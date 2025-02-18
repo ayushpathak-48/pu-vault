@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { PT_Serif, Poppins } from "next/font/google";
 import "./globals.css";
+import ClientProvider from "@/providers/client-provider";
+import { Navbar } from "@/components/navbar";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const headingFont = PT_Serif({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-heading",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.className} ${headingFont.variable} antialiased`}
       >
-        {children}
+        <ClientProvider>
+          <NuqsAdapter>
+            <div className="w-full">
+              <Navbar />
+              <main className="w-full">{children}</main>
+            </div>
+          </NuqsAdapter>
+        </ClientProvider>
       </body>
     </html>
   );
