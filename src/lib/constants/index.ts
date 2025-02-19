@@ -9,6 +9,7 @@ import {
 export const APP_NAME = "Pu Vault";
 export const MATERIAL_LINK_BASE_URL =
   "https://ayushpathak-48.github.io/pu-vault-assets";
+
 export const navLinks = [
   {
     id: 1,
@@ -22,23 +23,24 @@ export const navLinks = [
   //     href: "/favourites",
   //     icon: HeartIcon,
   //   },
+
   {
     id: 3,
-    title: "Settings",
-    href: "/settings",
-    icon: SettingsIcon,
-  },
-  {
-    id: 4,
     title: "Softwares",
     href: "/software-links",
     icon: HardDriveDownloadIcon,
   },
   {
-    id: 5,
+    id: 4,
     title: "Time Table",
     href: "/time-table",
     icon: CableCarIcon,
+  },
+  {
+    id: 5,
+    title: "Settings",
+    href: "/settings",
+    icon: SettingsIcon,
   },
 ];
 

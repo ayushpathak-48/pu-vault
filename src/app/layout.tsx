@@ -4,6 +4,7 @@ import "./globals.css";
 import ClientProvider from "@/providers/client-provider";
 import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
+import { BottomTabs } from "@/components/bottom-tabs";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
               <Navbar />
               <main className="w-full">{children}</main>
             </div>
+            <BottomTabs />
           </ClientProvider>
         </NuqsAdapter>
       </body>
