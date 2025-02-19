@@ -7,7 +7,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { navLinks } from "@/lib/constants/settings";
+import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { BookOpenText } from "lucide-react";
 import Link from "next/link";

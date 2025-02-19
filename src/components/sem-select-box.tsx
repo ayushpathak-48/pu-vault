@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { streams } from "@/lib/constants/settings";
+import { streams } from "@/lib/constants";
 
 export const SemSelectBox = () => {
   return (

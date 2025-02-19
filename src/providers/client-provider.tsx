@@ -4,7 +4,6 @@ import { useLayoutEffect, useState } from "react";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export default function ClientProvider({
   children,
@@ -28,12 +27,10 @@ export default function ClientProvider({
       enableSystem
       disableTransitionOnChange
     >
-      <NuqsAdapter>
-        <SidebarProvider>
-          <AppSidebar />
-          {children}
-        </SidebarProvider>
-      </NuqsAdapter>
+      <SidebarProvider>
+        <AppSidebar />
+        {children}
+      </SidebarProvider>
     </ThemeProvider>
   );
 }

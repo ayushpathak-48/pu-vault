@@ -3,7 +3,7 @@ import { PT_Serif, Poppins } from "next/font/google";
 import "./globals.css";
 import ClientProvider from "@/providers/client-provider";
 import { Navbar } from "@/components/navbar";
-// import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -31,14 +31,14 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${headingFont.variable} antialiased`}
       >
-        <ClientProvider>
-          {/* <NuqsAdapter> */}
-          <div className="w-full">
-            <Navbar />
-            <main className="w-full">{children}</main>
-          </div>
-          {/* </NuqsAdapter> */}
-        </ClientProvider>
+        <NuqsAdapter>
+          <ClientProvider>
+            <div className="w-full">
+              <Navbar />
+              <main className="w-full">{children}</main>
+            </div>
+          </ClientProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );

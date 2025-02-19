@@ -1,6 +1,6 @@
 "use client";
 
-import { navLinks } from "@/lib/constants/settings";
+import { navLinks } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
 
