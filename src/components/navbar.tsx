@@ -18,7 +18,7 @@ export const Navbar = () => {
 
   return (
     <div className="bg-gray-50 shadow w-full flex items-center h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10">
-      <div className="custom-heading font-semibold text-2xl lg:text-3xl">
+      <div className="max-md:text-center max-md:w-full custom-heading font-semibold text-2xl lg:text-3xl">
         {activePage?.title}
       </div>
     </div>

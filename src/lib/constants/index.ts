@@ -89,3 +89,54 @@ export const softwareLinks = [
     link: "https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-installer-amd64.iso",
   },
 ];
+
+export type HomePageTabsType = "materials" | "practicals" | "assignments";
+export const homePageTabs: {
+  id: number;
+  title: string;
+  key: HomePageTabsType;
+}[] = [
+  {
+    id: 1,
+    title: "Materials",
+    key: "materials",
+  },
+  {
+    id: 2,
+    title: "Practicals",
+    key: "practicals",
+  },
+  {
+    id: 3,
+    title: "Assignments",
+    key: "assignments",
+  },
+];
+
+export const specializations = [
+  {
+    id: 1,
+    label: "Artificial Intelligence - I",
+    value: "ai",
+  },
+  {
+    id: 2,
+    label: "Cyber Security and Forensics - I",
+    value: "csf",
+  },
+  {
+    id: 3,
+    label: "Full Stack Web Developer - I",
+    value: "fswd",
+  },
+  {
+    id: 4,
+    label: "Big Data Analytics - I",
+    value: "bda",
+  },
+  {
+    id: 5,
+    label: "Cloud Computing - I",
+    value: "cc",
+  },
+];

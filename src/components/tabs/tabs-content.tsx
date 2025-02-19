@@ -5,12 +5,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { HomePageTabsType } from "@/lib/constants";
 import { materials } from "@/lib/constants/materials";
 import Link from "next/link";
-export const MaterialTabContent = () => {
+import { useState } from "react";
+export const MaterialTabContent = ({
+  activeTab,
+}: {
+  activeTab: HomePageTabsType;
+}) => {
+  const [tabData] = useState(activeTab == "materials" ? materials : []);
   return (
-    <Accordion type="single" collapsible className="w-full">
-      {materials.map((material) => (
+    <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
+      {tabData.map((material) => (
         <AccordionItem
           className="bg-gray-100"
           key={material.id}
@@ -29,13 +36,18 @@ export const MaterialTabContent = () => {
                     <Link
                       href={note.href}
                       target="_blank"
-                      className="bg-sky-500"
+                      className="bg-sky-500 hover:bg-sky-500/90"
                     >
                       View
                     </Link>
                   </Button>
                 </div>
               ))}
+            </div>
+            <div className="flex max-md:justify-center mt-3">
+              <Button className="bg-slate-700" size={"sm"}>
+                View Syllabus
+              </Button>
             </div>
           </AccordionContent>
         </AccordionItem>
