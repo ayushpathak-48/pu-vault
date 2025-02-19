@@ -5,15 +5,10 @@ import { useQueryState } from "nuqs";
 import { MaterialTabContent } from "./tabs-content";
 import { homePageTabs } from "@/lib/constants";
 
-export const ContentTypeTabs = ({
-  specialization,
-}: {
-  specialization?: string;
-}) => {
-  const [currentTab, setCurrentTab] = useQueryState("content-type", {
+export const ContentTypeTabs = () => {
+  const [currentTab, setCurrentTab] = useQueryState("view", {
     defaultValue: "materials",
   });
-  console.log({ specialization });
   return (
     <Tabs
       defaultValue={currentTab}

@@ -1,5 +1,5 @@
 "use client";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import {
   Select,
   SelectContent,
@@ -9,10 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { specializations } from "@/lib/constants";
+import { useDataStore } from "@/stores/data.store";
 
 export const SelectSpecialization = () => {
+  const { setSpecialization } = useDataStore((state) => state);
   const onSelect = (e: string) => {
-    Cookies.set("specialization", e, { expires: 365 });
+    setSpecialization(e);
+    console.log(e);
   };
   return (
     <>
