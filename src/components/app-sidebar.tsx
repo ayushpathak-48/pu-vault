@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { BookOpenText } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SemSelectBox } from "./sem-select-box";
+// import { SemSelectBox } from "./sem-select-box";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -44,9 +44,7 @@ export function AppSidebar() {
           })}
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
-        <SemSelectBox />
-      </SidebarFooter>
+      <SidebarFooter>{/* <SemSelectBox /> */}</SidebarFooter>
     </Sidebar>
   );
 }

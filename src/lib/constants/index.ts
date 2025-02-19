@@ -87,16 +87,3 @@ export const softwareLinks = [
     link: "https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-installer-amd64.iso",
   },
 ];
-
-export const syllabus = [
-  {
-    id: 1,
-    title: "Advanced Java Programming",
-    link: "ADVANCED%20JAVA%20PROGRAMMING.pdf",
-  },
-  {
-    id: 2,
-    title: "Data Communications and Networking",
-    link: "",
-  },
-];
