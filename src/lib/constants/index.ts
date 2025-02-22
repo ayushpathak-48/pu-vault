@@ -23,18 +23,17 @@ export const navLinks = [
   //     href: "/favourites",
   //     icon: HeartIcon,
   //   },
-
   {
     id: 3,
-    title: "Softwares",
-    href: "/software-links",
-    icon: HardDriveDownloadIcon,
-  },
-  {
-    id: 4,
     title: "Time Table",
     href: "/time-table",
     icon: CableCarIcon,
+  },
+  {
+    id: 4,
+    title: "Softwares",
+    href: "/software-links",
+    icon: HardDriveDownloadIcon,
   },
   {
     id: 5,
@@ -90,7 +89,7 @@ export const softwareLinks = [
   },
 ];
 
-export type HomePageTabsType = "materials" | "practicals" | "assignments";
+export type HomePageTabsType = "materials" | "practicals";
 export const homePageTabs: {
   id: number;
   title: string;
@@ -106,11 +105,11 @@ export const homePageTabs: {
     title: "Practicals",
     key: "practicals",
   },
-  {
-    id: 3,
-    title: "Assignments",
-    key: "assignments",
-  },
+  // {
+  //   id: 3,
+  //   title: "Assignments",
+  //   key: "assignments",
+  // },
 ];
 
 export const specializations = [
@@ -138,5 +137,63 @@ export const specializations = [
     id: 5,
     label: "Cloud Computing - I",
     value: "cc",
+  },
+];
+
+export const divisions = [
+  {
+    id: 1,
+    label: "Division : A",
+    value: "div_a",
+  },
+  {
+    id: 2,
+    label: "Division : B",
+    value: "div_b",
+  },
+  {
+    id: 3,
+    label: "Division : C",
+    value: "div_c",
+  },
+  {
+    id: 4,
+    label: "Division : D",
+    value: "div_d",
+  },
+  {
+    id: 5,
+    label: "Division : E",
+    value: "div_e",
+  },
+  {
+    id: 6,
+    label: "Division : F",
+    value: "div_f",
+  },
+  {
+    id: 7,
+    label: "Division : G",
+    value: "div_g",
+  },
+  {
+    id: 8,
+    label: "Division : H",
+    value: "div_h",
+  },
+  {
+    id: 9,
+    label: "Division : I",
+    value: "div_i",
+  },
+  {
+    id: 10,
+    label: "Division : J",
+    value: "div_j",
+  },
+  {
+    id: 11,
+    label: "Division : K",
+    value: "div_k",
   },
 ];

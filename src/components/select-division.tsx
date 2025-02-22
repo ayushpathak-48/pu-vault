@@ -8,23 +8,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { specializations } from "@/lib/constants";
+import { divisions } from "@/lib/constants";
 import { useDataStore } from "@/stores/data.store";
 
-export const SelectSpecialization = () => {
-  const { setSpecialization } = useDataStore((state) => state);
+export const SelectDivision = () => {
+  const setDivision = useDataStore((state) => state.setDivision);
   const onSelect = (e: string) => {
-    setSpecialization(e);
+    setDivision(e);
   };
   return (
     <>
       <Select onValueChange={onSelect}>
         <SelectTrigger className="w-full bg-gray-100">
-          <SelectValue placeholder="Select Specialization" />
+          <SelectValue placeholder="Select Division" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            {specializations.map((ele) => (
+            {divisions.map((ele) => (
               <SelectItem key={ele.id} value={ele.value}>
                 {ele.label}
               </SelectItem>

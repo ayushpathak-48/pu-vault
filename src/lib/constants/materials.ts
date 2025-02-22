@@ -78,3 +78,34 @@ export const materials = [
     ],
   },
 ];
+
+export const specializationMaterials = [
+  {
+    id: 1,
+    subject_name: "Artificial Intelligence",
+    value: "ai",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/artificial-intelligence.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Unit-1: Introduction",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Heuristic Search Techniques",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/2-heuristic-search-techniques.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Problems, Problems Spaces and Search",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/3-problems-spaces-and-search.pdf`,
+      },
+      {
+        id: 4,
+        title: "Refrence Book: AI Russell Norvig",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
+      },
+    ],
+  },
+];
