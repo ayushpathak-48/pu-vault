@@ -171,7 +171,7 @@ export const time_table = [
         },
         {
           id: 4,
-          label: "CDC ENGLISH & MATHEMATICAL APTITUDE",
+          label: "CDC",
           professor: "Arul P",
           classroom: "606",
           cellClassName: "text-[#11131e]",
@@ -544,7 +544,7 @@ export const time_table = [
         },
         {
           id: 5,
-          label: "CDC English & Mathematical Aptitude",
+          label: "CDC",
           professor: "Arul P",
           classroom: "603",
           cellClassName: "text-[#11131e]",
@@ -958,7 +958,7 @@ export const time_table = [
         },
         {
           id: 3,
-          label: "CDC English & Mathematical Aptitude",
+          label: "CDC",
           professor: "Arul P.",
           classroom: "605",
           cellClassName: "text-[#11131e]",
