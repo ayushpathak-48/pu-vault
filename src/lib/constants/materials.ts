@@ -22,6 +22,53 @@ export const materials = [
         href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/3-java-server-pages.pdf`,
       },
     ],
+    practicals_link: [
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-1-journal.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-2-journal.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-3-journal.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-4-journal.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-5-journal.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-6-journal.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-7-journal.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-9-journal.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 10",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-10-journal.pdf`,
+      },
+    ],
   },
   {
     id: 2,
@@ -42,6 +89,53 @@ export const materials = [
         id: 3,
         title: "Unit-2.2: Two dimensional transformations",
         href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/2.2-region-filling-algorithms.pdf`,
+      },
+    ],
+    practicals_link: [
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-1-journal.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-2-journal.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-3-journal.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-4-journal.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-5-journal.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-6-journal.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-7-journal.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-9-journal.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 10",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-10-journal.pdf`,
       },
     ],
   },
@@ -76,6 +170,33 @@ export const materials = [
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/week-5.pdf`,
       },
     ],
+    practicals_link: [
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-1-journal.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-2-journal.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-3-journal.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-4-journal.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-5-journal.pdf`,
+      },
+    ],
   },
 ];
 
@@ -105,6 +226,33 @@ export const specializationMaterials = [
         id: 4,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
+      },
+    ],
+    practicals_link: [
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-1-journal.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-2-journal.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-3-journal.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-4-journal.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-5-journal.pdf`,
       },
     ],
   },

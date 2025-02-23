@@ -11,6 +11,7 @@ import { materials, specializationMaterials } from "@/lib/constants/materials";
 import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 export const MaterialTabContent = ({
   activeTab,
 }: {
@@ -42,27 +43,71 @@ const MaterialAccordionCard = ({ material }: any) => (
   >
     <AccordionTrigger>{material.subject_name}</AccordionTrigger>
     <AccordionContent>
-      <div className="flex items-center flex-col gap-2">
-        {material.notes_link.map((note: any) => (
-          <div
-            key={note.id}
-            className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+      <Tabs defaultValue={"notes"} className="w-full">
+        <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
+          <TabsTrigger
+            value={"notes"}
+            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
           >
-            <div className="text-md font-medium">
-              <Link href={note.href}>{note.title}</Link>
+            Notes
+          </TabsTrigger>
+          <TabsTrigger
+            value={"practicals"}
+            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+          >
+            Practicals
+          </TabsTrigger>
+        </TabsList>
+        <div className="p-2">
+          <TabsContent value={"notes"}>
+            <div className="flex items-center flex-col gap-2">
+              {material.notes_link.map((note: any) => (
+                <div
+                  key={note.id}
+                  className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                >
+                  <div className="text-md font-medium">
+                    <Link href={note.href}>{note.title}</Link>
+                  </div>
+                  <Button className="" asChild size={"sm"}>
+                    <Link
+                      href={note.href}
+                      target="_blank"
+                      className="bg-sky-500 hover:bg-sky-500/90"
+                    >
+                      View
+                    </Link>
+                  </Button>
+                </div>
+              ))}
             </div>
-            <Button className="" asChild size={"sm"}>
-              <Link
-                href={note.href}
-                target="_blank"
-                className="bg-sky-500 hover:bg-sky-500/90"
-              >
-                View
-              </Link>
-            </Button>
-          </div>
-        ))}
-      </div>
+          </TabsContent>
+          <TabsContent value={"practicals"}>
+            <div className="flex items-center flex-col gap-2">
+              {material.practicals_link.map((practical: any) => (
+                <div
+                  key={practical.id}
+                  className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                >
+                  <div className="text-md font-medium">
+                    <Link href={practical.journal_link}>{practical.title}</Link>
+                  </div>
+                  <Button className="" asChild size={"sm"}>
+                    <Link
+                      href={practical.journal_link}
+                      target="_blank"
+                      className="bg-sky-500 hover:bg-sky-500/90"
+                    >
+                      View
+                    </Link>
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </div>
+      </Tabs>
+
       <div className="flex max-md:justify-center mt-3">
         <Button className="bg-slate-700" size={"sm"} asChild>
           <Link href={material?.syllabus_link} target="_bank">

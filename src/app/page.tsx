@@ -2,7 +2,7 @@
 
 import { SelectDivision } from "@/components/select-division";
 import { SelectSpecialization } from "@/components/select-specialization";
-import { ContentTypeTabs } from "@/components/tabs/content-type-tabs";
+import { HomePageTabs } from "@/components/tabs/home-page-tabs";
 import { useDataStore } from "@/stores/data.store";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         {!specialization && <SelectSpecialization />}
         {!division && <SelectDivision />}
       </div>
-      <ContentTypeTabs />
+      <HomePageTabs />
     </div>
   );
 }

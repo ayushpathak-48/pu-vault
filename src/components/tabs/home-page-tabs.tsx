@@ -5,7 +5,7 @@ import { useQueryState } from "nuqs";
 import { MaterialTabContent } from "./tabs-content";
 import { homePageTabs } from "@/lib/constants";
 
-export const ContentTypeTabs = () => {
+export const HomePageTabs = () => {
   const [currentTab, setCurrentTab] = useQueryState("view", {
     defaultValue: "materials",
   });

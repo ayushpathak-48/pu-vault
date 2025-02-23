@@ -89,7 +89,7 @@ export const softwareLinks = [
   },
 ];
 
-export type HomePageTabsType = "materials" | "practicals";
+export type HomePageTabsType = "materials" | "assignments";
 export const homePageTabs: {
   id: number;
   title: string;
@@ -100,16 +100,16 @@ export const homePageTabs: {
     title: "Materials",
     key: "materials",
   },
-  {
-    id: 2,
-    title: "Practicals",
-    key: "practicals",
-  },
   // {
-  //   id: 3,
-  //   title: "Assignments",
-  //   key: "assignments",
+  //   id: 2,
+  //   title: "Practicals",
+  //   key: "practicals",
   // },
+  {
+    id: 3,
+    title: "Assignments",
+    key: "assignments",
+  },
 ];
 
 export const specializations = [
