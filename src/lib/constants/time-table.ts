@@ -1280,6 +1280,7 @@ export const time_table = [
         },
         {
           id: 3,
+          row_span: 2,
           mca: {
             label: "Library",
           },
@@ -1288,7 +1289,6 @@ export const time_table = [
             professor: "Prachi Mehta",
             lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
-            row_span: 2,
           },
         },
         {
@@ -1347,8 +1347,8 @@ export const time_table = [
             professor: "Prachi Mehta",
             lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
-            row_span: 2,
           },
+          row_span: 2,
         },
         {
           id: 4,
@@ -1642,8 +1642,8 @@ export const time_table = [
             professor: "Prachi Mehta",
             lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
-            row_span: 2,
           },
+          row_span: 2,
         },
         {
           id: 4,
@@ -2002,8 +2002,8 @@ export const time_table = [
             professor: "Prachi Mehta",
             lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
-            row_span: 2,
           },
+          row_span: 2,
         },
         {
           id: 4,
