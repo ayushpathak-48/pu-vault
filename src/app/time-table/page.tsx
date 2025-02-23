@@ -6,6 +6,7 @@ import { divisions } from "@/lib/constants";
 import { time_table, TimetableData } from "@/lib/constants/time-table";
 import { useDataStore } from "@/stores/data.store";
 import { Loader } from "lucide-react";
+import { useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
 const weekdays = [
   "Sunday",
@@ -20,7 +21,10 @@ const weekdays = [
 const TimeTablePage = () => {
   const [date] = useState(new Date());
   const division = useDataStore((state) => state.division);
-  const [activeDivision, setActiveDivision] = useState(division || "div_a");
+  const [activeDivision, setActiveDivision] = useQueryState("div", {
+    defaultValue: division || "div_a",
+  });
+  // useState(division || "div_a");
   const [tableData, setTableData] = useState<TimetableData>([]);
   const currentDay = weekdays[date.getDay()]; // Get the current day name
 
@@ -38,12 +42,12 @@ const TimeTablePage = () => {
         onValueChange={setActiveDivision}
         className="w-full"
       >
-        <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y gap-6">
+        <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border-y gap-6">
           {divisions.map((div) => (
             <TabsTrigger
               key={div.id}
               value={div.value}
-              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+              className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
             >
               {div.label}
             </TabsTrigger>

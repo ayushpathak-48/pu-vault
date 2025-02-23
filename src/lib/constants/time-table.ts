@@ -7,12 +7,19 @@ export interface TimeTableCell {
   cellClassName?: string;
   row_span?: number;
   col_span?: number;
-  mca?: { label: string };
-  msc_it?: {
+  mca?: {
     label: string;
-    professor?: string;
     classroom?: string;
     cellClassName?: string;
+    professor?: string | string[];
+    lab?: string[];
+  };
+  msc_it?: {
+    label: string;
+    professor?: string | string[];
+    classroom?: string;
+    cellClassName?: string;
+    lab?: string[];
   };
 }
 type TimeTableRow = TimeTableCell[];
@@ -1275,7 +1282,7 @@ export const time_table = [
           msc_it: {
             label: "SE Lab",
             professor: "Prachi Mehta",
-            lab: "708,709,710",
+            lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
             row_span: 2,
           },
@@ -1334,7 +1341,7 @@ export const time_table = [
           msc_it: {
             label: "SE Lab",
             professor: "Prachi Mehta",
-            lab: "708,709,710",
+            lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
             row_span: 2,
           },
@@ -1629,7 +1636,7 @@ export const time_table = [
           msc_it: {
             label: "SE Lab",
             professor: "Prachi Mehta",
-            lab: "708,709,710",
+            lab: ["708", "709", "710"],
             cellClassName: "text-[#11131e]",
             row_span: 2,
           },
