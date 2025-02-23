@@ -14,7 +14,9 @@ export const TimeTableBody = ({
       {data.map((table, i) => (
         <tr
           key={i}
-          className="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+          className={cn(
+            "bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+          )}
         >
           {table.map(
             ({
