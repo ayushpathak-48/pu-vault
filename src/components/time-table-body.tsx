@@ -42,7 +42,7 @@ export const TimeTableBody = ({
                   rowSpan={row_span}
                   colSpan={col_span}
                   className={cn(
-                    "px-6 py-4 text-center border",
+                    "px-6 py-4 text-center border ",
                     cellClassName || isMscItOrMCA
                       ? "font-medium"
                       : "text-emerald-900 bg-emerald-50",
