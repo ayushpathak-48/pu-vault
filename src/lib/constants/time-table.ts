@@ -1311,7 +1311,7 @@ export const time_table = [
           id: 7,
           label: "CG Lab",
           professor: ["Dampy, CB"],
-          lab: ["609, 612"],
+          lab: ["609", "612"],
           cellClassName: "text-orange-500",
           row_span: 2,
         },
@@ -1528,7 +1528,7 @@ export const time_table = [
           },
           msc_it: {
             label: "SE",
-            professor: "Prof. Prachi Mehta",
+            professor: "Prachi Mehta",
             classroom: "601",
             cellClassName: "text-[#11131e]",
           },
@@ -1537,7 +1537,7 @@ export const time_table = [
           id: 5,
           label: "CG Lab",
           professor: ["Dampy, CB"],
-          lab: ["613, 709"],
+          lab: ["613", "709"],
           cellClassName: "text-orange-500",
           row_span: 2,
         },
@@ -1586,7 +1586,7 @@ export const time_table = [
           },
           msc_it: {
             label: "SE",
-            professor: "Prof. Prachi Mehta",
+            professor: "Prachi Mehta",
             classroom: "602",
             cellClassName: "text-[#11131e]",
           },
@@ -1698,7 +1698,7 @@ export const time_table = [
           },
           msc_it: {
             label: "SE",
-            professor: "Prof. Prachi Mehta",
+            professor: "Prachi Mehta",
             classroom: "607",
             cellClassName: "text-[#11131e]",
           },
@@ -1721,6 +1721,361 @@ export const time_table = [
           professor: "Harshad",
           classroom: "601",
           cellClassName: "text-[#11131e]",
+        },
+      ],
+    ],
+  },
+  //  Division F
+  {
+    id: 5,
+    title: "Division F [CC]",
+    division_key: "div_f",
+    data: [
+      [
+        {
+          id: 1,
+          label: "Lecture No.",
+        },
+        {
+          id: 2,
+          label: "Lecture Timing",
+        },
+        {
+          id: 3,
+          label: "Monday",
+        },
+        {
+          id: 4,
+          label: "Tuesday",
+        },
+        {
+          id: 5,
+          label: "Wednesday",
+        },
+        {
+          id: 6,
+          label: "Thursday",
+        },
+        {
+          id: 7,
+          label: "Friday",
+        },
+        {
+          id: 8,
+          label: "Saturday",
+        },
+      ],
+      // 07:30 - 08:30
+      [
+        {
+          id: 1,
+          label: "1",
+        },
+        {
+          id: 2,
+          label: "07:30 TO 08:30",
+        },
+        {
+          id: 3,
+          label: "DCN",
+          professor: "Mayank P.",
+          classroom: "602",
+          cellClassName: "text-purple-500",
+        },
+        {
+          id: 4,
+          label: "AJP Lab",
+          professor: "Renuka Parmar, Dhruv",
+          lab: "612, 613",
+          cellClassName: "text-red-500",
+          row_span: 2,
+        },
+        {
+          id: 5,
+          label: "AJP",
+          professor: "Renuka P.",
+          classroom: "602",
+          cellClassName: "text-red-500",
+        },
+        {
+          id: 6,
+          label: "CG",
+          professor: "Dr. Ghanshyam",
+          classroom: "602",
+          cellClassName: "text-orange-500",
+        },
+        {
+          id: 7,
+          label: "DCN",
+          professor: "Mayank P.",
+          classroom: "602",
+          cellClassName: "text-purple-500",
+        },
+        {
+          id: 8,
+          label: "PULMS Self Learning",
+        },
+      ],
+      // 08:30 - 09:30
+      [
+        {
+          id: 1,
+          label: "2",
+        },
+        {
+          id: 2,
+          label: "08:30 TO 09:30",
+        },
+        {
+          id: 3,
+          label: "CC",
+          professor: "Mohit",
+          classroom: "602",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 4,
+          label: "CG",
+          professor: "Dr. Ghanshyam",
+          classroom: "602",
+          cellClassName: "text-orange-500",
+        },
+        {
+          id: 5,
+          label: "CC",
+          professor: "Mohit",
+          classroom: "602",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 6,
+          label: "CC",
+          professor: "Mohit",
+          classroom: "602",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 7,
+          label: "Library",
+        },
+      ],
+      // 09:30 - 09:45
+      [
+        {
+          id: 1,
+          label: "Recess",
+        },
+        {
+          id: 2,
+          label: "Short Break (09:30 TO 09:45)",
+          col_span: 7,
+        },
+      ],
+      // 09:45 - 10:45
+      [
+        {
+          id: 1,
+          label: "3",
+        },
+        {
+          id: 2,
+          label: "09:45 TO 10:45",
+        },
+        {
+          id: 3,
+          label: "CG Lab",
+          professor: "Dr. Ghanshyam, Mohit",
+          lab: "613",
+          cellClassName: "text-orange-500",
+          row_span: 2,
+        },
+        {
+          id: 4,
+          mca: {
+            label: "Library",
+          },
+          msc_it: {
+            label: "SE",
+            professor: "Prachi Mehta",
+            classroom: "601",
+            cellClassName: "text-[#11131e]",
+          },
+        },
+        {
+          id: 5,
+          label: "CA",
+          professor: "Smarika Rai",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 6,
+          label: "CA",
+          professor: "Smarika Rai",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 7,
+          label: "CC Lab",
+          professor: "Mohit, Ashish",
+          lab: "712, 713",
+          cellClassName: "text-[#11131e]",
+          row_span: 2,
+        },
+        {
+          id: 8,
+          label: "DCN Lab",
+          professor: "Mayank P., Faruk",
+          lab: "605, 606",
+          cellClassName: "text-purple-500",
+          row_span: 2,
+        },
+      ],
+      // 10:45 - 11:45
+      [
+        {
+          id: 1,
+          label: "4",
+        },
+        {
+          id: 2,
+          label: "10:45 TO 11:45",
+        },
+        {
+          id: 3,
+          label: "CA",
+          professor: "Smarika Rai",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 4,
+          label: "CDC",
+          professor: "Arul P",
+          classroom: "603",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 5,
+          mca: {
+            label: "Library",
+          },
+          msc_it: {
+            label: "SE",
+            professor: "Prachi Mehta",
+            classroom: "602",
+            cellClassName: "text-[#11131e]",
+          },
+        },
+      ],
+      // 11:45 - 12:45
+      [
+        {
+          id: 1,
+          label: "Recess",
+        },
+        {
+          id: 2,
+          label: "Lunch Break (11:45 TO 12:45)",
+          col_span: 7,
+        },
+      ],
+      // 12:45 - 01:35
+      [
+        {
+          id: 1,
+          label: "5",
+        },
+        {
+          id: 2,
+          label: "12:45 TO 01:35",
+        },
+        {
+          id: 3,
+          mca: {
+            label: "Library",
+          },
+          msc_it: {
+            label: "SE Lab",
+            professor: "Prachi Mehta",
+            lab: ["708", "709", "710"],
+            cellClassName: "text-[#11131e]",
+            row_span: 2,
+          },
+        },
+        {
+          id: 4,
+          label: "DCN",
+          professor: ["Mayank P.", "Dean Mam"],
+          classroom: "604",
+          cellClassName: "text-purple-500",
+        },
+        {
+          id: 5,
+          label: "Library",
+        },
+        {
+          id: 6,
+          label: "AJP",
+          professor: "Vivek Dave",
+          classroom: "309",
+          cellClassName: "text-red-500",
+        },
+        {
+          id: 7,
+          label: "AJP Lab",
+          professor: ["Renuka Parmar", "Honey Parmar"],
+          lab: ["611 ", " 713"],
+          cellClassName: "text-red-500",
+        },
+        {
+          id: 8,
+          label: "CC",
+          professor: "Mohit",
+          classroom: "602",
+          cellClassName: "text-[#11131e]",
+        },
+      ],
+      // 01:35 - 02:25
+      [
+        {
+          id: 1,
+          label: "6",
+        },
+        {
+          id: 2,
+          label: "01:35 TO 02:25",
+        },
+        {
+          id: 3,
+          label: "AJP [T]",
+          professor: ["Renuka Parmar", "Vivek Dave"],
+          lab: ["612 ", "613"],
+          cellClassName: "text-red-500",
+        },
+        {
+          id: 4,
+          mca: {
+            label: "Library",
+          },
+          msc_it: {
+            label: "SE",
+            professor: "Prachi Mehta",
+            classroom: "607",
+            cellClassName: "text-[#11131e]",
+          },
+        },
+        {
+          id: 5,
+          label: "FACE",
+          professor: "Harshad",
+          classroom: "306",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 6,
+          label: "CG",
+          professor: "Ghanshyam",
+          classroom: "602",
+          cellClassName: "text-orange-500",
         },
       ],
     ],
