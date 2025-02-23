@@ -42,7 +42,7 @@ const TimeTablePage = () => {
         onValueChange={setActiveDivision}
         className="w-full"
       >
-        <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border-y gap-6">
+        <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
           {divisions.map((div) => (
             <TabsTrigger
               key={div.id}
@@ -53,10 +53,10 @@ const TimeTablePage = () => {
             </TabsTrigger>
           ))}
         </TabsList>
-        <div className="p-5">
+        <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 mb-20">
           {divisions.map((tab) => (
             <TabsContent key={tab.id} value={tab.value}>
-              <div className="relative w-full overflow-x-auto mb-20">
+              <div className="relative w-full overflow-x-auto">
                 {!tableData ? (
                   <div className="h-40 flex items-center justify-center">
                     No time table found for Division:{" "}
