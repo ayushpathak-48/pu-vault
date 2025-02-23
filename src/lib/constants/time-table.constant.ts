@@ -2269,7 +2269,7 @@ export const time_table = [
           row_span: 2,
         },
         {
-          id: 5,
+          id: 7,
           label: "Face",
           professor: "Harshad",
           classroom: "302",

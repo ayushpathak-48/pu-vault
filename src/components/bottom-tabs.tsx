@@ -14,6 +14,7 @@ export const BottomTabs = () => {
         {navLinks.map((link) => {
           const activeLink = pathname == link.href;
           const Icon = link.icon;
+          if (link?.hideOnMobile) return;
           return (
             <Link
               href={link.href}

@@ -6,30 +6,25 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { HomePageTabsType } from "@/lib/constants";
-import { materials, specializationMaterials } from "@/lib/constants/materials";
 import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
-import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-export const MaterialTabContent = ({
-  activeTab,
+export const HomePageAccordionList = ({
+  tabData,
+  specializationTabData,
 }: {
-  activeTab: HomePageTabsType;
+  tabData: any;
+  specializationTabData: any;
 }) => {
-  const [tabData] = useState(activeTab == "materials" ? materials : []);
-  const [specializationTabData] = useState(
-    activeTab == "materials" ? specializationMaterials : []
-  );
   const specialization = useDataStore((state) => state.specialization);
   return (
     <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
-      {specializationTabData.map((item) => {
+      {specializationTabData.map((item: any) => {
         if (item.value == specialization) {
           return <MaterialAccordionCard key={item.id} material={item} />;
         }
       })}
-      {tabData.map((material) => (
+      {tabData.map((material: any) => (
         <MaterialAccordionCard key={material.id} material={material} />
       ))}
     </Accordion>

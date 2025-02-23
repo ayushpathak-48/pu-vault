@@ -2,8 +2,12 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useQueryState } from "nuqs";
-import { MaterialTabContent } from "./tabs-content";
+import { HomePageAccordionList } from "./home-accordion-list";
 import { homePageTabs } from "@/lib/constants";
+import {
+  materials,
+  specializationMaterials,
+} from "@/lib/constants/materials.constant";
 
 export const HomePageTabs = () => {
   const [currentTab, setCurrentTab] = useQueryState("view", {
@@ -29,7 +33,10 @@ export const HomePageTabs = () => {
       <div className="p-5">
         {homePageTabs.map((tab) => (
           <TabsContent key={tab.id} value={tab.key}>
-            <MaterialTabContent activeTab={tab.key} />
+            <HomePageAccordionList
+              tabData={materials}
+              specializationTabData={specializationMaterials}
+            />
           </TabsContent>
         ))}
       </div>

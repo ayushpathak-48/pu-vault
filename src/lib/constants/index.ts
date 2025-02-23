@@ -1,5 +1,7 @@
 import {
+  Book,
   CableCarIcon,
+  Calculator,
   HardDriveDownloadIcon,
   //  HeartIcon,
   HouseIcon,
@@ -31,12 +33,26 @@ export const navLinks = [
   },
   {
     id: 4,
-    title: "Softwares",
-    href: "/software-links",
-    icon: HardDriveDownloadIcon,
+    title: "Assignments",
+    href: "/assignments",
+    icon: Book,
   },
   {
     id: 5,
+    title: "Softwares",
+    href: "/software-links",
+    hideOnMobile: true,
+    icon: HardDriveDownloadIcon,
+  },
+  {
+    id: 6,
+    title: "Attendance Calc",
+    href: "/attendance-calculator",
+    hideOnMobile: true,
+    icon: Calculator,
+  },
+  {
+    id: 7,
     title: "Settings",
     href: "/settings",
     icon: SettingsIcon,

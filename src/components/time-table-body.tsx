@@ -1,4 +1,7 @@
-import { TimetableData, TimeTableCell } from "@/lib/constants/time-table";
+import {
+  TimetableData,
+  TimeTableCell,
+} from "@/lib/constants/time-table.constant";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -120,8 +123,8 @@ const SingleCell = ({
         classroom || lab ? "" : "hidden"
       )}
     >
-      {classroom && <span>C: {classroom}</span>}
-      {lab && lab?.length > 0 && <span>L: {lab.join(", ")}</span>}
+      {classroom && <span>Class: {classroom}</span>}
+      {lab && lab?.length > 0 && <span>Lab: {lab.join(", ")}</span>}
     </div>
   </>
 );

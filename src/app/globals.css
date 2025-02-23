@@ -114,6 +114,7 @@ body {
 
 *::-webkit-scrollbar {
   height: 3px;
+  width: 3px;
   background-color: #eee;
 }
 *::-webkit-scrollbar-thumb {
