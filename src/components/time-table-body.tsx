@@ -65,7 +65,7 @@ export const TimeTableBody = ({
                           professor={mca?.professor}
                         />
                       </div>
-                      <div className="h-0.5 w-full bg-slate-500 my-4" />
+                      <div className="h-0.5 w-full my-4" />
                       <div className="text-blue-400">
                         <SingleCell
                           label={msc_it?.label}
