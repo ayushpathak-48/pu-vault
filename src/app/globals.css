@@ -91,3 +91,23 @@ body {
 .custom-heading{
   @apply font-heading text-sky-700
 }
+
+.text-\[\#11131e\] {
+  --tw-text-opacity: 1;
+  color: rgb(17 19 30 / var(--tw-text-opacity, 1)) /* #11131e */;
+}
+
+.text-purple-500 {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity, 1)) /* #a855f7 */;
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1)) /* #ef4444 */;
+}
+
+.text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity, 1)) /* #f97316 */;
+}

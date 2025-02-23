@@ -1,3 +1,14 @@
+export interface TimeTableRow {
+  id: number;
+  label: string;
+  professor?: string | string[];
+  classroom?: string;
+  lab?: string[];
+  cellClassName?: string;
+  row_span?: number;
+  col_span?: number;
+}
+
 export const time_table = [
   // Divison A
   {
