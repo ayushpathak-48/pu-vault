@@ -13,6 +13,8 @@ export interface TimeTableCell {
     cellClassName?: string;
     professor?: string | string[];
     lab?: string[];
+    row_span?: number;
+    col_span?: number;
   };
   msc_it?: {
     label: string;
@@ -20,6 +22,8 @@ export interface TimeTableCell {
     classroom?: string;
     cellClassName?: string;
     lab?: string[];
+    row_span?: number;
+    col_span?: number;
   };
 }
 type TimeTableRow = TimeTableCell[];
@@ -1786,7 +1790,7 @@ export const time_table = [
           id: 4,
           label: "AJP Lab",
           professor: "Renuka Parmar, Dhruv",
-          lab: "612, 613",
+          lab: ["612", "613"],
           cellClassName: "text-red-500",
           row_span: 2,
         },
@@ -1885,7 +1889,7 @@ export const time_table = [
           id: 3,
           label: "CG Lab",
           professor: "Dr. Ghanshyam, Mohit",
-          lab: "613",
+          lab: ["613"],
           cellClassName: "text-orange-500",
           row_span: 2,
         },
@@ -1917,7 +1921,7 @@ export const time_table = [
           id: 7,
           label: "CC Lab",
           professor: "Mohit, Ashish",
-          lab: "712, 713",
+          lab: ["712", "713"],
           cellClassName: "text-[#11131e]",
           row_span: 2,
         },
@@ -1925,7 +1929,7 @@ export const time_table = [
           id: 8,
           label: "DCN Lab",
           professor: "Mayank P., Faruk",
-          lab: "605, 606",
+          lab: ["605", "606"],
           cellClassName: "text-purple-500",
           row_span: 2,
         },
