@@ -13,12 +13,14 @@ import { useDataStore } from "@/stores/data.store";
 
 export const SelectSpecialization = () => {
   const { setSpecialization } = useDataStore((state) => state);
+  const specialization = useDataStore((state) => state.specialization);
+
   const onSelect = (e: string) => {
     setSpecialization(e);
   };
   return (
     <>
-      <Select onValueChange={onSelect}>
+      <Select onValueChange={onSelect} defaultValue={specialization || ""}>
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Specialization" />
         </SelectTrigger>
