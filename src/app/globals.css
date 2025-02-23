@@ -88,8 +88,8 @@ body {
   }
 }
 
-.custom-heading{
-  @apply font-heading text-sky-700
+.custom-heading {
+  @apply font-heading text-sky-700;
 }
 
 .text-\[\#11131e\] {
@@ -110,4 +110,13 @@ body {
 .text-orange-500 {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity, 1)) /* #f97316 */;
+}
+
+*::-webkit-scrollbar {
+  height: 3px;
+  background-color: #eee;
+}
+*::-webkit-scrollbar-thumb {
+  height: 3px;
+  background-color: #ccc;
 }

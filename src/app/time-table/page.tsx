@@ -1,7 +1,8 @@
 "use client";
 
-import { SelectDivision } from "@/components/select-division";
 import { TimeTableBody } from "@/components/time-table-body";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { divisions } from "@/lib/constants";
 import { time_table, TimetableData } from "@/lib/constants/time-table";
 import { useDataStore } from "@/stores/data.store";
 import { Loader } from "lucide-react";
@@ -23,10 +24,6 @@ const TimeTablePage = () => {
   const [tableData, setTableData] = useState<TimetableData>([]);
   const currentDay = weekdays[date.getDay()]; // Get the current day name
 
-  const handleDivisionChange = (data: string) => {
-    setActiveDivision(data);
-  };
-
   useEffect(() => {
     const tempData = time_table.filter(
       ({ division_key }) => division_key == activeDivision
@@ -36,26 +33,48 @@ const TimeTablePage = () => {
 
   return (
     <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
-      <div className="max-w-full">
-        <SelectDivision
-          onSelect={handleDivisionChange}
-          defaultValue={activeDivision || ""}
-        />
-      </div>
-      <div className="relative w-full overflow-x-auto mb-20">
-        {tableData.length ? (
-          <table
-            border={1}
-            className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-          >
-            <TimeTableBody data={tableData} currentDay={currentDay} />
-          </table>
-        ) : (
-          <div className="h-40 flex items-center justify-center">
-            <Loader className="animate-spin" />
-          </div>
-        )}
-      </div>
+      <Tabs
+        defaultValue={activeDivision}
+        onValueChange={setActiveDivision}
+        className="w-full"
+      >
+        <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y gap-6">
+          {divisions.map((div) => (
+            <TabsTrigger
+              key={div.id}
+              value={div.value}
+              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+            >
+              {div.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        <div className="p-5">
+          {divisions.map((tab) => (
+            <TabsContent key={tab.id} value={tab.value}>
+              <div className="relative w-full overflow-x-auto mb-20">
+                {!tableData ? (
+                  <div className="h-40 flex items-center justify-center">
+                    No time table found for Division:{" "}
+                    {activeDivision.split("_")[1].toUpperCase()}
+                  </div>
+                ) : tableData?.length > 0 ? (
+                  <table
+                    border={1}
+                    className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                  >
+                    <TimeTableBody data={tableData} currentDay={currentDay} />
+                  </table>
+                ) : (
+                  <div className="h-40 flex items-center justify-center">
+                    <Loader className="animate-spin" />
+                  </div>
+                )}
+              </div>
+            </TabsContent>
+          ))}
+        </div>
+      </Tabs>
     </div>
   );
 };
