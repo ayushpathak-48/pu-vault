@@ -1,12 +1,19 @@
 export interface TimeTableCell {
   id: number;
-  label: string;
+  label?: string;
   professor?: string | string[];
   classroom?: string;
   lab?: string[];
   cellClassName?: string;
   row_span?: number;
   col_span?: number;
+  mca?: { label: string };
+  msc_it?: {
+    label: string;
+    professor?: string;
+    classroom?: string;
+    cellClassName?: string;
+  };
 }
 type TimeTableRow = TimeTableCell[];
 export type TimetableData = TimeTableRow[];
@@ -1473,7 +1480,7 @@ export const time_table = [
           cellClassName: "text-orange-500",
         },
         {
-          id: 4,
+          id: 6,
           label: "Library",
         },
       ],

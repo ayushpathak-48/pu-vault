@@ -32,7 +32,6 @@ const TimeTablePage = () => {
       ({ division_key }) => division_key == activeDivision
     )[0]?.data;
     setTableData(tempData);
-    console.log({ tempData });
   }, [activeDivision]);
 
   return (
