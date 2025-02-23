@@ -2412,7 +2412,7 @@ export const time_table = [
   {
     id: 8,
     title: "Division G [csf]",
-    division_key: "div_g",
+    division_key: "div_h",
     data: [
       [
         {
@@ -2467,9 +2467,9 @@ export const time_table = [
         },
         {
           id: 4,
-          label: "DCN [LAB]",
+          label: "DCN Lab",
           professor: ["Sonali Gupta", "Mayank P"],
-          classroom: ["601", "602"],
+          lab: ["601", "602"],
           cellClassName: "text-purple-500",
           row_span: 2,
         },
@@ -2701,7 +2701,7 @@ export const time_table = [
           id: 4,
           label: "CG Lab",
           professor: "Ghanshyam",
-          lab: "Lab No",
+          lab: ["Lab No"],
           cellClassName: "text-orange-500",
           row_span: 2,
         },
@@ -2722,7 +2722,7 @@ export const time_table = [
           id: 7,
           label: "AJP Lab",
           professor: ["Gaurav", "Dhruv"],
-          classroom: ["710", "712"],
+          lab: ["710", "712"],
           cellClassName: "text-red-500",
           row_span: 2,
         },
