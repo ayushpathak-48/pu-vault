@@ -315,7 +315,6 @@ export const time_table = [
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
@@ -516,7 +515,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -530,7 +528,6 @@ export const time_table = [
           id: 5,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
@@ -1345,7 +1342,7 @@ export const time_table = [
           msc_it: {
             label: "SE Lab",
             professor: "Prachi Mehta",
-            lab: ["708", "709", "710"],
+            lab: ["607"],
             cellClassName: "text-[#11131e]",
           },
           row_span: 2,
@@ -1711,13 +1708,11 @@ export const time_table = [
           id: 5,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
@@ -1909,13 +1904,11 @@ export const time_table = [
           id: 5,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
@@ -1948,7 +1941,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -2139,7 +2131,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -2251,7 +2242,7 @@ export const time_table = [
           id: 4,
           label: "CSF",
           professor: ["Dhillon", "Aesh Gada"],
-          lab: ["706", "727"],
+          lab: ["706", "707"],
           cellClassName: "text-[#11131e]",
           row_span: 2,
         },
@@ -2269,7 +2260,7 @@ export const time_table = [
           row_span: 2,
         },
         {
-          id: 5,
+          id: 7,
           label: "Face",
           professor: "Harshad",
           classroom: "302",
@@ -2392,7 +2383,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -2405,7 +2395,6 @@ export const time_table = [
           id: 5,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
       ],
     ],
@@ -2570,7 +2559,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -2596,7 +2584,6 @@ export const time_table = [
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
@@ -2657,7 +2644,7 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 7,
           label: "AJP",
           professor: "Gaurav",
           classroom: "604",
@@ -2718,7 +2705,6 @@ export const time_table = [
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
@@ -3291,7 +3277,6 @@ export const time_table = [
           id: 3,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 4,
@@ -3305,7 +3290,6 @@ export const time_table = [
           id: 5,
           label: "CA",
           professor: "Smarika Rai",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
