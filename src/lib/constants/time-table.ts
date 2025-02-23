@@ -2029,6 +2029,7 @@ export const time_table = [
           professor: ["Renuka Parmar", "Honey Parmar"],
           lab: ["611 ", " 713"],
           cellClassName: "text-red-500",
+          row_span: 2,
         },
         {
           id: 8,
