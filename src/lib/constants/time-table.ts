@@ -1,4 +1,4 @@
-export interface TimeTableRow {
+export interface TimeTableCell {
   id: number;
   label: string;
   professor?: string | string[];
@@ -8,6 +8,8 @@ export interface TimeTableRow {
   row_span?: number;
   col_span?: number;
 }
+type TimeTableRow = TimeTableCell[];
+export type TimetableData = TimeTableRow[];
 
 export const time_table = [
   // Divison A
@@ -147,7 +149,6 @@ export const time_table = [
         {
           id: 8,
           label: "Library",
-          cellClassName: "text-sm",
         },
       ],
       // 9:30 TO 9:45
@@ -469,7 +470,6 @@ export const time_table = [
         {
           id: 8,
           label: "Library",
-          cellClassName: "text-sm",
         },
       ],
       //  9:30 - 9:45
@@ -653,7 +653,6 @@ export const time_table = [
         {
           id: 4,
           label: "Library",
-          cellClassName: "text-sm",
         },
         {
           id: 8,
@@ -803,7 +802,6 @@ export const time_table = [
         {
           id: 8,
           label: "Library",
-          cellClassName: "text-sm",
         },
       ],
       //  9:30 - 9:45

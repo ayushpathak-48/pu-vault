@@ -11,14 +11,24 @@ import {
 import { divisions } from "@/lib/constants";
 import { useDataStore } from "@/stores/data.store";
 
-export const SelectDivision = () => {
+export const SelectDivision = ({
+  onSelect,
+  defaultValue,
+}: {
+  onSelect?: (data: string) => void;
+  defaultValue?: string;
+}) => {
   const setDivision = useDataStore((state) => state.setDivision);
-  const onSelect = (e: string) => {
+  const division = useDataStore((state) => state.division);
+  const handleSelect = (e: string) => {
     setDivision(e);
   };
   return (
     <>
-      <Select onValueChange={onSelect}>
+      <Select
+        defaultValue={defaultValue ? defaultValue : division ? division : ""}
+        onValueChange={onSelect ? onSelect : handleSelect}
+      >
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Division" />
         </SelectTrigger>

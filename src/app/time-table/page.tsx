@@ -1,8 +1,10 @@
 "use client";
 
-import { time_table, TimeTableRow } from "@/lib/constants/time-table";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { SelectDivision } from "@/components/select-division";
+import { TimeTableBody } from "@/components/time-table-body";
+import { time_table, TimetableData } from "@/lib/constants/time-table";
+import { useDataStore } from "@/stores/data.store";
+import { useEffect, useState } from "react";
 const weekdays = [
   "Sunday",
   "Monday",
@@ -14,79 +16,37 @@ const weekdays = [
 ];
 
 const TimeTablePage = () => {
-  // const [date] = useState(new Date());
   const [date] = useState(new Date());
-  const currentDay = weekdays[date.getDay() + 1]; // Get the current day name
+  const division = useDataStore((state) => state.division);
+  const [activeDivision, setActiveDivision] = useState(division);
+  const [tableData, setTableData] = useState<TimetableData>([]);
+  const currentDay = weekdays[date.getDay()]; // Get the current day name
+
+  const handleDivisionChange = (data: string) => {
+    setActiveDivision(data);
+  };
+
+  useEffect(() => {
+    setTableData(
+      time_table.filter(({ division_key }) => division_key == activeDivision)[0]
+        ?.data
+    );
+  }, [activeDivision]);
 
   return (
-    <div className="flex flex-col gap-2 p-5 lg:p-10">
-      <div className="relative overflow-x-auto mb-20">
+    <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
+      <div className="max-w-full">
+        <SelectDivision
+          onSelect={handleDivisionChange}
+          defaultValue={activeDivision || ""}
+        />
+      </div>
+      <div className="relative w-full overflow-x-auto mb-20">
         <table
           border={1}
           className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
         >
-          <tbody>
-            {time_table[0].data.map((table, i) => (
-              <tr
-                key={i}
-                className="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
-              >
-                {table.map(
-                  ({
-                    id,
-                    label,
-                    professor,
-                    classroom,
-                    lab,
-                    row_span,
-                    col_span,
-                    cellClassName,
-                  }: TimeTableRow) => {
-                    const isHeader = i === 0;
-                    const isMetaRow = id === 1 || id === 2;
-                    const isRecess = label === "Recess" || col_span === 7;
-                    const sameDay = label === currentDay;
-                    return (
-                      <td
-                        key={id}
-                        rowSpan={row_span}
-                        colSpan={col_span}
-                        className={cn(
-                          "px-6 py-4 text-center border",
-                          isMetaRow && "text-slate-900 font-medium",
-                          isHeader &&
-                            "uppercase bg-zinc-700 text-slate-300 font-semibold",
-                          isRecess && "bg-neutral-500 text-white",
-                          sameDay && "bg-teal-500 text-black font-bold",
-                          cellClassName && "font-medium",
-                          cellClassName
-                        )}
-                      >
-                        <div className="whitespace-nowrap">{label}</div>
-                        {professor && (
-                          <div className="whitespace-nowrap">
-                            Prof:{" "}
-                            {Array.isArray(professor)
-                              ? professor.join("/")
-                              : professor}
-                          </div>
-                        )}
-                        <div
-                          className={cn(
-                            "border-2 w-max mx-auto rounded-md border-gray-200 p-1 mt-1",
-                            classroom || lab ? "" : "hidden"
-                          )}
-                        >
-                          {classroom && <span>C: {classroom}</span>}
-                          {lab && <span>L: {lab.join(", ")}</span>}
-                        </div>
-                      </td>
-                    );
-                  }
-                )}
-              </tr>
-            ))}
-          </tbody>
+          <TimeTableBody data={tableData} currentDay={currentDay} />
         </table>
       </div>
     </div>

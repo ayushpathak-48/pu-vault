@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <NuqsAdapter>
           <ClientProvider>
-            <div className="w-full">
+            <div className="w-[calc(100%-16rem)]">
               <Navbar />
               <main className="w-full">{children}</main>
             </div>
