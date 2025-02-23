@@ -10,16 +10,10 @@ export default function Home() {
   const division = useDataStore((state) => state.division);
   return (
     <div className="w-full">
-      {!specialization && (
-        <div className="p-5">
-          <SelectSpecialization />
-        </div>
-      )}
-      {!division && (
-        <div className="p-5">
-          <SelectDivision />
-        </div>
-      )}
+      <div className="flex flex-col gap-2 p-5">
+        {!specialization && <SelectSpecialization />}
+        {!division && <SelectDivision />}
+      </div>
       <ContentTypeTabs />
     </div>
   );
