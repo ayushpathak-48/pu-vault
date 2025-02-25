@@ -24,49 +24,59 @@ export const materials = [
     ],
     practicals_link: [
       {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/index.pdf`,
+      },
+      {
         id: 1,
         title: "Practical 1",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-1-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-1.pdf`,
       },
       {
         id: 2,
         title: "Practical 2",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-2-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-2.pdf`,
       },
       {
         id: 3,
         title: "Practical 3",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-3-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-3.pdf`,
       },
       {
         id: 4,
         title: "Practical 4",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-4-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-4.pdf`,
       },
       {
         id: 5,
         title: "Practical 5",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-5-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-5.pdf`,
       },
       {
         id: 6,
         title: "Practical 6",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-6-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-6.pdf`,
       },
       {
         id: 7,
         title: "Practical 7",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-7-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-8.pdf`,
       },
       {
         id: 9,
         title: "Practical 9",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-9-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-9.pdf`,
       },
       {
         id: 10,
         title: "Practical 10",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp_practical-10-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-10.pdf`,
       },
     ],
   },
@@ -93,49 +103,69 @@ export const materials = [
     ],
     practicals_link: [
       {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/index.pdf`,
+      },
+      {
         id: 1,
         title: "Practical 1",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-1-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-1.pdf`,
       },
       {
         id: 2,
         title: "Practical 2",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-2-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-2.pdf`,
       },
       {
         id: 3,
         title: "Practical 3",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-3-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-3.pdf`,
       },
       {
         id: 4,
         title: "Practical 4",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-4-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-4.pdf`,
       },
       {
         id: 5,
         title: "Practical 5",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-5-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-5.pdf`,
       },
       {
         id: 6,
         title: "Practical 6",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-6-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-6.pdf`,
       },
       {
         id: 7,
         title: "Practical 7",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-7-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-8.pdf`,
       },
       {
         id: 9,
         title: "Practical 9",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-9-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-9.pdf`,
       },
       {
         id: 10,
         title: "Practical 10",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg_practical-10-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-10.pdf`,
+      },
+      {
+        id: 11,
+        title: "Practical 11",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-11.pdf`,
+      },
+      {
+        id: 12,
+        title: "Practical 12",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-12.pdf`,
       },
     ],
   },
@@ -172,35 +202,56 @@ export const materials = [
     ],
     practicals_link: [
       {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/index.pdf`,
+      },
+      {
         id: 1,
         title: "Practical 1",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-1-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-1.pdf`,
       },
       {
         id: 2,
         title: "Practical 2",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-2-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-2.pdf`,
       },
       {
         id: 3,
         title: "Practical 3",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-3-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-3.pdf`,
       },
       {
         id: 4,
         title: "Practical 4",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-4-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-4.pdf`,
       },
       {
         id: 5,
         title: "Practical 5",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn_practical-5-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-8.pdf`,
       },
     ],
   },
 ];
 
 export const specializationMaterials = [
+  // AI
   {
     id: 1,
     subject_name: "Artificial Intelligence",
@@ -230,30 +281,174 @@ export const specializationMaterials = [
     ],
     practicals_link: [
       {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/index.pdf`,
+      },
+      {
         id: 1,
         title: "Practical 1",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-1-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-1.pdf`,
       },
       {
         id: 2,
         title: "Practical 2",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-2-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-2.pdf`,
       },
       {
         id: 3,
         title: "Practical 3",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-3-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-3.pdf`,
       },
       {
         id: 4,
         title: "Practical 4",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-4-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-4.pdf`,
+      },
+    ],
+  },
+  // BDA
+  {
+    id: 2,
+    subject_name: "Big Data Analytics",
+    value: "bda",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/big-data-analytics.pdf`,
+    notes_link: [
+      // {
+      //   id: 1,
+      //   title: "Unit-1: Introduction",
+      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
+      // },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
+      // },
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-4.pdf`,
       },
       {
         id: 5,
         title: "Practical 5",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai_practical-5-journal.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-5.pdf`,
       },
+      {
+        id: 6,
+        title: "Practical 6",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-8.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-9.pdf`,
+      },
+    ],
+  },
+  // FSWD
+  {
+    id: 3,
+    subject_name: "Full Stack Web Developer",
+    value: "fswd",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/fullstack-web-developer.pdf`,
+    notes_link: [
+      // {
+      //   id: 1,
+      //   title: "Unit-1: Introduction",
+      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
+      // },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
+      // },
+      // {
+      //   id: 1,
+      //   title: "Practical 1",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
+      // },
+    ],
+  },
+  // CSF
+  {
+    id: 4,
+    subject_name: "Cyber Security and Forensics",
+    value: "csf",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cybersecurity-and-forensic.pdf`,
+    notes_link: [
+      // {
+      //   id: 1,
+      //   title: "Unit-1: Introduction",
+      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
+      // },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
+      // },
+      // {
+      //   id: 1,
+      //   title: "Practical 1",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
+      // },
+    ],
+  },
+  // CC
+  {
+    id: 5,
+    subject_name: "Cloud Computing",
+    value: "cc",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cloud-computing.pdf`,
+    notes_link: [
+      // {
+      //   id: 1,
+      //   title: "Unit-1: Introduction",
+      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
+      // },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
+      // },
+      // {
+      //   id: 1,
+      //   title: "Practical 1",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
+      // },
     ],
   },
 ];
