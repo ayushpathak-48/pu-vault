@@ -19,9 +19,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Pu Vault",
-  description: "Access all materials of Sem-2",
-  icons:
-    "https://img.icons8.com/?size=100&id=INcxb9GXWSZs&format=png&color=000000",
+  description: "Parul University MCA sem 2 materials",
+  icons: "/favicon.png",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
