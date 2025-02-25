@@ -34,10 +34,30 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${headingFont.variable} antialiased`}
       >
+        <>
+          <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
+            <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
+              Maintenance
+            </h1>
+            <p className="text-white text-lg mb-8">
+              We&apos;re working hard to bring you something amazing. Stay
+              tuned!
+            </p>
+          </div>
+        </>
+      </body>
+    </html>
+  );
+  return (
+    <html lang="en">
+      <body
+        className={`${poppins.className} ${headingFont.variable} antialiased`}
+      >
         <NuqsAdapter>
           <ClientProvider>
             <div className="md:w-[calc(100%-16rem)] w-full relative">
               <Navbar />
+
               <main className="w-full">{children}</main>
             </div>
             <BottomTabs />
