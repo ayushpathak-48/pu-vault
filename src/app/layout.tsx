@@ -34,7 +34,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (isTargetDate()) {
+  if (isTargetDate() && process.env.NODE_ENV == "production") {
     return (
       <html lang="en">
         <body
