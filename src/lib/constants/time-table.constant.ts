@@ -26,7 +26,7 @@ export interface TimeTableCell {
     col_span?: number;
   };
 }
-type TimeTableRow = TimeTableCell[];
+export type TimeTableRow = TimeTableCell[];
 export type TimetableData = TimeTableRow[];
 
 export const time_table = [

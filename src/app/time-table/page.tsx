@@ -1,21 +1,14 @@
 "use client";
 
+import { SingleWeekTimeTableBody } from "@/components/single-week-time-table-body";
 import { TimeTableBody } from "@/components/time-table-body";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { divisions } from "@/lib/constants";
+import { divisions, weekdays } from "@/lib/constants";
 import { time_table, TimetableData } from "@/lib/constants/time-table.constant";
 import { useDataStore } from "@/stores/data.store";
 import { Loader } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
-const weekdays = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
 
 const TimeTablePage = () => {
   const [date] = useState(new Date());
@@ -41,7 +34,7 @@ const TimeTablePage = () => {
       ({ division_key }) => division_key == activeDivision
     )[0]?.data;
     setTableData(tempData);
-  }, [activeDivision]);
+  }, [activeDivision, division]);
 
   return (
     <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
@@ -111,9 +104,12 @@ const TimeTablePage = () => {
                               ))}
                             </TabsList>
                             <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
-                              {weekdays.map((week) => (
+                              {weekdays.map((week, i) => (
                                 <TabsContent key={week} value={week}>
-                                  {week} time table
+                                  <SingleWeekTimeTableBody
+                                    weekIndex={i}
+                                    activeDivision={activeDivision}
+                                  />
                                 </TabsContent>
                               ))}
                             </div>

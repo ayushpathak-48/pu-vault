@@ -213,3 +213,12 @@ export const divisions = [
     value: "div_k",
   },
 ];
+
+export const weekdays = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
