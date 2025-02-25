@@ -24,30 +24,38 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
+const isTargetDate = (): boolean => {
+  const today = new Date();
+  return today.toLocaleDateString("en-GB") === "25/02/2025";
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${poppins.className} ${headingFont.variable} antialiased`}
-      >
-        <>
-          <div className="min-h-screen bg-[#11131e] flex flex-col items-center justify-center">
-            <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
-              Maintenance
-            </h1>
-            <p className="text-white text-lg mb-8">
-              We&apos;re working hard to bring you something amazing. Stay
-              tuned!
-            </p>
-          </div>
-        </>
-      </body>
-    </html>
-  );
+  if (isTargetDate()) {
+    return (
+      <html lang="en">
+        <body
+          className={`${poppins.className} ${headingFont.variable} antialiased`}
+        >
+          <>
+            <div className="min-h-screen bg-[#11131e] flex flex-col items-center justify-center">
+              <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
+                Maintenance
+              </h1>
+              <p className="text-white text-lg mb-8 text-center">
+                We&apos;re working hard to bring you something amazing. Stay
+                tuned!
+              </p>
+            </div>
+          </>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en">
       <body
