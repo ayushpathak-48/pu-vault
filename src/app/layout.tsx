@@ -35,7 +35,7 @@ export default function RootLayout({
         className={`${poppins.className} ${headingFont.variable} antialiased`}
       >
         <>
-          <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
+          <div className="min-h-screen bg-[#11131e] flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
               Maintenance
             </h1>
