@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sidebar";
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { BookOpenText } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import { SemSelectBox } from "./sem-select-box";
@@ -18,11 +18,11 @@ export function AppSidebar() {
   const pathname = usePathname();
   return (
     <Sidebar>
-      <SidebarHeader />
+      <SidebarHeader className="flex items-center flex-row justify-center gap-2">
+        <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
+        <div className="font-bold">Pu Vault</div>
+      </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup className="flex items-center w-full justify-center">
-          <BookOpenText className="size-10 text-sky-700" />
-        </SidebarGroup>
         <SidebarGroup>
           {navLinks.map((link) => {
             const activeLink = pathname == link.href;
