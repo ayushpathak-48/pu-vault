@@ -2,6 +2,7 @@ import { MATERIAL_LINK_BASE_URL } from ".";
 
 export const materials = [
   // AJP
+
   {
     id: 1,
     subject_name: "ADVANCE JAVA PROGRAMMING",
@@ -250,6 +251,110 @@ export const materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-8.pdf`,
       },
     ],
+  },
+  // CA
+  {
+    id: 4,
+    subject_name: "Comprehensive Assesment",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/data-communication-and-networking.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Advanced Database Management Systems",
+        href: `https://drive.google.com/drive/folders/1eIhXFzHIhyo0yIiVUpix0Zp8inwY1q7L?usp=drive_link`,
+      },
+      {
+        id: 2,
+        title: "Analysis and Design of Algorithm",
+        href: `https://drive.google.com/drive/folders/1HIJh_-2GIxFr_5uuBr5uEciWswwQQZKz?usp=drive_link`,
+      },
+      {
+        id: 3,
+        title: "Fundamentals of Computer Organization",
+        href: `https://drive.google.com/drive/folders/1kbuC_53b0WULi051p6I3TDAA5P2n1wWH?usp=drive_link`,
+      },
+      {
+        id: 4,
+        title: "Fundamentals of Internet and Web Designing",
+        href: `https://drive.google.com/drive/folders/1fD1TT5istGU5IPeM9LQ3Iz-tGusffLP6?usp=drive_link`,
+      },
+      {
+        id: 5,
+        title: "Fundamentals of Programming (Using C)",
+        href: `https://drive.google.com/drive/folders/1Rp5Vcooe0m7S1xsrINPBSbzWL6l2loKx?usp=drive_link`,
+      },
+      {
+        id: 6,
+        title: "Java Programming",
+        href: `https://drive.google.com/drive/folders/18APMUJME0qI-XMpviqGZB8px6EfAH3M0?usp=drive_link`,
+      },
+      {
+        id: 7,
+        title: "Object Oriented Concepts and Programming (Using C++)",
+        href: `https://drive.google.com/drive/folders/16OnYLOnrDfGQFW-CXLba0iOeBp2b8Dzz?usp=drive_link`,
+      },
+      {
+        id: 8,
+        title: "Open Source Technology using PHP",
+        href: `https://drive.google.com/drive/folders/1pRLvO9b03LCUhmOdmKGTQiwjYYs3dNq8?usp=drive_link`,
+      },
+      {
+        id: 9,
+        title: "Operating Systems",
+        href: `https://drive.google.com/drive/folders/1W3JTDBdGAvmpsb0WBJkz2JLkGxWZBpGd?usp=drive_link`,
+      },
+      {
+        id: 10,
+        title: "Software Engineering",
+        href: `https://drive.google.com/drive/folders/1BgflTqkwNwcJ1Lcf7nMB9bIFhKD4As8z?usp=drive_link`,
+      },
+    ],
+    practicals_link: [],
+  },
+  // Value Added
+  {
+    id: 5,
+    subject_name: "Value Added",
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "Python Chapter 1",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Python Chapter 2",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Python Chapter 3",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Python Chapter 4",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Python Chapter 5",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Python Chapter 6",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Python Chapter 7",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/value-added/python-chapter-7.pdf`,
+      },
+    ],
+
+    practicals_link: [],
   },
 ];
 
