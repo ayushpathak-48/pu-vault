@@ -6,6 +6,7 @@ import {
   //  HeartIcon,
   HouseIcon,
   SettingsIcon,
+  Building,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -39,20 +40,26 @@ export const navLinks = [
   },
   {
     id: 5,
+    title: "Interview Questions",
+    href: "/interview",
+    icon: Building,
+  },
+  {
+    id: 6,
     title: "Softwares",
     href: "/software-links",
     hideOnMobile: true,
     icon: HardDriveDownloadIcon,
   },
   {
-    id: 6,
+    id: 7,
     title: "Attendance Calc",
     href: "/attendance-calculator",
     hideOnMobile: true,
     icon: Calculator,
   },
   {
-    id: 7,
+    id: 8,
     title: "Settings",
     href: "/settings",
     icon: SettingsIcon,
