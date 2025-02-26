@@ -63,7 +63,7 @@ export default function RootLayout({
       >
         <NuqsAdapter>
           <ClientProvider>
-            <div className="md:w-[calc(100%-16rem)] w-full relative">
+            <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
               <Navbar />
 
               <main className="w-full">{children}</main>
