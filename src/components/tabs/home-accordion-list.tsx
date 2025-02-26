@@ -85,7 +85,10 @@ const MaterialAccordionCard = ({ material }: any) => (
                   className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
                 >
                   <div className="text-md font-medium">
-                    <Link href={practical.journal_link}>{practical.title}</Link>
+                    <Link href={practical.journal_link}>
+                      <span className="custom-heading">Journal:</span>{" "}
+                      {practical.title}
+                    </Link>
                   </div>
                   <Button className="" asChild size={"sm"}>
                     <Link
