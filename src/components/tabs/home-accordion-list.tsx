@@ -39,7 +39,7 @@ const MaterialAccordionCard = ({ material }: any) => (
     <AccordionTrigger>{material.subject_name}</AccordionTrigger>
     <AccordionContent>
       <Tabs defaultValue={"notes"} className="w-full">
-        <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
+        {materials?.practicals_link?.length > 0 && (<TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
           <TabsTrigger
             value={"notes"}
             className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
@@ -52,7 +52,7 @@ const MaterialAccordionCard = ({ material }: any) => (
           >
             Practicals
           </TabsTrigger>
-        </TabsList>
+        </TabsList>)}
         <div className="p-2">
           <TabsContent value={"notes"}>
             <div className="flex items-center flex-col gap-2">
