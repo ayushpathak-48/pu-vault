@@ -9,6 +9,6 @@ export const assignments = [
   {
     id: 2,
     title: "Computer Graphics",
-    href: `${MATERIAL_LINK_BASE_URL}/assignments/ajp_assignment-1.pdf`,
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/cg-assignment-1.pdf`,
   },
 ];
