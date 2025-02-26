@@ -256,7 +256,7 @@ export const materials = [
   {
     id: 4,
     subject_name: "Comprehensive Assesment",
-    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/data-communication-and-networking.pdf`,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/comprehensive-assesment.pdf`,
     notes_link: [
       {
         id: 1,
