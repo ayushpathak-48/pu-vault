@@ -57,125 +57,125 @@ const TimeTablePage = () => {
             Table
           </TabsTrigger>
         </TabsList> */}
-        <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 ">
-          {/* List View Type */}
-          <TabsContent value={"list"}>
-            <Tabs
-              defaultValue={activeDivision}
-              onValueChange={setActiveDivision}
-              className="w-full"
-            >
-              <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
-                {divisions.map((div) => (
-                  <TabsTrigger
-                    key={div.id}
-                    value={div.value}
-                    className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
-                  >
-                    {div.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              <div className="">
-                {divisions.map((tab) => (
-                  <TabsContent key={tab.id} value={tab.value}>
-                    <div className="relative w-full overflow-x-auto">
-                      {!tableData ? (
-                        <div className="h-40 flex items-center justify-center">
-                          No time table found for Division:{" "}
-                          {activeDivision.split("_")[1].toUpperCase()}
-                        </div>
-                      ) : tableData?.length > 0 ? (
-                        <>
-                          <Tabs
-                            defaultValue={activeWeekTab}
-                            onValueChange={setActivewWeekTab}
-                            className="w-full"
-                          >
-                            <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
-                              {weekdays.map((week) => (
-                                <TabsTrigger
-                                  key={week}
-                                  value={week}
-                                  className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
-                                >
-                                  {week}
-                                </TabsTrigger>
-                              ))}
-                            </TabsList>
-                            <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
-                              {weekdays.map((week, i) => (
-                                <TabsContent key={week} value={week}>
-                                  <SingleWeekTimeTableBody
-                                    weekIndex={i}
-                                    activeDivision={activeDivision}
-                                  />
-                                </TabsContent>
-                              ))}
-                            </div>
-                          </Tabs>
-                        </>
-                      ) : (
-                        <div className="h-40 flex items-center justify-center">
-                          <Loader className="animate-spin" />
-                        </div>
-                      )}
-                    </div>
-                  </TabsContent>
-                ))}
-              </div>
-            </Tabs>
-          </TabsContent>
-
-          {/* Table View Type */}
-          <TabsContent value={"table"}>
-            <Tabs
-              defaultValue={activeDivision}
-              onValueChange={setActiveDivision}
-              className="w-full"
-            >
-              <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
-                {divisions.map((div) => (
-                  <TabsTrigger
-                    key={div.id}
-                    value={div.value}
-                    className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
-                  >
-                    {div.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
-                {divisions.map((tab) => (
-                  <TabsContent key={tab.id} value={tab.value}>
-                    <div className="relative w-full overflow-x-auto">
-                      {!tableData ? (
-                        <div className="h-40 flex items-center justify-center">
-                          No time table found for Division:{" "}
-                          {activeDivision.split("_")[1].toUpperCase()}
-                        </div>
-                      ) : tableData?.length > 0 ? (
-                        <table
-                          border={1}
-                          className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        {/* <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 "> */}
+        {/* List View Type */}
+        <TabsContent value={"list"}>
+          <Tabs
+            defaultValue={activeDivision}
+            onValueChange={setActiveDivision}
+            className="w-full"
+          >
+            <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
+              {divisions.map((div) => (
+                <TabsTrigger
+                  key={div.id}
+                  value={div.value}
+                  className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
+                >
+                  {div.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <div className="">
+              {divisions.map((tab) => (
+                <TabsContent key={tab.id} value={tab.value}>
+                  <div className="relative w-full overflow-x-auto">
+                    {!tableData ? (
+                      <div className="h-40 flex items-center justify-center">
+                        No time table found for Division:{" "}
+                        {activeDivision.split("_")[1].toUpperCase()}
+                      </div>
+                    ) : tableData?.length > 0 ? (
+                      <>
+                        <Tabs
+                          defaultValue={activeWeekTab}
+                          onValueChange={setActivewWeekTab}
+                          className="w-full"
                         >
-                          <TimeTableBody
-                            data={tableData}
-                            currentDay={currentDay}
-                          />
-                        </table>
-                      ) : (
-                        <div className="h-40 flex items-center justify-center">
-                          <Loader className="animate-spin" />
-                        </div>
-                      )}
-                    </div>
-                  </TabsContent>
-                ))}
-              </div>
-            </Tabs>
-          </TabsContent>
-        </div>
+                          <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
+                            {weekdays.map((week) => (
+                              <TabsTrigger
+                                key={week}
+                                value={week}
+                                className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
+                              >
+                                {week}
+                              </TabsTrigger>
+                            ))}
+                          </TabsList>
+                          <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
+                            {weekdays.map((week, i) => (
+                              <TabsContent key={week} value={week}>
+                                <SingleWeekTimeTableBody
+                                  weekIndex={i}
+                                  activeDivision={activeDivision}
+                                />
+                              </TabsContent>
+                            ))}
+                          </div>
+                        </Tabs>
+                      </>
+                    ) : (
+                      <div className="h-40 flex items-center justify-center">
+                        <Loader className="animate-spin" />
+                      </div>
+                    )}
+                  </div>
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
+        </TabsContent>
+
+        {/* Table View Type */}
+        <TabsContent value={"table"}>
+          <Tabs
+            defaultValue={activeDivision}
+            onValueChange={setActiveDivision}
+            className="w-full"
+          >
+            <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
+              {divisions.map((div) => (
+                <TabsTrigger
+                  key={div.id}
+                  value={div.value}
+                  className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
+                >
+                  {div.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
+              {divisions.map((tab) => (
+                <TabsContent key={tab.id} value={tab.value}>
+                  <div className="relative w-full overflow-x-auto">
+                    {!tableData ? (
+                      <div className="h-40 flex items-center justify-center">
+                        No time table found for Division:{" "}
+                        {activeDivision.split("_")[1].toUpperCase()}
+                      </div>
+                    ) : tableData?.length > 0 ? (
+                      <table
+                        border={1}
+                        className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        <TimeTableBody
+                          data={tableData}
+                          currentDay={currentDay}
+                        />
+                      </table>
+                    ) : (
+                      <div className="h-40 flex items-center justify-center">
+                        <Loader className="animate-spin" />
+                      </div>
+                    )}
+                  </div>
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
+        </TabsContent>
+        {/* </div> */}
       </Tabs>
     </div>
   );

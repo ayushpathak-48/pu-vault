@@ -49,10 +49,10 @@ export function AttendanceCalcForm() {
 
   return (
     <Form {...form}>
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-full max-md:p-5">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full md:w-1/3 space-y-6 rounded-lg border-2 p-2 md:p-5"
+          className="w-full mx-auto max-w-xl space-y-6 rounded-lg border-2 p-4 md:p-5"
         >
           <FormField
             control={form.control}

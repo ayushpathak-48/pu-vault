@@ -23,7 +23,7 @@ export const Navbar = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-gray-50 shadow w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10">
+    <div className="bg-gray-50 shadow w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
       <Image
         src={"/favicon.png"}
         height={40}

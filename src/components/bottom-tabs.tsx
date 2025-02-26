@@ -9,7 +9,7 @@ import React from "react";
 export const BottomTabs = () => {
   const pathname = usePathname();
   return (
-    <div className="fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100">
+    <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100">
       <div className="flex items-center justify-start h-full">
         {navLinks.map((link) => {
           const activeLink = pathname == link.href;
