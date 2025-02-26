@@ -65,7 +65,6 @@ export default function RootLayout({
           <ClientProvider>
             <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
               <Navbar />
-
               <main className="w-full">{children}</main>
             </div>
             <BottomTabs />

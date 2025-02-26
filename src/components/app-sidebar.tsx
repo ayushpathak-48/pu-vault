@@ -3,7 +3,7 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
+  // SidebarFooter,
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
@@ -44,7 +44,9 @@ export function AppSidebar() {
           })}
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>{/* <SemSelectBox /> */}</SidebarFooter>
+      {/* <SidebarFooter>
+        <SemSelectBox />
+      </SidebarFooter> */}
     </Sidebar>
   );
 }
