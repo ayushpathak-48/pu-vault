@@ -387,16 +387,21 @@ export const specializationMaterials = [
       // },
     ],
     practicals_link: [
-      // {
-      //   id: 0,
-      //   title: "Index",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
-      // },
-      // {
-      //   id: 1,
-      //   title: "Practical 1",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
-      // },
+      {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/index.pdf`,
+      },
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-2.pdf`,
+      },
     ],
   },
   // CSF
