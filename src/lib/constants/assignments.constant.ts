@@ -4,7 +4,7 @@ export const assignments = [
   {
     id: 1,
     title: "AJP assignment 1",
-    href: `${MATERIAL_LINK_BASE_URL}/assignments/ajp_assignment-1.pdf`,
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/ajp-assignment-1.pdf`,
   },
   {
     id: 2,
