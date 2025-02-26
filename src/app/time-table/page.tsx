@@ -23,7 +23,7 @@ const TimeTablePage = () => {
   });
   const [tableData, setTableData] = useState<TimetableData>([]);
   const [timeTableViewType, setTimeTableViewType] = useQueryState("view", {
-    defaultValue: "list",
+    defaultValue: "table",
   });
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const TimeTablePage = () => {
         onValueChange={(data) => setTimeTableViewType(data)}
         className="w-full"
       >
-        <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border w-max">
+        {/* <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border w-max">
           <TabsTrigger
             value={"list"}
             className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white w-full"
@@ -56,7 +56,7 @@ const TimeTablePage = () => {
           >
             Table
           </TabsTrigger>
-        </TabsList>
+        </TabsList> */}
         <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 ">
           {/* List View Type */}
           <TabsContent value={"list"}>
