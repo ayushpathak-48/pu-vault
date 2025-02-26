@@ -42,6 +42,7 @@ export const navLinks = [
     id: 5,
     title: "Interview Questions",
     href: "/interview",
+    hideOnMobile: true,
     icon: Building,
   },
   {
