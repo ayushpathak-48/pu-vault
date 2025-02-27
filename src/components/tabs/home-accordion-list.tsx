@@ -39,20 +39,22 @@ const MaterialAccordionCard = ({ material }: any) => (
     <AccordionTrigger>{material.subject_name}</AccordionTrigger>
     <AccordionContent>
       <Tabs defaultValue={"notes"} className="w-full">
-        <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
-          <TabsTrigger
-            value={"notes"}
-            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
-          >
-            Notes
-          </TabsTrigger>
-          <TabsTrigger
-            value={"practicals"}
-            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
-          >
-            Practicals
-          </TabsTrigger>
-        </TabsList>
+        {material?.practicals_link?.length > 0 && (
+          <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
+            <TabsTrigger
+              value={"notes"}
+              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+            >
+              Notes
+            </TabsTrigger>
+            <TabsTrigger
+              value={"practicals"}
+              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+            >
+              Practicals
+            </TabsTrigger>
+          </TabsList>
+        )}
         <div className="p-2">
           <TabsContent value={"notes"}>
             <div className="flex items-center flex-col gap-2">
@@ -78,6 +80,30 @@ const MaterialAccordionCard = ({ material }: any) => (
             </div>
           </TabsContent>
           <TabsContent value={"practicals"}>
+            <div className="flex items-center flex-col gap-2">
+              {material?.output_links?.map((practical: any) => (
+                <div
+                  key={practical.id}
+                  className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                >
+                  <div className="text-md font-medium">
+                    <Link href={practical.journal_link}>
+                      <span className="custom-heading">Output:</span>{" "}
+                      {practical.title}
+                    </Link>
+                  </div>
+                  <Button className="" asChild size={"sm"}>
+                    <Link
+                      href={practical.journal_link}
+                      target="_blank"
+                      className="bg-sky-500 hover:bg-sky-500/90"
+                    >
+                      View
+                    </Link>
+                  </Button>
+                </div>
+              ))}
+            </div>
             <div className="flex items-center flex-col gap-2">
               {material.practicals_link.map((practical: any) => (
                 <div
