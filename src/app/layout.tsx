@@ -44,7 +44,7 @@ export default function RootLayout({
               </main>
             </div>
             <BottomTabs />
-            <Toaster />
+            <Toaster position="top-center" />
           </ClientProvider>
         </NuqsAdapter>
       </body>
