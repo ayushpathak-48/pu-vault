@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Send } from "lucide-react";
 export const HomePageAccordionList = ({
   tabData,
   specializationTabData,
@@ -57,27 +58,47 @@ const MaterialAccordionCard = ({ material }: any) => (
         )}
         <div className="p-2">
           <TabsContent value={"notes"}>
-            <div className="flex items-center flex-col gap-2">
-              {material.notes_link.map((note: any) => (
-                <div
-                  key={note.id}
-                  className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
-                >
-                  <div className="text-md font-medium">
-                    <Link href={note.href}>{note.title}</Link>
+            {material?.notes_link?.length > 0 ? (
+              <div className="flex items-center flex-col gap-2">
+                {material.notes_link.map((note: any) => (
+                  <div
+                    key={note.id}
+                    className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                  >
+                    <div className="text-md font-medium">
+                      <Link href={note.href}>{note.title}</Link>
+                    </div>
+                    <Button className="" asChild size={"sm"}>
+                      <Link
+                        href={note.href}
+                        target="_blank"
+                        className="bg-sky-500 hover:bg-sky-500/90"
+                      >
+                        View
+                      </Link>
+                    </Button>
                   </div>
-                  <Button className="" asChild size={"sm"}>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-40 gap-3">
+                <div className="flex items-center justify-center gap-1">
+                  No Notes Available for{" "}
+                  <div className="font-bold"> {material.subject_name}</div>
+                </div>
+                <div className="flex items-center justify-center gap-1">
+                  If you have it then you can send it here{" "}
+                  <Button size={"sm"} variant={"outline"} asChild>
                     <Link
-                      href={note.href}
+                      href={`https://wa.me/919157587671?text=Hey I want to provide your notes of ${material.subject_name}`}
                       target="_blank"
-                      className="bg-sky-500 hover:bg-sky-500/90"
                     >
-                      View
+                      <Send />
                     </Link>
                   </Button>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </TabsContent>
           <TabsContent value={"practicals"} className="flex flex-col gap-2">
             <div className="flex items-center flex-col gap-2">
