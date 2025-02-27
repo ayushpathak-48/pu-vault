@@ -81,6 +81,13 @@ export const materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-10.pdf`,
       },
     ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/output/ajp-outputs.pdf`,
+      },
+    ],
   },
   //  CG
   {
@@ -202,6 +209,11 @@ export const materials = [
         id: 5,
         title: "Week 5",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/week-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Week 6",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-6.pdf`,
       },
     ],
     practicals_link: [
@@ -488,11 +500,16 @@ export const specializationMaterials = [
     value: "fswd",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/fullstack-web-developer.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Java Date & Time",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/1-java-date-&-time.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Java Conversion",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/2-java-conversion.pdf`,
+      },
     ],
     practicals_link: [
       {
