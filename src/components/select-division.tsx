@@ -1,5 +1,4 @@
 "use client";
-// import Cookies from "js-cookie";
 import {
   Select,
   SelectContent,
@@ -25,11 +24,12 @@ export const SelectDivision = ({
     setDivision(e);
     toast.success("Division changed successfully");
   };
+  console.log({ division });
   return (
     <>
       <Select
-        defaultValue={defaultValue ? defaultValue : division ? division : ""}
         onValueChange={onSelect ? onSelect : handleSelect}
+        value={defaultValue ? defaultValue : division ? division : ""}
       >
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Division" />

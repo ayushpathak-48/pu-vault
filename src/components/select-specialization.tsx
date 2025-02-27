@@ -22,7 +22,7 @@ export const SelectSpecialization = () => {
   };
   return (
     <>
-      <Select onValueChange={onSelect} defaultValue={specialization || ""}>
+      <Select onValueChange={onSelect} value={specialization || ""}>
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Specialization" />
         </SelectTrigger>
