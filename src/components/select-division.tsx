@@ -24,7 +24,7 @@ export const SelectDivision = ({
     setDivision(e);
     toast.success("Division changed successfully");
   };
-  
+
   return (
     <>
       <Select

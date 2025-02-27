@@ -2,6 +2,7 @@
 
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function ClientProvider({
   children,
@@ -12,6 +13,7 @@ export default function ClientProvider({
     <SidebarProvider>
       <AppSidebar />
       {children}
+      <GoogleAnalytics trackPageViews />
     </SidebarProvider>
   );
 }

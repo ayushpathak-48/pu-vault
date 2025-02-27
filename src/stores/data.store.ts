@@ -10,10 +10,10 @@ interface SpecializationState {
 
 export const useDataStore = create<SpecializationState>()(
   persist(
-    (set) => ({
-      specialization: null, // Default state
+    (set, get) => ({
+      specialization: get()?.specialization, // Default state
       setSpecialization: (value) => set({ specialization: value }),
-      division: null, // Default state
+      division: get()?.division, // Default state
       setDivision: (value) => set({ division: value }),
     }),
     {
