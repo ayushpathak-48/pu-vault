@@ -512,6 +512,16 @@ export const specializationMaterials = [
         title: "Practical 9",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-9.pdf`,
       },
+      {
+        id: 10,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-10.pdf`,
+      },
+      {
+        id: 11,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-11.pdf`,
+      },
     ],
   },
   // FSWD
