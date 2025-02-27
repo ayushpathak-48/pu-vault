@@ -5,6 +5,7 @@ import ClientProvider from "@/providers/client-provider";
 import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
+import { Toaster } from "@/components/ui/sonner";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
               </main>
             </div>
             <BottomTabs />
+            <Toaster />
           </ClientProvider>
         </NuqsAdapter>
       </body>

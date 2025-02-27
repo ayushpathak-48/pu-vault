@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { divisions } from "@/lib/constants";
 import { useDataStore } from "@/stores/data.store";
+import { toast } from "sonner";
 
 export const SelectDivision = ({
   onSelect,
@@ -22,6 +23,7 @@ export const SelectDivision = ({
   const division = useDataStore((state) => state.division);
   const handleSelect = (e: string) => {
     setDivision(e);
+    toast.success("Division changed successfully");
   };
   return (
     <>

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { specializations } from "@/lib/constants";
 import { useDataStore } from "@/stores/data.store";
+import { toast } from "sonner";
 
 export const SelectSpecialization = () => {
   const { setSpecialization } = useDataStore((state) => state);
@@ -17,6 +18,7 @@ export const SelectSpecialization = () => {
 
   const onSelect = (e: string) => {
     setSpecialization(e);
+    toast.success("Specialization changed successfully");
   };
   return (
     <>
