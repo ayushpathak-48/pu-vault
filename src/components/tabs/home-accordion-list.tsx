@@ -93,6 +93,7 @@ const MaterialAccordionCard = ({ material }: any) => (
                       href={`https://wa.me/919157587671?text=Hey I want to provide your notes of ${material.subject_name}`}
                       target="_blank"
                     >
+                      <span className="md:hidden mr-1">Whatsapp</span>
                       <Send />
                     </Link>
                   </Button>
