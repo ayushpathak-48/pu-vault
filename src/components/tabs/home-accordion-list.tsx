@@ -79,7 +79,7 @@ const MaterialAccordionCard = ({ material }: any) => (
               ))}
             </div>
           </TabsContent>
-          <TabsContent value={"practicals"}>
+          <TabsContent value={"practicals"} className="flex flex-col gap-2">
             <div className="flex items-center flex-col gap-2">
               {material?.output_links?.map((practical: any) => (
                 <div
