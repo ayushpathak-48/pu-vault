@@ -13,7 +13,9 @@ import { useDataStore } from "@/stores/data.store";
 import { toast } from "sonner";
 
 export const SelectSpecialization = () => {
-  const { setSpecialization } = useDataStore((state) => state);
+  // const { setSpecialization } = useDataStore((state) => state);
+  const setSpecialization = useDataStore((state) => state.setSpecialization);
+
   const specialization = useDataStore((state) => state.specialization);
 
   const onSelect = (e: string) => {
