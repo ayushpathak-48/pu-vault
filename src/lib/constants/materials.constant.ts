@@ -514,12 +514,12 @@ export const specializationMaterials = [
       },
       {
         id: 10,
-        title: "Practical 9",
+        title: "Practical 10",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-10.pdf`,
       },
       {
         id: 11,
-        title: "Practical 9",
+        title: "Practical 11",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-11.pdf`,
       },
     ],
