@@ -85,7 +85,7 @@ export const materials = [
       {
         id: 0,
         title: "Outputs",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/output/ajp-outputs.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/ajp-outputs.pdf`,
       },
     ],
   },
@@ -93,7 +93,7 @@ export const materials = [
   {
     id: 2,
     subject_name: "COMPUTER GRAPHICS",
-    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/artificial-intelligence.pdf`,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/computer-graphics.pdf`,
     notes_link: [
       {
         id: 1,
@@ -176,6 +176,13 @@ export const materials = [
         id: 12,
         title: "Practical 12",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-12.pdf`,
+      },
+    ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/cg-outputs.pdf`,
       },
     ],
   },
@@ -261,6 +268,13 @@ export const materials = [
         id: 8,
         title: "Practical 8",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-8.pdf`,
+      },
+    ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
       },
     ],
   },
@@ -424,6 +438,13 @@ export const specializationMaterials = [
         id: 4,
         title: "Practical 4",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-4.pdf`,
+      },
+    ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/ai-outputs.pdf`,
       },
     ],
   },
