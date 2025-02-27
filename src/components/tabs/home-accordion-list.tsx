@@ -82,11 +82,11 @@ const MaterialAccordionCard = ({ material }: any) => (
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-40 gap-3">
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-center gap-1 flex-wrap">
                   No Notes Available for{" "}
                   <div className="font-bold"> {material.subject_name}</div>
                 </div>
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-center gap-1 flex-wrap">
                   If you have it then you can send it here{" "}
                   <Button size={"sm"} variant={"outline"} asChild>
                     <Link
