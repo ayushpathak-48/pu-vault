@@ -98,17 +98,18 @@ export const materials = [
       {
         id: 1,
         title: "Unit-1: Introduction and Basic Drawing Algorithms",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/1-introduction-and-basic-drawing-algorithms.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/1.pdf`,
       },
       {
         id: 2,
-        title: "Unit-2.1: Region Filling Algorithms",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/2.1-region-filling-algorithms.pdf`,
+        title:
+          "Unit-2: Region Filling Algorithms and Two-Dimensional Geometric Transformations",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/2.pdf`,
       },
       {
         id: 3,
-        title: "Unit-2.2: Two dimensional transformations",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/2.2-region-filling-algorithms.pdf`,
+        title: "Unit- 3: Viewing and Clipping",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/3.pdf`,
       },
     ],
     practicals_link: [
