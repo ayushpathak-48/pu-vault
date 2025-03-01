@@ -567,11 +567,26 @@ export const specializationMaterials = [
     value: "csf",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cybersecurity-and-forensic.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: " Introduction",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/csf-introduction.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-1: Security Principles and Practices ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/1-security-principles-and-practices.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-2: Security Threats ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/2-security-threats.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-3: Operating System Security ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/3-operating-system-security.pdf`,
+      },
     ],
     practicals_link: [
       // {
