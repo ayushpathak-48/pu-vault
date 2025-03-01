@@ -455,11 +455,47 @@ export const specializationMaterials = [
     value: "bda",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/big-data-analytics.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Overview of Big Data",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/1-overview-of-big-data.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Discovering the Use of Big Data in Business Context ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Technologies for Handling Big Data ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Understanding Hadoop Ecosystem ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: HDFS(Hadoop Distributed File System) ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: MapReduce Fundamentals ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/6.pdf`,
+      },
+      {
+        id: 7,
+        title:
+          "Unit-7: Understanding Big Data Technology Foundations, Storing Data in Databases and Data Warehouses ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Processing Your Data with MapReduce ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/8.pdf`,
+      },
     ],
     practicals_link: [
       // {
