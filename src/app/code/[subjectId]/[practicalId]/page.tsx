@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { practicalCodes } from "@/lib/constants/codes.constant";
 import { Info } from "lucide-react";
@@ -6,9 +8,10 @@ import Link from "next/link";
 import React from "react";
 import CodeBlock from "./code-block";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useParams } from "next/navigation";
 
-const page = async ({ params }: { params: any }) => {
-  const { subjectId, practicalId } = await params;
+const CodePage = () => {
+  const { subjectId, practicalId } = useParams();
   const practical = practicalCodes
     .find(({ key }) => key == subjectId)
     ?.practicals?.find(({ key }) => key == practicalId);
@@ -54,4 +57,4 @@ const page = async ({ params }: { params: any }) => {
   );
 };
 
-export default page;
+export default CodePage;

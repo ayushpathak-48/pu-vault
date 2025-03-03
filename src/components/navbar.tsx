@@ -12,13 +12,18 @@ export const Navbar = () => {
   const pathname = usePathname();
   const { toggleSidebar } = useSidebar();
 
-  const [activePage, setActivePage] = useState(
-    navLinks.find((link) => link.href == pathname)
+  const [activePageTitle, setActivePageTitle] = useState(
+    navLinks.find((link) => link.href == pathname)?.title
   );
 
   useLayoutEffect(() => {
-    if (pathname != activePage?.href) {
-      setActivePage(() => navLinks.find((link) => link.href == pathname));
+    console.log({ pathname });
+    if (pathname.includes("/code/")) {
+      setActivePageTitle("Source Codes");
+    } else {
+      setActivePageTitle(
+        () => navLinks.find((link) => link.href.includes(pathname))?.title
+      );
     }
   }, [pathname]);
 
@@ -32,7 +37,7 @@ export const Navbar = () => {
         className="md:hidden"
       />
       <div className="max-md:text-center max-md:w-full custom-heading font-semibold text-2xl lg:text-3xl">
-        {activePage?.title}
+        {activePageTitle}
       </div>
       <Button
         variant={"ghost"}
