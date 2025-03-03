@@ -59,44 +59,44 @@ export const practicalCodes = [
               theBoard[move] = turn
               count += 1
           else:
-              print("That place is already filled.\nMove to which place?")
+              print("That place is already filled.\\nMove to which place?")
               continue
   
           
           if count >= 5:
               if theBoard["7"] == theBoard["8"] == theBoard["9"] != " ":  
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif (
                   theBoard["4"] == theBoard["5"] == theBoard["6"] != " "):  # across the middle
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif (
                   theBoard["1"] == theBoard["2"] == theBoard["3"] != " "):  # across the bottom
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif (
                   theBoard["1"] == theBoard["4"] == theBoard["7"] != " "):  # down the left side
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif (
                   theBoard["2"] == theBoard["5"] == theBoard["8"] != " "):  # down the middle
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif (
                   theBoard["3"] == theBoard["6"] == theBoard["9"] != " "):  # down the right side
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
               elif theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":  # diagonal
@@ -106,13 +106,13 @@ export const practicalCodes = [
                   break
               elif theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":  # diagonal
                   printBoard(theBoard)
-                  print("\nGame Over.\n")
+                  print("\\nGame Over.\\n")
                   print(" **** " + turn + " won. ****")
                   break
   
           # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
           if count == 9:
-              print("\nGame Over.\n")
+              print("\\nGame Over.\\n")
               print("It's a Tie!!")
   
           # Now we have to change the player after every move.
@@ -1404,7 +1404,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   //   DCN
   {
     subject_name: "Data Communication and Networking",
-    key: "data-comunication-and-networking",
+    key: "data-communication-and-networking",
     practicals: [
       // pra - 5 pipe
       {
