@@ -6,6 +6,7 @@ export const materials = [
   {
     id: 1,
     subject_name: "ADVANCE JAVA PROGRAMMING",
+    key: "advance-java-programming",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/advance-java-programming.pdf`,
     notes_link: [
       {
@@ -93,6 +94,7 @@ export const materials = [
   {
     id: 2,
     subject_name: "COMPUTER GRAPHICS",
+    key: "computer-graphics",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/computer-graphics.pdf`,
     notes_link: [
       {
@@ -190,6 +192,7 @@ export const materials = [
   {
     id: 3,
     subject_name: "Data Communication & Networking",
+    key: "data-communication-and-networking",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/data-communication-and-networking.pdf`,
     notes_link: [
       {
@@ -282,6 +285,7 @@ export const materials = [
   {
     id: 4,
     subject_name: "Comprehensive Assesment",
+    key: "comprehensive-assesment",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/comprehensive-assesment.pdf`,
     notes_link: [
       {
@@ -342,6 +346,7 @@ export const materials = [
     id: 5,
     subject_name: "Value Added",
     syllabus_link: ``,
+    key: "value-added",
     notes_link: [
       {
         id: 1,
@@ -390,6 +395,7 @@ export const specializationMaterials = [
     id: 1,
     subject_name: "Artificial Intelligence",
     value: "ai",
+    key: "artificial-intelligence",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/artificial-intelligence.pdf`,
     notes_link: [
       {

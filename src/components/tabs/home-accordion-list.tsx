@@ -10,6 +10,7 @@ import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Send } from "lucide-react";
+import { practicalCodes } from "@/lib/constants/codes.constant";
 export const HomePageAccordionList = ({
   tabData,
   specializationTabData,
@@ -42,17 +43,25 @@ const MaterialAccordionCard = ({ material }: any) => (
       <Tabs defaultValue={"notes"} className="w-full">
         {material?.practicals_link?.length > 0 && (
           <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
-            <TabsTrigger
-              value={"notes"}
-              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
-            >
-              Notes
-            </TabsTrigger>
+            {material.practicals_link?.length > 0 && (
+              <TabsTrigger
+                value={"notes"}
+                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+              >
+                Notes
+              </TabsTrigger>
+            )}
             <TabsTrigger
               value={"practicals"}
               className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
             >
               Practicals
+            </TabsTrigger>
+            <TabsTrigger
+              value={"codes"}
+              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+            >
+              Source Codes
             </TabsTrigger>
           </TabsList>
         )}
@@ -66,7 +75,9 @@ const MaterialAccordionCard = ({ material }: any) => (
                     className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
-                      <Link href={note.href}>{note.title}</Link>
+                      <Link target="_blank" href={note.href}>
+                        {note.title}
+                      </Link>
                     </div>
                     <Button className="" asChild size={"sm"}>
                       <Link
@@ -109,7 +120,7 @@ const MaterialAccordionCard = ({ material }: any) => (
                   className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
                 >
                   <div className="text-md font-medium">
-                    <Link href={practical.journal_link}>
+                    <Link target="_blank" href={practical.journal_link}>
                       <span className="custom-heading">Output:</span>{" "}
                       {practical.title}
                     </Link>
@@ -149,6 +160,32 @@ const MaterialAccordionCard = ({ material }: any) => (
                   </Button>
                 </div>
               ))}
+            </div>
+          </TabsContent>
+          <TabsContent value={"codes"} className="flex flex-col gap-2">
+            <div className="flex items-center flex-col gap-2">
+              {practicalCodes
+                ?.find(({ key }) => key == material?.key)
+                ?.practicals.map((practical) => (
+                  <div
+                    key={practical.key}
+                    className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                  >
+                    <div className="text-md font-medium">
+                      <Link href={`/code/${material.key}/${practical.key}`}>
+                        {practical.name}
+                      </Link>
+                    </div>
+                    <Button className="" asChild size={"sm"}>
+                      <Link
+                        href={`/code/${material.key}/${practical.key}`}
+                        className="bg-sky-500 hover:bg-sky-500/90"
+                      >
+                        View
+                      </Link>
+                    </Button>
+                  </div>
+                ))}
             </div>
           </TabsContent>
         </div>
