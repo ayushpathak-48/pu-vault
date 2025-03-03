@@ -16,25 +16,27 @@ export const practicalCodes = [
             type: "code",
             fileName: "tic-tac-toe.py",
             value: `def print_board(board):
- print("\\n")
+ print("\n")
  print(f" {board[0]} | {board[1]} | {board[2]} ")
  print("---+---+---")
  print(f" {board[3]} | {board[4]} | {board[5]} ")
  print("---+---+---")
  print(f" {board[6]} | {board[7]} | {board[8]} ")
- print("\\n")
+ print("\n")
 # Function to check if the current player has won
 def check_win(board, player):
- win_conditions = [
- [0, 1, 2], [3, 4, 5], [6, 7, 8], # Horizontal
- [0, 3, 6], [1, 4, 7], [2, 5, 8], # Vertical
- [0, 4, 8], [2, 4, 6] # Diagonal
- ]
+    win_conditions = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Horizontal
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Vertical
+        [0, 4, 8], [2, 4, 6]  # Diagonal
+    ]
 
- for condition in win_conditions:
-    if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
-        return True
-    return False
+    for condition in win_conditions:
+        if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
+            return True  # If a winning condition is met, return True
+
+    return False  # Return False only after checking all conditions
+
 
 # Function to check if the board is full
 def is_board_full(board):
@@ -66,9 +68,10 @@ def play_game():
     print_board(board)
     if check_win(board, current_player):
         print(f"Player {current_player} wins!")
-    if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
-        return True
-    return False
+        break
+    elif is_board_full(board):
+        print("It's a tie!")
+        break
 
 # Function to check if the board is full
 def is_board_full(board):
@@ -112,6 +115,71 @@ def play_game():
 # Start the game
 if __name__ == "__main__":
  play_game()`,
+          },
+          {
+            type: "code",
+            is_output: true,
+            value: `Welcome to Tic-Tac-Toe!
+
+
+   |   |   
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 1
+
+
+ X |   |   
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player O, choose your position (1-9): 3
+
+
+ X |   | O 
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 5
+
+
+ X |   | O 
+---+---+---
+   | X |   
+---+---+---
+   |   |   
+
+
+Player O, choose your position (1-9): 6
+
+
+ X |   | O 
+---+---+---
+   | X | O 
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 9
+
+
+ X |   | O 
+---+---+---
+   | X | O 
+---+---+---
+   |   | X 
+
+
+Player X wins!`,
           },
         ],
       },
