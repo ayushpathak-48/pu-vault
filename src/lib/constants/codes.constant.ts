@@ -1386,7 +1386,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   //   DCN
   {
     subject_name: "Data Communication and Networking",
-    key: "data-comunication-and-networking",
+    key: "data-communication-and-networking",
     practicals: [
       // pra - 5 pipe
       {
