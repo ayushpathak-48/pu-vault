@@ -100,17 +100,18 @@ export const materials = [
       {
         id: 1,
         title: "Unit-1: Introduction and Basic Drawing Algorithms",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/1-introduction-and-basic-drawing-algorithms.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/1.pdf`,
       },
       {
         id: 2,
-        title: "Unit-2.1: Region Filling Algorithms",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/2.1-region-filling-algorithms.pdf`,
+        title:
+          "Unit-2: Region Filling Algorithms and Two-Dimensional Geometric Transformations",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/2.pdf`,
       },
       {
         id: 3,
-        title: "Unit-2.2: Two dimensional transformations",
-        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/2.2-region-filling-algorithms.pdf`,
+        title: "Unit- 3: Viewing and Clipping",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/3.pdf`,
       },
     ],
     practicals_link: [
@@ -224,6 +225,11 @@ export const materials = [
         id: 6,
         title: "Week 6",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Week 7",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-7.pdf`,
       },
     ],
     practicals_link: [
@@ -415,6 +421,11 @@ export const specializationMaterials = [
       },
       {
         id: 4,
+        title: "Unit-4: Knowledege Representation",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/4-knowledge-representation.pdf`,
+      },
+      {
+        id: 5,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
       },
@@ -461,11 +472,47 @@ export const specializationMaterials = [
     value: "bda",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/big-data-analytics.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Overview of Big Data",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/1-overview-of-big-data.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Discovering the Use of Big Data in Business Context ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Technologies for Handling Big Data ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Understanding Hadoop Ecosystem ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: HDFS(Hadoop Distributed File System) ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: MapReduce Fundamentals ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/6.pdf`,
+      },
+      {
+        id: 7,
+        title:
+          "Unit-7: Understanding Big Data Technology Foundations, Storing Data in Databases and Data Warehouses ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Processing Your Data with MapReduce ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/big-data-analytics/8.pdf`,
+      },
     ],
     practicals_link: [
       // {
@@ -573,18 +620,48 @@ export const specializationMaterials = [
     value: "csf",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cybersecurity-and-forensic.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: " Introduction",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/csf-introduction.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-1: Security Principles and Practices ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/1-security-principles-and-practices.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-2: Security Threats ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/2-security-threats.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-3: Operating System Security ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/3-operating-system-security.pdf`,
+      },
     ],
     practicals_link: [
-      // {
-      //   id: 0,
-      //   title: "Index",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
-      // },
+      {
+        id: 0,
+        title: "ADB Commands",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/adb-commands.pdf`,
+      },
+      {
+        id: 1,
+        title: "Ethical hacking commands in windows ",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/ehitcal-hacking-commands-in-windows.pdf`,
+      },
+      {
+        id: 2,
+        title: "Hashing and cryptography manual ",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/hashing-and-cryptography-manual.pdf`,
+      },
+      {
+        id: 3,
+        title: "John the Ripper tool manual",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/john-the-ripper-tool-manual.pdf`,
+      },
       // {
       //   id: 1,
       //   title: "Practical 1",
@@ -599,11 +676,16 @@ export const specializationMaterials = [
     value: "cc",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cloud-computing.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Introduction",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Cloud Computing Models",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/2.pdf`,
+      },
     ],
     practicals_link: [
       // {
