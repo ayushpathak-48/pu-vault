@@ -410,6 +410,11 @@ export const specializationMaterials = [
       },
       {
         id: 4,
+        title: "Unit-4: Knowledege Representation",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/4-knowledge-representation.pdf`,
+      },
+      {
+        id: 5,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
       },
