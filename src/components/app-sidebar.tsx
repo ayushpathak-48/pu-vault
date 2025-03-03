@@ -3,7 +3,6 @@
 import {
   Sidebar,
   SidebarContent,
-  // SidebarFooter,
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
@@ -12,7 +11,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { SemSelectBox } from "./sem-select-box";
+import { SelectDivision } from "./select-division";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -22,6 +21,9 @@ export function AppSidebar() {
         <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
         <div className="font-bold">Pu Vault</div>
       </SidebarHeader>
+      <SidebarGroup>
+        <SelectDivision />
+      </SidebarGroup>
       <SidebarContent>
         <SidebarGroup>
           {navLinks.map((link) => {
@@ -44,9 +46,6 @@ export function AppSidebar() {
           })}
         </SidebarGroup>
       </SidebarContent>
-      {/* <SidebarFooter>
-        <SemSelectBox />
-      </SidebarFooter> */}
     </Sidebar>
   );
 }

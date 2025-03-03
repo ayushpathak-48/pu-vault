@@ -132,6 +132,7 @@ const TimeTablePage = () => {
           <Tabs
             defaultValue={activeDivision}
             onValueChange={setActiveDivision}
+            value={activeDivision}
             className="w-full"
           >
             <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">

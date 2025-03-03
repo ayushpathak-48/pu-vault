@@ -20,8 +20,11 @@ export const SelectDivision = ({
 }) => {
   const setDivision = useDataStore((state) => state.setDivision);
   const division = useDataStore((state) => state.division);
+  const setSpecialization = useDataStore((state) => state.setSpecialization);
   const handleSelect = (e: string) => {
     setDivision(e);
+    const selectedDivision = divisions.find(({ value }) => value == e)!;
+    setSpecialization(selectedDivision.specialization);
     toast.success("Division changed successfully");
   };
 
@@ -29,7 +32,8 @@ export const SelectDivision = ({
     <>
       <Select
         onValueChange={onSelect ? onSelect : handleSelect}
-        value={defaultValue ? defaultValue : division ? division : ""}
+        disabled={!division}
+        value={defaultValue ? defaultValue : division}
       >
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Division" />

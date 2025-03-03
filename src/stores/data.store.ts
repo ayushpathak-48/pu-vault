@@ -2,18 +2,18 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface SpecializationState {
-  specialization: string | null;
+  specialization: string;
   setSpecialization: (value: string) => void;
-  division: string | null;
+  division: string;
   setDivision: (value: string) => void;
 }
 
 export const useDataStore = create<SpecializationState>()(
   persist(
     (set, get) => ({
-      specialization: get()?.specialization, // Default state
+      specialization: get()?.specialization || "ai", // Default state
       setSpecialization: (value) => set({ specialization: value }),
-      division: get()?.division, // Default state
+      division: get()?.division || "div_a", // Default state
       setDivision: (value) => set({ division: value }),
     }),
     {

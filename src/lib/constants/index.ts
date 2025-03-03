@@ -3,10 +3,8 @@ import {
   CableCarIcon,
   Calculator,
   HardDriveDownloadIcon,
-  //  HeartIcon,
   HouseIcon,
   SettingsIcon,
-  // SquareUserRound,
   Building,
 } from "lucide-react";
 
@@ -21,12 +19,6 @@ export const navLinks = [
     href: "/",
     icon: HouseIcon,
   },
-  //   {
-  //     id: 2,
-  //     title: "Favourites",
-  //     href: "/favourites",
-  //     icon: HeartIcon,
-  //   },
   {
     id: 3,
     title: "Time Table",
@@ -66,13 +58,6 @@ export const navLinks = [
     href: "/settings",
     icon: SettingsIcon,
   },
-  // {
-  //   id: 8,
-  //   title: "Faculty Members",
-  //   href: "/faculty-members",
-  //   icon: SquareUserRound,
-  //   hideOnMobile: true,
-  // },
 ];
 
 export const streams = [
@@ -172,55 +157,66 @@ export const divisions = [
     id: 1,
     label: "Division : A",
     value: "div_a",
+    specialization: "ai",
   },
   {
     id: 2,
     label: "Division : B",
     value: "div_b",
+    specialization: "ai",
   },
   {
     id: 3,
     label: "Division : C",
     value: "div_c",
+    specialization: "ai",
   },
   {
     id: 4,
     label: "Division : D",
     value: "div_d",
+    specialization: "ai",
   },
   {
     id: 5,
     label: "Division : E",
     value: "div_e",
+    specialization: "bda",
   },
   {
     id: 6,
     label: "Division : F",
     value: "div_f",
+    specialization: "cc",
   },
   {
     id: 7,
     label: "Division : G",
+    specialization: "csf",
     value: "div_g",
   },
   {
     id: 8,
     label: "Division : H",
+    specialization: "csf",
     value: "div_h",
   },
   {
     id: 9,
     label: "Division : I",
+    specialization: "csf",
     value: "div_i",
   },
   {
     id: 10,
     label: "Division : J",
+    specialization: "fswd",
     value: "div_j",
   },
   {
     id: 11,
     label: "Division : K",
+    specialization: "fswd",
     value: "div_k",
   },
 ];

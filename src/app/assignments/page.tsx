@@ -14,8 +14,8 @@ const SoftwareLinksPage = () => {
             key={software.id}
             className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
           >
-            <Link href={software.href}>
-              <h2 className="text-lg font-medium hover:text-sky-500 transition-all">
+            <Link target="_blank" href={software.href}>
+              <h2 className="text-base md:text-lg font-medium hover:text-sky-500 transition-all">
                 {software.title}
               </h2>
             </Link>
