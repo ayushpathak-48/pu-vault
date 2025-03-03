@@ -16,13 +16,13 @@ export const practicalCodes = [
             type: "code",
             fileName: "tic-tac-toe.py",
             value: `def print_board(board):
- print("\n")
+ print("\\n")
  print(f" {board[0]} | {board[1]} | {board[2]} ")
  print("---+---+---")
  print(f" {board[3]} | {board[4]} | {board[5]} ")
  print("---+---+---")
  print(f" {board[6]} | {board[7]} | {board[8]} ")
- print("\n")
+ print("\\n")
 # Function to check if the current player has won
 def check_win(board, player):
  win_conditions = [
@@ -173,15 +173,15 @@ ai = int(input("Initially Water in Jug A : "))
 bi = int(input("Initially Water in Jug B : "))
 af = int(input("Final State of Jug A : "))
 bf = int(input("Final State of Jug B : "))
-print("List of Operations you can do: \n")
+print("List of Operations you can do: \\n")
 print("1. Fill Jug A Completely")
 print("2. Fill Jug B Completely")
 print("3. Empty Jug A Completely")
 print("4. Empty Jug B Completely")
-print("5. Pour from Jug A till Jug B filled Completely or A become empty \n")
-print("6. Pour from Jug B till Jug A filled Completely or B become empty \n")
-print("7. Pour all Jug B till Jug A\n")
-print("8. Pour all Jug A till Jug B\n")
+print("5. Pour from Jug A till Jug B filled Completely or A become empty \\n")
+print("6. Pour from Jug B till Jug A filled Completely or B become empty \\n")
+print("7. Pour all Jug B till Jug A\\n")
+print("8. Pour all Jug A till Jug B\\n")
 
 while ((ai != af or bi != bf)):
     op = int(input("Enter the operation: "))
@@ -326,7 +326,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             int choice;
             do {
-                System.out.println("\\n--- Student Information System ---");
+                System.out.println("\\\n--- Student Information System ---");
                 System.out.println("1. Insert Student");
                 System.out.println("2. Update Student");
                 System.out.println("3. Delete Student");
@@ -438,7 +438,7 @@ public class Main {
             String sql = "SELECT * FROM student";
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(sql)) {
-                System.out.println("\\n--- Student Records ---");
+                System.out.println("\\\n--- Student Records ---");
                 while (resultSet.next()) {
                     int id = resultSet.getInt("student_id");
                     String name = resultSet.getString("name");
@@ -1415,12 +1415,12 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           perror("pipe");
           exit(EXIT_FAILURE);
       }
-      printf("Writing message to pipe...\n");
+      printf("Writing message to pipe...\\n");
       write(pipefd[1], message, strlen(message) + 1);
   
-      printf("Reading message from pipe...\n");
+      printf("Reading message from pipe...\\n");
       read(pipefd[0], buffer, sizeof(buffer));
-      printf("Received message: %s\n", buffer);
+      printf("Received message: %s\\n", buffer);
       close(pipefd[0]);
       close(pipefd[1]);
       return 0;
@@ -1459,7 +1459,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       // Process each character until we hit null terminator
       for (int i = 0; text[i] != '\\0'; i++)
       {
-          if (text[i] == '\\n')
+          if (text[i] == '\\\n')
           {
               continue; // Skip newline character from fgets
           }
@@ -1486,13 +1486,13 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       }
   
       // Print results
-      printf("\\nCharacter Analysis Results:\\n");
-      printf("-------------------------\\n");
-      printf("Total Characters: %d\\n", char_count);
-      printf("Alphabets: %d\\n", alphabets);
-      printf("Digits: %d\\n", digits);
-      printf("Spaces: %d\\n", spaces);
-      printf("Special Characters: %d\\n", special_chars);
+      printf("\\\nCharacter Analysis Results:\\\n");
+      printf("-------------------------\\\n");
+      printf("Total Characters: %d\\\n", char_count);
+      printf("Alphabets: %d\\\n", alphabets);
+      printf("Digits: %d\\\n", digits);
+      printf("Spaces: %d\\\n", spaces);
+      printf("Special Characters: %d\\\n", special_chars);
   
       return 0;
   }`,
@@ -1533,7 +1533,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       scanf("%d", &num);
   
       int result = countSetBits(num);
-      printf("Number of set bits in %d: %d\n", num, result);
+      printf("Number of set bits in %d: %d\\n", num, result);
       return 0;
   }`,
           },
@@ -1562,7 +1562,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       int messageLength = strlen(message);
       int numFrames = (messageLength + frameLength - 1) / frameLength; // Calculate the number of frames needed
       int i, j;
-      printf("Frames:\\n");
+      printf("Frames:\\\n");
   
       for (i = 0; i < numFrames; i++)
       {
@@ -1571,7 +1571,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           {
               printf("%c", message[i * frameLength + j]);
           }
-          printf("\\n");
+          printf("\\\n");
       }
   }
   int main()
@@ -1582,7 +1582,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       printf("Enter the message: ");
       fgets(message, sizeof(message), stdin);
   
-      message[strcspn(message, "\\n")] = '\\0'; // Remove trailing newline
+      message[strcspn(message, "\\\n")] = '\\0'; // Remove trailing newline
   
       printf("Enter the frame length: ");
       scanf("%d", &frameLength);
