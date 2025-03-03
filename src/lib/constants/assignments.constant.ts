@@ -11,4 +11,9 @@ export const assignments = [
     title: "Computer Graphics",
     href: `${MATERIAL_LINK_BASE_URL}/assignments/cg-assignment-1.pdf`,
   },
+  {
+    id: 3,
+    title: "English and Mathematical Apptitude",
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/cdc-assignment.pdf`,
+  },
 ];

@@ -223,6 +223,11 @@ export const materials = [
         title: "Week 6",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-6.pdf`,
       },
+      {
+        id: 7,
+        title: "Week 7",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-7.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -631,11 +636,26 @@ export const specializationMaterials = [
       },
     ],
     practicals_link: [
-      // {
-      //   id: 0,
-      //   title: "Index",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
-      // },
+      {
+        id: 0,
+        title: "ADB Commands",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/adb-commands.pdf`,
+      },
+      {
+        id: 1,
+        title: "Ethical hacking commands in windows ",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/ehitcal-hacking-commands-in-windows.pdf`,
+      },
+      {
+        id: 2,
+        title: "Hashing and cryptography manual ",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/hashing-and-cryptography-manual.pdf`,
+      },
+      {
+        id: 3,
+        title: "John the Ripper tool manual",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/john-the-ripper-tool-manual.pdf`,
+      },
       // {
       //   id: 1,
       //   title: "Practical 1",
@@ -650,11 +670,16 @@ export const specializationMaterials = [
     value: "cc",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cloud-computing.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction",
-      //   href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/1-introduction.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Introduction",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Cloud Computing Models",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/2.pdf`,
+      },
     ],
     practicals_link: [
       // {
