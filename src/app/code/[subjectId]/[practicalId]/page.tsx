@@ -79,6 +79,7 @@ const CodePage = () => {
         <Button
           disabled={currentPracticalIndex == 0}
           variant={"outline"}
+          className="max-md:hidden"
           onClick={handleClickPrevious}
         >
           Previous
@@ -105,6 +106,7 @@ const CodePage = () => {
         </TabsList>
         <Button
           variant={"outline"}
+          className="max-md:hidden"
           disabled={
             allPracticals?.practicals?.length == currentPracticalIndex + 1
           }
@@ -113,13 +115,33 @@ const CodePage = () => {
           Next
         </Button>
       </Tabs>
+      <div className="flex items-center justify-between gap-4 md:hidden mt-1 w-full px-5">
+        <Button
+          disabled={currentPracticalIndex == 0}
+          variant={"outline"}
+          onClick={handleClickPrevious}
+          className="w-full"
+        >
+          Previous
+        </Button>{" "}
+        <Button
+          variant={"outline"}
+          disabled={
+            allPracticals?.practicals?.length == currentPracticalIndex + 1
+          }
+          className="w-full"
+          onClick={handleClickNext}
+        >
+          Next
+        </Button>
+      </div>
       {isLoading ? (
         <div className="h-96 w-full flex items-center justify-center">
           <LoaderCircle className="animate-spin size-6" />
         </div>
       ) : (
         <div className="flex flex-col gap-2 p-5 lg:p-10">
-          {practical.pageBlocks.map((ele, i) => (
+          {practical?.pageBlocks?.map((ele, i) => (
             <div key={ele.type + "_" + i}>
               {ele.type == "heading" && (
                 <h2 className="text-2xl font-bold text-slate-700 text-center my-2">
@@ -131,13 +153,19 @@ const CodePage = () => {
                   <CardHeader>
                     <CardTitle>
                       <span className="text-gray-500 text-sm">
-                        {ele?.is_output ? "Output : " : "filename:"}
+                        {/* {ele?.is_output ? "Output : " : "filename:"} */}
+                        filename:
                       </span>{" "}
                       {ele.fileName}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="px-5">
-                    <CodeBlock code={ele.value} language="python" />
+                    <CodeBlock
+                      code={ele.value}
+                      language={
+                        ele?.language || allPracticals?.language || "python"
+                      }
+                    />
                   </CardContent>
                 </Card>
               )}

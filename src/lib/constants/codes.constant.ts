@@ -3,6 +3,7 @@ export const practicalCodes = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
+    language: "python",
     practicals: [
       {
         key: "tic-tac-toe",
@@ -116,71 +117,59 @@ def play_game():
 if __name__ == "__main__":
  play_game()`,
           },
-          {
-            type: "code",
-            is_output: true,
-            value: `Welcome to Tic-Tac-Toe!
+          //           {
+          //             type: "code",
+          //             is_output: true,
+          //             value: `Welcome to Tic-Tac-Toe!
 
+          //    |   |
+          // ---+---+---
+          //    |   |
+          // ---+---+---
+          //    |   |
 
-   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
+          // Player X, choose your position (1-9): 1
 
+          //  X |   |
+          // ---+---+---
+          //    |   |
+          // ---+---+---
+          //    |   |
 
-Player X, choose your position (1-9): 1
+          // Player O, choose your position (1-9): 3
 
+          //  X |   | O
+          // ---+---+---
+          //    |   |
+          // ---+---+---
+          //    |   |
 
- X |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
+          // Player X, choose your position (1-9): 5
 
+          //  X |   | O
+          // ---+---+---
+          //    | X |
+          // ---+---+---
+          //    |   |
 
-Player O, choose your position (1-9): 3
+          // Player O, choose your position (1-9): 6
 
+          //  X |   | O
+          // ---+---+---
+          //    | X | O
+          // ---+---+---
+          //    |   |
 
- X |   | O 
----+---+---
-   |   |   
----+---+---
-   |   |   
+          // Player X, choose your position (1-9): 9
 
+          //  X |   | O
+          // ---+---+---
+          //    | X | O
+          // ---+---+---
+          //    |   | X
 
-Player X, choose your position (1-9): 5
-
-
- X |   | O 
----+---+---
-   | X |   
----+---+---
-   |   |   
-
-
-Player O, choose your position (1-9): 6
-
-
- X |   | O 
----+---+---
-   | X | O 
----+---+---
-   |   |   
-
-
-Player X, choose your position (1-9): 9
-
-
- X |   | O 
----+---+---
-   | X | O 
----+---+---
-   |   | X 
-
-
-Player X wins!`,
-          },
+          // Player X wins!`,
+          //           },
         ],
       },
       {
@@ -319,6 +308,7 @@ tower_of_hanoi(3, 'Red', 'Green', "Blue")
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
+    language: "java",
     practicals: [
       // Pra-1 jdbc-connectivity
       {
@@ -535,6 +525,7 @@ public class Main {
           {
             type: "code",
             fileName: "registration.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -668,6 +659,7 @@ public class DisplayUsers extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html>
 <body>
@@ -748,6 +740,7 @@ public class AuthenticateServlet extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -991,6 +984,7 @@ public class RedirectServlet extends HttpServlet {
           {
             type: "code",
             fileName: "redirectForm.jsp",
+            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -1027,6 +1021,7 @@ public class RedirectServlet extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html>
 <head>
@@ -1115,6 +1110,7 @@ public class NewServlet extends HttpServlet {
           {
             type: "code",
             fileName: "home.jsp",
+            language: "html",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -1144,6 +1140,7 @@ String un = (String)session.getAttribute("un");
           },
           {
             type: "code",
+            language: "html",
             fileName: "index.jsp",
             value: `<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
@@ -1174,6 +1171,7 @@ String un = (String)session.getAttribute("un");
           },
           {
             type: "code",
+            language: "html",
             fileName: "process.jsp",
             value: `<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
@@ -1244,6 +1242,7 @@ public class BankAccount implements Serializable {
           },
           {
             type: "code",
+            language: "html",
             fileName: "index.jsp",
             value: `<%@ taglib prefix="c" uri="/WEB-INF/tlds/sortNumbers.tld" %>
 <html>
@@ -1396,6 +1395,7 @@ public class UserCounterListener implements HttpSessionListener {
           },
           {
             type: "code",
+            language: "html",
             fileName: "error.jsp",
             value: `<html>
   <head>
@@ -1409,6 +1409,7 @@ public class UserCounterListener implements HttpSessionListener {
           },
           {
             type: "code",
+            language: "html",
             fileName: "index.jsp",
             value: `<%@ page import="jakarta.servlet.ServletContext" %> <% ServletContext context =
 request.getServletContext(); Integer activeUsers = (Integer)
@@ -1427,6 +1428,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           },
           {
             type: "code",
+            language: "html",
             fileName: "logout.jsp",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -1455,6 +1457,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   {
     subject_name: "Data Communication and Networking",
     key: "data-communication-and-networking",
+    language: "c",
     practicals: [
       // pra - 5 pipe
       {
@@ -1665,26 +1668,3 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
     ],
   },
 ];
-
-// Example Empty box
-// {
-//     key: "crud-operations",
-//     name: "Practical - 2: JDBC Connectivity & Crud Operations ",
-//     pageBlocks: [
-//       {
-//         type: "heading",
-//         value: "Practical 2- JDBC Connectivity & Crud Operations",
-//       },
-//       {
-//         type: "code",
-//         fileName: "main.java",
-//         value: ``,
-//       },
-//     ],
-//   },
-
-//   {
-//     type: "code",
-//     fileName: "registration.html",
-//     value: ``,
-//   },
