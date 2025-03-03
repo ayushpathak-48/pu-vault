@@ -5,9 +5,6 @@ import React from "react";
 const SoftwareLinksPage = () => {
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
-      {/* <h2 className="text-2xl font-semibold custom-heading text-center">
-        All Assignments Link
-      </h2> */}
       <div className="flex flex-col gap-4">
         {assignments.map((software) => (
           <div

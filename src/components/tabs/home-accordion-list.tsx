@@ -57,12 +57,14 @@ const MaterialAccordionCard = ({ material }: any) => (
             >
               Practicals
             </TabsTrigger>
-            <TabsTrigger
-              value={"codes"}
-              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
-            >
-              Source Codes
-            </TabsTrigger>
+            {practicalCodes?.some(({ key }) => key == material?.key) && (
+              <TabsTrigger
+                value={"codes"}
+                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+              >
+                Source Codes
+              </TabsTrigger>
+            )}
           </TabsList>
         )}
         <div className="p-2">
