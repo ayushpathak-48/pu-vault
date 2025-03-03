@@ -10,10 +10,15 @@ const CodeBlock = ({ code, language }: { code: string; language: string }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    toast.success("Code copied to clipboard");
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      navigator.clipboard.writeText(code);
+      setCopied(true);
+      toast.success("Code copied to clipboard");
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.log({ error });
+      toast.success("Failed to copy! Try manually copying code");
+    }
   };
 
   return (
