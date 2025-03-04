@@ -9,9 +9,7 @@ export const SingleWeekTimeTableBody = ({
   activeDivision: string;
 }) => {
   const [timetableData, setTimetableData] = useState<TimeTableRow>([]);
-
   useLayoutEffect(() => {
-    console.log({ weekIndex });
     const weekData: TimeTableRow = [];
     time_table.forEach((table) => {
       if (activeDivision == table.division_key) {

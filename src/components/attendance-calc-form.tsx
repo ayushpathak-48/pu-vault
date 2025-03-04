@@ -43,7 +43,6 @@ export function AttendanceCalcForm() {
     const percentage = (presentSlots / totalSlots) * 100;
     setAttendancePercentage(percentage);
     const requiredSlots = Math.ceil((0.75 * totalSlots - presentSlots) / 0.25);
-    console.log({ requiredSlots });
     setRequiredSlots(requiredSlots);
   }
 

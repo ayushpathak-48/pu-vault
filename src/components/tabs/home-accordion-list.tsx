@@ -174,13 +174,15 @@ const MaterialAccordionCard = ({ material }: any) => (
                     className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
-                      <Link href={`/code/${material.key}/${practical.key}`}>
+                      <Link
+                        href={`/code/${material.key}?practical=${practical.key}`}
+                      >
                         {practical.name}
                       </Link>
                     </div>
                     <Button className="" asChild size={"sm"}>
                       <Link
-                        href={`/code/${material.key}/${practical.key}`}
+                        href={`/code/${material.key}?practical=${practical.key}`}
                         className="bg-sky-500 hover:bg-sky-500/90"
                       >
                         View
