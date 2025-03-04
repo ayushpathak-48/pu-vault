@@ -686,6 +686,16 @@ export const specializationMaterials = [
         title: "Unit-2: Cloud Computing Models",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/2.pdf`,
       },
+      {
+        id: 3,
+        title: "Unit-3: Virtualization Concepts",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Cloud Storage",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/4.pdf`,
+      },
     ],
     practicals_link: [
       // {
