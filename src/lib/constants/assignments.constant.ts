@@ -16,4 +16,14 @@ export const assignments = [
     title: "English and Mathematical Apptitude",
     href: `${MATERIAL_LINK_BASE_URL}/assignments/cdc-assignment.pdf`,
   },
+  {
+    id: 4,
+    title: "Artificial Intelligence",
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/ai-assignment.pdf`,
+  },
+  {
+    id: 5,
+    title: "Cyber Security and Forensics",
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/csf-assignment.pdf`,
+  },
 ];
