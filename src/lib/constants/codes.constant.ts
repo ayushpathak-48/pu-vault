@@ -17,13 +17,13 @@ export const practicalCodes = [
             type: "code",
             fileName: "tic-tac-toe.py",
             value: `def print_board(board):
- print("\n")
+ print("\\n")
  print(f" {board[0]} | {board[1]} | {board[2]} ")
  print("---+---+---")
  print(f" {board[3]} | {board[4]} | {board[5]} ")
  print("---+---+---")
  print(f" {board[6]} | {board[7]} | {board[8]} ")
- print("\n")
+ print("\\n")
 # Function to check if the current player has won
 def check_win(board, player):
     win_conditions = [
@@ -157,6 +157,13 @@ def bfs(visited,graph,node):
 
 print("BFS")
 bfs(visited,graph,'5')`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `BFS
+5 3 7 2 4 8 `,
           },
         ],
       },
