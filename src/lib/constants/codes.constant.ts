@@ -16,123 +16,106 @@ export const practicalCodes = [
           {
             type: "code",
             fileName: "tic-tac-toe.py",
-            value: `theBoard = {
-    "7": " ",
-    "8": " ",
-    "9": " ",
-    "4": " ",
-    "5": " ",
-    "6": " ",
-    "1": " ",
-    "2": " ",
-    "3": " ",
-}
+            value: `def print_board(board):
+ print("\n")
+ print(f" {board[0]} | {board[1]} | {board[2]} ")
+ print("---+---+---")
+ print(f" {board[3]} | {board[4]} | {board[5]} ")
+ print("---+---+---")
+ print(f" {board[6]} | {board[7]} | {board[8]} ")
+ print("\n")
+# Function to check if the current player has won
+def check_win(board, player):
+    win_conditions = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Horizontal
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Vertical
+        [0, 4, 8], [2, 4, 6]  # Diagonal
+    ]
 
-board_keys = []
+    for condition in win_conditions:
+        if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
+            return True  # If a winning condition is met, return True
 
-for key in theBoard:
-    board_keys.append(key)
-
-
-
-
-def printBoard(board):
-    print(board["7"] + "|" + board["8"] + "|" + board["9"])
-    print("-+-+-")
-    print(board["4"] + "|" + board["5"] + "|" + board["6"])
-    print("-+-+-")
-    print(board["1"] + "|" + board["2"] + "|" + board["3"])
+    return False  # Return False only after checking all conditions
 
 
+# Function to check if the board is full
+def is_board_full(board):
+ return " " not in board
 
-def game():
-
-    turn = "X"
-    count = 0
-
-    for i in range(10):
-        printBoard(theBoard)
-        print("It's your turn," + turn + ".Move to which place?")
-
-        move = input()
-
-        if theBoard[move] == " ":
-            theBoard[move] = turn
-            count += 1
+# Function to handle player's move
+def player_move(board, player):
+ while True:
+    try:
+        move = int(input(f"Player {player}, choose your position (1-9): ")) - 1
+        if board[move] == " ":
+            board[move] = player
+            break
         else:
-            print("That place is already filled.\\nMove to which place?")
-            continue
+             print("That position is already taken. Try again.")
+    except (ValueError, IndexError):
+         print("Invalid move. Please choose a number between 1 and 9.")
 
-        
-        if count >= 5:
-            if theBoard["7"] == theBoard["8"] == theBoard["9"] != " ":
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif (
-                theBoard["4"] == theBoard["5"] == theBoard["6"] != " "):  # across the middle
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif (
-                theBoard["1"] == theBoard["2"] == theBoard["3"] != " "):  # across the bottom
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif (
-                theBoard["1"] == theBoard["4"] == theBoard["7"] != " "):  # down the left side
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif (
-                theBoard["2"] == theBoard["5"] == theBoard["8"] != " "):  # down the middle
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif (
-                theBoard["3"] == theBoard["6"] == theBoard["9"] != " "):  # down the right side
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":  # diagonal
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
-            elif theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":  # diagonal
-                printBoard(theBoard)
-                print("\\nGame Over.\\n")
-                print(" **** " + turn + " won. ****")
-                break
+# Main function to play the game
+def play_game():
+ board = [" "] * 9
+ current_player = "X"
 
-        # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
-        if count == 9:
-            print("\\nGame Over.\\n")
-            print("It's a Tie!!")
+ print("Welcome to Tic-Tac-Toe!")
+ print_board(board)
 
-        # Now we have to change the player after every move.
-        if turn == "X":
-            turn = "O"
+ while True:
+    player_move(board, current_player)
+    print_board(board)
+    if check_win(board, current_player):
+        print(f"Player {current_player} wins!")
+        break
+    elif is_board_full(board):
+        print("It's a tie!")
+        break
+
+# Function to check if the board is full
+def is_board_full(board):
+ return " " not in board
+
+
+# Function to handle player's move
+def player_move(board, player):
+ while True:
+    try:
+        move = int(input(f"Player {player}, choose your position (1-9): ")) - 1
+        if board[move] == " ":
+            board[move] = player
+            break
         else:
-            turn = "X"
-
-    # Now we will ask if player wants to restart the game or not.
-    restart = input("Do want to play Again?(y/n)")
-    if restart == "y" or restart == "Y":
-        for key in board_keys:
-            theBoard[key] = " "
-
-        game()
+            print("That position is already taken. Try again.")
+    except (ValueError, IndexError):
+        print("Invalid move. Please choose a number between 1 and 9.")
 
 
-if _name_ == "_main_":
-    game()`,
+# Main function to play the game
+def play_game():
+ board = [" "] * 9
+ current_player = "X"
+
+ print("Welcome to Tic-Tac-Toe!")
+ print_board(board)
+
+ while True:
+    player_move(board, current_player)
+    print_board(board)
+    if check_win(board, current_player):
+        print(f"Player {current_player} wins!")
+        break
+    elif is_board_full(board):
+        print("It's a tie!")
+        break
+    # Switch player
+    current_player = "O" if current_player == "X" else "X"
+
+# Start the game
+if __name__ == "__main__":
+ play_game()`,
           },
         ],
       },
@@ -236,6 +219,95 @@ while ((ai != af or bi != bf)):
         bi = bi + ai
         ai = 0
     print(ai, bi)`,
+          },
+        ],
+      },
+      {
+        key: "n-queens-problem",
+        name: "Practical - 4: N Queens Problem",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5 - N Queens Problem",
+          },
+          {
+            type: "code",
+            fileName: "n-queens-problem.py",
+            value: `n = int(input("Enter the value of n :"))
+board=[]
+
+def getBoard():
+    for i in range(n):
+        nthList = []
+        for j in range(n):
+            nthList.append(0)
+        board.append(nthList)
+
+def printBoard():
+    for i in range(n):
+        for j in range(n):
+            print(board[i][j], end=" ")
+        print("")
+
+def isSafe(row,col):
+    for i in range(n):
+        if board[row][i] == 1:
+            return False
+    for j in range(n):
+        if board[j][col] == 1:
+            return False
+    i=row-1
+    j=col-1
+    while(i>=0 and j>=0):
+        if board[i][j] == 1:
+            return False
+        i = i - 1
+        j = j - 1
+
+    i = row - 1
+    j = col + 1
+
+    while(i >= 0 and j < n):
+        if board[i][j] == 1:
+            return False
+
+        i = i-1
+        j = j+1
+
+    i = row+1
+    j = col-1
+
+    while(i<n and j >=0):
+        if board[i][j] == 1:
+            return False
+        i = i +1
+        j = j+1
+    i = row+1
+    j=col+1
+    while(i<n and j<n):
+        if board[i][j] == 1:
+            return False
+        i = i + 1
+        j = j + 1
+    return True
+
+def Put(n,count):
+    if count == n:
+        return True
+    for i in range(n):
+        for j in range(n):
+            if isSafe(i,j):
+                board[i][j] = 1
+                count = count+1
+                if Put(n,count) == True:
+                    return True
+                board[i][j] = 0
+                count = count -1
+    return False
+
+getBoard()
+Put(n,0)
+printBoard()`,
           },
         ],
       },
