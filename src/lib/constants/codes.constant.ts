@@ -228,7 +228,7 @@ while ((ai != af or bi != bf)):
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical 5 - N Queens Problem",
+            value: "Practical 4 - N Queens Problem",
           },
           {
             type: "code",
@@ -341,6 +341,18 @@ printBoard()`,
 
 
 tower_of_hanoi(3, 'Red', 'Green', "Blue")`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Move disc 1 from Red to Blue 
+Move disc 2 from Red to Green 
+Move disc 1 from Blue to Green 
+Move disc 3 from Red to Blue 
+Move disc 1 from Green to Red 
+Move disc 2 from Green to Blue 
+Move disc 1 from Red to Blue `,
           },
         ],
       },

@@ -15,6 +15,14 @@ import {
 } from "@/components/ui/carousel";
 import { useQueryState } from "nuqs";
 
+type CodeElementType = {
+  type: string;
+  value: string;
+  fileName?: string;
+  is_output?: boolean;
+  language?: string;
+};
+
 const CodePage = () => {
   const [api, setApi] = React.useState<CarouselApi>();
 
@@ -146,7 +154,7 @@ const CodePage = () => {
           {practicalSubject?.practicals.map((ele, index) => (
             <CarouselItem key={index}>
               <div className="flex flex-col gap-2 p-5 lg:p-10">
-                {ele?.pageBlocks?.map((ele, i) => (
+                {ele?.pageBlocks?.map((ele: CodeElementType, i) => (
                   <div key={ele.type + "_" + i}>
                     {ele.type == "heading" && (
                       <h2 className="text-2xl font-bold text-slate-700 text-center my-2">
@@ -158,14 +166,14 @@ const CodePage = () => {
                         <CardHeader>
                           <CardTitle>
                             <span className="text-gray-500 text-sm">
-                              {/* {ele?.is_output ? "Output : " : "filename:"} */}
-                              filename:
+                              {ele?.is_output ? "Output : " : "filename:"}
                             </span>{" "}
                             {ele.fileName}
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="px-5">
                           <CodeBlock
+                            is_output={ele?.is_output}
                             code={ele.value}
                             language={
                               ele?.language ||

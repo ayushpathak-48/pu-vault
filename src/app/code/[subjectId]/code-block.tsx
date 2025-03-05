@@ -1,12 +1,21 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
 
-const CodeBlock = ({ code, language }: { code: string; language: string }) => {
+const CodeBlock = ({
+  is_output,
+  code,
+  language,
+}: {
+  is_output?: boolean;
+  code: string;
+  language: string;
+}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -26,7 +35,10 @@ const CodeBlock = ({ code, language }: { code: string; language: string }) => {
       <Button
         variant={"outline"}
         onClick={handleCopy}
-        className="absolute top-2 right-2 px-3 rounded-md text-xs transition"
+        className={cn(
+          "absolute top-2 right-2 px-3 rounded-md text-xs transition",
+          is_output && "hidden"
+        )}
         size={"sm"}
       >
         {copied ? "Copied!" : "Copy"}
