@@ -227,6 +227,39 @@ while ((ai != af or bi != bf)):
         ai = 0
     print(ai, bi)`,
           },
+          {
+            type: "code",
+            is_output: true,
+            language: "text",
+            value: `Enter Jug A Capacity : 10
+Enter Jug B Capacity : 10
+Initially Water in Jug A : 5
+Initially Water in Jug B : 5
+Final State of Jug A : 10
+Final State of Jug B : 10
+List Of Operations You can Do:
+
+1. Fill Jug A Completely 
+
+2. Fill Jug B Completely 
+
+3. Empty Jug A Completely 
+
+4. Empty Jug B Completely 
+
+5. Pour from Jug A till Jug B filled Completely or A become empty
+
+6. Pour from Jug B till Jug A filled Completely or B become empty
+
+7. Pour all Jug B till Jug A
+
+8. Pour all Jug A till Jug B
+
+Enter the Operation: 1
+10 5
+Enter the Operation: 2
+10 10`,
+          },
         ],
       },
       {
@@ -319,6 +352,7 @@ printBoard()`,
           {
             type: "code",
             is_output: true,
+            language: "text",
             value: `0 1 0 0 
 0 0 0 1 
 1 0 0 0 
@@ -360,6 +394,43 @@ Move disc 3 from Red to Blue
 Move disc 1 from Green to Red 
 Move disc 2 from Green to Blue 
 Move disc 1 from Red to Blue `,
+          },
+        ],
+      },
+      {
+        key: "family-tree",
+        name: "Practical - 6: Family Tree - Prolog",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 6 - Family Tree - Prolog",
+          },
+          {
+            type: "code",
+            fileName: "family-tree.pl",
+            language: "prolog",
+            value: `female(pammi).
+female(lizza).
+female(patty).
+female(annny).
+male(jimmy).
+male(bobby).
+male(tomy).
+male(pitter).
+parent(pammi,bobby).
+parent(tomy,bobby).
+parent(tomy,lizza).
+parent(bobby,annny).
+parent(bobby,patty).
+parent(patty,jimmy).
+parent(bobby,pitter).
+parent(pitter,jimmy).
+
+mother(X,Y):- parent(X,Y), female(X).
+father(X,Y):- parent(X,Y), male(X).
+haschild(X):- parent(X,_).
+sister(X,Y):- parent(Z,X),parent(Z,Y),female(X),X\==Y.
+brother(X,Y):- parent(Z,X),parent(Z,Y),male(X),X\==Y.`,
           },
         ],
       },
