@@ -6,6 +6,9 @@ import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -40,6 +43,17 @@ export default function RootLayout({
             <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
               <Navbar />
               <main className="w-full h-full max-md:pb-14 pt-16 md:pt-20">
+                <div className="bg-gray-200 m-5 py-2 px-5 flex items-center justify-between rounded-xl">
+                  <div className="font-semibold">Exam Time Table</div>
+                  <Button asChild>
+                    <Link
+                      target="_blank"
+                      href={`${MATERIAL_LINK_BASE_URL}/time-table/mca-mscit-mid-sem-exam-time-table.pdf`}
+                    >
+                      View
+                    </Link>
+                  </Button>
+                </div>
                 {children}
               </main>
             </div>
