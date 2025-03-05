@@ -3,6 +3,7 @@ export const practicalCodes = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
+    language: "python",
     practicals: [
       {
         key: "tic-tac-toe",
@@ -269,6 +270,7 @@ tower_of_hanoi(3, 'Red', 'Green', "Blue")`,
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
+    language: "java",
     practicals: [
       // Pra-1 jdbc-connectivity
       {
@@ -1409,6 +1411,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   {
     subject_name: "Data Communication and Networking",
     key: "data-communication-and-networking",
+    language: "c",
     practicals: [
       // pra - 5 pipe
       {

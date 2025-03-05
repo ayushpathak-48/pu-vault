@@ -168,8 +168,8 @@ const CodePage = () => {
                           <CodeBlock
                             code={ele.value}
                             language={
-                              // ele?.language ||
-                              // practicalSubject?.language ||
+                              ele?.language ||
+                              practicalSubject?.language ||
                               "python"
                             }
                           />
