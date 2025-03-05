@@ -797,7 +797,7 @@ public class DisplayUsers extends HttpServlet {
 <html>
 <body>
 <h2>Login Form</h2>
-<form action="Authenticate" method="post">
+<form action="AuthenticateServlet" method="post">
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" required><br>
 <label for="password">Password:</label>
@@ -850,7 +850,7 @@ public class AuthenticateServlet extends HttpServlet {
         request.getHeaderNames().asIterator().forEachRemaining(headerName -> {
             out.println(headerName + ": " + request.getHeader(headerName) + "<br>");
         });
-        response.addHeader("Custom-Header", "This is gaurav and i am your header");
+        response.addHeader("Custom-Header", "This is Karan and i am your header");
         out.println("<h2>Response Headers:</h2>");
         response.getHeaderNames().forEach(headerName -> {
             out.println(headerName + ": " + response.getHeader(headerName) + "<br>");
@@ -903,12 +903,12 @@ public class AuthenticateServlet extends HttpServlet {
             fileName: "examInfo.java",
             value: `import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = { "/examInfo" })
 public class examInfo extends HttpServlet {
@@ -937,16 +937,16 @@ public class examInfo extends HttpServlet {
             out.println("<head>");
             out.println("<title>ExamInfo</title>");
             out.println("</head>");
-            out.println("<body><form action=\"examResult\">");
+            out.println("<body><form action=\\"examResult\\">");
             out.println("<h1>Student : " + nm + "</h1><br><hr>");
             out.println("<center><b>Enter ,marks for six subjects [out of 100]</b></center><br>");
-            out.println("Enter marks for subject1 <input type=\"text\" name=\"subj1\"><br><br>");
-            out.println("Enter marks for subject2 <input type=\"text\" name=\"subj2\"><br><br>");
-            out.println("Enter marks for subject3 <input type=\"text\" name=\"subj3\" ><br><br>");
-            out.println("Enter marks for subject4 <input type=\"text\" name=\"subj4\" ><br><br>");
-            out.println("Enter marks for subject5 <input type=\"text\" name=\"subj5\" ><br><br>");
-            out.println("Enter marks for subject6 <input type=\"text\" name=\"subj6\" ><br><br>");
-            out.println("<input type=\"Submit\" value=\"Generate Result\">");
+            out.println("Enter marks for subject1 <input type=\\"text\\" name=\\"subj1\\"><br><br>");
+            out.println("Enter marks for subject2 <input type=\\"text\\" name=\\"subj2\\"><br><br>");
+            out.println("Enter marks for subject3 <input type=\\"text\\" name=\\"subj3\\" ><br><br>");
+            out.println("Enter marks for subject4 <input type=\\"text\\" name=\\"subj4\\" ><br><br>");
+            out.println("Enter marks for subject5 <input type=\\"text\\" name=\\"subj5\\" ><br><br>");
+            out.println("Enter marks for subject6 <input type=\\"text\\" name=\\"subj6\\" ><br><br>");
+            out.println("<input type=\\"Submit\\" value=\\"Generate Result\\">");
             out.println("</form></body>");
             out.println("</html>");
         }
@@ -1302,18 +1302,30 @@ String un = (String)session.getAttribute("un");
           {
             type: "code",
             fileName: "process.jsp",
-            value: `<%@ page language="java" import="beans.BankAccount" %>
+            value: `
+<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
-<% String action = request.getParameter("action"); if ("Deposit".equals(action))
-{ double depositAmount =
-Double.parseDouble(request.getParameter("depositAmount"));
-account.deposit(depositAmount); } else if ("Withdraw".equals(action)) { double
-withdrawAmount = Double.parseDouble(request.getParameter("withdrawAmount")); if
-(!account.withdraw(withdrawAmount)) { out.println("
-<script>
-  alert("Insufficient Balance!");
-</script>
-"); } } response.sendRedirect("index.jsp"); %>`,
+
+<%
+    String action = request.getParameter("action");
+
+    if ("Deposit".equals(action)) {
+        double depositAmount = Double.parseDouble(request.getParameter("depositAmount"));
+        account.deposit(depositAmount);
+        out.println("<script>alert('Deposit Successful!');</script>");
+    }
+    
+    else if ("Withdraw".equals(action)) {
+        double withdrawAmount = Double.parseDouble(request.getParameter("withdrawAmount"));
+        if (!account.withdraw(withdrawAmount)) {
+            out.println("<script>alert('Insufficient Balance!');</script>");
+        } else {
+            out.println("<script>alert('Withdrawal Successful!');</script>");
+        }
+    }
+
+    response.sendRedirect("index.jsp");
+%>`,
           },
           {
             type: "code",
@@ -1327,7 +1339,7 @@ public class BankAccount implements Serializable {
     private double balance;
 
     public BankAccount() {
-        this.accountHolder = "Gaurav";
+        this.accountHolder = "Karan";
         this.balance = 0.0;
     }
 

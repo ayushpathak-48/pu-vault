@@ -26,4 +26,5 @@ export const assignments = [
     title: "Cyber Security and Forensics",
     href: `${MATERIAL_LINK_BASE_URL}/assignments/csf-assignment.pdf`,
   },
+  // Succesfully
 ];
