@@ -102,7 +102,7 @@ def game():
                 break
             elif theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":  # diagonal
                 printBoard(theBoard)
-                print("\nGame Over.\n")
+                print("\\nGame Over.\\n")
                 print(" **** " + turn + " won. ****")
                 break
             elif theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":  # diagonal
@@ -194,15 +194,15 @@ ai = int(input("Initially Water in Jug A : "))
 bi = int(input("Initially Water in Jug B : "))
 af = int(input("Final State of Jug A : "))
 bf = int(input("Final State of Jug B : "))
-print("List of Operations you can do: \n")
+print("List of Operations you can do: \\n")
 print("1. Fill Jug A Completely")
 print("2. Fill Jug B Completely")
 print("3. Empty Jug A Completely")
 print("4. Empty Jug B Completely")
-print("5. Pour from Jug A till Jug B filled Completely or A become empty \n")
-print("6. Pour from Jug B till Jug A filled Completely or B become empty \n")
-print("7. Pour all Jug B till Jug A\n")
-print("8. Pour all Jug A till Jug B\n")
+print("5. Pour from Jug A till Jug B filled Completely or A become empty \\n")
+print("6. Pour from Jug B till Jug A filled Completely or B become empty \\n")
+print("7. Pour all Jug B till Jug A\\n")
+print("8. Pour all Jug A till Jug B\\n")
 
 while ((ai != af or bi != bf)):
     op = int(input("Enter the operation: "))
@@ -1440,12 +1440,12 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           perror("pipe");
           exit(EXIT_FAILURE);
       }
-      printf("Writing message to pipe...\n");
+      printf("Writing message to pipe...\\n");
       write(pipefd[1], message, strlen(message) + 1);
   
-      printf("Reading message from pipe...\n");
+      printf("Reading message from pipe...\\n");
       read(pipefd[0], buffer, sizeof(buffer));
-      printf("Received message: %s\n", buffer);
+      printf("Received message: %s\\n", buffer);
       close(pipefd[0]);
       close(pipefd[1]);
       return 0;
@@ -1558,7 +1558,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       scanf("%d", &num);
   
       int result = countSetBits(num);
-      printf("Number of set bits in %d: %d\n", num, result);
+      printf("Number of set bits in %d: %d\\n", num, result);
       return 0;
   }`,
           },
