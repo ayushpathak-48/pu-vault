@@ -233,7 +233,7 @@ while ((ai != af or bi != bf)):
           {
             type: "code",
             fileName: "n-queens-problem.py",
-            value: `n = int(input("Enter the value of n :"))
+            value: `n = 4
 board=[]
 
 def getBoard():
@@ -308,6 +308,14 @@ def Put(n,count):
 getBoard()
 Put(n,0)
 printBoard()`,
+          },
+          {
+            type: "code",
+            is_output: true,
+            value: `0 1 0 0 
+0 0 0 1 
+1 0 0 0 
+0 0 1 0 `,
           },
         ],
       },
