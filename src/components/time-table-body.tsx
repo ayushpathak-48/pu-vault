@@ -70,7 +70,7 @@ export const TimeTableBody = ({
                       </div>
                       <div className="h-0.5 w-full my-4" />
                       <div className="text-blue-400">
-                        <div className="font-bold">MSCIt</div>
+                        <div className="font-bold">MScIt</div>
                         <SingleCell
                           label={msc_it?.label}
                           classroom={msc_it?.classroom}
