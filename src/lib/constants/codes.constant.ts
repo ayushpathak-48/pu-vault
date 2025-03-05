@@ -3,7 +3,6 @@ export const practicalCodes = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
-    language: "python",
     practicals: [
       {
         key: "tic-tac-toe",
@@ -16,160 +15,124 @@ export const practicalCodes = [
           {
             type: "code",
             fileName: "tic-tac-toe.py",
-            value: `def print_board(board):
- print("\n")
- print(f" {board[0]} | {board[1]} | {board[2]} ")
- print("---+---+---")
- print(f" {board[3]} | {board[4]} | {board[5]} ")
- print("---+---+---")
- print(f" {board[6]} | {board[7]} | {board[8]} ")
- print("\n")
-# Function to check if the current player has won
-def check_win(board, player):
-    win_conditions = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Horizontal
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Vertical
-        [0, 4, 8], [2, 4, 6]  # Diagonal
-    ]
-
-    for condition in win_conditions:
-        if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
-            return True  # If a winning condition is met, return True
-
-    return False  # Return False only after checking all conditions
-
-
-# Function to check if the board is full
-def is_board_full(board):
- return " " not in board
-
-# Function to handle player's move
-def player_move(board, player):
- while True:
-    try:
-        move = int(input(f"Player {player}, choose your position (1-9): ")) - 1
-        if board[move] == " ":
-            board[move] = player
-            break
-        else:
-             print("That position is already taken. Try again.")
-    except (ValueError, IndexError):
-         print("Invalid move. Please choose a number between 1 and 9.")
-
-# Main function to play the game
-def play_game():
- board = [" "] * 9
- current_player = "X"
-
- print("Welcome to Tic-Tac-Toe!")
- print_board(board)
-
- while True:
-    player_move(board, current_player)
-    print_board(board)
-    if check_win(board, current_player):
-        print(f"Player {current_player} wins!")
-        break
-    elif is_board_full(board):
-        print("It's a tie!")
-        break
-
-# Function to check if the board is full
-def is_board_full(board):
- return " " not in board
-
-
-# Function to handle player's move
-def player_move(board, player):
- while True:
-    try:
-        move = int(input(f"Player {player}, choose your position (1-9): ")) - 1
-        if board[move] == " ":
-            board[move] = player
-            break
-        else:
-            print("That position is already taken. Try again.")
-    except (ValueError, IndexError):
-        print("Invalid move. Please choose a number between 1 and 9.")
-
-
-# Main function to play the game
-def play_game():
- board = [" "] * 9
- current_player = "X"
-
- print("Welcome to Tic-Tac-Toe!")
- print_board(board)
-
- while True:
-    player_move(board, current_player)
-    print_board(board)
-    if check_win(board, current_player):
-        print(f"Player {current_player} wins!")
-        break
-    elif is_board_full(board):
-        print("It's a tie!")
-        break
-    # Switch player
-    current_player = "O" if current_player == "X" else "X"
-
-# Start the game
-if __name__ == "__main__":
- play_game()`,
+            value: `theBoard = {
+      "7": " ",
+      "8": " ",
+      "9": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+      "1": " ",
+      "2": " ",
+      "3": " ",
+  }
+  
+  board_keys = []
+  
+  for key in theBoard:
+      board_keys.append(key)
+  
+  
+  
+  
+  def printBoard(board):
+      print(board["7"] + "|" + board["8"] + "|" + board["9"])
+      print("-+-+-")
+      print(board["4"] + "|" + board["5"] + "|" + board["6"])
+      print("-+-+-")
+      print(board["1"] + "|" + board["2"] + "|" + board["3"])
+  
+  
+  
+  def game():
+  
+      turn = "X"
+      count = 0
+  
+      for i in range(10):
+          printBoard(theBoard)
+          print("It's your turn," + turn + ".Move to which place?")
+  
+          move = input()
+  
+          if theBoard[move] == " ":
+              theBoard[move] = turn
+              count += 1
+          else:
+              print("That place is already filled.\\nMove to which place?")
+              continue
+  
+          
+          if count >= 5:
+              if theBoard["7"] == theBoard["8"] == theBoard["9"] != " ":
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif (
+                  theBoard["4"] == theBoard["5"] == theBoard["6"] != " "):  # across the middle
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif (
+                  theBoard["1"] == theBoard["2"] == theBoard["3"] != " "):  # across the bottom
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif (
+                  theBoard["1"] == theBoard["4"] == theBoard["7"] != " "):  # down the left side
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif (
+                  theBoard["2"] == theBoard["5"] == theBoard["8"] != " "):  # down the middle
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif (
+                  theBoard["3"] == theBoard["6"] == theBoard["9"] != " "):  # down the right side
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":  # diagonal
+                  printBoard(theBoard)
+                  print("\nGame Over.\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+              elif theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":  # diagonal
+                  printBoard(theBoard)
+                  print("\\nGame Over.\\n")
+                  print(" **** " + turn + " won. ****")
+                  break
+  
+          # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
+          if count == 9:
+              print("\\nGame Over.\\n")
+              print("It's a Tie!!")
+  
+          # Now we have to change the player after every move.
+          if turn == "X":
+              turn = "O"
+          else:
+              turn = "X"
+  
+      # Now we will ask if player wants to restart the game or not.
+      restart = input("Do want to play Again?(y/n)")
+      if restart == "y" or restart == "Y":
+          for key in board_keys:
+              theBoard[key] = " "
+  
+          game()
+  
+  
+  if _name_ == "_main_":
+      game()`,
           },
-          //           {
-          //             type: "code",
-          //             is_output: true,
-          //             value: `Welcome to Tic-Tac-Toe!
-
-          //    |   |
-          // ---+---+---
-          //    |   |
-          // ---+---+---
-          //    |   |
-
-          // Player X, choose your position (1-9): 1
-
-          //  X |   |
-          // ---+---+---
-          //    |   |
-          // ---+---+---
-          //    |   |
-
-          // Player O, choose your position (1-9): 3
-
-          //  X |   | O
-          // ---+---+---
-          //    |   |
-          // ---+---+---
-          //    |   |
-
-          // Player X, choose your position (1-9): 5
-
-          //  X |   | O
-          // ---+---+---
-          //    | X |
-          // ---+---+---
-          //    |   |
-
-          // Player O, choose your position (1-9): 6
-
-          //  X |   | O
-          // ---+---+---
-          //    | X | O
-          // ---+---+---
-          //    |   |
-
-          // Player X, choose your position (1-9): 9
-
-          //  X |   | O
-          // ---+---+---
-          //    | X | O
-          // ---+---+---
-          //    |   | X
-
-          // Player X wins!`,
-          //           },
         ],
       },
       {
@@ -184,32 +147,32 @@ if __name__ == "__main__":
             type: "code",
             fileName: "bfs.py",
             value: `graph = {
-    '5': ['3', '7'],
-    '3': ['2', '4'],
-    '7': ['8'],
-    '2': [],
-    '4': ['8'],
-    '8': []
-}
-
-visited = []
-queue = []
-
-def bfs(visited,graph,node):
-    visited.append(node)
-    queue.append(node)
-
-    while queue:
-        m = queue.pop(0)
-        print(m,end = " ")
-
-        for neighbour  in graph[m]:
-            if neighbour not in visited:
-                visited.append(neighbour)
-                queue.append(neighbour)
-
-print("BFS")
-bfs(visited,graph,'5')`,
+      '5': ['3', '7'],
+      '3': ['2', '4'],
+      '7': ['8'],
+      '2': [],
+      '4': ['8'],
+      '8': []
+  }
+  
+  visited = []
+  queue = []
+  
+  def bfs(visited,graph,node):
+      visited.append(node)
+      queue.append(node)
+  
+      while queue:
+          m = queue.pop(0)
+          print(m,end = " ")
+  
+          for neighbour  in graph[m]:
+              if neighbour not in visited:
+                  visited.append(neighbour)
+                  queue.append(neighbour)
+  
+  print("BFS")
+  bfs(visited,graph,'5')`,
           },
         ],
       },
@@ -225,54 +188,53 @@ bfs(visited,graph,'5')`,
             type: "code",
             fileName: "water-jug-problem.py",
             value: `a = int(input("Enter Jug A Capacity : "))
-b = int(input("Enter Jug B Capacity : "))
-ai = int(input("Initially Water in Jug A : "))
-bi = int(input("Initially Water in Jug B : "))
-af = int(input("Final State of Jug A : "))
-bf = int(input("Final State of Jug B : "))
-print("List of Operations you can do: \\n")
-print("1. Fill Jug A Completely")
-print("2. Fill Jug B Completely")
-print("3. Empty Jug A Completely")
-print("4. Empty Jug B Completely")
-print("5. Pour from Jug A till Jug B filled Completely or A become empty \\n")
-print("6. Pour from Jug B till Jug A filled Completely or B become empty \\n")
-print("7. Pour all Jug B till Jug A\\n")
-print("8. Pour all Jug A till Jug B\\n")
-
-while ((ai != af or bi != bf)):
-    op = int(input("Enter the operation: "))
-    if (op == 1):
-        ai = a
-    elif (op == 2):
-        bi = b
-    elif (op == 3):
-        ai = 0
-    elif (op == 4):
-        bi = 0
-    elif (op == 5):
-        if (b - bi > ai):
-            bi = ai + bi
-            ai = 0
-        else:
-            ai = ai - (b - bi)
-            bi = b
-    elif (op == 6):
-        if (a - ai > bi):
-            ai = ai + bi
-            bi = 0
-        else:
-            bi = bi - (a - ai)
-            ai = a
-    elif (op == 7):
-        ai = ai + bi
-        bi = 0
-
-    elif (op == 8):
-        bi = bi + ai
-        ai = 0
-    print(ai, bi)
-`,
+  b = int(input("Enter Jug B Capacity : "))
+  ai = int(input("Initially Water in Jug A : "))
+  bi = int(input("Initially Water in Jug B : "))
+  af = int(input("Final State of Jug A : "))
+  bf = int(input("Final State of Jug B : "))
+  print("List of Operations you can do: \n")
+  print("1. Fill Jug A Completely")
+  print("2. Fill Jug B Completely")
+  print("3. Empty Jug A Completely")
+  print("4. Empty Jug B Completely")
+  print("5. Pour from Jug A till Jug B filled Completely or A become empty \n")
+  print("6. Pour from Jug B till Jug A filled Completely or B become empty \n")
+  print("7. Pour all Jug B till Jug A\n")
+  print("8. Pour all Jug A till Jug B\n")
+  
+  while ((ai != af or bi != bf)):
+      op = int(input("Enter the operation: "))
+      if (op == 1):
+          ai = a
+      elif (op == 2):
+          bi = b
+      elif (op == 3):
+          ai = 0
+      elif (op == 4):
+          bi = 0
+      elif (op == 5):
+          if (b - bi > ai):
+              bi = ai + bi
+              ai = 0
+          else:
+              ai = ai - (b - bi)
+              bi = b
+      elif (op == 6):
+          if (a - ai > bi):
+              ai = ai + bi
+              bi = 0
+          else:
+              bi = bi - (a - ai)
+              ai = a
+      elif (op == 7):
+          ai = ai + bi
+          bi = 0
+  
+      elif (op == 8):
+          bi = bi + ai
+          ai = 0
+      print(ai, bi)`,
           },
         ],
       },
@@ -288,17 +250,16 @@ while ((ai != af or bi != bf)):
             type: "code",
             fileName: "tower-of-hanoi.py",
             value: `def tower_of_hanoi(n, A, B, C):
-    if (n == 1):
-        print(f"Move disc {n} from {A} to {C} ")
-        return
-
-    tower_of_hanoi(n - 1, A, C, B)
-    print(f"Move disc {n} from {A} to {C} ")
-    tower_of_hanoi(n - 1, B, A, C)
-
-
-tower_of_hanoi(3, 'Red', 'Green', "Blue")
-`,
+      if (n == 1):
+          print(f"Move disc {n} from {A} to {C} ")
+          return
+  
+      tower_of_hanoi(n - 1, A, C, B)
+      print(f"Move disc {n} from {A} to {C} ")
+      tower_of_hanoi(n - 1, B, A, C)
+  
+  
+  tower_of_hanoi(3, 'Red', 'Green', "Blue")`,
           },
         ],
       },
@@ -308,7 +269,6 @@ tower_of_hanoi(3, 'Red', 'Green', "Blue")
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
-    language: "java",
     practicals: [
       // Pra-1 jdbc-connectivity
       {
@@ -384,7 +344,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             int choice;
             do {
-                System.out.println("\\\n--- Student Information System ---");
+                System.out.println("\\n--- Student Information System ---");
                 System.out.println("1. Insert Student");
                 System.out.println("2. Update Student");
                 System.out.println("3. Delete Student");
@@ -496,7 +456,7 @@ public class Main {
             String sql = "SELECT * FROM student";
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(sql)) {
-                System.out.println("\\\n--- Student Records ---");
+                System.out.println("\\n--- Student Records ---");
                 while (resultSet.next()) {
                     int id = resultSet.getInt("student_id");
                     String name = resultSet.getString("name");
@@ -525,7 +485,6 @@ public class Main {
           {
             type: "code",
             fileName: "registration.html",
-            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -659,7 +618,6 @@ public class DisplayUsers extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
-            language: "html",
             value: `<!DOCTYPE html>
 <html>
 <body>
@@ -740,7 +698,6 @@ public class AuthenticateServlet extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
-            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -984,7 +941,6 @@ public class RedirectServlet extends HttpServlet {
           {
             type: "code",
             fileName: "redirectForm.jsp",
-            language: "html",
             value: `<!DOCTYPE html>
 <html>
   <head>
@@ -1021,7 +977,6 @@ public class RedirectServlet extends HttpServlet {
           {
             type: "code",
             fileName: "index.html",
-            language: "html",
             value: `<!DOCTYPE html>
 <html>
 <head>
@@ -1110,7 +1065,6 @@ public class NewServlet extends HttpServlet {
           {
             type: "code",
             fileName: "home.jsp",
-            language: "html",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -1140,7 +1094,6 @@ String un = (String)session.getAttribute("un");
           },
           {
             type: "code",
-            language: "html",
             fileName: "index.jsp",
             value: `<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
@@ -1171,7 +1124,6 @@ String un = (String)session.getAttribute("un");
           },
           {
             type: "code",
-            language: "html",
             fileName: "process.jsp",
             value: `<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
@@ -1242,7 +1194,6 @@ public class BankAccount implements Serializable {
           },
           {
             type: "code",
-            language: "html",
             fileName: "index.jsp",
             value: `<%@ taglib prefix="c" uri="/WEB-INF/tlds/sortNumbers.tld" %>
 <html>
@@ -1395,7 +1346,6 @@ public class UserCounterListener implements HttpSessionListener {
           },
           {
             type: "code",
-            language: "html",
             fileName: "error.jsp",
             value: `<html>
   <head>
@@ -1409,7 +1359,6 @@ public class UserCounterListener implements HttpSessionListener {
           },
           {
             type: "code",
-            language: "html",
             fileName: "index.jsp",
             value: `<%@ page import="jakarta.servlet.ServletContext" %> <% ServletContext context =
 request.getServletContext(); Integer activeUsers = (Integer)
@@ -1428,7 +1377,6 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           },
           {
             type: "code",
-            language: "html",
             fileName: "logout.jsp",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -1457,7 +1405,6 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   {
     subject_name: "Data Communication and Networking",
     key: "data-communication-and-networking",
-    language: "c",
     practicals: [
       // pra - 5 pipe
       {
@@ -1486,12 +1433,12 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           perror("pipe");
           exit(EXIT_FAILURE);
       }
-      printf("Writing message to pipe...\\n");
+      printf("Writing message to pipe...\n");
       write(pipefd[1], message, strlen(message) + 1);
   
-      printf("Reading message from pipe...\\n");
+      printf("Reading message from pipe...\n");
       read(pipefd[0], buffer, sizeof(buffer));
-      printf("Received message: %s\\n", buffer);
+      printf("Received message: %s\n", buffer);
       close(pipefd[0]);
       close(pipefd[1]);
       return 0;
@@ -1530,7 +1477,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       // Process each character until we hit null terminator
       for (int i = 0; text[i] != '\\0'; i++)
       {
-          if (text[i] == '\\\n')
+          if (text[i] == '\\n')
           {
               continue; // Skip newline character from fgets
           }
@@ -1557,13 +1504,13 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       }
   
       // Print results
-      printf("\\\nCharacter Analysis Results:\\\n");
-      printf("-------------------------\\\n");
-      printf("Total Characters: %d\\\n", char_count);
-      printf("Alphabets: %d\\\n", alphabets);
-      printf("Digits: %d\\\n", digits);
-      printf("Spaces: %d\\\n", spaces);
-      printf("Special Characters: %d\\\n", special_chars);
+      printf("\\nCharacter Analysis Results:\\n");
+      printf("-------------------------\\n");
+      printf("Total Characters: %d\\n", char_count);
+      printf("Alphabets: %d\\n", alphabets);
+      printf("Digits: %d\\n", digits);
+      printf("Spaces: %d\\n", spaces);
+      printf("Special Characters: %d\\n", special_chars);
   
       return 0;
   }`,
@@ -1604,7 +1551,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       scanf("%d", &num);
   
       int result = countSetBits(num);
-      printf("Number of set bits in %d: %d\\n", num, result);
+      printf("Number of set bits in %d: %d\n", num, result);
       return 0;
   }`,
           },
@@ -1633,7 +1580,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       int messageLength = strlen(message);
       int numFrames = (messageLength + frameLength - 1) / frameLength; // Calculate the number of frames needed
       int i, j;
-      printf("Frames:\\\n");
+      printf("Frames:\\n");
   
       for (i = 0; i < numFrames; i++)
       {
@@ -1642,7 +1589,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           {
               printf("%c", message[i * frameLength + j]);
           }
-          printf("\\\n");
+          printf("\\n");
       }
   }
   int main()
@@ -1653,7 +1600,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       printf("Enter the message: ");
       fgets(message, sizeof(message), stdin);
   
-      message[strcspn(message, "\\\n")] = '\\0'; // Remove trailing newline
+      message[strcspn(message, "\\n")] = '\\0'; // Remove trailing newline
   
       printf("Enter the frame length: ");
       scanf("%d", &frameLength);
@@ -1668,3 +1615,26 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
     ],
   },
 ];
+
+// Example Empty box
+// {
+//     key: "crud-operations",
+//     name: "Practical - 2: JDBC Connectivity & Crud Operations ",
+//     pageBlocks: [
+//       {
+//         type: "heading",
+//         value: "Practical 2- JDBC Connectivity & Crud Operations",
+//       },
+//       {
+//         type: "code",
+//         fileName: "main.java",
+//         value: ``,
+//       },
+//     ],
+//   },
+
+//   {
+//     type: "code",
+//     fileName: "registration.html",
+//     value: ``,
+//   },
