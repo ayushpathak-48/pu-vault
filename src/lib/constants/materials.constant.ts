@@ -456,6 +456,11 @@ export const specializationMaterials = [
         title: "Practical 4",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-4.pdf`,
       },
+       {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-5.pdf`,
+      },
     ],
     output_links: [
       {
