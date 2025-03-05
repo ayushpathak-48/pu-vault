@@ -17,7 +17,7 @@ export const Navbar = () => {
   );
 
   useLayoutEffect(() => {
-    if (pathname.includes("/code/")) {
+    if (pathname.includes("/code")) {
       setActivePageTitle("Source Codes");
     } else {
       setActivePageTitle(

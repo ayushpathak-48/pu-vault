@@ -6,6 +6,7 @@ import {
   HouseIcon,
   SettingsIcon,
   Building,
+  SquareDashedBottomCode,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -18,6 +19,12 @@ export const navLinks = [
     title: "Home",
     href: "/",
     icon: HouseIcon,
+  },
+  {
+    id: 2,
+    title: "Source Codes",
+    href: "/code",
+    icon: SquareDashedBottomCode,
   },
   {
     id: 3,

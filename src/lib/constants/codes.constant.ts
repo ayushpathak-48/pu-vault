@@ -3,6 +3,7 @@ export const practicalCodes = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
+    specialization: "ai",
     language: "python",
     practicals: [
       {
@@ -1586,11 +1587,11 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       // pra - 5 pipe
       {
         key: "pipe",
-        name: `Practical - 5: A program to create a pipe and ssend ""Hello"" message.`,
+        name: `Practical - 5: A program to create a pipe and send ""Hello"" message.`,
         pageBlocks: [
           {
             type: "heading",
-            value: `Practical 5- A program to create a pipe and ssend ""Hello"" message.`,
+            value: `Practical 5- A program to create a pipe and send ""Hello"" message.`,
           },
           {
             type: "code",
