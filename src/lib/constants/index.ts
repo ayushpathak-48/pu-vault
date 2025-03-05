@@ -82,12 +82,12 @@ export const softwareLinks = [
   {
     id: 3,
     title: "Netbeans",
-    link: "https://dlcdn.apache.org/netbeans/netbeans-installers/24/Apache-NetBeans-24-bin-windows-x64.exe",
+    link: "https://www.apache.org/dyn/closer.lua/netbeans/netbeans-installers/25/Apache-NetBeans-25-bin-windows-x64.exe",
   },
   {
     id: 4,
     title: "TomCat Server",
-    link: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.98/bin/apache-tomcat-9.0.98.exe",
+    link: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.100/bin/apache-tomcat-9.0.100.exe",
   },
   {
     id: 5,
