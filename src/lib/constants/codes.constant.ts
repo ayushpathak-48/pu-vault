@@ -1621,6 +1621,14 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       return 0;
   }`,
           },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Writing message to pipe...
+Reading message from pipe...
+Received message: Hello`,
+          },
         ],
       },
       //    pra - 6
@@ -1692,6 +1700,20 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       return 0;
   }`,
           },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter text to analyze: Hello From Pu-Vault !!!
+
+Character Analysis Results:
+-------------------------
+Total Characters: 23
+Alphabets: 16
+Digits: 0
+Spaces: 3
+Special Characters: 4`,
+          },
         ],
       },
       //   pra -7 bit-count
@@ -1731,6 +1753,13 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
       printf("Number of set bits in %d: %d\\n", num, result);
       return 0;
   }`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter an integer: 1200
+Number of set bits in 1200: 4`,
           },
         ],
       },
@@ -1786,6 +1815,19 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
   
       return 0;
   }`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter the message: Hello From PU-Vault
+Enter the frame length: 4
+Frames:
+Frame 1: Hell
+Frame 2: o Fr
+Frame 3: om P
+Frame 4: U-Va
+Frame 5: ult`,
           },
         ],
       },
