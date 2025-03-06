@@ -1,4 +1,5 @@
 "use client";
+
 import { practicalCodes } from "@/lib/constants/codes.constant";
 import { useDataStore } from "@/stores/data.store";
 import { ArrowRight } from "lucide-react";

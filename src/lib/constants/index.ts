@@ -59,12 +59,12 @@ export const navLinks = [
     hideOnMobile: true,
     icon: Calculator,
   },
-  {
-    id: 8,
-    title: "Settings",
-    href: "/settings",
-    icon: SettingsIcon,
-  },
+  // {
+  //   id: 8,
+  //   title: "Settings",
+  //   href: "/settings",
+  //   icon: SettingsIcon,
+  // },
 ];
 
 export const streams = [
