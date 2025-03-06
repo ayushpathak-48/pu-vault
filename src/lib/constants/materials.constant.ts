@@ -426,6 +426,11 @@ export const specializationMaterials = [
       },
       {
         id: 5,
+        title: "Unit-9: Machine Learning",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/9-machine-learning.pdf`,
+      },
+      {
+        id: 6,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
       },
@@ -456,7 +461,7 @@ export const specializationMaterials = [
         title: "Practical 4",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-4.pdf`,
       },
-       {
+      {
         id: 5,
         title: "Practical 5",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-5.pdf`,
