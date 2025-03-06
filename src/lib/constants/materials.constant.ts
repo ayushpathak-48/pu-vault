@@ -283,6 +283,21 @@ export const materials = [
         title: "Practical 8",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-8.pdf`,
       },
+      {
+        id: 9,
+        title: "Practical 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-9.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 10",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-10.pdf`,
+      },
+      {
+        id: 11,
+        title: "Practical 11",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-11.pdf`,
+      },
     ],
     output_links: [
       {
@@ -609,6 +624,11 @@ export const specializationMaterials = [
         title: "Unit-2: Java Conversion",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/2-java-conversion.pdf`,
       },
+      {
+        id: 3,
+        title: "Unit-3: Introdution to JSON",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/3-introduction-to-json.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -659,23 +679,23 @@ export const specializationMaterials = [
     practicals_link: [
       {
         id: 0,
-        title: "ADB Commands",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/adb-commands.pdf`,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-1.pdf`,
       },
       {
         id: 1,
-        title: "Ethical hacking commands in windows ",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/ehitcal-hacking-commands-in-windows.pdf`,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-2.pdf`,
       },
       {
         id: 2,
-        title: "Hashing and cryptography manual ",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/hashing-and-cryptography-manual.pdf`,
+        title: "Practical 3 ",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-3.pdf`,
       },
       {
         id: 3,
-        title: "John the Ripper tool manual",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/john-the-ripper-tool-manual.pdf`,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-4.pdf`,
       },
       // {
       //   id: 1,
@@ -718,11 +738,31 @@ export const specializationMaterials = [
       //   title: "Index",
       //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/index.pdf`,
       // },
-      // {
-      //   id: 1,
-      //   title: "Practical 1",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Practical 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-5.pdf`,
+      },
     ],
   },
 ];
