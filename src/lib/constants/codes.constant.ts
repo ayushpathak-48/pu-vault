@@ -2032,6 +2032,463 @@ int main() {
       },
     ],
   },
+  // FSW
+  {
+    subject_name: "Full Stack Web Development",
+    key: "fswd",
+    language: "java",
+    practicals: [
+      // pra - 1 date-time
+      {
+        key: "date-time",
+        name: `Practical - 1: Date & Time`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 1: Date & Time`,
+          },
+          {
+            type: "code",
+            fileName: "Clock.java",
+            value: `
+  // Clock Class Example - Creating an Instance of Clock
+
+import java.time.Clock;
+
+public class Clock {
+    // Main method
+    public static void main(String[] args) {
+        // Creating a Clock instance using systemUTC() method
+        Clock clock = Clock.systemUTC();
+        // Getting the current instant defined by clock
+        System.out.println("UTC time = " + clock.instant());
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Clock1.java",
+            value: `
+ // Clock Class Example - Using systemDefaultZone() Method
+
+import java.time.Clock;
+
+public class Clock1 {
+    // Main method
+    public static void main(String[] args) {
+        // Creating a Clock instance using systemDefaultZone() method
+        Clock clock = Clock.systemDefaultZone();
+
+        // Printing system clock details
+        System.out.println(clock);
+
+        // Printing the time zone of the clock instance
+        System.out.println("Time Zone : " + clock.getZone());
+    }
+}`,
+          },
+          // Date Time Formater
+          {
+            type: "code",
+            fileName: "DateAndTimeFormatter.java",
+            value: `import java.time.LocalDateTime; // Import the LocalDateTime class
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+
+public class DateAndTimeFormatter {
+    public static void main(String[] args) {
+        LocalDateTime myDateObj = LocalDateTime.now();
+        System.out.println("Before formatting: " + myDateObj);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+        String formattedDate = myDateObj.format(myFormatObj);
+        System.out.println("After formatting: " + formattedDate);
+    }
+}
+`,
+          },
+          // Local Time
+          {
+            type: "code",
+            fileName: "LocalDateAndTime.java",
+            value: `import java.time.LocalDateTime; // import the LocalDateTime class
+
+public class LocalDateAndTime {
+    public static void main(String[] args) {
+        LocalDateTime myObj = LocalDateTime.now();
+        System.out.println(myObj);
+    }
+}
+`,
+          },
+          // Local Date
+          {
+            type: "code",
+            fileName: "Date.java",
+            value: `
+// LocalDate example
+import java.time.LocalDate; // import the LocalDate class
+
+public class Date {
+    public static void main(String[] args) {
+        LocalDate myObj = LocalDate.now(); // Create a date object
+        System.out.println(myObj); // Display the current date
+    }
+}
+`,
+          },
+          {
+            type: "code",
+            fileName: "Date1.java",
+            value: `import java.time.LocalDate;
+
+public class Date1 {
+    public static void main(String[] args) {
+        // Using now() to get the current date
+        LocalDate currentDate = LocalDate.now();
+        // Printing the current date
+        System.out.println("Current Date: " + currentDate);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Date2.java",
+            value: `import java.time.LocalDate;
+
+public class Date2 {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        LocalDate yesterday = date.minusDays(1);
+        LocalDate tomorrow = yesterday.plusDays(2);
+        System.out.println("Today date: " + date);
+        System.out.println("Yesterday date: " + yesterday);
+        System.out.println("Tomorrow date: " + tomorrow);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Date3.java",
+            value: `import java.time.LocalDate;
+
+public class Date3 {
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2017, 1, 13);
+        System.out.println(date1.isLeapYear()); // Checking leap year for 2017
+
+        LocalDate date2 = LocalDate.of(2016, 9, 23);
+        System.out.println(date2.isLeapYear()); // Checking leap year for 2016
+    }
+}`,
+          },
+
+          //  Month Day
+          {
+            type: "code",
+            fileName: "Month.java",
+            value: `// MonthDay Class Example - Creating an Instance of MonthDay
+
+import java.time.Month;
+import java.time.MonthDay;
+
+public class Example {
+    // Main driver method
+    public static void main(String[] args) {
+        // Creating an object of MonthDay class
+        MonthDay monthday = MonthDay.of(Month.MARCH, 14);
+        // Print and display the value stored
+        System.out.println(monthday);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Month1.java",
+            value: `// MonthDay Class Example - Parsing a MonthDay from Text
+
+import java.time.MonthDay;
+
+public class Month1 {
+    // Main driver method
+    public static void main(String[] args) {
+        // Store an instance of MonthDay from text --03-14
+        MonthDay monthday = MonthDay.parse("--03-14");
+
+        // Display the month using the instance of class
+        System.out.println(monthday.getMonth());
+    }
+}`,
+          },
+
+          // Offset Time
+          {
+            type: "code",
+            fileName: "OffSetTime1.java",
+            value: `// OffsetTime Class Example - Using now() Method
+
+import java.time.OffsetTime;
+import java.time.temporal.ChronoField;
+
+public class OffSetTime1 {
+
+    // Main driver method
+    public static void main(String[] args) {
+        // Creating an object of OffsetTime class
+        OffsetTime offset = OffsetTime.now();
+
+        int h = offset.get(ChronoField.HOUR_OF_DAY); // Get hour of day
+        System.out.println(h);
+
+        int m = offset.get(ChronoField.MINUTE_OF_DAY); // Get minute of day
+        System.out.println(m);
+
+        int s = offset.get(ChronoField.SECOND_OF_DAY); // Get second of day
+        System.out.println(s);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "OffSetTime2.java",
+            value: `// OffsetTime Class Example - Using getHour() Method
+
+import java.time.OffsetTime;
+
+public class OffSetTime2 {
+    public static void main(String[] args) {
+        // Creating an instance of OffsetTime class
+        OffsetTime offset = OffsetTime.now();
+        // Getting the hour of the day field
+        int h = offset.getHour();
+        // Print and display the hours
+        System.out.println(h + " hours");
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "OffSetTime3.java",
+            value: `// OffsetDateTime Class Example - Using format() Method
+
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class OffSetTime3 {
+    public static void main(String[] args) {
+        // Parse the date1
+        OffsetDateTime date1 = OffsetDateTime.parse("2018-12-12T13:30:30+05:00");
+
+        System.out.println("Date1: " + date1);
+
+        // Using ISO_TIME formatter
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_TIME;
+        System.out.println(formatter.format(date1));
+    }
+}`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `
+Clock ->                 UTC time = 2025-03-06T17:02:17.199659857Z
+
+Clock1 ->                SystemClock[GMT]
+                         Time Zone : GMT
+
+DateAndTimeFormatter ->  Before formatting: 2025-03-06T17:19:45.072476315
+                         After formatting: 06-03-2025 17:19:45
+                         
+LocalDateAndTime ->      2025-03-06T17:22:55.041050549
+
+Date ->                  2025-03-06
+
+Date1 ->                 Current Date: 2025-03-06
+
+Date2 ->                 Today date: 2025-03-06
+                         Yesterday date: 2025-03-05
+                         Tomorrow date: 2025-03-07
+
+Date3 ->                 false
+                         true
+
+Month ->                 --03-14
+
+Month1 ->                MARCH
+
+OffSetTime1 ->           17
+                         1063
+                         63783
+
+OffSetTime2 ->           17 hours
+
+OffSetTime3 ->           Date1: 2018-12-12T13:30:30+05:00
+                         13:30:30+05:00
+`,
+          },
+        ],
+      },
+      // Practical -2
+      {
+        key: "type-conversion",
+        name: `Practical - 2: Conversion`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 2: Conversion`,
+          },
+          {
+            type: "code",
+            fileName: "BinarytoDecimal.java",
+            value: `
+ public class BinarytoDecimal {
+    public static void main(String[] args) {
+        String binary = "1010";
+        int decimal = Integer.parseInt(binary, 2);
+        System.out.println("Binary to Decimal: " + decimal);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "BooleantoString.java",
+            value: `
+public class BooleantoString {
+    public static void main(String[] args) {
+        boolean boolValue = true;
+        String booleanToString = String.valueOf(boolValue);
+        System.out.println("Boolean to String: " + booleanToString);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "ChartoInt.java",
+            value: `
+public class ChartoInt {
+    public static void main(String args[]) {
+        char ch = 'A';
+        int charToInt = (int) ch;
+
+        System.out.println("Input Character: " + ch);
+        System.out.println("Converted Integer: " + charToInt);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "DatetoString.java",
+            value: `
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DatetoString {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateStr = formatter.format(date);
+
+        System.out.println("Input Date: " + date);
+        System.out.println("Formatted Date String: " + dateStr);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "DatetoTimeStamp.java",
+            value: `
+import java.util.Date;
+
+public class DatetoTimeStamp {
+    public static void main(String[] args) {
+        Date date = new Date();
+        long timestamp = date.getTime();
+        System.out.println("Date to Timestamp: " + timestamp);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "DecimaltoBinary.java",
+            value: `
+public class DecimaltoBinary {
+    public static void main(String[] args) {
+        int decimal = 10;
+        // Decimal to Binary
+        String binary = Integer.toBinaryString(decimal);
+        System.out.println("Decimal to binary : " + binary);
+        // decimal to Octal
+        String octal = Integer.toOctalString(decimal);
+        System.out.println("decimal to octal: " + octal);
+        //  decimal to hex
+         String hex = Integer.toHexString(decimal);
+        System.out.println("Decimal to hex : " + hex);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "DoubletoInt.java",
+            value: `
+public class DoubletoInt {
+    public static void main(String args[]) {
+        double dbl = 45.67;
+        int num = (int) dbl;
+
+        System.out.println("Input Double: " + dbl);
+        System.out.println("Converted Integer: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "DoubletoString.java",
+            value: `
+class DobletoString {
+    public static void main(String[] args) {
+        double num = 78.9;
+        String str = Double.toString(num);
+
+        System.out.println("Input Double: " + num);
+        System.out.println("Converted String: " + str);
+    }
+}`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `
+BinarytoDecimal       ->  Binary to Decimal: 10
+
+BooleantoString       ->  Boolean to String: true
+
+ChartoInt             ->  Input Character: A
+                          Converted Integer: 65
+
+DatetoString          ->  Input Date: Thu Mar 06 17:56:37 GMT 2025
+                          Formatted Date String: 2025-03-06
+
+DatetoTimeStamp       ->  Date to Timestamp: 1741283903865
+
+DecimaltoBinary       ->  Decimal to binary : 1010
+
+DecimaltoOctal        ->  decimal to octal: 12
+
+DecimaltoHex          ->  Decimal to hex : a
+
+DoubletoInt           ->  Input Double: 45.67  Converted Int: 45.67
+
+DobletoString         ->  Input Double: 78.9  Converted String: 78.9`,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 // Example Empty box

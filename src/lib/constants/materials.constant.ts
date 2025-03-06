@@ -612,6 +612,7 @@ export const specializationMaterials = [
     id: 3,
     subject_name: "Full Stack Web Developer",
     value: "fswd",
+    key: "fswd",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/fullstack-web-developer.pdf`,
     notes_link: [
       {
