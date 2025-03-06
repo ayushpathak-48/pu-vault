@@ -113,6 +113,11 @@ export const materials = [
         title: "Unit- 3: Viewing and Clipping",
         href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/3.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit- 5: 2D and 3D Animation tools - Flash 1",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/5.pdf`,
+      },
     ],
     practicals_link: [
       {
