@@ -1068,7 +1068,6 @@ public class examResult extends HttpServlet {
             value: `import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;
-import java.util.regex.*;
 
 public class RedirectServlet extends HttpServlet {
 
@@ -1092,25 +1091,7 @@ public class RedirectServlet extends HttpServlet {
             throws ServletException, IOException {
         // Retrieve the URL entered by the user
         String location = request.getParameter("location");
-
-        // Validate if the URL is empty or not
-        if (location == null || location.isEmpty()) {
-            response.getWriter().println("URL cannot be empty!");
-            return;
-        }
-
-        // Basic URL validation using regex (ensure it starts with http:// or https://)
-        String regex = "^(https?|ftp)://.*$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(location);
-
-        if (matcher.matches()) {
-            // If the URL is valid, perform the redirection
-            response.sendRedirect(location);
-        } else {
-            // If the URL is invalid, show an error message
-            response.getWriter().println("Invalid URL! Please enter a valid URL starting with http:// or https://");
-        }
+        response.sendRedirect("https://www.google.com/search?q=" + location);
     }
 }`,
           },
