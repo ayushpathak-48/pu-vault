@@ -1833,6 +1833,203 @@ Frame 5: ult`,
           },
         ],
       },
+      // pra - 9 byte-stuffing
+      {
+        key: "byte-stuffing",
+        name: "Practical - 9: Byte Stuffing ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 9 - Byte Stuffing",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char frame[50][50], str[50][50];
+    char flag[10];
+    strcpy(flag, "flag");
+    char esc[10];
+    strcpy(esc, "esc");
+    int i, k = 0, n;
+    strcpy(frame[k++], flag);
+    printf("Enter length of String : \\n");
+    scanf("%d", &n);
+    printf("Enter the String: ");
+    getchar(); // to clear the buffer
+    for (i = 0; i < n; i++) {
+        fgets(str[i], sizeof(str[i]), stdin);
+        str[i][strcspn(str[i], "\\n")] = '\\0'; // remove newline character
+    }
+    printf("\\nYou entered :\\n");
+    for (i = 0; i < n; i++) {
+        puts(str[i]);
+    }
+    printf("\\n");
+    for (i = 0; i < n; i++) {
+        if (strcmp(str[i], flag) != 0 && strcmp(str[i], esc) != 0) {
+            strcpy(frame[k++], str[i]);
+        } else {
+            strcpy(frame[k++], esc);
+            strcpy(frame[k++], str[i]);
+        }
+    }
+    strcpy(frame[k++], flag);
+    printf("------------------------------\\n\\n");
+    printf("Byte stuffing at sender side:\\n\\n");
+    printf("------------------------------\\n\\n");
+    for (i = 0; i < k; i++) {
+        printf("%s\\t", frame[i]);
+    }
+    return 0;
+}
+`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter length of String : 
+3
+Enter the String: Hello
+From
+Pu-vault
+
+You entered :
+Hello
+From
+Pu-vault
+
+------------------------------
+
+Byte stuffing at sender side:
+
+------------------------------
+
+flag	Hello	From	Pu-vault	flag`,
+          },
+        ],
+      },
+      //  pra - 10 bit-stuffing
+      {
+        key: "bit-stuffing",
+        name: "Practical - 10: Bit Stuffing ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 10 - Bit Stuffing",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+    char data[100], stuffedData[200];
+    int i, count = 0, j = 0;
+    
+    printf("Enter the data: ");
+    scanf("%s", data);
+    
+    for(i = 0; i < strlen(data); i++) {
+        if(data[i] == '1') {
+            count++;
+            stuffedData[j++] = data[i];
+        } else {
+            count = 0;
+            stuffedData[j++] = data[i];
+        }
+        
+        if(count == 5) {
+            count = 0;
+            stuffedData[j++] = '0';
+        }
+    }
+    
+    stuffedData[j] = '\\0';
+    
+    printf("Data after bit stuffing: %s\\n", stuffedData);
+    
+    return 0;
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter the data: 11111110111111111
+Data after bit stuffing: 1111101101111101111`,
+          },
+        ],
+      },
+      // pra - 11 error-detection-lrc-and-checksum
+      {
+        key: "error-detection-lrc-and-checksum",
+        name: "Practical - 11: Error Detection: LRC and Checksum ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 11 - Error Detection: LRC and Checksum",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+
+// Function to calculate LRC
+unsigned char calculateLRC(unsigned char *data, int length) {
+    unsigned char lrc = 0;
+    for (int i = 0; i < length; i++) {
+        lrc += data[i];
+    }
+    // Take the one's complement of the sum
+    lrc = (~lrc) + 1;
+    return lrc;
+}
+
+// Function to print a byte in binary format
+void printBinary(unsigned char byte) {
+    for (int i = 7; i >= 0; i--) {
+        printf("%d", (byte >> i) & 1);
+    }
+}
+
+int main() {
+    // Example data to be sent (replace this with your actual data)
+    unsigned char dataToSend[] = {0x41, 0x42, 0x43, 0x44}; // "ABCD" in ASCII
+    int dataLength = sizeof(dataToSend) / sizeof(dataToSend[0]);
+
+    // Calculate LRC for the data
+    unsigned char lrc = calculateLRC(dataToSend, dataLength);
+
+    // Append LRC to the data
+    dataToSend[dataLength] = lrc;
+
+    // Display the data with appended LRC in binary format
+    printf("Data with appended LRC (in binary):\\n");
+    for (int i = 0; i < dataLength + 1; i++) {
+        printBinary(dataToSend[i]);
+        printf(" ");
+    }
+    printf("\\n");
+
+    return 0;
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Data with appended LRC (in binary):
+01000001 01000010 01000011 01000100 11110110 `,
+          },
+        ],
+      },
     ],
   },
 ];
