@@ -1116,6 +1116,7 @@ public class RedirectServlet extends HttpServlet {
           },
           {
             type: "code",
+            language: "html",
             fileName: "redirectForm.jsp",
             value: `<!DOCTYPE html>
 <html>
@@ -1242,6 +1243,7 @@ public class NewServlet extends HttpServlet {
           {
             type: "code",
             fileName: "home.jsp",
+            language: "html",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -1272,6 +1274,7 @@ String un = (String)session.getAttribute("un");
           {
             type: "code",
             fileName: "index.jsp",
+            language: "html",
             value: `<%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
 <jsp:setProperty name="account" property="accountHolder" param="name" />
@@ -1302,6 +1305,7 @@ String un = (String)session.getAttribute("un");
           {
             type: "code",
             fileName: "process.jsp",
+            language: "html",
             value: `
 <%@ page language="java" import="beans.BankAccount" %>
 <jsp:useBean id="account" class="beans.BankAccount" scope="session" />
@@ -1384,6 +1388,7 @@ public class BankAccount implements Serializable {
           {
             type: "code",
             fileName: "index.jsp",
+            language: "html",
             value: `<%@ taglib prefix="c" uri="/WEB-INF/tlds/sortNumbers.tld" %>
 <html>
   <head>
@@ -1536,6 +1541,7 @@ public class UserCounterListener implements HttpSessionListener {
           {
             type: "code",
             fileName: "error.jsp",
+            language: "html",
             value: `<html>
   <head>
     <title>Access Denied</title>
@@ -1549,6 +1555,7 @@ public class UserCounterListener implements HttpSessionListener {
           {
             type: "code",
             fileName: "index.jsp",
+            language: "html",
             value: `<%@ page import="jakarta.servlet.ServletContext" %> <% ServletContext context =
 request.getServletContext(); Integer activeUsers = (Integer)
 context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
@@ -1567,6 +1574,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           {
             type: "code",
             fileName: "logout.jsp",
+            language: "html",
             value: `<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
