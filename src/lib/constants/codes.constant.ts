@@ -2036,6 +2036,7 @@ int main() {
   {
     subject_name: "Full Stack Web Development",
     key: "fswd",
+    specialization: "fswd",
     language: "java",
     practicals: [
       // pra - 1 date-time
