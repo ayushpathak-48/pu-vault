@@ -2457,6 +2457,250 @@ class DobletoString {
     }
 }`,
           },
+          {
+            type: "code",
+            fileName: "HextoDecimal.java",
+            value: `
+public class HextoDecimal {
+    public static void main(String[] args) {
+        String hex = "A";
+        int decimal = Integer.parseInt(hex, 16);
+        System.out.println("Hex to decimal : " + decimal);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoChar.java",
+            value: `
+class InttoChar {
+    public static void main(String[] args) {
+        int num = 65;
+        char intToChar = (char) num;
+        System.out.println("Int to Char: " + intToChar);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoDouble.java",
+            value: `
+public class InttoDouble {
+    public static void main(String args[]) {
+        int num = 25;
+        double dbl = num;
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Converted Double: " + dbl);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoLong.java",
+            value: `
+public class InttoLong {
+    public static void main(String args[]) {
+        int num = 42;
+        long lng = num;
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Converted Long: " + lng);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoString.java",
+            value: `
+class InttoString {
+    public static void main(String[] args) {
+        int num = 456;
+        String str1 = String.valueOf(num);
+        String str2 = Integer.toString(num);
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Using String.valueOf: " + str1);
+        System.out.println("Using toString: " + str2);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "LongtoInt.java",
+            value: `
+public class LongtoInt {
+    public static void main(String args[]) {
+        long lng = 123456L;
+        int num = (int) lng;
+
+        System.out.println("Input Long: " + lng);
+        System.out.println("Converted Integer: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "LongtoString.java",
+            value: `
+class LongtoString {
+    public static void main(String[] args) {
+        long num = 9876543210L;
+        String str = Long.toString(num);
+
+        System.out.println("Input Long: " + num);
+        System.out.println("Converted String: " + str);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "ObjecttoString.java",
+            value: `
+public class ObjecttoString {
+    public static void main(String args[]) {
+        Object obj = "Welcome to Java!";
+        String str = obj.toString();
+
+        System.out.println("Input Object: " + obj);
+        System.out.println("Converted String: " + str);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "OctaltoDecimal.java",
+            value: `
+public class OctaltoDecimal {
+    public static void main(String[] args) {
+        String octal = "12";
+        int decimal = -Integer.parseInt(octal, 8);
+        System.out.println("Octal to decimal : " + decimal);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoBoolean.java",
+            value: `
+public class Main {
+    public static void main(String[] args) {
+        String str = "true";
+        boolean stringToBoolean = Boolean.parseBoolean(str);
+        System.out.println("String to Boolean: " + stringToBoolean);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoCharacter.java",
+            value: `
+public class StringtoCharacter {
+    public static void main(String[] args) {
+        String str = "A";
+        if (str.length() == 1) {
+            char ch = str.charAt(0);
+            System.out.println("input String :" + str);
+            System.out.println("converted Character :" + ch);
+        } else {
+            System.out.println("input is not a Single character String");
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoDate.java",
+            value: `
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+class StringtoDate {
+    public static void main(String args[]) {
+        String dateStr = "2025-01-17";
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            formatter.setLenient(false);
+            Date date = formatter.parse(dateStr);
+            System.out.println("Input String: " + dateStr);
+            System.out.println("Converted Date: " + date);
+        } catch (Exception e) {
+            System.out.println("Invalid date format: " + e);
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoDouble.java",
+            value: `
+class StringtoDouble {
+    public static void main(String[] args) {
+        String str = "45.67";
+        double num = Double.parseDouble(str);
+
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Double: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoInteger.java",
+            value: `
+public class StringtoInteger {
+    public static void main(String args[]) {
+        String str = "123";
+        int num1 = Integer.parseInt(str);
+        int num2 = Integer.valueOf(str);
+
+        System.out.println("Input string: " + str);
+        System.out.println("Using parseInt: " + num1);
+        System.out.println("Using valueOf: " + num2);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoLong.java",
+            value: `
+class StringtoLong {
+    public static void main(String[] args) {
+        String str = "9876543210";
+        long num = Long.parseLong(str);
+
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Long: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoObject.java",
+            value: `
+public class StringtoObject {
+    public static void main(String args[]) {
+        String str = "Hello World";
+        Object obj = str;
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Object: " + obj);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "TimestamptoDate.java",
+            value: `
+import java.util.Date;
+
+public class TimestamptoDate {
+    public static void main(String[] args) {
+        long timestamp = 1704068492345L;
+        Date date = new Date(timestamp);
+        System.out.println("Timestamp to Date: " + date);
+    }
+}`,
+          },
 
           // Outputs
           {
@@ -2484,7 +2728,41 @@ DecimaltoHex          ->  Decimal to hex : a
 
 DoubletoInt           ->  Input Double: 45.67  Converted Int: 45.67
 
-DobletoString         ->  Input Double: 78.9  Converted String: 78.9`,
+DobletoString         ->  Input Double: 78.9  Converted String: 78.9
+
+HextoDecimal          ->  Hex to decimal : 10
+
+InttoChar             ->  Int to Char: A
+
+InttoDouble           ->  Input Integer: 25       Converted Double: 25.0
+
+InttoLong             ->  Input Integer: 42       Converted Double: 42
+
+InttoString           ->  Input Integer: 456      Using String.valueOf: 456  Using toString: 456
+
+LongtoInt             ->  Input Long: 123456      Converted Integer: 123456
+
+LongtoString          ->  Input Long: 9876543210  Converted String: 9876543210
+
+ObjecttoString        ->  Input Object: Welcome to Java!   Converted String: Welcome to Java!
+
+OctaltoDecimal        ->  Input Object: Welcome to Java!   Converted String: Welcome to Java!
+
+StringtoBoolean       ->  String to Boolean: true
+
+StringtoCharacter     ->  input String : A   converted Character : A
+
+StringtoDate          ->  Input String: 2025-01-17   Converted Date: Fri Jan 17 00:00:00 GMT 2025
+
+StringtoDouble        ->  Input String: 45.67   Converted Double: 45.67
+
+StringtoInteger       ->  Input string: 123  Using parseInt: 123  Using valueOf: 123
+
+StringtoLong          ->  Input String: 9876543210   Converted Long: 9876543210
+
+StringtoObject        ->  Input String: Hello World  Converted Object: Hello World
+
+TimestamptoDate       ->  Timestamp to Date: Mon Jan 01 00:21:32 GMT 2024`,
           },
         ],
       },

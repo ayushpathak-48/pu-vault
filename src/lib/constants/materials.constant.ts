@@ -685,7 +685,7 @@ export const specializationMaterials = [
       },
       {
         id: 1,
-        title: "Practical 1",
+        title: "Practical 2",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-2.pdf`,
       },
       {
