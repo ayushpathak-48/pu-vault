@@ -312,6 +312,44 @@ export const materials = [
       },
     ],
   },
+  //  English and Mathematical Apptitude
+  {
+    id: 6,
+    subject_name: "English and Mathematical Aptitude",
+    key: "english-and-mathematical-aptitude",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/english-and-mathematical-aptitude.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Ratio and Proportion",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/ratio-proportion.pdf`,
+      },
+      {
+        id: 2,
+        title: "Time and work",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/time-and-work.pdf`,
+      },
+      {
+        id: 3,
+        title: "Time, speed and distance",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/time-speed-distance.pdf`,
+      },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/index.pdf`,
+      // },
+    ],
+    output_links: [
+      // {
+      //   id: 0,
+      //   title: "Outputs",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
+      // },
+    ],
+  },
   // CA
   {
     id: 4,
