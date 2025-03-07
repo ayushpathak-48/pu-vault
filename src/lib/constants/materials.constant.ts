@@ -505,6 +505,7 @@ export const specializationMaterials = [
     id: 2,
     subject_name: "Big Data Analytics",
     value: "bda",
+    key: "big-data-analysis",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/big-data-analytics.pdf`,
     notes_link: [
       {
