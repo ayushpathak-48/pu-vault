@@ -674,6 +674,21 @@ export const specializationMaterials = [
         title: "Unit-3: Introdution to JSON",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/3-introduction-to-json.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Bootstrap",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/4-bootstrap.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Bootstrap Utilities",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/5-bootstrap-utilities.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Selenium",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/6-selenium.pdf`,
+      },
     ],
     practicals_link: [
       {
