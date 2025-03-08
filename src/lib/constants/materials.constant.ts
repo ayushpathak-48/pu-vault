@@ -735,6 +735,11 @@ export const specializationMaterials = [
         title: "Unit-3: Operating System Security ",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/3-operating-system-security.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-4: Wireless Network Security ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/4-wireless-network-security.pdf`,
+      },
     ],
     practicals_link: [
       {
