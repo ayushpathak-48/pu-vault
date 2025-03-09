@@ -4,7 +4,6 @@ import {
   Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
-  // SettingsIcon,
   Building,
   SquareDashedBottomCode,
 } from "lucide-react";
