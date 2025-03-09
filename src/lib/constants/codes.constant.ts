@@ -817,7 +817,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
-@WebServlet("/Authenticate")
+@WebServlet("/AuthenticateServlet")
 public class AuthenticateServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
