@@ -1575,7 +1575,7 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
             type: "code",
             fileName: "web.xml",
             value: `<listener>
-    <listener-class>com.example.UserCounterListener</listener-class>
+    <listener-class>UserCounterListener</listener-class>
 </listener>`,
           },
         ],
