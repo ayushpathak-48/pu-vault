@@ -1069,6 +1069,7 @@ public class examResult extends HttpServlet {
 import jakarta.servlet.http.*;
 import java.io.*;
 
+@WebServlet(urlPatterns = { "/RedirectServlet" })
 public class RedirectServlet extends HttpServlet {
 
     // Handle both GET and POST requests
