@@ -37,7 +37,7 @@ export const TimeTableBody = ({
               const isHeader = i === 0;
               const isMetaRow = id === 1 || id === 2;
               const isRecess = label === "Recess" || col_span === 7;
-              const sameDay = label === currentDay;
+              const sameDay = label && label === currentDay;
               const isMscItOrMCA = msc_it || mca;
               return (
                 <td
