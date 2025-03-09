@@ -2457,6 +2457,250 @@ class DobletoString {
     }
 }`,
           },
+          {
+            type: "code",
+            fileName: "HextoDecimal.java",
+            value: `
+public class HextoDecimal {
+    public static void main(String[] args) {
+        String hex = "A";
+        int decimal = Integer.parseInt(hex, 16);
+        System.out.println("Hex to decimal : " + decimal);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoChar.java",
+            value: `
+class InttoChar {
+    public static void main(String[] args) {
+        int num = 65;
+        char intToChar = (char) num;
+        System.out.println("Int to Char: " + intToChar);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoDouble.java",
+            value: `
+public class InttoDouble {
+    public static void main(String args[]) {
+        int num = 25;
+        double dbl = num;
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Converted Double: " + dbl);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoLong.java",
+            value: `
+public class InttoLong {
+    public static void main(String args[]) {
+        int num = 42;
+        long lng = num;
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Converted Long: " + lng);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "InttoString.java",
+            value: `
+class InttoString {
+    public static void main(String[] args) {
+        int num = 456;
+        String str1 = String.valueOf(num);
+        String str2 = Integer.toString(num);
+
+        System.out.println("Input Integer: " + num);
+        System.out.println("Using String.valueOf: " + str1);
+        System.out.println("Using toString: " + str2);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "LongtoInt.java",
+            value: `
+public class LongtoInt {
+    public static void main(String args[]) {
+        long lng = 123456L;
+        int num = (int) lng;
+
+        System.out.println("Input Long: " + lng);
+        System.out.println("Converted Integer: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "LongtoString.java",
+            value: `
+class LongtoString {
+    public static void main(String[] args) {
+        long num = 9876543210L;
+        String str = Long.toString(num);
+
+        System.out.println("Input Long: " + num);
+        System.out.println("Converted String: " + str);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "ObjecttoString.java",
+            value: `
+public class ObjecttoString {
+    public static void main(String args[]) {
+        Object obj = "Welcome to Java!";
+        String str = obj.toString();
+
+        System.out.println("Input Object: " + obj);
+        System.out.println("Converted String: " + str);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "OctaltoDecimal.java",
+            value: `
+public class OctaltoDecimal {
+    public static void main(String[] args) {
+        String octal = "12";
+        int decimal = -Integer.parseInt(octal, 8);
+        System.out.println("Octal to decimal : " + decimal);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoBoolean.java",
+            value: `
+public class Main {
+    public static void main(String[] args) {
+        String str = "true";
+        boolean stringToBoolean = Boolean.parseBoolean(str);
+        System.out.println("String to Boolean: " + stringToBoolean);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoCharacter.java",
+            value: `
+public class StringtoCharacter {
+    public static void main(String[] args) {
+        String str = "A";
+        if (str.length() == 1) {
+            char ch = str.charAt(0);
+            System.out.println("input String :" + str);
+            System.out.println("converted Character :" + ch);
+        } else {
+            System.out.println("input is not a Single character String");
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoDate.java",
+            value: `
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+class StringtoDate {
+    public static void main(String args[]) {
+        String dateStr = "2025-01-17";
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            formatter.setLenient(false);
+            Date date = formatter.parse(dateStr);
+            System.out.println("Input String: " + dateStr);
+            System.out.println("Converted Date: " + date);
+        } catch (Exception e) {
+            System.out.println("Invalid date format: " + e);
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoDouble.java",
+            value: `
+class StringtoDouble {
+    public static void main(String[] args) {
+        String str = "45.67";
+        double num = Double.parseDouble(str);
+
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Double: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoInteger.java",
+            value: `
+public class StringtoInteger {
+    public static void main(String args[]) {
+        String str = "123";
+        int num1 = Integer.parseInt(str);
+        int num2 = Integer.valueOf(str);
+
+        System.out.println("Input string: " + str);
+        System.out.println("Using parseInt: " + num1);
+        System.out.println("Using valueOf: " + num2);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoLong.java",
+            value: `
+class StringtoLong {
+    public static void main(String[] args) {
+        String str = "9876543210";
+        long num = Long.parseLong(str);
+
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Long: " + num);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StringtoObject.java",
+            value: `
+public class StringtoObject {
+    public static void main(String args[]) {
+        String str = "Hello World";
+        Object obj = str;
+        System.out.println("Input String: " + str);
+        System.out.println("Converted Object: " + obj);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "TimestamptoDate.java",
+            value: `
+import java.util.Date;
+
+public class TimestamptoDate {
+    public static void main(String[] args) {
+        long timestamp = 1704068492345L;
+        Date date = new Date(timestamp);
+        System.out.println("Timestamp to Date: " + date);
+    }
+}`,
+          },
 
           // Outputs
           {
@@ -2484,7 +2728,971 @@ DecimaltoHex          ->  Decimal to hex : a
 
 DoubletoInt           ->  Input Double: 45.67  Converted Int: 45.67
 
-DobletoString         ->  Input Double: 78.9  Converted String: 78.9`,
+DobletoString         ->  Input Double: 78.9  Converted String: 78.9
+
+HextoDecimal          ->  Hex to decimal : 10
+
+InttoChar             ->  Int to Char: A
+
+InttoDouble           ->  Input Integer: 25       Converted Double: 25.0
+
+InttoLong             ->  Input Integer: 42       Converted Double: 42
+
+InttoString           ->  Input Integer: 456      Using String.valueOf: 456  Using toString: 456
+
+LongtoInt             ->  Input Long: 123456      Converted Integer: 123456
+
+LongtoString          ->  Input Long: 9876543210  Converted String: 9876543210
+
+ObjecttoString        ->  Input Object: Welcome to Java!   Converted String: Welcome to Java!
+
+OctaltoDecimal        ->  Input Object: Welcome to Java!   Converted String: Welcome to Java!
+
+StringtoBoolean       ->  String to Boolean: true
+
+StringtoCharacter     ->  input String : A   converted Character : A
+
+StringtoDate          ->  Input String: 2025-01-17   Converted Date: Fri Jan 17 00:00:00 GMT 2025
+
+StringtoDouble        ->  Input String: 45.67   Converted Double: 45.67
+
+StringtoInteger       ->  Input string: 123  Using parseInt: 123  Using valueOf: 123
+
+StringtoLong          ->  Input String: 9876543210   Converted Long: 9876543210
+
+StringtoObject        ->  Input String: Hello World  Converted Object: Hello World
+
+TimestamptoDate       ->  Timestamp to Date: Mon Jan 01 00:21:32 GMT 2024`,
+          },
+        ],
+      },
+      // Practical -3
+      {
+        key: "object-json",
+        name: `Practical - 3: WAP to implement JSON....`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 3: WAP to implemt JSON object and Array in JAVA`,
+          },
+          {
+            type: "code",
+            fileName: "Main.java",
+            value: `
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a JSON Object
+        JSONObject student = new JSONObject();
+        student.put("name", "Rahul");
+        student.put("age", 21);
+        student.put("course", "Computer Science");
+
+        // Nested JSON Object for Marks
+        JSONObject marks = new JSONObject();
+        marks.put("math", 90);
+        marks.put("science", 85);
+        marks.put("english", 88);
+
+        student.put("marks", marks);
+
+        // Creating a JSON Array
+        JSONArray studentsArray = new JSONArray();
+
+        JSONObject student1 = new JSONObject();
+        student1.put("name", "Rahul");
+        student1.put("age", 21);
+        student1.put("course", "CS");
+
+        JSONObject student2 = new JSONObject();
+        student2.put("name", "Aditi");
+        student2.put("age", 22);
+        student2.put("course", "IT");
+
+        JSONObject student3 = new JSONObject();
+        student3.put("name", "Rohan");
+        student3.put("age", 20);
+        student3.put("course", "ECE");
+
+        studentsArray.put(student1);
+        studentsArray.put(student2);
+        studentsArray.put(student3);
+
+        // Printing JSON Object and JSON Array
+        System.out.println("JSON Object:");
+        System.out.println(student.toString(4)); // Pretty print with 4 spaces
+
+        System.out.println("\\nJSON Array:");
+        System.out.println(studentsArray.toString(4));
+
+        // Accessing values from JSON Object
+        System.out.println("\\nStudent Name: " + student.getString("name"));
+
+        // Accessing values from JSON Array
+        System.out.println("First Student in Array: " + studentsArray.getJSONObject(0).getString("name"));
+    }
+}
+`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `JSON Object:
+{
+    "name": "Rahul",
+    "course": "Computer Science",
+    "marks": {
+        "science": 85,
+        "english": 88,
+        "math": 90
+    },
+    "age": 21
+}
+
+JSON Array:
+[
+    {
+        "name": "Rahul",
+        "course": "CS",
+        "age": 21
+    },
+    {
+        "name": "Aditi",
+        "course": "IT",
+        "age": 22
+    },
+    {
+        "name": "Rohan",
+        "course": "ECE",
+        "age": 20
+    }
+]
+
+Student Name: Rahul
+First Student in Array: Rahul`,
+          },
+        ],
+      },
+    ],
+  },
+  // BDA
+  {
+    subject_name: "Big Data Analysis",
+    key: "big-data-analysis",
+    specialization: "bda",
+    language: "python",
+    practicals: [
+      // Word Count
+      {
+        key: "word-count",
+        name: "Practical - 3: Word Counting",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - Word Counting",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "solution1.py",
+            value: `from collections import defaultdict
+import multiprocessing
+
+
+# Mapper function
+def mapper(chunk):
+    word_count = defaultdict(int)
+    for word in chunk.split():
+        word_count[word] += 1
+    return word_count
+
+
+# Reducer function
+def reducer(results):
+    word_count = defaultdict(int)
+    for wc in results:
+        for word, count in wc.items():
+            word_count[word] += count
+    return word_count
+
+
+# MapReduce function
+def mapreduce(data, mapper, reducer, num_processes=2):
+    with multiprocessing.Pool(processes=num_processes) as pool:
+        mapped_data = pool.map(mapper, data)
+        reduced_data = reducer(mapped_data)
+    return reduced_data
+
+
+if __name__ == "__main__":
+    # Sample input data
+    data = ["hello world", "world is beautiful", "hello beautiful world"]
+
+    # Execute MapReduce
+    word_counts = mapreduce(data, mapper, reducer)
+
+    # Output results
+    print("Word Counts:")
+    for word, count in word_counts.items():
+        print(f"{word}: {count}")`,
+          },
+          // Solution 2
+          {
+            type: "code",
+            fileName: "solution2.py",
+            value: `from collections import defaultdict
+from multiprocessing import Pool
+
+
+# Mapper function
+def mapper(text):
+    word_count = defaultdict(int)
+    for word in text.split():
+        word_count[word.lower()] += 1
+    return word_count
+
+
+# Reducer function
+def reducer(count_dicts):
+    word_count = defaultdict(int)
+    for count_dict in count_dicts:
+        for word, count in count_dict.items():
+            word_count[word] += count
+    return word_count
+
+
+# Main function to orchestrate MapReduce process
+def main():
+    # Sample input data
+    data = ["Hello world", "World is beautiful", "Hello beautiful world"]
+
+    # Map phase
+    with Pool() as pool:
+        mapped_data = pool.map(mapper, data)
+
+    # Reduce phase
+    reduced_result = reducer(mapped_data)
+
+    # Print the final word counts
+    print("Word Counts:")
+    for word, count in reduced_result.items():
+        print(f"{word}: {count}")
+
+
+if __name__ == "__main__":
+    main()`,
+          },
+          // Solution 3
+          {
+            type: "code",
+            fileName: "solution3.py",
+            value: `import pandas as pd
+import multiprocessing
+from collections import defaultdict
+
+
+def mapper(data):
+    word_count = defaultdict(int)
+    for row in data.itertuples():
+        for word in str(
+            row.Text
+        ).split():  # Assuming the 'text' column contains the text data
+            word_count[word] += 1
+    return word_count
+
+
+def reducer(word_counts):
+    final_word_count = defaultdict(int)
+    for word_count in word_counts:
+        for word, count in word_count.items():
+            final_word_count[word] += count
+    return final_word_count
+
+
+def mapreduce(data, num_workers=2):
+    pool = multiprocessing.Pool(processes=num_workers)
+    chunk_size = len(data) // num_workers
+    chunks = [data[i : i + chunk_size] for i in range(0, len(data), chunk_size)]
+    word_counts = pool.map(mapper, chunks)
+    final_word_count = reducer(word_counts)
+    pool.close()
+    pool.join()
+    return final_word_count
+
+
+if __name__ == "__main__":
+    # Ensure to provide the correct path to your Excel file
+    df = pd.read_excel(
+        "C:/Users/karan/Downloads/BDA1_pracsolution/my_data.xlsx"
+    )  # Replace with the actual path
+    result = mapreduce(df, num_workers=2)
+    print(result)`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `
+Word Counts:
+hello: 2
+world: 3
+is: 1
+beautiful: 2
+`,
+          },
+        ],
+      },
+      // practical 4
+      {
+        key: "mrjob",
+        name: "Practical - 4: Word Counting",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 4 - Word Counting",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "solution1.py",
+            value: `import multiprocessing
+
+
+class MapReduce:
+    def __init__(self, num_processes=2):
+        self.num_processes = num_processes
+
+    def mapper(self, data):
+        raise NotImplementedError("Subclasses must implement mapper method")
+
+    def reducer(self, data):
+        raise NotImplementedError("Subclasses must implement reducer method")
+
+    def _map(self, data):
+        # Ensure we are applying the mapper to a list of (key, value) tuples
+        result = []
+        for item in data:
+            result.extend(
+                self.mapper(item)
+            )  # Ensure mapping generates a list of tuples
+        return result
+
+    def _reduce(self, data):
+        reduced_data = {}
+        for key, value in data:
+            reduced_data.setdefault(key, []).append(value)
+        return [(key, sum(values)) for key, values in reduced_data.items()]
+
+    def run(self, data):
+        pool = multiprocessing.Pool(processes=self.num_processes)
+        # Split the data into chunks based on the number of processes
+        chunk_size = len(data) // self.num_processes
+        chunks = [data[i : i + chunk_size] for i in range(0, len(data), chunk_size)]
+        mapped_data = pool.map(self._map, chunks)  # Mapping phase
+        flattened_data = [
+            item for sublist in mapped_data for item in sublist
+        ]  # Flatten list of lists
+        result = self._reduce(flattened_data)  # Reducing phase
+        pool.close()
+        pool.join()
+        return result
+
+
+# Example usage:
+class WordCount(MapReduce):
+    def mapper(self, data):
+        key, value = data  # Unpack the (key, value) tuple
+        result = []
+        for word in value.split():
+            result.append((word, 1))  # Collecting words with a count of 1
+        return result
+
+    def reducer(self, data):
+        key, values = data  # Aggregate the values (sum the counts)
+        return (key, sum(values))  # Summing up counts for each word
+
+
+if __name__ == "__main__":
+    # Input data: each tuple contains an ID and a string
+    input_data = [(1, "apple banana"), (2, "banana orange"), (3, "orange apple")]
+
+    # Create a WordCount MapReduce job
+    word_count_job = WordCount()
+
+    # Run the MapReduce job
+    result = word_count_job.run(input_data)
+
+    # Output the result
+    for item in result:
+        print(item)`,
+          },
+          // Solution 2
+          {
+            type: "code",
+            fileName: "solution2.py",
+            value: `import multiprocessing
+
+
+class MapReduce:
+    def __init__(self, num_processes=2):
+        self.num_processes = num_processes
+
+    def mapper(self, data):
+        raise NotImplementedError("Subclasses must implement mapper method")
+
+    def reducer(self, data):
+        raise NotImplementedError("Subclasses must implement reducer method")
+
+    def _map(self, data):
+        # Ensure we are applying the mapper to a list of (key, value) tuples
+        result = []
+        for item in data:
+            result.extend(
+                self.mapper(item)
+            )  # Ensure mapping generates a list of tuples
+        return result
+
+    def _reduce(self, data):
+        reduced_data = {}
+        for key, value in data:
+            reduced_data.setdefault(key, []).append(value)
+        return [(key, sum(values)) for key, values in reduced_data.items()]
+
+    def run(self, data):
+        pool = multiprocessing.Pool(processes=self.num_processes)
+        # Split the data into chunks based on the number of processes
+        chunk_size = len(data) // self.num_processes
+        chunks = [data[i : i + chunk_size] for i in range(0, len(data), chunk_size)]
+        mapped_data = pool.map(self._map, chunks)  # Mapping phase
+        flattened_data = [
+            item for sublist in mapped_data for item in sublist
+        ]  # Flatten list of lists
+        result = self._reduce(flattened_data)  # Reducing phase
+        pool.close()
+        pool.join()
+        return result
+
+
+# Example usage:
+class WordCount(MapReduce):
+    def mapper(self, data):
+        key, value = data  # Unpack the (key, value) tuple
+        result = []
+        for word in value.split():
+            result.append((word, 1))  # Collecting words with a count of 1
+        return result
+
+    def reducer(self, data):
+        key, values = data  # Aggregate the values (sum the counts)
+        return (key, sum(values))  # Summing up counts for each word
+
+
+if __name__ == "__main__":
+    # Input data: each tuple contains an ID and a string
+    input_data = [(1, "apple banana"), (2, "banana orange"), (3, "orange apple")]
+
+    # Create a WordCount MapReduce job
+    word_count_job = WordCount()
+
+    # Run the MapReduce job
+    result = word_count_job.run(input_data)
+
+    # Output the result
+    for item in result:
+        print(item)`,
+          },
+          // Solution 3
+          {
+            type: "code",
+            fileName: "solution3.py",
+            value: `from mrjob.job import MRJob
+from mrjob.step import MRStep
+
+
+class WordCount(MRJob):
+
+    def steps(self):
+        return [MRStep(mapper=self.mapper, reducer=self.reducer)]
+
+    def mapper(self, _, line):
+        """Tokenizes each line and emits (word, 1)"""
+        for word in line.split():
+            yield word.lower(), 1
+
+    def reducer(self, word, counts):
+        """Aggregates counts for each word"""
+        yield word, sum(counts)
+
+
+if __name__ == "__main__":
+    WordCount.run()`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `('apple', 2)
+('banana', 2)
+('orange', 2)
+`,
+          },
+        ],
+      },
+      //  Practical 5
+      {
+        key: "stop-word",
+        name: "Practical - 5: Stop Word",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5 - Stop Word",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "solution1.py",
+            value: `def load_stop_words(stopwords_file):
+    """Load stop words from a file into a set"""
+    with open(stopwords_file, "r", encoding="utf-8") as file:
+        stop_words = {line.strip().lower() for line in file}
+    return stop_words
+
+
+def remove_stop_words(input_file, stopwords_file, output_file):
+    """Remove stop words from each line of the input file"""
+    stop_words = load_stop_words(stopwords_file)
+
+    with open(input_file, "r", encoding="utf-8") as infile, open(
+        output_file, "w", encoding="utf-8"
+    ) as outfile:
+        for line in infile:
+            filtered_words = [
+                word for word in line.split() if word.lower() not in stop_words
+            ]
+            outfile.write(" ".join(filtered_words) + "\n")
+
+
+if __name__ == "__main__":
+    input_file = "input.txt"  # Large text file (one sentence per line)
+    stopwords_file = "stopwords.txt"  # Stop words file (one per line)
+    output_file = "output.txt"  # Processed file without stop words
+
+    remove_stop_words(input_file, stopwords_file, output_file)
+    print("Stop word elimination complete. Processed output saved in", output_file)`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "stopwords.txt",
+            value: `the
+is
+a
+am`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "input.txt",
+            value: `This is a test sentence.
+I am learning Python programming.
+The quick brown fox jumps over the lazy dog.`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `This test sentence.
+I learning Python programming.
+quick brown fox jumps over lazy dog.`,
+          },
+        ],
+      },
+      //  Practical 6
+      {
+        key: "weather-data-mrjob",
+        name: "Practical - 6: Weather Data",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 6 - Weather Data",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "weather_data_mrjob.py",
+            value: `from mrjob.job import MRJob
+from mrjob.step import MRStep
+
+
+class WeatherDataStats(MRJob):
+
+    def mapper(self, _, line):
+        """Tokenizes each line and emits (word, 1)"""
+        fields = line.split(",")
+        if len(fields) == 3:
+            # Extract year and temperature from the line
+            year = fields[0].strip()
+            temperature = float(fields[1].strip())
+            yield year, temperature
+
+    def reducer(self, year, temperatures):
+        """Aggregates counts for each word"""
+        temperatures = list(temperatures)
+        avg_temp = sum(temperatures) / len(temperatures)
+        max_temp = max(temperatures)
+        min_temp = min(temperatures)
+        yield year, (avg_temp, max_temp, min_temp)
+
+
+class FilterTemperature(MRJob):
+
+    def mapper(self, _, line):
+        """Filters the data with temperature > 30"""
+        fields = line.split(",")
+        if len(fields) == 3:
+            # Extract year, temperature, and other data
+            year = fields[0].strip()
+            temperature = float(fields[1].strip())
+            other_data = fields[2].strip()
+
+            # Yield the temperature if it's greater than 30
+            if temperature > 30.0:
+                yield year, (temperature, other_data)
+
+    def reducer(self, year, readings):
+        """Writes the filtered readings to a file"""
+        with open(f"filtered_readings_{year}.txt", "w") as f:
+            for reading in readings:
+                f.write(f"{year}, {reading[0]}, {reading[1]}\n")
+
+
+if __name__ == "__main__":
+    # Configure the job to run with the local runner
+    import sys
+
+    if len(sys.argv) < 2:
+        sys.argv.append("ncdc_data.txt")  # Provide your input file path here
+
+    WeatherDataStats.run()
+    FilterTemperature.run()`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "ncdc_data.txt",
+            value: `2020, 23.4, Some location
+2020, 30.5, Another location
+2021, 33.7, Location X
+2021, 28.9, Location Y`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `"2020" [26.95, 30.5, 23.4]
+"2021" [31.3, 33.7,28.9]`,
+          },
+        ],
+      },
+      // Practical 7
+      {
+        key: "student-info-managment-using-collection-types",
+        name: "Practical - 7: Student Info....",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 7 - Student Information Management using Collection Types",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "practical7.py",
+            value: `# Using List to store student records
+students_list = [
+    {"roll_no": 101, "name": "Alice", "dob": "2002-05-14", "address": "New York"},
+    {"roll_no": 102, "name": "Bob", "dob": "2001-09-23", "address": "Los Angeles"},
+    {"roll_no": 103, "name": "Charlie", "dob": "2003-07-19", "address": "Chicago"},
+]
+
+# Using Set to store unique roll numbers
+students_set = {101, 102, 103}
+
+# Using Dictionary (Map) to store student details with roll_no as key
+students_map = {
+    101: {"name": "Alice", "dob": "2002-05-14", "address": "New York"},
+    102: {"name": "Bob", "dob": "2001-09-23", "address": "Los Angeles"},
+    103: {"name": "Charlie", "dob": "2003-07-19", "address": "Chicago"},
+}
+
+
+# Function to add a new student
+def add_student(roll_no, name, dob, address):
+    if roll_no in students_set:
+        print(f"Student with Roll No {roll_no} already exists.")
+        return
+    students_list.append(
+        {"roll_no": roll_no, "name": name, "dob": dob, "address": address}
+    )
+    students_set.add(roll_no)
+    students_map[roll_no] = {"name": name, "dob": dob, "address": address}
+    print(f"Student {name} added successfully.")
+
+
+# Function to display all students
+def display_students():
+    print("\\nStudent Records:")
+    for student in students_list:
+        print(student)
+
+
+# Function to find a student by roll number
+def find_student(roll_no):
+    if roll_no in students_map:
+        print(f"\\nDetails of Roll No {roll_no}: {students_map[roll_no]}")
+    else:
+        print(f"Student with Roll No {roll_no} not found.")
+
+
+# Adding a new student
+add_student(104, "David", "2004-01-12", "Houston")
+
+# Display all students
+display_students()
+
+# Find a student
+find_student(102)`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Student David added successfully.
+
+Student Records:
+{'roll_no': 101, 'name': 'Alice', 'dob': '2002-05-14', 'address': 'New York'}
+{'roll_no': 102, 'name': 'Bob', 'dob': '2001-09-23', 'address': 'Los Angeles'}
+{'roll_no': 103, 'name': 'Charlie', 'dob': '2003-07-19', 'address': 'Chicago'}
+{'roll_no': 104, 'name': 'David', 'dob': '2004-01-12', 'address': 'Houston'}
+
+Details of Roll No 102: {'name': 'Bob', 'dob': '2001-09-23', 'address': 'Los Angeles'}`,
+          },
+        ],
+      },
+      //  Practical 8
+      {
+        key: "py-mongo",
+        name: "Practical - 8: CRUD Operations using MongoDB",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 8 - CRUD Operations using MongoDB",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "practical8.py",
+            value: `import pymongo
+
+# Connect to the MongoDB server
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# Select the database
+db = client["mydatabase"]
+
+# Access an existing collection or create it if it doesn't exist
+collection = db["students"]
+
+# Insert a single document
+student = {"name": "John", "age": 20, "grade": "A"}
+collection.insert_one(student)
+
+# Insert multiple documents
+students = [
+    {"name": "Alice", "age": 22, "grade": "B"},
+    {"name": "Bob", "age": 21, "grade": "C"},
+]
+collection.insert_many(students)
+
+# Find a single document
+result = collection.find_one({"name": "John"})
+print(result)
+
+# Find all documents that match a query
+results = collection.find({"grade": "A"})
+for result in results:
+    print(result)
+
+# Update a single document
+collection.update_one({"name": "John"}, {"$set": {"age": 21}})
+
+# Update multiple documents
+collection.update_many({"grade": "B"}, {"$set": {"grade": "A"}})
+
+# Delete a single document
+collection.delete_one({"name": "John"})
+
+# Delete multiple documents
+collection.delete_many({"grade": "C"})`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `_id: ObjectId('67bf2dccbd874ac73d462dfe')
+name:"John"
+age: 20
+grade:"A"
+
+_id: ObjectId('67bf2ef269dd55476bea6569')
+name:"Alice"
+age:22
+grade:"B"
+
+_id: ObjectId('67bf2ef269dd55476bea656a')
+name:"Bob"
+age:21
+grade:"C"
+
+'_id': ObjectId('67bf2dccbd874ac73d462dfe'), 'name': 'John', 'age': 20, 'grade': 'A')
+
+_id: ObjectId('67bf2dccbd874ac73d462dfe')
+name: "John"
+age: 21
+grade: "A"
+
+_id: ObjectId('67bf2ef269dd55476bea6569')
+name:"Alice"
+age:22
+grade:"A"`,
+          },
+        ],
+      },
+      // Pracitcl 9
+      {
+        key: "py-mongo-9",
+        name: "Practical - 9: Basic MongoDB Queries for Student Collection",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 9 - Basic MongoDB Queries for Student Collection",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "practical9.py",
+            value: `result = db.students.find()
+
+result = db.students.find({"age": {"$gt": 20}})
+
+result = db.students.find({}, {"name": 1, "age": 1})
+
+result = db.students.find_one({"name": "John"})
+
+result = db.students.find().limit(10)`,
+          },
+        ],
+      },
+      //  practical 10
+      {
+        key: "py-mongo-10",
+        name: "Practical - 10 Retrieving Documents.....",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 10 - Retrieving Documents from MongoDB Students Collection",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "practical10.py",
+            value: `from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient(
+    "mongodb://localhost:27017/"
+)  # Assuming MongoDB is running locally
+
+# Select database and collection
+db = client[
+    "your_database_name"
+]  # Replace 'your_database_name' with your actual database name
+collection = db["Students"]
+
+# Find all documents in the collection
+cursor = collection.find()
+
+# Iterate over the cursor to access the documents
+for document in cursor:
+    print(document)`,
+          },
+        ],
+      },
+      //  Practical 11
+      {
+        key: "word-count-11",
+        name: "Practical - 11 Word Count",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 11 - Word Count",
+          },
+          // Solution 1
+          {
+            type: "code",
+            fileName: "practical11.py",
+            value: `from mrjob.job import MRJob
+
+
+class WordCount(MRJob):
+    def mapper(self, _, line):
+        # Split the line into words
+        words = line.split()
+        for word in words:
+            yield word, 1
+
+    def reducer(self, word, counts):
+        # Sum the counts for each word
+        yield word, sum(counts)
+
+
+if __name__ == "__main__":
+    WordCount.run()`,
+          },
+          {
+            type: "code",
+            fileName: "input.txt",
+            value: `hello world
+hello mrjob
+world of mrjob`,
+          },
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `"hello" 2
+"mrjob" 2
+"of"    1
+"world" 2`,
           },
         ],
       },

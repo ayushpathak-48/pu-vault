@@ -236,6 +236,11 @@ export const materials = [
         title: "Week 7",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-7.pdf`,
       },
+      {
+        id: 8,
+        title: "Week 8",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-8.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -305,6 +310,44 @@ export const materials = [
         title: "Outputs",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
       },
+    ],
+  },
+  //  English and Mathematical Apptitude
+  {
+    id: 6,
+    subject_name: "English and Mathematical Aptitude",
+    key: "english-and-mathematical-aptitude",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/english-and-mathematical-aptitude.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Ratio and Proportion",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/ratio-proportion.pdf`,
+      },
+      {
+        id: 2,
+        title: "Time and work",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/time-and-work.pdf`,
+      },
+      {
+        id: 3,
+        title: "Time, speed and distance",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/time-speed-distance.pdf`,
+      },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/index.pdf`,
+      // },
+    ],
+    output_links: [
+      // {
+      //   id: 0,
+      //   title: "Outputs",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
+      // },
     ],
   },
   // CA
@@ -500,6 +543,7 @@ export const specializationMaterials = [
     id: 2,
     subject_name: "Big Data Analytics",
     value: "bda",
+    key: "big-data-analysis",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/big-data-analytics.pdf`,
     notes_link: [
       {
@@ -630,6 +674,21 @@ export const specializationMaterials = [
         title: "Unit-3: Introdution to JSON",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/3-introduction-to-json.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Bootstrap",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/4-bootstrap.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Bootstrap Utilities",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/5-bootstrap-utilities.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Selenium",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/6-selenium.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -676,6 +735,11 @@ export const specializationMaterials = [
         title: "Unit-3: Operating System Security ",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/3-operating-system-security.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-4: Wireless Network Security ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/4-wireless-network-security.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -685,7 +749,7 @@ export const specializationMaterials = [
       },
       {
         id: 1,
-        title: "Practical 1",
+        title: "Practical 2",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-2.pdf`,
       },
       {
