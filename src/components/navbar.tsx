@@ -8,6 +8,7 @@ import { useSidebar } from "@/components/ui/sidebar";
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { WhatsappDialog } from "./whatsapp-dialog";
+import Link from "next/link";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -30,13 +31,15 @@ export const Navbar = () => {
   return (
     <>
       <div className="bg-gray-50 shadow w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
-        <Image
-          src={"/favicon.png"}
-          height={40}
-          width={40}
-          alt="Logo"
-          className="md:hidden"
-        />
+        <Link href={"/"}>
+          <Image
+            src={"/favicon.png"}
+            height={40}
+            width={40}
+            alt="Logo"
+            className="md:hidden"
+          />
+        </Link>
         <div className="max-md:text-center max-md:w-full custom-heading font-semibold text-2xl lg:text-3xl">
           {activePageTitle}
         </div>
