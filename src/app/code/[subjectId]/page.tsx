@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 const CodePage = async ({ params }: { params: any }) => {
   const { subjectId } = await params;
   const practicalSubject = practicalCodes.find(({ key }) => key == subjectId);
-  console.log({ subjectId, practicalSubject });
   return redirect(`/code/${subjectId}/${practicalSubject?.practicals[0].key}`);
 };
 
