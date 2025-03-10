@@ -706,6 +706,11 @@ export const specializationMaterials = [
         title: "Practical 2",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-2.pdf`,
       },
+      {
+        id: 3,
+        title: "Practical 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-3.pdf`,
+      },
     ],
   },
   // CSF
