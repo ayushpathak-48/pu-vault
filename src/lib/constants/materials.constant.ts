@@ -334,6 +334,52 @@ export const materials = [
         title: "Time, speed and distance",
         href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/time-speed-distance.pdf`,
       },
+      // english
+      {
+        id: 4,
+        title: "Adjectives and Adverbs",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/adjectives-and-adverbs.pdf`,
+      },
+      {
+        id: 5,
+        title: "Collocation, Greunds and Infinitives",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/collocation-gerunds-and-infinitives.pdf`,
+      },
+      {
+        id: 6,
+        title: "Determiners and Articles",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/determiners-and-articles.pdf`,
+      },
+      {
+        id: 7,
+        title: "Nouns and Pronouns",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/nouns-and-pronouns.pdf`,
+      },
+      {
+        id: 8,
+        title: "Prepositions",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/prepositions.pdf`,
+      },
+      {
+        id: 9,
+        title: "Pronoun-antecedent agreement",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/pronoun-antecedent-agreement.pdf`,
+      },
+      {
+        id: 10,
+        title: "Reading Comprehension Strategies",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/reading-comprehension-strategies.pdf`,
+      },
+      {
+        id: 11,
+        title: "Subject Verb Agreement",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/subject-verb-agreement.pdf`,
+      },
+      {
+        id: 12,
+        title: "Tenses",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/english-and-mathematical-aptitude/tenses.pdf`,
+      },
     ],
     practicals_link: [
       // {
@@ -654,7 +700,7 @@ export const specializationMaterials = [
   // FSWD
   {
     id: 3,
-    subject_name: "Full Stack Web Developer",
+    subject_name: "Full Stack Web Development",
     value: "fswd",
     key: "fswd",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/fullstack-web-developer.pdf`,
