@@ -86,7 +86,7 @@ const SearchModal = ({
           triggerContent
         ) : (
           <>
-            <SearchIcon />
+            <SearchIcon className="size-4" />
             {hideShortcut ? (
               <></>
             ) : (

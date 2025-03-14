@@ -54,7 +54,7 @@ export const BottomTabs = () => {
                 />
                 <span
                   className={cn(
-                    "text-[10px] font-medium text-gray-500",
+                    "text-[10px] truncate text-center font-medium text-gray-500",
                     activeLink && "text-sky-500"
                   )}
                 >
