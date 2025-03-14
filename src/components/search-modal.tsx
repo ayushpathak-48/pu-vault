@@ -34,9 +34,9 @@ const SearchModal = ({
   triggerContent,
   triggerClass,
 }: {
-  hideShortcut: boolean;
-  triggerContent: ReactNode;
-  triggerClass: string;
+  hideShortcut?: boolean;
+  triggerContent?: ReactNode;
+  triggerClass?: string;
 }) => {
   const router = useRouter();
   const materialsData = [...specializationMaterials, ...materials];
