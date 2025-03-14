@@ -241,6 +241,11 @@ export const materials = [
         title: "Week 8",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-8.pdf`,
       },
+      {
+        id: 9,
+        title: "Week 9",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-9.pdf`,
+      },
     ],
     practicals_link: [
       {
