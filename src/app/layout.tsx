@@ -6,9 +6,9 @@ import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
+// import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 import { WhatsappButton } from "@/components/WhatsappButton";
 
 const headingFont = PT_Serif({
@@ -53,17 +53,6 @@ export default function RootLayout({
                     Whatsapp Community for Updates
                   </Link>
                   <WhatsappButton />
-                </div>
-                <div className="bg-gray-100 m-5 py-2 px-5 flex items-center justify-between rounded-xl">
-                  <div className="font-semibold">Exam Time Table</div>
-                  <Button asChild>
-                    <Link
-                      target="_blank"
-                      href={`${MATERIAL_LINK_BASE_URL}/time-table/mca-mscit-mid-sem-exam-time-table.pdf`}
-                    >
-                      View
-                    </Link>
-                  </Button>
                 </div>
                 {children}
               </main>

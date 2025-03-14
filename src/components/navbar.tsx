@@ -9,6 +9,7 @@ import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { WhatsappDialog } from "./whatsapp-dialog";
 import Link from "next/link";
+import SearchModal from "./search-modal";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="bg-gray-50 shadow w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
+      <div className="bg-gray-50 shadow md:w-[calc(100%-16rem)] ml-auto w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
         <Link href={"/"} className="md:hidden">
           <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
         </Link>
@@ -46,6 +47,9 @@ export const Navbar = () => {
           >
             <MenuIcon className="" />
           </Button>
+        </div>
+        <div className="max-md:hidden">
+          <SearchModal />
         </div>
       </div>
       <WhatsappDialog />

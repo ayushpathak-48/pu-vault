@@ -2,7 +2,6 @@ import { MATERIAL_LINK_BASE_URL } from ".";
 
 export const materials = [
   // AJP
-
   {
     id: 1,
     subject_name: "ADVANCE JAVA PROGRAMMING",

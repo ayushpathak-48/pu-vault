@@ -4,38 +4,64 @@ import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { Fragment } from "react";
+import SearchModal from "./search-modal";
+import { SearchIcon } from "lucide-react";
 
 export const BottomTabs = () => {
   const pathname = usePathname();
   return (
     <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100">
       <div className="flex items-center justify-start h-full">
-        {navLinks.map((link) => {
+        {navLinks.map((link, i) => {
           const activeLink = pathname == link.href;
           const Icon = link.icon;
           if (link?.hideOnMobile) return;
+
           return (
-            <Link
-              href={link.href}
-              key={link.id}
-              className="w-full h-full flex items-center justify-center hover:bg-gray-200 flex-col gap-1"
-            >
-              <Icon
-                className={cn(
-                  "size-6 text-gray-500 active:scale-[0.95] transition-all",
-                  activeLink && "text-sky-500"
-                )}
-              />
-              <span
-                className={cn(
-                  "text-[10px] font-medium text-gray-500",
-                  activeLink && "text-sky-500"
-                )}
+            <Fragment key={link.id}>
+              {i == 2 ? (
+                <SearchModal
+                  triggerClass="w-full h-full flex items-center justify-center hover:bg-gray-200 flex-col gap-1"
+                  triggerContent={
+                    <>
+                      <SearchIcon
+                        className={cn(
+                          "size-6 text-gray-500 active:scale-[0.95] transition-all"
+                        )}
+                      />
+                      <span
+                        className={cn("text-[10px] font-medium text-gray-500")}
+                      >
+                        Search
+                      </span>
+                    </>
+                  }
+                  hideShortcut
+                />
+              ) : (
+                <></>
+              )}
+              <Link
+                href={link.href}
+                className="w-full h-full flex items-center justify-center hover:bg-gray-200 flex-col gap-1"
               >
-                {link.title}
-              </span>
-            </Link>
+                <Icon
+                  className={cn(
+                    "size-6 text-gray-500 active:scale-[0.95] transition-all",
+                    activeLink && "text-sky-500"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "text-[10px] font-medium text-gray-500",
+                    activeLink && "text-sky-500"
+                  )}
+                >
+                  {link.title}
+                </span>
+              </Link>
+            </Fragment>
           );
         })}
       </div>
