@@ -79,7 +79,8 @@ const SearchModal = ({
       <Button
         className={cn(triggerClass)}
         onClick={() => setOpen(true)}
-        variant={"secondary"}
+        variant={hideShortcut ? "link" : "secondary"}
+        size={hideShortcut ? "icon" : "default"}
       >
         {triggerContent ? (
           triggerContent
