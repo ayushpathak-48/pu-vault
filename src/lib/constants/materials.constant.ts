@@ -507,6 +507,40 @@ export const materials = [
 
     practicals_link: [],
   },
+  // Msc.IT
+  // Software Engineering with Agile
+  {
+    id: 7,
+    subject_name: " Software Engineering with Agile",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/software-engineering.pdf`,
+    key: "software-engineeering-with-agile",
+    notes_link: [
+      {
+        id: 1,
+        title:
+          "Unit-1: Introduction to system and software development process",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/1-introduction-to-system-and-software-development-process.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Requirement Analysis and Requirement Engineering",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/2-requirement-analysis-and-requirement-engineering.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: System Analysis and Design",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/3-structured-system-analysis-and-design.pdf`,
+      },
+    ],
+
+    practicals_link: [
+      {
+        id: 1,
+        title: "Practicals",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/se/se-practicals.pdf`,
+      },
+    ],
+  },
 ];
 
 export const specializationMaterials = [
