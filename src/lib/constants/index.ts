@@ -7,6 +7,7 @@ import {
   HouseIcon,
   Building,
   SquareDashedBottomCode,
+  SettingsIcon,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -59,21 +60,31 @@ export const navLinks = [
     hideOnMobile: true,
     icon: Calculator,
   },
-  // {
-  //   id: 8,
-  //   title: "Settings",
-  //   href: "/settings",
-  //   icon: SettingsIcon,
-  // },
+  {
+    id: 8,
+    title: "Settings",
+    href: "/settings",
+    hideOnMobile: true,
+    icon: SettingsIcon,
+  },
 ];
 
-export const streams = [
+export const courses = [
   {
     id: 1,
-    stream: "MCA",
+    label: "MCA",
+    value: "mca",
+    total_semester: 4,
+  },
+  {
+    id: 2,
+    label: "Msc It",
+    value: "mscit",
     total_semester: 4,
   },
 ];
+
+export type CourseType = "mca" | "mscit";
 
 export const softwareLinks = [
   {
@@ -171,18 +182,21 @@ export const divisions = [
     label: "Division : A (AI)",
     value: "div_a",
     specialization: "ai",
+    courses: ["mca"],
   },
   {
     id: 2,
     label: "Division : B (AI)",
     value: "div_b",
     specialization: "ai",
+    courses: ["mca"],
   },
   {
     id: 3,
     label: "Division : C (AI)",
     value: "div_c",
     specialization: "ai",
+    courses: ["mca"],
   },
   {
     id: 4,

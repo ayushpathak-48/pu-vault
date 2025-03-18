@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Send } from "lucide-react";
 import { practicalCodes } from "@/lib/constants/codes.constant";
+import { cn } from "@/lib/utils";
 export const HomePageAccordionList = ({
   tabData,
   specializationTabData,
@@ -19,6 +20,7 @@ export const HomePageAccordionList = ({
   specializationTabData: any;
 }) => {
   const specialization = useDataStore((state) => state.specialization);
+  const course = useDataStore((state) => state.course);
   return (
     <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
       {specializationTabData.map((item: any) => {
@@ -26,9 +28,14 @@ export const HomePageAccordionList = ({
           return <MaterialAccordionCard key={item.id} material={item} />;
         }
       })}
-      {tabData.map((material: any) => (
-        <MaterialAccordionCard key={material.id} material={material} />
-      ))}
+      {tabData.map((material: any) => {
+        if (
+          material?.courses?.length > 0 &&
+          !material?.courses?.includes(course)
+        )
+          return;
+        return <MaterialAccordionCard key={material.id} material={material} />;
+      })}
     </Accordion>
   );
 };
@@ -70,7 +77,7 @@ const MaterialAccordionCard = ({ material }: any) => (
         <div className="p-2">
           <TabsContent value={"notes"}>
             {material?.notes_link?.length > 0 ? (
-              <div className="flex items-center flex-col gap-2">
+              <div className={cn("flex items-center flex-col gap-2")}>
                 {material.notes_link.map((note: any) => (
                   <div
                     key={note.id}

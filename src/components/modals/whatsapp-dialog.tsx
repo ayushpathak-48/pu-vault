@@ -10,7 +10,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { WhatsappButton } from "./WhatsappButton";
+import { WhatsappButton } from "../WhatsappButton";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

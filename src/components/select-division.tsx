@@ -20,6 +20,7 @@ export const SelectDivision = ({
 }) => {
   const setDivision = useDataStore((state) => state.setDivision);
   const division = useDataStore((state) => state.division);
+  const course = useDataStore((state) => state.course);
   const setSpecialization = useDataStore((state) => state.setSpecialization);
   const handleSelect = (e: string) => {
     setDivision(e);
@@ -38,10 +39,16 @@ export const SelectDivision = ({
         <SelectTrigger className="w-full bg-gray-100">
           <SelectValue placeholder="Select Division" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="max-h-60">
           <SelectGroup>
             {divisions.map((ele) => (
-              <SelectItem key={ele.id} value={ele.value}>
+              <SelectItem
+                key={ele.id}
+                value={ele.value}
+                className={
+                  !ele?.courses?.includes(course) && ele.courses ? "hidden" : ""
+                }
+              >
                 {ele.label}
               </SelectItem>
             ))}

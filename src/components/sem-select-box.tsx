@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { streams } from "@/lib/constants";
+import { courses } from "@/lib/constants";
 
 export const SemSelectBox = () => {
   return (
@@ -17,7 +17,7 @@ export const SemSelectBox = () => {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {Array(streams[0].total_semester)
+          {Array(courses[0].total_semester)
             .fill(0)
             .map((_, i) => i + 1)
             .map((ele) => (

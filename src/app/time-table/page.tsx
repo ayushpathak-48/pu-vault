@@ -11,6 +11,7 @@ import { useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
 
 const TimeTablePage = () => {
+  const course = useDataStore((state) => state.course);
   const [date] = useState(new Date());
   const currentDay = weekdays[date.getDay() - 1];
 
@@ -66,15 +67,18 @@ const TimeTablePage = () => {
             className="w-full"
           >
             <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
-              {divisions.map((div) => (
-                <TabsTrigger
-                  key={div.id}
-                  value={div.value}
-                  className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
-                >
-                  {div.label}
-                </TabsTrigger>
-              ))}
+              {divisions.map((div) => {
+                if (div.courses && div?.courses?.includes(course)) return;
+                return (
+                  <TabsTrigger
+                    key={div.id}
+                    value={div.value}
+                    className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
+                  >
+                    {div.label}
+                  </TabsTrigger>
+                );
+              })}
             </TabsList>
             <div className="">
               {divisions.map((tab) => (
@@ -136,7 +140,19 @@ const TimeTablePage = () => {
             className="w-full"
           >
             <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
-              {divisions.map((div) => (
+              {divisions.map((div) => {
+                if (div?.courses && !div?.courses?.includes(course)) return;
+                return (
+                  <TabsTrigger
+                    key={div.id}
+                    value={div.value}
+                    className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
+                  >
+                    {div.label}
+                  </TabsTrigger>
+                );
+              })}
+              {/* {divisions.map((div) => (
                 <TabsTrigger
                   key={div.id}
                   value={div.value}
@@ -144,7 +160,7 @@ const TimeTablePage = () => {
                 >
                   {div.label}
                 </TabsTrigger>
-              ))}
+              ))} */}
             </TabsList>
             <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
               {divisions.map((tab) => (

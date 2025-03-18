@@ -7,9 +7,10 @@ import React, { useLayoutEffect, useState } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
-import { WhatsappDialog } from "./whatsapp-dialog";
+// import { WhatsappDialog } from "./whatsapp-dialog";
 import Link from "next/link";
 import SearchModal from "./search-modal";
+import { DataDialog } from "./modals/data-dialog";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -52,7 +53,8 @@ export const Navbar = () => {
           <SearchModal />
         </div>
       </div>
-      <WhatsappDialog />
+      {/* <WhatsappDialog /> */}
+      <DataDialog />
     </>
   );
 };

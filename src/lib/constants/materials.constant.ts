@@ -512,6 +512,7 @@ export const materials = [
   {
     id: 7,
     subject_name: " Software Engineering with Agile",
+    courses: ["mscit"],
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/software-engineering.pdf`,
     key: "software-engineeering-with-agile",
     notes_link: [
