@@ -1,8 +1,11 @@
+"use client";
+
 import {
   TimetableData,
   TimeTableCell,
 } from "@/lib/constants/time-table.constant";
 import { cn } from "@/lib/utils";
+import { useDataStore } from "@/stores/data.store";
 import React from "react";
 
 export const TimeTableBody = ({
@@ -12,6 +15,7 @@ export const TimeTableBody = ({
   data: TimetableData;
   currentDay: string;
 }) => {
+  const course = useDataStore((state) => state.course);
   return (
     <tbody>
       {data.map((table, i) => (
@@ -58,27 +62,33 @@ export const TimeTableBody = ({
                   )}
                 >
                   {isMscItOrMCA ? (
-                    <div className="flex flex-col">
-                      <div className="flex flex-col text-purple-400">
-                        <div className="font-bold">MCA</div>
-                        <SingleCell
-                          label={mca?.label}
-                          classroom={mca?.classroom}
-                          lab={mca?.lab}
-                          professor={mca?.professor}
-                        />
-                      </div>
-                      <div className="h-0.5 w-full my-4" />
-                      <div className="text-blue-400">
-                        <div className="font-bold">MScIt</div>
-                        <SingleCell
-                          label={msc_it?.label}
-                          classroom={msc_it?.classroom}
-                          lab={msc_it?.lab}
-                          professor={msc_it?.professor}
-                        />
-                      </div>
-                    </div>
+                    <>
+                      {mca && course == "mca" ? (
+                        <div className="flex flex-col">
+                          <div className="flex flex-col text-purple-400">
+                            {/* <div className="font-bold">MCA</div> */}
+                            <SingleCell
+                              label={mca?.label}
+                              classroom={mca?.classroom}
+                              lab={mca?.lab}
+                              professor={mca?.professor}
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col text-purple-400">
+                          <div className="text-blue-400">
+                            {/* <div className="font-bold">MScIt</div> */}
+                            <SingleCell
+                              label={msc_it?.label}
+                              classroom={msc_it?.classroom}
+                              lab={msc_it?.lab}
+                              professor={msc_it?.professor}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <SingleCell
                       label={label}
