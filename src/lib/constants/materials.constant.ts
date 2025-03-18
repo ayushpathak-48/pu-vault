@@ -532,6 +532,11 @@ export const materials = [
         title: "Unit-3: System Analysis and Design",
         href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/3-structured-system-analysis-and-design.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Agile Methodology",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/4-agile-methodology.pdf`,
+      },
     ],
 
     practicals_link: [
