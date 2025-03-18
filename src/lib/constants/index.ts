@@ -5,9 +5,9 @@ import {
   Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
-  Building,
   SquareDashedBottomCode,
   SettingsIcon,
+  MessageCircleQuestion,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -44,7 +44,7 @@ export const navLinks = [
     title: "Interview Questions",
     href: "/interview",
     hideOnMobile: true,
-    icon: Building,
+    icon: MessageCircleQuestion,
   },
   {
     id: 6,
