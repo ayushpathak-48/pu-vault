@@ -804,6 +804,11 @@ export const specializationMaterials = [
         title: "Practical 3 - WAP to implemt JSON object and Array",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-3.pdf`,
       },
+      {
+        id: 4,
+        title: "Practical 4 - Bootstrap Components",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-4.pdf`,
+      },
     ],
   },
   // CSF

@@ -2881,6 +2881,156 @@ First Student in Array: Rahul`,
           },
         ],
       },
+      // Practical - 4
+      {
+        key: "bootstrap-components",
+        name: `Practical - 4: Bootstrap Components`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 4: Bootstrap Components`,
+          },
+          {
+            type: "code",
+            fileName: "Button.html",
+            value: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Buttons</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h3>Button Styles</h3>
+
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-light">Light</button>
+      <button class="btn btn-dark">Dark</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "Label.html",
+            value: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Badge Styles</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h3>Badge Styles</h3>
+
+      <span class="badge bg-primary">Primary</span>
+      <span class="badge bg-secondary">Secondary</span>
+      <span class="badge bg-success">Success</span>
+      <span class="badge bg-danger">Danger</span>
+      <span class="badge bg-warning text-dark">Warning</span>
+      <span class="badge bg-info text-dark">Info</span>
+      <span class="badge bg-light text-dark">Light</span>
+      <span class="badge bg-dark">Dark</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "Border.html",
+            value: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Border Styles</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h3>Border Styles</h3>
+
+      <div class="border border-primary p-3 mb-2">Primary Border</div>
+      <div class="border border-secondary p-3 mb-2">Secondary Border</div>
+      <div class="border border-success p-3 mb-2">Success Border</div>
+      <div class="border border-warning p-3 mb-2">Warning Border</div>
+      <div class="border border-info p-3 mb-2">Info Border</div>
+      <div class="border border-dark p-3 mb-2">Dark Border</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "Background.html",
+            value: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Background Styles</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h3>Background Styles</h3>
+
+      <div class="bg-primary text-white p-3 mb-3">Primary Background</div>
+      <div class="bg-success text-white p-3 mb-3">Success Background</div>
+      <div class="bg-danger text-white p-3 mb-3">Danger Background</div>
+      <div class="bg-warning text-dark p-3 mb-3">Warning Background</div>
+      <div class="bg-info text-dark p-3 mb-3">Info Background</div>
+      <div class="bg-light text-dark p-3 mb-3">Light Background</div>
+      <div class="bg-dark text-white p-3 mb-3">Dark Background</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>`,
+          },
+
+          // Outputs
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
     ],
   },
   // BDA
