@@ -18,33 +18,32 @@ export const practicalCodes = [
             type: "code",
             fileName: "tic-tac-toe.py",
             value: `def print_board(board):
- print("\\n")
+ print("\n")
  print(f" {board[0]} | {board[1]} | {board[2]} ")
  print("---+---+---")
  print(f" {board[3]} | {board[4]} | {board[5]} ")
  print("---+---+---")
  print(f" {board[6]} | {board[7]} | {board[8]} ")
- print("\\n")
-# Function to check if the current player has won
+ print("\n")
+
 def check_win(board, player):
     win_conditions = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Horizontal
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Vertical
-        [0, 4, 8], [2, 4, 6]  # Diagonal
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],  
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+        [0, 4, 8], [2, 4, 6] 
     ]
 
     for condition in win_conditions:
         if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
-            return True  # If a winning condition is met, return True
+            return True
 
-    return False  # Return False only after checking all conditions
+    return False 
 
 
-# Function to check if the board is full
 def is_board_full(board):
  return " " not in board
 
-# Function to handle player's move
+
 def player_move(board, player):
  while True:
     try:
@@ -57,7 +56,7 @@ def player_move(board, player):
     except (ValueError, IndexError):
          print("Invalid move. Please choose a number between 1 and 9.")
 
-# Main function to play the game
+
 def play_game():
  board = [" "] * 9
  current_player = "X"
@@ -75,12 +74,12 @@ def play_game():
         print("It's a tie!")
         break
 
-# Function to check if the board is full
+
 def is_board_full(board):
  return " " not in board
 
 
-# Function to handle player's move
+
 def player_move(board, player):
  while True:
     try:
@@ -94,7 +93,7 @@ def player_move(board, player):
         print("Invalid move. Please choose a number between 1 and 9.")
 
 
-# Main function to play the game
+
 def play_game():
  board = [" "] * 9
  current_player = "X"
@@ -111,10 +110,10 @@ def play_game():
     elif is_board_full(board):
         print("It's a tie!")
         break
-    # Switch player
+    
     current_player = "O" if current_player == "X" else "X"
 
-# Start the game
+
 if __name__ == "__main__":
  play_game()`,
           },
