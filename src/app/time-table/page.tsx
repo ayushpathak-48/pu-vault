@@ -12,12 +12,13 @@ import { useEffect, useState } from "react";
 
 const TimeTablePage = () => {
   const course = useDataStore((state) => state.course);
+  const hydrated = useDataStore((state) => state.hydrated);
   const [date] = useState(new Date());
   const currentDay = weekdays[date.getDay() - 1];
 
   const division = useDataStore((state) => state.division);
   const [activeDivision, setActiveDivision] = useQueryState("div", {
-    defaultValue: division || "div_a",
+    defaultValue: division,
   });
   const [activeWeekTab, setActivewWeekTab] = useQueryState("week", {
     defaultValue: currentDay,
@@ -36,6 +37,14 @@ const TimeTablePage = () => {
     )[0]?.data;
     setTableData(tempData);
   }, [activeDivision, division]);
+
+  if (!hydrated) {
+    return (
+      <div className="flex items-center justify-center h-96 w-full">
+        <Loader className="animate-spin text-lg" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
