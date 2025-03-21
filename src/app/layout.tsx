@@ -6,9 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
-// import { Button } from "@/components/ui/button";
 import Link from "next/link";
-// import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 import { WhatsappButton } from "@/components/WhatsappButton";
 
 const headingFont = PT_Serif({
