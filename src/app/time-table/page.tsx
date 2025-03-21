@@ -40,7 +40,7 @@ const TimeTablePage = () => {
   return (
     <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
       <Tabs
-        defaultValue={timeTableViewType}
+        value={timeTableViewType}
         onValueChange={(data) => setTimeTableViewType(data)}
         className="w-full"
       >

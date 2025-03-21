@@ -18,7 +18,6 @@ export const DataDialog = () => {
   const course = useDataStore((state) => state.course);
 
   useEffect(() => {
-    console.log({ hydrated, course });
     if (hydrated && !course) {
       setOpen(true);
     }

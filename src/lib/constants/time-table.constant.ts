@@ -244,25 +244,25 @@ export const time_table = [
           label: "10.45 TO 11.45",
         },
         {
-          id: 3,
+          id: 4,
           label: "CG",
           professor: "MT",
           classroom: "606",
           cellClassName: "text-orange-500",
         },
         {
-          id: 4,
+          id: 5,
           label: "PULMS Self Learning",
         },
         {
-          id: 5,
+          id: 6,
           label: "AJP",
           professor: "Tanmay",
           classroom: "305",
           cellClassName: "text-red-500",
         },
         {
-          id: 6,
+          id: 8,
           label: "DCN",
           professor: "Sonali Gupta",
           classroom: "305",
@@ -343,13 +343,12 @@ export const time_table = [
           id: 2,
           label: "01.35 TO 02.25",
         },
-
         {
           id: 4,
           label: "Library",
         },
         {
-          id: 5,
+          id: 6,
           label: "Library",
         },
       ],
@@ -464,13 +463,6 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 4,
-          label: " AI",
-          professor: "Rinkal S.",
-          classroom: "307",
-          cellClassName: "text-[#11131e]",
-        },
-        {
           id: 5,
           label: " AI",
           professor: "Rinkal S.",
@@ -479,6 +471,13 @@ export const time_table = [
         },
         {
           id: 6,
+          label: " AI",
+          professor: "Rinkal S.",
+          classroom: "307",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 7,
           label: " AI",
           professor: "Rinkal S.",
           classroom: "306",
@@ -564,18 +563,18 @@ export const time_table = [
           label: "PULMS Self Learning",
         },
         {
-          id: 4,
+          id: 5,
           label: "PULMS Self Learning",
         },
         {
-          id: 5,
+          id: 6,
           label: "CDC",
           professor: "Arul P",
           classroom: "603",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 6,
+          id: 8,
           label: "CG",
           professor: "Preeti",
           classroom: "307",
@@ -658,18 +657,18 @@ export const time_table = [
           label: "01.35 TO 02.25",
         },
         {
-          id: 3,
+          id: 6,
           label: "Face",
           professor: "Harshad",
           classroom: "304",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 4,
+          id: 7,
           label: "Library",
         },
         {
-          id: 5,
+          id: 8,
           label: "CA",
           professor: "Smarika Rai",
           classroom: "307",
@@ -892,14 +891,14 @@ export const time_table = [
           label: "10.45 TO 11.45",
         },
         {
-          id: 3,
+          id: 6,
           label: "CG",
           professor: "Dampy",
           classroom: "306",
           cellClassName: "text-orange-500",
         },
         {
-          id: 4,
+          id: 8,
           label: "AI",
           professor: "Nirmit Shah",
           classroom: "308",
@@ -987,17 +986,17 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 4,
+          id: 6,
           label: "CA",
           professor: "Samika Rai",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 7,
           label: "PULMS Self Learning",
         },
         {
-          id: 6,
+          id: 8,
           label: "CA",
           professor: "Samika Rai",
           classroom: "308",
@@ -1129,14 +1128,14 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 6,
+          id: 7,
           label: "CG",
           professor: "Dampy",
           classroom: "309",
           cellClassName: "text-orange-500",
         },
         {
-          id: 7,
+          id: 8,
           label: "Library",
         },
       ],
@@ -1224,18 +1223,18 @@ export const time_table = [
           label: "10:45 TO 11:45",
         },
         {
-          id: 3,
+          id: 4,
           label: "Library",
         },
         {
-          id: 4,
+          id: 5,
           label: " AI",
           professor: "Prachi Mehta",
           classroom: "604",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -1247,7 +1246,7 @@ export const time_table = [
           },
         },
         {
-          id: 6,
+          id: 8,
           label: "CA",
           professor: "Smarika Rai",
           cellClassName: "text-[#11131e]",
@@ -1335,7 +1334,7 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -1348,14 +1347,14 @@ export const time_table = [
           row_span: 2,
         },
         {
-          id: 4,
+          id: 6,
           label: "CG",
           professor: "Dampy",
           classroom: "309",
           cellClassName: "text-orange-500",
         },
         {
-          id: 5,
+          id: 8,
           label: "CG",
           professor: "Dampy",
           classroom: "309",
@@ -1467,13 +1466,6 @@ export const time_table = [
           label: "08:30 TO 09:30",
         },
         {
-          id: 3,
-          label: "DCN",
-          professor: "Komal B.",
-          classroom: "601",
-          cellClassName: "text-purple-500",
-        },
-        {
           id: 4,
           label: "DCN",
           professor: "Komal B.",
@@ -1482,13 +1474,20 @@ export const time_table = [
         },
         {
           id: 5,
+          label: "DCN",
+          professor: "Komal B.",
+          classroom: "601",
+          cellClassName: "text-purple-500",
+        },
+        {
+          id: 6,
           label: "CG",
           professor: "Dampy",
           classroom: "601",
           cellClassName: "text-orange-500",
         },
         {
-          id: 6,
+          id: 8,
           label: "Library",
         },
       ],
@@ -1575,13 +1574,13 @@ export const time_table = [
           label: "10:45 TO 11:45",
         },
         {
-          id: 3,
+          id: 4,
           label: "BDA",
           professor: "VG",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 4,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -1593,14 +1592,14 @@ export const time_table = [
           },
         },
         {
-          id: 5,
+          id: 7,
           label: "BDA",
           professor: "VG",
           classroom: "306",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 6,
+          id: 8,
           label: "BDA",
           professor: "VG",
           classroom: "601",
@@ -1686,14 +1685,14 @@ export const time_table = [
         },
 
         {
-          id: 3,
+          id: 4,
           label: "AJP Lab",
           professor: ["Dhruv", "Honey"],
           lab: ["606", "607"],
           cellClassName: "text-red-500",
         },
         {
-          id: 4,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -1705,17 +1704,17 @@ export const time_table = [
           },
         },
         {
-          id: 5,
-          label: "CA",
-          professor: "Smarika Rai",
-        },
-        {
           id: 6,
           label: "CA",
           professor: "Smarika Rai",
         },
         {
           id: 7,
+          label: "CA",
+          professor: "Smarika Rai",
+        },
+        {
+          id: 8,
           label: "Face",
           professor: "Harshad",
           classroom: "601",
@@ -1833,18 +1832,11 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 4,
+          id: 5,
           label: "CG",
           professor: "Ghanshyam",
           classroom: "602",
           cellClassName: "text-orange-500",
-        },
-        {
-          id: 5,
-          label: "CC",
-          professor: "Mohit",
-          classroom: "602",
-          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
@@ -1855,6 +1847,13 @@ export const time_table = [
         },
         {
           id: 7,
+          label: "CC",
+          professor: "Mohit",
+          classroom: "602",
+          cellClassName: "text-[#11131e]",
+        },
+        {
+          id: 8,
           label: "Library",
         },
       ],
@@ -1938,19 +1937,19 @@ export const time_table = [
           label: "10:45 TO 11:45",
         },
         {
-          id: 3,
+          id: 4,
           label: "CA",
           professor: "Smarika Rai",
         },
         {
-          id: 4,
+          id: 5,
           label: "CDC",
           professor: "Arul P",
           classroom: "603",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -2042,14 +2041,14 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 4,
           label: "AJP [T]",
           professor: ["Renuka Parmar", "Vivek Dave"],
           lab: ["612 ", "613"],
           cellClassName: "text-red-500",
         },
         {
-          id: 4,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -2061,14 +2060,14 @@ export const time_table = [
           },
         },
         {
-          id: 5,
+          id: 6,
           label: "FACE",
           professor: "Harshad",
           classroom: "306",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 6,
+          id: 8,
           label: "CG",
           professor: "Ghanshyam",
           classroom: "602",
@@ -2290,14 +2289,14 @@ export const time_table = [
           label: "PLUMS Self Learning",
         },
         {
-          id: 4,
+          id: 7,
           label: "CSF",
           professor: "Aniket",
           classroom: "302",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 8,
           label: "CSF",
           professor: "Aniket",
           classroom: "603",
@@ -2380,19 +2379,19 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 4,
           label: "CA",
           professor: "Smarika Rai",
         },
         {
-          id: 4,
+          id: 6,
           label: "CSF",
           professor: "Aniket",
           classroom: "302",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 7,
           label: "CA",
           professor: "Smarika Rai",
         },
@@ -2508,28 +2507,28 @@ export const time_table = [
           cellClassName: "text-red-500",
         },
         {
-          id: 4,
+          id: 5,
           label: "DCN",
           professor: "Sonali Gupta",
           classroom: "604",
           cellClassName: "text-purple-500",
         },
         {
-          id: 5,
+          id: 6,
           label: "AJP",
           professor: "Gaurav",
           classroom: "604",
           cellClassName: "text-red-500",
         },
         {
-          id: 6,
+          id: 7,
           label: "CG",
           professor: "Ghanshyam",
           classroom: "604",
           cellClassName: "text-orange-500",
         },
         {
-          id: 7,
+          id: 8,
           label: "Library",
         },
       ],
@@ -2625,7 +2624,7 @@ export const time_table = [
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 5,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -2637,14 +2636,14 @@ export const time_table = [
           },
         },
         {
-          id: 6,
+          id: 7,
           label: "CDC",
           professor: "DD",
           classroom: "304",
           cellClassName: "text-[#11131e]",
         },
         {
-          id: 7,
+          id: 8,
           label: "AJP",
           professor: "Gaurav",
           classroom: "604",
@@ -2733,7 +2732,7 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -2745,11 +2744,11 @@ export const time_table = [
           },
         },
         {
-          id: 4,
+          id: 6,
           label: "Library",
         },
         {
-          id: 5,
+          id: 8,
           label: "DCN",
           professor: "Sonali Gupta",
           classroom: "604",
@@ -2977,14 +2976,14 @@ export const time_table = [
           label: "10:45 TO 11:45",
         },
         {
-          id: 3,
+          id: 4,
           label: "AJP",
           professor: "Hardik Parmar",
           classroom: "710",
           cellClassName: "text-red-500",
         },
         {
-          id: 4,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -2996,12 +2995,12 @@ export const time_table = [
           },
         },
         {
-          id: 5,
+          id: 7,
           label: "CA",
           professor: "Smarika Rai",
         },
         {
-          id: 6,
+          id: 8,
           label: "Face",
           professor: "Harshad",
           classroom: "605",
@@ -3090,14 +3089,14 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 4,
           label: "DCN",
           professor: ["Mayank P.", "Dean Mam"],
           classroom: "601",
           cellClassName: "text-purple-500",
         },
         {
-          id: 4,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -3330,11 +3329,11 @@ export const time_table = [
           label: "Library",
         },
         {
-          id: 4,
+          id: 5,
           label: "Library",
         },
         {
-          id: 5,
+          id: 8,
           label: "CG",
           professor: "MT",
           classroom: "606",
@@ -3426,7 +3425,7 @@ export const time_table = [
           cellClassName: "text-orange-500",
         },
         {
-          id: 5,
+          id: 7,
           label: "PULMS Self Learning",
         },
       ],
@@ -3657,11 +3656,11 @@ export const time_table = [
           label: "10:45 TO 11:45",
         },
         {
-          id: 3,
+          id: 4,
           label: "Library",
         },
         {
-          id: 4,
+          id: 6,
           mca: {
             label: "Library",
           },
@@ -3754,7 +3753,7 @@ export const time_table = [
           label: "01:35 TO 02:25",
         },
         {
-          id: 3,
+          id: 5,
           mca: {
             label: "Library",
           },
@@ -3766,18 +3765,18 @@ export const time_table = [
           },
         },
         {
-          id: 4,
+          id: 6,
           label: "Library",
         },
         {
-          id: 5,
+          id: 7,
           label: "DCN",
           professor: ["Sonali Gupta", "Dean Mam"],
           classroom: "607",
           cellClassName: "text-purple-500",
         },
         {
-          id: 6,
+          id: 8,
           label: "FSW",
           professor: "Omkar",
           classroom: "607",

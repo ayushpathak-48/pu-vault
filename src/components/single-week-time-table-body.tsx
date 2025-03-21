@@ -1,5 +1,5 @@
 import { time_table, TimeTableRow } from "@/lib/constants/time-table.constant";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 export const SingleWeekTimeTableBody = ({
   weekIndex,
@@ -25,6 +25,11 @@ export const SingleWeekTimeTableBody = ({
     });
     setTimetableData(weekData);
   }, []);
+
+  useEffect(() => {
+    console.log({ weekIndex, timetableData });
+  }, [timetableData]);
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-col gap-2">
