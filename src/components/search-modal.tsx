@@ -21,13 +21,14 @@ import {
   CommandDialog,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
+  // CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Input } from "./ui/input";
 
 const SearchModal = ({
   hideShortcut,
@@ -44,7 +45,7 @@ const SearchModal = ({
   const [open, setOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
 
-  const filteredData = {
+  const initialData = {
     notes: materialsData.map(({ notes_link }) => notes_link),
     practicals: materialsData.map(({ practicals_link }) => practicals_link),
     syllabus: materialsData.map(({ syllabus_link }) => syllabus_link),
@@ -52,6 +53,89 @@ const SearchModal = ({
     practicalCodes,
     assignments,
   };
+
+  const [filteredData, setFilteredData] = useState(initialData);
+
+  useEffect(() => {
+    const tempInitialData = JSON.parse(JSON.stringify(initialData));
+    if (!searchText) {
+      setFilteredData(tempInitialData);
+      return;
+    }
+
+    const searchTextArr = searchText.split(" ");
+
+    const tempNotes = tempInitialData.notes
+      .map((data, ind) => {
+        data.forEach((ele) => {
+          ele.title = ele.title + " " + materialsData[ind]?.subject_name;
+        });
+        data = data.filter(({ title }) =>
+          searchTextArr.every((keyword) =>
+            (title + " Notes Materials ppt pdf")
+              .toLowerCase()
+              .includes(keyword.toLowerCase())
+          )
+        );
+        return data;
+      })
+      .filter((arr) => arr.length > 0);
+
+    const tempPracticals = tempInitialData.practicals
+      .map((data, ind) => {
+        data.forEach((ele) => {
+          ele.title = ele.title + " " + materialsData[ind]?.subject_name;
+        });
+        data = data.filter(({ title }) =>
+          searchTextArr.every((keyword) =>
+            (title + " Journal").toLowerCase().includes(keyword.toLowerCase())
+          )
+        );
+        return data;
+      })
+      .filter((arr) => arr.length > 0);
+
+    const tempPracticalCodes = tempInitialData.practicalCodes
+      .map((data) => {
+        data.practicals = data.practicals.filter(({ name }) =>
+          searchTextArr.every((keyword) =>
+            (name + " " + data.subject_name + " Source Code")
+              .toLowerCase()
+              .includes(keyword.toLowerCase())
+          )
+        );
+        return data;
+      })
+      .filter((arr) => arr.practicals.length > 0);
+
+    const tempSyllabus = tempInitialData.syllabus.filter((data) =>
+      searchTextArr.every((keyword) =>
+        (data + " Syllabus").toLowerCase().includes(keyword.toLowerCase())
+      )
+    );
+    const tempInterviewQuestions = tempInitialData.interviewQuestions.filter(
+      ({ title }) =>
+        searchTextArr.every((keyword) =>
+          (title + " Interview Questions")
+            .toLowerCase()
+            .includes(keyword.toLowerCase())
+        )
+    );
+    const tempAssignments = tempInitialData.assignments.filter(({ title }) =>
+      searchTextArr.every((keyword) =>
+        (title + " Assignements").toLowerCase().includes(keyword.toLowerCase())
+      )
+    );
+
+    setFilteredData({
+      notes: tempNotes,
+      practicals: tempPracticals,
+      syllabus: tempSyllabus,
+      interviewQuestions: tempInterviewQuestions,
+      practicalCodes: tempPracticalCodes,
+      assignments: tempAssignments,
+    });
+  }, [searchText]);
 
   useEffect(() => {
     if (hideShortcut) return;
@@ -103,9 +187,9 @@ const SearchModal = ({
         open={open}
         onOpenChange={setOpen}
       >
-        <CommandInput
-          onValueChange={(e) => {
-            setSearchText(e);
+        <Input
+          onChange={(e) => {
+            setSearchText(e?.target?.value || "");
           }}
           placeholder="Start typing here to search..."
         />
@@ -113,57 +197,61 @@ const SearchModal = ({
           <CommandEmpty>
             <span>No results found for {searchText}</span>
           </CommandEmpty>
-          <CommandGroup heading="Notes">
-            {filteredData.notes.map((notesArr, i) =>
+          <CommandGroup
+            className={filteredData.notes?.length > 0 ? "" : "hidden"}
+            heading="Notes"
+          >
+            {filteredData.notes.map((notesArr) =>
               notesArr.map((note) => (
                 <CommandItem
                   key={note.id}
-                  keywords={[
-                    "Notes",
-                    materialsData[i]?.subject_name,
-                    note.title,
-                  ]}
                   onSelect={() => handleRedirect(note.href, "_blank")}
                 >
                   <Notebook className="!size-4" />
-                  <span className="hidden">
-                    Notes {materialsData[i]?.subject_name}
-                  </span>
                   <span>{note.title}</span>
                   <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
-                    {materialsData[i]?.subject_name}
+                    {
+                      materialsData.find(({ notes_link }) =>
+                        notes_link.some(({ href }) => href == note.href)
+                      )?.subject_name
+                    }
                   </span>
                 </CommandItem>
               ))
             )}
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Journals">
-            {filteredData.practicals.map((notesArr, i) =>
+          <CommandGroup
+            className={filteredData.practicals?.length > 0 ? "" : "hidden"}
+            heading="Journals"
+          >
+            {filteredData.practicals.map((notesArr) =>
               notesArr.map((note) => (
                 <CommandItem
                   key={note.id}
-                  keywords={[
-                    "Journals",
-                    materialsData[i]?.subject_name,
-                    note.title,
-                  ]}
                   onSelect={() => handleRedirect(note.journal_link, "_blank")}
                 >
                   <NotebookPen className="!size-4" />
-                  <span className="hidden">
-                    Journals : {materialsData[i]?.subject_name}
-                  </span>
                   <span>{note.title}</span>
                   <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
-                    {materialsData[i]?.subject_name}
+                    {
+                      materialsData.find(({ practicals_link }) =>
+                        practicals_link.some(
+                          ({ journal_link }) =>
+                            journal_link == note.journal_link
+                        )
+                      )?.subject_name
+                    }
                   </span>
                 </CommandItem>
               ))
             )}
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Source Code">
+          <CommandGroup
+            heading="Source Code"
+            className={filteredData.practicalCodes?.length > 0 ? "" : "hidden"}
+          >
             {filteredData.practicalCodes.map((codes) =>
               codes.practicals.map((practical) => (
                 <CommandItem
@@ -174,7 +262,6 @@ const SearchModal = ({
                   }
                 >
                   <FolderCodeIcon className="!size-4" />
-                  <span className="hidden">Source Code</span>
                   <span>{practical.name}</span>
                   <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
                     {codes?.subject_name}
@@ -184,11 +271,13 @@ const SearchModal = ({
             )}
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Assignments">
+          <CommandGroup
+            heading="Assignments"
+            className={filteredData.assignments?.length > 0 ? "" : "hidden"}
+          >
             {filteredData.assignments.map((assignment) => (
               <CommandItem
                 key={assignment.id}
-                keywords={["Assignments", assignment.title]}
                 onSelect={() => handleRedirect(assignment.href, "_blank")}
               >
                 <NotebookPen className="!size-4" />
@@ -199,22 +288,46 @@ const SearchModal = ({
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading="Syllabus">
-            {filteredData.syllabus.map((syllabus, i) => (
+          <CommandGroup
+            heading="Syllabus"
+            className={filteredData.syllabus?.length > 0 ? "" : "hidden"}
+          >
+            {filteredData.syllabus.map((syllabus) => (
               <CommandItem
                 key={syllabus}
-                keywords={["Syllabus", materialsData[i]?.subject_name]}
+                keywords={[
+                  "Syllabus",
+                  materialsData.find(
+                    ({ syllabus_link }) => syllabus_link == syllabus
+                  )?.subject_name,
+                ]}
                 onSelect={() => handleRedirect(syllabus, "_blank")}
               >
                 <NotebookPen className="!size-4" />
-                <span>{materialsData[i]?.subject_name} : Syllabus</span>
+                <span>
+                  {
+                    materialsData.find(
+                      ({ syllabus_link }) => syllabus_link == syllabus
+                    )?.subject_name
+                  }{" "}
+                  : Syllabus
+                </span>
                 <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
-                  {materialsData[i]?.subject_name}
+                  {
+                    materialsData.find(
+                      ({ syllabus_link }) => syllabus_link == syllabus
+                    )?.subject_name
+                  }
                 </span>
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading="Interview Questions">
+          <CommandGroup
+            heading="Interview Questions"
+            className={
+              filteredData.interviewQuestions?.length > 0 ? "" : "hidden"
+            }
+          >
             {filteredData.interviewQuestions.map((question) => (
               <CommandItem
                 key={question.id}

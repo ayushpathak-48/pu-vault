@@ -14,15 +14,27 @@ export const SingleWeekTimeTableBody = ({
     time_table.forEach((table) => {
       if (activeDivision == table.division_key) {
         table.data.forEach((row) => {
-          if (row[weekIndex + 2]) {
-            weekData.push(row[weekIndex + 2]);
-          } else {
-            weekData.push(row[weekIndex]);
-          }
+          row.forEach((data, i) => {
+            if (data.id == i + 1) {
+              weekData.push(data);
+            } else {
+              const difference = data.id - i + 1;
+              const arr = new Array(difference).fill(0);
+              arr.forEach(() => {
+                weekData.push();
+              });
+            }
+            // console.log({ data });
+          });
+          // if (row[weekIndex + 2]) {
+          // } else {
+          //   weekData.push(row[weekIndex]);
+          // }
           return;
         });
       }
     });
+    console.log({ weekData });
     setTimetableData(weekData);
   }, []);
 
