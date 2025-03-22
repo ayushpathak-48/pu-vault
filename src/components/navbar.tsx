@@ -40,7 +40,16 @@ export const Navbar = () => {
           {activePageTitle}
         </div>
         <div className="md:hidden">
-          <SearchModal hideShortcut />
+          <SearchModal
+            hideShortcut
+            triggerContent={
+              <SearchIcon
+                className={cn(
+                  "size-6 text-gray-500 active:scale-[0.95] transition-all"
+                )}
+              />
+            }
+          />
         </div>
         <div className="md:hidden">
           <Button
@@ -53,20 +62,7 @@ export const Navbar = () => {
           </Button>
         </div>
         <div className="max-md:hidden">
-          <SearchModal
-            triggerContent={
-              <>
-                <SearchIcon
-                  className={cn(
-                    "size-6 text-gray-500 active:scale-[0.95] transition-all"
-                  )}
-                />
-                <span className={cn("text-[10px] font-medium text-gray-500")}>
-                  Search
-                </span>
-              </>
-            }
-          />
+          <SearchModal />
         </div>
       </div>
       {/* <WhatsappDialog /> */}
