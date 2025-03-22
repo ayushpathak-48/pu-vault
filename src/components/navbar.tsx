@@ -5,11 +5,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, SearchIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import SearchModal from "./search-modal";
 import { DataDialog } from "./modals/data-dialog";
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -39,6 +40,9 @@ export const Navbar = () => {
           {activePageTitle}
         </div>
         <div className="md:hidden">
+          <SearchModal hideShortcut />
+        </div>
+        <div className="md:hidden">
           <Button
             variant={"ghost"}
             size={"icon"}
@@ -49,7 +53,20 @@ export const Navbar = () => {
           </Button>
         </div>
         <div className="max-md:hidden">
-          <SearchModal />
+          <SearchModal
+            triggerContent={
+              <>
+                <SearchIcon
+                  className={cn(
+                    "size-6 text-gray-500 active:scale-[0.95] transition-all"
+                  )}
+                />
+                <span className={cn("text-[10px] font-medium text-gray-500")}>
+                  Search
+                </span>
+              </>
+            }
+          />
         </div>
       </div>
       {/* <WhatsappDialog /> */}

@@ -192,6 +192,7 @@ const SearchModal = ({
             setSearchText(e?.target?.value || "");
           }}
           placeholder="Start typing here to search..."
+          className="p-[25px] rounded-none"
         />
         <CommandList className="h-full max-md:!max-h-full md:h-[300px]">
           <CommandEmpty>

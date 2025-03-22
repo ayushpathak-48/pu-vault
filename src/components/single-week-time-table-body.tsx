@@ -1,5 +1,6 @@
 import { time_table, TimeTableRow } from "@/lib/constants/time-table.constant";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import { checkIsActiveTime, cn } from "@/lib/utils";
+import React, { Fragment, useEffect, useLayoutEffect, useState } from "react";
 
 export const SingleWeekTimeTableBody = ({
   weekIndex,
@@ -8,48 +9,172 @@ export const SingleWeekTimeTableBody = ({
   weekIndex: number;
   activeDivision: string;
 }) => {
-  const [timetableData, setTimetableData] = useState<TimeTableRow>([]);
+  const [timetableData, setTimetableData] = useState<TimeTableRow[]>([]);
+  const [currentLectureIndex, setCurrentLectureIndex] = useState<number | null>(
+    null
+  );
   useLayoutEffect(() => {
-    const weekData: TimeTableRow = [];
+    const weekData: TimeTableRow[] = [];
     time_table.forEach((table) => {
       if (activeDivision == table.division_key) {
-        table.data.forEach((row) => {
-          row.forEach((data, i) => {
-            if (data.id == i + 1) {
-              weekData.push(data);
-            } else {
-              const difference = data.id - i + 1;
-              const arr = new Array(difference).fill(0);
-              arr.forEach(() => {
-                weekData.push();
-              });
-            }
-            // console.log({ data });
-          });
-          // if (row[weekIndex + 2]) {
-          // } else {
-          //   weekData.push(row[weekIndex]);
-          // }
+        table.data.forEach((row, rowInd) => {
+          if ([0].includes(rowInd)) return;
+          const data = row.find((ele) => ele.id == weekIndex + 3);
+          if (data) {
+            weekData.push([row[0], row[1], data]);
+          } else {
+            weekData.push([row[0], row[1]]);
+          }
           return;
         });
       }
     });
-    console.log({ weekData });
     setTimetableData(weekData);
   }, []);
 
   useEffect(() => {
-    console.log({ weekIndex, timetableData });
+    timetableData.forEach((data, i) => {
+      if (i == 2 && checkIsActiveTime("03.30 TO 04.30")) {
+        setCurrentLectureIndex(i);
+      }
+    });
   }, [timetableData]);
 
   return (
     <div className="flex items-center justify-between">
-      <div className="flex flex-col gap-2">
-        {timetableData.map((table, i) => (
-          <div className="" key={table?.id + "_" + i}>
-            {table?.label}
-          </div>
-        ))}
+      <div className="flex flex-col gap-2 w-full">
+        {timetableData.map((table, i) => {
+          if (timetableData[i - 1]?.[2]?.row_span == 2) return;
+          return (
+            <Fragment key={i}>
+              {table[1]?.col_span == 7 ? (
+                // Recess Card
+                <div className="py-2 text-sm bg-neutral-200 text-black text-center font-medium rounded-sm">
+                  {table[1].label}
+                </div>
+              ) : (
+                // Time Table Card
+                <div>
+                  {currentLectureIndex == i && (
+                    <div className="bg-sky-100 w-full p-1 text-xs font-semibold text-center text-sky-800 rounded-t-lg">
+                      Ongoing Lecture
+                    </div>
+                  )}
+                  {
+                    // currentLectureIndex ==
+                    // ((currentLectureIndex &&
+                    // timetableData[currentLectureIndex]?.[2]?.row_span == 2
+                    //   ? i - 3
+                    //   : timetableData[i - 1]?.[1].col_span == 7
+                    //   ? i - 2
+                    //   : i - 1)
+                    currentLectureIndex ==
+                      (timetableData[i - 1]?.[1].col_span == 7
+                        ? i - 2
+                        : i - 1) && (
+                      <div className="bg-orange-100 w-full p-1 text-xs font-semibold text-center text-orange-800 rounded-t-lg">
+                        Next Lecture
+                      </div>
+                    )
+                  }
+                  <div
+                    className={cn(
+                      "border w-full rounded-sm flex items-center justify-center gap-2",
+                      currentLectureIndex == i &&
+                        "rounded-t-none border-sky-200",
+                      currentLectureIndex ==
+                        (timetableData[i - 1]?.[1].col_span == 7
+                          ? i - 2
+                          : i - 1) && "rounded-t-none border-orange-200"
+                    )}
+                    key={table[0]?.id + "_" + i}
+                  >
+                    <div className="flex flex-col gap-2 items-center w-[100px] border-r-2 p-2 h-full">
+                      {!table[2]?.professor && (
+                        <div className="bg-emerald-100 text-emerald-800 text-center px-2 w-full rounded-sm text-xs">
+                          Free
+                        </div>
+                      )}
+                      {!table[2]?.lab &&
+                        !table[2]?.classroom &&
+                        table[2]?.professor && (
+                          <div className="bg-orange-100 text-orange-800 text-center px-2 w-full rounded-sm text-xs">
+                            Online
+                          </div>
+                        )}
+                      {table[2]?.classroom && (
+                        <div className="bg-sky-100 text-sky-800 text-center px-2 w-full rounded-sm text-xs">
+                          Lecture
+                        </div>
+                      )}
+                      {table[2]?.lab && (
+                        <div className="bg-purple-100 text-purple-800 text-center px-2 w-full rounded-sm text-xs">
+                          Lab
+                        </div>
+                      )}
+                      <div className="whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black font-medium">
+                        <span>{table[1].label?.split(" ")[0]}</span>
+                        <span>{table[1].label?.split(" ")[1]}</span>
+                        <span>{table[1].label?.split(" ")[2]}</span>
+                      </div>
+
+                      {table[2]?.row_span == 2 && (
+                        <div className=" border-t-2 pt-2 whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black font-medium">
+                          <span>
+                            {timetableData[i + 1][1].label?.split(" ")[0]}
+                          </span>
+                          <span>
+                            {timetableData[i + 1][1].label?.split(" ")[1]}
+                          </span>
+                          <span>
+                            {timetableData[i + 1][1].label?.split(" ")[2]}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="w-full flex flex-col gap-2 p-3">
+                      <div
+                        className={cn(
+                          "text-sm",
+                          !table[2]?.professor && "text-center "
+                        )}
+                      >
+                        {table[2]?.professor && "Subject: "}
+                        <span className="font-semibold">{table[2]?.label}</span>
+                      </div>
+                      {table[2]?.professor && (
+                        <div className="text-sm ">
+                          Professor:{" "}
+                          <span className="font-semibold">
+                            {typeof table[2]?.professor == "string"
+                              ? table[2]?.professor
+                              : table[2]?.professor?.join(", ")}
+                          </span>
+                        </div>
+                      )}
+                      {table[2]?.classroom && (
+                        <div className="text-sm ">
+                          Classroom:{" "}
+                          <span className="font-semibold">
+                            {table[2]?.classroom}
+                          </span>
+                        </div>
+                      )}
+                      {table[2]?.lab && (
+                        <div className="text-sm ">
+                          Lab:{" "}
+                          <span className="font-semibold">
+                            {table[2]?.lab?.join(", ")}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Fragment>
+          );
+        })}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { divisions, weekdays } from "@/lib/constants";
 import { time_table, TimetableData } from "@/lib/constants/time-table.constant";
 import { useDataStore } from "@/stores/data.store";
-import { Loader } from "lucide-react";
+import { Loader, LayoutList, SheetIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
 
@@ -15,17 +15,18 @@ const TimeTablePage = () => {
   const hydrated = useDataStore((state) => state.hydrated);
   const [date] = useState(new Date());
   const currentDay = weekdays[date.getDay() - 1];
+  console.log({});
 
   const division = useDataStore((state) => state.division);
   const [activeDivision, setActiveDivision] = useQueryState("div", {
     defaultValue: division,
   });
   const [activeWeekTab, setActivewWeekTab] = useQueryState("week", {
-    defaultValue: currentDay,
+    defaultValue: currentDay || "Monday",
   });
   const [tableData, setTableData] = useState<TimetableData>([]);
   const [timeTableViewType, setTimeTableViewType] = useQueryState("view", {
-    defaultValue: "table",
+    defaultValue: "list",
   });
 
   useEffect(() => {
@@ -47,26 +48,26 @@ const TimeTablePage = () => {
   }
 
   return (
-    <div className="flex w-full flex-col gap-2 p-5 lg:p-10">
+    <div className="flex w-full flex-col gap-2 px-5 py-2">
       <Tabs
         value={timeTableViewType}
         onValueChange={(data) => setTimeTableViewType(data)}
         className="w-full"
       >
-        {/* <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border w-max">
+        <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border bg-white">
           <TabsTrigger
             value={"list"}
-            className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white w-full"
+            className="py-2 data-[state=active]:bg-transparent data-[state=active]:rounded-none data-[state=active]:shadow-none data-[state=active]:border-slate-700  border-b border-transparent w-full"
           >
-            List
+            <LayoutList className="mr-2 size-5" /> List
           </TabsTrigger>
           <TabsTrigger
             value={"table"}
-            className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white w-full"
+            className="py-2 data-[state=active]:bg-transparent data-[state=active]:rounded-none data-[state=active]:shadow-none data-[state=active]:border-slate-700  border-b border-transparent w-full"
           >
-            Table
+            <SheetIcon className="mr-2 size-5" /> Table
           </TabsTrigger>
-        </TabsList> */}
+        </TabsList>
         {/* <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 "> */}
         {/* List View Type */}
         <TabsContent value={"list"}>
@@ -77,7 +78,7 @@ const TimeTablePage = () => {
           >
             <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
               {divisions.map((div) => {
-                if (div.courses && div?.courses?.includes(course)) return;
+                if (div?.courses && !div?.courses?.includes(course)) return;
                 return (
                   <TabsTrigger
                     key={div.id}
@@ -105,18 +106,18 @@ const TimeTablePage = () => {
                           onValueChange={setActivewWeekTab}
                           className="w-full"
                         >
-                          <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-6">
+                          <TabsList className="w-full flex items-center justify-around p-1 h-max overflow-x-auto border gap-2">
                             {weekdays.map((week) => (
                               <TabsTrigger
                                 key={week}
                                 value={week}
                                 className="py-2 data-[state=active]:bg-slate-700 data-[state=active]:text-white"
                               >
-                                {week}
+                                {week.slice(0, 3)}
                               </TabsTrigger>
                             ))}
                           </TabsList>
-                          <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0">
+                          <div className="">
                             {weekdays.map((week, i) => (
                               <TabsContent key={week} value={week}>
                                 <SingleWeekTimeTableBody
