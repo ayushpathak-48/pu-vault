@@ -15,7 +15,6 @@ const TimeTablePage = () => {
   const hydrated = useDataStore((state) => state.hydrated);
   const [date] = useState(new Date());
   const currentDay = weekdays[date.getDay() - 1];
-  console.log({});
 
   const division = useDataStore((state) => state.division);
   const [activeDivision, setActiveDivision] = useQueryState("div", {
