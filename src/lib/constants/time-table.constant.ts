@@ -1577,6 +1577,7 @@ export const time_table = [
           id: 4,
           label: "BDA",
           professor: "VG",
+          classroom: "613",
           cellClassName: "text-[#11131e]",
         },
         {
