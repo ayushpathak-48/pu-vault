@@ -1,5 +1,6 @@
 import { time_table, TimeTableRow } from "@/lib/constants/time-table.constant";
 import { checkIsActiveTime, cn } from "@/lib/utils";
+import { useDataStore } from "@/stores/data.store";
 import React, { Fragment, useEffect, useLayoutEffect, useState } from "react";
 
 export const SingleWeekTimeTableBody = ({
@@ -13,6 +14,9 @@ export const SingleWeekTimeTableBody = ({
   const [currentLectureIndex, setCurrentLectureIndex] = useState<number | null>(
     null
   );
+
+  const course = useDataStore((state) => state.course);
+
   useLayoutEffect(() => {
     const weekData: TimeTableRow[] = [];
     time_table.forEach((table) => {
@@ -45,6 +49,12 @@ export const SingleWeekTimeTableBody = ({
       <div className="flex flex-col gap-2 w-full">
         {timetableData.map((table, i) => {
           if (timetableData[i - 1]?.[2]?.row_span == 2) return;
+          if (table?.[2]?.mca && table?.[2]?.msc_it) {
+            table[2] =
+              course == "mca"
+                ? { id: table[2].id, ...table[2]?.mca }
+                : { id: table[2]?.id, ...table[2]?.msc_it };
+          }
           return (
             <Fragment key={i}>
               {table[1]?.col_span == 7 ? (
