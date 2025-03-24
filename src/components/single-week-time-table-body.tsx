@@ -34,7 +34,7 @@ export const SingleWeekTimeTableBody = ({
 
   useEffect(() => {
     timetableData.forEach((data, i) => {
-      if (i == 2 && checkIsActiveTime(data[1]?.label)) {
+      if (checkIsActiveTime(data[1]?.label)) {
         setCurrentLectureIndex(i);
       }
     });
