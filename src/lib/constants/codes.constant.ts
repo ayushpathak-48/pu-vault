@@ -1579,6 +1579,110 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           },
         ],
       },
+      //  pra - 11 web-service
+      {
+        key: "web-service",
+        name: "Practical - 11: Simple RESTful Service ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 11- Simple RESTful Service",
+          },
+          {
+            type: "code",
+            fileName: "CurrencyConverterService.java",
+            value: `package in.ga.services;
+
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import java.util.HashMap;
+import java.util.Map;
+
+@Path("/currency")
+public class CurrencyConverterService {
+
+    private static final Map<String, Double> exchangeRates = new HashMap<>();
+
+    static {
+        exchangeRates.put("USD_TO_INR", 83.0);
+        exchangeRates.put("EUR_TO_INR", 90.0);
+    }
+
+    @GET
+    @Path("/convert")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response convertCurrency(@QueryParam("from") String from,
+            @QueryParam("to") String to,
+            @QueryParam("amount") double amount) {
+        String key = from.toUpperCase() + "_TO_" + to.toUpperCase();
+        if (!exchangeRates.containsKey(key)) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("Exchange rate for " + key + " not available.")
+                    .build();
+        }
+        double rate = exchangeRates.get(key);
+        double convertedAmount = amount * rate;
+        Map<String, Object> response = new HashMap<>();
+        response.put("from", from);
+        response.put("to", to);
+        response.put("amount", amount);
+        response.put("convertedAmount", convertedAmount);
+        return Response.ok(response).build();
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "web.xml",
+            language: "html",
+            value: `<servlet>
+<servlet-name>Jersey REST Service</servlet-name>
+<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+<init-param>
+<param-name>jersey.config.server.provider.packages</param-name>
+<param-value>in.ga.services</param-value>
+</init-param>
+<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>Jersey REST Service</servlet-name>
+<url-pattern>/ws/*</url-pattern>
+</servlet-mapping>`,
+          },
+          {
+            type: "code",
+            fileName: "pom.xml",
+            language: "html",
+            value: `<dependency>
+<groupId>org.glassfish.jersey.core</groupId>
+<artifactId>jersey-common</artifactId>
+<version>3.1.10</version>
+</dependency>
+<dependency>
+<groupId>org.glassfish.jersey.containers</groupId>
+<artifactId>jersey-container-servlet</artifactId>
+<version>3.1.10</version>
+</dependency>
+<dependency>
+<groupId>org.glassfish.jersey.inject</groupId>
+<artifactId>jersey-hk2</artifactId>
+<version>3.1.10</version>
+</dependency>`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `{
+  "amount": 5,
+  "convertedAmount": 415,
+  "from": "USD",
+  "to": "INR"
+}`,
+          },
+        ],
+      },
     ],
   },
   //   DCN
