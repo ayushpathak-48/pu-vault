@@ -826,6 +826,7 @@ export const specializationMaterials = [
     id: 4,
     subject_name: "Cyber Security and Forensics",
     value: "csf",
+    key: "csf",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cybersecurity-and-forensic.pdf`,
     notes_link: [
       {
@@ -875,6 +876,11 @@ export const specializationMaterials = [
         id: 3,
         title: "Practical 4 - How to use John the Ripper in Kali Linux",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-4.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 5 - Autopsy Practical Manual",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/autospy-practical-manual.pdf`,
       },
       // {
       //   id: 1,
