@@ -1,3 +1,5 @@
+"use client";
+
 import { time_table, TimeTableRow } from "@/lib/constants/time-table.constant";
 import { checkIsActiveTime, cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
@@ -10,6 +12,9 @@ export const SingleWeekTimeTableBody = ({
   weekIndex: number;
   activeDivision: string;
 }) => {
+  const [date] = useState(new Date());
+  const currentDayIndex = date.getDay() - 1;
+
   const [timetableData, setTimetableData] = useState<TimeTableRow[]>([]);
   const [currentLectureIndex, setCurrentLectureIndex] = useState<number | null>(
     null
@@ -39,7 +44,9 @@ export const SingleWeekTimeTableBody = ({
   useEffect(() => {
     timetableData.forEach((data, i) => {
       if (checkIsActiveTime(data[1]?.label)) {
-        setCurrentLectureIndex(i);
+        if (weekIndex == currentDayIndex) {
+          setCurrentLectureIndex(i);
+        }
       }
     });
   }, [timetableData]);
