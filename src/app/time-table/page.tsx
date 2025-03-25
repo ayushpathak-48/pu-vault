@@ -67,7 +67,6 @@ const TimeTablePage = () => {
             <SheetIcon className="mr-2 size-5" /> Table
           </TabsTrigger>
         </TabsList>
-        {/* <div className="md:p-5 border-2 rounded-lg md:border-slate-100 border-t-0 "> */}
         {/* List View Type */}
         <TabsContent value={"list"}>
           <Tabs

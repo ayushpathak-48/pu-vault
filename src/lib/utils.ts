@@ -14,12 +14,23 @@ export function getCurrentTime() {
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
-  return `${hours}.${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 export const checkIsActiveTime = (timeRange: string | undefined) => {
   if (!timeRange) return;
+
   const [startTime, endTime] = timeRange.split(" TO ");
   const currentTime = getCurrentTime();
-  return currentTime >= startTime && currentTime <= endTime;
+  const toMinutes = (time: string) => {
+    let [hours, minutes] = time.split(":").map(Number);
+    minutes = minutes;
+    if (hours < 6) hours += 12;
+    return hours * 60 + minutes;
+  };
+
+  const current = toMinutes(currentTime);
+  const start = toMinutes(startTime);
+  const end = toMinutes(endTime);
+  return current >= start && current < end;
 };

@@ -78,7 +78,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "07.30 TO 08.30",
+          label: "07:30 TO 08:30",
         },
         {
           id: 3,
@@ -127,7 +127,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "08.30 TO 09.30",
+          label: "08:30 TO 09:30",
         },
         {
           id: 3,
@@ -189,7 +189,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "09.45 TO 10.45",
+          label: "09:45 TO 10:45",
         },
         {
           id: 3,
@@ -241,7 +241,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "10.45 TO 11.45",
+          label: "10:45 TO 11:45",
         },
         {
           id: 4,
@@ -289,7 +289,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "12.45 TO 01.35",
+          label: "12:45 TO 01:35",
         },
         {
           id: 3,
@@ -341,7 +341,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "01.35 TO 02.25",
+          label: "01:35 TO 02:25",
         },
         {
           id: 4,
@@ -402,7 +402,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "07.30 TO 08.30",
+          label: "07:30 TO 08:30",
         },
         {
           id: 3,
@@ -453,7 +453,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "08.30 TO 09.30",
+          label: "08:30 TO 09:30",
         },
         {
           id: 3,
@@ -508,7 +508,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "09.45 TO 10.45",
+          label: "09:45 TO 10:45",
         },
         {
           id: 3,
@@ -556,7 +556,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "10.45 TO 11.45",
+          label: "10:45 TO 11:45",
         },
         {
           id: 3,
@@ -601,7 +601,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "12.45 TO 01.35",
+          label: "12:45 TO 01:35",
         },
         {
           id: 3,
@@ -654,7 +654,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "01.35 TO 02.25",
+          label: "01:35 TO 02:25",
         },
         {
           id: 6,
@@ -725,7 +725,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "07.30 TO 08.30",
+          label: "07:30 TO 08:30",
         },
         {
           id: 3,
@@ -775,7 +775,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "08.30 TO 09.30",
+          label: "08:30 TO 09:30",
         },
         {
           id: 3,
@@ -837,7 +837,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "09.45 TO 10.45",
+          label: "09:45 TO 10:45",
         },
         {
           id: 3,
@@ -888,7 +888,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "10.45 TO 11.45",
+          label: "10:45 TO 11:45",
         },
         {
           id: 6,
@@ -925,7 +925,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "12.45 TO 01.35",
+          label: "12:45 TO 01:35",
         },
         {
           id: 3,
@@ -976,7 +976,7 @@ export const time_table = [
         },
         {
           id: 2,
-          label: "01.35 TO 02.25",
+          label: "01:35 TO 02:25",
         },
         {
           id: 3,
