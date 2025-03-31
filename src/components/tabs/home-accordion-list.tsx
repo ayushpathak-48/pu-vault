@@ -246,10 +246,13 @@ const MaterialAccordionCard = ({
                     className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
-                      <Link href={paper?.href}>{paper.label}</Link>
+                      <Link target="_blank" href={paper?.href}>
+                        {paper.label}
+                      </Link>
                     </div>
                     <Button className="" asChild size={"sm"}>
                       <Link
+                        target="_blank"
                         href={paper?.href}
                         className="bg-sky-500 hover:bg-sky-500/90"
                       >

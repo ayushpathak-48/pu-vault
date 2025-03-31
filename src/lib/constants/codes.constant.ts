@@ -2211,7 +2211,7 @@ int main() {
         if (is_valid_divisor(divisor)) {
             printf("[Receiver] ✅ Valid CRC divisor.\\n");
         } else {
-            printf("[Receiver] ❌ Invalid CRC divisor. (Must start and end with 1 and be at least 2 bits long)\n");
+            printf("[Receiver] ❌ Invalid CRC divisor. (Must start and end with 1 and be at least 2 bits long)\\n");
         }
 
         // Remove FIFO
