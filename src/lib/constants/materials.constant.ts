@@ -85,6 +85,18 @@ export const materials = [
         title: "Practical 10 - JSP :- Application Context",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-10.pdf`,
       },
+      {
+        id: 11,
+        title: "Practical 11 - Simple RESTful Service",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ajp/practical-11.pdf`,
+      },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "AJP Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/ajp/mid-sem-2025.pdf`,
+      },
     ],
     output_links: [
       {
@@ -189,6 +201,13 @@ export const materials = [
         id: 12,
         title: "Practical 12 - Play and Stop Button",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-12.pdf`,
+      },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "CG Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/cg/mid-sem-2025.pdf`,
       },
     ],
     output_links: [
@@ -322,6 +341,18 @@ export const materials = [
         id: 11,
         title: "Practical 11 - Error Detection: LRC & Checksum",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-11.pdf`,
+      },
+      {
+        id: 12,
+        title: "Practical 12 - Error Detection: CRC",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-12.pdf`,
+      },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "DCN Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/dcn/mid-sem-2025.pdf`,
       },
     ],
     output_links: [
@@ -636,6 +667,13 @@ export const specializationMaterials = [
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-5.pdf`,
       },
     ],
+    que_papers: [
+      {
+        id: 1,
+        label: "AI Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/ai/mid-sem-2025.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -899,6 +937,7 @@ export const specializationMaterials = [
     id: 5,
     subject_name: "Cloud Computing",
     value: "cc",
+    key: "cloud-computing",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/cloud-computing.pdf`,
     notes_link: [
       {
@@ -955,6 +994,13 @@ export const specializationMaterials = [
         title:
           "Practical 5 -  Setting Up and Accessing a Linux Virtual Machine on Google Cloud",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-5.pdf`,
+      },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "CC Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/cc/mid-sem-2025.pdf`,
       },
     ],
   },
