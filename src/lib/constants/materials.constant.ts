@@ -202,6 +202,21 @@ export const materials = [
         title: "Practical 12 - Play and Stop Button",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-12.pdf`,
       },
+      {
+        id: 13,
+        title: "Practical 13 - Login",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-13.pdf`,
+      },
+      {
+        id: 14,
+        title: "Practical 14 - Calculator",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-14.pdf`,
+      },
+      {
+        id: 15,
+        title: "Practical 15 - Scenes",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-15.pdf`,
+      },
     ],
     que_papers: [
       {
