@@ -97,6 +97,11 @@ export const materials = [
         label: "AJP Mid Sem Theory 2025",
         href: `${MATERIAL_LINK_BASE_URL}/papers/ajp/mid-sem-2025.pdf`,
       },
+      {
+        id: 2,
+        label: "AJP Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/ajp/ajp-answer-key.pdf`,
+      },
     ],
     output_links: [
       {
