@@ -229,6 +229,11 @@ export const materials = [
         label: "CG Mid Sem Theory 2025",
         href: `${MATERIAL_LINK_BASE_URL}/papers/cg/mid-sem-2025.pdf`,
       },
+      {
+        id: 2,
+        label: "CG Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/cg/cg-answer-key.pdf`,
+      },
     ],
     output_links: [
       {
@@ -373,6 +378,11 @@ export const materials = [
         id: 1,
         label: "DCN Mid Sem Theory 2025",
         href: `${MATERIAL_LINK_BASE_URL}/papers/dcn/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "DCN Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/dcn/dcn-answer-key.pdf`,
       },
     ],
     output_links: [
@@ -693,6 +703,11 @@ export const specializationMaterials = [
         label: "AI Mid Sem Theory 2025",
         href: `${MATERIAL_LINK_BASE_URL}/papers/ai/mid-sem-2025.pdf`,
       },
+      {
+        id: 2,
+        label: "AI Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/ai/ai-answer-key.pdf`,
+      },
     ],
     output_links: [
       {
@@ -816,6 +831,18 @@ export const specializationMaterials = [
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-11.pdf`,
       },
     ],
+    que_papers: [
+      {
+        id: 1,
+        label: "BDA Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/bda/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "BDA Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/bda/bda-answer-key.pdf`,
+      },
+    ],
   },
   // FSWD
   {
@@ -881,6 +908,18 @@ export const specializationMaterials = [
         id: 4,
         title: "Practical 4 - Bootstrap Components",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-4.pdf`,
+      },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "FSWD Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/fswd/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "FSWD Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/fswd/fswd-answer-key.pdf`,
       },
     ],
   },
@@ -950,6 +989,18 @@ export const specializationMaterials = [
       //   title: "Practical 1",
       //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
       // },
+    ],
+    que_papers: [
+      {
+        id: 1,
+        label: "CSF Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/csf/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "CSF Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/csf/csf-answer-key.pdf`,
+      },
     ],
   },
   // CC
@@ -1021,6 +1072,11 @@ export const specializationMaterials = [
         id: 1,
         label: "CC Mid Sem Theory 2025",
         href: `${MATERIAL_LINK_BASE_URL}/papers/cc/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "CC Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/cc/cc-answer-key.pdf`,
       },
     ],
   },
