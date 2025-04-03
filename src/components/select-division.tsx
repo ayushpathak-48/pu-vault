@@ -36,7 +36,7 @@ export const SelectDivision = ({
         disabled={!division}
         value={defaultValue ? defaultValue : division}
       >
-        <SelectTrigger className="w-full bg-gray-100">
+        <SelectTrigger className="w-full ">
           <SelectValue placeholder="Select Division" />
         </SelectTrigger>
         <SelectContent className="max-h-60">

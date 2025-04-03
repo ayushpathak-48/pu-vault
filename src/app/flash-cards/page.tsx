@@ -1,0 +1,37 @@
+"use client";
+
+import { flashCards } from "@/lib/constants/flash-cards.constant";
+import { useDataStore } from "@/stores/data.store";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+
+const FlashCardsPage = () => {
+  const specialization = useDataStore((state) => state.specialization);
+
+  return (
+    <div className="p-5 flex flex-col gap-10 w-full">
+      <div className="flex flex-col gap-4">
+        {flashCards.map(
+          (subject) =>
+            (!subject?.specialization ||
+              specialization == subject?.specialization) && (
+              <Link
+                key={subject.key}
+                href={`/flash-cards/${subject.key}/${subject.units[0].key}`}
+              >
+                <div className="flex group border border-transparent hover:text-sky-400 hover:border-primary/50 cursor-pointer items-center justify-between bg-gray-100 p-4 rounded-lg">
+                  <h2 className="text-base md:text-lg font-medium hover:text-sky-500 transition-all">
+                    {subject.subject_name}
+                  </h2>
+                  <ArrowRight className="group-hover:-translate-x-1 transition-all" />
+                </div>
+              </Link>
+            ),
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default FlashCardsPage;
