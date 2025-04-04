@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
+import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
             </div>
             <BottomTabs />
             <Toaster position="top-center" />
+            <WhatsappFloatingButton />
           </ClientProvider>
         </NuqsAdapter>
       </body>

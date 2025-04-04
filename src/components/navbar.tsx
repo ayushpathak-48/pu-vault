@@ -17,15 +17,17 @@ export const Navbar = () => {
   const { toggleSidebar } = useSidebar();
 
   const [activePageTitle, setActivePageTitle] = useState(
-    navLinks.find((link) => link.href == pathname)?.title
+    navLinks.find((link) => link.href == pathname)?.title,
   );
 
   useLayoutEffect(() => {
     if (pathname.includes("/code")) {
       setActivePageTitle("Source Codes");
+    } else if (pathname.includes("/flash-cards")) {
+      setActivePageTitle("Flash Cards");
     } else {
       setActivePageTitle(
-        () => navLinks.find((link) => link.href.includes(pathname))?.title
+        () => navLinks.find((link) => link.href.includes(pathname))?.title,
       );
     }
   }, [pathname]);
@@ -45,7 +47,7 @@ export const Navbar = () => {
             triggerContent={
               <SearchIcon
                 className={cn(
-                  "size-6 text-gray-500 active:scale-[0.95] transition-all"
+                  "size-6 text-gray-500 active:scale-[0.95] transition-all",
                 )}
               />
             }
