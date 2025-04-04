@@ -4,7 +4,7 @@ import { useState } from "react";
 const Flashcard = ({ front, back }: { front: string; back: string }) => {
   const [flipped, setFlipped] = useState(false);
   return (
-    <div className="flex justify-center  h-full w-full group items-center overflow-hidden relative">
+    <div className="flex justify-center h-full w-full group items-center">
       <div
         className="relative w-full h-full cursor-pointer "
         onClick={() => setFlipped(!flipped)}

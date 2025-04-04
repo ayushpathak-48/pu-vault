@@ -125,7 +125,7 @@ const CodePageClient = () => {
               asChild
             >
               <Link
-                href={`/code/${subject.key}/${ele.key}`}
+                href={`/flash-cards/${subject.key}/${ele.key}`}
                 ref={ele?.key === chapter?.key ? activeTabRef : null}
               >
                 {ele.title}
@@ -171,16 +171,16 @@ const CodePageClient = () => {
               align: "start",
             }}
             setApi={setApi}
-            className="w-80"
+            className="w-96 max-w-full"
           >
-            <CarouselContent className="-mt-1 h-[calc(100vh-300px)]">
+            <CarouselContent className="-mt-1 h-[calc(100vh-350px)] min-h-80">
               {chapter?.cards?.map((card: FlashCardType) => (
                 <CarouselItem
                   key={card.id}
                   className="pt-1 flex items-center justify-center w-full"
                 >
-                  <Card className="group h-full flex items-center border-none shadow-none justify-center p-0 w-80">
-                    <CardContent className="flex items-center justify-center h-full w-full">
+                  <Card className="group h-full flex items-center border-none shadow-none justify-center p-2 w-80">
+                    <CardContent className="flex items-center justify-center h-full w-full p-2">
                       <Flashcard front={card.front} back={card.back} />
                     </CardContent>
                   </Card>
