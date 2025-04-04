@@ -2,7 +2,7 @@ import {} from "@radix-ui/react-select";
 import {
   Book,
   CableCarIcon,
-  // Calculator,
+  Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
   SquareDashedBottomCode,
@@ -69,13 +69,13 @@ export const navLinks = [
     hideOnMobile: true,
     icon: HardDriveDownloadIcon,
   },
-  // {
-  //   id: 9,
-  //   title: "Attendance Calc",
-  //   href: "/attendance-calculator",
-  //   hideOnMobile: true,
-  //   icon: Calculator,
-  // },
+  {
+    id: 9,
+    title: "Attendance Calc",
+    href: "/attendance-calculator",
+    hideOnMobile: true,
+    icon: Calculator,
+  },
   {
     id: 10,
     title: "Settings",
