@@ -1069,19 +1069,19 @@ export const flashCards = [
       },
     ],
   },
-  {
-    subject_name: "Big Data Analytics",
-    key: "big-data-analytics",
-    specialization: "bda",
-    units: [
-      {
-        id: 1,
-        title: "Unit- 1: Introduction",
-        key: "introduction",
-        cards: [],
-      },
-    ],
-  },
+  // {
+  //   subject_name: "Big Data Analytics",
+  //   key: "big-data-analytics",
+  //   specialization: "bda",
+  //   units: [
+  //     {
+  //       id: 1,
+  //       title: "Unit- 1: Introduction",
+  //       key: "introduction",
+  //       cards: [],
+  //     },
+  //   ],
+  // },
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
