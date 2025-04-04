@@ -171,7 +171,7 @@ const CodePageClient = () => {
               align: "start",
             }}
             setApi={setApi}
-            className="w-96 max-w-full"
+            className="w-96 max-w-[90%]"
           >
             <CarouselContent className="-mt-1 h-[calc(100vh-350px)] min-h-80">
               {chapter?.cards?.map((card: FlashCardType) => (
@@ -190,8 +190,8 @@ const CodePageClient = () => {
             <div className="py-2 text-center text-sm text-muted-foreground">
               Flashcard {current} of {count}
             </div>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="-left-5" />
+            <CarouselNext className="-right-5" />
           </Carousel>
         </div>
       )}
