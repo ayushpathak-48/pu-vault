@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Info, LoaderCircle } from "lucide-react";
 import Link from "next/link";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { flashCards } from "@/lib/constants/flash-cards.constant";
