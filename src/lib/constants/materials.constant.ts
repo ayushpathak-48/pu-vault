@@ -136,6 +136,11 @@ export const materials = [
       },
       {
         id: 4,
+        title: "Unit- 4: Illumination Model",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/4-illumination-model.pdf`,
+      },
+      {
+        id: 5,
         title: "Unit- 5: 2D and 3D Animation tools - Flash 1",
         href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/5.pdf`,
       },
@@ -304,6 +309,11 @@ export const materials = [
         id: 11,
         title: "Week 11",
         href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-11.pdf`,
+      },
+      {
+        id: 12,
+        title: "Week 12",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/data-communication-and-networking/nptel/Week-12.pdf`,
       },
     ],
     practicals_link: [

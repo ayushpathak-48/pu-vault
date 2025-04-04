@@ -1668,6 +1668,11 @@ public class CurrencyConverterService {
 <groupId>org.glassfish.jersey.inject</groupId>
 <artifactId>jersey-hk2</artifactId>
 <version>3.1.10</version>
+</dependency>
+<dependency>
+<groupId>org.glassfish.jersey.media</groupId>
+<artifactId>jersey-media-json-jackson</artifactId>
+<version>3.1.10</version>
 </dependency>`,
           },
           {
