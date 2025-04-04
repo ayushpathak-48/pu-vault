@@ -2,12 +2,14 @@ import {} from "@radix-ui/react-select";
 import {
   Book,
   CableCarIcon,
-  Calculator,
+  // Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
   SquareDashedBottomCode,
   SettingsIcon,
   MessageCircleQuestion,
+  // LinkIcon,
+  SquareAsteriskIcon,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -22,6 +24,12 @@ export const navLinks = [
     icon: HouseIcon,
   },
   {
+    id: 4,
+    title: "Flash Cards",
+    href: "/flash-cards",
+    icon: SquareAsteriskIcon,
+  },
+  {
     id: 2,
     title: "Source Codes",
     href: "/code",
@@ -33,35 +41,43 @@ export const navLinks = [
     href: "/time-table",
     icon: CableCarIcon,
   },
+
   {
-    id: 4,
+    id: 5,
     title: "Assignments",
     href: "/assignments",
     icon: Book,
   },
+  // {
+  //   id: 6,
+  //   title: "Important Links",
+  //   href: "/imp-links",
+  //   icon: LinkIcon,
+  //   hideOnMobile: true,
+  // },
   {
-    id: 5,
+    id: 7,
     title: "Interview Questions",
     href: "/interview",
     hideOnMobile: true,
     icon: MessageCircleQuestion,
   },
   {
-    id: 6,
+    id: 8,
     title: "Softwares",
     href: "/software-links",
     hideOnMobile: true,
     icon: HardDriveDownloadIcon,
   },
+  // {
+  //   id: 9,
+  //   title: "Attendance Calc",
+  //   href: "/attendance-calculator",
+  //   hideOnMobile: true,
+  //   icon: Calculator,
+  // },
   {
-    id: 7,
-    title: "Attendance Calc",
-    href: "/attendance-calculator",
-    hideOnMobile: true,
-    icon: Calculator,
-  },
-  {
-    id: 8,
+    id: 10,
     title: "Settings",
     href: "/settings",
     hideOnMobile: true,
@@ -255,4 +271,13 @@ export const weekdays = [
   "Thursday",
   "Friday",
   "Saturday",
+];
+
+export const impLinks = [
+  {
+    id: 1,
+    title: "Software Engineering",
+    href: `${MATERIAL_LINK_BASE_URL}/assignments/se-assignment.pdf`,
+  },
+  // Succesfully
 ];

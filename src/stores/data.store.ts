@@ -30,6 +30,6 @@ export const useDataStore = create<SpecializationState>()(
           state.hydrated = true; // Update hydration state when done
         }
       },
-    }
-  )
+    },
+  ),
 );

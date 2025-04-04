@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      transformStyle: {
+        "3d": "preserve-3d",
+      },
+      backfaceVisibility: {
+        hidden: "hidden",
+      },
       fontFamily: {
         heading: "var(--font-heading)",
       },
