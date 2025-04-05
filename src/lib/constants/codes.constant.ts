@@ -3258,6 +3258,96 @@ First Student in Array: Rahul`,
           // },
         ],
       },
+      // Practical 7
+      {
+        key: "create-a-nodejs-console-and-webapp",
+        name: `Practical - Create a NodeJS console and webapp`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical Create a NodeJS console and webapp`,
+          },
+          {
+            type: "code",
+            fileName: "1. Initialize Node.js Project",
+            value: `npm init -y`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "first.js",
+            value: `console.log("Welcome to my Node.js console app!");`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "second.js",
+            value: `console.log("Welcome to my Node.js console app!");
+
+process.stdout.write("Enter your name: ");
+process.stdin.on("data", (data) => {
+  const name = data.toString().trim();
+  console.log(Hello, ${name}!);
+  process.exit();
+});
+`,
+          },
+          {
+            type: "code",
+            fileName: "server.js",
+            value: `var http = require("http");
+
+var server = http.createServer(function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.write("Hello, this is a simple Node.js web server!");
+  res.end();
+});
+
+server.listen(3000, function () {
+  console.log("Server is running at http://localhost:3000");
+});`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: false,
+            value: `1. Initialize Node.js Project:-
+
+{
+  "name": "ndjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\"Error: no test specified\\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+-----------------------------------------------------------------------------------------------
+first.js
+
+Welcome to my Node.js console app!
+
+-----------------------------------------------------------------------------------------------
+second.js
+
+Welcome to my Node.js console app!
+Enter your name: John
+Hello, John!
+
+-----------------------------------------------------------------------------------------------
+server.js
+
+Server is running at http://localhost:3000
+
+Hello, this is a simple Node.js web server!`,
+          },
+        ],
+      },
     ],
   },
   // BDA
