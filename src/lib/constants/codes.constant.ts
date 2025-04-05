@@ -3312,7 +3312,7 @@ server.listen(3000, function () {
           {
             type: "code",
             language: "text",
-            is_output: false,
+            is_output: true,
             value: `1. Initialize Node.js Project:-
 
 {
