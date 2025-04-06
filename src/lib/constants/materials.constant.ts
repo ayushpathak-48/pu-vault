@@ -632,6 +632,18 @@ export const materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/se/se-practicals.pdf`,
       },
     ],
+    que_papers: [
+      {
+        id: 1,
+        label: "SE Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/se/mid-sem-2025.pdf`,
+      },
+      {
+        id: 2,
+        label: "SE Mid Sem Answer Key",
+        href: `${MATERIAL_LINK_BASE_URL}/papers/se/se-answer-key.pdf`,
+      },
+    ],
   },
 ];
 
@@ -839,6 +851,11 @@ export const specializationMaterials = [
         id: 11,
         title: "Practical 11 - Word Count using MRJob",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-11.pdf`,
+      },
+      {
+        id: 12,
+        title: "Practical 12 - Creating HDFS Tables and Joining in Hive",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-12.pdf`,
       },
     ],
     que_papers: [
