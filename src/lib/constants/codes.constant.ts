@@ -4166,6 +4166,92 @@ world of mrjob`,
           },
         ],
       },
+      //  Practical 12
+      {
+        key: "hive-hdfs-12",
+        name: "Practical - 12 Hive and HDFS Table Join",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 12 - Creating HDFS Tables and Joining in Hive",
+          },
+          // HDFS Commands
+          {
+            type: "code",
+            fileName: "hdfs_commands.sh",
+            value: `# Create directories in HDFS
+hdfs dfs -mkdir -p /user/hive/warehouse/customers
+hdfs dfs -mkdir -p /user/hive/warehouse/orders
+
+# Put local files into HDFS
+hdfs dfs -put customers.csv /user/hive/warehouse/customers/
+hdfs dfs -put orders.csv /user/hive/warehouse/orders/`,
+          },
+          // Sample Input Files
+          {
+            type: "code",
+            fileName: "customers.csv",
+            value: `1,John Doe
+2,Jane Smith
+3,Bob Johnson`,
+          },
+          {
+            type: "code",
+            fileName: "orders.csv",
+            value: `1,2024-01-15,250.50
+2,2024-01-20,99.99
+1,2024-02-10,180.75
+3,2024-03-05,300.00`,
+          },
+          // Hive Table Creation
+          {
+            type: "code",
+            fileName: "hive_create_tables.hql",
+            value: `-- Create external table for customers
+CREATE EXTERNAL TABLE IF NOT EXISTS customers (
+  customer_id INT,
+  name STRING
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/user/hive/warehouse/customers';
+
+-- Create external table for orders
+CREATE EXTERNAL TABLE IF NOT EXISTS orders (
+  customer_id INT,
+  order_date STRING,
+  amount DOUBLE
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/user/hive/warehouse/orders';`,
+          },
+          // Hive Join Query
+          {
+            type: "code",
+            fileName: "hive_join_query.hql",
+            value: `-- Inner Join between customers and orders
+SELECT 
+  c.customer_id, 
+  c.name, 
+  o.order_date, 
+  o.amount
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id;`,
+          },
+          // Expected Output
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `1\tJohn Doe\t2024-01-15\t250.5
+1\tJohn Doe\t2024-02-10\t180.75
+2\tJane Smith\t2024-01-20\t99.99
+3\tBob Johnson\t2024-03-05\t300.0`,
+          },
+        ],
+      },
     ],
   },
 ];
