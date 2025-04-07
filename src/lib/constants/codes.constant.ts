@@ -3119,6 +3119,7 @@ First Student in Array: Rahul`,
           },
           {
             type: "code",
+            language: "html",
             fileName: "Button.html",
             value: `<!DOCTYPE html>
 <html lang="en">
@@ -3152,6 +3153,7 @@ First Student in Array: Rahul`,
           //
           {
             type: "code",
+            language: "html",
             fileName: "Label.html",
             value: `<!DOCTYPE html>
 <html lang="en">
@@ -3187,6 +3189,7 @@ First Student in Array: Rahul`,
           {
             type: "code",
             fileName: "Border.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -3219,6 +3222,7 @@ First Student in Array: Rahul`,
           {
             type: "code",
             fileName: "Background.html",
+            language: "html",
             value: `<!DOCTYPE html>
 <html lang="en">
   <head>

@@ -47,8 +47,8 @@ export default function RootLayout({
                 <div className="p-2 lg:p-5 flex flex-col gap-1">
                   {/* <div className="flex flex-col gap-2"> */}
                   <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
-                    <div>End Sem Theory Time Table</div>
-                    <Button asChild>
+                    <div className="text-sm">End Sem Theory Time Table</div>
+                    <Button asChild size={"sm"}>
                       <Link
                         href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-theory-time-table.pdf`}
                         target="_blank"
@@ -58,8 +58,8 @@ export default function RootLayout({
                     </Button>
                   </div>
                   <div className="bg-gray-50 rounded-md p-2 px-4  flex items-center justify-between gap-4">
-                    <div>End Sem Practical Time Table</div>
-                    <Button asChild>
+                    <div className="text-sm">End Sem Practical Time Table</div>
+                    <Button asChild size={"sm"}>
                       <Link
                         href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-practical-time-table.pdf`}
                         target="_blank"
