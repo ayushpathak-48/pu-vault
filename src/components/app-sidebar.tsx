@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SelectDivision } from "./select-division";
+import InstallPWAButton from "./install-app-btn";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -35,7 +36,7 @@ export function AppSidebar() {
                 className={cn(
                   "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-sky-600 transition-all",
                   activeLink &&
-                    "bg-gray-200 text-sky-600 border-l-4 border-sky-700"
+                    "bg-gray-200 text-sky-600 border-l-4 border-sky-700",
                 )}
                 key={link.id}
               >
@@ -44,6 +45,9 @@ export function AppSidebar() {
               </Link>
             );
           })}
+        </SidebarGroup>
+        <SidebarGroup>
+          <InstallPWAButton />
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

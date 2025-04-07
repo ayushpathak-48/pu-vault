@@ -1,7 +1,7 @@
 {
   "name": "Pu Vault",
   "short_name": "Pu Vault",
-  "description": "A brief description of your app",
+  "description": "Access all the materials, journals, source codes and more...",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -17,6 +17,22 @@
       "src": "/favicon/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/image-1.png",
+      "sizes": "1920x1020",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Wonder Widgets"
+    },
+    {
+      "src": "screenshots/image-2.png",
+      "sizes": "540x1200",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
     }
   ]
 }
