@@ -2,7 +2,7 @@
 
 import React from "react";
 import CodePageClient from "./client";
-const page = async () => {
+const page = () => {
   return <CodePageClient />;
 };
 
