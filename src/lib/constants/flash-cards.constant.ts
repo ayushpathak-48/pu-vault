@@ -2345,6 +2345,1537 @@ export const flashCards = [
     ],
   },
   {
+    subject_name: "Cyber Security and Forensics",
+    key: "cyber-secury-and-forensics",
+    specialization: "csf",
+    units: [
+      {
+        id: 1,
+        title: "Unit- 1 : Security Principles and Practices",
+        key: "security-principles-and-practices",
+        cards: [
+          {
+            id: 1,
+            front: "What is Information Security?",
+            back: "Information security is the protection of information and systems from unauthorized access, disclosure, disruption, modification, or destruction.",
+          },
+          {
+            id: 2,
+            front: "What is the Network Security Model?",
+            back: "The network security model ensures secure communication by protecting data during transmission using encryption, authentication, and firewalls.",
+          },
+          {
+            id: 3,
+            front: "What is Cryptography?",
+            back: "Cryptography is the science of encoding and decoding information to protect it from unauthorized access.",
+          },
+          {
+            id: 4,
+            front: "Name common attacks on cryptosystems.",
+            back: "Brute force attack, ciphertext-only attack, known-plaintext attack, chosen-plaintext attack, and man-in-the-middle attack.",
+          },
+          {
+            id: 5,
+            front: "What is Traditional Cryptography?",
+            back: "Traditional cryptography refers to classical techniques like Caesar Cipher, Monoalphabetic Cipher, and Vigenère Cipher.",
+          },
+          {
+            id: 6,
+            front: "What is a Block Cipher?",
+            back: "A block cipher encrypts data in fixed-size blocks (e.g., 64-bit or 128-bit blocks) using a symmetric key.",
+          },
+          {
+            id: 7,
+            front: "What is a Stream Cipher?",
+            back: "A stream cipher encrypts data one bit or byte at a time, often using a keystream generator.",
+          },
+          {
+            id: 8,
+            front: "What is Symmetric Key Encryption?",
+            back: "Symmetric key encryption uses the same key for both encryption and decryption.",
+          },
+          {
+            id: 9,
+            front: "What is Asymmetric Key Encryption?",
+            back: "Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption.",
+          },
+          {
+            id: 10,
+            front: "What is a Feistel Cipher?",
+            back: "A Feistel Cipher is a symmetric structure used in many block ciphers, including DES, involving repeated rounds of processing.",
+          },
+          {
+            id: 11,
+            front: "What is DES?",
+            back: "DES (Data Encryption Standard) is a symmetric-key block cipher that encrypts data in 64-bit blocks using a 56-bit key.",
+          },
+          {
+            id: 12,
+            front: "What is 3DES?",
+            back: "3DES (Triple DES) applies the DES algorithm three times with different keys to increase security.",
+          },
+          {
+            id: 13,
+            front: "What is AES?",
+            back: "AES (Advanced Encryption Standard) is a symmetric block cipher that supports key sizes of 128, 192, and 256 bits for encrypting 128-bit blocks.",
+          },
+          {
+            id: 14,
+            front: "What are Block Cipher Modes of Operation?",
+            back: "Examples include ECB (Electronic Codebook), CBC (Cipher Block Chaining), CFB (Cipher Feedback), OFB (Output Feedback), and CTR (Counter).",
+          },
+          {
+            id: 15,
+            front: "What is Public Key Encryption?",
+            back: "Public Key Encryption uses a pair of keys: the public key for encryption and the private key for decryption.",
+          },
+          {
+            id: 16,
+            front: "What is a Public Key Infrastructure (PKI)?",
+            back: "PKI is a framework that manages digital keys and certificates for secure communication using public key encryption.",
+          },
+          {
+            id: 17,
+            front: "What is the RSA Algorithm?",
+            back: "RSA is a widely-used public key cryptosystem based on the difficulty of factoring large integers.",
+          },
+          {
+            id: 18,
+            front: "What is a Hash Function?",
+            back: "A hash function generates a fixed-size output (hash) from an input, used for data integrity verification.",
+          },
+          {
+            id: 19,
+            front: "What is a Message Authentication Code (MAC)?",
+            back: "MAC is a short piece of information used to authenticate a message and ensure its integrity and authenticity.",
+          },
+          {
+            id: 20,
+            front: "What is a Digital Signature?",
+            back: "A digital signature is a cryptographic method to verify the authenticity and integrity of a message, document, or software.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit- 2 : Security Threats",
+        key: "security-threats",
+        cards: [
+          {
+            id: 1,
+            front: "What is a Worm?",
+            back: "A worm is a type of malware that replicates itself and spreads to other computers without human interaction.",
+          },
+          {
+            id: 2,
+            front: "What is a Virus?",
+            back: "A virus is malicious code that attaches itself to a host program and spreads when the infected program is executed.",
+          },
+          {
+            id: 3,
+            front: "What is a Trojan Horse?",
+            back: "A Trojan horse is malware disguised as legitimate software, which once executed, can cause harm or steal data.",
+          },
+          {
+            id: 4,
+            front: "What is Malware?",
+            back: "Malware is any software intentionally designed to cause damage to a computer system or network.",
+          },
+          {
+            id: 5,
+            front: "What is Malicious Spyware?",
+            back: "Malicious spyware secretly gathers user information without consent and transmits it to third parties.",
+          },
+          {
+            id: 6,
+            front: "What is Adware?",
+            back: "Adware displays unwanted advertisements and can track user behavior, often bundled with free software.",
+          },
+          {
+            id: 7,
+            front: "What is a Botnet?",
+            back: "A botnet is a network of infected devices controlled remotely to perform malicious tasks like DDoS attacks.",
+          },
+          {
+            id: 8,
+            front: "What is Spam?",
+            back: "Spam refers to unwanted or unsolicited messages, usually sent in bulk via email, often containing phishing or ads.",
+          },
+          {
+            id: 9,
+            front: "What is Phishing?",
+            back: "Phishing is a cyber attack that tricks individuals into revealing sensitive information through fake websites or emails.",
+          },
+          {
+            id: 10,
+            front: "What is a Stack Overflow Attack?",
+            back: "A stack overflow attack exploits the call stack memory by overflowing it with malicious code, often leading to execution of arbitrary code.",
+          },
+          {
+            id: 11,
+            front: "What is a Buffer Overflow Attack?",
+            back: "Buffer overflow occurs when more data is written to a buffer than it can hold, which may allow attackers to overwrite adjacent memory.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit- 3 : Operating System Security",
+        key: "operating-system-security",
+        cards: [
+          {
+            id: 1,
+            front:
+              "What is the role of operating systems in information systems applications?",
+            back: "Operating systems manage hardware and software resources, providing a platform for information systems to run efficiently and securely.",
+          },
+          {
+            id: 2,
+            front:
+              "How do operating systems support multitasking in information systems?",
+            back: "Operating systems use process scheduling and resource allocation to allow multiple tasks to run concurrently.",
+          },
+          {
+            id: 3,
+            front:
+              "Why is the OS important in managing information system applications?",
+            back: "It ensures proper execution, security, resource management, and interface for application interaction.",
+          },
+          {
+            id: 4,
+            front: "What is operating system security?",
+            back: "OS security refers to protecting the system's resources and data from unauthorized access and threats.",
+          },
+          {
+            id: 5,
+            front: "Name a few key components of OS security.",
+            back: "User authentication, access control, auditing, and encryption.",
+          },
+          {
+            id: 6,
+            front: "What is a patched operating system?",
+            back: "A patched OS is one that has received updates or fixes to correct security vulnerabilities and bugs.",
+          },
+          {
+            id: 7,
+            front: "Why is patching the OS critical for system security?",
+            back: "It fixes known security flaws and prevents exploitation by attackers.",
+          },
+          {
+            id: 8,
+            front: "What are protected objects in an operating system?",
+            back: "Protected objects include files, memory, I/O devices, and system processes that require controlled access.",
+          },
+          {
+            id: 9,
+            front: "Name some methods of protection used by operating systems.",
+            back: "Access control lists, user permissions, role-based access, and sandboxing.",
+          },
+          {
+            id: 10,
+            front: "What is memory address protection?",
+            back: "It prevents processes from accessing memory allocated to other processes, ensuring data integrity and isolation.",
+          },
+          {
+            id: 11,
+            front: "How does OS achieve memory address protection?",
+            back: "Using techniques like virtual memory, segmentation, and paging.",
+          },
+          {
+            id: 12,
+            front: "What is file protection mechanism in OS?",
+            back: "It controls access to files and directories through permissions, encryption, and secure access methods.",
+          },
+          {
+            id: 13,
+            front: "What are common file protection techniques?",
+            back: "Read/write/execute permissions, encryption, and user authentication.",
+          },
+          {
+            id: 14,
+            front: "What is the significance of protected methods in OS?",
+            back: "They help maintain system stability and confidentiality by restricting access to critical operations.",
+          },
+          {
+            id: 15,
+            front: "What is the principle of least privilege in OS security?",
+            back: "It means users and processes should have the minimum level of access necessary to perform their tasks.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit- 4 : Wireless Networks Security",
+        key: "wireless-networks-security",
+        cards: [
+          {
+            id: 1,
+            front: "What is wireless technology?",
+            back: "Wireless technology enables communication without physical cables, using electromagnetic waves for data transmission.",
+          },
+          {
+            id: 2,
+            front: "Name some common wireless technologies.",
+            back: "Wi-Fi, Bluetooth, ZigBee, LTE, 5G, and infrared.",
+          },
+          {
+            id: 3,
+            front: "What are the advantages of wireless communication?",
+            back: "Mobility, scalability, ease of installation, and cost-effectiveness.",
+          },
+          {
+            id: 4,
+            front: "What is Wired Equivalent Privacy (WEP)?",
+            back: "WEP is an outdated security protocol for wireless networks that aimed to provide similar protection as wired networks.",
+          },
+          {
+            id: 5,
+            front: "What are the weaknesses of WEP?",
+            back: "WEP uses static encryption keys and is vulnerable to brute-force and replay attacks.",
+          },
+          {
+            id: 6,
+            front: "What is Wi-Fi Protected Access (WPA)?",
+            back: "WPA was developed as an improvement over WEP, offering dynamic key encryption and message integrity checks.",
+          },
+          {
+            id: 7,
+            front: "How does WPA differ from WPA2?",
+            back: "WPA2 uses a stronger encryption standard (AES) compared to WPA (TKIP), making it more secure.",
+          },
+          {
+            id: 8,
+            front: "What is WPA2?",
+            back: "WPA2 is a security protocol that uses AES encryption to provide robust protection for wireless networks.",
+          },
+          {
+            id: 9,
+            front: "What is an attack on a wireless network?",
+            back: "It's an attempt to exploit vulnerabilities in wireless systems to gain unauthorized access or disrupt services.",
+          },
+          {
+            id: 10,
+            front: "What are some common attacks on wireless networks?",
+            back: "Eavesdropping, rogue access points, denial of service (DoS), MAC spoofing, and man-in-the-middle (MitM) attacks.",
+          },
+          {
+            id: 11,
+            front: "How can wireless networks be secured?",
+            back: "Using strong encryption protocols (like WPA2/WPA3), MAC filtering, firewalls, and secure authentication methods.",
+          },
+          {
+            id: 12,
+            front: "Why is WPA2 preferred over WEP and WPA?",
+            back: "Because it provides stronger encryption (AES) and improved data integrity, reducing vulnerability to attacks.",
+          },
+          {
+            id: 13,
+            front: "What is a rogue access point?",
+            back: "A rogue AP is an unauthorized wireless access point installed to bypass network security controls.",
+          },
+          {
+            id: 14,
+            front:
+              "What is a denial-of-service (DoS) attack in wireless networks?",
+            back: "It's an attack that overwhelms the network with traffic, making it unavailable to legitimate users.",
+          },
+          {
+            id: 15,
+            front: "What is MAC spoofing in wireless attacks?",
+            back: "It's a technique where an attacker disguises their MAC address to impersonate a legitimate device on the network.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit- 5 : Understanding Cyber Forensics",
+        key: "understanding-cyber-forensics",
+        cards: [
+          {
+            id: 1,
+            front: "What is Computer Forensics?",
+            back: "Computer Forensics is the application of investigative techniques to collect and analyze digital evidence from computers and storage devices.",
+          },
+          {
+            id: 2,
+            front: "Define Cyber Forensics.",
+            back: "Cyber Forensics focuses on tracking, recording, and analyzing network events to discover the source of security attacks or other problem incidents.",
+          },
+          {
+            id: 3,
+            front: "What is Digital Evidence?",
+            back: "Digital Evidence refers to information or data stored or transmitted in digital form that can be used in court.",
+          },
+          {
+            id: 4,
+            front: "What are the Rules of Evidence?",
+            back: "Rules of Evidence are legal standards that determine what digital evidence is admissible in court, focusing on authenticity, integrity, and relevance.",
+          },
+          {
+            id: 5,
+            front: "What is RFC282?",
+            back: "RFC282 (RFC 2822) defines the format for text messages sent via email, which is useful in forensic email analysis.",
+          },
+          {
+            id: 6,
+            front: "How is email analyzed in forensic investigations?",
+            back: "Email forensics involves analyzing headers, content, and metadata to trace origins, detect tampering, or retrieve deleted messages.",
+          },
+          {
+            id: 7,
+            front: "What is the Digital Forensics Life Cycle?",
+            back: "The life cycle includes Identification, Preservation, Collection, Examination, Analysis, Presentation, and Decision.",
+          },
+          {
+            id: 8,
+            front: "What is Chain of Custody in forensics?",
+            back: "Chain of Custody is the documented process of maintaining and transferring evidence to ensure its integrity.",
+          },
+          {
+            id: 9,
+            front: "What is Network Forensics?",
+            back: "Network Forensics is the analysis of network traffic data to investigate incidents and detect intrusions.",
+          },
+          {
+            id: 10,
+            front: "Why set up a Computer Forensics Lab?",
+            back: "A forensic lab provides a secure environment with specialized tools for investigating and analyzing digital evidence.",
+          },
+          {
+            id: 11,
+            front: "What is Steganography in the context of forensics?",
+            back: "Steganography is the practice of hiding data within other data, like images or audio, making detection and extraction key tasks in forensics.",
+          },
+          {
+            id: 12,
+            front: "What are Rootkits?",
+            back: "Rootkits are malicious tools that enable unauthorized access while hiding their presence from detection software.",
+          },
+          {
+            id: 13,
+            front: "What is Information Hiding?",
+            back: "It is the technique of embedding information within other content, often used in steganography and watermarking.",
+          },
+          {
+            id: 14,
+            front: "How does the OSI Model relate to Computer Forensics?",
+            back: "Each OSI layer provides different forensic data points—e.g., IP addresses (Network Layer), data integrity (Transport Layer), etc.",
+          },
+          {
+            id: 15,
+            front:
+              "What forensic challenges exist with social networking sites?",
+            back: "Challenges include handling privacy settings, deleted content, encrypted data, and identifying the source of threats.",
+          },
+          {
+            id: 16,
+            front:
+              "How do social networking sites relate to digital forensics?",
+            back: "They are often sources of digital evidence in cybercrime cases involving harassment, data leakage, and identity theft.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Unit- 6 : Challenges in Cyber Forensics",
+        key: "challenges-in-cyber-forensics",
+        cards: [
+          {
+            id: 1,
+            front: "What are some technical challenges in computer forensics?",
+            back: "Challenges include understanding raw data formats, diverse file systems, encryption, and recovering deleted or hidden files.",
+          },
+          {
+            id: 2,
+            front:
+              "Why is understanding raw data structure important in forensics?",
+            back: "Raw data must be correctly interpreted to recover evidence accurately without data corruption or loss.",
+          },
+          {
+            id: 3,
+            front: "What are the legal challenges in computer forensics?",
+            back: "Legal challenges include data jurisdiction, chain of custody, obtaining proper warrants, and ensuring evidence admissibility in court.",
+          },
+          {
+            id: 4,
+            front: "What are common data privacy issues in digital forensics?",
+            back: "Data privacy concerns involve accessing personal information without consent, potential data breaches, and violating regulations like GDPR.",
+          },
+          {
+            id: 5,
+            front: "What are some special digital forensics tools?",
+            back: "Tools include EnCase, FTK (Forensic Toolkit), Autopsy, Wireshark, Sleuth Kit, and Volatility Framework.",
+          },
+          {
+            id: 6,
+            front: "What is the use of data mining in cyber forensics?",
+            back: "Data mining helps discover patterns, detect anomalies, and analyze large datasets for investigative insights in cyber forensics.",
+          },
+          {
+            id: 7,
+            front: "What is forensic auditing?",
+            back: "Forensic auditing is the examination of financial records using forensic techniques to detect fraud, embezzlement, or financial misconduct.",
+          },
+          {
+            id: 8,
+            front: "What is anti-forensics?",
+            back: "Anti-forensics involves techniques used to obstruct forensic investigations by hiding, encrypting, or destroying digital evidence.",
+          },
+          {
+            id: 9,
+            front: "Name some anti-forensics techniques.",
+            back: "Techniques include data wiping, steganography, encryption, timestamp manipulation, and using rootkits to conceal activities.",
+          },
+          {
+            id: 10,
+            front: "How can legal frameworks support forensic investigators?",
+            back: "By defining data access rights, maintaining evidence admissibility, and establishing procedures to ensure proper handling of digital evidence.",
+          },
+        ],
+      },
+      {
+        id: 7,
+        title: "Unit- 7 : Forensics of Hand-Held Devices",
+        key: "forensics-of-hand-held-devices",
+        cards: [
+          {
+            id: 1,
+            front:
+              "What is digital forensics in the context of hand-held devices?",
+            back: "It involves recovering, analyzing, and preserving digital data from mobile phones, PDAs, printers, scanners, smartphones, and other handheld devices.",
+          },
+          {
+            id: 2,
+            front:
+              "Which devices are commonly included in hand-held digital forensics?",
+            back: "Mobile phones, PDAs, printers, scanners, smartphones, and iPhones are commonly analyzed.",
+          },
+          {
+            id: 3,
+            front: "What is a Personal Digital Assistant (PDA)?",
+            back: "A PDA is a mobile device used for managing contacts, appointments, and tasks, which can contain valuable digital evidence.",
+          },
+          {
+            id: 4,
+            front:
+              "What are common forensic challenges with digital images from still cameras?",
+            back: "Challenges include metadata analysis, image manipulation detection, and linking images to specific devices or users.",
+          },
+          {
+            id: 5,
+            front:
+              "What are the forensic challenges specific to BlackBerry devices?",
+            back: "Challenges include proprietary OS, encrypted communications, and secure enterprise-level messaging systems.",
+          },
+          {
+            id: 6,
+            front: "What is EnCase used for in handheld device forensics?",
+            back: "EnCase is a forensic tool used to acquire, analyze, and report digital data from various devices, including mobile phones.",
+          },
+          {
+            id: 7,
+            front: "What does Device Seizure do?",
+            back: "Device Seizure is a forensic tool used for extracting and analyzing data from mobile devices.",
+          },
+          {
+            id: 8,
+            front: "What is PDA Seizure?",
+            back: "PDA Seizure is a tool for extracting forensic data from PDAs and smartphones.",
+          },
+          {
+            id: 9,
+            front: "What is Palm DD?",
+            back: "Palm DD is a forensic acquisition tool used to extract data from Palm OS devices.",
+          },
+          {
+            id: 10,
+            front: "What is Cell Seizure used for?",
+            back: "Cell Seizure is used to recover and examine data from cell phones, including messages, call logs, and contacts.",
+          },
+          {
+            id: 11,
+            front: "What is MOBILedit used for in forensics?",
+            back: "MOBILedit is a tool used for phone content extraction and analysis in forensic investigations.",
+          },
+          {
+            id: 12,
+            front: "What is the Forensic SIM tool?",
+            back: "Forensic SIM tools help in extracting and analyzing data from SIM cards, including contacts and SMS messages.",
+          },
+          {
+            id: 13,
+            front:
+              "Why are organizational guidelines important for cell phone forensics?",
+            back: "They ensure standard procedures are followed for data preservation, evidence integrity, and legal admissibility.",
+          },
+          {
+            id: 14,
+            front:
+              "What is meant by hand-held forensics as a specialty domain?",
+            back: "It refers to the focused field of digital forensics dealing specifically with mobile and portable digital devices in crime investigations.",
+          },
+          {
+            id: 15,
+            front: "What are common challenges in smartphone forensics?",
+            back: "Challenges include data encryption, frequent OS updates, locked devices, and proprietary apps and formats.",
+          },
+        ],
+      },
+      {
+        id: 8,
+        title: "Unit- 8 : Concept of Virtualization",
+        key: "concept-of-visualization",
+        cards: [
+          {
+            id: 1,
+            front: "What is Software Virtualization?",
+            back: "Software virtualization allows multiple virtual environments to run on a single physical machine by abstracting the hardware through software.",
+          },
+          {
+            id: 2,
+            front: "What are the benefits of Software Virtualization?",
+            back: "It improves resource utilization, provides environment isolation, and allows for easy testing and deployment of applications.",
+          },
+          {
+            id: 3,
+            front: "Give an example of Software Virtualization.",
+            back: "VirtualBox or VMware Workstation is an example where virtual machines can run on a host OS.",
+          },
+          {
+            id: 4,
+            front: "What is Hardware Virtualization?",
+            back: "Hardware virtualization is the abstraction of physical hardware by using a hypervisor to create and manage virtual machines.",
+          },
+          {
+            id: 5,
+            front:
+              "What is the role of a hypervisor in Hardware Virtualization?",
+            back: "A hypervisor manages multiple virtual machines and allocates resources like CPU and memory to each VM.",
+          },
+          {
+            id: 6,
+            front: "Name two types of hypervisors.",
+            back: "Type 1 (bare-metal) and Type 2 (hosted) hypervisors.",
+          },
+          {
+            id: 7,
+            front: "What is OS Partitioning?",
+            back: "OS partitioning divides a single operating system into isolated containers or environments that can run applications independently.",
+          },
+          {
+            id: 8,
+            front: "How is OS Partitioning different from Virtualization?",
+            back: "OS partitioning shares a single OS kernel across partitions, while virtualization uses separate OS instances for each VM.",
+          },
+          {
+            id: 9,
+            front: "Give an example of OS Partitioning technology.",
+            back: "Linux Containers (LXC) or Docker.",
+          },
+          {
+            id: 10,
+            front: "What is VMware?",
+            back: "VMware is a virtualization platform that provides tools for creating and managing virtual machines on Windows and Linux systems.",
+          },
+          {
+            id: 11,
+            front: "Name two popular VMware products.",
+            back: "VMware Workstation and VMware ESXi.",
+          },
+          {
+            id: 12,
+            front: "Can VMware be used on both Windows and Linux?",
+            back: "Yes, VMware provides compatible virtualization tools for both Windows and Linux environments.",
+          },
+          {
+            id: 13,
+            front: "What is the role of Windows in virtualization?",
+            back: "Windows can act as both a host and guest operating system in virtualization platforms like VMware and Hyper-V.",
+          },
+          {
+            id: 14,
+            front: "How does Linux support virtualization?",
+            back: "Linux supports virtualization through tools like KVM (Kernel-based Virtual Machine) and containerization via Docker or LXC.",
+          },
+          {
+            id: 15,
+            front: "What is a virtual machine (VM)?",
+            back: "A VM is a software emulation of a physical computer that runs an operating system and applications like a physical device.",
+          },
+        ],
+      },
+      {
+        id: 9,
+        title: "Unit- 9 : Introduction to kali linux / Santoku",
+        key: "introduction-to-kali-linux-santoku",
+        cards: [
+          {
+            id: 1,
+            front: "What is Autopsy in digital forensics?",
+            back: "Autopsy is a digital forensics platform and graphical interface to The Sleuth Kit, used to investigate hard drives and smartphones.",
+          },
+          {
+            id: 2,
+            front: "What are the features of Autopsy?",
+            back: "Features include timeline analysis, keyword search, web artifacts, file metadata viewer, and hash filtering.",
+          },
+          {
+            id: 3,
+            front: "What types of investigations is Autopsy used for?",
+            back: "It is used for law enforcement, corporate investigations, and incident response.",
+          },
+          {
+            id: 4,
+            front: "What is ADB in mobile forensics?",
+            back: "ADB (Android Debug Bridge) is a command-line tool used to communicate with and control Android devices, often used in mobile forensic investigations.",
+          },
+          {
+            id: 5,
+            front: "How does ADB help in mobile forensics?",
+            back: "ADB allows forensic experts to extract data, install applications like DIVA.apk, and interact with the file system of Android devices.",
+          },
+          {
+            id: 6,
+            front: "What is required to use ADB in forensics?",
+            back: "USB debugging must be enabled on the Android device and proper authorization must be granted.",
+          },
+          {
+            id: 7,
+            front: "What is DIVA.apk in mobile forensics?",
+            back: "DIVA (Damn Insecure and Vulnerable App) is a deliberately insecure Android application used for security training and testing forensic tools.",
+          },
+          {
+            id: 8,
+            front: "Why is DIVA.apk used in forensics?",
+            back: "DIVA helps understand common vulnerabilities in Android apps and allows practitioners to simulate attacks and test forensics skills.",
+          },
+          {
+            id: 9,
+            front: "Can DIVA.apk be used in a real forensic case?",
+            back: "No, it's used only for educational and training purposes to understand mobile vulnerabilities.",
+          },
+          {
+            id: 10,
+            front: "What are common use cases of mobile forensics?",
+            back: "Recovering deleted data, analyzing app activity, retrieving call logs, messages, and geo-location data from mobile devices.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    subject_name: "Full Stack Web Development",
+    key: "full-stack-web-development",
+    specialization: "fswd",
+    units: [
+      {
+        id: 1,
+        title: "Unit- 1 : Java Date & Time",
+        key: "java-date-and-time",
+        cards: [
+          {
+            id: 1,
+            front: "What is the Java Time API?",
+            back: "Java Time API introduced in Java 8 provides a comprehensive model for date and time handling with immutability and thread-safety.",
+          },
+          {
+            id: 2,
+            front: "What does LocalDate represent?",
+            back: "LocalDate represents a date without time or time zone, like 2025-04-04.",
+          },
+          {
+            id: 3,
+            front: "What does LocalTime represent?",
+            back: "LocalTime represents a time without a date or time zone, like 14:30:00.",
+          },
+          {
+            id: 4,
+            front: "What is LocalDateTime in Java?",
+            back: "LocalDateTime represents a date and time without a time zone, like 2025-04-04T14:30:00.",
+          },
+          {
+            id: 5,
+            front: "What is MonthDay used for?",
+            back: "MonthDay represents a month and day without a year, useful for recurring events like birthdays.",
+          },
+          {
+            id: 6,
+            front: "What does OffsetTime represent?",
+            back: "OffsetTime represents a time with an offset from UTC, like 14:30:00+02:00.",
+          },
+          {
+            id: 7,
+            front: "What is OffsetDateTime?",
+            back: "OffsetDateTime includes a date, time, and offset from UTC, such as 2025-04-04T14:30:00+02:00.",
+          },
+          {
+            id: 8,
+            front: "What is Clock used for in the Java Time API?",
+            back: "Clock provides access to the current instant, date, and time using a time-zone; useful for testing.",
+          },
+          {
+            id: 9,
+            front: "What does the Year class represent?",
+            back: "The Year class represents a year, like 2025, and can be used for operations related to year-only values.",
+          },
+          {
+            id: 10,
+            front: "What is YearMonth used for?",
+            back: "YearMonth represents a year and month without a day, like 2025-04.",
+          },
+          {
+            id: 11,
+            front: "What is a Period in Java Time API?",
+            back: "Period represents a quantity of time in terms of years, months, and days, like 'P1Y2M3D'.",
+          },
+          {
+            id: 12,
+            front: "What is the Duration class used for?",
+            back: "Duration represents a time-based amount of time, like 'PT3H15M' (3 hours and 15 minutes).",
+          },
+          {
+            id: 13,
+            front: "Is Java Time API thread-safe?",
+            back: "Yes, all classes in the Java Time API are immutable and thread-safe.",
+          },
+          {
+            id: 14,
+            front: "How do you get the current date using Java Time API?",
+            back: "Use `LocalDate.now()` to get the current system date.",
+          },
+          {
+            id: 15,
+            front: "How do you calculate the difference between two dates?",
+            back: "Use `Period.between(date1, date2)` for date-based differences, or `Duration.between(time1, time2)` for time.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit- 2 : Java Conversion",
+        key: "java-conversion",
+        cards: [
+          {
+            id: 1,
+            front: "How to convert String to int in Java?",
+            back: "Use `Integer.parseInt(str)`.",
+          },
+          {
+            id: 2,
+            front: "How to convert int to String in Java?",
+            back: "Use `String.valueOf(num)` or `Integer.toString(num)`.",
+          },
+          {
+            id: 3,
+            front: "How to convert String to long?",
+            back: "Use `Long.parseLong(str)`.",
+          },
+          {
+            id: 4,
+            front: "How to convert long to String?",
+            back: "Use `String.valueOf(longVal)`.",
+          },
+          {
+            id: 5,
+            front: "How to convert String to double?",
+            back: "Use `Double.parseDouble(str)`.",
+          },
+          {
+            id: 6,
+            front: "How to convert double to String?",
+            back: "Use `String.valueOf(doubleVal)`.",
+          },
+          {
+            id: 7,
+            front: "How to convert String to Date in Java?",
+            back: 'Use `SimpleDateFormat` to parse: `new SimpleDateFormat("yyyy-MM-dd").parse(str)`.',
+          },
+          {
+            id: 8,
+            front: "How to convert Date to String in Java?",
+            back: "Use `SimpleDateFormat.format(date)`.",
+          },
+          {
+            id: 9,
+            front: "How to convert char to String?",
+            back: "Use `String.valueOf(ch)` or `Character.toString(ch)`.",
+          },
+          {
+            id: 10,
+            front: "How to convert String to char?",
+            back: "Use `str.charAt(0)`.",
+          },
+          {
+            id: 11,
+            front: "How to convert String to Object?",
+            back: "Object obj = (Object) str; // String is already an Object.",
+          },
+          {
+            id: 12,
+            front: "How to convert Object to String?",
+            back: "Use `obj.toString()` if not null.",
+          },
+          {
+            id: 13,
+            front: "How to convert int to long?",
+            back: "Use casting: `long l = (long) i;`",
+          },
+          {
+            id: 14,
+            front: "How to convert long to int?",
+            back: "Use casting: `int i = (int) l;` (may truncate)",
+          },
+          {
+            id: 15,
+            front: "How to convert int to double?",
+            back: "Use casting: `double d = (double) i;`",
+          },
+          {
+            id: 16,
+            front: "How to convert double to int?",
+            back: "Use casting: `int i = (int) d;` (decimal truncated)",
+          },
+          {
+            id: 17,
+            front: "How to convert char to int?",
+            back: "Use casting: `int i = (int) c;` (gives ASCII)",
+          },
+          {
+            id: 18,
+            front: "How to convert int to char?",
+            back: "Use casting: `char c = (char) i;`",
+          },
+          {
+            id: 19,
+            front: "How to convert String to Boolean?",
+            back: "Use `Boolean.parseBoolean(str)`.",
+          },
+          {
+            id: 20,
+            front: "How to convert Boolean to String?",
+            back: "Use `String.valueOf(bool)`.",
+          },
+          {
+            id: 21,
+            front: "How to convert Date to Timestamp?",
+            back: "Use `new Timestamp(date.getTime())`.",
+          },
+          {
+            id: 22,
+            front: "How to convert Timestamp to Date?",
+            back: "Use `new Date(timestamp.getTime())`.",
+          },
+          {
+            id: 23,
+            front: "How to convert binary to decimal?",
+            back: "Use `Integer.parseInt(binaryString, 2)`.",
+          },
+          {
+            id: 24,
+            front: "How to convert decimal to binary?",
+            back: "Use `Integer.toBinaryString(decimal)`.",
+          },
+          {
+            id: 25,
+            front: "How to convert hex to decimal?",
+            back: "Use `Integer.parseInt(hexString, 16)`.",
+          },
+          {
+            id: 26,
+            front: "How to convert decimal to hex?",
+            back: "Use `Integer.toHexString(decimal)`.",
+          },
+          {
+            id: 27,
+            front: "How to convert octal to decimal?",
+            back: "Use `Integer.parseInt(octalString, 8)`.",
+          },
+          {
+            id: 28,
+            front: "How to convert decimal to octal?",
+            back: "Use `Integer.toOctalString(decimal)`.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit- 3 : Json",
+        key: "json",
+        cards: [
+          {
+            id: 1,
+            front: "What is JSON?",
+            back: "JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy to read and write for humans and easy to parse for machines.",
+          },
+          {
+            id: 2,
+            front: "What is the main difference between JSON and XML?",
+            back: "JSON is more compact and easier to read than XML, while XML supports more complex features like attributes and namespaces.",
+          },
+          {
+            id: 3,
+            front: "Give a simple JSON example.",
+            back: `{\n  "name": "John",\n  "age": 30,\n  "city": "New York"\n}`,
+          },
+          {
+            id: 4,
+            front: "What is a JSON Object?",
+            back: 'A JSON Object is an unordered collection of key/value pairs enclosed in curly braces: `{ "key": "value" }`.',
+          },
+          {
+            id: 5,
+            front: "What is a JSON Array?",
+            back: 'A JSON Array is an ordered list of values enclosed in square brackets: `[ "Apple", "Banana", "Cherry" ]`.',
+          },
+          {
+            id: 6,
+            front: "Can JSON have comments?",
+            back: "No, JSON does not officially support comments. Any comment will cause a parsing error.",
+          },
+          {
+            id: 7,
+            front: "How to use JSON in PHP?",
+            back: "Use `json_encode()` to convert PHP array to JSON and `json_decode()` to convert JSON to PHP.",
+          },
+          {
+            id: 8,
+            front: "JSON example using PHP",
+            back: `<?php\n$data = [\"name\" => \"John\", \"age\" => 25];\necho json_encode($data);\n?>`,
+          },
+          {
+            id: 9,
+            front: "How to parse JSON in Java?",
+            back: "Use libraries like `org.json`, `Gson`, or `Jackson` to parse JSON in Java.",
+          },
+          {
+            id: 10,
+            front: "JSON example using Java",
+            back: `JSONObject obj = new JSONObject("{\\"name\\":\\"John\\",\\"age\\":30}");\nSystem.out.println(obj.getString(\"name\"));`,
+          },
+          {
+            id: 11,
+            front: "How to use JSON with AJAX?",
+            back: "You can send and receive JSON using `XMLHttpRequest` or `fetch()` in AJAX.",
+          },
+          {
+            id: 12,
+            front: "JSON example using AJAX",
+            back: `fetch(\"data.json\")\n.then(res => res.json())\n.then(data => console.log(data));`,
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit- 4 : Bootstrap",
+        key: "bootstrap",
+        cards: [
+          {
+            id: 1,
+            front: "What is Bootstrap?",
+            back: "Bootstrap is a front-end framework for developing responsive and mobile-first websites using HTML, CSS, and JS.",
+          },
+          {
+            id: 2,
+            front: "Give an example of using Bootstrap.",
+            back: "<button class='btn btn-primary'>Click Me</button>",
+          },
+          {
+            id: 3,
+            front: "What is a Bootstrap container?",
+            back: "A container is a class used to center and pad the content within a fixed-width layout.",
+          },
+          {
+            id: 4,
+            front: "What is a jumbotron in Bootstrap?",
+            back: "Jumbotron is a lightweight, flexible component for showcasing content, typically used for headers or key messages.",
+          },
+          {
+            id: 5,
+            front: "How to create a button in Bootstrap?",
+            back: "<button class='btn btn-success'>Submit</button>",
+          },
+          {
+            id: 6,
+            front: "Explain Bootstrap grid system.",
+            back: "The grid system uses containers, rows, and columns to layout and align content. It's based on 12 columns.",
+          },
+          {
+            id: 7,
+            front: "What is a Bootstrap table?",
+            back: "Bootstrap provides classes like `.table` to style HTML tables with enhanced visual formatting.",
+          },
+          {
+            id: 8,
+            front: "What is a Bootstrap form?",
+            back: "A Bootstrap form uses form-control and form-group classes to structure form inputs and layout.",
+          },
+          {
+            id: 9,
+            front: "How to show alerts in Bootstrap?",
+            back: "<div class='alert alert-danger'>This is a danger alert!</div>",
+          },
+          {
+            id: 10,
+            front: "What are Bootstrap wells?",
+            back: "Wells are used to add a rounded border around content, but are deprecated in newer versions of Bootstrap.",
+          },
+          {
+            id: 11,
+            front: "What is the use of badge & label in Bootstrap?",
+            back: "Badges and labels are used to display counts or labels beside other elements like buttons or links.",
+          },
+          {
+            id: 12,
+            front: "What are Bootstrap panels?",
+            back: "Panels are used to create boxed content blocks with optional headings. They are replaced by cards in Bootstrap 4+.",
+          },
+          {
+            id: 13,
+            front: "Explain Bootstrap pagination.",
+            back: "Pagination creates a series of links for navigating through pages of content using `.pagination` class.",
+          },
+          {
+            id: 14,
+            front: "What is the pager in Bootstrap?",
+            back: "Pager provides previous and next navigation links using `.pager` class. Deprecated in newer versions.",
+          },
+          {
+            id: 15,
+            front: "How to add responsive images in Bootstrap?",
+            back: "Use the class `img-fluid` to make images scale with the parent element.",
+          },
+          {
+            id: 16,
+            front: "What is a progress bar in Bootstrap?",
+            back: "Progress bars visually represent the progression of a task using `.progress` and `.progress-bar` classes.",
+          },
+          {
+            id: 17,
+            front: "What is a list group in Bootstrap?",
+            back: "List groups are flexible components used to display lists of content with `.list-group` and `.list-group-item`.",
+          },
+          {
+            id: 18,
+            front: "How to create a dropdown in Bootstrap?",
+            back: "Use the `.dropdown` class with a toggle button and menu list for dropdowns.",
+          },
+          {
+            id: 19,
+            front: "What is collapse in Bootstrap?",
+            back: "Collapse is used to hide or show content using buttons or links.",
+          },
+          {
+            id: 20,
+            front: "Explain tabs and pills in Bootstrap.",
+            back: "Tabs and pills are navigation components used to switch between content using `.nav-tabs` or `.nav-pills`.",
+          },
+          {
+            id: 21,
+            front: "What is a NavBar in Bootstrap?",
+            back: "Navbar is a responsive navigation header with links, branding, toggler, and menus.",
+          },
+          {
+            id: 22,
+            front: "List some input types supported by Bootstrap.",
+            back: "Text, Password, Email, Number, Checkbox, Radio, Date, Range, File, etc.",
+          },
+          {
+            id: 23,
+            front: "What are Bootstrap models?",
+            back: "You might mean 'modals' — Modals are dialog boxes or pop-ups that appear over the current page.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit- 5 : Bootstrap utilities",
+        key: "bootstrap-utilities",
+        cards: [
+          {
+            id: 1,
+            front:
+              "What is the purpose of the `border` utility in CSS/Bootstrap?",
+            back: "The `border` utility is used to add borders to elements, such as `border`, `border-top`, `border-0`, etc., to control border appearance.",
+          },
+          {
+            id: 2,
+            front: "What does the `clearfix` class do?",
+            back: "`clearfix` is used to clear floats, ensuring that a container properly wraps its floated child elements.",
+          },
+          {
+            id: 3,
+            front: "What are color icons?",
+            back: "Color icons are icons that include or are styled with different colors for visual enhancement and usability.",
+          },
+          {
+            id: 4,
+            front: "What is image replacement in web design?",
+            back: "Image replacement hides text visually and replaces it with an image while keeping the text available to screen readers and search engines.",
+          },
+          {
+            id: 5,
+            front: "How do you make content invisible but accessible?",
+            back: "Use classes like `sr-only` or `visually-hidden` to hide content from view but keep it accessible to screen readers.",
+          },
+          {
+            id: 6,
+            front: "What does the `position` property in CSS control?",
+            back: "The `position` property controls the positioning method of an element: static, relative, absolute, fixed, or sticky.",
+          },
+          {
+            id: 7,
+            front: "How does `relative` positioning work in CSS?",
+            back: "`position: relative;` positions an element relative to its normal position, allowing offset using top, right, bottom, or left.",
+          },
+          {
+            id: 8,
+            front: "What is the role of screen readers in web accessibility?",
+            back: "Screen readers read aloud text and UI elements on the screen, aiding visually impaired users to interact with websites.",
+          },
+          {
+            id: 9,
+            front: "How can you improve screen reader accessibility?",
+            back: "Use semantic HTML, ARIA labels, and hidden accessible text (`sr-only`) to convey important information.",
+          },
+          {
+            id: 10,
+            front: "What is the `sizing` utility in CSS/Bootstrap?",
+            back: "Sizing utilities allow you to set element width and height using classes like `w-25`, `h-50`, `mw-100`, etc.",
+          },
+          {
+            id: 11,
+            front: "What are `spacing` utilities in Bootstrap?",
+            back: "Spacing utilities like `m-*` and `p-*` control margin and padding using shorthand notations and responsive classes.",
+          },
+          {
+            id: 12,
+            front: "Give an example of using spacing in Bootstrap.",
+            back: "`class='mt-3 mb-2 px-4'` adds top margin, bottom margin, and horizontal padding.",
+          },
+          {
+            id: 13,
+            front: "What is a star rating system in UI design?",
+            back: "A star rating system allows users to rate something (e.g., product, service) on a scale usually from 1 to 5 stars.",
+          },
+          {
+            id: 14,
+            front: "How is a star rating implemented in web design?",
+            back: "It can be implemented using HTML radio buttons, SVG icons, or font icons styled with CSS/JS for interactivity.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Unit- 6 : Selenium",
+        key: "selenium",
+        cards: [
+          {
+            id: 1,
+            front: "What is Selenium?",
+            back: "Selenium is an open-source automated testing framework used to validate web applications across different browsers and platforms.",
+          },
+          {
+            id: 2,
+            front: "List some key features of Selenium.",
+            back: "Open-source, cross-browser compatibility, supports multiple languages (Java, Python, etc.), supports parallel test execution.",
+          },
+          {
+            id: 3,
+            front: "What are the limitations of Selenium?",
+            back: "Does not support desktop applications, no built-in reporting, handling dynamic elements can be complex, no direct support for captcha or barcode readers.",
+          },
+          {
+            id: 4,
+            front: "Selenium vs QTP: Name one key difference.",
+            back: "Selenium is open-source and supports only web apps, while QTP (now UFT) is commercial and supports desktop and web apps.",
+          },
+          {
+            id: 5,
+            front: "What are the components of the Selenium Tool Suite?",
+            back: "Selenium IDE, Selenium WebDriver, Selenium Grid, Selenium RC (deprecated).",
+          },
+          {
+            id: 6,
+            front: "What is Selenium IDE?",
+            back: "Selenium IDE is a Chrome/Firefox plugin that enables recording, editing, and debugging tests.",
+          },
+          {
+            id: 7,
+            front: "How do you install Selenium IDE?",
+            back: "Install Selenium IDE as a browser extension from the Chrome Web Store or Firefox Add-ons site.",
+          },
+          {
+            id: 8,
+            front: "What are the main features of Selenium IDE?",
+            back: "Record and playback, easy debugging, assertion support, export test cases to different languages.",
+          },
+          {
+            id: 9,
+            front: "How do you create a test case in Selenium IDE?",
+            back: "Open Selenium IDE, click record, perform the test steps in the browser, stop recording, and save the test case.",
+          },
+          {
+            id: 10,
+            front: "What is a login test case in Selenium IDE?",
+            back: "A test case that automates the steps to test the login functionality of a web application using recorded actions.",
+          },
+          {
+            id: 11,
+            front: "What are some basic commands in Selenium IDE?",
+            back: "open, click, type, assertText, verifyElementPresent, waitForElementPresent, store.",
+          },
+          {
+            id: 12,
+            front: "How do you execute a Selenium IDE test case?",
+            back: "Click the Run button in the Selenium IDE UI to execute the selected test case or all test cases in a suite.",
+          },
+        ],
+      },
+      {
+        id: 7,
+        title: "Unit- 7 : Selenium Web Driver",
+        key: "selenium-web-driver",
+        cards: [
+          {
+            id: 1,
+            front: "What is Selenium WebDriver?",
+            back: "Selenium WebDriver is a tool used to automate web application testing to verify that it works as expected. It interacts directly with the browser.",
+          },
+          {
+            id: 2,
+            front: "Selenium WebDriver vs Selenium RC: Key Difference?",
+            back: "WebDriver communicates directly with the browser using its native compatibility, while RC requires a server to inject JavaScript for browser control.",
+          },
+          {
+            id: 3,
+            front: "How to install Selenium WebDriver in Java?",
+            back: "Add Selenium WebDriver dependencies via Maven in `pom.xml` or download the Selenium JAR files and add them to the classpath.",
+          },
+          {
+            id: 4,
+            front: "How to run a Selenium WebDriver test on Chrome?",
+            back: "Set up ChromeDriver executable path, initialize WebDriver with `new ChromeDriver()`, and run the test script.",
+          },
+          {
+            id: 5,
+            front: "How to run Selenium WebDriver test on Firefox?",
+            back: "Set GeckoDriver path, initialize WebDriver with `new FirefoxDriver()`, and execute the test.",
+          },
+          {
+            id: 6,
+            front: "How to perform drag & drop using WebDriver?",
+            back: "Use `Actions` class: `actions.dragAndDrop(source, target).build().perform();`",
+          },
+          {
+            id: 7,
+            front: "How to handle JavaScript alerts in Selenium WebDriver?",
+            back: "Switch to alert using `driver.switchTo().alert()`, then use `accept()`, `dismiss()`, or `getText()` methods.",
+          },
+          {
+            id: 8,
+            front: "Give examples of browser commands in WebDriver.",
+            back: "`driver.get()`, `driver.getTitle()`, `driver.getCurrentUrl()`, `driver.close()`, `driver.quit()`.",
+          },
+          {
+            id: 9,
+            front: "What are navigation commands in Selenium WebDriver?",
+            back: "`driver.navigate().to()`, `driver.navigate().back()`, `driver.navigate().forward()`, `driver.navigate().refresh()`.",
+          },
+          {
+            id: 10,
+            front: "How to select a radio button in Selenium WebDriver?",
+            back: "Locate the radio button element and use `element.click()` to select it.",
+          },
+          {
+            id: 11,
+            front: "How to handle checkboxes in Selenium WebDriver?",
+            back: "Use `isSelected()` to verify status and `click()` to toggle the checkbox.",
+          },
+          {
+            id: 12,
+            front: "How to verify if a radio button is selected?",
+            back: "Use `element.isSelected()` method; returns true if selected.",
+          },
+        ],
+      },
+      {
+        id: 8,
+        title: "Unit- 8 : Node JS",
+        key: "node-js",
+        cards: [
+          {
+            id: 1,
+            front: "How to install Node.js on Windows?",
+            back: "Download the installer from nodejs.org, run it, and follow the setup steps. It installs both Node.js and npm.",
+          },
+          {
+            id: 2,
+            front: "How to run a Node.js file from console?",
+            back: "Use the command `node filename.js` in the terminal.",
+          },
+          {
+            id: 3,
+            front: "What is Node.js REPL?",
+            back: "REPL stands for Read-Eval-Print Loop. It is an interactive shell to run Node.js commands.",
+          },
+          {
+            id: 4,
+            front: "What is NPM in Node.js?",
+            back: "NPM is Node Package Manager used to install, update, and manage Node.js packages.",
+          },
+          {
+            id: 5,
+            front: "What are CLI options in Node.js?",
+            back: "Node.js supports command-line options like `--inspect`, `--eval`, `--require`, and `--trace-warnings`.",
+          },
+          {
+            id: 6,
+            front: "What are some global objects in Node.js?",
+            back: "`__dirname`, `__filename`, `global`, `process`, `module`, and `exports` are examples of global objects.",
+          },
+          {
+            id: 7,
+            front: "How to use timers in Node.js?",
+            back: "Use functions like `setTimeout()`, `setInterval()`, and `setImmediate()` for timer-based operations.",
+          },
+          {
+            id: 8,
+            front: "How does Node.js handle errors?",
+            back: "Errors are handled using try-catch blocks, and asynchronous errors use error-first callbacks or promises.",
+          },
+          {
+            id: 9,
+            front: "What is the `dns` module in Node.js?",
+            back: "The `dns` module provides functions to do DNS lookups and name resolution.",
+          },
+          {
+            id: 10,
+            front: "What does the `net` module do?",
+            back: "It provides an asynchronous network API for creating stream-based TCP or IPC servers and clients.",
+          },
+          {
+            id: 11,
+            front: "What is a buffer in Node.js?",
+            back: "Buffer is a temporary memory allocated outside the V8 heap to handle binary data.",
+          },
+          {
+            id: 12,
+            front: "What are streams in Node.js?",
+            back: "Streams are objects that let you read data from a source or write data to a destination in a continuous fashion.",
+          },
+          {
+            id: 13,
+            front: "What does the `fs` module provide?",
+            back: "The `fs` (File System) module allows you to work with the file system: read, write, update, and delete files.",
+          },
+          {
+            id: 14,
+            front: "Purpose of the `path` module?",
+            back: "The `path` module provides utilities for working with file and directory paths.",
+          },
+          {
+            id: 15,
+            front: "What is the `string_decoder` module?",
+            back: "It provides a way to decode buffer streams into strings while preserving multi-byte characters.",
+          },
+          {
+            id: 16,
+            front: "How does `querystring` module work?",
+            back: "It provides utilities for parsing and formatting URL query strings.",
+          },
+          {
+            id: 17,
+            front: "What is an EventEmitter in Node.js?",
+            back: "`EventEmitter` is a class in the `events` module used to handle events via `.on()` and `.emit()` methods.",
+          },
+          {
+            id: 18,
+            front: "Example of using `fs.readFile`?",
+            back: "`fs.readFile('file.txt', 'utf8', (err, data) => { console.log(data); });`",
+          },
+          {
+            id: 19,
+            front: "What is `setImmediate()` used for?",
+            back: "It schedules a callback to execute after the current event loop completes.",
+          },
+          {
+            id: 20,
+            front: "Difference between `setTimeout()` and `setImmediate()`?",
+            back: "`setTimeout()` waits at least the defined delay, `setImmediate()` executes after I/O events callbacks.",
+          },
+        ],
+      },
+      {
+        id: 9,
+        title: "Unit- 9 : Node JS with MySQL",
+        key: "node-js-with-mysql",
+        cards: [
+          {
+            id: 1,
+            front: "How do you create a connection to a MySQL database in PHP?",
+            back: "`$conn = new mysqli('localhost', 'username', 'password', 'database');`",
+          },
+          {
+            id: 2,
+            front: "SQL syntax to create a database named 'school'?",
+            back: "`CREATE DATABASE school;`",
+          },
+          {
+            id: 3,
+            front:
+              "How do you create a table named 'students' with id and name?",
+            back: "`CREATE TABLE students (id INT PRIMARY KEY, name VARCHAR(50));`",
+          },
+          {
+            id: 4,
+            front: "How to insert a record into the 'students' table?",
+            back: "`INSERT INTO students (id, name) VALUES (1, 'Aayush');`",
+          },
+          {
+            id: 5,
+            front: "How to update a record in the 'students' table?",
+            back: "`UPDATE students SET name = 'Aryan' WHERE id = 1;`",
+          },
+          {
+            id: 6,
+            front: "How to delete a record from the 'students' table?",
+            back: "`DELETE FROM students WHERE id = 1;`",
+          },
+          {
+            id: 7,
+            front: "How to select all records from the 'students' table?",
+            back: "`SELECT * FROM students;`",
+          },
+          {
+            id: 8,
+            front: "How to select unique names from the 'students' table?",
+            back: "`SELECT DISTINCT name FROM students;`",
+          },
+          {
+            id: 9,
+            front: "How to drop a table named 'students'?",
+            back: "`DROP TABLE students;`",
+          },
+          {
+            id: 10,
+            front: "How to drop a database named 'school'?",
+            back: "`DROP DATABASE school;`",
+          },
+          {
+            id: 11,
+            front: "What function checks connection success in PHP?",
+            back: "`$conn->connect_error` is used to check if the connection failed.",
+          },
+          {
+            id: 12,
+            front: "How to execute a query in PHP using MySQLi?",
+            back: "`$conn->query('YOUR_SQL_QUERY');`",
+          },
+        ],
+      },
+    ],
+  },
+  {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
     units: [
