@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const pathname = usePathname();
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, setOpenMobile } = useSidebar();
 
   const [activePageTitle, setActivePageTitle] = useState(
     navLinks.find((link) => link.href == pathname)?.title,
@@ -30,6 +30,7 @@ export const Navbar = () => {
         () => navLinks.find((link) => link.href.includes(pathname))?.title,
       );
     }
+    setOpenMobile(false);
   }, [pathname]);
 
   return (
