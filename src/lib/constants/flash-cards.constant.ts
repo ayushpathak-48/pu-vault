@@ -1069,19 +1069,1281 @@ export const flashCards = [
       },
     ],
   },
-  // {
-  //   subject_name: "Big Data Analytics",
-  //   key: "big-data-analytics",
-  //   specialization: "bda",
-  //   units: [
-  //     {
-  //       id: 1,
-  //       title: "Unit- 1: Introduction",
-  //       key: "introduction",
-  //       cards: [],
-  //     },
-  //   ],
-  // },
+  {
+    subject_name: "Big Data Analytics",
+    key: "big-data-analytics",
+    specialization: "bda",
+    units: [
+      {
+        id: 1,
+        title: "Unit- 1: Overview of Big Data",
+        key: "overview-of-big-data",
+        cards: [
+          {
+            id: 1,
+            front: "What is Big Data?",
+            back: "Big Data refers to large, complex data sets that traditional data processing software cannot handle efficiently.",
+          },
+          {
+            id: 2,
+            front: "What are the 5 V's of Big Data?",
+            back: "Volume, Velocity, Variety, Veracity, and Value.",
+          },
+          {
+            id: 3,
+            front: "What is the main goal of Big Data?",
+            back: "To extract meaningful insights and knowledge from large and diverse datasets.",
+          },
+          {
+            id: 4,
+            front: "How did Big Data evolve?",
+            back: "Big Data evolved due to the exponential growth of data from digital platforms, sensors, and IoT devices.",
+          },
+          {
+            id: 5,
+            front:
+              "Which technologies contributed to the evolution of Big Data?",
+            back: "Technologies like Hadoop, NoSQL databases, and cloud computing.",
+          },
+          {
+            id: 6,
+            front: "What is structured data?",
+            back: "Structured data is organized in a defined format like rows and columns, typically found in relational databases.",
+          },
+          {
+            id: 7,
+            front: "What is unstructured data?",
+            back: "Unstructured data lacks a predefined format, such as images, videos, and social media posts.",
+          },
+          {
+            id: 8,
+            front: "What is semi-structured data?",
+            back: "Semi-structured data has some organizational properties but doesn't fit into a strict schema, like JSON or XML.",
+          },
+          {
+            id: 9,
+            front: "What are the fundamentals of Big Data?",
+            back: "Fundamentals include data acquisition, storage, processing, analysis, and visualization.",
+          },
+          {
+            id: 10,
+            front: "What is Big Data Analytics?",
+            back: "Big Data Analytics is the process of examining large data sets to uncover hidden patterns and insights.",
+          },
+          {
+            id: 11,
+            front: "What tools are used in Big Data Analytics?",
+            back: "Tools like Hadoop, Spark, Hive, Pig, and Apache Flink are commonly used.",
+          },
+          {
+            id: 12,
+            front: "How is Big Data Analytics useful?",
+            back: "It helps in decision-making, customer behavior prediction, fraud detection, and operational efficiency.",
+          },
+          {
+            id: 13,
+            front: "What skills are needed for a Big Data career?",
+            back: "Skills in data analysis, programming (Python, Java), statistics, and tools like Hadoop and Spark.",
+          },
+          {
+            id: 14,
+            front: "What are some career roles in Big Data?",
+            back: "Big Data Analyst, Data Engineer, Data Scientist, and Hadoop Developer.",
+          },
+          {
+            id: 15,
+            front: "What is the future of Big Data?",
+            back: "It includes greater integration with AI, real-time analytics, and expansion into new industries.",
+          },
+          {
+            id: 16,
+            front: "Why is Big Data important in today's world?",
+            back: "Because it enables organizations to make data-driven decisions and gain a competitive edge.",
+          },
+          {
+            id: 17,
+            front: "What is Hadoop in Big Data?",
+            back: "Hadoop is an open-source framework that allows for distributed processing of large data sets.",
+          },
+          {
+            id: 18,
+            front: "What role does cloud computing play in Big Data?",
+            back: "It provides scalable storage and computing power needed to handle massive data sets efficiently.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit- 2: Discovering the Use of Big Data in Business Context",
+        key: "discovering-the-use-of-big-data-in-business-context",
+        cards: [
+          {
+            id: 1,
+            front: "How is Big Data used in social networking?",
+            back: "Big Data is used in social networking to analyze user behavior, recommend content, and personalize user experiences.",
+          },
+          {
+            id: 2,
+            front: "What role does Big Data play in social media analytics?",
+            back: "It helps identify trending topics, measure engagement, and understand audience preferences in real-time.",
+          },
+          {
+            id: 3,
+            front:
+              "Which platforms benefit from Big Data in social networking?",
+            back: "Platforms like Facebook, Twitter, Instagram, and LinkedIn use Big Data for user insights and targeted advertising.",
+          },
+          {
+            id: 4,
+            front: "How does Big Data help prevent fraudulent activities?",
+            back: "Big Data analyzes large volumes of transactional data to detect unusual patterns that may indicate fraud.",
+          },
+          {
+            id: 5,
+            front:
+              "Which techniques are used in fraud prevention with Big Data?",
+            back: "Techniques include machine learning, pattern recognition, and real-time monitoring.",
+          },
+          {
+            id: 6,
+            front: "What is the benefit of real-time fraud detection?",
+            back: "It allows immediate action to prevent financial losses and protect user accounts.",
+          },
+          {
+            id: 7,
+            front: "How does Big Data help detect insurance fraud?",
+            back: "It examines claims data, customer history, and external sources to uncover inconsistencies and suspicious behavior.",
+          },
+          {
+            id: 8,
+            front: "What tools are used to detect fraudulent insurance claims?",
+            back: "Tools like predictive analytics, AI, and data mining help insurers flag potential fraud cases.",
+          },
+          {
+            id: 9,
+            front:
+              "What kind of data is analyzed in insurance fraud detection?",
+            back: "Data from claim forms, social media, location tracking, and historical claims.",
+          },
+          {
+            id: 10,
+            front: "How is Big Data transforming the retail industry?",
+            back: "Big Data helps retailers understand customer behavior, optimize pricing, and personalize shopping experiences.",
+          },
+          {
+            id: 11,
+            front: "What are the benefits of using Big Data in retail?",
+            back: "Improved inventory management, targeted marketing, and enhanced customer satisfaction.",
+          },
+          {
+            id: 12,
+            front: "Which retail companies use Big Data extensively?",
+            back: "Companies like Amazon, Walmart, and Target use Big Data to improve operations and customer engagement.",
+          },
+          {
+            id: 13,
+            front: "What is recommendation engine in retail?",
+            back: "It's a Big Data-driven system that suggests products to users based on their behavior and preferences.",
+          },
+          {
+            id: 14,
+            front: "How does Big Data aid in dynamic pricing in retail?",
+            back: "Retailers use real-time data to adjust prices based on demand, competition, and customer behavior.",
+          },
+          {
+            id: 15,
+            front:
+              "How is customer sentiment analyzed in retail using Big Data?",
+            back: "Through social media mining, reviews, and feedback using natural language processing (NLP).",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit- 3: Technologies for Handling Big Data",
+        key: "technologies-for-handling-big-data",
+        cards: [
+          {
+            id: 1,
+            front: "What is Distributed Computing in Big Data?",
+            back: "Distributed Computing divides data and computation across multiple machines to process large-scale data efficiently.",
+          },
+          {
+            id: 2,
+            front: "What is Parallel Computing in Big Data?",
+            back: "Parallel Computing executes multiple tasks simultaneously to speed up Big Data processing.",
+          },
+          {
+            id: 3,
+            front:
+              "What are the benefits of Distributed and Parallel Computing?",
+            back: "They improve processing speed, scalability, and fault tolerance in Big Data systems.",
+          },
+          {
+            id: 4,
+            front: "What is Hadoop?",
+            back: "Hadoop is an open-source Big Data framework that enables distributed storage and processing using the MapReduce model.",
+          },
+          {
+            id: 5,
+            front: "What are the main components of Hadoop?",
+            back: "Hadoop Distributed File System (HDFS) and MapReduce are the two core components.",
+          },
+          {
+            id: 6,
+            front: "What is the role of HDFS in Hadoop?",
+            back: "HDFS stores large files across multiple machines with data replication for fault tolerance.",
+          },
+          {
+            id: 7,
+            front: "How does Cloud Computing support Big Data?",
+            back: "Cloud Computing provides scalable infrastructure and services for storing, processing, and analyzing Big Data.",
+          },
+          {
+            id: 8,
+            front: "Which cloud platforms support Big Data processing?",
+            back: "Platforms like AWS, Microsoft Azure, and Google Cloud offer Big Data services like EMR, HDInsight, and Dataproc.",
+          },
+          {
+            id: 9,
+            front: "What are the advantages of Cloud Computing in Big Data?",
+            back: "Cost efficiency, on-demand scalability, and accessibility from anywhere.",
+          },
+          {
+            id: 10,
+            front: "What is In-Memory Computing?",
+            back: "In-Memory Computing processes data stored in RAM instead of disk, offering much faster computation.",
+          },
+          {
+            id: 11,
+            front:
+              "Which technologies are used for In-Memory Computing in Big Data?",
+            back: "Technologies like Apache Spark and SAP HANA support in-memory data processing.",
+          },
+          {
+            id: 12,
+            front:
+              "What is the advantage of using In-Memory Computing for Big Data?",
+            back: "It significantly reduces latency and accelerates data processing tasks.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit- 4: Understanding Hadoop Ecosystem",
+        key: "understanding-hadoop-ecosystem",
+        cards: [
+          {
+            id: 1,
+            front: "What is the history of Hadoop?",
+            back: "Hadoop was created by Doug Cutting and Mike Cafarella, inspired by Google's MapReduce and GFS papers. It was later adopted by Yahoo and became an Apache project.",
+          },
+          {
+            id: 2,
+            front: "Why was Hadoop developed?",
+            back: "Hadoop was developed to process and store massive amounts of data efficiently using distributed computing.",
+          },
+          {
+            id: 3,
+            front:
+              "Who contributed significantly to Hadoop's early development?",
+            back: "Yahoo! played a major role in developing and scaling Hadoop in its early stages.",
+          },
+          {
+            id: 4,
+            front: "What is the Hadoop Ecosystem?",
+            back: "The Hadoop Ecosystem includes tools and frameworks such as HDFS, MapReduce, Hive, Pig, HBase, Zookeeper, and Sqoop that support data processing and storage.",
+          },
+          {
+            id: 5,
+            front: "Name some components of the Hadoop Ecosystem.",
+            back: "Hive, Pig, HBase, Sqoop, Flume, Zookeeper, and Oozie.",
+          },
+          {
+            id: 6,
+            front: "What is the role of Pig in Hadoop Ecosystem?",
+            back: "Pig is a high-level platform for creating MapReduce programs using a scripting language called Pig Latin.",
+          },
+          {
+            id: 7,
+            front: "How can data be analyzed with Unix tools?",
+            back: "Data can be analyzed using Unix tools like grep, awk, sed, cut, sort, and uniq to process text-based datasets.",
+          },
+          {
+            id: 8,
+            front: "Why use Unix tools for Big Data analysis?",
+            back: "Unix tools are efficient for line-based text processing and can handle moderately large datasets quickly.",
+          },
+          {
+            id: 9,
+            front: "What limitations do Unix tools face in Big Data analysis?",
+            back: "They struggle with massive datasets and distributed processing, which is where Hadoop excels.",
+          },
+          {
+            id: 10,
+            front: "How is data analyzed using Hadoop?",
+            back: "Hadoop processes data through the MapReduce programming model, breaking it into chunks processed in parallel.",
+          },
+          {
+            id: 11,
+            front: "What is Hadoop Streaming?",
+            back: "Hadoop Streaming is a utility that allows users to create and run MapReduce jobs with any executable or script as the mapper and/or reducer.",
+          },
+          {
+            id: 12,
+            front: "Which languages can be used with Hadoop Streaming?",
+            back: "Any language that can read from standard input and write to standard output, such as Python, Perl, or Bash.",
+          },
+          {
+            id: 13,
+            front: "What is the IBM Big Data Strategy?",
+            back: "IBM’s Big Data strategy involves integrating various tools and platforms to manage, analyze, and gain insights from massive datasets.",
+          },
+          {
+            id: 14,
+            front: "What is IBM Infosphere BigInsights?",
+            back: "BigInsights is IBM’s platform based on Hadoop, designed for large-scale analytics and enterprise-grade features.",
+          },
+          {
+            id: 15,
+            front: "What are IBM BigSheets?",
+            back: "BigSheets is a spreadsheet-like web tool that helps users analyze web-scale data without writing code.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit- 5: HDFS(Hadoop Distributed File System)",
+        key: "hadoop-distributed-file-system",
+        cards: [
+          {
+            id: 1,
+            front: "What is HDFS in Hadoop?",
+            back: "HDFS (Hadoop Distributed File System) is the primary storage system of Hadoop that stores large files across multiple machines.",
+          },
+          {
+            id: 2,
+            front: "How is HDFS designed?",
+            back: "HDFS is designed to store very large files with streaming data access, using a master/slave architecture with NameNode and DataNodes.",
+          },
+          {
+            id: 3,
+            front: "What are blocks in HDFS?",
+            back: "Blocks are fixed-size chunks (default 128MB) into which files are split before storing across DataNodes.",
+          },
+          {
+            id: 4,
+            front: "What is the role of NameNode in HDFS?",
+            back: "The NameNode manages metadata and file system namespace; it does not store actual data.",
+          },
+          {
+            id: 5,
+            front: "What are key HDFS concepts?",
+            back: "Key concepts include NameNode, DataNode, block replication, fault tolerance, and scalability.",
+          },
+          {
+            id: 6,
+            front: "What is the HDFS replication factor?",
+            back: "It is the number of copies of each block stored in the cluster for fault tolerance (default is 3).",
+          },
+          {
+            id: 7,
+            front: "What is the HDFS Command Line Interface (CLI)?",
+            back: "The HDFS CLI allows users to interact with HDFS using commands like `hdfs dfs -ls`, `-put`, `-get`, etc.",
+          },
+          {
+            id: 8,
+            front: "How does Hadoop FileSystem interface work?",
+            back: "Hadoop provides an abstract `FileSystem` API that can interface with local, HDFS, and other file systems uniformly.",
+          },
+          {
+            id: 9,
+            front: "What is the data flow in Hadoop?",
+            back: "Data flows from client to HDFS blocks (replicated across DataNodes) and is processed by MapReduce jobs.",
+          },
+          {
+            id: 10,
+            front: "What is Flume in Hadoop?",
+            back: "Flume is a tool used to efficiently collect, aggregate, and move large amounts of log data to HDFS.",
+          },
+          {
+            id: 11,
+            front: "What is Sqoop in Hadoop?",
+            back: "Sqoop is a tool designed for efficiently transferring bulk data between Hadoop and relational databases.",
+          },
+          {
+            id: 12,
+            front: "What are Hadoop Archives (HAR)?",
+            back: "HAR is a file archiving facility in Hadoop to pack many small files into a single archive for better performance.",
+          },
+          {
+            id: 13,
+            front: "What is Hadoop I/O?",
+            back: "Hadoop I/O includes mechanisms for reading/writing data, serialization, compression, and file-based formats.",
+          },
+          {
+            id: 14,
+            front: "Why is compression used in Hadoop?",
+            back: "Compression reduces disk space usage and speeds up data transfer, improving Hadoop performance.",
+          },
+          {
+            id: 15,
+            front: "What is Avro in Hadoop?",
+            back: "Avro is a serialization framework that uses JSON for defining data schemas and supports compact, fast, binary serialization.",
+          },
+          {
+            id: 16,
+            front: "What are file-based data structures in Hadoop?",
+            back: "File-based structures include SequenceFile, MapFile, and AvroFile, used for storing key-value pairs and complex data.",
+          },
+          {
+            id: 17,
+            front: "What is serialization in Hadoop?",
+            back: "Serialization is the process of converting data into a byte stream for storage or transmission in Hadoop.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Unit- 6 : MapReduce Fundamentals",
+        key: "mapreduce-fundamentals",
+        cards: [
+          {
+            id: 1,
+            front: "What is the anatomy of a MapReduce job run?",
+            back: "A MapReduce job consists of a Map phase, Shuffle and Sort phase, and a Reduce phase. It includes job submission, initialization, task assignment, execution, and completion.",
+          },
+          {
+            id: 2,
+            front: "What happens during the Map phase of a MapReduce job?",
+            back: "In the Map phase, input data is split into key-value pairs which are processed independently to generate intermediate key-value pairs.",
+          },
+          {
+            id: 3,
+            front: "What is the Shuffle and Sort phase in MapReduce?",
+            back: "Shuffle distributes the intermediate data to reducers, and Sort organizes the data by key before the Reduce phase.",
+          },
+          {
+            id: 4,
+            front: "What occurs during the Reduce phase of a MapReduce job?",
+            back: "The Reduce phase aggregates the sorted intermediate key-value pairs and produces the final output.",
+          },
+          {
+            id: 5,
+            front: "What types of failures can occur in MapReduce?",
+            back: "Failures can include task failure, node failure, job tracker failure, or data corruption.",
+          },
+          {
+            id: 6,
+            front: "How does MapReduce handle task failures?",
+            back: "MapReduce automatically reschedules failed tasks on other nodes using the task tracker and heartbeat mechanism.",
+          },
+          {
+            id: 7,
+            front: "What is job scheduling in MapReduce?",
+            back: "Job scheduling is the process of allocating resources and determining the order in which MapReduce jobs are executed.",
+          },
+          {
+            id: 8,
+            front: "What is FIFO scheduler in Hadoop?",
+            back: "FIFO (First-In-First-Out) is the default scheduler in Hadoop that runs jobs in the order they are submitted.",
+          },
+          {
+            id: 9,
+            front: "What is task execution in MapReduce?",
+            back: "Task execution involves running the assigned map or reduce task on the allocated node using task trackers.",
+          },
+          {
+            id: 10,
+            front: "What are MapReduce types and formats?",
+            back: "MapReduce supports various input/output formats like TextInputFormat, KeyValueInputFormat, SequenceFileFormat.",
+          },
+          {
+            id: 11,
+            front: "What is TextInputFormat in MapReduce?",
+            back: "TextInputFormat is the default format where each line of input is treated as a record with the key as the byte offset.",
+          },
+          {
+            id: 12,
+            front: "What is SequenceFileInputFormat?",
+            back: "It is a format for reading binary key-value pairs from sequence files in MapReduce jobs.",
+          },
+          {
+            id: 13,
+            front: "What are the main features of MapReduce?",
+            back: "Features include fault tolerance, scalability, data locality optimization, automatic parallelization, and ease of use.",
+          },
+          {
+            id: 14,
+            front: "What is speculative execution in MapReduce?",
+            back: "Speculative execution runs duplicate copies of slow tasks to reduce overall job execution time.",
+          },
+          {
+            id: 15,
+            front: "What is a combiner in MapReduce?",
+            back: "A combiner performs a mini-reduce process to reduce data transfer during the shuffle phase.",
+          },
+        ],
+      },
+      {
+        id: 7,
+        title:
+          "Unit- 7 : Understanding Big Data Technology Foundations, Storing Data in Databases and Data Warehouses",
+        key: "understanding-big-data-technology-foundations",
+        cards: [
+          {
+            id: 1,
+            front: "What is the Big Data stack?",
+            back: "The Big Data stack is a layered architecture that includes data sources, storage, processing, analytics, and visualization tools used to handle big data workflows.",
+          },
+          {
+            id: 2,
+            front: "Why is understanding the Big Data stack important?",
+            back: "Understanding the stack helps in designing scalable and efficient systems for collecting, storing, processing, and analyzing large volumes of data.",
+          },
+          {
+            id: 3,
+            front: "What are the layers in the Big Data stack?",
+            back: "The layers include Data Sources, Data Storage, Data Processing, Data Analysis, and Data Visualization.",
+          },
+          {
+            id: 4,
+            front: "What is virtualization in Big Data?",
+            back: "Virtualization is the creation of virtual resources such as servers and storage to improve scalability, flexibility, and efficiency in big data environments.",
+          },
+          {
+            id: 5,
+            front: "Name a key benefit of virtualization in Big Data.",
+            back: "It enables resource abstraction, allowing better allocation and isolation of computing tasks.",
+          },
+          {
+            id: 6,
+            front: "What are two popular virtualization approaches?",
+            back: "Hypervisor-based virtualization (e.g., VMware) and containerization (e.g., Docker).",
+          },
+          {
+            id: 7,
+            front: "How do containers benefit Big Data applications?",
+            back: "Containers offer lightweight, portable environments that simplify deployment and scaling of big data tools.",
+          },
+          {
+            id: 8,
+            front: "What is the role of RDBMS in Big Data?",
+            back: "RDBMS handles structured data and can be used in combination with big data systems for hybrid analytics.",
+          },
+          {
+            id: 9,
+            front: "What is a non-relational database?",
+            back: "Also known as NoSQL databases, they handle unstructured or semi-structured data and provide horizontal scalability.",
+          },
+          {
+            id: 10,
+            front: "Give an example of a non-relational database.",
+            back: "MongoDB, Cassandra, and CouchDB are common examples of NoSQL databases.",
+          },
+          {
+            id: 11,
+            front: "What is polyglot persistence?",
+            back: "It is the use of different types of databases to handle different parts of an application's data needs.",
+          },
+          {
+            id: 12,
+            front: "Why use polyglot persistence?",
+            back: "To leverage the strengths of different data storage technologies for varied data types and use cases.",
+          },
+          {
+            id: 13,
+            front:
+              "How does Big Data integrate with traditional data warehouses?",
+            back: "Through data pipelines, connectors, and ETL tools that enable structured and unstructured data integration.",
+          },
+          {
+            id: 14,
+            front:
+              "What is a key challenge in integrating Big Data with traditional warehouses?",
+            back: "Handling data variety and volume while maintaining performance and consistency.",
+          },
+          {
+            id: 15,
+            front: "What is the function of a data warehouse in Big Data?",
+            back: "It stores historical structured data optimized for fast querying and business intelligence.",
+          },
+          {
+            id: 16,
+            front:
+              "Name a Big Data analysis tool that integrates with data warehouses.",
+            back: "Apache Hive can run SQL-like queries on big data stored in Hadoop, integrating with traditional BI tools.",
+          },
+          {
+            id: 17,
+            front: "What are changing deployment models in Big Data?",
+            back: "Cloud computing, hybrid cloud, and on-demand platforms have replaced traditional on-premise setups.",
+          },
+          {
+            id: 18,
+            front: "Why is cloud deployment preferred for Big Data?",
+            back: "It offers scalability, cost-efficiency, and flexibility for storing and processing large volumes of data.",
+          },
+          {
+            id: 19,
+            front: "What is the difference between RDBMS and Big Data systems?",
+            back: "RDBMS are good for structured data and ACID compliance, while Big Data systems handle massive, diverse data with high velocity.",
+          },
+          {
+            id: 20,
+            front: "Give an example of a cloud-based Big Data platform.",
+            back: "Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform offer Big Data solutions.",
+          },
+          {
+            id: 21,
+            front:
+              "What is quick revision in the context of Big Data learning?",
+            back: "A concise summary of key concepts and technologies that helps reinforce understanding and memory retention.",
+          },
+          {
+            id: 22,
+            front: "How does virtualization reduce hardware dependency?",
+            back: "By abstracting hardware, it allows multiple virtual systems to run on a single physical machine, maximizing utilization.",
+          },
+          {
+            id: 23,
+            front:
+              "What is a major limitation of traditional data warehouses in the Big Data era?",
+            back: "Inability to handle high-volume, high-velocity unstructured data efficiently.",
+          },
+          {
+            id: 24,
+            front:
+              "How can organizations future-proof their data infrastructure?",
+            back: "By adopting flexible, cloud-based, and hybrid systems capable of integrating both RDBMS and Big Data tools.",
+          },
+          {
+            id: 25,
+            front:
+              "Why is understanding deployment models crucial in Big Data?",
+            back: "It helps choose the right infrastructure (on-premise, cloud, or hybrid) to meet performance and budget needs.",
+          },
+        ],
+      },
+      {
+        id: 8,
+        title: "Unit- 8 : Processing Your Data with MapReduce",
+        key: "processing-your-data-with-mapreduce",
+        cards: [
+          {
+            id: 1,
+            front: "What is the MapReduce framework?",
+            back: "MapReduce is a programming model for processing large data sets with a distributed algorithm on a cluster.",
+          },
+          {
+            id: 2,
+            front: "What are the two main functions in MapReduce?",
+            back: "The two primary functions are 'Map', which processes input data into key-value pairs, and 'Reduce', which merges and processes those intermediate results.",
+          },
+          {
+            id: 3,
+            front: "How does the 'Map' function work in MapReduce?",
+            back: "The Map function takes input data and transforms it into key-value pairs which are then grouped by key.",
+          },
+          {
+            id: 4,
+            front: "What does the 'Reduce' function do in MapReduce?",
+            back: "The Reduce function processes grouped data by key and performs aggregation or summarization.",
+          },
+          {
+            id: 5,
+            front: "Give an example of a simple MapReduce application.",
+            back: "A common example is Word Count, where Map emits (word, 1) and Reduce sums the counts for each word.",
+          },
+          {
+            id: 6,
+            front: "What is the purpose of a combiner in MapReduce?",
+            back: "A combiner performs a local reduce task to minimize data transfer between Map and Reduce phases.",
+          },
+          {
+            id: 7,
+            front: "How is data distributed in a MapReduce framework?",
+            back: "Input data is split into chunks, and each chunk is processed by a separate Mapper in parallel.",
+          },
+          {
+            id: 8,
+            front:
+              "What is the role of the Hadoop Distributed File System (HDFS) in MapReduce?",
+            back: "HDFS stores the input and output data of MapReduce jobs and ensures data replication across the cluster.",
+          },
+          {
+            id: 9,
+            front: "Name a Java class used to develop MapReduce applications.",
+            back: "Classes like `Mapper`, `Reducer`, `Job`, and `Configuration` are commonly used in Java MapReduce applications.",
+          },
+          {
+            id: 10,
+            front:
+              "Why is it important to design key-value pairs carefully in MapReduce?",
+            back: "Efficient key-value pair design improves sorting, shuffling, and load balancing during job execution.",
+          },
+          {
+            id: 11,
+            front: "What is a 'shuffle and sort' phase in MapReduce?",
+            back: "It is the phase between Map and Reduce that transfers and sorts intermediate data by keys to prepare for reduction.",
+          },
+          {
+            id: 12,
+            front:
+              "What does it mean to design a MapReduce application for scalability?",
+            back: "It means creating jobs that can handle increasing data volume and node count without performance degradation.",
+          },
+          {
+            id: 13,
+            front: "How does fault tolerance work in MapReduce?",
+            back: "If a node fails, the job tracker reassigns the task to another node using redundant data in HDFS.",
+          },
+          {
+            id: 14,
+            front:
+              "Why is monitoring memory and I/O usage important in MapReduce design?",
+            back: "Because resource limits can cause task failures or inefficient performance; optimization ensures reliability.",
+          },
+          {
+            id: 15,
+            front:
+              "What should be considered when choosing between multiple Reducers?",
+            back: "Consider data distribution, reduce complexity, and whether parallelism will benefit result aggregation.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    subject_name: "Cloud Computing",
+    key: "cloud-computing",
+    specialization: "cc",
+    units: [
+      {
+        id: 1,
+        title: "Unit- 1 : Introduction",
+        key: "introduction",
+        cards: [
+          {
+            id: 1,
+            front: "What is cloud computing?",
+            back: "Cloud computing is the delivery of computing services like storage, processing, and software over the internet (the cloud) on a pay-as-you-go basis.",
+          },
+          {
+            id: 2,
+            front: "What are the main characteristics of cloud computing?",
+            back: "The key characteristics include on-demand self-service, broad network access, resource pooling, rapid elasticity, and measured service.",
+          },
+          {
+            id: 3,
+            front: "What are the advantages of cloud computing?",
+            back: "Advantages include cost efficiency, scalability, accessibility, disaster recovery, and automatic software updates.",
+          },
+          {
+            id: 4,
+            front: "What are some disadvantages of cloud computing?",
+            back: "Disadvantages include security risks, internet dependency, limited control, and potential downtime.",
+          },
+          {
+            id: 5,
+            front: "How has cloud computing evolved over time?",
+            back: "Cloud computing evolved from early mainframe and client-server models to today's distributed, internet-based computing platforms.",
+          },
+          {
+            id: 6,
+            front: "What is the nature of cloud computing?",
+            back: "Cloud computing is virtualized, scalable, service-oriented, and network-based, enabling remote access to computing resources.",
+          },
+          {
+            id: 7,
+            front: "Name key technologies that support cloud computing.",
+            back: "Key technologies include virtualization, distributed computing, grid computing, web services, and broadband internet.",
+          },
+          {
+            id: 8,
+            front: "What does migrating into the cloud involve?",
+            back: "It involves moving data, applications, and services from on-premises infrastructure to cloud-based environments.",
+          },
+          {
+            id: 9,
+            front: "Give an example of a common cloud application.",
+            back: "Google Workspace (Docs, Sheets, Drive) is a common cloud-based application suite used for collaboration and productivity.",
+          },
+          {
+            id: 10,
+            front: "How does cloud computing work?",
+            back: "Cloud providers host data centers with resources accessed by clients via the internet, allocating resources dynamically based on demand.",
+          },
+          {
+            id: 11,
+            front: "What is SaaS in cloud computing?",
+            back: "Software as a Service (SaaS) delivers software applications over the internet, eliminating the need for local installation.",
+          },
+          {
+            id: 12,
+            front: "What is IaaS in cloud computing?",
+            back: "Infrastructure as a Service (IaaS) provides virtualized computing infrastructure over the internet, such as servers and storage.",
+          },
+          {
+            id: 13,
+            front: "What is PaaS in cloud computing?",
+            back: "Platform as a Service (PaaS) offers hardware and software tools over the internet for application development.",
+          },
+          {
+            id: 14,
+            front: "What are some current trends in cloud computing?",
+            back: "Trends include multi-cloud strategies, edge computing, serverless computing, AI integration, and enhanced security practices.",
+          },
+          {
+            id: 15,
+            front: "What is edge computing in the context of cloud trends?",
+            back: "Edge computing processes data closer to the data source rather than in centralized cloud servers, reducing latency and improving performance.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit- 2 : Cloud Computing Models",
+        key: "cloud-computing-models",
+        cards: [
+          {
+            id: 1,
+            front: "What are the main types of cloud?",
+            back: "The main types of cloud are Public Cloud, Private Cloud, Hybrid Cloud, and Community Cloud.",
+          },
+          {
+            id: 2,
+            front: "What is a Public Cloud?",
+            back: "A Public Cloud is a cloud environment owned and operated by a third-party provider, offering services to multiple customers over the internet.",
+          },
+          {
+            id: 3,
+            front: "What is a Private Cloud?",
+            back: "A Private Cloud is a cloud infrastructure operated solely for a single organization, either managed internally or by a third party.",
+          },
+          {
+            id: 4,
+            front: "What is a Hybrid Cloud?",
+            back: "A Hybrid Cloud combines public and private clouds, allowing data and applications to move between them for greater flexibility.",
+          },
+          {
+            id: 5,
+            front: "What are the major Cloud Service Models?",
+            back: "The major cloud service models are Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).",
+          },
+          {
+            id: 6,
+            front: "What is SaaS?",
+            back: "Software as a Service (SaaS) delivers software applications over the internet, managed by a service provider.",
+          },
+          {
+            id: 7,
+            front: "What is PaaS?",
+            back: "Platform as a Service (PaaS) provides a platform allowing customers to develop, run, and manage applications without managing the infrastructure.",
+          },
+          {
+            id: 8,
+            front: "What is IaaS?",
+            back: "Infrastructure as a Service (IaaS) provides virtualized computing resources like servers, storage, and networking on a pay-as-you-go basis.",
+          },
+          {
+            id: 9,
+            front:
+              "What are other cloud services apart from SaaS, PaaS, and IaaS?",
+            back: "Other services include Backend as a Service (BaaS), Function as a Service (FaaS), and Desktop as a Service (DaaS).",
+          },
+          {
+            id: 10,
+            front: "What are the main Cloud Deployment Models?",
+            back: "The main deployment models are Public Cloud, Private Cloud, Hybrid Cloud, and Community Cloud.",
+          },
+          {
+            id: 11,
+            front: "What is Cloud Architecture?",
+            back: "Cloud architecture refers to the components and subcomponents required for cloud computing, including front-end and back-end platforms, cloud-based delivery, and a network.",
+          },
+          {
+            id: 12,
+            front: "What is the Cloud Computing Reference Model?",
+            back: "It’s a layered model defining how different cloud components like infrastructure, platforms, and applications interact in a cloud environment.",
+          },
+          {
+            id: 13,
+            front:
+              "What is the benefit of using IaaS over traditional infrastructure?",
+            back: "IaaS reduces capital expenses and provides scalability and flexibility by offering on-demand infrastructure.",
+          },
+          {
+            id: 14,
+            front: "How does SaaS benefit organizations?",
+            back: "SaaS eliminates the need for software installation and maintenance, reducing IT workload and costs.",
+          },
+          {
+            id: 15,
+            front: "What makes PaaS ideal for developers?",
+            back: "PaaS provides tools, libraries, and frameworks that simplify application development and deployment without worrying about infrastructure.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit- 3 : Virtualization Concepts",
+        key: "virtualization-concepts",
+        cards: [
+          {
+            id: 1,
+            front: "What is virtualization in cloud computing?",
+            back: "Virtualization is the process of creating a virtual version of physical resources like servers, storage devices, and networks, enabling efficient utilization of hardware.",
+          },
+          {
+            id: 2,
+            front: "What is the architecture of virtualization?",
+            back: "Virtualization architecture typically includes a host machine, a hypervisor, and guest virtual machines (VMs) that share the host's physical resources.",
+          },
+          {
+            id: 3,
+            front: "What is a hypervisor?",
+            back: "A hypervisor is software that allows multiple operating systems to run on a single physical machine by abstracting the hardware.",
+          },
+          {
+            id: 4,
+            front: "Name two types of hypervisors.",
+            back: "The two types are Type 1 (bare-metal) hypervisors and Type 2 (hosted) hypervisors.",
+          },
+          {
+            id: 5,
+            front: "What are some examples of virtualization software?",
+            back: "Examples include VMware, Microsoft Hyper-V, Oracle VirtualBox, and KVM.",
+          },
+          {
+            id: 6,
+            front: "What are the applications of virtualization?",
+            back: "Applications include server consolidation, testing and development, disaster recovery, and running legacy applications.",
+          },
+          {
+            id: 7,
+            front: "What is virtual clustering?",
+            back: "Virtual clustering involves grouping multiple virtual machines to work together as a single system to improve performance and availability.",
+          },
+          {
+            id: 8,
+            front: "What is the anatomy of cloud infrastructure?",
+            back: "Cloud infrastructure includes physical servers, storage, networking, virtualization software, and management tools that support cloud services.",
+          },
+          {
+            id: 9,
+            front: "What is virtual infrastructure?",
+            back: "Virtual infrastructure is a collection of virtualized resources such as servers, storage, and networks that support IT operations without relying on physical hardware.",
+          },
+          {
+            id: 10,
+            front: "What is CPU virtualization?",
+            back: "CPU virtualization allows multiple operating systems to share the CPU's physical resources efficiently through abstraction.",
+          },
+          {
+            id: 11,
+            front: "What is network virtualization?",
+            back: "Network virtualization creates a virtual version of physical network resources, enabling multiple virtual networks to operate independently on the same hardware.",
+          },
+          {
+            id: 12,
+            front: "What is storage virtualization?",
+            back: "Storage virtualization combines multiple physical storage devices into a single virtual storage pool that is easier to manage and scale.",
+          },
+          {
+            id: 13,
+            front: "How does virtualization support cloud computing?",
+            back: "Virtualization provides scalability, resource efficiency, and flexibility, which are core features of cloud computing services.",
+          },
+          {
+            id: 14,
+            front: "What are the benefits of using virtual infrastructure?",
+            back: "Benefits include cost savings, faster deployment, better resource utilization, and simplified disaster recovery.",
+          },
+          {
+            id: 15,
+            front: "What is the role of virtualization in disaster recovery?",
+            back: "Virtualization allows for quick backup and recovery of systems by restoring virtual machines on different hardware in case of failures.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit- 4 : Cloud Storage",
+        key: "cloud-storage",
+        cards: [
+          {
+            id: 1,
+            front: "What is cloud data storage?",
+            back: "Cloud data storage refers to storing digital data on remote servers that can be accessed over the internet.",
+          },
+          {
+            id: 2,
+            front: "What are the key benefits of cloud data storage?",
+            back: "Benefits include scalability, cost efficiency, accessibility, data backup, and disaster recovery.",
+          },
+          {
+            id: 3,
+            front: "What are the common storage options in the cloud?",
+            back: "Common options include object storage, block storage, and file storage.",
+          },
+          {
+            id: 4,
+            front: "What is object storage in the cloud?",
+            back: "Object storage stores data as objects with metadata and unique identifiers, ideal for large unstructured data.",
+          },
+          {
+            id: 5,
+            front: "What is block storage in the cloud?",
+            back: "Block storage divides data into blocks and stores them separately, suitable for databases and transactional apps.",
+          },
+          {
+            id: 6,
+            front: "What is file storage in the cloud?",
+            back: "File storage organizes data in a hierarchical file system and is ideal for shared file access.",
+          },
+          {
+            id: 7,
+            front: "What is structured storage in cloud computing?",
+            back: "Structured storage involves storing data in organized formats such as tables or databases, suitable for relational data.",
+          },
+          {
+            id: 8,
+            front: "What is unstructured storage in cloud computing?",
+            back: "Unstructured storage handles formats like images, videos, and documents, which don’t follow a predefined model.",
+          },
+          {
+            id: 9,
+            front: "What are cloud storage services?",
+            back: "Cloud storage services include platforms like Amazon S3, Google Cloud Storage, and Microsoft Azure Blob Storage.",
+          },
+          {
+            id: 10,
+            front: "What is data storage management in the cloud?",
+            back: "It involves managing how and where data is stored, ensuring availability, security, and performance.",
+          },
+          {
+            id: 11,
+            front: "What are cloud data stores?",
+            back: "Cloud data stores are managed storage systems like NoSQL databases or object storage systems used in the cloud.",
+          },
+          {
+            id: 12,
+            front: "What does provisioning cloud storage mean?",
+            back: "Provisioning refers to allocating cloud storage resources based on user or application needs.",
+          },
+          {
+            id: 13,
+            front:
+              "Name some data-intensive technologies used in cloud computing.",
+            back: "Technologies include Hadoop, Spark, and big data platforms that process large datasets in the cloud.",
+          },
+          {
+            id: 14,
+            front:
+              "What is the difference between LAN and WAN in cloud storage?",
+            back: "LAN is a local area network for on-premise storage; WAN connects cloud storage over the internet for broader access.",
+          },
+          {
+            id: 15,
+            front: "What is distributed data storage in the cloud?",
+            back: "It stores data across multiple physical locations, improving availability, redundancy, and performance.",
+          },
+          {
+            id: 16,
+            front: "Give examples of applications utilizing cloud storage.",
+            back: "Examples include Google Drive, Dropbox, OneDrive, Netflix (for media streaming), and Salesforce (for CRM data).",
+          },
+          {
+            id: 17,
+            front:
+              "How does the cloud ensure data durability and availability?",
+            back: "By replicating data across multiple regions and using fault-tolerant infrastructure.",
+          },
+          {
+            id: 18,
+            front: "What is cold storage in cloud computing?",
+            back: "Cold storage refers to storing infrequently accessed data at lower costs, such as Amazon Glacier.",
+          },
+          {
+            id: 19,
+            front: "How is cloud storage secured?",
+            back: "Using encryption (in-transit and at-rest), access control policies, and authentication mechanisms.",
+          },
+          {
+            id: 20,
+            front: "What are some challenges in cloud data storage?",
+            back: "Challenges include latency, data transfer costs, vendor lock-in, and regulatory compliance.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit- 5 : Cloud Risks and Cloud Security",
+        key: "cloud-risks-and-cloud-security",
+        cards: [
+          {
+            id: 1,
+            front: "What are the main risks associated with cloud computing?",
+            back: "Risks include data breaches, loss of control over data, downtime, compliance issues, and vendor lock-in.",
+          },
+          {
+            id: 2,
+            front: "What is risk management in cloud computing?",
+            back: "Risk management involves identifying, assessing, and mitigating potential risks to cloud services and data.",
+          },
+          {
+            id: 3,
+            front:
+              "How does cloud computing impact enterprise risk management?",
+            back: "It introduces new risk vectors like data exposure, requiring updated enterprise-wide strategies and tools.",
+          },
+          {
+            id: 4,
+            front: "Name some types of risks in cloud computing.",
+            back: "Types include operational risk, compliance risk, data security risk, and reputational risk.",
+          },
+          {
+            id: 5,
+            front: "What is cloud data security?",
+            back: "Cloud data security involves protecting digital data stored in cloud environments from unauthorized access and breaches.",
+          },
+          {
+            id: 6,
+            front: "What is a digital persona in cloud security?",
+            back: "A digital persona refers to the identity and attributes of a user in a digital environment, critical for authentication and privacy.",
+          },
+          {
+            id: 7,
+            front: "What is content-level security in cloud computing?",
+            back: "It refers to securing the actual content or data rather than just the system or infrastructure it's stored on.",
+          },
+          {
+            id: 8,
+            front: "What is the shared security model in cloud?",
+            back: "It's a model where cloud providers handle infrastructure security while users are responsible for securing their data and applications.",
+          },
+          {
+            id: 9,
+            front: "What are some common cloud security services?",
+            back: "Examples include identity and access management (IAM), encryption services, security monitoring, and DDoS protection.",
+          },
+          {
+            id: 10,
+            front: "What is authentication in cloud security?",
+            back: "Authentication is the process of verifying the identity of users accessing cloud resources.",
+          },
+          {
+            id: 11,
+            front: "What is security authorization in cloud computing?",
+            back: "Authorization determines what an authenticated user is allowed to access or perform in the cloud environment.",
+          },
+          {
+            id: 12,
+            front: "What are some major challenges in securing the cloud?",
+            back: "Challenges include data breaches, insider threats, insecure APIs, and compliance with regulations.",
+          },
+          {
+            id: 13,
+            front: "What are the requirements for secure cloud software?",
+            back: "They include secure coding practices, regular updates, vulnerability assessments, and compliance with security standards.",
+          },
+          {
+            id: 14,
+            front: "Why is software testing important for cloud security?",
+            back: "It helps identify and fix vulnerabilities before deployment, ensuring the reliability and security of cloud-based applications.",
+          },
+          {
+            id: 15,
+            front: "What role does encryption play in cloud security?",
+            back: "Encryption protects data by converting it into unreadable code, ensuring only authorized users can access it.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Unit- 6 : Google Cloud Platform",
+        key: "google-cloud-platform",
+        cards: [
+          {
+            id: 1,
+            front: "What is the GCP Console?",
+            back: "The GCP Console is a web-based interface to manage Google Cloud resources and services.",
+          },
+          {
+            id: 2,
+            front: "What are GCP Projects?",
+            back: "GCP Projects are containers for resources and settings in Google Cloud, enabling organization and billing separation.",
+          },
+          {
+            id: 3,
+            front: "How do you install the Google Cloud SDK?",
+            back: "Download the SDK from the official site, then run the installer and initialize it using `gcloud init`.",
+          },
+          {
+            id: 4,
+            front: "What is Cloud Shell in GCP?",
+            back: "Cloud Shell is a browser-based command-line tool for managing GCP resources without local installation.",
+          },
+          {
+            id: 5,
+            front: "What are GCP APIs used for?",
+            back: "GCP APIs allow programmatic access to Google Cloud services like Compute Engine, Cloud Storage, and more.",
+          },
+          {
+            id: 6,
+            front: "What is the GCP Console Mobile App?",
+            back: "The mobile app provides access to monitor and manage GCP resources on the go.",
+          },
+          {
+            id: 7,
+            front: "What compute options does GCP offer?",
+            back: "GCP offers Compute Engine (VMs), App Engine (PaaS), Kubernetes Engine, and Cloud Functions.",
+          },
+          {
+            id: 8,
+            front: "What is Compute Engine in GCP?",
+            back: "Compute Engine provides IaaS virtual machines with custom configurations and scalability.",
+          },
+          {
+            id: 9,
+            front: "What is IaaS in the context of GCP?",
+            back: "Infrastructure as a Service (IaaS) allows users to run virtual machines and manage infrastructure without owning hardware.",
+          },
+          {
+            id: 10,
+            front: "How can GCP autoscale applications?",
+            back: "GCP uses Managed Instance Groups with autoscaling policies to dynamically add or remove VM instances based on demand.",
+          },
+          {
+            id: 11,
+            front: "What is the purpose of the `gcloud` CLI?",
+            back: "`gcloud` is a command-line interface to manage GCP services, resources, deployments, and configurations.",
+          },
+          {
+            id: 12,
+            front: "What are the steps to configure elastic apps in GCP?",
+            back: "Use Managed Instance Groups, define autoscaling policies, set up load balancers, and monitor performance metrics.",
+          },
+          {
+            id: 13,
+            front: "Can you use Cloud Shell to deploy apps?",
+            back: "Yes, Cloud Shell can be used to write, deploy, and manage applications directly in the browser.",
+          },
+          {
+            id: 14,
+            front: "What is the significance of billing in GCP Projects?",
+            back: "Each GCP Project is associated with a billing account, allowing detailed cost tracking and resource management.",
+          },
+          {
+            id: 15,
+            front: "Why is it beneficial to use GCP APIs?",
+            back: "GCP APIs allow automation, integration with other tools, and custom management of GCP services programmatically.",
+          },
+        ],
+      },
+    ],
+  },
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
