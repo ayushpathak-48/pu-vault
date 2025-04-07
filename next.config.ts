@@ -1,9 +1,15 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import withPWA from "next-pwa";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export",
-  images: { unoptimized: true },
-  /* config options here */
-};
+// const baseConfig: NextConfig = {
+//   // Your other Next.js config options here
+// };
+
+const nextConfig = withPWA({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+})({});
 
 export default nextConfig;
