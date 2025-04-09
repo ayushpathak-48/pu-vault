@@ -382,6 +382,21 @@ export const materials = [
         title: "Practical 12 - Error Detection: CRC",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-12.pdf`,
       },
+      {
+        id: 13,
+        title: "Practical 13 - Error Correction: Hamming Code",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-13.pdf`,
+      },
+      {
+        id: 14,
+        title: "Practical 14 - Congestion Control Protocols: Leaky Bucket",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-14.pdf`,
+      },
+      {
+        id: 15,
+        title: "Practical 15 - Congestion Control Protocols: Token Bucket",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/practical-15.pdf`,
+      },
     ],
     que_papers: [
       {
@@ -396,11 +411,11 @@ export const materials = [
       },
     ],
     output_links: [
-      {
-        id: 0,
-        title: "Outputs",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
-      },
+      // {
+      //   id: 0,
+      //   title: "Outputs",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
+      // },
     ],
   },
   //  English and Mathematical Apptitude

@@ -2260,6 +2260,380 @@ int main() {
           },
         ],
       },
+      //  pra - 13 error-hamming
+      {
+        key: "error-hamming",
+        name: "Practical - 13: Error Correction: Hamming Code ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 13 - Error Correction: Hamming Code",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+#include <math.h>
+int input[32];
+int code[32];
+int ham_calc(int, int);
+void main()
+{
+    int n, i, p_n = 0, c_l, j, k;
+    printf("Please enter the length of the Data Word: ");
+    scanf("%d", &n);
+    printf("Please enter the Data Word:\\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &input[i]);
+    }
+
+    i = 0;
+    while (n > (int)pow(2, i) - (i + 1))
+    {
+        p_n++;
+        i++;
+    }
+
+    c_l = p_n + n;
+
+    j = k = 0;
+    for (i = 0; i < c_l; i++)
+    {
+
+        if (i == ((int)pow(2, k) - 1))
+        {
+            code[i] = 0;
+            k++;
+        }
+        else
+        {
+            code[i] = input[j];
+            j++;
+        }
+    }
+    for (i = 0; i < p_n; i++)
+    {
+        int position = (int)pow(2, i);
+        int value = ham_calc(position, c_l);
+        code[position - 1] = value;
+    }
+    printf("\\nThe calculated Code Word is: ");
+    for (i = 0; i < c_l; i++)
+        printf("%d", code[i]);
+    printf("\\n");
+    printf("Please enter the received Code Word:\\n");
+    for (i = 0; i < c_l; i++)
+        scanf("%d", &code[i]);
+
+    int error_pos = 0;
+    for (i = 0; i < p_n; i++)
+    {
+        int position = (int)pow(2, i);
+        int value = ham_calc(position, c_l);
+        if (value != 0)
+            error_pos += position;
+    }
+    if (error_pos == 1)
+        printf("The received Code Word is correct.\\n");
+    else
+        printf("Error at bit position: %d\\n", error_pos);
+}
+int ham_calc(int position, int c_l)
+{
+    int count = 0, i, j;
+    i = position - 1;
+    while (i < c_l)
+    {
+        for (j = i; j < i + position; j++)
+        {
+            if (code[j] == 1)
+                count++;
+        }
+        i = i + 2 * position;
+    }
+    if (count % 2 == 0)
+        return 0;
+    else
+        return 1;
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Please enter the length of the Data Word: 4
+Please enter the Data Word:
+1 0 1 1
+
+The calculated Code Word is: 0110011
+Please enter the received Code Word:
+0110111
+Error at bit position: 5`,
+          },
+        ],
+      },
+      //  pra - 14 leaky-bucket
+      {
+        key: "leaky-bucket",
+        name: "Practical - 14: Congestion Control Protocols: Leaky Bucket ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 14 - Congestion Control Protocols: Leaky Bucket",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h> // For sleep function
+
+int main()
+{
+    int i, packets[10], content = 0, newcontent, time, clk, bucket_size, output_rate;
+
+    // Generate random packet sizes
+    for (i = 0; i < 5; i++)
+    {
+        packets[i] = rand() % 10;
+        if (packets[i] == 0)
+            i--; // Regenerate if packet size is 0
+    }
+
+    printf("\\nEnter output rate of the bucket: ");
+    scanf("%d", &output_rate);
+
+    printf("\\nEnter Bucket size: ");
+    scanf("%d", &bucket_size);
+
+    for (i = 0; i < 5; ++i)
+    {
+        if ((packets[i] + content) > bucket_size)
+        {
+            if (packets[i] > bucket_size)
+                printf("\\nIncoming packet size %d greater than the size of the bucket\\n", packets[i]);
+            else
+                printf("\\nBucket size exceeded\\n");
+        }
+        else
+        {
+            newcontent = packets[i];
+            content += newcontent;
+            printf("\\nIncoming Packet: %d\\n", newcontent);
+            printf("Transmission left: %d\\n", content);
+            time = rand() % 10;
+            printf("Next packet will come at: %d\\n", time);
+
+            for (clk = 0; clk < time && content > 0; ++clk)
+            {
+                printf("\\nLeft time: %d", (time - clk));
+                sleep(1);
+
+                if (content > 0)
+                {
+                    printf("\\nTransmitted\\n");
+                    if (content < output_rate)
+                        content = 0;
+                    else
+                        content -= output_rate;
+                    printf("Bytes remaining: %d\\n", content);
+                }
+                else
+                {
+                    printf("\\nNo packets to send\\n");
+                }
+            }
+        }
+    }
+
+    return 0;
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter output rate of the bucket: 4
+
+Enter Bucket size: 10
+
+Incoming Packet: 6
+Transmission left: 6
+Next packet will come at: 3
+
+Left time: 3
+Transmitted
+Bytes remaining: 2
+
+Left time: 2
+Transmitted
+Bytes remaining: 0
+
+Left time: 1
+No packets to send
+
+Incoming Packet: 2
+Transmission left: 2
+Next packet will come at: 4
+
+Left time: 4
+Transmitted
+Bytes remaining: 0
+
+Left time: 3
+No packets to send
+
+Incoming Packet: 7
+Transmission left: 7
+Next packet will come at: 2
+
+Left time: 2
+Transmitted
+Bytes remaining: 3
+
+Left time: 1
+Transmitted
+Bytes remaining: 0
+
+Incoming Packet: 3
+Transmission left: 3
+Next packet will come at: 6
+
+Left time: 6
+Transmitted
+Bytes remaining: 0
+
+Left time: 5
+No packets to send
+
+Incoming Packet: 5
+Transmission left: 5
+Next packet will come at: 1
+
+Left time: 1
+Transmitted
+Bytes remaining: 1`,
+          },
+        ],
+      },
+      //  pra - 15 token-bucket
+      {
+        key: "token-bucket",
+        name: "Practical - 15: Congestion Control Protocols: Token Bucket ",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 15 - Congestion Control Protocols: Token Bucket",
+          },
+          {
+            type: "code",
+            fileName: "main.c",
+            value: `#include <stdio.h>
+#include <stdbool.h>
+#include <unistd.h> // for usleep function
+
+int main()
+{
+    int bucket_size, output_rate;
+
+    // User input for bucket size and output rate
+    printf("Enter the bucket size: ");
+    scanf("%d", &bucket_size);
+    printf("Enter the output rate of the bucket: ");
+    scanf("%d", &output_rate);
+
+    int bucket = 0; // Current size of the bucket
+
+    while (true)
+    {
+        // Generate some data, e.g., incoming packets
+        int incoming_packets;
+        printf("Enter the number of incoming packets: ");
+        scanf("%d", &incoming_packets);
+
+        // Add incoming packets to the bucket
+        if (bucket + incoming_packets <= bucket_size)
+        {
+            bucket += incoming_packets;
+        }
+        else
+        {
+            printf("Bucket overflow! Dropping %d packets.\\n", incoming_packets + bucket - bucket_size);
+            bucket = bucket_size; // Bucket is full
+        }
+
+        // Transmit data from the bucket
+        if (bucket >= output_rate)
+        {
+            printf("%d packets transmitted.\\n", output_rate);
+            bucket -= output_rate;
+        }
+        else
+        {
+            printf("Bucket empty.\\n");
+        }
+
+        // Wait for a second before the next iteration
+        usleep(1000000); // Sleep for 1 second (1 million microseconds)
+    }
+
+    return 0;
+}`,
+          },
+          {
+            type: "code",
+            fileName: "vrc.c",
+            value: `
+#include <stdio.h>
+
+int main()
+{
+    int data[10], vrc = 0;
+
+    // Input data
+    printf("Enter 7 bits of data: ");
+    for (int i = 0; i < 7; i++)
+    {
+        scanf("%d", &data[i]);
+    }
+
+    // Calculate VRC
+    for (int i = 0; i < 7; i++)
+    {
+        vrc ^= data[i];
+    }
+
+    // Display VRC
+    printf("VRC bit is: %d\\n", vrc);
+
+    return 0;
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Enter the bucket size: 10
+Enter the output rate of the bucket: 4
+
+Enter the number of incoming packets: 5
+4 packets transmitted.
+Enter the number of incoming packets: 6
+Bucket overflow! Dropping 1 packets.
+4 packets transmitted.
+Enter the number of incoming packets: 3
+Bucket empty.
+Enter the number of incoming packets: 4
+4 packets transmitted.
+Enter the number of incoming packets: 5
+4 packets transmitted.
+--------------------------------------------------------------
+Enter 7 bits of data: 1 0 1 1 0 1 1
+VRC bit is: 1`,
+          },
+        ],
+      },
     ],
   },
   // FSW
