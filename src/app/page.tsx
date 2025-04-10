@@ -3,22 +3,49 @@
 import { SelectDivision } from "@/components/select-division";
 import { SelectSpecialization } from "@/components/select-specialization";
 import { HomePageAccordionList } from "@/components/tabs/home-accordion-list";
+import { Button } from "@/components/ui/button";
+import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 import {
   materials,
   specializationMaterials,
 } from "@/lib/constants/materials.constant";
 import { cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
+import Link from "next/link";
 
 export default function Home() {
   const specialization = useDataStore((state) => state.specialization);
   const division = useDataStore((state) => state.division);
   return (
     <div className="w-full h-full">
+      <div className="p-2 lg:p-5 flex flex-col gap-1">
+        <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+          <div className="text-sm">End Sem Theory Time Table</div>
+          <Button asChild size={"sm"}>
+            <Link
+              href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-theory-time-table.pdf`}
+              target="_blank"
+            >
+              View
+            </Link>
+          </Button>
+        </div>
+        <div className="bg-gray-50 rounded-md p-2 px-4  flex items-center justify-between gap-4">
+          <div className="text-sm">End Sem Practical Time Table</div>
+          <Button asChild size={"sm"}>
+            <Link
+              href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-practical-time-table.pdf`}
+              target="_blank"
+            >
+              View
+            </Link>
+          </Button>
+        </div>
+      </div>
       <div
         className={cn(
           "flex flex-col gap-2 p-5",
-          specialization && division && "hidden"
+          specialization && division && "hidden",
         )}
       >
         {!specialization && <SelectSpecialization />}

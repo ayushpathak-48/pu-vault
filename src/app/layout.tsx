@@ -6,9 +6,6 @@ import { Navbar } from "@/components/navbar";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 
 const headingFont = PT_Serif({
@@ -44,32 +41,6 @@ export default function RootLayout({
             <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
               <Navbar />
               <main className="w-full h-full max-md:pb-14 pt-16 md:pt-20">
-                <div className="p-2 lg:p-5 flex flex-col gap-1">
-                  {/* <div className="flex flex-col gap-2"> */}
-                  <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
-                    <div className="text-sm">End Sem Theory Time Table</div>
-                    <Button asChild size={"sm"}>
-                      <Link
-                        href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-theory-time-table.pdf`}
-                        target="_blank"
-                      >
-                        View
-                      </Link>
-                    </Button>
-                  </div>
-                  <div className="bg-gray-50 rounded-md p-2 px-4  flex items-center justify-between gap-4">
-                    <div className="text-sm">End Sem Practical Time Table</div>
-                    <Button asChild size={"sm"}>
-                      <Link
-                        href={`${MATERIAL_LINK_BASE_URL}/time-table/sem-2-end-sem-practical-time-table.pdf`}
-                        target="_blank"
-                      >
-                        View
-                      </Link>
-                    </Button>
-                  </div>
-                  {/* </div> */}
-                </div>
                 {children}
               </main>
             </div>
