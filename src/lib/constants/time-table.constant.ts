@@ -3642,7 +3642,7 @@ export const time_table = [
         {
           id: 8,
           label: "FSW Lab",
-          professor: ["Omkar ", "Praveen Tomar"],
+          professor: ["Deepti S", "Praveen Tomar"],
           lab: ["603", "604"],
           cellClassName: "text-[#11131e]",
           row_span: 2,
@@ -3660,7 +3660,10 @@ export const time_table = [
         },
         {
           id: 4,
-          label: "Library",
+          label: "FSW",
+          professor: "Deepti S",
+          classroom: "601",
+          cellClassName: "text-[#11131e]",
         },
         {
           id: 6,
@@ -3726,14 +3729,14 @@ export const time_table = [
         {
           id: 6,
           label: "FSW",
-          professor: "Omkar",
+          professor: "Deepti S",
           classroom: "306",
           cellClassName: "text-[#11131e]",
         },
         {
           id: 7,
           label: "FSW",
-          professor: "Omkar",
+          professor: "Deepti S",
           classroom: "302",
           cellClassName: "text-[#11131e]",
         },
@@ -3781,7 +3784,7 @@ export const time_table = [
         {
           id: 8,
           label: "FSW",
-          professor: "Omkar",
+          professor: "Deepti S",
           classroom: "607",
           cellClassName: "text-[#11131e]",
         },
