@@ -956,6 +956,16 @@ export const specializationMaterials = [
         title: "Practical 4 - Bootstrap Components",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-4.pdf`,
       },
+      {
+        id: 5,
+        title: "Practical 5 - Test Case using Selenium",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6 - NodeJs Console and Webapp",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-6.pdf`,
+      },
     ],
     que_papers: [
       {
