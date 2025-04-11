@@ -17,7 +17,7 @@ export const SingleWeekTimeTableBody = ({
 
   const [timetableData, setTimetableData] = useState<TimeTableRow[]>([]);
   const [currentLectureIndex, setCurrentLectureIndex] = useState<number | null>(
-    null
+    null,
   );
 
   const course = useDataStore((state) => state.course);
@@ -57,10 +57,19 @@ export const SingleWeekTimeTableBody = ({
         {timetableData.map((table, i) => {
           if (timetableData[i - 1]?.[2]?.row_span == 2) return;
           if (table?.[2]?.mca && table?.[2]?.msc_it) {
+            console.log({ table });
             table[2] =
               course == "mca"
-                ? { id: table[2].id, ...table[2]?.mca }
-                : { id: table[2]?.id, ...table[2]?.msc_it };
+                ? {
+                    id: table[2].id,
+                    row_span: table?.[2]?.row_span,
+                    ...table[2]?.mca,
+                  }
+                : {
+                    id: table[2]?.id,
+                    row_span: table?.[2]?.row_span,
+                    ...table[2]?.msc_it,
+                  };
           }
           return (
             <Fragment key={i}>
@@ -102,7 +111,7 @@ export const SingleWeekTimeTableBody = ({
                       currentLectureIndex ==
                         (timetableData[i - 1]?.[1].col_span == 7
                           ? i - 2
-                          : i - 1) && "rounded-t-none border-orange-200"
+                          : i - 1) && "rounded-t-none border-orange-200",
                     )}
                     key={table[0]?.id + "_" + i}
                   >
@@ -153,7 +162,7 @@ export const SingleWeekTimeTableBody = ({
                       <div
                         className={cn(
                           "text-sm",
-                          !table[2]?.professor && "text-center "
+                          !table[2]?.professor && "text-center ",
                         )}
                       >
                         {table[2]?.professor && "Subject: "}

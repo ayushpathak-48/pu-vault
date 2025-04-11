@@ -3672,7 +3672,7 @@ export const time_table = [
           },
           msc_it: {
             label: "SE",
-            professor: "Prof. Prachi Mehta",
+            professor: "Prachi Mehta",
             classroom: "602",
             cellClassName: "text-[#11131e]",
           },

@@ -9,7 +9,7 @@ import {
   MessageCircleQuestion,
   // LinkIcon,
   SquareAsteriskIcon,
-  MonitorPlay,
+  // MonitorPlay,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -29,12 +29,12 @@ export const navLinks = [
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
   },
-  {
-    id: 11,
-    title: "Youtube Tutorials",
-    href: "/youtube-tutorials",
-    icon: MonitorPlay,
-  },
+  // {
+  //   id: 11,
+  //   title: "Youtube Tutorials",
+  //   href: "/youtube-tutorials",
+  //   icon: MonitorPlay,
+  // },
   {
     id: 2,
     title: "Source Codes",
