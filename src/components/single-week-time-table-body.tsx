@@ -57,7 +57,6 @@ export const SingleWeekTimeTableBody = ({
         {timetableData.map((table, i) => {
           if (timetableData[i - 1]?.[2]?.row_span == 2) return;
           if (table?.[2]?.mca && table?.[2]?.msc_it) {
-            console.log({ table });
             table[2] =
               course == "mca"
                 ? {

@@ -11,12 +11,11 @@ export const BottomTabs = () => {
     <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100">
       <div className="flex items-center justify-start h-full">
         {navLinks.map((link) => {
+          if (link?.hideOnMobile) return;
           const activeLink =
-            (link.href != "" && pathname.startsWith(link.href)) ||
+            (link.href != "/" && pathname.startsWith(link.href)) ||
             pathname == link.href;
           const Icon = link.icon;
-          if (link?.hideOnMobile) return;
-
           return (
             <Fragment key={link.id}>
               <Link

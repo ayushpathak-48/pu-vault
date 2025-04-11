@@ -16,7 +16,6 @@ import InstallPWAButton from "./install-app-btn";
 
 export function AppSidebar() {
   const pathname = usePathname();
-  console.log({ pathname });
   return (
     <Sidebar>
       <SidebarHeader className="flex items-center flex-row justify-center gap-2">
