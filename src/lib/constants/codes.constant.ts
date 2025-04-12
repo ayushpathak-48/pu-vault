@@ -3638,6 +3638,123 @@ First Student in Array: Rahul`,
       },
       // Practical 7
       {
+        key: "string-decoder",
+        name: `Practical - 7: WAP to implement String Decoder`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 7: WAP to implement String Decoder`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "decoder.js",
+            value: `function decodeString(s) {
+  let stack = [];
+  for (let char of s) {
+    if (char !== "]") {
+      stack.push(char);
+    } else {
+      let decodedString = "";
+      while (stack[stack.length - 1] !== "[") {
+        decodedString = stack.pop() + decodedString;
+      }
+      stack.pop(); // remove '['
+      let k = "";
+      while (stack.length && !isNaN(stack[stack.length - 1])) {
+        k = stack.pop() + k;
+      }
+      stack.push(decodedString.repeat(parseInt(k)));
+    }
+  }
+  return stack.join("");
+}
+
+// Example
+console.log(decodeString("3[a2[b]]"));`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `abbabbabb`,
+          },
+        ],
+      },
+      //  Practical 8
+      {
+        key: "query-string",
+        name: `Practical - 8: WAP to implement Query String`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 8: WAP to implement Query String`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "querystring.js",
+            value: `const querystring = require("querystring");
+
+const query = "name=JohnDoe&age=30&city=NewYork";
+const parsed = querystring.parse(query);
+
+console.log(parsed);`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `{
+  name: 'JohnDoe',
+  age: '30',
+  city: 'NewYork'
+}`,
+          },
+        ],
+      },
+      // Practical 9
+      {
+        key: "events",
+        name: `Practical - 9: WAP to implement events.`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 9: WAP to implement events.`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "events.js",
+            value: `const EventEmitter = require("events");
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on("dataReceived", () => {
+  console.log("Data received successfully!");
+});
+
+// Emit the event
+myEmitter.emit("dataReceived");`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Data received successfully!`,
+          },
+        ],
+      },
+      //  Practical
+      {
         key: "create-a-nodejs-console-and-webapp",
         name: `Practical - Create a NodeJS console and webapp`,
         pageBlocks: [
