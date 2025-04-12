@@ -28,6 +28,11 @@ export const materials = [
         title: "Unit-4: Java Web Services - I",
         href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/4-java-web-services-I.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: Introduction to Spring and Hibernate",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/advance-java/5-introduction-to-spring-and-hibernate.pdf`,
+      },
     ],
     practicals_link: [
       {
