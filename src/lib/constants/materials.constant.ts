@@ -1093,6 +1093,16 @@ export const specializationMaterials = [
         title: "Unit-4: Cloud Storage",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/4.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: Cloud Risks and Cloud Security",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Google Cloud Platform (GCP)",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cloud-computing/6.pdf`,
+      },
     ],
     practicals_link: [
       // {
@@ -1113,20 +1123,38 @@ export const specializationMaterials = [
       {
         id: 3,
         title:
-          "Practical 3 - Virtualization Setup and OS Installation on Oracle VirtualBox",
+          "Practical 3 - Para-Virtualization: Implement one VMs in LINUX/Windows using VM software on your local machine.",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-3.pdf`,
       },
       {
         id: 4,
         title:
-          "Practical 4 - Creating and Accessing a Windows VM on Google Cloud Platform",
+          "Practical 4 - Start a Windows Virtual Machine on Google Compute Engine.",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-4.pdf`,
       },
       {
         id: 5,
         title:
-          "Practical 5 -  Setting Up and Accessing a Linux Virtual Machine on Google Cloud",
+          "Practical 5 -  Start a LINUX Virtual Machine on Google Compute Engine.",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title:
+          "Practical 6 -  Build a Docker Application on GCP. You can use Git Repository to build.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title:
+          "Practical 7 -  Develop, Build and Deploy a container Application On Google Compute Engine.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title:
+          "Practical 8 -  Explore GCP. Perform at least one Case Study on GCP services and prepare detailed report on your Case Study.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cc/practical-8.pdf`,
       },
     ],
     que_papers: [
