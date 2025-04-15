@@ -49,7 +49,7 @@ export const SingleWeekTimeTableBody = ({
         }
       }
     });
-  }, [timetableData]);
+  }, [timetableData,currentDayIndex,weekIndex]);
 
   return (
     <div className="flex items-center justify-between">
