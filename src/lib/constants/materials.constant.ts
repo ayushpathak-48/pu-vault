@@ -698,11 +698,16 @@ export const specializationMaterials = [
       },
       {
         id: 5,
+        title: "Unit-6: Symbolic Reasoning Under Uncertainty",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/6-symbolic-reasoning-under-uncertainty.pdf`,
+      },
+      {
+        id: 6,
         title: "Unit-9: Machine Learning",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/9-machine-learning.pdf`,
       },
       {
-        id: 6,
+        id: 7,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
       },
@@ -737,6 +742,21 @@ export const specializationMaterials = [
         id: 5,
         title: "Practical 5 - Tower of Hanoi Problem",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6 - A prolog program for the family tree.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7 -  N-Queens problem using Prolog.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8 - 8 puzzle problem using Prolog.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/ai/practical-8.pdf`,
       },
     ],
     que_papers: [

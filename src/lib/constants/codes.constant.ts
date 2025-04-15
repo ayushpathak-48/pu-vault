@@ -360,6 +360,7 @@ printBoard()`,
           },
         ],
       },
+      //  p-5 tower-of-hanoi
       {
         key: "tower-of-hanoi",
         name: "Practical - 5: Tower of Hanoi",
@@ -397,6 +398,7 @@ Move disc 1 from Red to Blue `,
           },
         ],
       },
+      // p -6 prolog-family-tree
       {
         key: "family-tree",
         name: "Practical - 6: Family Tree - Prolog",
@@ -409,28 +411,271 @@ Move disc 1 from Red to Blue `,
             type: "code",
             fileName: "family-tree.pl",
             language: "prolog",
-            value: `female(pammi).
-female(lizza).
-female(patty).
-female(annny).
-male(jimmy).
-male(bobby).
-male(tomy).
-male(pitter).
-parent(pammi,bobby).
-parent(tomy,bobby).
-parent(tomy,lizza).
-parent(bobby,annny).
-parent(bobby,patty).
-parent(patty,jimmy).
-parent(bobby,pitter).
-parent(pitter,jimmy).
+            value: `/* Facts */
+male(hardik).
+male(karan).
+male(satish).
+male(james).
+male(simon).
+male(harry).
+female(helen).
+female(sophie).
+female(jess).
+female(lily).
 
-mother(X,Y):- parent(X,Y), female(X).
-father(X,Y):- parent(X,Y), male(X).
-haschild(X):- parent(X,_).
-sister(X,Y):- parent(Z,X),parent(Z,Y),female(X),X\==Y.
-brother(X,Y):- parent(Z,X),parent(Z,Y),male(X),X\==Y.`,
+parent_of(jack,jess).
+parent_of(jack,lily).
+parent_of(helen, jess).
+parent_of(helen, lily).
+parent_of(oliver,james).
+parent_of(sophie, james).
+parent_of(jess, simon).
+parent_of(ali, simon).
+parent_of(lily, harry).
+parent_of(james, harry).
+
+/* Rules */
+father_of(X,Y):- male(X),
+    parent_of(X,Y).
+
+mother_of(X,Y):- female(X),
+    parent_of(X,Y).
+
+grandfather_of(X,Y):- male(X),
+    parent_of(X,Z),
+    parent_of(Z,Y).
+
+grandmother_of(X,Y):- female(X),
+    parent_of(X,Z),
+    parent_of(Z,Y).
+
+sister_of(X,Y):- %(X,Y or Y,X)%
+    female(X),
+    father_of(F, Y), father_of(F,X),X \\= Y.
+
+sister_of(X,Y):- female(X),
+    mother_of(M, Y), mother_of(M,X),X \\= Y.
+
+aunt_of(X,Y):- female(X),
+    parent_of(Z,Y), sister_of(Z,X),!.
+
+brother_of(X,Y):- %(X,Y or Y,X)%
+    male(X),
+    father_of(F, Y), father_of(F,X),X \\= Y.
+
+brother_of(X,Y):- male(X),
+    mother_of(M, Y), mother_of(M,X),X \\= Y.
+
+uncle_of(X,Y):-
+    parent_of(Z,Y), brother_of(Z,X).
+
+ancestor_of(X,Y):- parent_of(X,Y).
+ancestor_of(X,Y):- parent_of(X,Z),
+    ancestor_of(Z,Y).
+
+//The given statement is a Prolog rule that defines the relationship father_of(X, Y). Let's break it down:
+//father_of(X, Y) :- male(X), parent_of(X, Y).
+//Meaning:
+//father_of(X, Y) is true if:
+//X is male (male(X)).
+//X is a parent of Y (parent_of(X, Y)).
+//Meaning:
+//father_of(X, Y) is true if:
+// X is male (male(X)).
+// X is a parent of Y (parent_of(X, Y)).`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `father_of(X, Y)
+X = jack,   Y = jess ;
+X = jack,   Y = lily ;
+X = oliver, Y = james ;
+X = ali,    Y = simon ;
+X = james,  Y = harry ;
+-------------------------------------------
+mother_of(X, Y)
+X = helen,  Y = jess ;
+X = helen,  Y = lily ;
+X = sophie, Y = james ;
+X = jess,   Y = simon ;
+X = lily,   Y = harry ;
+-------------------------------------------
+grandfather_of(X, Y)
+X = jack,    Y = simon ;
+X = oliver,  Y = harry ;
+X = ali,     Y = harry ;
+-------------------------------------------
+grandmother_of(X, Y)
+X = helen,   Y = simon ;
+X = sophie,  Y = harry ;
+X = jess,    Y = harry ;
+-------------------------------------------
+sister_of(X, Y)
+X = lily, Y = jess ;
+X = jess, Y = lily ;
+aunt_of(X, Y)
+X = lily,  Y = simon ;
+X = jess,  Y = harry ;
+-------------------------------------------
+ancestor_of(X, Y)
+X = jack,    Y = jess ;
+X = jack,    Y = lily ;
+X = jack,    Y = simon ;
+X = jack,    Y = harry ;
+X = helen,   Y = jess ;
+X = helen,   Y = lily ;
+X = helen,   Y = simon ;
+X = helen,   Y = harry ;
+X = oliver,  Y = james ;
+X = oliver,  Y = harry ;
+X = sophie,  Y = james ;
+X = sophie,  Y = harry ;
+X = jess,    Y = simon ;
+X = jess,    Y = harry ;
+X = ali,     Y = simon ;
+X = ali,     Y = harry ;
+X = lily,    Y = harry ;
+X = james,   Y = harry ;`,
+          },
+        ],
+      },
+      //  p- 7 n-queens-using-prolog
+      {
+        key: "n-queens-using-prolog",
+        name: "Practical - 7:  N-Queens problem using Prolog.",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 7 -  N-Queens problem using Prolog.",
+          },
+          {
+            type: "code",
+            fileName: "n-queens.pl",
+            language: "prolog",
+            value: `% N-Queens Problem in Prolog
+% Entry point: solve the problem for N queens
+n_queens(N, Solution) :-
+    range(1, N, Ns),
+    permutation(Ns, Solution),
+    safe(Solution).
+
+% Generate a list from Low to High
+range(Low, High, [Low|Rest]) :-
+    Low < High,
+    Next is Low + 1,
+    range(Next, High, Rest).
+range(High, High, [High]).
+
+% Check that no two queens attack each other
+safe([]).
+safe([Q|Others]) :-
+    safe(Others),
+    no_attack(Q, Others, 1).
+
+% Check that a queen does not attack any others diagonally
+no_attack(_, [], _).
+no_attack(Q, [Q1|Others], D) :-
+    Q =\\= Q1,
+    abs(Q - Q1) =\\= D,
+    D1 is D + 1,
+    no_attack(Q, Others, D1).
+
+% Permutation generator (built-in in some Prolog systems)
+permutation([], []).
+permutation(List, [H|Perm]) :-
+    select(H, List, Rest),
+    permutation(Rest, Perm).`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `n_queens(4, Solution).
+Solution = [2, 4, 1, 3]
+Solution = [3, 1, 4, 2]`,
+          },
+        ],
+      },
+      //  p-8 8-puzzleproblem-using-prolog
+      {
+        key: "8-puzzleproblem-using-prolog",
+        name: "Practical - 8:  8 puzzle problem using Prolog.",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 8 -  8 puzzle problem using Prolog.",
+          },
+          {
+            type: "code",
+            fileName: "8-puzzle.pl",
+            language: "prolog",
+            value: `% 8-Puzzle Problem in Prolog
+
+% Define possible moves (Left and Right)
+move([X, 0, Z, A, B, C, D, E, F], [0, X, Z, A, B, C, D, E, F]). % move left
+move([X, Z, 0, A, B, C, D, E, F], [X, 0, Z, A, B, C, D, E, F]).
+move([A, B, C, X, 0, Z, D, E, F], [A, B, C, 0, X, Z, D, E, F]).
+move([A, B, C, X, Z, 0, D, E, F], [A, B, C, X, 0, Z, D, E, F]).
+move([A, B, C, D, E, F, X, 0, Z], [A, B, C, D, E, F, 0, X, Z]).
+move([A, B, C, D, E, F, X, Z, 0], [A, B, C, D, E, F, X, 0, Z]).
+
+% Right moves
+move([0, X, Z, A, B, C, D, E, F], [X, 0, Z, A, B, C, D, E, F]).
+move([X, 0, Z, A, B, C, D, E, F], [X, Z, 0, A, B, C, D, E, F]).
+move([A, B, C, 0, X, Z, D, E, F], [A, B, C, X, 0, Z, D, E, F]).
+move([A, B, C, X, 0, Z, D, E, F], [A, B, C, X, Z, 0, D, E, F]).
+move([A, B, C, D, E, F, 0, X, Z], [A, B, C, D, E, F, X, 0, Z]).
+move([A, B, C, D, E, F, X, 0, Z], [A, B, C, D, E, F, X, Z, 0]).
+
+% Up moves
+move([A, B, C, D, E, F, 0, X, Z], [A, B, C, 0, E, F, D, X, Z]).
+move([A, B, C, D, E, F, X, 0, Z], [A, B, C, D, 0, F, X, E, Z]).
+move([A, B, C, D, E, F, X, Z, 0], [A, B, C, D, E, 0, X, Z, F]).
+
+% Down moves
+move([0, B, C, A, E, F, D, H, I], [A, B, C, 0, E, F, D, H, I]).
+move([A, 0, C, D, E, F, G, H, I], [A, E, C, D, 0, F, G, H, I]).
+move([A, B, 0, D, E, F, G, H, I], [A, B, F, D, E, 0, G, H, I]).
+
+% Solve function using depth-first search
+solve(State, Goal) :-
+    dfs([State], Goal, Path),
+    write('Solution Path:'), nl,
+    print_path(Path).
+
+% Depth-First Search
+dfs([Goal|Visited], Goal, [Goal|Visited]).
+dfs([Current|Visited], Goal, Path) :-
+    move(Current, Next),
+    \\+ member(Next, Visited),
+    dfs([Next, Current | Visited], Goal, Path).
+
+% Print solution path
+print_path([]).
+print_path([H | T]) :-
+    print_state(H),
+    nl,
+    print_path(T).
+
+% Display board state in 3×3 format
+print_state([A, B, C, D, E, F, G, H, I]) :-
+    format('~w ~w ~w~n~w ~w ~w~n~w ~w ~w~n', [A, B, C, D, E, F, G, H, I]).`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `solve([1,2,3,4,0,5,6,7,8], [1,2,3,4,5,0,6,7,8]).
+Solution Path:
+1 2 3
+4 5 0
+6 7 8
+
+1 2 3
+4 0 5
+6 7 8`,
           },
         ],
       },
