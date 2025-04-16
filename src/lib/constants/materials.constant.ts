@@ -1038,6 +1038,31 @@ export const specializationMaterials = [
         title: "Unit-4: Wireless Network Security ",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/4-wireless-network-security.pdf`,
       },
+      {
+        id: 6,
+        title: "Unit-5: Understanding Cyber Forensics ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/5-understanding-cyber-forensics.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-6: Challenges in Cyber Forensics ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/6-challenges-in-cyber-forensics.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-7: Forensics of Hand-Held Devices ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/7-forensics-of-hand-held-devices.pdf`,
+      },
+      {
+        id: 9,
+        title: "Unit-8: Concept of Virtualization ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/8-concept-of-virtualization.pdf`,
+      },
+      {
+        id: 10,
+        title: "Unit-9: Introduction to kali linux / Santoku",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/9-introduction-to-kali-linux -santoku.pdf`,
+      },
     ],
     practicals_link: [
       {
