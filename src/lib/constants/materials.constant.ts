@@ -954,6 +954,11 @@ export const specializationMaterials = [
         title: "Unit-8: Node Js",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/8-node-js.pdf`,
       },
+      {
+        id: 9,
+        title: "Unit-9: Node JS with MySQL",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/9-node-js-with-mysql.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -990,6 +995,21 @@ export const specializationMaterials = [
         id: 6,
         title: "Practical 6 - NodeJs Console and Webapp",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7 - WAP to implement String Decoder",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8 - WAP to implement Query String",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-8.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9 - WAP to implement events.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-9.pdf`,
       },
     ],
     que_papers: [
