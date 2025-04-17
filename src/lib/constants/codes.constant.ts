@@ -4994,6 +4994,118 @@ ON c.customer_id = o.customer_id;`,
       },
     ],
   },
+  {
+    subject_name: "Computer Graphics",
+    key: "computer-graphics",
+    language: "javascript",
+    practicals: [
+      {
+        key: "image-enhancement",
+        name: "Write a program for image enhancement",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Write a program for image enhancement",
+          },
+          {
+            type: "code",
+            value: `img = imread('peppers.png');
+bright_img = img + 50; % Increase brightness
+
+imshowpair(img, bright_img, 'montage');
+title('Original Image (Left) and Brightened Image (Right)');
+`,
+          },
+        ],
+      },
+      {
+        key: "image-compression",
+        name: "Write a program for image compression",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Write a program for image compression",
+          },
+          {
+            type: "code",
+            value: `img = imread('peppers.png');
+small_img = imresize(img, 0.5); % Compress (reduce size)
+big_img = imresize(small_img, 2); % Resize back to original
+
+imshowpair(img, big_img, 'montage');
+title('Original Image (Left) and Compressed-Reconstructed Image (Right)');
+`,
+          },
+        ],
+      },
+      {
+        key: "color-image-processing",
+        name: "Write a program for color image processing",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Write a program for color image processing",
+          },
+          {
+            type: "code",
+            value: `img = imread('peppers.png');
+
+red = img(:,:,1);
+green = img(:,:,2);
+blue = img(:,:,3);
+
+subplot(2,2,1); imshow(img); title('Original');
+subplot(2,2,2); imshow(red); title('Red Channel');
+subplot(2,2,3); imshow(green); title('Green Channel');
+subplot(2,2,4); imshow(blue); title('Blue Channel');
+
+`,
+          },
+        ],
+      },
+      {
+        key: "image-segmentation",
+        name: "Write a program for image segmentation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Write a program for image segmentation",
+          },
+          {
+            type: "code",
+            value: `img = imread('cameraman.tif');
+threshold = 100;
+binary_img = img > threshold;
+
+imshow(binary_img);
+title('Segmented Image (Thresholding)');
+`,
+          },
+        ],
+      },
+      {
+        key: "image-morphology",
+        name: "Write a program for image morphology",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Write a program for image morphology",
+          },
+          {
+            type: "code",
+            value: `img = imread('text.png');
+se = strel('square', 3); % Square structuring element
+dilated_img = imdilate(img, se);
+
+imshowpair(img, dilated_img, 'montage');
+title('Original Image (Left) and Dilated Image (Right)');
+
+`,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 // Example Empty box

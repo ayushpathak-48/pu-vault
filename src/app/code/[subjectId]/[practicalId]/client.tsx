@@ -26,10 +26,11 @@ const CodePageClient = () => {
   const [isLoading, setIsLoading] = useState(true);
   const practicalSubject = practicalCodes.find(({ key }) => key == subjectId);
   const practical = practicalSubject?.practicals?.find(
-    ({ key }) => key == practicalId
+    ({ key }) => key == practicalId,
   );
   const [currentPracticalIndex, setCurrentPracticalIndex] = useState<number>(
-    practicalSubject?.practicals.findIndex(({ key }) => key == practicalId) || 0
+    practicalSubject?.practicals.findIndex(({ key }) => key == practicalId) ||
+      0,
   );
 
   const handleClickPrevious = () => {
@@ -160,9 +161,12 @@ const CodePageClient = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle>
-                      <span className="text-gray-500 text-sm">
-                        {ele?.is_output ? "Output :" : "filename:"}
-                      </span>{" "}
+                      {ele?.is_output ||
+                        (ele?.fileName && (
+                          <span className="text-gray-500 text-sm">
+                            {ele?.is_output ? "Output :" : "filename:"}
+                          </span>
+                        ))}{" "}
                       {ele.fileName}
                     </CardTitle>
                   </CardHeader>
