@@ -149,6 +149,11 @@ export const materials = [
         title: "Unit- 5: 2D and 3D Animation tools - Flash 1",
         href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/5.pdf`,
       },
+      {
+        id: 6,
+        title: "Unit- 6: Working with MatLab",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/computer-graphics/6-matlab.pdf`,
+      },
     ],
     practicals_link: [
       {
