@@ -954,6 +954,11 @@ export const specializationMaterials = [
         title: "Unit-8: Node Js",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/8-node-js.pdf`,
       },
+      {
+        id: 9,
+        title: "Unit-9: Node JS with MySQL",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/9-node-js-with-mysql.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -990,6 +995,21 @@ export const specializationMaterials = [
         id: 6,
         title: "Practical 6 - NodeJs Console and Webapp",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7 - WAP to implement String Decoder",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8 - WAP to implement Query String",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-8.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9 - WAP to implement events.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-9.pdf`,
       },
     ],
     que_papers: [
@@ -1037,6 +1057,31 @@ export const specializationMaterials = [
         id: 5,
         title: "Unit-4: Wireless Network Security ",
         href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/4-wireless-network-security.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-5: Understanding Cyber Forensics ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/5-understanding-cyber-forensics.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-6: Challenges in Cyber Forensics ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/6-challenges-in-cyber-forensics.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-7: Forensics of Hand-Held Devices ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/7-forensics-of-hand-held-devices.pdf`,
+      },
+      {
+        id: 9,
+        title: "Unit-8: Concept of Virtualization ",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/8-concept-of-virtualization.pdf`,
+      },
+      {
+        id: 10,
+        title: "Unit-9: Introduction to kali linux / Santoku",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/cyber-security-and-forensics/9-introduction-to-kali-linux -santoku.pdf`,
       },
     ],
     practicals_link: [

@@ -117,6 +117,73 @@ def play_game():
 if __name__ == "__main__":
  play_game()`,
           },
+           {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Welcome to Tic-Tac-Toe!
+
+
+   |   |   
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 1
+
+
+ X |   |   
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player O, choose your position (1-9): 3
+
+
+ X |   | O 
+---+---+---
+   |   |   
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 5
+
+
+ X |   | O 
+---+---+---
+   | X |   
+---+---+---
+   |   |   
+
+
+Player O, choose your position (1-9): 6
+
+
+ X |   | O 
+---+---+---
+   | X | O 
+---+---+---
+   |   |   
+
+
+Player X, choose your position (1-9): 9
+
+
+ X |   | O 
+---+---+---
+   | X | O 
+---+---+---
+   |   | X 
+
+
+Player X wins!
+`,
+          },
         ],
       },
       {
