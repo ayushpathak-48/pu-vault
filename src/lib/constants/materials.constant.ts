@@ -237,6 +237,11 @@ export const materials = [
         title: "Practical 15 - Scenes",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-15.pdf`,
       },
+      {
+        id: 16,
+        title: "Practical 16 - Matlab",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/cg/practical-16.pdf`,
+      },
     ],
     que_papers: [
       {
