@@ -7,6 +7,7 @@ import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
+import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
             <BottomTabs />
             <Toaster position="top-center" />
             <WhatsappFloatingButton />
+            <WhatsappDialog />
           </ClientProvider>
         </NuqsAdapter>
       </body>
