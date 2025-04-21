@@ -960,6 +960,11 @@ export const specializationMaterials = [
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/6-selenium.pdf`,
       },
       {
+        id: 7,
+        title: "Unit-7: Selenium Web Driver",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/7-selenium-driver.pdf`,
+      },
+      {
         id: 8,
         title: "Unit-8: Node Js",
         href: `${MATERIAL_LINK_BASE_URL}/materials/fullstack-web-development/8-node-js.pdf`,
