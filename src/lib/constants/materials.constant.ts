@@ -1118,14 +1118,51 @@ export const specializationMaterials = [
       },
       {
         id: 4,
-        title: "Practical 5 - Autopsy Practical Manual",
-        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/autospy-practical-manual.pdf`,
+        title: "Practical 5 - NMAP",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-5.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 6 - WireShark",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-6.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 7 - SQL Injection (Manual & SQLmap)",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-7.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 8 - Hydra",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-8.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 9 - Virus Total",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-9.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 10 - The Harvester",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-10.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 11 - Google Dorking for Penetration Testers",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/csf/practical-11.pdf`,
       },
       // {
       //   id: 1,
       //   title: "Practical 1",
       //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/bda/practical-1.pdf`,
       // },
+    ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/csf-outputs.pdf`,
+      },
     ],
     que_papers: [
       {
