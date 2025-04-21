@@ -4251,12 +4251,76 @@ app.listen(PORT, () => {
           },
 
           // Outputs
-          // {
-          //   type: "code",
-          //   language: "text",
-          //   is_output: false,
-          //   value: ``,
-          // },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `*All CRUD operations (Create, Read, Update, and Delete) were successfully tested using the Postman application.*
+
+1. Create
+POST :- http://localhost:3100/items
+body -> raw -> json
+
+{
+  "name": "Item 1",
+  "description": "Iphone 16 pro max"
+}
+Output:-
+{
+    "name": "Item 1",
+    "description": "Iphone 16 pro max",
+    "_id": "6806527d61325311fee085f4",
+    "createdAt": "2025-04-21T14:13:17.284Z",
+    "__v": 0
+}
+----------------------------------------------------
+2. Read
+GET :- http://localhost:3100/items
+
+Output:-
+[
+  {
+      "_id": "6806527d61325311fee085f4",
+      "name": "Item 1",
+      "description": "Iphone 16 pro max",
+      "createdAt": "2025-04-21T14:13:17.284Z",
+      "__v": 0
+  }
+    {
+        "_id": "68064f3e61325311fee085e5",
+        "name": "Item 2",
+        "description": "This is a description for Item 2",
+        "createdAt": "2025-04-21T13:59:26.331Z",
+        "__v": 0
+    },
+]
+----------------------------------------------------
+3. Update
+PUT :- http://localhost:3100/items/6806527d61325311fee085f4
+body -> raw -> json
+{
+  "name": "Mobile 1",
+  "description": "Iphone 16 pro max"
+}
+
+Output:-
+{
+    "_id": "6806527d61325311fee085f4",
+    "name": "Mobile 1",
+    "description": "Iphone 16 pro max",
+    "createdAt": "2025-04-21T14:13:17.284Z",
+    "__v": 0
+}
+----------------------------------------------------
+4. Delete
+
+DELETE :- http://localhost:3100/items/68064f3e61325311fee085e5
+
+Output:-
+{
+    "message": "Item deleted successfully"
+}`,
+          },
         ],
       },
       //  Practical
