@@ -117,7 +117,7 @@ def play_game():
 if __name__ == "__main__":
  play_game()`,
           },
-           {
+          {
             type: "code",
             language: "text",
             is_output: true,
@@ -3948,6 +3948,88 @@ First Student in Array: Rahul`,
           // },
         ],
       },
+      //  Practical 5
+      {
+        key: "test-cases",
+        name: `Practical - 5: WAP to implement various test cases.`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 5: WAP to implement various test cases.`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "test.js",
+            value: `const assert = require('chai').assert;
+      
+      function add(a, b) {
+        return a + b;
+      }
+      
+      describe("Addition function", function() {
+        it("should return 5 when 2 and 3 are added", function() {
+          assert.equal(add(2, 3), 5);
+        });
+      
+        it("should return 0 when -1 and 1 are added", function() {
+          assert.equal(add(-1, 1), 0);
+        });
+      });`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Addition function
+    ✓ should return 5 when 2 and 3 are added
+    ✓ should return 0 when -1 and 1 are added
+
+  2 passing (XXms)`,
+          },
+        ],
+      },
+      //  Practical 6
+      {
+        key: "web-driver",
+        name: `Practical - 6: WAP to implement various Web Driver.`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 6: WAP to implement various Web Driver.`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "driver.js",
+            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+
+(async function example() {
+  let driver = await new Builder().forBrowser('firefox').build();
+
+  try {
+    await driver.get('http://www.google.com');
+    await driver.findElement(By.name('q')).sendKeys('Selenium', Key.RETURN);
+    await driver.wait(until.titleContains('Selenium'), 1000);
+    const title = await driver.getTitle();
+    console.log('Page title is:', title);
+  } finally {
+    await driver.quit();
+  }
+})();`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Page title is: Selenium - Google Search`,
+          },
+        ],
+      },
       // Practical 7
       {
         key: "string-decoder",
@@ -4063,6 +4145,118 @@ myEmitter.emit("dataReceived");`,
             is_output: true,
             value: `Data received successfully!`,
           },
+        ],
+      },
+      //  Practical 10
+      {
+        key: "crud-op-mongo",
+        name: `Practical - 10: CRUD Operation in Node JS with Mongo DB`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 10: CRUD Operation in Node JS with Mongo DB`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "server.js",
+            value: `const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const PORT = 3100;
+
+app.use(express.json());
+
+const MONGODB_URI =
+  "mongodb+srv://kachak331:B6zghd8ElLeuI456@cluster0.ssh6gw7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Could not connect to MongoDB:", err));
+
+const itemSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: String,
+  createdAt: { type: Date, default: Date.now },
+});
+
+const Item = mongoose.model("Item", itemSchema);
+
+// Create Item
+app.post("/items", async (req, res) => {
+  try {
+    const newItem = new Item(req.body);
+    const savedItem = await newItem.save();
+    res.status(201).json(savedItem);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Get All Items
+app.get("/items", async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Get Single Item by ID
+app.get("/items/:id", async (req, res) => {
+  try {
+    const item = await Item.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(item);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Update Item by ID
+app.put("/items/:id", async (req, res) => {
+  try {
+    const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!updatedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(updatedItem);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Delete Item by ID
+app.delete("/items/:id", async (req, res) => {
+  try {
+    const deletedItem = await Item.findByIdAndDelete(req.params.id);
+    if (!deletedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json({ message: "Item deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(\`Server is running on http://localhost:\${PORT}\`);
+});`,
+          },
+
+          // Outputs
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
         ],
       },
       //  Practical
@@ -5061,6 +5255,7 @@ ON c.customer_id = o.customer_id;`,
       },
     ],
   },
+  //  Computer graphics
   {
     subject_name: "Computer Graphics",
     key: "computer-graphics",
