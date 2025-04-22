@@ -4168,7 +4168,7 @@ const PORT = 3100;
 app.use(express.json());
 
 const MONGODB_URI =
-  "mongodb+srv://kachak331:B6zghd8ElLeuI456@cluster0.ssh6gw7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "Your Connection String";
 
 mongoose
   .connect(MONGODB_URI)
