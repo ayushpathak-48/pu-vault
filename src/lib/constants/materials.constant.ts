@@ -708,16 +708,31 @@ export const specializationMaterials = [
       },
       {
         id: 5,
+        title: "Unit-5: Representing Knowledge Using Rules",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/5-representing-knowledge-using-rules.pdf`,
+      },
+      {
+        id: 6,
         title: "Unit-6: Symbolic Reasoning Under Uncertainty",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/6-symbolic-reasoning-under-uncertainty.pdf`,
       },
       {
-        id: 6,
+        id: 7,
+        title: "Unit-7: Statistical Reasoning",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/7-statistical-reasoning.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Prolog",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/8-prolog.pdf`,
+      },
+      {
+        id: 9,
         title: "Unit-9: Machine Learning",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/9-machine-learning.pdf`,
       },
       {
-        id: 7,
+        id: 10,
         title: "Refrence Book: AI Russell Norvig",
         href: `${MATERIAL_LINK_BASE_URL}/materials/artificial-intelligence/reference-book-ai-russell-norving.pdf`,
       },
