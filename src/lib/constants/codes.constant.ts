@@ -3948,77 +3948,105 @@ First Student in Array: Rahul`,
           // },
         ],
       },
-      //  Practical 5
+      // Practical-5
       {
-        key: "test-cases",
-        name: `Practical - 5: WAP to implement various test cases.`,
+        key: "test-case-selenium",
+        name: `Practical - 5: Test Case Using Selenium`,
         pageBlocks: [
           {
             type: "heading",
-            value: `Practical - 5: WAP to implement various test cases.`,
+            value: `Practical - 5: Test Case Using Selenium`,
           },
+          //
           {
             type: "code",
-            // language: "JavaScript",
+            // language: "html",
             fileName: "test.js",
-            value: `const assert = require('chai').assert;
-      
-      function add(a, b) {
-        return a + b;
-      }
-      
-      describe("Addition function", function() {
-        it("should return 5 when 2 and 3 are added", function() {
-          assert.equal(add(2, 3), 5);
-        });
-      
-        it("should return 0 when -1 and 1 are added", function() {
-          assert.equal(add(-1, 1), 0);
-        });
-      });`,
+            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+const assert = require('assert');
+
+describe('+2', function () {
+  this.timeout(30000);
+  let driver;
+  let vars;
+
+  beforeEach(async function () {
+    driver = await new Builder().forBrowser('firefox').build();
+    vars = {};
+  });
+
+  afterEach(async function () {
+    await driver.quit();
+  });
+
+  it('+2', async function () {
+    await driver.get("https://coway.com/zen-in/");
+    await driver.manage().window().setRect({ width: 1995, height: 6873 });
+    await driver.executeScript("window.scrollTo(0, 0);");
+
+    await driver.findElement(By.linkText("Customer Service")).click();
+    await driver.findElement(By.linkText("Amazon Prime")).click(); // Assuming this is the correct link text
+  });
+});`,
           },
 
           // Outputs
-          {
-            type: "code",
-            language: "text",
-            is_output: true,
-            value: `Addition function
-    ✓ should return 5 when 2 and 3 are added
-    ✓ should return 0 when -1 and 1 are added
-
-  2 passing (XXms)`,
-          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
         ],
       },
-      //  Practical 6
+      //  Practical - 6
       {
-        key: "web-driver",
-        name: `Practical - 6: WAP to implement various Web Driver.`,
+        key: "create-a-nodejs-console-and-webapp",
+        name: `Practical - 6: Create a NodeJS console and webapp`,
         pageBlocks: [
           {
             type: "heading",
-            value: `Practical - 6: WAP to implement various Web Driver.`,
+            value: `Practical - 6: Create a NodeJS console and webapp`,
           },
           {
             type: "code",
-            // language: "JavaScript",
-            fileName: "driver.js",
-            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+            fileName: "1. Initialize Node.js Project",
+            value: `npm init -y`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "first.js",
+            value: `console.log("Welcome to my Node.js console app!");`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "second.js",
+            value: `console.log("Welcome to my Node.js console app!");
 
-(async function example() {
-  let driver = await new Builder().forBrowser('firefox').build();
+process.stdout.write("Enter your name: ");
+process.stdin.on("data", (data) => {
+  const name = data.toString().trim();
+  console.log(\`Hello, \${name}!\`);
+  process.exit();
+});
+`,
+          },
+          {
+            type: "code",
+            fileName: "server.js",
+            value: `var http = require("http");
 
-  try {
-    await driver.get('http://www.google.com');
-    await driver.findElement(By.name('q')).sendKeys('Selenium', Key.RETURN);
-    await driver.wait(until.titleContains('Selenium'), 1000);
-    const title = await driver.getTitle();
-    console.log('Page title is:', title);
-  } finally {
-    await driver.quit();
-  }
-})();`,
+var server = http.createServer(function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.write("Hello, this is a simple Node.js web server!");
+  res.end();
+});
+
+server.listen(3000, function () {
+  console.log("Server is running at http://localhost:3000");
+});`,
           },
 
           // Outputs
@@ -4026,7 +4054,38 @@ First Student in Array: Rahul`,
             type: "code",
             language: "text",
             is_output: true,
-            value: `Page title is: Selenium - Google Search`,
+            value: `1. Initialize Node.js Project:-
+
+{
+  "name": "ndjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\"Error: no test specified\\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+-----------------------------------------------------------------------------------------------
+first.js
+
+Welcome to my Node.js console app!
+
+-----------------------------------------------------------------------------------------------
+second.js
+
+Welcome to my Node.js console app!
+Enter your name: John
+Hello, John!
+
+-----------------------------------------------------------------------------------------------
+server.js
+
+Server is running at http://localhost:3000
+
+Hello, this is a simple Node.js web server!`,
           },
         ],
       },
@@ -4149,12 +4208,94 @@ myEmitter.emit("dataReceived");`,
       },
       //  Practical 10
       {
-        key: "crud-op-mongo",
-        name: `Practical - 10: CRUD Operation in Node JS with Mongo DB`,
+        key: "test-cases",
+        name: `Practical - 10: WAP to implement various test cases.`,
         pageBlocks: [
           {
             type: "heading",
-            value: `Practical - 10: CRUD Operation in Node JS with Mongo DB`,
+            value: `Practical - 10: WAP to implement various test cases.`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "test.js",
+            value: `const assert = require('chai').assert;
+            
+            function add(a, b) {
+              return a + b;
+            }
+            
+            describe("Addition function", function() {
+              it("should return 5 when 2 and 3 are added", function() {
+                assert.equal(add(2, 3), 5);
+              });
+            
+              it("should return 0 when -1 and 1 are added", function() {
+                assert.equal(add(-1, 1), 0);
+              });
+            });`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Addition function
+          ✓ should return 5 when 2 and 3 are added
+          ✓ should return 0 when -1 and 1 are added
+      
+        2 passing (XXms)`,
+          },
+        ],
+      },
+      //  Practical 11
+      {
+        key: "web-driver",
+        name: `Practical - 11: WAP to implement various Web Driver.`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 11: WAP to implement various Web Driver.`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
+            fileName: "driver.js",
+            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+      
+      (async function example() {
+        let driver = await new Builder().forBrowser('firefox').build();
+      
+        try {
+          await driver.get('http://www.google.com');
+          await driver.findElement(By.name('q')).sendKeys('Selenium', Key.RETURN);
+          await driver.wait(until.titleContains('Selenium'), 1000);
+          const title = await driver.getTitle();
+          console.log('Page title is:', title);
+        } finally {
+          await driver.quit();
+        }
+      })();`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Page title is: Selenium - Google Search`,
+          },
+        ],
+      },
+      //  Practical 12
+      {
+        key: "crud-op-mongo",
+        name: `Practical - 12: CRUD Operation in Node JS with Mongo DB`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 12: CRUD Operation in Node JS with Mongo DB`,
           },
           {
             type: "code",
@@ -4320,96 +4461,6 @@ Output:-
 {
     "message": "Item deleted successfully"
 }`,
-          },
-        ],
-      },
-      //  Practical
-      {
-        key: "create-a-nodejs-console-and-webapp",
-        name: `Practical - Create a NodeJS console and webapp`,
-        pageBlocks: [
-          {
-            type: "heading",
-            value: `Practical Create a NodeJS console and webapp`,
-          },
-          {
-            type: "code",
-            fileName: "1. Initialize Node.js Project",
-            value: `npm init -y`,
-          },
-          //
-          {
-            type: "code",
-            fileName: "first.js",
-            value: `console.log("Welcome to my Node.js console app!");`,
-          },
-          //
-          {
-            type: "code",
-            fileName: "second.js",
-            value: `console.log("Welcome to my Node.js console app!");
-
-process.stdout.write("Enter your name: ");
-process.stdin.on("data", (data) => {
-  const name = data.toString().trim();
-  console.log(\`Hello, \${name}!\`);
-  process.exit();
-});
-`,
-          },
-          {
-            type: "code",
-            fileName: "server.js",
-            value: `var http = require("http");
-
-var server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.write("Hello, this is a simple Node.js web server!");
-  res.end();
-});
-
-server.listen(3000, function () {
-  console.log("Server is running at http://localhost:3000");
-});`,
-          },
-
-          // Outputs
-          {
-            type: "code",
-            language: "text",
-            is_output: true,
-            value: `1. Initialize Node.js Project:-
-
-{
-  "name": "ndjs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \\"Error: no test specified\\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
-}
------------------------------------------------------------------------------------------------
-first.js
-
-Welcome to my Node.js console app!
-
------------------------------------------------------------------------------------------------
-second.js
-
-Welcome to my Node.js console app!
-Enter your name: John
-Hello, John!
-
------------------------------------------------------------------------------------------------
-server.js
-
-Server is running at http://localhost:3000
-
-Hello, this is a simple Node.js web server!`,
           },
         ],
       },
