@@ -1041,6 +1041,21 @@ export const specializationMaterials = [
         title: "Practical 9 - WAP to implement events.",
         journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-9.pdf`,
       },
+      {
+        id: 10,
+        title: "Practical 10 - WAP to implement various test cases.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-10.pdf`,
+      },
+      {
+        id: 11,
+        title: "Practical 11 - WAP to implement various Web Driver.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-11.pdf`,
+      },
+      {
+        id: 12,
+        title: "Practical 12 - CRUD Operation in Node JS with Mongo DB.",
+        journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/fsw/practical-12.pdf`,
+      },
     ],
     que_papers: [
       {
