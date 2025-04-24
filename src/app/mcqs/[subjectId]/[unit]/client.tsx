@@ -6,57 +6,25 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { flashCards } from "@/lib/constants/flash-cards.constant";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import Flashcard from "@/components/flash-card";
+import AllMcqQuestions from "@/components/mcq/mcq-questions";
+import { mcqs } from "@/lib/constants/mcqs.constant";
 
-type FlashCardType = {
-  id: number;
-  front: string;
-  back: string;
-};
-
-const FlashCardsPageClient = () => {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-
+const McqPageClient = () => {
   const router = useRouter();
   const tabsContainerRef = useRef(null);
   const { subjectId, unit } = useParams();
   const activeTabRef = useRef<HTMLAnchorElement>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const subject = flashCards.find(({ key }) => key == subjectId);
+  const subject = mcqs.find(({ key }) => key == subjectId);
   const chapter = subject?.units?.find(({ key }) => key == unit);
   const [currentPracticalIndex, setCurrentPracticalIndex] = useState<number>(
     subject?.units.findIndex(({ key }) => key == unit) || 0
   );
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
   const handleClickPrevious = () => {
     const oldIndex = currentPracticalIndex;
     setCurrentPracticalIndex((prev) => (prev == 0 ? 0 : prev - 1));
-    const href = `/flash-cards/${subject?.key}/${
+    const href = `/mcqs/${subject?.key}/${
       subject?.units.find((_, i) => i == oldIndex - 1)?.key
     }`;
     router.push(href);
@@ -64,7 +32,7 @@ const FlashCardsPageClient = () => {
   const handleClickNext = () => {
     const oldIndex = currentPracticalIndex;
     setCurrentPracticalIndex((prev) => (prev == 0 ? 0 : prev + 1));
-    const href = `/flash-cards/${subject?.key}/${
+    const href = `/mcqs/${subject?.key}/${
       subject?.units.find((_, i) => i == oldIndex + 1)?.key
     }`;
     router.push(href);
@@ -165,38 +133,12 @@ const FlashCardsPageClient = () => {
           <LoaderCircle className="animate-spin size-6" />
         </div>
       ) : (
-        <div className="flex items-center justify-center flex-col gap-2 p-5 lg:p-20">
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            setApi={setApi}
-            className="w-96 max-w-[90%]"
-          >
-            <CarouselContent className="-mt-1 h-[calc(100vh-350px)] min-h-80">
-              {chapter?.cards?.map((card: FlashCardType) => (
-                <CarouselItem
-                  key={card.id}
-                  className="pt-1 flex items-center justify-center w-full"
-                >
-                  <Card className="group h-full flex items-center border-none shadow-none justify-center p-2 w-80">
-                    <CardContent className="flex items-center justify-center h-full w-full p-2">
-                      <Flashcard front={card.front} back={card.back} />
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="py-2 text-center text-sm text-muted-foreground">
-              Flashcard {current} of {count}
-            </div>
-            <CarouselPrevious className="-left-5" />
-            <CarouselNext className="-right-5" />
-          </Carousel>
+        <div className="flex items-center justify-center flex-col gap-2 p-5">
+          <AllMcqQuestions allMcqs={chapter.all_mcqs} />
         </div>
       )}
     </>
   );
 };
 
-export default FlashCardsPageClient;
+export default McqPageClient;
