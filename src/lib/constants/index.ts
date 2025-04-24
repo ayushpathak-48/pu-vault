@@ -1,14 +1,15 @@
 import {
-  Book,
+  // Book,
   CableCarIcon,
   // Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
   SquareDashedBottomCode,
   SettingsIcon,
-  MessageCircleQuestion,
+  // MessageCircleQuestion,
   // LinkIcon,
   SquareAsteriskIcon,
+  ListTodo,
   // MonitorPlay,
 } from "lucide-react";
 
@@ -22,6 +23,12 @@ export const navLinks = [
     title: "Home",
     href: "/",
     icon: HouseIcon,
+  },
+  {
+    id: 11,
+    title: "MCQs",
+    href: "/mcqs",
+    icon: ListTodo,
   },
   {
     id: 4,
@@ -48,12 +55,12 @@ export const navLinks = [
     icon: CableCarIcon,
   },
 
-  {
-    id: 5,
-    title: "Assignments",
-    href: "/assignments",
-    icon: Book,
-  },
+  // {
+  //   id: 5,
+  //   title: "Assignments",
+  //   href: "/assignments",
+  //   icon: Book,
+  // },
   // {
   //   id: 6,
   //   title: "Important Links",
@@ -61,13 +68,13 @@ export const navLinks = [
   //   icon: LinkIcon,
   //   hideOnMobile: true,
   // },
-  {
-    id: 7,
-    title: "Interview Questions",
-    href: "/interview",
-    hideOnMobile: true,
-    icon: MessageCircleQuestion,
-  },
+  // {
+  //   id: 7,
+  //   title: "Interview Questions",
+  //   href: "/interview",
+  //   hideOnMobile: true,
+  //   icon: MessageCircleQuestion,
+  // },
   {
     id: 8,
     title: "Softwares",

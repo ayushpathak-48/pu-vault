@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import FlashCardsPageClient from "./client";
+import McqPageClient from "./client";
 
 const page = () => {
-  return <FlashCardsPageClient />;
+  return <McqPageClient />;
 };
 
 export default page;
