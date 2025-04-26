@@ -1069,6 +1069,7 @@ export const flashCards = [
       },
     ],
   },
+  // BDA
   {
     subject_name: "Big Data Analytics",
     key: "big-data-analytics",
@@ -1814,6 +1815,7 @@ export const flashCards = [
       },
     ],
   },
+  // CC
   {
     subject_name: "Cloud Computing",
     key: "cloud-computing",
@@ -2344,6 +2346,7 @@ export const flashCards = [
       },
     ],
   },
+  // CSF
   {
     subject_name: "Cyber Security and Forensics",
     key: "cyber-secury-and-forensics",
@@ -3063,6 +3066,7 @@ export const flashCards = [
       },
     ],
   },
+  // FSWD
   {
     subject_name: "Full Stack Web Development",
     key: "full-stack-web-development",
