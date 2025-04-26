@@ -9858,6 +9858,8 @@ export const mcqs = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
+    specialization: "ai",
+
     units: [
       {
         id: 1,
@@ -12306,6 +12308,7 @@ export const mcqs = [
   {
     subject_name: "Full Stack Web Development",
     key: "full-stack-web-development",
+    specialization: "fswd",
     units: [
       {
         id: 1,
@@ -14644,6 +14647,7 @@ export const mcqs = [
   {
     subject_name: "Cyber Security and Forensics",
     key: "cyber-secury-and-forensics",
+    specialization: "csf",
     units: [
       {
         id: 1,
@@ -17340,6 +17344,7 @@ export const mcqs = [
   {
     subject_name: "Big Data Analytics",
     key: "big-data-analytics",
+    specialization: "bda",
     units: [
       {
         id: 1,
@@ -19938,6 +19943,7 @@ export const mcqs = [
   {
     subject_name: "Cloud Computing",
     key: "cloud-computing",
+    specialization: "cc",
     units: [
       {
         id: 1,
