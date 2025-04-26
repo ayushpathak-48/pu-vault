@@ -93,7 +93,7 @@ const McqPageClient = () => {
               asChild
             >
               <Link
-                href={`/flash-cards/${subject.key}/${ele.key}`}
+                href={`/mcqs/${subject.key}/${ele.key}`}
                 ref={ele?.key === chapter?.key ? activeTabRef : null}
               >
                 {ele.title}
