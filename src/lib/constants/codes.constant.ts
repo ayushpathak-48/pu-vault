@@ -1942,7 +1942,9 @@ public class CurrencyConverterService {
         response.put("convertedAmount", convertedAmount);
         return Response.ok(response).build();
     }
-}`,
+}
+    
+// Output Link http://localhost:8081/mavenproject1/ws/currency/convert?from=USD&to=INR&amount=100`,
           },
           {
             type: "code",
