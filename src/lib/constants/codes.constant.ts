@@ -1942,7 +1942,9 @@ public class CurrencyConverterService {
         response.put("convertedAmount", convertedAmount);
         return Response.ok(response).build();
     }
-}`,
+}
+    
+// Output Link http://localhost:8081/mavenproject1/ws/currency/convert?from=USD&to=INR&amount=100`,
           },
           {
             type: "code",
@@ -3948,6 +3950,147 @@ First Student in Array: Rahul`,
           // },
         ],
       },
+      // Practical-5
+      {
+        key: "test-case-selenium",
+        name: `Practical - 5: Test Case Using Selenium`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 5: Test Case Using Selenium`,
+          },
+          //
+          {
+            type: "code",
+            // language: "html",
+            fileName: "test.js",
+            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+const assert = require('assert');
+
+describe('+2', function () {
+  this.timeout(30000);
+  let driver;
+  let vars;
+
+  beforeEach(async function () {
+    driver = await new Builder().forBrowser('firefox').build();
+    vars = {};
+  });
+
+  afterEach(async function () {
+    await driver.quit();
+  });
+
+  it('+2', async function () {
+    await driver.get("https://coway.com/zen-in/");
+    await driver.manage().window().setRect({ width: 1995, height: 6873 });
+    await driver.executeScript("window.scrollTo(0, 0);");
+
+    await driver.findElement(By.linkText("Customer Service")).click();
+    await driver.findElement(By.linkText("Amazon Prime")).click(); // Assuming this is the correct link text
+  });
+});`,
+          },
+
+          // Outputs
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      //  Practical - 6
+      {
+        key: "create-a-nodejs-console-and-webapp",
+        name: `Practical - 6: Create a NodeJS console and webapp`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 6: Create a NodeJS console and webapp`,
+          },
+          {
+            type: "code",
+            fileName: "1. Initialize Node.js Project",
+            value: `npm init -y`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "first.js",
+            value: `console.log("Welcome to my Node.js console app!");`,
+          },
+          //
+          {
+            type: "code",
+            fileName: "second.js",
+            value: `console.log("Welcome to my Node.js console app!");
+
+process.stdout.write("Enter your name: ");
+process.stdin.on("data", (data) => {
+  const name = data.toString().trim();
+  console.log(\`Hello, \${name}!\`);
+  process.exit();
+});
+`,
+          },
+          {
+            type: "code",
+            fileName: "server.js",
+            value: `var http = require("http");
+
+var server = http.createServer(function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.write("Hello, this is a simple Node.js web server!");
+  res.end();
+});
+
+server.listen(3000, function () {
+  console.log("Server is running at http://localhost:3000");
+});`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `1. Initialize Node.js Project:-
+
+{
+  "name": "ndjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\"Error: no test specified\\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+-----------------------------------------------------------------------------------------------
+first.js
+
+Welcome to my Node.js console app!
+
+-----------------------------------------------------------------------------------------------
+second.js
+
+Welcome to my Node.js console app!
+Enter your name: John
+Hello, John!
+
+-----------------------------------------------------------------------------------------------
+server.js
+
+Server is running at http://localhost:3000
+
+Hello, this is a simple Node.js web server!`,
+          },
+        ],
+      },
       // Practical 7
       {
         key: "string-decoder",
@@ -4065,53 +4208,188 @@ myEmitter.emit("dataReceived");`,
           },
         ],
       },
-      //  Practical
+      //  Practical 10
       {
-        key: "create-a-nodejs-console-and-webapp",
-        name: `Practical - Create a NodeJS console and webapp`,
+        key: "test-cases",
+        name: `Practical - 10: WAP to implement various test cases.`,
         pageBlocks: [
           {
             type: "heading",
-            value: `Practical Create a NodeJS console and webapp`,
+            value: `Practical - 10: WAP to implement various test cases.`,
           },
           {
             type: "code",
-            fileName: "1. Initialize Node.js Project",
-            value: `npm init -y`,
+            // language: "JavaScript",
+            fileName: "test.js",
+            value: `const assert = require('chai').assert;
+            
+            function add(a, b) {
+              return a + b;
+            }
+            
+            describe("Addition function", function() {
+              it("should return 5 when 2 and 3 are added", function() {
+                assert.equal(add(2, 3), 5);
+              });
+            
+              it("should return 0 when -1 and 1 are added", function() {
+                assert.equal(add(-1, 1), 0);
+              });
+            });`,
           },
-          //
-          {
-            type: "code",
-            fileName: "first.js",
-            value: `console.log("Welcome to my Node.js console app!");`,
-          },
-          //
-          {
-            type: "code",
-            fileName: "second.js",
-            value: `console.log("Welcome to my Node.js console app!");
 
-process.stdout.write("Enter your name: ");
-process.stdin.on("data", (data) => {
-  const name = data.toString().trim();
-  console.log(\`Hello, \${name}!\`);
-  process.exit();
-});
-`,
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Addition function
+          ✓ should return 5 when 2 and 3 are added
+          ✓ should return 0 when -1 and 1 are added
+      
+        2 passing (XXms)`,
+          },
+        ],
+      },
+      //  Practical 11
+      {
+        key: "web-driver",
+        name: `Practical - 11: WAP to implement various Web Driver.`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 11: WAP to implement various Web Driver.`,
           },
           {
             type: "code",
+            // language: "JavaScript",
+            fileName: "driver.js",
+            value: `const { Builder, By, Key, until } = require('selenium-webdriver');
+      
+      (async function example() {
+        let driver = await new Builder().forBrowser('firefox').build();
+      
+        try {
+          await driver.get('http://www.google.com');
+          await driver.findElement(By.name('q')).sendKeys('Selenium', Key.RETURN);
+          await driver.wait(until.titleContains('Selenium'), 1000);
+          const title = await driver.getTitle();
+          console.log('Page title is:', title);
+        } finally {
+          await driver.quit();
+        }
+      })();`,
+          },
+
+          // Outputs
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Page title is: Selenium - Google Search`,
+          },
+        ],
+      },
+      //  Practical 12
+      {
+        key: "crud-op-mongo",
+        name: `Practical - 12: CRUD Operation in Node JS with Mongo DB`,
+        pageBlocks: [
+          {
+            type: "heading",
+            value: `Practical - 12: CRUD Operation in Node JS with Mongo DB`,
+          },
+          {
+            type: "code",
+            // language: "JavaScript",
             fileName: "server.js",
-            value: `var http = require("http");
+            value: `const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const PORT = 3100;
 
-var server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.write("Hello, this is a simple Node.js web server!");
-  res.end();
+app.use(express.json());
+
+const MONGODB_URI =
+  "Your Connection String";
+
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Could not connect to MongoDB:", err));
+
+const itemSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: String,
+  createdAt: { type: Date, default: Date.now },
 });
 
-server.listen(3000, function () {
-  console.log("Server is running at http://localhost:3000");
+const Item = mongoose.model("Item", itemSchema);
+
+// Create Item
+app.post("/items", async (req, res) => {
+  try {
+    const newItem = new Item(req.body);
+    const savedItem = await newItem.save();
+    res.status(201).json(savedItem);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Get All Items
+app.get("/items", async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Get Single Item by ID
+app.get("/items/:id", async (req, res) => {
+  try {
+    const item = await Item.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(item);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Update Item by ID
+app.put("/items/:id", async (req, res) => {
+  try {
+    const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!updatedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json(updatedItem);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Delete Item by ID
+app.delete("/items/:id", async (req, res) => {
+  try {
+    const deletedItem = await Item.findByIdAndDelete(req.params.id);
+    if (!deletedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json({ message: "Item deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(\`Server is running on http://localhost:\${PORT}\`);
 });`,
           },
 
@@ -4120,38 +4398,71 @@ server.listen(3000, function () {
             type: "code",
             language: "text",
             is_output: true,
-            value: `1. Initialize Node.js Project:-
+            value: `*All CRUD operations (Create, Read, Update, and Delete) were successfully tested using the Postman application.*
+
+1. Create
+POST :- http://localhost:3100/items
+body -> raw -> json
 
 {
-  "name": "ndjs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \\"Error: no test specified\\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "name": "Item 1",
+  "description": "Iphone 16 pro max"
 }
------------------------------------------------------------------------------------------------
-first.js
+Output:-
+{
+    "name": "Item 1",
+    "description": "Iphone 16 pro max",
+    "_id": "6806527d61325311fee085f4",
+    "createdAt": "2025-04-21T14:13:17.284Z",
+    "__v": 0
+}
+----------------------------------------------------
+2. Read
+GET :- http://localhost:3100/items
 
-Welcome to my Node.js console app!
+Output:-
+[
+  {
+      "_id": "6806527d61325311fee085f4",
+      "name": "Item 1",
+      "description": "Iphone 16 pro max",
+      "createdAt": "2025-04-21T14:13:17.284Z",
+      "__v": 0
+  }
+    {
+        "_id": "68064f3e61325311fee085e5",
+        "name": "Item 2",
+        "description": "This is a description for Item 2",
+        "createdAt": "2025-04-21T13:59:26.331Z",
+        "__v": 0
+    },
+]
+----------------------------------------------------
+3. Update
+PUT :- http://localhost:3100/items/6806527d61325311fee085f4
+body -> raw -> json
+{
+  "name": "Mobile 1",
+  "description": "Iphone 16 pro max"
+}
 
------------------------------------------------------------------------------------------------
-second.js
+Output:-
+{
+    "_id": "6806527d61325311fee085f4",
+    "name": "Mobile 1",
+    "description": "Iphone 16 pro max",
+    "createdAt": "2025-04-21T14:13:17.284Z",
+    "__v": 0
+}
+----------------------------------------------------
+4. Delete
 
-Welcome to my Node.js console app!
-Enter your name: John
-Hello, John!
+DELETE :- http://localhost:3100/items/68064f3e61325311fee085e5
 
------------------------------------------------------------------------------------------------
-server.js
-
-Server is running at http://localhost:3000
-
-Hello, this is a simple Node.js web server!`,
+Output:-
+{
+    "message": "Item deleted successfully"
+}`,
           },
         ],
       },
@@ -5061,6 +5372,7 @@ ON c.customer_id = o.customer_id;`,
       },
     ],
   },
+  //  Computer graphics
   {
     subject_name: "Computer Graphics",
     key: "computer-graphics",
