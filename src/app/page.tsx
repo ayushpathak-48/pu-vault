@@ -1,7 +1,7 @@
 "use client";
 
-import { SelectDivision } from "@/components/select-division";
-import { SelectSpecialization } from "@/components/select-specialization";
+// import { SelectDivision } from "@/components/select-division";
+// import { SelectSpecialization } from "@/components/select-specialization";
 import { HomePageAccordionList } from "@/components/tabs/home-accordion-list";
 import { Button } from "@/components/ui/button";
 import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
@@ -9,13 +9,10 @@ import {
   materials,
   specializationMaterials,
 } from "@/lib/constants/materials.constant";
-import { cn } from "@/lib/utils";
-import { useDataStore } from "@/stores/data.store";
+// import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Home() {
-  const specialization = useDataStore((state) => state.specialization);
-  const division = useDataStore((state) => state.division);
   return (
     <div className="w-full h-full">
       <div className="p-2 lg:p-5 flex flex-col gap-1">
@@ -42,7 +39,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <div
+      {/* <div
         className={cn(
           "flex flex-col gap-2 p-5",
           specialization && division && "hidden",
@@ -50,7 +47,7 @@ export default function Home() {
       >
         {!specialization && <SelectSpecialization />}
         {!division && <SelectDivision />}
-      </div>
+      </div> */}
       <div className="my-4 text-3xl font-semibold mx-auto custom-heading text-center">
         All Materials
       </div>

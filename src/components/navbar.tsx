@@ -1,8 +1,8 @@
 "use client";
 
-import { navLinks } from "@/lib/constants";
+import { CourseType, navLinks } from "@/lib/constants";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { MenuIcon, SearchIcon } from "lucide-react";
@@ -11,9 +11,16 @@ import Link from "next/link";
 import SearchModal from "./search-modal";
 import { DataDialog } from "./modals/data-dialog";
 import { cn } from "@/lib/utils";
+import { useDataStore } from "@/stores/data.store";
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const courseParam = useSearchParams().get("course") as CourseType;
+  const divisionParam = useSearchParams().get("div");
+
+  const setCourse = useDataStore((state) => state.setCourse);
+  const setDivision = useDataStore((state) => state.setDivision);
+
   const { toggleSidebar, setOpenMobile } = useSidebar();
 
   const [activePageTitle, setActivePageTitle] = useState(
@@ -32,6 +39,20 @@ export const Navbar = () => {
     }
     setOpenMobile(false);
   }, [pathname]);
+
+  useLayoutEffect(() => {
+    if (courseParam && ["mca", "mscit"].includes(courseParam)) {
+      setCourse(courseParam);
+    }
+    if (
+      divisionParam &&
+      ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"].includes(
+        divisionParam,
+      )
+    ) {
+      setDivision(divisionParam);
+    }
+  }, [courseParam, divisionParam]);
 
   return (
     <>

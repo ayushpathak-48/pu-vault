@@ -117,7 +117,7 @@ def play_game():
 if __name__ == "__main__":
  play_game()`,
           },
-           {
+          {
             type: "code",
             language: "text",
             is_output: true,
@@ -1161,7 +1161,7 @@ public class AuthenticateServlet extends HttpServlet {
         request.getHeaderNames().asIterator().forEachRemaining(headerName -> {
             out.println(headerName + ": " + request.getHeader(headerName) + "<br>");
         });
-        response.addHeader("Custom-Header", "This is Karan and i am your header");
+        response.addHeader("Custom-Header", "This is custom header");
         out.println("<h2>Response Headers:</h2>");
         response.getHeaderNames().forEach(headerName -> {
             out.println(headerName + ": " + response.getHeader(headerName) + "<br>");
