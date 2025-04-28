@@ -4497,6 +4497,1903 @@ export const flashCards = [
     ],
   },
   {
+    subject_name: "Data Communication & Networking",
+    key: "data-communication-and-networking",
+    units: [
+      {
+        id: 1,
+        title: "Week 1",
+        key: "week-1",
+        cards: [
+          {
+            id: 1,
+            front: "What is a computer network?",
+            back: "A collection of interconnected computers and devices to share resources and information.",
+          },
+          {
+            id: 2,
+            front: "What is ARPANET?",
+            back: "The first operational packet switching network and a predecessor of the Internet, launched in 1969.",
+          },
+          {
+            id: 3,
+            front: "Who developed ARPANET?",
+            back: "The United States Department of Defense's Advanced Research Projects Agency (ARPA).",
+          },
+          {
+            id: 4,
+            front: "Define Packet Switching.",
+            back: "A method of grouping transmitted data into packets for efficient routing through a network.",
+          },
+          {
+            id: 5,
+            front: "What led to the development of the Internet?",
+            back: "Research from ARPANET and advancements in packet switching technologies.",
+          },
+          {
+            id: 6,
+            front: "What is a Network Protocol Stack?",
+            back: "A set of network protocol layers that work together to enable network communication.",
+          },
+          {
+            id: 7,
+            front: "What are the major protocol stacks?",
+            back: "OSI model and TCP/IP model.",
+          },
+          {
+            id: 8,
+            front: "Name the 7 layers of the OSI model.",
+            back: "Physical, Data Link, Network, Transport, Session, Presentation, Application.",
+          },
+          {
+            id: 9,
+            front: "Which layers are present in TCP/IP model?",
+            back: "Application, Transport, Internet, Network Access (Link).",
+          },
+          {
+            id: 10,
+            front: "What does the Transport layer handle?",
+            back: "End-to-end communication, error control, and flow control.",
+          },
+          {
+            id: 11,
+            front: "What does the Network layer handle?",
+            back: "Routing and addressing of packets across the network.",
+          },
+          {
+            id: 12,
+            front: "Difference between Circuit Switching and Packet Switching?",
+            back: "Circuit Switching establishes a dedicated path, Packet Switching divides data into packets and routes independently.",
+          },
+          {
+            id: 13,
+            front: "Give one example of Circuit Switching network.",
+            back: "Traditional Telephone Network (PSTN).",
+          },
+          {
+            id: 14,
+            front: "Give one example of Packet Switching network.",
+            back: "The Internet.",
+          },
+          {
+            id: 15,
+            front: "What is a benefit of Packet Switching?",
+            back: "Efficient use of network resources and reduced transmission costs.",
+          },
+          {
+            id: 16,
+            front: "What service does the Application layer provide?",
+            back: "Provides network services directly to user applications like email, file transfer.",
+          },
+          {
+            id: 17,
+            front: "Name a protocol at the Application layer.",
+            back: "HTTP (Hypertext Transfer Protocol).",
+          },
+          {
+            id: 18,
+            front: "What is the role of the Presentation layer?",
+            back: "Data translation, encryption, and compression.",
+          },
+          {
+            id: 19,
+            front: "What service is offered by the Transport layer?",
+            back: "Reliable data transfer (e.g., TCP) or fast but unreliable transfer (e.g., UDP).",
+          },
+          {
+            id: 20,
+            front: "What does SMTP stand for?",
+            back: "Simple Mail Transfer Protocol.",
+          },
+          {
+            id: 21,
+            front: "What is FTP used for?",
+            back: "File Transfer Protocol is used for transferring files between client and server.",
+          },
+          {
+            id: 22,
+            front: "Purpose of DNS?",
+            back: "Domain Name System translates domain names to IP addresses.",
+          },
+          {
+            id: 23,
+            front: "Name two types of services provided by Application Layer.",
+            back: "File transfer and email services.",
+          },
+          {
+            id: 24,
+            front: "What is Telnet used for?",
+            back: "A protocol used to remotely access another computer.",
+          },
+          {
+            id: 25,
+            front: "Which protocol is used for web browsing?",
+            back: "HTTP (Hypertext Transfer Protocol).",
+          },
+          {
+            id: 26,
+            front: "Which protocol secures HTTP?",
+            back: "HTTPS (HTTP Secure) using SSL/TLS.",
+          },
+          {
+            id: 27,
+            front: "What is the role of the Session layer?",
+            back: "Manages sessions or connections between applications.",
+          },
+          {
+            id: 28,
+            front: "Name a protocol for remote login.",
+            back: "SSH (Secure Shell).",
+          },
+          {
+            id: 29,
+            front: "What is the difference between HTTP and HTTPS?",
+            back: "HTTPS encrypts data using SSL/TLS while HTTP does not.",
+          },
+          {
+            id: 30,
+            front:
+              "Which application layer protocol is used for sending emails?",
+            back: "SMTP (Simple Mail Transfer Protocol).",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Week 2",
+        key: "week-2",
+        cards: [
+          {
+            id: 1,
+            front: "What is the purpose of DNS?",
+            back: "Domain Name System (DNS) translates human-readable domain names into IP addresses.",
+          },
+          {
+            id: 2,
+            front: "What type of system is DNS?",
+            back: "A hierarchical and decentralized naming system for computers and services on the Internet.",
+          },
+          {
+            id: 3,
+            front: "What are DNS servers?",
+            back: "Servers that store DNS records and respond to DNS queries from clients.",
+          },
+          {
+            id: 4,
+            front: "What is a DNS resolver?",
+            back: "A client-side service that resolves domain names into IP addresses.",
+          },
+          {
+            id: 5,
+            front: "Name the main types of DNS records.",
+            back: "A record, CNAME record, MX record, NS record, PTR record, TXT record.",
+          },
+          {
+            id: 6,
+            front: "What is an A record in DNS?",
+            back: "Maps a domain name to its corresponding IPv4 address.",
+          },
+          {
+            id: 7,
+            front: "What does CNAME record stand for?",
+            back: "Canonical Name record - used to alias one domain name to another.",
+          },
+          {
+            id: 8,
+            front: "What is the Web?",
+            back: "A system of interlinked hypertext documents accessed via the Internet.",
+          },
+          {
+            id: 9,
+            front: "What protocol does the Web primarily use?",
+            back: "HTTP (Hypertext Transfer Protocol).",
+          },
+          {
+            id: 10,
+            front: "What is a URL?",
+            back: "Uniform Resource Locator - the address used to access resources on the Web.",
+          },
+          {
+            id: 11,
+            front: "Name key components of a URL.",
+            back: "Protocol, domain name, path, parameters.",
+          },
+          {
+            id: 12,
+            front: "What is HTTP?",
+            back: "Hypertext Transfer Protocol - used for transferring web pages over the Internet.",
+          },
+          {
+            id: 13,
+            front: "Which port does HTTP typically use?",
+            back: "Port 80.",
+          },
+          { id: 14, front: "Which port does HTTPS use?", back: "Port 443." },
+          {
+            id: 15,
+            front: "Difference between HTTP and HTTPS?",
+            back: "HTTPS encrypts communication using SSL/TLS, whereas HTTP does not.",
+          },
+          {
+            id: 16,
+            front: "What is a status code in HTTP?",
+            back: "A code indicating the result of a client's request to the server.",
+          },
+          {
+            id: 17,
+            front: "Example of HTTP status code 200?",
+            back: "OK - Request succeeded.",
+          },
+          {
+            id: 18,
+            front: "Example of HTTP status code 404?",
+            back: "Not Found - The requested resource was not found.",
+          },
+          {
+            id: 19,
+            front: "What is Internet Mail Transfer Protocol (SMTP)?",
+            back: "A protocol for sending email messages between servers.",
+          },
+          {
+            id: 20,
+            front: "Which port does SMTP commonly use?",
+            back: "Port 25.",
+          },
+          {
+            id: 21,
+            front: "What protocol is used for receiving email?",
+            back: "POP3 (Post Office Protocol) or IMAP (Internet Message Access Protocol).",
+          },
+          {
+            id: 22,
+            front: "Difference between POP3 and IMAP?",
+            back: "POP3 downloads and deletes from server; IMAP syncs with server.",
+          },
+          {
+            id: 23,
+            front: "What is MIME?",
+            back: "Multipurpose Internet Mail Extensions - extends email format to include attachments and non-text data.",
+          },
+          {
+            id: 24,
+            front: "What does FTP stand for?",
+            back: "File Transfer Protocol.",
+          },
+          {
+            id: 25,
+            front: "Purpose of FTP?",
+            back: "Transfer files between a client and server over a network.",
+          },
+          {
+            id: 26,
+            front: "Which ports are used by FTP?",
+            back: "Port 20 (data transfer) and Port 21 (control commands).",
+          },
+          {
+            id: 27,
+            front: "Difference between active and passive FTP?",
+            back: "Active FTP: server connects to client; Passive FTP: client connects to server.",
+          },
+          {
+            id: 28,
+            front: "What is an FTP client?",
+            back: "A program that connects to an FTP server to upload or download files.",
+          },
+          {
+            id: 29,
+            front: "What is anonymous FTP?",
+            back: "Allows users to log into an FTP server without a username or password.",
+          },
+          { id: 30, front: "Name a popular FTP client.", back: "FileZilla." },
+        ],
+      },
+      {
+        id: 3,
+        title: "Week 3",
+        key: "week-3",
+        cards: [
+          {
+            id: 1,
+            front: "What is the main purpose of the transport layer?",
+            back: "To provide reliable data transfer services to the upper layers.",
+          },
+          {
+            id: 2,
+            front: "Name two important protocols at the transport layer.",
+            back: "TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).",
+          },
+          {
+            id: 3,
+            front: "What is multiplexing in the transport layer?",
+            back: "Combining data from multiple applications into a single stream for transmission.",
+          },
+          {
+            id: 4,
+            front: "What is demultiplexing in the transport layer?",
+            back: "Delivering received data to the correct application process.",
+          },
+          {
+            id: 5,
+            front: "What is a socket?",
+            back: "An endpoint for sending or receiving data across a network.",
+          },
+          {
+            id: 6,
+            front: "What does TCP provide that UDP does not?",
+            back: "Reliable, connection-oriented data transmission.",
+          },
+          {
+            id: 7,
+            front: "Define connection establishment in TCP.",
+            back: "The process of creating a connection before data transfer using a three-way handshake.",
+          },
+          {
+            id: 8,
+            front: "What is the three-way handshake?",
+            back: "SYN, SYN-ACK, and ACK packets exchanged to establish a TCP connection.",
+          },
+          {
+            id: 9,
+            front: "What is connection termination in TCP?",
+            back: "Gracefully closing a connection using a four-step handshake (FIN, ACK).",
+          },
+          {
+            id: 10,
+            front: "What is flow control in TCP?",
+            back: "Mechanism to prevent sender from overwhelming the receiver.",
+          },
+          {
+            id: 11,
+            front: "How is flow control implemented in TCP?",
+            back: "Using a sliding window protocol.",
+          },
+          {
+            id: 12,
+            front: "What is congestion control?",
+            back: "Mechanism to prevent network congestion by adjusting the sending rate.",
+          },
+          {
+            id: 13,
+            front: "Define reliable data transfer.",
+            back: "Ensuring data is delivered accurately and in the correct sequence.",
+          },
+          {
+            id: 14,
+            front: "What is an acknowledgment (ACK)?",
+            back: "A signal sent to confirm the receipt of data.",
+          },
+          {
+            id: 15,
+            front: "What is a timeout in TCP?",
+            back: "A timer that triggers retransmission if acknowledgment is not received in time.",
+          },
+          {
+            id: 16,
+            front: "What is meant by retransmission?",
+            back: "Resending data packets that were lost or corrupted.",
+          },
+          {
+            id: 17,
+            front:
+              "What are the main types of errors handled in the transport layer?",
+            back: "Packet loss, packet duplication, packet corruption, and out-of-order delivery.",
+          },
+          {
+            id: 18,
+            front: "What is a sliding window protocol?",
+            back: "A flow control protocol where sender can send multiple frames before needing an acknowledgment.",
+          },
+          {
+            id: 19,
+            front: "What is Go-Back-N ARQ?",
+            back: "A sliding window protocol where sender resends all frames from a lost frame onwards.",
+          },
+          {
+            id: 20,
+            front: "What is Selective Repeat ARQ?",
+            back: "Only the lost or corrupted frames are retransmitted, not all frames after a lost one.",
+          },
+          {
+            id: 21,
+            front: "What is the window size in sliding window protocol?",
+            back: "The maximum number of frames that can be sent without waiting for acknowledgment.",
+          },
+          {
+            id: 22,
+            front: "What happens if the receiver's window size is full?",
+            back: "The sender must wait until the receiver acknowledges some frames.",
+          },
+          {
+            id: 23,
+            front: "Why is the sliding window protocol efficient?",
+            back: "It allows continuous transmission without waiting for an acknowledgment after each frame.",
+          },
+          {
+            id: 24,
+            front: "What causes retransmissions in Go-Back-N ARQ?",
+            back: "Loss or corruption of a frame.",
+          },
+          {
+            id: 25,
+            front: "What causes retransmissions in Selective Repeat ARQ?",
+            back: "Only specific lost or corrupted frames are retransmitted individually.",
+          },
+          {
+            id: 26,
+            front: "What is cumulative acknowledgment?",
+            back: "An acknowledgment that confirms receipt of all frames up to a certain point.",
+          },
+          {
+            id: 27,
+            front:
+              "Which is better for high-error networks, Go-Back-N or Selective Repeat?",
+            back: "Selective Repeat, as it minimizes retransmissions.",
+          },
+          {
+            id: 28,
+            front: "What is pipelining in TCP?",
+            back: "Sending multiple packets without waiting for individual acknowledgments.",
+          },
+          {
+            id: 29,
+            front: "What does TCP use for reliability?",
+            back: "Acknowledgments, sequence numbers, and retransmissions.",
+          },
+          {
+            id: 30,
+            front: "Why is connection management important?",
+            back: "To establish, maintain, and terminate communication sessions reliably.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Week 4",
+        key: "week-4",
+        cards: [
+          {
+            id: 1,
+            front: "What factors affect transport layer performance?",
+            back: "Delay, throughput, packet loss, and congestion.",
+          },
+          {
+            id: 2,
+            front: "What is throughput?",
+            back: "The rate at which data is successfully delivered over a network channel.",
+          },
+          {
+            id: 3,
+            front: "What is end-to-end delay?",
+            back: "Total time taken for a data packet to travel from sender to receiver.",
+          },
+          {
+            id: 4,
+            front: "What causes packet loss?",
+            back: "Network congestion, faulty hardware, or poor signal strength.",
+          },
+          {
+            id: 5,
+            front: "What is buffer management in transport layer?",
+            back: "Managing memory buffers where packets are stored during transmission or reception.",
+          },
+          {
+            id: 6,
+            front: "What happens when buffers overflow?",
+            back: "Packets are dropped, leading to data loss.",
+          },
+          {
+            id: 7,
+            front: "How can buffer management improve performance?",
+            back: "By optimizing memory usage and reducing packet loss.",
+          },
+          {
+            id: 8,
+            front: "What is congestion control?",
+            back: "Mechanism to avoid excessive load on the network.",
+          },
+          {
+            id: 9,
+            front: "Name two congestion control strategies.",
+            back: "Open-loop control and closed-loop control.",
+          },
+          {
+            id: 10,
+            front: "What is TCP slow start?",
+            back: "A congestion control algorithm that gradually increases the sending rate to avoid congestion.",
+          },
+          {
+            id: 11,
+            front: "What is congestion window (cwnd) in TCP?",
+            back: "A TCP state variable that limits the amount of data a sender can transmit.",
+          },
+          {
+            id: 12,
+            front: "What are primitives in transport layer?",
+            back: "Basic operations provided to application layers, such as CONNECT, LISTEN, SEND, RECEIVE, and DISCONNECT.",
+          },
+          {
+            id: 13,
+            front: "What is the CONNECT primitive?",
+            back: "It initiates a connection request to another host.",
+          },
+          {
+            id: 14,
+            front: "What is the LISTEN primitive?",
+            back: "It waits for incoming connection requests from clients.",
+          },
+          {
+            id: 15,
+            front: "What is the SEND primitive?",
+            back: "It sends data to a connected peer.",
+          },
+          {
+            id: 16,
+            front: "What is the RECEIVE primitive?",
+            back: "It receives data from a connected peer.",
+          },
+          {
+            id: 17,
+            front: "What is the DISCONNECT primitive?",
+            back: "It terminates a connection with a peer.",
+          },
+          {
+            id: 18,
+            front: "What is TCP?",
+            back: "Transmission Control Protocol, a reliable, connection-oriented transport layer protocol.",
+          },
+          {
+            id: 19,
+            front: "How does TCP ensure reliability?",
+            back: "Using sequence numbers, acknowledgments, and retransmissions.",
+          },
+          {
+            id: 20,
+            front: "What is the basic unit of data in TCP?",
+            back: "A segment.",
+          },
+          {
+            id: 21,
+            front: "What is a TCP connection identified by?",
+            back: "Source IP address, source port, destination IP address, and destination port.",
+          },
+          {
+            id: 22,
+            front: "What is the TCP three-way handshake?",
+            back: "A process involving SYN, SYN-ACK, and ACK to establish a connection.",
+          },
+          {
+            id: 23,
+            front: "What are the TCP flags?",
+            back: "SYN, ACK, FIN, RST, PSH, URG.",
+          },
+          {
+            id: 24,
+            front: "What does the SYN flag indicate?",
+            back: "Request to establish a connection.",
+          },
+          {
+            id: 25,
+            front: "What does the FIN flag indicate?",
+            back: "Request to terminate a connection.",
+          },
+          {
+            id: 26,
+            front: "What does the RST flag do?",
+            back: "Resets the TCP connection.",
+          },
+          {
+            id: 27,
+            front: "What is TCP flow control?",
+            back: "Managing the rate of data transmission between sender and receiver using the window size.",
+          },
+          {
+            id: 28,
+            front: "How is TCP connection closed?",
+            back: "By exchanging FIN and ACK packets.",
+          },
+          {
+            id: 29,
+            front: "What happens if a TCP segment is lost?",
+            back: "The sender retransmits the lost segment.",
+          },
+          {
+            id: 30,
+            front: "What does TCP use to detect segment loss?",
+            back: "Timeouts and duplicate acknowledgments.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Week 5",
+        key: "week-5",
+        cards: [
+          {
+            id: 1,
+            front: "What is TCP flow control?",
+            back: "Mechanism to prevent the sender from overwhelming the receiver's buffer.",
+          },
+          {
+            id: 2,
+            front: "Which field in TCP handles flow control?",
+            back: "The window size field in the TCP header.",
+          },
+          {
+            id: 3,
+            front: "What is advertised window?",
+            back: "It tells the sender how much data the receiver can accept.",
+          },
+          {
+            id: 4,
+            front: "What happens if the advertised window is 0?",
+            back: "The sender must stop sending until it becomes non-zero.",
+          },
+          {
+            id: 5,
+            front: "Name a TCP flow control mechanism.",
+            back: "Sliding Window Protocol.",
+          },
+          {
+            id: 6,
+            front: "What is TCP congestion control?",
+            back: "Technique to prevent too much data from overwhelming the network.",
+          },
+          {
+            id: 7,
+            front: "Name four TCP congestion control phases.",
+            back: "Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery.",
+          },
+          {
+            id: 8,
+            front: "What is the purpose of Slow Start in TCP?",
+            back: "To gradually increase the congestion window to find network capacity.",
+          },
+          {
+            id: 9,
+            front: "When does TCP enter congestion avoidance?",
+            back: "When congestion window reaches a threshold value.",
+          },
+          {
+            id: 10,
+            front: "What happens during TCP Fast Retransmit?",
+            back: "Sender retransmits a segment without waiting for a timeout after receiving three duplicate ACKs.",
+          },
+          {
+            id: 11,
+            front: "What happens in TCP Fast Recovery?",
+            back: "Sender reduces the congestion window and avoids slow start.",
+          },
+          {
+            id: 12,
+            front: "What is User Datagram Protocol (UDP)?",
+            back: "A connectionless, lightweight transport layer protocol.",
+          },
+          {
+            id: 13,
+            front: "Is UDP reliable?",
+            back: "No, it does not guarantee delivery, order, or duplicate protection.",
+          },
+          {
+            id: 14,
+            front: "Name some applications using UDP.",
+            back: "DNS, video streaming, VoIP.",
+          },
+          {
+            id: 15,
+            front: "What is a UDP segment called?",
+            back: "A datagram.",
+          },
+          {
+            id: 16,
+            front: "What fields are present in the UDP header?",
+            back: "Source port, destination port, length, and checksum.",
+          },
+          {
+            id: 17,
+            front: "What is socket programming?",
+            back: "Way of connecting two nodes on a network to communicate.",
+          },
+          {
+            id: 18,
+            front: "Which two endpoints are required for socket communication?",
+            back: "IP address and port number.",
+          },
+          {
+            id: 19,
+            front: "Which libraries are used for socket programming in C?",
+            back: "sys/socket.h, netinet/in.h, arpa/inet.h.",
+          },
+          {
+            id: 20,
+            front: "What function is used to create a socket?",
+            back: "socket()",
+          },
+          {
+            id: 21,
+            front: "Which function binds a socket to an address?",
+            back: "bind()",
+          },
+          {
+            id: 22,
+            front: "Which function listens for incoming connections?",
+            back: "listen()",
+          },
+          {
+            id: 23,
+            front: "Which function accepts incoming connection requests?",
+            back: "accept()",
+          },
+          {
+            id: 24,
+            front: "What function sends data through a socket?",
+            back: "send()",
+          },
+          {
+            id: 25,
+            front: "What function receives data from a socket?",
+            back: "recv()",
+          },
+          {
+            id: 26,
+            front: "What is the role of connect() function?",
+            back: "It establishes a connection to a server from a client.",
+          },
+          {
+            id: 27,
+            front: "What is the purpose of close() in socket programming?",
+            back: "To release the socket resource after communication ends.",
+          },
+          {
+            id: 28,
+            front: "What is blocking in socket programming?",
+            back: "The function waits until it completes its operation, e.g., recv() waits until data arrives.",
+          },
+          {
+            id: 29,
+            front: "What is a non-blocking socket?",
+            back: "The socket returns immediately if no operation can be performed.",
+          },
+          {
+            id: 30,
+            front: "What is TCP socket programming used for?",
+            back: "Building reliable, connection-oriented applications like web servers and chat apps.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Week 6",
+        key: "week-6",
+        cards: [
+          {
+            id: 1,
+            front: "What is the main function of the network layer?",
+            back: "To move packets from the source to the destination across multiple networks.",
+          },
+          {
+            id: 2,
+            front: "Name a key responsibility of the network layer.",
+            back: "Routing and addressing.",
+          },
+          {
+            id: 3,
+            front: "What are two main types of network services?",
+            back: "Connectionless and connection-oriented services.",
+          },
+          {
+            id: 4,
+            front: "What is IP addressing?",
+            back: "Assigning unique addresses to devices on a network for identification and communication.",
+          },
+          {
+            id: 5,
+            front: "What is classful addressing?",
+            back: "An IP addressing method where IP addresses are divided into five classes (A, B, C, D, E).",
+          },
+          {
+            id: 6,
+            front: "What is the range of Class A IP addresses?",
+            back: "0.0.0.0 to 127.255.255.255.",
+          },
+          {
+            id: 7,
+            front: "What is the default subnet mask for Class B?",
+            back: "255.255.0.0",
+          },
+          {
+            id: 8,
+            front: "What is the purpose of Class D addresses?",
+            back: "Used for multicasting.",
+          },
+          {
+            id: 9,
+            front: "What is CIDR?",
+            back: "Classless Inter-Domain Routing, a method for allocating IP addresses and IP routing.",
+          },
+          {
+            id: 10,
+            front: "What notation does CIDR use?",
+            back: "Slash notation (e.g., 192.168.1.0/24).",
+          },
+          {
+            id: 11,
+            front: "How does CIDR improve IP address allocation?",
+            back: "By allowing more efficient and flexible address distribution.",
+          },
+          {
+            id: 12,
+            front: "What is NAT?",
+            back: "Network Address Translation, a technique that translates private IP addresses to a public IP address.",
+          },
+          {
+            id: 13,
+            front: "Why is NAT important?",
+            back: "It conserves the number of public IP addresses and adds a layer of security.",
+          },
+          {
+            id: 14,
+            front: "What are the types of NAT?",
+            back: "Static NAT, Dynamic NAT, and PAT (Port Address Translation).",
+          },
+          {
+            id: 15,
+            front: "What is Static NAT?",
+            back: "One-to-one mapping between local and global addresses.",
+          },
+          {
+            id: 16,
+            front: "What is Dynamic NAT?",
+            back: "Maps a local IP address to any available global IP address from a pool.",
+          },
+          {
+            id: 17,
+            front: "What is PAT?",
+            back: "Port Address Translation allows multiple devices on a LAN to be mapped to a single public IP address but with different port numbers.",
+          },
+          {
+            id: 18,
+            front: "What is IPv6?",
+            back: "Internet Protocol version 6, the successor to IPv4, designed to address IP address exhaustion.",
+          },
+          {
+            id: 19,
+            front: "What is the size of an IPv6 address?",
+            back: "128 bits.",
+          },
+          {
+            id: 20,
+            front: "How are IPv6 addresses represented?",
+            back: "Hexadecimal notation separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).",
+          },
+          {
+            id: 21,
+            front: "What is the main advantage of IPv6 over IPv4?",
+            back: "Larger address space and improved routing efficiency.",
+          },
+          {
+            id: 22,
+            front: "What is Stateless Address Autoconfiguration (SLAAC)?",
+            back: "A method in IPv6 that allows devices to configure themselves automatically.",
+          },
+          {
+            id: 23,
+            front: "What are IPv6 header improvements over IPv4?",
+            back: "Simplified header structure with fewer fields.",
+          },
+          { id: 24, front: "What is an IPv6 loopback address?", back: "::1" },
+          {
+            id: 25,
+            front: "What is an IPv6 link-local address?",
+            back: "An address used for communication within a single network segment.",
+          },
+          {
+            id: 26,
+            front: "What is the prefix for IPv6 multicast addresses?",
+            back: "FF00::/8",
+          },
+          {
+            id: 27,
+            front: "Can IPv6 and IPv4 coexist?",
+            back: "Yes, using techniques like Dual Stack, Tunneling, and Translation.",
+          },
+          {
+            id: 28,
+            front: "What is Dual Stack?",
+            back: "Running both IPv4 and IPv6 protocols on a device simultaneously.",
+          },
+          {
+            id: 29,
+            front: "What is Tunneling in IPv6?",
+            back: "Encapsulating IPv6 packets inside IPv4 packets for transmission over IPv4 networks.",
+          },
+          {
+            id: 30,
+            front: "What is NAT64?",
+            back: "A method for translating IPv6 packets to IPv4 packets and vice versa.",
+          },
+        ],
+      },
+      {
+        id: 7,
+        title: "Week 7",
+        key: "week-7",
+        cards: [
+          {
+            id: 1,
+            front: "What does QoS stand for?",
+            back: "Quality of Service.",
+          },
+          {
+            id: 2,
+            front: "What is the purpose of QoS in networking?",
+            back: "To guarantee certain levels of performance to data flows.",
+          },
+          {
+            id: 3,
+            front: "Name three common metrics used to measure QoS.",
+            back: "Bandwidth, delay (latency), and packet loss.",
+          },
+          {
+            id: 4,
+            front: "Why is QoS important for real-time applications?",
+            back: "Because applications like VoIP and video streaming need low latency and minimal packet loss.",
+          },
+          {
+            id: 5,
+            front: "What is the Basic QoS Architecture?",
+            back: "A structure that supports traffic classification, marking, policing, shaping, and scheduling.",
+          },
+          {
+            id: 6,
+            front: "What is traffic classification in QoS?",
+            back: "Identifying and categorizing packets based on parameters like source address, destination address, and port numbers.",
+          },
+          {
+            id: 7,
+            front: "What is traffic policing?",
+            back: "The process of monitoring traffic flows and dropping or remarking packets that exceed a traffic profile.",
+          },
+          {
+            id: 8,
+            front: "What is traffic shaping?",
+            back: "Regulating the data flow rate to ensure a smooth traffic pattern that conforms to a traffic profile.",
+          },
+          {
+            id: 9,
+            front: "What is the difference between policing and shaping?",
+            back: "Policing drops excess packets, shaping delays them to conform to traffic rates.",
+          },
+          {
+            id: 10,
+            front: "What is traffic scheduling?",
+            back: "Determining the order in which packets are transmitted to manage congestion and meet QoS requirements.",
+          },
+          {
+            id: 11,
+            front: "Name some common traffic scheduling algorithms.",
+            back: "FIFO, Priority Queuing, Weighted Fair Queuing (WFQ).",
+          },
+          {
+            id: 12,
+            front: "What is FIFO scheduling?",
+            back: "First In First Out, where packets are processed in the order they arrive.",
+          },
+          {
+            id: 13,
+            front: "What is Priority Queuing?",
+            back: "Packets are categorized into priority classes, and higher-priority traffic is sent first.",
+          },
+          {
+            id: 14,
+            front: "What is Weighted Fair Queuing (WFQ)?",
+            back: "A scheduling algorithm that provides fair bandwidth distribution based on weights assigned to different flows.",
+          },
+          {
+            id: 15,
+            front: "What is the Integrated Services (IntServ) architecture?",
+            back: "A QoS architecture that provides end-to-end guarantees by reserving resources along the data path.",
+          },
+          {
+            id: 16,
+            front: "What protocol is used in IntServ to reserve resources?",
+            back: "RSVP (Resource Reservation Protocol).",
+          },
+          {
+            id: 17,
+            front:
+              "What is the Differentiated Services (DiffServ) architecture?",
+            back: "A scalable QoS architecture that classifies and manages network traffic and provides different levels of service.",
+          },
+          {
+            id: 18,
+            front: "What is a key component of DiffServ?",
+            back: "Differentiated Services Code Point (DSCP) in IP headers.",
+          },
+          {
+            id: 19,
+            front: "How does DiffServ differ from IntServ?",
+            back: "DiffServ provides QoS by classifying traffic at the network edge and does not require resource reservation per flow.",
+          },
+          {
+            id: 20,
+            front: "What is traffic marking?",
+            back: "Assigning QoS markings to packets for differentiated treatment across the network.",
+          },
+          {
+            id: 21,
+            front: "What does RSVP stand for?",
+            back: "Resource Reservation Protocol.",
+          },
+          {
+            id: 22,
+            front: "Which architecture (IntServ or DiffServ) is more scalable?",
+            back: "DiffServ is more scalable.",
+          },
+          {
+            id: 23,
+            front: "What role does the network core play in DiffServ?",
+            back: "The network core forwards packets based on their QoS markings without maintaining per-flow state.",
+          },
+          {
+            id: 24,
+            front: "What is the primary challenge of IntServ?",
+            back: "Scalability due to maintaining state information for each flow in routers.",
+          },
+          {
+            id: 25,
+            front: "Which architecture uses per-hop behavior (PHB)?",
+            back: "DiffServ.",
+          },
+          {
+            id: 26,
+            front: "What is Per-Hop Behavior (PHB)?",
+            back: "A description of the treatment that packets receive at each network node under DiffServ.",
+          },
+          {
+            id: 27,
+            front: "What happens when traffic exceeds its profile in policing?",
+            back: "Packets may be dropped or remarked to a lower priority.",
+          },
+          {
+            id: 28,
+            front: "What is a traffic profile?",
+            back: "A set of rules defining acceptable traffic patterns (rate, burst size, etc.).",
+          },
+          {
+            id: 29,
+            front: "What is congestion in a network?",
+            back: "A situation where demand for network resources exceeds capacity, causing packet loss and delays.",
+          },
+          {
+            id: 30,
+            front: "What is the goal of congestion control mechanisms in QoS?",
+            back: "To prevent and manage congestion to maintain service quality.",
+          },
+        ],
+      },
+      {
+        id: 8,
+        title: "Week 8",
+        key: "week-8",
+        cards: [
+          {
+            id: 1,
+            front: "What is QoS (Quality of Service)?",
+            back: "QoS refers to the ability of a network to provide better service to selected network traffic.",
+          },
+          {
+            id: 2,
+            front: "Why is QoS important?",
+            back: "QoS ensures the performance of critical applications, prioritizes traffic, and manages bandwidth.",
+          },
+          {
+            id: 3,
+            front: "What are key QoS parameters?",
+            back: "Bandwidth, latency, jitter, and packet loss.",
+          },
+          {
+            id: 4,
+            front: "What is latency?",
+            back: "The time it takes for a data packet to travel from the source to the destination.",
+          },
+          {
+            id: 5,
+            front: "What is jitter?",
+            back: "The variation in packet arrival time.",
+          },
+          {
+            id: 6,
+            front: "What is the Basic QoS Architecture?",
+            back: "It involves classifying traffic, marking packets, queuing, and scheduling.",
+          },
+          {
+            id: 7,
+            front: "What are the key functions in Basic QoS Architecture?",
+            back: "Classification, policing, shaping, scheduling, and dropping.",
+          },
+          {
+            id: 8,
+            front: "What is traffic classification?",
+            back: "Identifying and grouping packets based on specific criteria such as application or user.",
+          },
+          {
+            id: 9,
+            front: "What is traffic policing?",
+            back: "Monitoring the traffic rate and dropping or marking packets that exceed the limit.",
+          },
+          {
+            id: 10,
+            front: "What is traffic shaping?",
+            back: "Delaying excess packets to smooth traffic bursts.",
+          },
+          {
+            id: 11,
+            front: "What is the main difference between policing and shaping?",
+            back: "Policing drops or marks packets; shaping delays them.",
+          },
+          {
+            id: 12,
+            front: "What is traffic scheduling?",
+            back: "Deciding the order in which packets are transmitted.",
+          },
+          {
+            id: 13,
+            front: "Name a few traffic scheduling techniques.",
+            back: "FIFO, Priority Queuing (PQ), Weighted Fair Queuing (WFQ).",
+          },
+          {
+            id: 14,
+            front: "What is FIFO scheduling?",
+            back: "First In, First Out - packets are transmitted in the order they arrive.",
+          },
+          {
+            id: 15,
+            front: "What is Priority Queuing (PQ)?",
+            back: "Packets are assigned to queues based on priority and served accordingly.",
+          },
+          {
+            id: 16,
+            front: "What is Weighted Fair Queuing (WFQ)?",
+            back: "Queues are served fairly based on assigned weights.",
+          },
+          {
+            id: 17,
+            front: "What is Integrated Services (IntServ)?",
+            back: "A QoS model that reserves resources for individual flows.",
+          },
+          {
+            id: 18,
+            front: "What protocol is used in IntServ for resource reservation?",
+            back: "RSVP (Resource Reservation Protocol).",
+          },
+          {
+            id: 19,
+            front: "What is Differentiated Services (DiffServ)?",
+            back: "A scalable QoS model that classifies and manages traffic in aggregates.",
+          },
+          {
+            id: 20,
+            front: "What does DiffServ use to classify packets?",
+            back: "DSCP (Differentiated Services Code Point) field in the IP header.",
+          },
+          {
+            id: 21,
+            front: "What is the main advantage of DiffServ over IntServ?",
+            back: "DiffServ is more scalable for large networks.",
+          },
+          {
+            id: 22,
+            front: "What is a Traffic Conditioner?",
+            back: "A function in DiffServ that performs traffic metering, marking, policing, and shaping.",
+          },
+          {
+            id: 23,
+            front: "What is the role of the Per-Hop Behavior (PHB)?",
+            back: "Defines how packets are treated at each network node in DiffServ.",
+          },
+          {
+            id: 24,
+            front: "Name an example of a PHB.",
+            back: "Expedited Forwarding (EF) for low-loss, low-latency traffic.",
+          },
+          {
+            id: 25,
+            front: "What is Best Effort service in QoS?",
+            back: "No guarantees for packet delivery, delay, or loss.",
+          },
+          {
+            id: 26,
+            front: "Which QoS model requires end-to-end reservation?",
+            back: "Integrated Services (IntServ).",
+          },
+          {
+            id: 27,
+            front:
+              "Which QoS model uses aggregate classification and is scalable?",
+            back: "Differentiated Services (DiffServ).",
+          },
+          {
+            id: 28,
+            front: "How does RSVP work?",
+            back: "It reserves resources across a network for a data flow by communicating with routers.",
+          },
+          {
+            id: 29,
+            front: "What does DSCP stand for?",
+            back: "Differentiated Services Code Point.",
+          },
+          {
+            id: 30,
+            front: "What is the goal of QoS in networking?",
+            back: "To provide predictable and measurable network service to applications and users.",
+          },
+        ],
+      },
+      {
+        id: 9,
+        title: "Week 9",
+        key: "week-9",
+        cards: [
+          {
+            id: 1,
+            front: "What is an IP Router?",
+            back: "An IP Router forwards packets between different networks based on IP addresses.",
+          },
+          {
+            id: 2,
+            front: "What is the primary function of a router?",
+            back: "To determine the best path for forwarding packets to their destination.",
+          },
+          {
+            id: 3,
+            front: "What information is stored in a router's routing table?",
+            back: "Network destinations, next-hop addresses, and associated metrics.",
+          },
+          {
+            id: 4,
+            front: "What is IP forwarding?",
+            back: "The process of sending a packet from one network to another through routers.",
+          },
+          {
+            id: 5,
+            front: "Name common routing protocols.",
+            back: "RIP, OSPF, BGP.",
+          },
+          {
+            id: 6,
+            front: "What is static routing?",
+            back: "Routing that is manually configured and doesn't change automatically.",
+          },
+          {
+            id: 7,
+            front: "What is dynamic routing?",
+            back: "Routing that automatically adjusts based on network topology changes.",
+          },
+          {
+            id: 8,
+            front: "What is shown in an IP Router Demo?",
+            back: "Configuration of interfaces, setting up static routes, and observing packet forwarding.",
+          },
+          {
+            id: 9,
+            front: "What is Software Defined Networking (SDN)?",
+            back: "An approach to networking that separates the control plane from the data plane.",
+          },
+          {
+            id: 10,
+            front: "What are the two planes in SDN?",
+            back: "Control plane and data (forwarding) plane.",
+          },
+          {
+            id: 11,
+            front: "What is the main advantage of SDN?",
+            back: "Centralized control and programmability of the network.",
+          },
+          {
+            id: 12,
+            front: "What is a controller in SDN?",
+            back: "A software application that manages the flow control to switches/routers.",
+          },
+          {
+            id: 13,
+            front: "What is OpenFlow?",
+            back: "A communication protocol that allows the controller to interact with the forwarding plane of switches and routers.",
+          },
+          {
+            id: 14,
+            front: "Which organization originally developed OpenFlow?",
+            back: "Stanford University.",
+          },
+          {
+            id: 15,
+            front: "What does an OpenFlow switch consist of?",
+            back: "A flow table that tells how to process incoming packets.",
+          },
+          {
+            id: 16,
+            front: "What is a Flow Entry in OpenFlow?",
+            back: "A rule defining how packets matching specific criteria should be handled.",
+          },
+          {
+            id: 17,
+            front: "What is the purpose of flow tables?",
+            back: "To match incoming packets against a set of rules and determine actions.",
+          },
+          {
+            id: 18,
+            front: "What is the role of an OpenFlow Controller?",
+            back: "To update flow tables in switches dynamically based on network policies.",
+          },
+          {
+            id: 19,
+            front: "Name an example of an SDN controller.",
+            back: "OpenDaylight, ONOS, Ryu.",
+          },
+          {
+            id: 20,
+            front: "What is shown in an SDN Demo?",
+            back: "How a controller dynamically programs a switch and manages network flows.",
+          },
+          {
+            id: 21,
+            front: "How does SDN improve network management?",
+            back: "By simplifying configuration, monitoring, and automation of network resources.",
+          },
+          {
+            id: 22,
+            front: "What is northbound API in SDN?",
+            back: "Interface between the controller and applications.",
+          },
+          {
+            id: 23,
+            front: "What is southbound API in SDN?",
+            back: "Interface between the controller and networking devices (e.g., switches).",
+          },
+          {
+            id: 24,
+            front: "What challenges does SDN solve?",
+            back: "Complexity, lack of flexibility, and static nature of traditional networks.",
+          },
+          {
+            id: 25,
+            front: "What are the key components of SDN architecture?",
+            back: "Application Layer, Control Layer, and Infrastructure Layer.",
+          },
+          {
+            id: 26,
+            front: "How does SDN support network virtualization?",
+            back: "By abstracting the physical network and enabling multiple virtual networks.",
+          },
+          {
+            id: 27,
+            front: "What is flow-based forwarding?",
+            back: "Routing based on defined flows instead of destination IP only.",
+          },
+          {
+            id: 28,
+            front: "What is the benefit of OpenFlow in SDN?",
+            back: "Enables direct programming of the network path for packets.",
+          },
+          {
+            id: 29,
+            front: "What is centralized control in SDN?",
+            back: "Network intelligence is moved to a central controller rather than being distributed.",
+          },
+          {
+            id: 30,
+            front: "What is programmability in networking?",
+            back: "The ability to configure and manage networks using software dynamically.",
+          },
+        ],
+      },
+      {
+        id: 10,
+        title: "Week 10",
+        key: "week-10",
+        cards: [
+          {
+            id: 1,
+            front: "What is the primary role of an IP Router?",
+            back: "To forward packets between different networks based on their IP address.",
+          },
+          {
+            id: 2,
+            front: "What information does an IP Router use to forward packets?",
+            back: "It uses the routing table to determine the best path for packet forwarding.",
+          },
+          {
+            id: 3,
+            front: "What is a routing table?",
+            back: "A data table stored in a router that lists the routes to particular network destinations.",
+          },
+          {
+            id: 4,
+            front: "What is the purpose of the IP Router Demo?",
+            back: "To demonstrate how packets are processed and forwarded in real time.",
+          },
+          {
+            id: 5,
+            front: "What key components are observed in an IP Router Demo?",
+            back: "Packet reception, route lookup, packet forwarding, and interface selection.",
+          },
+          {
+            id: 6,
+            front: "What is Software Defined Networking (SDN)?",
+            back: "An approach to networking that uses software-based controllers to direct network traffic.",
+          },
+          {
+            id: 7,
+            front: "What are the basic concepts of SDN?",
+            back: "Separation of the control plane and data plane, centralized control, and programmability.",
+          },
+          {
+            id: 8,
+            front: "What are the main components of SDN architecture?",
+            back: "Application layer, control layer, and infrastructure layer.",
+          },
+          {
+            id: 9,
+            front: "What is the control plane in SDN?",
+            back: "The component that makes decisions about where traffic is sent.",
+          },
+          {
+            id: 10,
+            front: "What is the data plane in SDN?",
+            back: "The component that actually forwards traffic according to the control plane decisions.",
+          },
+          {
+            id: 11,
+            front: "What protocol is most commonly associated with SDN?",
+            back: "OpenFlow.",
+          },
+          {
+            id: 12,
+            front: "What is OpenFlow?",
+            back: "A protocol that allows the controller to interact with the forwarding plane of network devices.",
+          },
+          {
+            id: 13,
+            front: "How does OpenFlow enable SDN?",
+            back: "By allowing direct access and manipulation of the forwarding plane of network switches and routers.",
+          },
+          {
+            id: 14,
+            front: "What are Flow Tables in OpenFlow?",
+            back: "Tables in switches that match incoming packets to actions determined by the controller.",
+          },
+          {
+            id: 15,
+            front: "What is a Controller in OpenFlow?",
+            back: "A centralized software that manages the flow control to the network devices.",
+          },
+          {
+            id: 16,
+            front: "What is the benefit of centralized control in SDN?",
+            back: "Simplified management and faster innovation by programming the network behavior.",
+          },
+          {
+            id: 17,
+            front: "What is SDN's impact on network management?",
+            back: "It makes networks more agile, flexible, and efficient.",
+          },
+          {
+            id: 18,
+            front: "What was demonstrated in the SDN Demo?",
+            back: "The real-time control and reprogramming of network traffic flows using SDN controllers.",
+          },
+          {
+            id: 19,
+            front: "What tools are commonly used for SDN demos?",
+            back: "Mininet, Open vSwitch (OVS), and SDN controllers like ONOS or OpenDaylight.",
+          },
+          {
+            id: 20,
+            front: "How does SDN enhance network security?",
+            back: "By enabling dynamic and programmable responses to network threats.",
+          },
+          {
+            id: 21,
+            front: "Name a popular open-source SDN controller.",
+            back: "ONOS (Open Network Operating System).",
+          },
+          {
+            id: 22,
+            front:
+              "What is the main advantage of SDN over traditional networking?",
+            back: "Centralized control and flexibility in managing network resources.",
+          },
+          {
+            id: 23,
+            front: "What is network programmability in SDN?",
+            back: "The ability to configure, manage, and optimize network resources using software.",
+          },
+          {
+            id: 24,
+            front: "What does Mininet simulate?",
+            back: "A realistic virtual network for SDN experimentation.",
+          },
+          {
+            id: 25,
+            front: "Why is OpenFlow important in SDN?",
+            back: "It standardizes communication between the control and data planes.",
+          },
+          {
+            id: 26,
+            front: "What is flow matching in OpenFlow?",
+            back: "The process of matching incoming packets to flow rules defined by the controller.",
+          },
+          {
+            id: 27,
+            front:
+              "What are the types of actions a switch can perform according to OpenFlow?",
+            back: "Forward, drop, modify header, or send to controller.",
+          },
+          {
+            id: 28,
+            front: "What is southbound API in SDN?",
+            back: "Interfaces between the control plane and data plane (e.g., OpenFlow).",
+          },
+          {
+            id: 29,
+            front: "What is northbound API in SDN?",
+            back: "Interfaces between the control plane and applications for easier network programming.",
+          },
+          {
+            id: 30,
+            front: "How does SDN support rapid innovation?",
+            back: "By allowing new network services to be developed quickly without changing hardware.",
+          },
+        ],
+      },
+      {
+        id: 11,
+        title: "Week 11",
+        key: "week-11",
+        cards: [
+          {
+            id: 1,
+            front: "What does ARP stand for?",
+            back: "Address Resolution Protocol.",
+          },
+          {
+            id: 2,
+            front: "What is the main function of ARP?",
+            back: "To map an IP address to a MAC address.",
+          },
+          {
+            id: 3,
+            front: "What does RARP stand for?",
+            back: "Reverse Address Resolution Protocol.",
+          },
+          {
+            id: 4,
+            front: "What is the main function of RARP?",
+            back: "To map a MAC address to an IP address.",
+          },
+          {
+            id: 5,
+            front: "What does BOOTP stand for?",
+            back: "Bootstrap Protocol.",
+          },
+          {
+            id: 6,
+            front: "What is the function of BOOTP?",
+            back: "To assign IP addresses to devices on a network.",
+          },
+          {
+            id: 7,
+            front: "What does DHCP stand for?",
+            back: "Dynamic Host Configuration Protocol.",
+          },
+          {
+            id: 8,
+            front: "What is the role of DHCP?",
+            back: "To automatically assign IP addresses and other network configuration to devices.",
+          },
+          {
+            id: 9,
+            front: "How does DHCP work?",
+            back: "It uses a client-server model to allocate IP addresses to devices on a network.",
+          },
+          {
+            id: 10,
+            front: "What is the difference between ARP and RARP?",
+            back: "ARP maps IP to MAC, while RARP maps MAC to IP.",
+          },
+          {
+            id: 11,
+            front: "What is the purpose of the ARP table?",
+            back: "It stores mappings between IP addresses and MAC addresses.",
+          },
+          {
+            id: 12,
+            front: "How does BOOTP differ from DHCP?",
+            back: "BOOTP is a more basic protocol, while DHCP offers more features like dynamic IP address allocation.",
+          },
+          {
+            id: 13,
+            front: "What is a VLAN?",
+            back: "A Virtual Local Area Network, which partitions a physical network into multiple logical networks.",
+          },
+          {
+            id: 14,
+            front: "What is the advantage of using VLANs?",
+            back: "VLANs improve network management, security, and efficiency by segmenting traffic.",
+          },
+          {
+            id: 15,
+            front: "How does VLAN improve network security?",
+            back: "By isolating broadcast domains, preventing unauthorized access between segments.",
+          },
+          {
+            id: 16,
+            front: "What is the role of a VLAN tag?",
+            back: "To identify which VLAN a packet belongs to in a network.",
+          },
+          {
+            id: 17,
+            front:
+              "What is the difference between a Layer 2 switch and a Layer 3 switch?",
+            back: "Layer 2 switches handle MAC addresses, while Layer 3 switches perform routing based on IP addresses.",
+          },
+          {
+            id: 18,
+            front: "What is a trunk port in VLANs?",
+            back: "A port that carries traffic for multiple VLANs between switches.",
+          },
+          {
+            id: 19,
+            front: "What is the function of a router in VLANs?",
+            back: "A router allows communication between different VLANs.",
+          },
+          {
+            id: 20,
+            front: "What is the purpose of the DHCP Discover message?",
+            back: "To request an IP address from a DHCP server.",
+          },
+          {
+            id: 21,
+            front: "What is the purpose of the DHCP Offer message?",
+            back: "To respond to the DHCP Discover message with an available IP address.",
+          },
+          {
+            id: 22,
+            front: "What is the purpose of DHCP Request and DHCP Acknowledge?",
+            back: "The client sends a DHCP Request to accept the offered IP, and the server acknowledges with DHCP Acknowledge.",
+          },
+          {
+            id: 23,
+            front: "How do VLANs affect broadcast traffic?",
+            back: "VLANs limit the scope of broadcast traffic to within the VLAN, preventing unnecessary traffic on other segments.",
+          },
+          {
+            id: 24,
+            front: "What is the main purpose of wireless LANs?",
+            back: "To provide network access over a wide area without using cables, typically through Wi-Fi.",
+          },
+          {
+            id: 25,
+            front: "What are the two main components of a wireless LAN?",
+            back: "Access Points (APs) and client devices.",
+          },
+          {
+            id: 26,
+            front:
+              "What is the role of an Access Point (AP) in a wireless LAN?",
+            back: "To provide wireless connectivity to devices and act as a bridge between the wireless network and the wired network.",
+          },
+          {
+            id: 27,
+            front:
+              "What security protocols are commonly used in wireless LANs?",
+            back: "WEP, WPA, WPA2, and WPA3.",
+          },
+          {
+            id: 28,
+            front: "What is the purpose of SSID in a wireless LAN?",
+            back: "The SSID (Service Set Identifier) is used to identify and distinguish one wireless network from another.",
+          },
+          {
+            id: 29,
+            front:
+              "What is the difference between a closed and an open wireless network?",
+            back: "A closed network requires authentication to join, while an open network does not.",
+          },
+          {
+            id: 30,
+            front: "What are the typical challenges of managing wireless LANs?",
+            back: "Interference, security concerns, bandwidth limitations, and device compatibility.",
+          },
+        ],
+      },
+      {
+        id: 12,
+        title: "Week 12",
+        key: "week-12",
+        cards: [
+          {
+            id: 1,
+            front: "What is the role of the Physical Layer?",
+            back: "The Physical Layer is responsible for transmitting raw bits over a physical medium.",
+          },
+          {
+            id: 2,
+            front:
+              "What are some examples of physical media used in the Physical Layer?",
+            back: "Copper cables, fiber optics, and wireless signals.",
+          },
+          {
+            id: 3,
+            front: "What are the two main functions of the Physical Layer?",
+            back: "Bit transmission and the definition of electrical and mechanical specifications for the transmission medium.",
+          },
+          {
+            id: 4,
+            front: "What is a protocol at the Physical Layer?",
+            back: "It defines how data is transmitted over physical media, including voltage levels, timing, and pinouts.",
+          },
+          {
+            id: 5,
+            front: "What is data encoding?",
+            back: "Data encoding is the process of converting data into a format suitable for transmission on a communication medium.",
+          },
+          {
+            id: 6,
+            front: "What are the different types of encoding techniques?",
+            back: "Manchester encoding, NRZ encoding, and 4B/5B encoding.",
+          },
+          {
+            id: 7,
+            front:
+              "What is the function of the Physical Layer in relation to the Data Link Layer?",
+            back: "The Physical Layer provides the means to transmit data over a medium, while the Data Link Layer handles error detection and correction.",
+          },
+          {
+            id: 8,
+            front: "What is a transceiver?",
+            back: "A transceiver is a device that both transmits and receives signals.",
+          },
+          {
+            id: 9,
+            front: "What is multiplexing?",
+            back: "Multiplexing is the technique of combining multiple signals into one transmission medium to optimize the use of the medium.",
+          },
+          {
+            id: 10,
+            front:
+              "What is the difference between analog and digital transmission?",
+            back: "Analog transmission involves continuous signals, while digital transmission involves discrete signals.",
+          },
+          {
+            id: 11,
+            front:
+              "What is the significance of the Physical Layer in network security?",
+            back: "The Physical Layer can be vulnerable to interception and physical tampering, affecting overall security.",
+          },
+          {
+            id: 12,
+            front: "What is attenuation in the Physical Layer?",
+            back: "Attenuation refers to the loss of signal strength as the signal travels over a medium.",
+          },
+          {
+            id: 13,
+            front: "What is the purpose of the Network Security Layer?",
+            back: "The Network Security Layer protects data integrity, confidentiality, and availability during communication over a network.",
+          },
+          {
+            id: 14,
+            front: "What are some common threats to network security?",
+            back: "Unauthorized access, data breaches, DoS attacks, and malware.",
+          },
+          {
+            id: 15,
+            front: "What is the concept of a firewall in network security?",
+            back: "A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+          },
+          {
+            id: 16,
+            front: "What is the purpose of encryption in network security?",
+            back: "Encryption ensures that data transmitted over a network remains confidential and cannot be read by unauthorized parties.",
+          },
+          {
+            id: 17,
+            front:
+              "What is the function of an Intrusion Detection System (IDS)?",
+            back: "An IDS monitors network traffic for suspicious activity and potential security breaches.",
+          },
+          {
+            id: 18,
+            front: "What is a Denial of Service (DoS) attack?",
+            back: "A DoS attack attempts to make a network resource unavailable to its intended users by overwhelming it with traffic.",
+          },
+          {
+            id: 19,
+            front: "What are TCP/IP security mechanisms?",
+            back: "TCP/IP security mechanisms include encryption, authentication, firewalls, and intrusion detection systems.",
+          },
+          {
+            id: 20,
+            front: "What is IPsec?",
+            back: "IPsec (Internet Protocol Security) is a suite of protocols used to secure Internet Protocol communications by authenticating and encrypting each IP packet.",
+          },
+          {
+            id: 21,
+            front: "What are the different modes of IPsec?",
+            back: "Transport mode and Tunnel mode.",
+          },
+          {
+            id: 22,
+            front: "What is the role of the Network Layer in network security?",
+            back: "The Network Layer provides mechanisms like routing, addressing, and forwarding, which must be secured to ensure safe communication.",
+          },
+          {
+            id: 23,
+            front: "What is the importance of SSL/TLS in network security?",
+            back: "SSL/TLS provides secure communication channels over networks by encrypting data between clients and servers.",
+          },
+          {
+            id: 24,
+            front: "What are common types of network security protocols?",
+            back: "SSL/TLS, IPsec, SSH, and Kerberos.",
+          },
+          {
+            id: 25,
+            front:
+              "What is the difference between a public and private key in cryptography?",
+            back: "A public key is shared with others for encryption, while a private key is kept secret for decryption.",
+          },
+          {
+            id: 26,
+            front:
+              "What is the role of the Transport Layer in network security?",
+            back: "The Transport Layer ensures data integrity and confidentiality, often using protocols like SSL/TLS.",
+          },
+          {
+            id: 27,
+            front: "How does the Transport Layer prevent unauthorized access?",
+            back: "It uses encryption and authentication methods to secure data before it is transmitted.",
+          },
+          {
+            id: 28,
+            front: "What is a TCP handshake?",
+            back: "The TCP handshake is a process used to establish a connection between a client and a server over a network.",
+          },
+          {
+            id: 29,
+            front:
+              "What is the purpose of traffic analysis in network security?",
+            back: "Traffic analysis involves monitoring network traffic patterns to detect potential attacks or security breaches.",
+          },
+          {
+            id: 30,
+            front: "What are some common network security vulnerabilities?",
+            back: "Unpatched software, weak passwords, insufficient encryption, and open ports.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     subject_name: "Computer Graphics",
     key: "computer-graphics",
     units: [
