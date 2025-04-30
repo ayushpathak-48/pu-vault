@@ -16,7 +16,31 @@ export default function Home() {
   return (
     <div className="w-full h-full">
       <div className="p-2 lg:p-5 flex flex-col gap-1">
-        <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+        <div className="bg-sky-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+          <div className="text-sm">Seminar Certificate Sample Format</div>
+          <Button asChild size={"sm"}>
+            <Link
+              href={`${MATERIAL_LINK_BASE_URL}/certificate-sample.docx`}
+              target="_blank"
+              download={true}
+            >
+              Download
+            </Link>
+          </Button>
+        </div>
+        <div className="bg-sky-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+          <div className="text-sm">Seminar Report Sample Format</div>
+          <Button asChild size={"sm"}>
+            <Link
+              href={`${MATERIAL_LINK_BASE_URL}/seminar-report-sample.docx`}
+              target="_blank"
+              download={true}
+            >
+              Download
+            </Link>
+          </Button>
+        </div>
+        {/* <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
           <div className="text-sm">End Sem Theory Time Table</div>
           <Button asChild size={"sm"}>
             <Link
@@ -26,7 +50,7 @@ export default function Home() {
               View
             </Link>
           </Button>
-        </div>
+        </div> */}
         <div className="bg-gray-50 rounded-md p-2 px-4  flex items-center justify-between gap-4">
           <div className="text-sm">End Sem Practical Time Table</div>
           <Button asChild size={"sm"}>
