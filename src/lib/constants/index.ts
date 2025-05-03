@@ -59,6 +59,7 @@ export const navLinks = [
     id: 3,
     title: "Time Table",
     href: "/time-table",
+    hideOnMobile: true,
     icon: CableCarIcon,
   },
 
