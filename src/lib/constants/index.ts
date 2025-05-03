@@ -34,7 +34,7 @@ export const navLinks = [
   {
     id: 12,
     title: "NPTEL Calc",
-    href: "/nptel-marks-calculator",
+    href: "/nptel-calculator",
     icon: Calculator,
   },
   {
