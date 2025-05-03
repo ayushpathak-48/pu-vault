@@ -129,9 +129,11 @@ const NptelCalculatorPage = () => {
                   : "Sorry, you are not passed in the internal."
                 : ""}
 
-              <div className="my-2 font-medium text-lg text-center border w-max mx-auto p-2 rounded-lg">
-                Result: <span className="text-primary">{result}</span>
-              </div>
+              {result && (
+                <div className="my-2 font-medium text-lg text-center border w-max mx-auto p-2 rounded-lg">
+                  Result: <span className="text-primary">{result}</span>
+                </div>
+              )}
             </div>
           </form>
         </div>
