@@ -10,7 +10,7 @@ import {
   // LinkIcon,
   SquareAsteriskIcon,
   ListTodo,
-  Calculator,
+  // Calculator,
   // MonitorPlay,
 } from "lucide-react";
 
@@ -31,12 +31,12 @@ export const navLinks = [
     href: "/mcqs",
     icon: ListTodo,
   },
-  {
-    id: 12,
-    title: "NPTEL Calc",
-    href: "/nptel-calculator",
-    icon: Calculator,
-  },
+  // {
+  //   id: 12,
+  //   title: "NPTEL Calc",
+  //   href: "/nptel-calculator",
+  //   icon: Calculator,
+  // },
   {
     id: 4,
     title: "Flash Cards",
