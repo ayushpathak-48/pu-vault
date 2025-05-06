@@ -653,6 +653,11 @@ export const materials = [
         title: "Unit-4: Agile Methodology",
         href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/4-agile-methodology.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: User Interface",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/5-user-interface.pdf`,
+      },
     ],
 
     practicals_link: [
