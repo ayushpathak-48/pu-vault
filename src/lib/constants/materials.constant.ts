@@ -665,7 +665,7 @@ export const materials = [
       },
       {
         id: 7,
-        title: "Unit-7: Case Tools 1",
+        title: "Unit-7: Case tools and study",
         href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/7-case-tools-1.pdf`,
       },
     ],
