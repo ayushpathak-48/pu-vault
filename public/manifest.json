@@ -4,8 +4,8 @@
   "description": "Access all the materials, journals, source codes and more...",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#101010",
+  "theme_color": "#fff",
   "orientation": "portrait",
   "icons": [
     {
