@@ -74,7 +74,7 @@ export const SingleWeekTimeTableBody = ({
             <Fragment key={i}>
               {table[1]?.col_span == 7 ? (
                 // Recess Card
-                <div className="py-2 text-sm bg-neutral-200 dark:bg-[#282828] text-black dark:text-gray-100 text-center font-medium rounded-sm">
+                <div className="py-2 text-sm bg-neutral-200 dark:bg-[#282828] text-black dark:text-gray-300 text-center font-medium rounded-sm">
                   {table[1].label}
                 </div>
               ) : (
@@ -137,14 +137,14 @@ export const SingleWeekTimeTableBody = ({
                           Lab
                         </div>
                       )}
-                      <div className="whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-100 font-medium">
+                      <div className="whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-300 font-medium">
                         <span>{table[1].label?.split(" ")[0]}</span>
                         <span>{table[1].label?.split(" ")[1]}</span>
                         <span>{table[1].label?.split(" ")[2]}</span>
                       </div>
 
                       {table[2]?.row_span == 2 && (
-                        <div className=" border-t-2 pt-2 whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-100 font-medium">
+                        <div className=" border-t-2 pt-2 whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-300 font-medium">
                           <span>
                             {timetableData[i + 1][1].label?.split(" ")[0]}
                           </span>
