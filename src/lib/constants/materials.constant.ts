@@ -653,6 +653,21 @@ export const materials = [
         title: "Unit-4: Agile Methodology",
         href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/4-agile-methodology.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: User Interface",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/5-user-interface.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Planning A Software Project",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/6-planning-a-software-project.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-7: Case tools and study",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/software-engineering/7-case-tools-1.pdf`,
+      },
     ],
 
     practicals_link: [
