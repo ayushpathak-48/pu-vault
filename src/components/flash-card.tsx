@@ -13,7 +13,7 @@ const Flashcard = ({ front, back }: { front: string; back: string }) => {
           <div
             className={cn("flip-card-inner", flipped && "flip-card-flipped")}
           >
-            <div className="flip-card-front h-full w-full bg-gray-50 rounded-lg p-4 flex items-center justify-center text-center">
+            <div className="flip-card-front h-full w-full bg-gray-50 dark:bg-[#212121] rounded-lg p-4 flex items-center justify-center text-center">
               {front}
             </div>
             <div className="flip-card-back h-full w-full bg-sky-900 rounded-lg text-white flex p-4 items-center justify-center text-center">

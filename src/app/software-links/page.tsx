@@ -10,13 +10,13 @@ const SoftwareLinksPage = () => {
         {softwareLinks.map((software) => (
           <div
             key={software.id}
-            className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
+            className="flex items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg"
           >
             <h2>{software.title}</h2>
             <Link
               href={software.link}
               target="_blank"
-              className="font-medium text-sky-600"
+              className="font-medium text-sky-600 dark:text-sky-700"
             >
               Download
             </Link>

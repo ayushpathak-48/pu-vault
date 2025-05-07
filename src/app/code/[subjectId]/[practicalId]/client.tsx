@@ -83,7 +83,7 @@ const CodePageClient = () => {
     <>
       <Tabs
         value={practical.key}
-        className="w-full px-2 flex items-center justify-center gap-3 sticky top-16 md:top-20 bg-gray-50 border-b z-[9] py-2"
+        className="w-full px-2 flex items-center justify-center gap-3 sticky top-16 md:top-20 bg-gray-50 dark:bg-[#212121] border-b z-[9] py-2"
       >
         <Button
           disabled={currentPracticalIndex == 0}
@@ -149,28 +149,27 @@ const CodePageClient = () => {
           <LoaderCircle className="animate-spin size-6" />
         </div>
       ) : (
-        <div className="flex flex-col gap-2 p-5 lg:p-10">
+        <div className="flex flex-col gap-2 p-2">
           {practical?.pageBlocks?.map((ele: CodeElementType, i) => (
             <div key={ele.type + "_" + i}>
               {ele.type == "heading" && (
-                <h2 className="text-2xl font-bold text-slate-700 text-center my-2">
+                <h2 className="text-2xl font-bold text-slate-700 dark:text-slate-300 text-center my-2">
                   {ele.value}
                 </h2>
               )}
               {ele.type == "code" && (
                 <Card>
-                  <CardHeader>
+                  <CardHeader className="p-2">
                     <CardTitle>
-                      {ele?.is_output ||
-                        (ele?.fileName && (
-                          <span className="text-gray-500 text-sm">
-                            {ele?.is_output ? "Output :" : "filename:"}
-                          </span>
-                        ))}{" "}
+                      {(ele?.is_output || ele?.fileName) && (
+                        <span className="text-gray-500 text-sm">
+                          {ele?.is_output ? "Output :" : "filename:"}
+                        </span>
+                      )}{" "}
                       {ele.fileName}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="px-5">
+                  <CardContent className="p-0">
                     <CodeBlock
                       is_output={ele?.is_output}
                       code={ele.value}

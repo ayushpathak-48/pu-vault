@@ -72,7 +72,10 @@ const MaterialAccordionCard = ({
   setActiveTabSection,
 }: any) => {
   return (
-    <AccordionItem className="bg-gray-100" value={material.key}>
+    <AccordionItem
+      className="bg-gray-100 dark:bg-[#181818]"
+      value={material.key}
+    >
       <AccordionTrigger>{material.subject_name}</AccordionTrigger>
       <AccordionContent>
         <Tabs
@@ -122,22 +125,34 @@ const MaterialAccordionCard = ({
                   {material.notes_link.map((note: any) => (
                     <div
                       key={note.id}
-                      className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                      className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                     >
                       <div className="text-md font-medium">
                         <Link target="_blank" href={note.href}>
                           {note.title}
                         </Link>
                       </div>
-                      <Button className="" asChild size={"sm"}>
-                        <Link
-                          href={note.href}
-                          target="_blank"
-                          className="bg-sky-500 hover:bg-sky-500/90"
+                      <div className="flex items-center gap-1">
+                        <Button className="" asChild size={"sm"}>
+                          <Link
+                            href={note.href}
+                            target="_blank"
+                            className="bg-sky-500 hover:bg-sky-500/90"
+                          >
+                            View
+                          </Link>
+                        </Button>
+                        {/* <Button
+                          className=""
+                          asChild
+                          variant="outline"
+                          size={"icon"}
                         >
-                          View
-                        </Link>
-                      </Button>
+                          <Link href={note.href} download>
+                            <Download />
+                          </Link>
+                        </Button> */}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -167,7 +182,7 @@ const MaterialAccordionCard = ({
                 {material?.output_links?.map((practical: any) => (
                   <div
                     key={practical.id}
-                    className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                    className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
                       <Link target="_blank" href={practical.journal_link}>
@@ -191,7 +206,7 @@ const MaterialAccordionCard = ({
                 {material.practicals_link.map((practical: any) => (
                   <div
                     key={practical.id}
-                    className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                    className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
                       <Link href={practical.journal_link}>
@@ -219,7 +234,7 @@ const MaterialAccordionCard = ({
                   ?.practicals.map((practical) => (
                     <div
                       key={practical.key}
-                      className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                      className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                     >
                       <div className="text-md font-medium">
                         <Link href={`/code/${material.key}/${practical.key}`}>
@@ -243,7 +258,7 @@ const MaterialAccordionCard = ({
                 {material?.que_papers?.map((paper: any) => (
                   <div
                     key={paper.id}
-                    className="bg-gray-50 p-2 w-full flex items-center justify-between gap-2"
+                    className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
                       <Link target="_blank" href={paper?.href}>

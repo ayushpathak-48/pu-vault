@@ -3,6 +3,7 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
@@ -13,6 +14,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SelectDivision } from "./select-division";
 import InstallPWAButton from "./install-app-btn";
+import { ToggleMode } from "./toggle-mode";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -36,9 +38,9 @@ export function AppSidebar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-sky-600 transition-all",
+                  "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-sky-600 hover:dark:text-sky-700 transition-all",
                   activeLink &&
-                    "bg-gray-200 text-sky-600 border-l-4 border-sky-700",
+                    "bg-gray-200 dark:bg-[#101010] text-sky-600 dark:text-sky-700 border-l-4 border-sky-700 dark:border-sky-700",
                 )}
                 key={link.id}
               >
@@ -52,6 +54,9 @@ export function AppSidebar() {
           <InstallPWAButton />
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <ToggleMode />
+      </SidebarFooter>
     </Sidebar>
   );
 }

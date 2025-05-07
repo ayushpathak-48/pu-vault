@@ -22,7 +22,7 @@ export const TimeTableBody = ({
         <tr
           key={i}
           className={cn(
-            "bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+            "bg-white border-b border-gray-200 dark:bg-[#181818] dark:border-[#282828]",
           )}
         >
           {table.map(
@@ -53,12 +53,14 @@ export const TimeTableBody = ({
                     cellClassName || isMscItOrMCA
                       ? "font-medium"
                       : "text-emerald-900 bg-emerald-50",
-                    isMetaRow && "text-slate-900 bg-white font-medium",
+                    isMetaRow &&
+                      "text-slate-900 dark:text-gray-300 bg-white dark:bg-[#101010] font-medium",
                     isHeader &&
                       "uppercase bg-zinc-700 text-slate-300 font-semibold",
                     isRecess && "bg-neutral-500 text-white",
-                    sameDay && "bg-teal-500 text-black font-bold",
-                    cellClassName
+                    sameDay &&
+                      "bg-teal-500 text-black dark:text-gray-300 font-bold",
+                    cellClassName,
                   )}
                 >
                   {isMscItOrMCA ? (
@@ -99,7 +101,7 @@ export const TimeTableBody = ({
                   )}
                 </td>
               );
-            }
+            },
           )}
         </tr>
       ))}
@@ -130,8 +132,9 @@ const SingleCell = ({
     )}
     <div
       className={cn(
-        "border-2 w-max mx-auto rounded-md border-gray-200 p-1 mt-1",
-        classroom || lab ? "" : "hidden"
+        "border-2 w-max mx-auto rounded-md border-gray-200 p-1 mt-1 dark:text-gray-300",
+        classroom || lab ? "" : "hidden",
+        "dark:!text-gray-300",
       )}
     >
       {classroom && <span>Class: {classroom}</span>}

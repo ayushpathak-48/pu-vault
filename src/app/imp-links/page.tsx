@@ -9,17 +9,17 @@ const SoftwareLinksPage = () => {
         {impLinks.map((link) => (
           <div
             key={link.id}
-            className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
+            className="flex items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg"
           >
             <Link target="_blank" href={link.href}>
-              <h2 className="text-base md:text-lg font-medium hover:text-sky-500 transition-all">
+              <h2 className="text-base md:text-lg font-medium hover:text-sky-500 hover:dark:text-sky-700 transition-all">
                 {link.title}
               </h2>
             </Link>
             <Link
               href={link.href}
               target="_blank"
-              className="font-medium text-sky-600"
+              className="font-medium text-sky-600 dark:text-sky-700"
             >
               Open
             </Link>

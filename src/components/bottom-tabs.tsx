@@ -8,7 +8,7 @@ import React, { Fragment } from "react";
 export const BottomTabs = () => {
   const pathname = usePathname();
   return (
-    <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100">
+    <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100 dark:bg-[#181818]">
       <div className="flex items-center justify-start h-full">
         {navLinks.map((link) => {
           if (link?.hideOnMobile) return;
@@ -20,7 +20,7 @@ export const BottomTabs = () => {
             <Fragment key={link.id}>
               <Link
                 href={link.href}
-                className="w-full h-full flex items-center justify-center hover:bg-gray-200 flex-col gap-1"
+                className="w-full h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-1"
               >
                 <Icon
                   className={cn(

@@ -26,7 +26,7 @@ const McqCard = ({
 
   return (
     <div className="flex flex-col gap-1 border rounded">
-      <div className="w-full bg-slate-200 rounded-t p-2 px-4 flex items-center justify-between">
+      <div className="w-full bg-slate-200 dark:bg-[#181818] rounded-t p-2 px-4 flex items-center justify-between">
         <div className="text-sm">Question {index + 1} </div>
         {isSubmitted && (
           <div className="font-normal text-xs">
@@ -73,7 +73,7 @@ const McqCard = ({
         </div>
       </div>
       {isSeeSolution ? (
-        <div className="w-full bg-slate-100 rounded-b px-4 flex items-center justify-between">
+        <div className="w-full bg-slate-100 dark:bg-[#181818] rounded-b px-4 flex items-center justify-between">
           <Accordion
             onValueChange={(e) => {
               setActiveTrigger(e);

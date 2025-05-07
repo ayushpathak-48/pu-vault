@@ -49,7 +49,7 @@ export const SingleWeekTimeTableBody = ({
         }
       }
     });
-  }, [timetableData,currentDayIndex,weekIndex]);
+  }, [timetableData, currentDayIndex, weekIndex]);
 
   return (
     <div className="flex items-center justify-between">
@@ -74,14 +74,14 @@ export const SingleWeekTimeTableBody = ({
             <Fragment key={i}>
               {table[1]?.col_span == 7 ? (
                 // Recess Card
-                <div className="py-2 text-sm bg-neutral-200 text-black text-center font-medium rounded-sm">
+                <div className="py-2 text-sm bg-neutral-200 dark:bg-[#282828] text-black dark:text-gray-100 text-center font-medium rounded-sm">
                   {table[1].label}
                 </div>
               ) : (
                 // Time Table Card
                 <div>
                   {currentLectureIndex == i && (
-                    <div className="bg-sky-100 w-full p-1 text-xs font-semibold text-center text-sky-800 rounded-t-lg">
+                    <div className="bg-sky-100 dark:bg-sky-900 w-full p-1 text-xs font-semibold text-center text-sky-800 dark:text-sky-200 rounded-t-lg">
                       Ongoing Lecture
                     </div>
                   )}
@@ -97,7 +97,7 @@ export const SingleWeekTimeTableBody = ({
                       (timetableData[i - 1]?.[1].col_span == 7
                         ? i - 2
                         : i - 1) && (
-                      <div className="bg-orange-100 w-full p-1 text-xs font-semibold text-center text-orange-800 rounded-t-lg">
+                      <div className="bg-orange-100 dark:bg-orange-900 dark:text-orange-200 w-full p-1 text-xs font-semibold text-center text-orange-800 rounded-t-lg">
                         Next Lecture
                       </div>
                     )
@@ -137,14 +137,14 @@ export const SingleWeekTimeTableBody = ({
                           Lab
                         </div>
                       )}
-                      <div className="whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black font-medium">
+                      <div className="whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-100 font-medium">
                         <span>{table[1].label?.split(" ")[0]}</span>
                         <span>{table[1].label?.split(" ")[1]}</span>
                         <span>{table[1].label?.split(" ")[2]}</span>
                       </div>
 
                       {table[2]?.row_span == 2 && (
-                        <div className=" border-t-2 pt-2 whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black font-medium">
+                        <div className=" border-t-2 pt-2 whitespace-wrap flex flex-col text-xs items-center justify-center text-center text-black dark:text-gray-100 font-medium">
                           <span>
                             {timetableData[i + 1][1].label?.split(" ")[0]}
                           </span>

@@ -56,7 +56,7 @@ const AllMcqQuestions = ({ allMcqs }: { allMcqs: any }) => {
           />
         ))}
       </div>
-      <div className="w-full flex items-center justify-between p-2 px-5 bg-white">
+      <div className="w-full flex items-center justify-between p-2 px-5 bg-white dark:bg-gray-800">
         {/* <div>Practice Questions</div> */}
         <div className="flex items-center justify-center gap-2">
           {!isSubmitted ? (

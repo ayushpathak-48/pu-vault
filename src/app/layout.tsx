@@ -7,7 +7,7 @@ import { NuqsAdapter } from "nuqs/adapters/react";
 import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
-// import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -33,24 +33,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${lexendDeca.className} ${headingFont.variable} antialiased`}
+        className={`${lexendDeca.className} ${headingFont.variable} antialiased `}
       >
-        <NuqsAdapter>
-          <ClientProvider>
-            <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
-              <Navbar />
-              <main className="w-full h-full max-md:pb-14 pt-16 md:pt-20">
-                {children}
-              </main>
-            </div>
-            <BottomTabs />
-            <Toaster position="top-center" />
-            <WhatsappFloatingButton />
-            {/* <WhatsappDialog /> */}
-          </ClientProvider>
-        </NuqsAdapter>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NuqsAdapter>
+            <ClientProvider>
+              <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
+                <Navbar />
+                <main className="w-full h-full max-md:pb-14 pt-16 md:pt-20">
+                  {children}
+                </main>
+              </div>
+              <BottomTabs />
+              <Toaster position="top-center" />
+              <WhatsappFloatingButton />
+              {/* <WhatsappDialog /> */}
+            </ClientProvider>
+          </NuqsAdapter>
+        </ThemeProvider>
       </body>
     </html>
   );

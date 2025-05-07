@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
 
 const CodeBlock = ({
@@ -37,7 +37,7 @@ const CodeBlock = ({
         onClick={handleCopy}
         className={cn(
           "absolute top-2 right-2 px-3 rounded-md text-xs transition",
-          is_output && "hidden"
+          is_output && "hidden",
         )}
         size={"sm"}
       >
@@ -46,15 +46,15 @@ const CodeBlock = ({
 
       {/* Code Block */}
       <div
-        className="max-h-[400px] overflow-auto rounded-lg"
+        className="max-h-[400px] overflow-auto rounded-lg rounded-t-none"
         style={{ maxWidth: "100%" }}
       >
         <SyntaxHighlighter
           showLineNumbers
           wrapLines
           language={language}
-          style={oneLight}
-          customStyle={{ margin: 0 }}
+          style={oneDark}
+          customStyle={{ margin: 0, padding: "10px 0" }}
         >
           {code}
         </SyntaxHighlighter>

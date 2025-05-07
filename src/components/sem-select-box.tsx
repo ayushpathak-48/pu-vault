@@ -12,7 +12,7 @@ import { courses } from "@/lib/constants";
 export const SemSelectBox = () => {
   return (
     <Select>
-      <SelectTrigger className="w-full bg-gray-100">
+      <SelectTrigger className="w-full bg-gray-100 dark:bg-[#181818]">
         <SelectValue placeholder="Select Semester" />
       </SelectTrigger>
       <SelectContent>

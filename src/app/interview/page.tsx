@@ -12,17 +12,17 @@ const SoftwareLinksPage = () => {
         {interviewQuestions.map((software) => (
           <div
             key={software.id}
-            className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
+            className="flex items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg"
           >
             <Link href={software.href}>
-              <h2 className="text-lg font-medium hover:text-sky-500 transition-all">
+              <h2 className="text-lg font-medium hover:text-sky-500 hover:dark:text-sky-700 transition-all">
                 {software.title}
               </h2>
             </Link>
             <Link
               href={software.href}
               target="_blank"
-              className="font-medium text-sky-600"
+              className="font-medium text-sky-600 dark:text-sky-700"
             >
               View
             </Link>

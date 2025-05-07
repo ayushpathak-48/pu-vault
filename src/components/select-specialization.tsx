@@ -25,7 +25,7 @@ export const SelectSpecialization = () => {
   return (
     <>
       <Select onValueChange={onSelect} value={specialization || ""}>
-        <SelectTrigger className="w-full bg-gray-100">
+        <SelectTrigger className="w-full bg-gray-100 dark:bg-[#181818]">
           <SelectValue placeholder="Select Specialization" />
         </SelectTrigger>
         <SelectContent>

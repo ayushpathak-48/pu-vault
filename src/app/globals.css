@@ -10,11 +10,11 @@ body {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
+    --foreground: 0, 0%, 7%;
     --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card-foreground: 0, 0%, 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
+    --popover-foreground: 0, 0%, 7%;
     --primary: 198.6 88.7% 48.4%;
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 60 4.8% 95.9%;
@@ -43,26 +43,28 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
+  .c {
+    color: hsl(0, 0%, 13%);
+  }
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 0, 0%, 7%;
     --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
+    --card: 0, 0%, 7%;
     --card-foreground: 60 9.1% 97.8%;
-    --popover: 20 14.3% 4.1%;
+    --popover: 0, 0%, 7%;
     --popover-foreground: 60 9.1% 97.8%;
     --primary: 198.6 88.7% 48.4%;
     --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 12 6.5% 15.1%;
+    --secondary: 0, 0%, 13%;
     --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
+    --muted: 0, 0%, 13%;
     --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
+    --accent: 0, 0%, 13%;
     --accent-foreground: 60 9.1% 97.8%;
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
+    --border: 0, 0%, 13%;
+    --input: 0, 0%, 13%;
     --ring: 198.6 88.7% 48.4%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;

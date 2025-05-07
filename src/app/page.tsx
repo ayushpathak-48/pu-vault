@@ -40,7 +40,7 @@ export default function Home() {
             </Link>
           </Button>
         </div> */}
-        <div className="bg-gray-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+        <div className="bg-gray-50 dark:bg-[#181818] rounded-md p-2 px-4 flex items-center justify-between gap-4">
           <div className="text-sm">End Sem Theory Time Table</div>
           <Button asChild size={"sm"}>
             <Link
@@ -51,7 +51,7 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-        {/* <div className="bg-gray-50 rounded-md p-2 px-4  flex items-center justify-between gap-4">
+        {/* <div className="bg-gray-50 dark:bg-[#181818] rounded-md p-2 px-4  flex items-center justify-between gap-4">
           <div className="text-sm">End Sem Practical Time Table</div>
           <Button asChild size={"sm"}>
             <Link

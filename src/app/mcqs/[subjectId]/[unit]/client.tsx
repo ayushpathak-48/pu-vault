@@ -18,7 +18,7 @@ const McqPageClient = () => {
   const subject = mcqs.find(({ key }) => key == subjectId);
   const chapter = subject?.units?.find(({ key }) => key == unit);
   const [currentPracticalIndex, setCurrentPracticalIndex] = useState<number>(
-    subject?.units.findIndex(({ key }) => key == unit) || 0
+    subject?.units.findIndex(({ key }) => key == unit) || 0,
   );
 
   const handleClickPrevious = () => {
@@ -71,7 +71,7 @@ const McqPageClient = () => {
     <>
       <Tabs
         value={chapter.key}
-        className="w-full px-2 flex items-center justify-center gap-3 sticky top-16 md:top-20 bg-gray-50 border-b z-[9] py-2"
+        className="w-full px-2 flex items-center justify-center gap-3 sticky top-16 md:top-20 bg-gray-50 dark:bg-[#212121] border-b z-[9] py-2"
       >
         <Button
           disabled={currentPracticalIndex == 0}

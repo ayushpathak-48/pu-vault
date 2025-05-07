@@ -33,7 +33,7 @@ const TimeTablePage = () => {
       setActiveDivision(division);
     }
     const tempData = time_table.filter(
-      ({ division_key }) => division_key == activeDivision
+      ({ division_key }) => division_key == activeDivision,
     )[0]?.data;
     setTableData(tempData);
   }, [activeDivision, division]);
@@ -53,7 +53,7 @@ const TimeTablePage = () => {
         onValueChange={(data) => setTimeTableViewType(data)}
         className="w-full"
       >
-        <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border bg-white">
+        <TabsList className="flex items-center justify-around p-1 h-max overflow-x-auto border bg-white dark:bg-[#101010]">
           <TabsTrigger
             value={"list"}
             className="py-2 data-[state=active]:bg-transparent data-[state=active]:rounded-none data-[state=active]:shadow-none data-[state=active]:border-slate-700  border-b border-transparent w-full"
