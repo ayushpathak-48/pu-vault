@@ -4,7 +4,7 @@ export const materials = [
   // AJP
   {
     id: 1,
-    subject_name: "ADVANCE JAVA PROGRAMMING",
+    subject_name: "Advance Java Programming",
     key: "advance-java-programming",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/advance-java-programming.pdf`,
     notes_link: [
@@ -119,7 +119,7 @@ export const materials = [
   //  CG
   {
     id: 2,
-    subject_name: "COMPUTER GRAPHICS",
+    subject_name: "Computer Graphics",
     key: "computer-graphics",
     syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/computer-graphics.pdf`,
     notes_link: [
