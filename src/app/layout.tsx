@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PT_Serif, Lexend_Deca } from "next/font/google";
+import { Poppins, PT_Serif } from "next/font/google";
 import "./globals.css";
 import ClientProvider from "@/providers/client-provider";
 import { Navbar } from "@/components/navbar";
@@ -15,11 +15,15 @@ const headingFont = PT_Serif({
   variable: "--font-heading",
 });
 
-const lexendDeca = Lexend_Deca({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+// const lexendDeca = Lexend_Deca({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700", "800"],
+// });
 
+const comicReleif = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 export const metadata: Metadata = {
   title: "Pu Vault",
   description: "Parul University MCA sem 2 materials",
@@ -35,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${lexendDeca.className} ${headingFont.variable} antialiased `}
+        className={`${comicReleif.className} ${headingFont.variable} antialiased `}
       >
         <ThemeProvider
           attribute="class"
