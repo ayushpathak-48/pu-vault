@@ -25,13 +25,13 @@ export const BottomTabs = () => {
                 <Icon
                   className={cn(
                     "size-6 text-gray-500 active:scale-[0.95] transition-all",
-                    activeLink && "text-sky-500",
+                    activeLink && "text-teal-500",
                   )}
                 />
                 <span
                   className={cn(
                     "text-[10px] truncate text-center font-medium text-gray-500",
-                    activeLink && "text-sky-500",
+                    activeLink && "text-teal-500",
                   )}
                 >
                   {link.title}

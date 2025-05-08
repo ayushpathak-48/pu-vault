@@ -81,7 +81,7 @@ export const SingleWeekTimeTableBody = ({
                 // Time Table Card
                 <div>
                   {currentLectureIndex == i && (
-                    <div className="bg-sky-100 dark:bg-sky-900 w-full p-1 text-xs font-semibold text-center text-sky-800 dark:text-sky-200 rounded-t-lg">
+                    <div className="bg-teal-100 dark:bg-teal-900 w-full p-1 text-xs font-semibold text-center text-teal-800 dark:text-teal-200 rounded-t-lg">
                       Ongoing Lecture
                     </div>
                   )}
@@ -106,7 +106,7 @@ export const SingleWeekTimeTableBody = ({
                     className={cn(
                       "border w-full rounded-sm flex items-center justify-center gap-2",
                       currentLectureIndex == i &&
-                        "rounded-t-none border-sky-200",
+                        "rounded-t-none border-teal-200",
                       currentLectureIndex ==
                         (timetableData[i - 1]?.[1].col_span == 7
                           ? i - 2
@@ -128,7 +128,7 @@ export const SingleWeekTimeTableBody = ({
                           </div>
                         )}
                       {table[2]?.classroom && (
-                        <div className="bg-sky-100 text-sky-800 text-center px-2 w-full rounded-sm text-xs">
+                        <div className="bg-teal-100 text-teal-800 text-center px-2 w-full rounded-sm text-xs">
                           Lecture
                         </div>
                       )}

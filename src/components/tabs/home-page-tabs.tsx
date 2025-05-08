@@ -24,7 +24,7 @@ export const HomePageTabs = () => {
           <TabsTrigger
             key={tab.id}
             value={tab.key}
-            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-sky-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-sky-600 data-[state=active]:rounded-none"
+            className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-teal-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-teal-600 data-[state=active]:rounded-none"
           >
             {tab.title}
           </TabsTrigger>

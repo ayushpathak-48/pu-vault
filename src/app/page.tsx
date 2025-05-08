@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="w-full h-full">
       <div className="p-2 lg:p-5 flex flex-col gap-1">
-        {/* <div className="bg-sky-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+        {/* <div className="bg-teal-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
           <div className="text-sm">Seminar Certificate Sample Format</div>
           <Button asChild size={"sm"}>
             <Link
@@ -28,7 +28,7 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-        <div className="bg-sky-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
+        <div className="bg-teal-50 rounded-md p-2 px-4 flex items-center justify-between gap-4">
           <div className="text-sm">Seminar Report Sample Format</div>
           <Button asChild size={"sm"}>
             <Link
