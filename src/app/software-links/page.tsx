@@ -16,7 +16,7 @@ const SoftwareLinksPage = () => {
             <Link
               href={software.link}
               target="_blank"
-              className="font-medium text-teal-600 dark:text-teal-700"
+              className="font-medium primary"
             >
               Download
             </Link>

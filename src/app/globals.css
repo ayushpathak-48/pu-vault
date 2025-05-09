@@ -17,7 +17,7 @@
     --card-foreground: 0, 0%, 7%;
     --popover: 0 0% 100%;
     --popover-foreground: 0, 0%, 7%;
-    --primary: 198.6 88.7% 48.4%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -29,7 +29,7 @@
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
-    --ring: 198.6 88.7% 48.4%;
+    --ring: 217.2 91.2% 59.8%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -56,7 +56,7 @@
     --card-foreground: 0, 0%, 87%;
     --popover: 0, 0%, 7%;
     --popover-foreground: 0, 0%, 87%;
-    --primary: 198.6 88.7% 48.4%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 0, 0%, 87%;
     --secondary: 0, 0%, 13%;
     --secondary-foreground: 0, 0%, 87%;
@@ -68,7 +68,7 @@
     --destructive-foreground: 0, 0%, 87%;
     --border: 0, 0%, 13%;
     --input: 0, 0%, 13%;
-    --ring: 198.6 88.7% 48.4%;
+    --ring: 217.2 91.2% 59.8%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -95,7 +95,7 @@
 }
 
 .custom-heading {
-  @apply font-heading text-teal-700;
+  @apply text-primary;
 }
 
 .text-\[\#11131e\] {

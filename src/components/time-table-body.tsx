@@ -59,7 +59,7 @@ export const TimeTableBody = ({
                       "uppercase bg-zinc-700 text-slate-300 font-semibold",
                     isRecess && "bg-neutral-500 text-white",
                     sameDay &&
-                      "bg-teal-500 text-black dark:text-gray-300 font-bold",
+                      "bg-primary text-black dark:text-gray-300 font-bold",
                     cellClassName,
                   )}
                 >

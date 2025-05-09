@@ -20,8 +20,8 @@ const FlashCardsPage = () => {
                 key={subject.key}
                 href={`/flash-cards/${subject.key}/${subject.units[0].key}`}
               >
-                <div className="flex group border border-transparent hover:text-teal-400 hover:dark:text-teal-700 hover:border-primary/50 cursor-pointer items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg">
-                  <h2 className="text-base md:text-lg font-medium hover:text-teal-500 hover:dark:text-teal-700 transition-all">
+                <div className="flex group border border-transparent hover:text-primary hover:border-primary/50 cursor-pointer items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg">
+                  <h2 className="text-base md:text-lg font-medium hover:text-primary transition-all">
                     {subject.subject_name}
                   </h2>
                   <ArrowRight className="group-hover:-translate-x-1 transition-all" />

@@ -89,21 +89,21 @@ const MaterialAccordionCard = ({
               {material.practicals_link?.length > 0 && (
                 <TabsTrigger
                   value={"notes"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-teal-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-teal-600 data-[state=active]:rounded-none"
+                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
                 >
                   Notes
                 </TabsTrigger>
               )}
               <TabsTrigger
                 value={"practicals"}
-                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-teal-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-teal-600 data-[state=active]:rounded-none"
+                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
               >
                 Journals
               </TabsTrigger>
               {practicalCodes?.some(({ key }) => key == material?.key) && (
                 <TabsTrigger
                   value={"codes"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-teal-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-teal-600 data-[state=active]:rounded-none"
+                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
                 >
                   Practical Codes
                 </TabsTrigger>
@@ -111,7 +111,7 @@ const MaterialAccordionCard = ({
               {material?.que_papers?.length > 0 && (
                 <TabsTrigger
                   value={"que_papers"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-teal-600 text-md data-[state=active]:border-b w-full data-[state=active]:border-teal-600 data-[state=active]:rounded-none"
+                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
                 >
                   Question Papers
                 </TabsTrigger>
@@ -137,7 +137,7 @@ const MaterialAccordionCard = ({
                           <Link
                             href={note.href}
                             target="_blank"
-                            className="bg-teal-500 hover:bg-teal-500/90"
+                            className="bg-primary hover:bg-primary/90"
                           >
                             View
                           </Link>
@@ -194,7 +194,7 @@ const MaterialAccordionCard = ({
                       <Link
                         href={practical.journal_link}
                         target="_blank"
-                        className="bg-teal-500 hover:bg-teal-500/90"
+                        className="bg-primary hover:bg-primary/90"
                       >
                         View
                       </Link>
@@ -218,7 +218,7 @@ const MaterialAccordionCard = ({
                       <Link
                         href={practical.journal_link}
                         target="_blank"
-                        className="bg-teal-500 hover:bg-teal-500/90"
+                        className="bg-primary hover:bg-primary/90"
                       >
                         View
                       </Link>
@@ -244,7 +244,7 @@ const MaterialAccordionCard = ({
                       <Button className="" asChild size={"sm"}>
                         <Link
                           href={`/code/${material.key}/${practical.key}`}
-                          className="bg-teal-500 hover:bg-teal-500/90"
+                          className="bg-primary hover:bg-primary/90"
                         >
                           View
                         </Link>
@@ -269,7 +269,7 @@ const MaterialAccordionCard = ({
                       <Link
                         target="_blank"
                         href={paper?.href}
-                        className="bg-teal-500 hover:bg-teal-500/90"
+                        className="bg-primary hover:bg-primary/90"
                       >
                         View
                       </Link>

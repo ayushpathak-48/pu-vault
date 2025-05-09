@@ -12,14 +12,14 @@ const SoftwareLinksPage = () => {
             className="flex items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg"
           >
             <Link target="_blank" href={link.href}>
-              <h2 className="text-base md:text-lg font-medium hover:text-teal-500 hover:dark:text-teal-700 transition-all">
+              <h2 className="text-base md:text-lg font-medium hover:text-primary transition-all">
                 {link.title}
               </h2>
             </Link>
             <Link
               href={link.href}
               target="_blank"
-              className="font-medium text-teal-600 dark:text-teal-700"
+              className="font-medium primary"
             >
               Open
             </Link>

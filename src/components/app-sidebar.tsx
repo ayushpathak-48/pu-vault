@@ -38,9 +38,9 @@ export function AppSidebar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-teal-600 hover:dark:text-teal-700 transition-all dark:text-[#ccc]",
+                  "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc]",
                   activeLink &&
-                    "bg-gray-200 dark:bg-[#101010] text-teal-600 dark:text-teal-700 border-l-4 border-teal-700 dark:border-teal-700 ",
+                    "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
                 )}
                 key={link.id}
               >
