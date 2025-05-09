@@ -118,7 +118,7 @@ const MaterialAccordionCard = ({
               )}
             </TabsList>
           )}
-          <div className="p-2">
+          <div className="md:px-3">
             <TabsContent value={"notes"}>
               {material?.notes_link?.length > 0 ? (
                 <div className={cn("flex items-center flex-col gap-2")}>
