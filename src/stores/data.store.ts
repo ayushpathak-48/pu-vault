@@ -9,6 +9,8 @@ interface SpecializationState {
   setDivision: (value: string) => void;
   course: CourseType;
   setCourse: (value: CourseType) => void;
+  color: string;
+  setColor: (value: string) => void;
   hydrated: boolean; // NEW state to track hydration
 }
 
@@ -21,6 +23,8 @@ export const useDataStore = create<SpecializationState>()(
       setDivision: (value) => set({ division: value }),
       course: get()?.course,
       setCourse: (value) => set({ course: value }),
+      color: get()?.color || "blue",
+      setColor: (value) => set({ color: value }),
       hydrated: false, // Initially false
     }),
     {

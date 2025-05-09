@@ -3,6 +3,7 @@
 import { CourseSelectBox } from "@/components/course-select-box";
 import { SelectDivision } from "@/components/select-division";
 import { ToggleMode } from "@/components/toggle-mode";
+import { ToggleThemeColor } from "@/components/toggle-theme-color";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 
@@ -22,6 +23,11 @@ const SettingsPage = () => {
       <div className="flex  gap-2 rounded-lg items-center p-2">
         <div className="font-medium text-lg">Theme Mode:</div>
         <ToggleMode />
+      </div>
+      <Separator />
+      <div className="flex  gap-2 rounded-lg items-center p-2">
+        <div className="font-medium text-lg">Theme Color:</div>
+        <ToggleThemeColor />
       </div>
     </div>
   );

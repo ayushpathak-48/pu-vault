@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation";
 import { SelectDivision } from "./select-division";
 import InstallPWAButton from "./install-app-btn";
 import { ToggleMode } from "./toggle-mode";
+import { ToggleThemeColor } from "./toggle-theme-color";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -54,8 +55,9 @@ export function AppSidebar() {
           <InstallPWAButton />
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="border-t">
         <ToggleMode />
+        <ToggleThemeColor />
       </SidebarFooter>
     </Sidebar>
   );
