@@ -12,6 +12,7 @@ import SearchModal from "./search-modal";
 import { DataDialog } from "./modals/data-dialog";
 import { cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
+import { WhatsappDialog } from "./modals/whatsapp-dialog";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -89,7 +90,7 @@ export const Navbar = () => {
           <SearchModal />
         </div>
       </div>
-      {/* <WhatsappDialog /> */}
+      <WhatsappDialog />
       <DataDialog />
     </>
   );
