@@ -5,7 +5,7 @@ export const VacationMode = () => {
   return (
     <div className="flex h-screen w-screen text-center items-center justify-center flex-col gap-5 p-3">
       <div className="text-xl lg:text-3xl font-bold">
-        Semester Khatam aur kitna padhoge.
+        Semester khatam aur kitna padhoge.
       </div>
       <div>Milte hai NPTEL ke result ke baad </div>
       <div className="text-lg">
