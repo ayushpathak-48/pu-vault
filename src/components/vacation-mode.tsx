@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const VacationMode = () => {
   return (
@@ -13,7 +14,11 @@ export const VacationMode = () => {
       </div>
       <div className="text-center space-y-1">
         <div>yaha tak aa hi gye ho to</div>
-        <Button>Feedback </Button>
+        <Button asChild>
+          <Link href={"https://forms.gle/jByuyrbURZ9xQGvc6"} target="_blank">
+            Feedback
+          </Link>
+        </Button>
         <div>Dete jaao</div>
       </div>
     </div>
