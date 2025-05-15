@@ -8,7 +8,7 @@ import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { VacationMode } from "@/components/vacation-mode";
+// import { VacationMode } from "@/components/vacation-mode";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  /*return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${comicReleif.className} ${headingFont.variable} antialiased `}
@@ -47,7 +47,7 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  );*/
   return (
     <html lang="en" suppressHydrationWarning>
       <body
