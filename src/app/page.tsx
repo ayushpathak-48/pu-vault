@@ -3,20 +3,20 @@
 // import { SelectDivision } from "@/components/select-division";
 // import { SelectSpecialization } from "@/components/select-specialization";
 import { HomePageAccordionList } from "@/components/tabs/home-accordion-list";
-import { Button } from "@/components/ui/button";
-import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
+// import { Button } from "@/components/ui/button";
+// import { MATERIAL_LINK_BASE_URL } from "@/lib/constants";
 import {
   materials,
   specializationMaterials,
 } from "@/lib/constants/materials.constant";
 // import { cn } from "@/lib/utils";
 // Time table removed
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="w-full h-full">
-      <div className="p-2 lg:p-5 flex flex-col gap-1">
+      {/* <div className="p-2 lg:p-5 flex flex-col gap-1">
         <div className="bg-gray-50 dark:bg-[#181818] rounded-md p-2 px-4 flex items-center justify-between gap-4">
           <div className="text-sm">End Sem Theory Time Table</div>
           <Button asChild size={"sm"}>
@@ -28,7 +28,7 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-      </div>
+      </div> */}
       <div className="my-4 text-3xl font-semibold mx-auto custom-heading text-center">
         All Materials
       </div>
