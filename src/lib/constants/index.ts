@@ -1,17 +1,11 @@
 import {
-  // Book,
   CableCarIcon,
-  // Calculator,
   HardDriveDownloadIcon,
   HouseIcon,
   SquareDashedBottomCode,
   SettingsIcon,
-  // MessageCircleQuestion,
-  // LinkIcon,
   SquareAsteriskIcon,
   ListTodo,
-  // Calculator,
-  // MonitorPlay,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -102,7 +96,7 @@ export const navLinks = [
     id: 10,
     title: "Settings",
     href: "/settings",
-    hideOnMobile: true,
+    // hideOnMobile: true,
     icon: SettingsIcon,
   },
 ];
@@ -112,13 +106,13 @@ export const courses = [
     id: 1,
     label: "MCA",
     value: "mca",
-    total_semester: 4,
+    semesters: [2, 3],
   },
   {
     id: 2,
     label: "Msc It",
     value: "mscit",
-    total_semester: 4,
+    semesters: [2, 3],
   },
 ];
 
