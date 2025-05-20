@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { MenuIcon, SearchIcon, SettingsIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import SearchModal from "./search-modal";
@@ -58,9 +58,14 @@ export const Navbar = () => {
   return (
     <>
       <div className="bg-gray-50 dark:bg-[#181818] shadow md:w-[calc(100%-16rem)] ml-auto w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
-        <Link href={"/"} className="md:hidden">
-          <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
-        </Link>
+        <div className="flex items-center justify-center gap-2 w-max  ">
+          <Link href={"/"} className="md:hidden">
+            <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
+          </Link>
+          <Link href={"/settings"}>
+            <SettingsIcon className="size-4 text-gray-400 cursor-pointer" />
+          </Link>
+        </div>
         <div className="max-md:text-center max-md:w-full custom-heading font-semibold text-2xl lg:text-3xl">
           {activePageTitle}
         </div>

@@ -96,7 +96,7 @@ export const navLinks = [
     id: 10,
     title: "Settings",
     href: "/settings",
-    // hideOnMobile: true,
+    hideOnMobile: true,
     icon: SettingsIcon,
   },
 ];

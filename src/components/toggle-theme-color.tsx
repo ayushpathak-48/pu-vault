@@ -19,9 +19,7 @@ export const ToggleThemeColor = () => {
   ];
 
   const applyTheme = (themeColor: string) => {
-    console.log({ themeColor });
     const root = document.documentElement;
-    console.log({ root });
     root.style.setProperty("--primary", themeColor);
     root.style.setProperty("--ring", themeColor);
     root.style.setProperty("--sidebar-ring", themeColor);
