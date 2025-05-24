@@ -6,7 +6,7 @@ export const materials = [
     id: 21,
     subject_name: "Impact Training - Aptitude",
     key: "impact-aptitude",
-    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/advance-java-programming.pdf`,
+    syllabus_link: ``,
     notes_link: [
       {
         id: 1,
