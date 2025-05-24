@@ -2,11 +2,15 @@
 
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { Fragment } from "react";
 export const BottomTabs = () => {
   const pathname = usePathname();
+  const bottomTabsEnabled = useDataStore((state) => state.bottomTabsEnabled);
+
+  if (!bottomTabsEnabled) return;
   return (
     <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100 dark:bg-[#181818]">
       <div className="flex items-center justify-start h-full">

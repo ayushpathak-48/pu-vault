@@ -11,6 +11,8 @@ interface SpecializationState {
   setCourse: (value: CourseType) => void;
   color: string;
   setColor: (value: string) => void;
+  bottomTabsEnabled: boolean;
+  setBottomTabsEnabled: (value: boolean) => void;
   hydrated: boolean; // NEW state to track hydration
 }
 
@@ -25,6 +27,8 @@ export const useDataStore = create<SpecializationState>()(
       setCourse: (value) => set({ course: value }),
       color: get()?.color || "blue",
       setColor: (value) => set({ color: value }),
+      bottomTabsEnabled: get()?.bottomTabsEnabled || true,
+      setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),
       hydrated: false, // Initially false
     }),
     {
