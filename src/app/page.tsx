@@ -10,7 +10,6 @@ import {
   specializationMaterials,
 } from "@/lib/constants/materials.constant";
 // import { cn } from "@/lib/utils";
-// Time table removed
 // import Link from "next/link";
 
 export default function Home() {

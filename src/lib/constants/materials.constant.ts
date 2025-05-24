@@ -1,6 +1,135 @@
 import { MATERIAL_LINK_BASE_URL } from ".";
 
 export const materials = [
+  // Impact Training
+  {
+    id: 21,
+    subject_name: "Impact Training - Aptitude",
+    key: "impact-aptitude",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL}/syllabus/advance-java-programming.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Number System - Basics",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/number-system.pdf`,
+      },
+      {
+        id: 2,
+        title: "Number System - Divisibility",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/number-system-divisibility.pdf`,
+      },
+      {
+        id: 3,
+        title: "Number System - LCM & HCF",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/number-system-lcm-hcf.pdf`,
+      },
+      {
+        id: 4,
+        title: "Number System - Number Problems",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/number-system-number-problems.pdf`,
+      },
+      {
+        id: 5,
+        title: "Linear Equation",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/linear-equation.pdf`,
+      },
+      {
+        id: 6,
+        title: "Ratio and Proportion",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/ratio-and-proportion.pdf`,
+      },
+      {
+        id: 7,
+        title: "Percentage",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/percentage.pdf`,
+      },
+      {
+        id: 8,
+        title: "Profit & Loss - Problems",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/p&l-problems.pdf`,
+      },
+      {
+        id: 9,
+        title: "Profit & Loss - Partnerships",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/p&l-partnerships.pdf`,
+      },
+      {
+        id: 10,
+        title: "Profit & Loss - Discount",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/p&l-discount.pdf`,
+      },
+      {
+        id: 11,
+        title: "Mixture & Alligations",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/mixture-&-alligations.pdf`,
+      },
+      {
+        id: 12,
+        title: "Averages",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/averages.pdf`,
+      },
+      {
+        id: 13,
+        title: "Time & Distance",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/time-distance.pdf`,
+      },
+      {
+        id: 14,
+        title: "Distance and Directions",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/distance-and-directions.pdf`,
+      },
+      {
+        id: 15,
+        title: "Blood Relations",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/blood-relations.pdf`,
+      },
+      {
+        id: 16,
+        title: "Alphabet Series",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/alphabet-series.pdf`,
+      },
+      {
+        id: 17,
+        title: "Alphanumeric Series",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/alphanumeric-series.pdf`,
+      },
+      {
+        id: 18,
+        title: "Data Interpretation - Basics",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/data-interpretation.pdf`,
+      },
+      {
+        id: 19,
+        title: "Data Interpretation - Pie Charts",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/di-pie-charts.pdf`,
+      },
+      {
+        id: 20,
+        title: "Data Interpretation - Tables",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/di-tables.pdf`,
+      },
+      {
+        id: 21,
+        title: "Data Interpretation - Bar Graphs",
+        href: `${MATERIAL_LINK_BASE_URL}/materials/impact-training/di-bar-graphs.pdf`,
+      },
+    ],
+    practicals_link: [
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/dcn/index.pdf`,
+      // },
+    ],
+    output_links: [
+      // {
+      //   id: 0,
+      //   title: "Outputs",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL}/practicals/outputs/dcn-outputs.pdf`,
+      // },
+    ],
+  },
+
   // AJP
   {
     id: 1,
