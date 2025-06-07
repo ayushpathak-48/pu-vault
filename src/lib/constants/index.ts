@@ -6,6 +6,7 @@ import {
   SettingsIcon,
   SquareAsteriskIcon,
   ListTodo,
+  MessageCircleQuestion,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -70,13 +71,13 @@ export const navLinks = [
   //   icon: LinkIcon,
   //   hideOnMobile: true,
   // },
-  // {
-  //   id: 7,
-  //   title: "Interview Questions",
-  //   href: "/interview",
-  //   hideOnMobile: true,
-  //   icon: MessageCircleQuestion,
-  // },
+  {
+    id: 7,
+    title: "Interview Questions",
+    href: "/interview",
+    // hideOnMobile: true,
+    icon: MessageCircleQuestion,
+  },
   {
     id: 8,
     title: "Softwares",
