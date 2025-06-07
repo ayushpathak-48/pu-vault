@@ -48,6 +48,7 @@ export const navLinks = [
     id: 2,
     title: "Source Codes",
     href: "/code",
+    hideOnMobile: true,
     icon: SquareDashedBottomCode,
   },
   {
