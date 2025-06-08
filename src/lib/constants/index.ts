@@ -20,14 +20,13 @@ export const navLinks = [
     title: "Home",
     href: "/",
     icon: HouseIcon,
-    sem: [2, 3],
+    sem: [2],
   },
   {
     id: 12,
     title: "Placement Materials",
     href: "/placement-materials",
     icon: BriefcaseBusiness,
-    sem: [2, 3],
   },
   {
     id: 11,
@@ -115,7 +114,6 @@ export const navLinks = [
     href: "/settings",
     hideOnMobile: true,
     icon: SettingsIcon,
-    sem: [2],
   },
 ];
 

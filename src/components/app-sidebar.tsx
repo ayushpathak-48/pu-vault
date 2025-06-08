@@ -37,7 +37,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           {navLinks.map((link) => {
-            if (sem && !link?.sem?.includes(sem)) return;
+            if (link?.sem && sem && !link?.sem?.includes(sem)) return;
             const activeLink =
               (link.href != "/" && pathname.startsWith(link.href)) ||
               pathname == link.href;

@@ -285,7 +285,7 @@ const MaterialAccordionCard = ({
         </Tabs>
 
         <div className="flex max-md:justify-center mt-3">
-          <Button className="bg-slate-700" size={"sm"} asChild>
+          <Button size={"sm"} asChild>
             <Link href={material?.syllabus_link} target="_bank">
               View Syllabus
             </Link>

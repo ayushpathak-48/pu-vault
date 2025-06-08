@@ -40,7 +40,7 @@ export default function InstallPWAButton() {
     isVisible && (
       <Button
         onClick={handleInstallClick}
-        className="px-4 py-2 bg-primary text-white rounded-xl shadow-lg"
+        className="px-4 py-2 rounded-xl shadow-lg"
       >
         Install Apk <ArrowDown />
       </Button>
