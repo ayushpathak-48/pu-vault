@@ -12,9 +12,9 @@ export const ToggleThemeColor = () => {
 
   const colorThemes = [
     { colorKey: "blue", colorValue: "217.2 91.2% 59.8%" },
-    { colorKey: "violet", colorValue: "258.3 89.5% 66.3%" },
+    // { colorKey: "violet", colorValue: "258.3 89.5% 66.3%" },
     { colorKey: "cyan", colorValue: "191.6 91.4% 36.5%" },
-    // { colorKey: "pink", colorValue: "335.1 77.6% 42%" },
+    { colorKey: "pink", colorValue: "335.1 77.6% 42%" },
     { colorKey: "amber", colorValue: "32.1 94.6% 43.7%" },
     { colorKey: "gray", colorValue: "220 13% 91%" },
   ];
