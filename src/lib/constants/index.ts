@@ -17,14 +17,14 @@ export const MATERIAL_LINK_BASE_URL =
 export const navLinks = [
   {
     id: 1,
-    title: "All Materials",
+    title: "Materials",
     href: "/",
     icon: HouseIcon,
     sem: [2],
   },
   {
     id: 12,
-    title: "Placement Materials",
+    title: "Placement",
     href: "/placement-materials",
     icon: BriefcaseBusiness,
   },
@@ -43,7 +43,7 @@ export const navLinks = [
   // },
   {
     id: 4,
-    title: "Flash Cards",
+    title: "FlashCards",
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
     sem: [2],
