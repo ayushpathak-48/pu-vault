@@ -1,21 +1,18 @@
 "use client";
 
-import { mcqs } from "@/lib/constants/mcqs.constant";
-// import { useDataStore } from "@/stores/data.store";
+import { useDataGetters } from "@/hooks/use-data-getters";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 const McqsPage = () => {
-  // const specialization = useDataStore((state) => state.specialization);
-
+  const { getMCQs } = useDataGetters();
+  const mcqs = getMCQs();
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
       <div className="flex flex-col gap-4">
         {mcqs.map(
           (subject) => (
-            // (!subject?.specialization ||
-            //   specialization == subject?.specialization) && (
             <Link
               key={subject.key}
               href={`/mcqs/${subject.key}/${subject.units[0].key}`}

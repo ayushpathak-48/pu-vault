@@ -74,7 +74,6 @@ const NptelCalculatorPage = () => {
     const finalResult = (averageScore * 25) / 100;
     setResult(finalResult.toFixed(2));
   };
-  console.log(form);
 
   return (
     <div className="flex flex-col flex-1 h-full w-full items-center justify-center">

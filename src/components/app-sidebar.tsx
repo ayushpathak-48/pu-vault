@@ -16,6 +16,7 @@ import { SelectDivision } from "./select-division";
 import InstallPWAButton from "./install-app-btn";
 import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
+import { SemSelectBox } from "./sem-select-box";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -27,6 +28,9 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarGroup>
         <SelectDivision />
+      </SidebarGroup>
+      <SidebarGroup>
+        <SemSelectBox showToast />
       </SidebarGroup>
       <SidebarContent>
         <SidebarGroup>

@@ -3,7 +3,7 @@
 import {
   TimetableData,
   TimeTableCell,
-} from "@/lib/constants/time-table.constant";
+} from "@/lib/constants/sem-2/time-table.constant";
 import { cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
 import React from "react";

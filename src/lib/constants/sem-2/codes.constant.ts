@@ -1,4 +1,4 @@
-export const practicalCodes = [
+export const sem2PracticalCodes = [
   // AI
   {
     subject_name: "Artificial Intelligence",

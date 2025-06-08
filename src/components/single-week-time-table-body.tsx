@@ -1,6 +1,10 @@
 "use client";
 
-import { time_table, TimeTableRow } from "@/lib/constants/time-table.constant";
+import { useDataGetters } from "@/hooks/use-data-getters";
+import {
+  // TimeTable,
+  TimeTableRow,
+} from "@/lib/constants/sem-2/time-table.constant";
 import { checkIsActiveTime, cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
 import React, { Fragment, useEffect, useLayoutEffect, useState } from "react";
@@ -12,6 +16,9 @@ export const SingleWeekTimeTableBody = ({
   weekIndex: number;
   activeDivision: string;
 }) => {
+  const { getTimeTable } = useDataGetters();
+  const TimeTable = getTimeTable();
+
   const [date] = useState(new Date());
   const currentDayIndex = date.getDay() - 1;
 
@@ -24,7 +31,7 @@ export const SingleWeekTimeTableBody = ({
 
   useLayoutEffect(() => {
     const weekData: TimeTableRow[] = [];
-    time_table.forEach((table) => {
+    TimeTable.forEach((table) => {
       if (activeDivision == table.division_key) {
         table.data.forEach((row, rowInd) => {
           if ([0].includes(rowInd)) return;

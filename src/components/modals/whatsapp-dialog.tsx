@@ -31,7 +31,7 @@ export const WhatsappDialog = () => {
 
   return (
     <AlertDialog open={open}>
-      <AlertDialogContent className="max-md:max-w-[75%]">
+      <AlertDialogContent className="max-md:max-w-[93%] rounded-md">
         <AlertDialogHeader>
           <AlertDialogTitle className="flex items-center gap-1">
             <Image

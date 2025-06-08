@@ -10,9 +10,9 @@ import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Send } from "lucide-react";
-import { practicalCodes } from "@/lib/constants/codes.constant";
 import { cn } from "@/lib/utils";
 import { useQueryState } from "nuqs";
+import { useDataGetters } from "@/hooks/use-data-getters";
 export const HomePageAccordionList = ({
   tabData,
   specializationTabData,
@@ -71,6 +71,9 @@ const MaterialAccordionCard = ({
   activeTabSection,
   setActiveTabSection,
 }: any) => {
+  const { getPracticalCodes } = useDataGetters();
+  const practicalCodes = getPracticalCodes();
+
   return (
     <AccordionItem
       className="bg-gray-100 dark:bg-[#181818]"

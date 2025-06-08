@@ -1,6 +1,6 @@
-import { MATERIAL_LINK_BASE_URL } from ".";
+import { MATERIAL_LINK_BASE_URL } from "..";
 
-export const materials = [
+export const sem2Materials = [
   // AJP
   {
     id: 1,
@@ -692,7 +692,7 @@ export const materials = [
   },
 ];
 
-export const specializationMaterials = [
+export const sem2specializationMaterials = [
   // AI
   {
     id: 1,

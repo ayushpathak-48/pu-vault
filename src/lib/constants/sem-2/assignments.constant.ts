@@ -1,6 +1,6 @@
-import { MATERIAL_LINK_BASE_URL } from ".";
+import { MATERIAL_LINK_BASE_URL } from "..";
 
-export const assignments = [
+export const sem2Assignments = [
   {
     id: 7,
     title: "Artificial Intelligence - Div C",

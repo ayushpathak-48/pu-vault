@@ -2,6 +2,7 @@
 
 import { CourseSelectBox } from "@/components/course-select-box";
 import { SelectDivision } from "@/components/select-division";
+import { SemSelectBox } from "@/components/sem-select-box";
 import { ToggleMode } from "@/components/toggle-mode";
 import { ToggleThemeColor } from "@/components/toggle-theme-color";
 import { Separator } from "@/components/ui/separator";
@@ -20,6 +21,11 @@ const SettingsPage = () => {
       <div className="flex  gap-2 rounded-lg items-center p-2">
         <div className="font-medium text-lg">Course:</div>
         <CourseSelectBox showToast />
+      </div>
+      <Separator />
+      <div className="flex  gap-2 rounded-lg items-center p-2">
+        <div className="font-medium text-lg">Semester:</div>
+        <SemSelectBox showToast />
       </div>
       <Separator />
       <div className="flex  gap-2 rounded-lg items-center p-2">

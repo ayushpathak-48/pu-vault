@@ -1,6 +1,6 @@
 "use client";
 
-import { practicalCodes } from "@/lib/constants/codes.constant";
+import { useDataGetters } from "@/hooks/use-data-getters";
 import { useDataStore } from "@/stores/data.store";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import React from "react";
 
 const SoftwareLinksPage = () => {
   const specialization = useDataStore((state) => state.specialization);
+  const { getPracticalCodes } = useDataGetters();
+  const practicalCodes = getPracticalCodes();
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
       <div className="flex flex-col gap-4">

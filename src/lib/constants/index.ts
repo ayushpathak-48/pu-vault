@@ -162,24 +162,6 @@ export const softwareLinks = [
   },
 ];
 
-export type HomePageTabsType = "materials" | "practical_codes";
-export const homePageTabs: {
-  id: number;
-  title: string;
-  key: HomePageTabsType;
-}[] = [
-  {
-    id: 1,
-    title: "Materials",
-    key: "materials",
-  },
-  {
-    id: 2,
-    title: "Practicals Codes",
-    key: "practical_codes",
-  },
-];
-
 export const specializations = [
   {
     id: 1,

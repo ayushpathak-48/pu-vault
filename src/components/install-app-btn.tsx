@@ -32,9 +32,6 @@ export default function InstallPWAButton() {
     const promptEvent = deferredPrompt as any;
     promptEvent.prompt(); // Show the install prompt
 
-    const { outcome } = await promptEvent.userChoice;
-    console.log(`User response: ${outcome}`);
-
     setDeferredPrompt(null);
     setIsVisible(false);
   };

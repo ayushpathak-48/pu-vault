@@ -6,7 +6,6 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { flashCards } from "@/lib/constants/flash-cards.constant";
 import {
   Carousel,
   CarouselApi,
@@ -17,6 +16,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Flashcard from "@/components/flash-card";
+import { useDataGetters } from "@/hooks/use-data-getters";
 
 type FlashCardType = {
   id: number;
@@ -25,6 +25,9 @@ type FlashCardType = {
 };
 
 const FlashCardsPageClient = () => {
+  const { getFlashCards } = useDataGetters();
+  const flashCards = getFlashCards();
+
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);

@@ -8,7 +8,6 @@ import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
-// import { VacationMode } from "@/components/vacation-mode";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -16,15 +15,11 @@ const headingFont = PT_Serif({
   variable: "--font-heading",
 });
 
-// const lexendDeca = Lexend_Deca({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700", "800"],
-// });
-
 const comicReleif = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
+
 export const metadata: Metadata = {
   title: "Pu Vault",
   description: "Parul University MCA sem 2 materials",
@@ -37,17 +32,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  /*return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${comicReleif.className} ${headingFont.variable} antialiased `}
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <VacationMode />
-        </ThemeProvider>
-      </body>
-    </html>
-  );*/
   return (
     <html lang="en" suppressHydrationWarning>
       <body

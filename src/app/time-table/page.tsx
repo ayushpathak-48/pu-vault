@@ -3,14 +3,18 @@
 import { SingleWeekTimeTableBody } from "@/components/single-week-time-table-body";
 import { TimeTableBody } from "@/components/time-table-body";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useDataGetters } from "@/hooks/use-data-getters";
 import { divisions, weekdays } from "@/lib/constants";
-import { time_table, TimetableData } from "@/lib/constants/time-table.constant";
+import { TimetableData } from "@/lib/constants/sem-2/time-table.constant";
 import { useDataStore } from "@/stores/data.store";
 import { Loader, LayoutList, SheetIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useEffect, useState } from "react";
 
 const TimeTablePage = () => {
+  const { getTimeTable } = useDataGetters();
+  const TimeTable = getTimeTable();
+
   const course = useDataStore((state) => state.course);
   const hydrated = useDataStore((state) => state.hydrated);
   const [date] = useState(new Date());
@@ -32,11 +36,11 @@ const TimeTablePage = () => {
     if (!divisions.some(({ value }) => value == activeDivision)) {
       setActiveDivision(division);
     }
-    const tempData = time_table.filter(
+    const tempData = TimeTable.filter(
       ({ division_key }) => division_key == activeDivision,
     )[0]?.data;
     setTableData(tempData);
-  }, [activeDivision, division]);
+  }, [activeDivision, division, TimeTable]);
 
   if (!hydrated) {
     return (

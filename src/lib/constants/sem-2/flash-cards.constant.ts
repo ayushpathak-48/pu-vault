@@ -1,4 +1,4 @@
-export const flashCards = [
+export const sem2FlashCards = [
   {
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",

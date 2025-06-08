@@ -5,7 +5,7 @@ import React from "react";
 const SoftwareLinksPage = () => {
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
-      <h2 className="text-xl font-semibold ">All Softwares for Sem 2</h2>
+      <h2 className="text-xl font-semibold ">All Softwares Links</h2>
       <div className="flex flex-col gap-4">
         {softwareLinks.map((software) => (
           <div

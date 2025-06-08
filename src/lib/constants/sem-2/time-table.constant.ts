@@ -29,7 +29,7 @@ export interface TimeTableCell {
 export type TimeTableRow = TimeTableCell[];
 export type TimetableData = TimeTableRow[];
 
-export const time_table = [
+export const sem2TimeTable = [
   // Divison A
   {
     id: 1,

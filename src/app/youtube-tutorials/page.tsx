@@ -2,7 +2,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ytVideoCategories,
   ytVideos,
-} from "@/lib/constants/yt-tutorials.constant";
+} from "@/lib/constants/sem-2/yt-tutorials.constant";
 import Image from "next/image";
 
 const page = () => {

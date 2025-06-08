@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -6,7 +5,7 @@ import Link from "next/link";
 
 export const WhatsappButton = () => {
   return (
-    <Button asChild variant={"outline"}>
+    <Button asChild>
       <Link
         target="_blank"
         href={`https://chat.whatsapp.com/D88Nxz3agYV7or3fbUR9zc`}

@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { practicalCodes } from "@/lib/constants/codes.constant";
 import { Info, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,6 +8,7 @@ import CodeBlock from "../code-block";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useDataGetters } from "@/hooks/use-data-getters";
 
 type CodeElementType = {
   type: string;
@@ -20,6 +20,10 @@ type CodeElementType = {
 
 const CodePageClient = () => {
   const router = useRouter();
+
+  const { getPracticalCodes } = useDataGetters();
+  const practicalCodes = getPracticalCodes();
+
   const tabsContainerRef = useRef(null);
   const { subjectId, practicalId } = useParams();
   const activeTabRef = useRef<HTMLAnchorElement>(null);

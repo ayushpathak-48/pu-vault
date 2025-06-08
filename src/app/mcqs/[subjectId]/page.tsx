@@ -1,9 +1,13 @@
-import { flashCards } from "@/lib/constants/flash-cards.constant";
-import { redirect } from "next/navigation";
+"use client";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CodePage = async ({ params }: { params: any }) => {
-  const { subjectId } = await params;
+import { useDataGetters } from "@/hooks/use-data-getters";
+import { redirect, useParams } from "next/navigation";
+
+const CodePage = () => {
+  const { getFlashCards } = useDataGetters();
+  const flashCards = getFlashCards();
+
+  const { subjectId } = useParams();
   const subject = flashCards.find(({ key }) => key == subjectId);
   return redirect(`/mcqs/${subjectId}/${subject?.units[0]?.key}`);
 };

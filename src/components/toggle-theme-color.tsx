@@ -43,7 +43,6 @@ export const ToggleThemeColor = () => {
       type="single"
       variant="outline"
       onValueChange={(value) => {
-        console.log({ value });
         if (!value) return;
         applyTheme(value);
       }}

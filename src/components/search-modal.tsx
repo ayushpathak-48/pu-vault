@@ -10,18 +10,12 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { ReactNode, useEffect, useState } from "react";
-import {
-  materials,
-  specializationMaterials,
-} from "@/lib/constants/materials.constant";
-import { interviewQuestions } from "@/lib/constants/interviewQuestions.constant";
-import { practicalCodes } from "@/lib/constants/codes.constant";
-import { assignments } from "@/lib/constants/assignments.constant";
+import { sem2specializationMaterials } from "@/lib/constants/sem-2/materials.constant";
+import { interviewQuestions } from "@/lib/constants/sem-2/interviewQuestions.constant";
 import {
   CommandDialog,
   CommandEmpty,
   CommandGroup,
-  // CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
@@ -29,6 +23,7 @@ import {
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
+import { useDataGetters } from "@/hooks/use-data-getters";
 
 const SearchModal = ({
   hideShortcut,
@@ -40,7 +35,13 @@ const SearchModal = ({
   triggerClass?: string;
 }) => {
   const router = useRouter();
-  const materialsData = [...specializationMaterials, ...materials];
+  const { getMaterials, getAssignments, getPracticalCodes } = useDataGetters();
+
+  const materials = getMaterials();
+  const assignments = getAssignments();
+  const practicalCodes = getPracticalCodes();
+
+  const materialsData = [...sem2specializationMaterials, ...materials];
 
   const [open, setOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -74,8 +75,8 @@ const SearchModal = ({
           searchTextArr.every((keyword) =>
             (title + " Notes Materials ppt pdf")
               .toLowerCase()
-              .includes(keyword.toLowerCase())
-          )
+              .includes(keyword.toLowerCase()),
+          ),
         );
         return data;
       })
@@ -88,8 +89,8 @@ const SearchModal = ({
         });
         data = data.filter(({ title }) =>
           searchTextArr.every((keyword) =>
-            (title + " Journal").toLowerCase().includes(keyword.toLowerCase())
-          )
+            (title + " Journal").toLowerCase().includes(keyword.toLowerCase()),
+          ),
         );
         return data;
       })
@@ -101,8 +102,8 @@ const SearchModal = ({
           searchTextArr.every((keyword) =>
             (name + " " + data.subject_name + " Source Code")
               .toLowerCase()
-              .includes(keyword.toLowerCase())
-          )
+              .includes(keyword.toLowerCase()),
+          ),
         );
         return data;
       })
@@ -110,21 +111,21 @@ const SearchModal = ({
 
     const tempSyllabus = tempInitialData.syllabus.filter((data) =>
       searchTextArr.every((keyword) =>
-        (data + " Syllabus").toLowerCase().includes(keyword.toLowerCase())
-      )
+        (data + " Syllabus").toLowerCase().includes(keyword.toLowerCase()),
+      ),
     );
     const tempInterviewQuestions = tempInitialData.interviewQuestions.filter(
       ({ title }) =>
         searchTextArr.every((keyword) =>
           (title + " Interview Questions")
             .toLowerCase()
-            .includes(keyword.toLowerCase())
-        )
+            .includes(keyword.toLowerCase()),
+        ),
     );
     const tempAssignments = tempInitialData.assignments.filter(({ title }) =>
       searchTextArr.every((keyword) =>
-        (title + " Assignements").toLowerCase().includes(keyword.toLowerCase())
-      )
+        (title + " Assignements").toLowerCase().includes(keyword.toLowerCase()),
+      ),
     );
 
     setFilteredData({
@@ -213,12 +214,12 @@ const SearchModal = ({
                   <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
                     {
                       materialsData.find(({ notes_link }) =>
-                        notes_link.some(({ href }) => href == note.href)
+                        notes_link.some(({ href }) => href == note.href),
                       )?.subject_name
                     }
                   </span>
                 </CommandItem>
-              ))
+              )),
             )}
           </CommandGroup>
           <CommandSeparator />
@@ -239,13 +240,13 @@ const SearchModal = ({
                       materialsData.find(({ practicals_link }) =>
                         practicals_link.some(
                           ({ journal_link }) =>
-                            journal_link == note.journal_link
-                        )
+                            journal_link == note.journal_link,
+                        ),
                       )?.subject_name
                     }
                   </span>
                 </CommandItem>
-              ))
+              )),
             )}
           </CommandGroup>
           <CommandSeparator />
@@ -268,7 +269,7 @@ const SearchModal = ({
                     {codes?.subject_name}
                   </span>
                 </CommandItem>
-              ))
+              )),
             )}
           </CommandGroup>
           <CommandSeparator />
@@ -299,7 +300,7 @@ const SearchModal = ({
                 keywords={[
                   "Syllabus",
                   materialsData.find(
-                    ({ syllabus_link }) => syllabus_link == syllabus
+                    ({ syllabus_link }) => syllabus_link == syllabus,
                   )?.subject_name,
                 ]}
                 onSelect={() => handleRedirect(syllabus, "_blank")}
@@ -308,7 +309,7 @@ const SearchModal = ({
                 <span>
                   {
                     materialsData.find(
-                      ({ syllabus_link }) => syllabus_link == syllabus
+                      ({ syllabus_link }) => syllabus_link == syllabus,
                     )?.subject_name
                   }{" "}
                   : Syllabus
@@ -316,7 +317,7 @@ const SearchModal = ({
                 <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
                   {
                     materialsData.find(
-                      ({ syllabus_link }) => syllabus_link == syllabus
+                      ({ syllabus_link }) => syllabus_link == syllabus,
                     )?.subject_name
                   }
                 </span>

@@ -1,4 +1,4 @@
-export const mcqs = [
+export const sem2MCQs = [
   // AJP
   {
     subject_name: "Advance Java Programming",

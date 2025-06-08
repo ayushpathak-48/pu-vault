@@ -1,4 +1,4 @@
-import { interviewQuestions } from "@/lib/constants/interviewQuestions.constant";
+import { interviewQuestions } from "@/lib/constants/sem-2/interviewQuestions.constant";
 import Link from "next/link";
 import React from "react";
 

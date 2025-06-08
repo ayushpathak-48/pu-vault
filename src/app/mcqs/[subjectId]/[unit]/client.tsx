@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AllMcqQuestions from "@/components/mcq/mcq-questions";
-import { mcqs } from "@/lib/constants/mcqs.constant";
+import { mcqs } from "@/lib/constants/sem-2/mcqs.constant";
 
 const McqPageClient = () => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 "use client";
 
-import { flashCards } from "@/lib/constants/flash-cards.constant";
+import { useDataGetters } from "@/hooks/use-data-getters";
 import { useDataStore } from "@/stores/data.store";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -8,6 +8,9 @@ import React from "react";
 
 const FlashCardsPage = () => {
   const specialization = useDataStore((state) => state.specialization);
+
+  const { getFlashCards } = useDataGetters();
+  const flashCards = getFlashCards();
 
   return (
     <div className="p-5 flex flex-col gap-10 w-full">

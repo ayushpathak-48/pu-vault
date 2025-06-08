@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CourseType } from "@/lib/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -9,6 +10,8 @@ interface SpecializationState {
   setDivision: (value: string) => void;
   course: CourseType;
   setCourse: (value: CourseType) => void;
+  sem: number | null;
+  setSem: (value: number) => void;
   color: string;
   setColor: (value: string) => void;
   bottomTabsEnabled: boolean;
@@ -25,17 +28,20 @@ export const useDataStore = create<SpecializationState>()(
       setDivision: (value) => set({ division: value }),
       course: get()?.course,
       setCourse: (value) => set({ course: value }),
+      sem: null,
+      setSem: (value) => set({ sem: value }),
       color: get()?.color || "blue",
       setColor: (value) => set({ color: value }),
       bottomTabsEnabled: get()?.bottomTabsEnabled || true,
       setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),
-      hydrated: false, // Initially false
+
+      hydrated: false,
     }),
     {
       name: "client-data",
       onRehydrateStorage: () => (state) => {
         if (state) {
-          state.hydrated = true; // Update hydration state when done
+          state.hydrated = true;
         }
       },
     },
