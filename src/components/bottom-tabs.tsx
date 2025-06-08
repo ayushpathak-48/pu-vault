@@ -24,7 +24,7 @@ export const BottomTabs = () => {
             <Fragment key={link.id}>
               <Link
                 href={link.href}
-                className="w-full h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-1"
+                className="w-20 h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-1"
               >
                 <Icon
                   className={cn(
@@ -34,7 +34,7 @@ export const BottomTabs = () => {
                 />
                 <span
                   className={cn(
-                    "text-[10px] truncate text-center font-medium text-gray-500",
+                    "text-[10px] text-wrap truncate text-center font-medium text-gray-500",
                     activeLink && "text-primary",
                   )}
                 >
