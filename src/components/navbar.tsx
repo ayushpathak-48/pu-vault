@@ -62,7 +62,7 @@ export const Navbar = () => {
           <Link href={"/"} className="md:hidden">
             <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
           </Link>
-          <Link href={"/settings"}>
+          <Link href={"/settings"} className="md:hidden">
             <SettingsIcon className="size-4 text-gray-400 cursor-pointer" />
           </Link>
         </div>

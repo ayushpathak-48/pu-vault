@@ -2,11 +2,11 @@
 
 import { HomePageAccordionList } from "@/components/tabs/home-accordion-list";
 import { useDataGetters } from "@/hooks/use-data-getters";
-import { sem2specializationMaterials } from "@/lib/constants/sem-2/materials.constant";
 
 export default function Home() {
-  const { getMaterials } = useDataGetters();
+  const { getMaterials, getSpecializationMaterials } = useDataGetters();
   const materials = getMaterials();
+  const specializationMaterials = getSpecializationMaterials();
 
   return (
     <div className="w-full h-full">
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="p-5 h-full">
         <HomePageAccordionList
           tabData={materials}
-          specializationTabData={sem2specializationMaterials}
+          specializationTabData={specializationMaterials}
         />
       </div>
     </div>

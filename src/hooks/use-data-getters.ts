@@ -5,8 +5,14 @@ import { sem2PracticalCodes } from "@/lib/constants/sem-2/codes.constant";
 import { sem3PracticalCodes } from "@/lib/constants/sem-3/codes.constant";
 import { sem3FlashCards } from "@/lib/constants/sem-3/flash-cards.constant";
 import { sem2FlashCards } from "@/lib/constants/sem-2/flash-cards.constant";
-import { sem3Materials } from "@/lib/constants/sem-3/materials.constant";
-import { sem2Materials } from "@/lib/constants/sem-2/materials.constant";
+import {
+  sem3Materials,
+  sem3specializationMaterials,
+} from "@/lib/constants/sem-3/materials.constant";
+import {
+  sem2Materials,
+  sem2specializationMaterials,
+} from "@/lib/constants/sem-2/materials.constant";
 import { sem2MCQs } from "@/lib/constants/sem-2/mcqs.constant";
 import { sem3MCQs } from "@/lib/constants/sem-3/mcqs.constant";
 import { sem2TimeTable } from "@/lib/constants/sem-2/time-table.constant";
@@ -57,12 +63,20 @@ export const useDataGetters = () => {
     return [];
   };
 
+  // Get Specialization constant
+  const getSpecializationMaterials = () => {
+    if (sem === 2) return sem2specializationMaterials;
+    if (sem === 3) return sem3specializationMaterials;
+    return [];
+  };
+
   return {
+    getMCQs,
     getMaterials,
+    getTimeTable,
+    getFlashCards,
     getAssignments,
     getPracticalCodes,
-    getFlashCards,
-    getMCQs,
-    getTimeTable,
+    getSpecializationMaterials,
   };
 };

@@ -6,6 +6,8 @@ import {
   SettingsIcon,
   SquareAsteriskIcon,
   ListTodo,
+  MessageCircleQuestion,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -18,12 +20,21 @@ export const navLinks = [
     title: "Home",
     href: "/",
     icon: HouseIcon,
+    sem: [2, 3],
+  },
+  {
+    id: 12,
+    title: "Placement Materials",
+    href: "/placement-materials",
+    icon: BriefcaseBusiness,
+    sem: [2, 3],
   },
   {
     id: 11,
     title: "MCQs",
     href: "/mcqs",
     icon: ListTodo,
+    sem: [2],
   },
   // {
   //   id: 12,
@@ -36,6 +47,7 @@ export const navLinks = [
     title: "Flash Cards",
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
+    sem: [2],
   },
   // {
   //   id: 11,
@@ -47,7 +59,9 @@ export const navLinks = [
     id: 2,
     title: "Source Codes",
     href: "/code",
+    hideOnMobile: true,
     icon: SquareDashedBottomCode,
+    sem: [2],
   },
   {
     id: 3,
@@ -55,6 +69,7 @@ export const navLinks = [
     href: "/time-table",
     hideOnMobile: true,
     icon: CableCarIcon,
+    sem: [2],
   },
 
   // {
@@ -70,19 +85,21 @@ export const navLinks = [
   //   icon: LinkIcon,
   //   hideOnMobile: true,
   // },
-  // {
-  //   id: 7,
-  //   title: "Interview Questions",
-  //   href: "/interview",
-  //   hideOnMobile: true,
-  //   icon: MessageCircleQuestion,
-  // },
+  {
+    id: 7,
+    title: "Interview Questions",
+    href: "/interview",
+    // hideOnMobile: true,
+    icon: MessageCircleQuestion,
+    sem: [2],
+  },
   {
     id: 8,
     title: "Softwares",
     href: "/software-links",
     hideOnMobile: true,
     icon: HardDriveDownloadIcon,
+    sem: [2],
   },
   // TT removed
   // {
@@ -98,6 +115,7 @@ export const navLinks = [
     href: "/settings",
     hideOnMobile: true,
     icon: SettingsIcon,
+    sem: [2],
   },
 ];
 

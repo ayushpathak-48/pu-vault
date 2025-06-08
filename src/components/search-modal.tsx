@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { ReactNode, useEffect, useState } from "react";
-import { sem2specializationMaterials } from "@/lib/constants/sem-2/materials.constant";
 import { interviewQuestions } from "@/lib/constants/sem-2/interviewQuestions.constant";
 import {
   CommandDialog,
@@ -35,13 +34,19 @@ const SearchModal = ({
   triggerClass?: string;
 }) => {
   const router = useRouter();
-  const { getMaterials, getAssignments, getPracticalCodes } = useDataGetters();
+  const {
+    getMaterials,
+    getAssignments,
+    getPracticalCodes,
+    getSpecializationMaterials,
+  } = useDataGetters();
+  const specializationMaterials = getSpecializationMaterials();
 
   const materials = getMaterials();
   const assignments = getAssignments();
   const practicalCodes = getPracticalCodes();
 
-  const materialsData = [...sem2specializationMaterials, ...materials];
+  const materialsData = [...specializationMaterials, ...materials];
 
   const [open, setOpen] = useState(false);
   const [searchText, setSearchText] = useState("");

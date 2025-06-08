@@ -17,9 +17,11 @@ import InstallPWAButton from "./install-app-btn";
 import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
 import { SemSelectBox } from "./sem-select-box";
+import { useDataStore } from "@/stores/data.store";
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const sem = useDataStore((state) => state.sem);
   return (
     <Sidebar>
       <SidebarHeader className="flex items-center flex-row justify-center gap-2">
@@ -35,6 +37,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           {navLinks.map((link) => {
+            if (sem && !link?.sem?.includes(sem)) return;
             const activeLink =
               (link.href != "/" && pathname.startsWith(link.href)) ||
               pathname == link.href;
