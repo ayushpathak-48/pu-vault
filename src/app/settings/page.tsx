@@ -5,6 +5,7 @@ import { SelectDivision } from "@/components/select-division";
 import { SemSelectBox } from "@/components/sem-select-box";
 import { ToggleMode } from "@/components/toggle-mode";
 import { ToggleThemeColor } from "@/components/toggle-theme-color";
+import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useDataStore } from "@/stores/data.store";
@@ -43,9 +44,12 @@ const SettingsPage = () => {
         <ToggleThemeColor />
       </div>
       <Separator />
-      <div className="flex justify-between gap-2 rounded-lg items-center p-2">
-        <div className="font-medium text-lg">Bottom tabs on mobile</div>
+      <div className="flex justify-between gap-2 rounded-lg items-center p-2 md:hidden">
+        <Label htmlFor="bottomTabSwitch" className="font-medium text-lg">
+          Bottom tabs on mobile
+        </Label>
         <Switch
+          id="bottomTabSwitch"
           checked={bottomTabsEnabled}
           onCheckedChange={(val) => setBottomTabsEnabled(val)}
         />
