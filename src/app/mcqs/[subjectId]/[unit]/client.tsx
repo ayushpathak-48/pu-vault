@@ -7,10 +7,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AllMcqQuestions from "@/components/mcq/mcq-questions";
-import { mcqs } from "@/lib/constants/sem-2/mcqs.constant";
+import { useDataGetters } from "@/hooks/use-data-getters";
 
 const McqPageClient = () => {
   const router = useRouter();
+  const { getMCQs } = useDataGetters();
+  const mcqs = getMCQs();
   const tabsContainerRef = useRef(null);
   const { subjectId, unit } = useParams();
   const activeTabRef = useRef<HTMLAnchorElement>(null);
