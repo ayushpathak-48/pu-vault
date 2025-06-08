@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomErrorPage } from "@/components/custom-error-page";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import { useDataStore } from "@/stores/data.store";
 import { ArrowRight } from "lucide-react";
@@ -10,6 +11,9 @@ const SoftwareLinksPage = () => {
   const specialization = useDataStore((state) => state.specialization);
   const { getPracticalCodes } = useDataGetters();
   const practicalCodes = getPracticalCodes();
+  if (practicalCodes.length == 0) {
+    return <CustomErrorPage errorText="Source Codes not available right now" />;
+  }
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
       <div className="flex flex-col gap-4">

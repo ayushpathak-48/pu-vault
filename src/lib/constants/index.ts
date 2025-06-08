@@ -17,7 +17,7 @@ export const MATERIAL_LINK_BASE_URL =
 export const navLinks = [
   {
     id: 1,
-    title: "Home",
+    title: "All Materials",
     href: "/",
     icon: HouseIcon,
     sem: [2],

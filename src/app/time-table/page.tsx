@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomErrorPage } from "@/components/custom-error-page";
 import { SingleWeekTimeTableBody } from "@/components/single-week-time-table-body";
 import { TimeTableBody } from "@/components/time-table-body";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -48,6 +49,10 @@ const TimeTablePage = () => {
         <Loader className="animate-spin text-lg" />
       </div>
     );
+  }
+
+  if (TimeTable.length == 0) {
+    return <CustomErrorPage errorText="Time table not available right now" />;
   }
 
   return (

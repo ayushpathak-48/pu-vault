@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomErrorPage } from "@/components/custom-error-page";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -8,6 +9,11 @@ import React from "react";
 const McqsPage = () => {
   const { getMCQs } = useDataGetters();
   const mcqs = getMCQs();
+
+  if (mcqs.length == 0) {
+    return <CustomErrorPage errorText="MCQs not available right now" />;
+  }
+
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
       <div className="flex flex-col gap-4">

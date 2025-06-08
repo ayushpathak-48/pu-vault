@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import { CustomErrorPage } from "@/components/custom-error-page";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import Link from "next/link";
 import React from "react";
@@ -7,6 +8,11 @@ import React from "react";
 const AsssignmentsPage = () => {
   const { getAssignments } = useDataGetters();
   const assignments = getAssignments();
+
+  if (assignments.length == 0) {
+    return <CustomErrorPage errorText="Assignments not available right now" />;
+  }
+
   return (
     <div className="p-5 flex flex-col gap-10 w-full">
       <div className="flex flex-col gap-4">

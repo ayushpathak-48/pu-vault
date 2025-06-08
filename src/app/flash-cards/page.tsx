@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomErrorPage } from "@/components/custom-error-page";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import { useDataStore } from "@/stores/data.store";
 import { ArrowRight } from "lucide-react";
@@ -11,6 +12,10 @@ const FlashCardsPage = () => {
 
   const { getFlashCards } = useDataGetters();
   const flashCards = getFlashCards();
+
+  if (flashCards.length == 0) {
+    return <CustomErrorPage errorText="Flashcards not available right now" />;
+  }
 
   return (
     <div className="p-5 flex flex-col gap-10 w-full">

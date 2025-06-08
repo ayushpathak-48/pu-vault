@@ -13,15 +13,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SelectDivision } from "./select-division";
-import InstallPWAButton from "./install-app-btn";
+// import InstallPWAButton from "./install-app-btn";
 import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
-import { SemSelectBox } from "./sem-select-box";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { useDataStore } from "@/stores/data.store";
 
 export function AppSidebar() {
   const pathname = usePathname();
   const sem = useDataStore((state) => state.sem);
+  const setSem = useDataStore((state) => state.setSem);
   return (
     <Sidebar>
       <SidebarHeader className="flex items-center flex-row justify-center gap-2">
@@ -31,13 +32,43 @@ export function AppSidebar() {
       <SidebarGroup>
         <SelectDivision />
       </SidebarGroup>
-      <SidebarGroup>
-        <SemSelectBox showToast />
-      </SidebarGroup>
+      {sem && (
+        <SidebarGroup className="flex-row flex items-center justify-between">
+          <div className="font-medium pl-2">Semester</div>
+          <ToggleGroup
+            type="single"
+            variant="default"
+            onValueChange={(value) => setSem(parseInt(value))}
+            value={sem.toString()}
+          >
+            <ToggleGroupItem
+              value="2"
+              aria-label="Semester 2"
+              className={cn(
+                "!border-gray-500 border",
+                sem == 2 && "!bg-primary/100 !text-primary-foreground",
+              )}
+            >
+              2
+            </ToggleGroupItem>
+
+            <ToggleGroupItem
+              value="3"
+              aria-label="Semester 3"
+              className={cn(
+                "!border-gray-500 border",
+                sem == 3 && "!bg-primary/100 !text-primary-foreground",
+              )}
+            >
+              3
+            </ToggleGroupItem>
+          </ToggleGroup>
+        </SidebarGroup>
+      )}
       <SidebarContent>
         <SidebarGroup>
           {navLinks.map((link) => {
-            if (link?.sem && sem && !link?.sem?.includes(sem)) return;
+            // if (link?.sem && sem && !link?.sem?.includes(sem)) return;
             const activeLink =
               (link.href != "/" && pathname.startsWith(link.href)) ||
               pathname == link.href;
@@ -58,9 +89,9 @@ export function AppSidebar() {
             );
           })}
         </SidebarGroup>
-        <SidebarGroup>
+        {/* <SidebarGroup>
           <InstallPWAButton />
-        </SidebarGroup>
+        </SidebarGroup> */}
       </SidebarContent>
       <SidebarFooter className="border-t">
         <ToggleMode />
