@@ -14,6 +14,9 @@ export const APP_NAME = "Pu Vault";
 export const MATERIAL_LINK_BASE_URL =
   "https://ayushpathak-48.github.io/pu-vault-assets";
 
+export const MATERIAL_LINK_BASE_URL_SEM_3 =
+  "https://saviour000.github.io/pu-vault-assets-3";
+
 export const navLinks = [
   {
     id: 1,
