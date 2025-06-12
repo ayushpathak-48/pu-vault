@@ -70,7 +70,6 @@ export const navLinks = [
     icon: CableCarIcon,
     sem: [2],
   },
-
   // {
   //   id: 5,
   //   title: "Assignments",
@@ -100,7 +99,6 @@ export const navLinks = [
     icon: HardDriveDownloadIcon,
     sem: [2],
   },
-  // TT removed
   // {
   //   id: 9,
   //   title: "Attendance Calc",
