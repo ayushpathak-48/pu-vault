@@ -296,3 +296,11 @@ export const impLinks = [
   },
   // Succesfully
 ];
+
+export const alertContent = [
+  {
+    id: 1,
+    title: "Academic Calendar",
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/academic-calendar.pdf`,
+  },
+];
