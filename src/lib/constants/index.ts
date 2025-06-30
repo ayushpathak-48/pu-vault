@@ -303,4 +303,9 @@ export const alertContent = [
     title: "Academic Calendar",
     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/academic-calendar.pdf`,
   },
+  {
+    id: 2,
+    title: "Research Paper Guidelines",
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
+  },
 ];
