@@ -187,6 +187,48 @@ export const sem3Materials = [
       //   },
     ],
   },
+  // Msc.IT
+  // Advanced Web Development Using React Js
+  {
+    id: 7,
+    subject_name: "Advanced Web Development Using React-js",
+    courses: ["mscit"],
+    syllabus_link: ``,
+    key: "advanced-Web-development-using-react-js",
+    notes_link: [
+      {
+        id: 1,
+        title:
+          "Unit-1: Introduction to system and software development process",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/advanced-web-development-using-react-js/1-node-js.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Requirement Analysis and Requirement Engineering",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/advanced-web-development-using-react-js/2-react-introduction.pdf`,
+      },
+    ],
+
+    practicals_link: [
+      // {
+      //   id: 1,
+      //   title: "Practicals",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/se/se-practicals.pdf`,
+      // },
+    ],
+    que_papers: [
+      // {
+      //   id: 1,
+      //   label: "SE Mid Sem Theory 2025",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/mid-sem-2025.pdf`,
+      // },
+      // {
+      //   id: 2,
+      //   label: "SE Mid Sem Answer Key",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/se-answer-key.pdf`,
+      // },
+    ],
+  },
 ];
 
 export const sem3specializationMaterials = [
@@ -305,11 +347,42 @@ export const sem3specializationMaterials = [
     key: "cloud-computing-II",
     syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cloud-computing-II.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction to AI with Case Study & Learning",
-      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/1-introduction-to-ai-with-case-study-&-learning.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Networking in the Cloud",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/1-intro-networking-in-the-cloud.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Working with Google App Engine",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/2-working-with-google-app-engine.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Microsoft Cloud Services",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/3-microsoft-cloud-services.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Amazon Cloud Services",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/4-amazon-cloud-services.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Cloud ML and AI",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/5-cloud-ml-and-ai.pdf`,
+      },
+      {
+        id: 6,
+        title: "Refrence Book: Cloud Computing: A Practical Approach",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/cloud-computing-a-practical-approach`,
+      },
+      {
+        id: 7,
+        title:
+          "Refrence Book: Cloud Computing: A Practical Approach For Learning And Implementation",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/cloud-computing-a-practical-approach-for-learning-and-implementation.pdf`,
+      },
     ],
     practicals_link: [
       //   {
