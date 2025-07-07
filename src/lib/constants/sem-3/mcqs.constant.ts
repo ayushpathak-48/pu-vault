@@ -2170,8 +2170,9 @@ export const sem3MCQs = [
   },
   // WAD
   {
-    subject_name: "Web Application Development - (MCA)",
+    subject_name: "Web Application Development",
     key: "wad",
+    course: "mca",
     units: [
       {
         id: 1,
@@ -4279,8 +4280,9 @@ export const sem3MCQs = [
 
   // WAD using react
   {
-    subject_name: "Advanced Web Development using React-JS - (Msc-it)",
+    subject_name: "Advanced Web Development using React-JS",
     key: "advanced-wad-using-react-js",
+    course: "mscit",
     units: [
       {
         id: 1,
@@ -6702,6 +6704,7 @@ export const sem3MCQs = [
   {
     subject_name: "Artificial Intelligence - II",
     key: "artificial-intelligence",
+    specialization: "ai",
     units: [
       // Unit - 1
       {
@@ -11217,6 +11220,7 @@ export const sem3MCQs = [
   {
     subject_name: "Full Stack Web Development – II",
     key: "full-stack-web-dev-ii",
+    specialization: "fswd",
     units: [
       //  Unit - 1
       {
@@ -13635,6 +13639,7 @@ export const sem3MCQs = [
   {
     subject_name: "Cyber Security & Forensics - II",
     key: "cyber-security-and-forensics-ii",
+    specialization: "csf",
     units: [
       {
         id: 1,
@@ -16881,6 +16886,7 @@ export const sem3MCQs = [
   {
     subject_name: "Big Data Analytics – II",
     key: "big-data-analytics-ii",
+    specialization: "bda",
     units: [
       {
         id: 1,
@@ -20316,6 +20322,7 @@ export const sem3MCQs = [
   {
     subject_name: "Cloud Computing - II",
     key: "cloud-computing",
+    specialization: "cc",
     units: [
       // Unit - 1
       {
