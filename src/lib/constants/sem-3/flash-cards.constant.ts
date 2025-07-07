@@ -1,4 +1,2485 @@
 export const sem3FlashCards = [
+  //  MAD
+  {
+    subject_name: "Mobile Apps Development",
+    key: "mobile-app-development",
+    units: [
+      {
+        id: 1,
+        title: "Unit 1: Getting Started with Mobility",
+        key: "mobile-apps-getting-started",
+        cards: [
+          {
+            id: 1,
+            front: "What is the mobility landscape?",
+            back: "It refers to the evolving domain of mobile technology, devices, platforms, and connectivity enabling mobile computing.",
+          },
+          {
+            id: 2,
+            front: "Name major mobile platforms.",
+            back: "Android, iOS, Windows Phone, and HarmonyOS.",
+          },
+          {
+            id: 3,
+            front: "What are native mobile apps?",
+            back: "Apps developed for a specific platform using its SDK and tools, like Java/Kotlin for Android or Swift for iOS.",
+          },
+          {
+            id: 4,
+            front: "What is hybrid mobile app development?",
+            back: "Developing apps using web technologies like HTML, CSS, and JS, then wrapping them in a native container.",
+          },
+          {
+            id: 5,
+            front: "What is the Android platform?",
+            back: "An open-source mobile OS developed by Google based on the Linux kernel, mainly for touch-screen devices.",
+          },
+          {
+            id: 6,
+            front: "What are the layers in Android architecture?",
+            back: "Linux Kernel, Libraries & Android Runtime, Application Framework, and Applications.",
+          },
+          {
+            id: 7,
+            front: "What is 3-tier architecture in mobile computing?",
+            back: "It includes the presentation layer (UI), business logic layer, and data layer, separated for modular development.",
+          },
+          {
+            id: 8,
+            front: "Name some key design considerations for mobile apps.",
+            back: "Screen size, power consumption, limited memory/CPU, network variability, and intuitive UI.",
+          },
+          {
+            id: 9,
+            front: "What tools are needed for Android development?",
+            back: "Android Studio, Android SDK, Emulator, Java/Kotlin, Gradle build system.",
+          },
+          {
+            id: 10,
+            front: "How does an emulator help in mobile development?",
+            back: "It simulates a real mobile device for testing and debugging apps without needing physical hardware.",
+          },
+          {
+            id: 11,
+            front: "What is the function of Android Studio?",
+            back: "It is the official IDE for Android development offering tools for coding, debugging, and app deployment.",
+          },
+          {
+            id: 12,
+            front: "What does SDK stand for?",
+            back: "Software Development Kit – tools and APIs provided to develop apps for a platform.",
+          },
+          {
+            id: 13,
+            front: "What is Gradle used for in Android?",
+            back: "It is the build system for managing dependencies and compiling the app code.",
+          },
+          {
+            id: 14,
+            front: "What is APK?",
+            back: "Android Package Kit – the file format used to distribute and install Android applications.",
+          },
+          {
+            id: 15,
+            front: "Why is testing on multiple devices/emulators important?",
+            back: "To ensure compatibility across various screen sizes, OS versions, and hardware capabilities.",
+          },
+          {
+            id: 16,
+            front: "What is the role of XML in Android development?",
+            back: "Used for designing UI layouts, defining resources, and configuration files.",
+          },
+          {
+            id: 17,
+            front: "What is the role of Java/Kotlin in Android?",
+            back: "They are the primary languages used to develop Android applications’ logic and behavior.",
+          },
+          {
+            id: 18,
+            front: "What is a case study in the context of app development?",
+            back: "A detailed example or real-world scenario that demonstrates app development from planning to deployment.",
+          },
+          {
+            id: 19,
+            front: "What is responsive design in mobile apps?",
+            back: "Designing apps to adapt to different screen sizes and resolutions for a better user experience.",
+          },
+          {
+            id: 20,
+            front: "Why is mobile-first design important?",
+            back: "Because it ensures the app is optimized for mobile constraints, offering better performance and usability.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit 2: Building Blocks of Mobile Apps",
+        key: "mobile-building-blocks",
+        cards: [
+          {
+            id: 1,
+            front: "What are UI resources in Android?",
+            back: "UI resources include layouts, drawables, menus, and strings used to design app interfaces.",
+          },
+          {
+            id: 2,
+            front: "What is an Activity in Android?",
+            back: "An Activity is a single screen with a user interface where users can interact.",
+          },
+          {
+            id: 3,
+            front: "What are the states of an Activity?",
+            back: "Created, Started, Resumed, Paused, Stopped, Destroyed.",
+          },
+          {
+            id: 4,
+            front: "What is the Activity lifecycle?",
+            back: "It’s the sequence of states an Activity goes through from creation to destruction.",
+          },
+          {
+            id: 5,
+            front: "How do Activities interact with each other?",
+            back: "Through Intents, allowing transitions and data sharing between Activities.",
+          },
+          {
+            id: 6,
+            front: "What is AsyncTask?",
+            back: "AsyncTask allows performing background operations and publishing results on the UI thread.",
+          },
+          {
+            id: 7,
+            front: "Why use Threads in Android?",
+            back: "To perform long-running operations in the background without blocking the UI thread.",
+          },
+          {
+            id: 8,
+            front: "What are Services in Android?",
+            back: "Components that run in the background to perform long-running operations.",
+          },
+          {
+            id: 9,
+            front: "What are the states of a Service?",
+            back: "Started, Running, Destroyed.",
+          },
+          {
+            id: 10,
+            front: "What are Notifications in Android?",
+            back: "Messages shown to users outside the app's UI to provide alerts or updates.",
+          },
+          {
+            id: 11,
+            front: "What is a Broadcast Receiver?",
+            back: "A component that responds to system-wide broadcast announcements.",
+          },
+          {
+            id: 12,
+            front: "How to send SMS in Android?",
+            back: "Use the SmsManager API to send SMS messages programmatically.",
+          },
+          {
+            id: 13,
+            front: "What is TelephonyManager?",
+            back: "Provides access to information about the telephony services on the device.",
+          },
+          {
+            id: 14,
+            front: "What is SharedPreferences?",
+            back: "A way to store small key-value pairs of primitive data types persistently.",
+          },
+          {
+            id: 15,
+            front: "What is on-device file I/O?",
+            back: "Reading/writing files using internal/external storage APIs on the device.",
+          },
+          {
+            id: 16,
+            front: "What is SQLite in Android?",
+            back: "A lightweight relational database used for local storage on Android devices.",
+          },
+          {
+            id: 17,
+            front: "How to create a database in Android?",
+            back: "Use SQLiteOpenHelper to manage database creation and versioning.",
+          },
+          {
+            id: 18,
+            front: "What are ContentProviders?",
+            back: "They manage access to a structured set of data for sharing between apps.",
+          },
+          {
+            id: 19,
+            front: "What is Intent?",
+            back: "A messaging object used to request actions from other app components.",
+          },
+          {
+            id: 20,
+            front: "What is an implicit Intent?",
+            back: "An Intent without a specific target component, resolved by the system.",
+          },
+          {
+            id: 21,
+            front: "What is an explicit Intent?",
+            back: "An Intent targeting a specific app component.",
+          },
+          {
+            id: 22,
+            front: "What is a Layout?",
+            back: "A container that defines the structure of the user interface in XML or code.",
+          },
+          {
+            id: 23,
+            front: "What is a Drawable?",
+            back: "A graphic that can be drawn on the screen such as bitmaps, shapes, or vectors.",
+          },
+          {
+            id: 24,
+            front: "How are menus defined in Android?",
+            back: "Using XML files and inflated in code using MenuInflater.",
+          },
+          {
+            id: 25,
+            front: "What is the role of the AndroidManifest.xml?",
+            back: "Declares app components, permissions, and configurations.",
+          },
+          {
+            id: 26,
+            front: "What is the purpose of Handler?",
+            back: "To communicate between threads using messages and runnable objects.",
+          },
+          {
+            id: 27,
+            front: "What is the Looper class?",
+            back: "Used to run a message loop for a thread.",
+          },
+          {
+            id: 28,
+            front: "How to perform network access?",
+            back: "Using HttpUrlConnection, Volley, or Retrofit libraries.",
+          },
+          {
+            id: 29,
+            front: "What are permissions in Android?",
+            back: "They control access to protected features like camera, contacts, and internet.",
+          },
+          {
+            id: 30,
+            front: "What is enterprise data access?",
+            back: "Accessing backend systems (e.g., REST APIs, databases) over internet/intranet.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit 3: Sprucing Up Mobile Apps",
+        key: "sprucing-up-mobile-apps",
+        cards: [
+          {
+            id: 1,
+            front: "What are custom views in Android?",
+            back: "User-defined components for custom drawing and interaction.",
+          },
+          {
+            id: 2,
+            front: "What is Canvas in Android?",
+            back: "An interface to draw shapes, text, and images on screen.",
+          },
+          {
+            id: 3,
+            front: "What are animation APIs in Android?",
+            back: "Classes like ObjectAnimator and ViewPropertyAnimator for creating animations.",
+          },
+          {
+            id: 4,
+            front: "What is the difference between frame and tween animation?",
+            back: "Frame uses images; tween uses transformations like rotate and scale.",
+          },
+          {
+            id: 5,
+            front: "What is multimedia support in Android?",
+            back: "Support for audio/video playback, recording, and streaming.",
+          },
+          {
+            id: 6,
+            front: "What class is used to play audio?",
+            back: "MediaPlayer class is used to play audio from files or streams.",
+          },
+          {
+            id: 7,
+            front: "How do you record audio?",
+            back: "Use MediaRecorder with proper permissions.",
+          },
+          {
+            id: 8,
+            front: "What is VideoView?",
+            back: "A widget used to play video files.",
+          },
+          {
+            id: 9,
+            front: "What sensors are available in Android?",
+            back: "Accelerometer, gyroscope, proximity, light, etc.",
+          },
+          {
+            id: 10,
+            front: "What is SensorManager?",
+            back: "Manages all sensors and provides access to sensor data.",
+          },
+          {
+            id: 11,
+            front: "How to detect motion?",
+            back: "Use accelerometer and gyroscope to track movement and rotation.",
+          },
+          {
+            id: 12,
+            front: "What is LocationManager?",
+            back: "Provides access to GPS and network-based location data.",
+          },
+          {
+            id: 13,
+            front: "How do you request location updates?",
+            back: "Using requestLocationUpdates() from LocationManager.",
+          },
+          {
+            id: 14,
+            front: "What is fused location provider?",
+            back: "A Google Play service API for high-accuracy location tracking.",
+          },
+          {
+            id: 15,
+            front: "What is ObjectAnimator?",
+            back: "An animation class that animates properties of objects.",
+          },
+          {
+            id: 16,
+            front: "What are Property Animations?",
+            back: "Animations that change the properties of objects over time.",
+          },
+          {
+            id: 17,
+            front: "What is onDraw() method?",
+            back: "Called when a view should render its content on the screen.",
+          },
+          {
+            id: 18,
+            front: "What is invalidate() method?",
+            back: "Forces a view to redraw by triggering onDraw().",
+          },
+          {
+            id: 19,
+            front: "How to animate a custom view?",
+            back: "By manipulating its properties and calling invalidate().",
+          },
+          {
+            id: 20,
+            front: "What is SurfaceView?",
+            back: "A view for rendering custom graphics in a separate thread.",
+          },
+          {
+            id: 21,
+            front: "What is OpenGL ES?",
+            back: "A graphics API for rendering 2D and 3D graphics.",
+          },
+          {
+            id: 22,
+            front: "What is animation listener?",
+            back: "A callback interface to monitor animation events.",
+          },
+          {
+            id: 23,
+            front: "What are sensors used for?",
+            back: "For motion detection, orientation, and environmental monitoring.",
+          },
+          {
+            id: 24,
+            front: "What is a sensor event?",
+            back: "Data generated by a sensor at a specific time.",
+          },
+          {
+            id: 25,
+            front: "How do you access gyroscope data?",
+            back: "Use SensorManager to register for TYPE_GYROSCOPE.",
+          },
+          {
+            id: 26,
+            front: "What permissions are needed for location?",
+            back: "ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION.",
+          },
+          {
+            id: 27,
+            front: "What is MediaStore API?",
+            back: "An API to access and organize multimedia files on the device.",
+          },
+          {
+            id: 28,
+            front: "What is gesture detection?",
+            back: "Detecting user gestures like fling, tap, or pinch via GestureDetector.",
+          },
+          {
+            id: 29,
+            front: "How do you animate layout changes?",
+            back: "Using TransitionManager and layout transitions.",
+          },
+          {
+            id: 30,
+            front: "What is frame animation?",
+            back: "Playing a sequence of images in order for an animated effect.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit 4: Testing Mobile Apps",
+        key: "mobile-testing",
+        cards: [
+          {
+            id: 1,
+            front: "What is white box testing?",
+            back: "Testing internal logic, code structure, and implementation of the application.",
+          },
+          {
+            id: 2,
+            front: "What is black box testing?",
+            back: "Testing app functionality without knowing internal code structure.",
+          },
+          {
+            id: 3,
+            front: "What is unit testing in Android?",
+            back: "Testing individual methods or classes using frameworks like JUnit.",
+          },
+          {
+            id: 4,
+            front: "What is the purpose of debugging?",
+            back: "To identify and fix bugs in the code during development.",
+          },
+          {
+            id: 5,
+            front: "What is a breakpoint?",
+            back: "A marker to pause code execution and inspect variables or flow.",
+          },
+          {
+            id: 6,
+            front: "How can you debug an Android app?",
+            back: "Using Android Studio debugger and logcat messages.",
+          },
+          {
+            id: 7,
+            front: "What is logcat?",
+            back: "A tool to display log messages from an Android device or emulator.",
+          },
+          {
+            id: 8,
+            front: "What is test automation?",
+            back: "Using tools to automate the process of running tests on mobile apps.",
+          },
+          {
+            id: 9,
+            front: "What is JUnit used for?",
+            back: "Writing and running unit tests in Java-based Android apps.",
+          },
+          {
+            id: 10,
+            front: "What is Robotium?",
+            back: "An Android test framework for automating black box UI tests.",
+          },
+          {
+            id: 11,
+            front: "What is MonkeyTalk?",
+            back: "A tool for automating functional testing of Android/iOS apps.",
+          },
+          {
+            id: 12,
+            front: "What is Espresso?",
+            back: "Google’s framework for writing UI tests for Android apps.",
+          },
+          {
+            id: 13,
+            front: "What is UI Automator?",
+            back: "A tool to test user interactions across multiple apps.",
+          },
+          {
+            id: 14,
+            front: "What is instrumentation testing?",
+            back: "Testing app components (Activity, Service, etc.) using Android’s instrumentation APIs.",
+          },
+          {
+            id: 15,
+            front: "What is code coverage?",
+            back: "A metric showing how much code is tested by automated tests.",
+          },
+          {
+            id: 16,
+            front: "What is the Android Test Orchestrator?",
+            back: "Runs each test in its own Instrumentation instance for isolation.",
+          },
+          {
+            id: 17,
+            front: "What is performance testing?",
+            back: "Ensuring app responds and behaves under various loads and stress.",
+          },
+          {
+            id: 18,
+            front: "What is regression testing?",
+            back: "Retesting the app after changes to ensure existing features still work.",
+          },
+          {
+            id: 19,
+            front: "What is smoke testing?",
+            back: "A basic test to check if the major functions of an app work.",
+          },
+          {
+            id: 20,
+            front: "What is the Android emulator used for in testing?",
+            back: "To simulate real devices for running and testing apps.",
+          },
+          {
+            id: 21,
+            front: "What is ADB?",
+            back: "Android Debug Bridge – a command-line tool to communicate with devices.",
+          },
+          {
+            id: 22,
+            front: "What are test cases?",
+            back: "Defined inputs and expected outputs to verify functionality.",
+          },
+          {
+            id: 23,
+            front: "What is test-driven development (TDD)?",
+            back: "Writing tests before the actual code.",
+          },
+          {
+            id: 24,
+            front: "How are UI tests different from unit tests?",
+            back: "UI tests simulate user actions; unit tests test logic and methods.",
+          },
+          {
+            id: 25,
+            front: "What is an assertion in testing?",
+            back: "A statement that verifies if a condition is true during testing.",
+          },
+          {
+            id: 26,
+            front: "What is mocking in tests?",
+            back: "Simulating objects or services in tests to isolate behavior.",
+          },
+          {
+            id: 27,
+            front: "What is a test suite?",
+            back: "A collection of test cases grouped together.",
+          },
+          {
+            id: 28,
+            front: "What is manual testing?",
+            back: "Testing the app by interacting with it manually without automation.",
+          },
+          {
+            id: 29,
+            front: "What is a bug report?",
+            back: "A documented issue that includes steps to reproduce a problem.",
+          },
+          {
+            id: 30,
+            front: "Why is testing important in mobile development?",
+            back: "To ensure app quality, performance, and reliability across devices.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit 5: Taking Apps to Market and Wireless Languages",
+        key: "mobile-deployment-wireless",
+        cards: [
+          {
+            id: 1,
+            front: "What is app versioning?",
+            back: "Tracking different releases of an app using version codes and names.",
+          },
+          {
+            id: 2,
+            front: "What is signing an APK?",
+            back: "Applying a digital signature to verify the app’s authenticity and integrity.",
+          },
+          {
+            id: 3,
+            front: "What is packaging in Android?",
+            back: "Bundling compiled code, resources, and assets into an APK file.",
+          },
+          {
+            id: 4,
+            front: "What is an APK?",
+            back: "Android Package – the file format used to distribute and install Android apps.",
+          },
+          {
+            id: 5,
+            front: "What is the Google Play Console?",
+            back: "A platform for developers to publish and manage Android apps.",
+          },
+          {
+            id: 6,
+            front: "What is app obfuscation?",
+            back: "Transforming code to make it harder to reverse-engineer, often using ProGuard.",
+          },
+          {
+            id: 7,
+            front: "What is Play Store listing?",
+            back: "Information like app description, screenshots, and icons shown on Play Store.",
+          },
+          {
+            id: 8,
+            front: "What are app release channels?",
+            back: "Tracks like alpha, beta, and production used for controlled app releases.",
+          },
+          {
+            id: 9,
+            front: "What is in-app billing?",
+            back: "A mechanism to sell digital content directly within the app.",
+          },
+          {
+            id: 10,
+            front: "What is HDML?",
+            back: "Handheld Device Markup Language – used for early mobile content.",
+          },
+          {
+            id: 11,
+            front: "What is WML?",
+            back: "Wireless Markup Language – used for designing pages for WAP-enabled mobile devices.",
+          },
+          {
+            id: 12,
+            front: "What is HTML?",
+            back: "HyperText Markup Language – standard language for creating web content.",
+          },
+          {
+            id: 13,
+            front: "What is cHTML?",
+            back: "Compact HTML – a subset of HTML designed for small-screen devices.",
+          },
+          {
+            id: 14,
+            front: "What is XHTML?",
+            back: "Extensible HTML – reformulates HTML using XML.",
+          },
+          {
+            id: 15,
+            front: "What is VoiceXML?",
+            back: "A language for creating voice user interfaces.",
+          },
+          {
+            id: 16,
+            front: "What is app distribution?",
+            back: "The process of making an app available to users through marketplaces or direct links.",
+          },
+          {
+            id: 17,
+            front: "What is beta testing?",
+            back: "Releasing a pre-final version to a limited audience for feedback.",
+          },
+          {
+            id: 18,
+            front: "Why use version codes?",
+            back: "To differentiate updates for the Android system during installations.",
+          },
+          {
+            id: 19,
+            front: "What is ProGuard used for?",
+            back: "To shrink, obfuscate, and optimize code for release builds.",
+          },
+          {
+            id: 20,
+            front: "What are signed and unsigned APKs?",
+            back: "Unsigned APKs are for testing; signed APKs are for distribution.",
+          },
+          {
+            id: 21,
+            front: "What is an Android App Bundle?",
+            back: "A new publishing format that includes all compiled code and resources.",
+          },
+          {
+            id: 22,
+            front: "What is a keystore?",
+            back: "A secure file that stores keys used to sign APKs.",
+          },
+          {
+            id: 23,
+            front: "What is app monetization?",
+            back: "Earning revenue through ads, in-app purchases, or paid downloads.",
+          },
+          {
+            id: 24,
+            front: "What is localization?",
+            back: "Adapting app content to different languages and regions.",
+          },
+          {
+            id: 25,
+            front: "What is responsive design?",
+            back: "Designing UI that works on various screen sizes and orientations.",
+          },
+          {
+            id: 26,
+            front: "What is GDPR in app development?",
+            back: "A regulation that requires user data protection and privacy in apps.",
+          },
+          {
+            id: 27,
+            front: "What is an AAB file?",
+            back: "Android App Bundle – Google’s recommended publishing format.",
+          },
+          {
+            id: 28,
+            front: "How are updates pushed to users?",
+            back: "Through Play Store using updated APK or AAB files.",
+          },
+          {
+            id: 29,
+            front: "What are market guidelines?",
+            back: "Rules set by platforms like Google Play to ensure app quality and safety.",
+          },
+          {
+            id: 30,
+            front: "What is the importance of app analytics?",
+            back: "To track user behavior, crashes, and performance for improvements.",
+          },
+        ],
+      },
+    ],
+  },
+
+  //  WAD
+  {
+    subject_name: "Web Application Development",
+    key: "web-application-development",
+    course: "mca",
+    units: [
+      // Flashcards for Web Application Development
+      {
+        id: 1,
+        title: "Unit 1: Introduction to ASP.NET and .NET Framework",
+        key: "aspnet-intro",
+        cards: [
+          {
+            id: 1,
+            front: "What is ASP.NET?",
+            back: "A web application framework developed by Microsoft for building dynamic websites.",
+          },
+          {
+            id: 2,
+            front: "What is the .NET Framework?",
+            back: "A development platform for building apps with visually stunning user experiences and secure communication.",
+          },
+          {
+            id: 3,
+            front: "What is CLR?",
+            back: "Common Language Runtime – the runtime environment in .NET for executing applications.",
+          },
+          {
+            id: 4,
+            front: "What does CLR manage?",
+            back: "Memory, thread execution, code safety verification, compilation, and other system services.",
+          },
+          {
+            id: 5,
+            front: "What is CTS?",
+            back: "Common Type System – standardizes data types across .NET languages.",
+          },
+          {
+            id: 6,
+            front: "Purpose of CTS?",
+            back: "Allows cross-language integration and type safety.",
+          },
+          {
+            id: 7,
+            front: "What is CLS?",
+            back: "Common Language Specification – defines a subset of features all .NET languages must support.",
+          },
+          {
+            id: 8,
+            front: "Why is CLS important?",
+            back: "Ensures interoperability among .NET languages.",
+          },
+          {
+            id: 9,
+            front: "What is MSIL?",
+            back: "Microsoft Intermediate Language – code generated by compilers before execution.",
+          },
+          {
+            id: 10,
+            front: "What is JIT compiler?",
+            back: "Just-In-Time compiler – converts MSIL to native code at runtime.",
+          },
+          {
+            id: 11,
+            front: "What are framework base classes?",
+            back: "A large class library used in .NET for tasks like file I/O, string management, data access, etc.",
+          },
+          {
+            id: 12,
+            front: "Define managed code.",
+            back: "Code executed by the CLR in .NET is called managed code.",
+          },
+          {
+            id: 13,
+            front: "Define unmanaged code.",
+            back: "Code executed directly by the OS outside the CLR environment.",
+          },
+          {
+            id: 14,
+            front: "What is a namespace?",
+            back: "A logical grouping of classes and types in .NET.",
+          },
+          {
+            id: 15,
+            front: "What is an assembly?",
+            back: "A compiled code library used for deployment, versioning, and security in .NET.",
+          },
+          {
+            id: 16,
+            front: "Difference between DLL and EXE?",
+            back: "DLL is a library; EXE is a standalone executable program.",
+          },
+          {
+            id: 17,
+            front: "What is the GAC?",
+            back: "Global Assembly Cache – stores shared assemblies in .NET.",
+          },
+          {
+            id: 18,
+            front: "Role of metadata in .NET?",
+            back: "Describes the types and members in code and is stored in the assembly.",
+          },
+          {
+            id: 19,
+            front: "What is ILDASM?",
+            back: "Intermediate Language Disassembler – used to view MSIL code.",
+          },
+          {
+            id: 20,
+            front: "What is strong naming in .NET?",
+            back: "Assigning a unique name to assemblies using public/private key pairs.",
+          },
+          {
+            id: 21,
+            front: "What is garbage collection?",
+            back: "Automatic memory management that reclaims unused memory.",
+          },
+          {
+            id: 22,
+            front: "What triggers garbage collection?",
+            back: "Low memory, system calls, or manually via GC.Collect().",
+          },
+          {
+            id: 23,
+            front: "What is the difference between stack and heap?",
+            back: "Stack stores value types; heap stores reference types.",
+          },
+          {
+            id: 24,
+            front: "Define value type.",
+            back: "A type that holds data directly (e.g., int, float).",
+          },
+          {
+            id: 25,
+            front: "Define reference type.",
+            back: "A type that stores a reference to the actual data (e.g., objects).",
+          },
+          {
+            id: 26,
+            front: "What are delegates?",
+            back: "Objects that refer to methods and allow callbacks.",
+          },
+          {
+            id: 27,
+            front: "What is an event in C#?",
+            back: "A message sent by an object to signal an action has occurred.",
+          },
+          {
+            id: 28,
+            front: "What are attributes in .NET?",
+            back: "Used to add metadata like compiler instructions to code.",
+          },
+          {
+            id: 29,
+            front: "What is reflection?",
+            back: "A feature to inspect metadata and access type information at runtime.",
+          },
+          {
+            id: 30,
+            front: "What is the main advantage of .NET?",
+            back: "Rapid development, type safety, performance, and cross-language support.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit 2: ASP.NET Controls, UI Design & Coding",
+        key: "aspnet-controls-ui",
+        cards: [
+          {
+            id: 1,
+            front: "What are ASP.NET server controls?",
+            back: "Controls that run on the server and are processed on the server side.",
+          },
+          {
+            id: 2,
+            front: "Name common ASP.NET input controls.",
+            back: "TextBox, Button, CheckBox, RadioButton, DropDownList.",
+          },
+          {
+            id: 3,
+            front: "What is the purpose of a TextBox?",
+            back: "Allows user input in the form of text.",
+          },
+          {
+            id: 4,
+            front: "What does a Button control do?",
+            back: "Triggers an event when clicked.",
+          },
+          {
+            id: 5,
+            front: "What are List Controls?",
+            back: "Controls like DropDownList, ListBox used to display lists of items.",
+          },
+          {
+            id: 6,
+            front: "What is the role of web.config?",
+            back: "Stores app settings, connection strings, and configuration data.",
+          },
+          {
+            id: 7,
+            front: "What is the purpose of global.asax?",
+            back: "Handles application-level events like Application_Start.",
+          },
+          {
+            id: 8,
+            front: "What is an ASP.NET page?",
+            back: "A web page (.aspx) processed by the ASP.NET engine.",
+          },
+          {
+            id: 9,
+            front: "How are variables declared in C#?",
+            back: 'Using syntax like int x = 10; or string name = "John";',
+          },
+          {
+            id: 10,
+            front: "What are data types in C#?",
+            back: "Types such as int, float, bool, string, char used to define variable types.",
+          },
+          {
+            id: 11,
+            front: "What are conditional statements in C#?",
+            back: "if, else if, else, switch used for decision-making.",
+          },
+          {
+            id: 12,
+            front: "What are loops in C#?",
+            back: "for, while, do-while, foreach used to repeat actions.",
+          },
+          {
+            id: 13,
+            front: "What is a class in C#?",
+            back: "A blueprint for objects containing methods and variables.",
+          },
+          {
+            id: 14,
+            front: "What is an object in C#?",
+            back: "An instance of a class.",
+          },
+          {
+            id: 15,
+            front: "What is inheritance in C#?",
+            back: "A class deriving features from another class.",
+          },
+          {
+            id: 16,
+            front: "What is encapsulation?",
+            back: "Hiding internal state and requiring access through methods.",
+          },
+          {
+            id: 17,
+            front: "What is polymorphism?",
+            back: "Ability to take many forms, e.g., method overloading.",
+          },
+          {
+            id: 18,
+            front: "What is an event handler?",
+            back: "A method that responds to an event like a button click.",
+          },
+          {
+            id: 19,
+            front: "How to write a method in C#?",
+            back: "Use syntax: returnType MethodName(parameters) { }",
+          },
+          {
+            id: 20,
+            front: "What is the use of Label control?",
+            back: "Displays static or dynamic text on a page.",
+          },
+          {
+            id: 21,
+            front: "What is ViewState?",
+            back: "Preserves control data between postbacks.",
+          },
+          {
+            id: 22,
+            front: "Can ASP.NET pages use CSS?",
+            back: "Yes, CSS can be applied to improve page design.",
+          },
+          {
+            id: 23,
+            front: "What is AutoPostBack in controls?",
+            back: "Causes postback automatically when control changes.",
+          },
+          {
+            id: 24,
+            front: "How to bind data to a DropDownList?",
+            back: "Use DataSource and DataBind() method.",
+          },
+          {
+            id: 25,
+            front: "What are CheckBox and RadioButton used for?",
+            back: "To select options; checkbox allows multiple, radio one.",
+          },
+          {
+            id: 26,
+            front: "What is IsPostBack property?",
+            back: "Indicates whether the page is loaded for the first time or due to postback.",
+          },
+          {
+            id: 27,
+            front: "What is Server.Transfer?",
+            back: "Transfers execution to another page on the server.",
+          },
+          {
+            id: 28,
+            front: "What is Response.Redirect?",
+            back: "Redirects the user to another URL.",
+          },
+          {
+            id: 29,
+            front: "What is the role of code-behind file?",
+            back: "Contains C# logic separate from ASPX markup.",
+          },
+          {
+            id: 30,
+            front: 'What does runat="server" mean?',
+            back: "Indicates the control will be processed on the server.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit 3: Validation Controls, State Management & Navigation",
+        key: "aspnet-validation-state-navigation",
+        cards: [
+          {
+            id: 1,
+            front: "What is the purpose of validation controls in ASP.NET?",
+            back: "To ensure user input meets specific rules before processing.",
+          },
+          {
+            id: 2,
+            front: "What does RequiredFieldValidator do?",
+            back: "Ensures a form field is not left blank.",
+          },
+          {
+            id: 3,
+            front: "What is RangeValidator used for?",
+            back: "Validates that input falls within a specified range.",
+          },
+          {
+            id: 4,
+            front: "What does CompareValidator do?",
+            back: "Compares the value of one input control to another.",
+          },
+          {
+            id: 5,
+            front: "What does RegularExpressionValidator do?",
+            back: "Validates input against a regular expression pattern.",
+          },
+          {
+            id: 6,
+            front: "What is CustomValidator?",
+            back: "Allows custom validation logic on the client or server side.",
+          },
+          {
+            id: 7,
+            front: "What is ValidationSummary?",
+            back: "Displays a summary of all validation errors on the page.",
+          },
+          {
+            id: 8,
+            front: "Can multiple validators be applied to one control?",
+            back: "Yes, multiple validators can validate a single control.",
+          },
+          {
+            id: 9,
+            front: "What is client-side validation?",
+            back: "Validation performed in the browser before postback.",
+          },
+          {
+            id: 10,
+            front: "What is server-side validation?",
+            back: "Validation done on the server after form submission.",
+          },
+          {
+            id: 11,
+            front: "What is ViewState in ASP.NET?",
+            back: "Used to preserve page and control values between postbacks.",
+          },
+          {
+            id: 12,
+            front: "What is Session state used for?",
+            back: "Stores user data for the duration of the user session.",
+          },
+          {
+            id: 13,
+            front: "What is Application state?",
+            back: "Shared data accessible by all users and sessions of the app.",
+          },
+          {
+            id: 14,
+            front: "What is the purpose of cookies in ASP.NET?",
+            back: "To store small pieces of data on the client side.",
+          },
+          {
+            id: 15,
+            front: "What is URL encoding?",
+            back: "A way to pass state data via the URL.",
+          },
+          {
+            id: 16,
+            front: "What is Master Page in ASP.NET?",
+            back: "Defines a common layout for multiple content pages.",
+          },
+          {
+            id: 17,
+            front: "How to create a Master Page?",
+            back: "Use the Master Page template and define content placeholders.",
+          },
+          {
+            id: 18,
+            front: "What is a Content Page?",
+            back: "A page that uses a Master Page and fills its placeholders.",
+          },
+          {
+            id: 19,
+            front: "Can Master Pages be nested?",
+            back: "Yes, one master can use another as its master.",
+          },
+          {
+            id: 20,
+            front: "How to access Master Page controls from Content Page?",
+            back: 'Use Master.FindControl("id") in the content page\'s code-behind.',
+          },
+          {
+            id: 21,
+            front: "What is Site Navigation in ASP.NET?",
+            back: "Provides structured navigation using sitemap files and controls.",
+          },
+          {
+            id: 22,
+            front: "What is Web.sitemap file?",
+            back: "An XML file that defines the structure of site navigation.",
+          },
+          {
+            id: 23,
+            front: "What is SiteMapPath control?",
+            back: "Displays a breadcrumb navigation based on site hierarchy.",
+          },
+          {
+            id: 24,
+            front: "What is TreeView control?",
+            back: "Displays hierarchical data, often used for site navigation.",
+          },
+          {
+            id: 25,
+            front: "What is Menu control used for?",
+            back: "Displays a menu bar for navigating the site.",
+          },
+          {
+            id: 26,
+            front: "Can cookies be made persistent?",
+            back: "Yes, by setting an expiration date.",
+          },
+          {
+            id: 27,
+            front: "What method is used to store data in Session?",
+            back: 'Session["key"] = value;',
+          },
+          {
+            id: 28,
+            front: "What happens when a session times out?",
+            back: "The server removes the session and its data is lost.",
+          },
+          {
+            id: 29,
+            front: "What is EnableViewState property?",
+            back: "Controls whether a control maintains its state between postbacks.",
+          },
+          {
+            id: 30,
+            front: "What is the difference between Session and ViewState?",
+            back: "Session is user-specific and server-side; ViewState is page-specific and client-side.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit 4: Data Access through ADO.NET",
+        key: "ado-net-data-access",
+        cards: [
+          {
+            id: 1,
+            front: "What is ADO.NET?",
+            back: "A set of classes in .NET for accessing and managing data from various sources.",
+          },
+          {
+            id: 2,
+            front: "What is the main purpose of ADO.NET?",
+            back: "To enable communication between a .NET application and a data source like SQL Server.",
+          },
+          {
+            id: 3,
+            front: "What is a DataSet in ADO.NET?",
+            back: "An in-memory cache of data retrieved from a database.",
+          },
+          {
+            id: 4,
+            front: "What is a DataReader?",
+            back: "A forward-only, read-only stream of data from a database.",
+          },
+          {
+            id: 5,
+            front: "What is SqlConnection?",
+            back: "Used to establish a connection to a SQL Server database.",
+          },
+          {
+            id: 6,
+            front: "What is SqlCommand used for?",
+            back: "To execute SQL queries and stored procedures.",
+          },
+          {
+            id: 7,
+            front: "What is SqlDataAdapter?",
+            back: "Acts as a bridge between a DataSet and the database.",
+          },
+          {
+            id: 8,
+            front: "How do you retrieve data into a GridView?",
+            back: "Bind the GridView to a DataSource like a DataSet or SqlDataSource.",
+          },
+          {
+            id: 9,
+            front: "What is the purpose of SqlDataSource control?",
+            back: "Provides an easy way to connect and interact with a SQL database.",
+          },
+          {
+            id: 10,
+            front: "What is CommandText in SqlCommand?",
+            back: "The SQL query or stored procedure to be executed.",
+          },
+          {
+            id: 11,
+            front: "What is a parameterized query?",
+            back: "A SQL query that uses parameters to prevent SQL injection.",
+          },
+          {
+            id: 12,
+            front: "What is the use of ConnectionString?",
+            back: "Defines how to connect to a database (server, DB name, credentials).",
+          },
+          {
+            id: 13,
+            front: "What is FormView control?",
+            back: "Displays a single record at a time in a customizable form layout.",
+          },
+          {
+            id: 14,
+            front: "What is DetailsView control?",
+            back: "Used to display, insert, edit, and delete a single record.",
+          },
+          {
+            id: 15,
+            front: "What is ListView control?",
+            back: "A flexible control for displaying lists of data with templates.",
+          },
+          {
+            id: 16,
+            front: "How do you update data in GridView?",
+            back: "Enable editing and handle the RowUpdating event.",
+          },
+          {
+            id: 17,
+            front: "What is ExecuteNonQuery used for?",
+            back: "Executes commands that don’t return data (INSERT, UPDATE, DELETE).",
+          },
+          {
+            id: 18,
+            front: "What does ExecuteScalar return?",
+            back: "Returns a single value from the database.",
+          },
+          {
+            id: 19,
+            front: "What does ExecuteReader return?",
+            back: "Returns a DataReader object with the query result.",
+          },
+          {
+            id: 20,
+            front: "What are the steps to connect to a DB using ADO.NET?",
+            back: "1. Create connection, 2. Create command, 3. Execute command, 4. Process results.",
+          },
+          {
+            id: 21,
+            front: "What is connection pooling?",
+            back: "Reusing database connections for better performance.",
+          },
+          {
+            id: 22,
+            front: "What is a DataTable?",
+            back: "A table representation of data in memory, used in a DataSet.",
+          },
+          {
+            id: 23,
+            front: "Can DataSet hold multiple tables?",
+            back: "Yes, a DataSet can contain multiple DataTables.",
+          },
+          {
+            id: 24,
+            front: "What is DataBinding?",
+            back: "The process of binding UI elements to data sources.",
+          },
+          {
+            id: 25,
+            front: "What is the purpose of ObjectDataSource?",
+            back: "Binds data from custom business objects to controls.",
+          },
+          {
+            id: 26,
+            front: "What is SqlException?",
+            back: "An exception thrown when SQL Server returns an error.",
+          },
+          {
+            id: 27,
+            front: "How do you open and close a SqlConnection?",
+            back: "Use conn.Open() and conn.Close() methods.",
+          },
+          {
+            id: 28,
+            front: "What is a stored procedure?",
+            back: "A precompiled SQL statement stored in the database.",
+          },
+          {
+            id: 29,
+            front: "Can ADO.NET work with XML?",
+            back: "Yes, DataSet can read/write XML data using ReadXml/WriteXml.",
+          },
+          {
+            id: 30,
+            front:
+              "What is the difference between connected and disconnected architecture?",
+            back: "Connected uses DataReader (real-time), Disconnected uses DataSet (cached).",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit 5: Advanced ASP.NET",
+        key: "advanced-aspnet",
+        cards: [
+          {
+            id: 1,
+            front: "What is AJAX in ASP.NET?",
+            back: "Asynchronous JavaScript and XML – allows web pages to update without full reload.",
+          },
+          {
+            id: 2,
+            front: "What is an UpdatePanel?",
+            back: "A control that allows partial page updates using AJAX.",
+          },
+          {
+            id: 3,
+            front: "What is ScriptManager?",
+            back: "Manages client script for AJAX-enabled ASP.NET web pages.",
+          },
+          {
+            id: 4,
+            front: "What is LINQ?",
+            back: "Language Integrated Query – allows querying of data using C# syntax.",
+          },
+          {
+            id: 5,
+            front: "What is the benefit of LINQ?",
+            back: "Unified querying across databases, XML, objects, and more.",
+          },
+          {
+            id: 6,
+            front: "What is a stored procedure?",
+            back: "A precompiled collection of one or more SQL statements stored in the database.",
+          },
+          {
+            id: 7,
+            front: "How to call a stored procedure in ADO.NET?",
+            back: "Use SqlCommand with CommandType set to StoredProcedure.",
+          },
+          {
+            id: 8,
+            front: "What is XML?",
+            back: "Extensible Markup Language – used to store and transport data.",
+          },
+          {
+            id: 9,
+            front: "How is XML used in ASP.NET?",
+            back: "For configuration, data storage, and communication between systems.",
+          },
+          {
+            id: 10,
+            front: "What is XmlTextReader?",
+            back: "A fast, forward-only reader for XML data.",
+          },
+          {
+            id: 11,
+            front: "What is XmlDocument?",
+            back: "A class for working with XML documents using DOM.",
+          },
+          {
+            id: 12,
+            front: "What is ASP.NET MVC?",
+            back: "A framework for building web apps using Model-View-Controller pattern.",
+          },
+          {
+            id: 13,
+            front: "What is the Model in MVC?",
+            back: "Represents the application's data and business logic.",
+          },
+          {
+            id: 14,
+            front: "What is the View in MVC?",
+            back: "Displays the data (user interface).",
+          },
+          {
+            id: 15,
+            front: "What is the Controller in MVC?",
+            back: "Handles user input and updates the Model and View.",
+          },
+          {
+            id: 16,
+            front: "What is routing in MVC?",
+            back: "A way to map URLs to controllers and actions.",
+          },
+          {
+            id: 17,
+            front: "What is a route in ASP.NET MVC?",
+            back: "A pattern that defines URL structure and maps to a controller/action.",
+          },
+          {
+            id: 18,
+            front: "What is RouteConfig.cs?",
+            back: "Defines route settings in an MVC app.",
+          },
+          {
+            id: 19,
+            front: "What is Razor?",
+            back: "A markup syntax used to embed C# code in HTML for MVC views.",
+          },
+          {
+            id: 20,
+            front: "What is @Html.ActionLink?",
+            back: "Generates a hyperlink to an MVC action.",
+          },
+          {
+            id: 21,
+            front: "What is TempData in MVC?",
+            back: "Stores data temporarily between controller actions.",
+          },
+          {
+            id: 22,
+            front: "What is ViewData?",
+            back: "Used to pass data from controller to view (dictionary-based).",
+          },
+          {
+            id: 23,
+            front: "What is ViewBag?",
+            back: "Dynamic wrapper around ViewData – allows passing data to view.",
+          },
+          {
+            id: 24,
+            front: "What is Partial View?",
+            back: "Reusable view components embedded inside other views.",
+          },
+          {
+            id: 25,
+            front: "What are strongly typed views?",
+            back: "Views bound to specific model classes for compile-time checking.",
+          },
+          {
+            id: 26,
+            front: "What is bundling in ASP.NET?",
+            back: "Combining multiple files into one to reduce HTTP requests.",
+          },
+          {
+            id: 27,
+            front: "What is minification?",
+            back: "Removing unnecessary characters from code to reduce file size.",
+          },
+          {
+            id: 28,
+            front: "What is Web API in ASP.NET?",
+            back: "A framework for building HTTP services used by clients like browsers or mobile apps.",
+          },
+          {
+            id: 29,
+            front: "What is JSON?",
+            back: "JavaScript Object Notation – a lightweight data-interchange format.",
+          },
+          {
+            id: 30,
+            front: "How do you consume a Web API in ASP.NET?",
+            back: "Using HttpClient or AJAX to make requests and handle responses.",
+          },
+        ],
+      },
+    ],
+  },
+  //  WAD Using REact
+  {
+    subject_name: "Advanced Web Development using React-JS",
+    key: "advanced-web-development-using-react-js",
+    course: "mscit",
+    units: [
+      {
+        id: 1,
+        title: "Unit 1: ReactJS Fundamentals",
+        key: "reactjs-fundamentals",
+        cards: [
+          {
+            id: 1,
+            front: "What is ReactJS?",
+            back: "A JavaScript library for building user interfaces.",
+          },
+          {
+            id: 2,
+            front: "How does ReactJS differ from Angular?",
+            back: "React is a library focused on UI; Angular is a full framework.",
+          },
+          {
+            id: 3,
+            front: "What is React Native?",
+            back: "A framework to build native mobile apps using React.",
+          },
+          {
+            id: 4,
+            front: "What is Vue.js?",
+            back: "A progressive JavaScript framework similar to React but simpler.",
+          },
+          {
+            id: 5,
+            front: "How do you create a React app?",
+            back: "Using create-react-app CLI tool.",
+          },
+          {
+            id: 6,
+            front: "What is JSX?",
+            back: "A syntax extension for JavaScript that resembles HTML.",
+          },
+          {
+            id: 7,
+            front: "What is the virtual DOM?",
+            back: "A lightweight copy of the real DOM used for efficient updates.",
+          },
+          {
+            id: 8,
+            front: "What is a single-page application?",
+            back: "An app that loads a single HTML page and updates dynamically.",
+          },
+          {
+            id: 9,
+            front: "What are class components?",
+            back: "Components written using ES6 classes.",
+          },
+          {
+            id: 10,
+            front: "What are function components?",
+            back: "Simpler components using JavaScript functions.",
+          },
+          {
+            id: 11,
+            front: "What are the benefits of using React?",
+            back: "Reusable components, virtual DOM, unidirectional data flow.",
+          },
+          {
+            id: 12,
+            front: "What is the purpose of components in React?",
+            back: "To break UI into reusable pieces.",
+          },
+          {
+            id: 13,
+            front: "What are props in React?",
+            back: "Inputs to components passed via attributes.",
+          },
+          {
+            id: 14,
+            front: "What is the use of ReactDOM.render?",
+            back: "To render a React component into the DOM.",
+          },
+          {
+            id: 15,
+            front: "What is the main advantage of virtual DOM?",
+            back: "Improves performance by minimizing real DOM manipulation.",
+          },
+          {
+            id: 16,
+            front: "What is a React element?",
+            back: "A description of what you want to see on the screen.",
+          },
+          {
+            id: 17,
+            front: "What are keys in React?",
+            back: "Unique identifiers for elements in a list.",
+          },
+          {
+            id: 18,
+            front: "Can JSX contain JavaScript expressions?",
+            back: "Yes, inside curly braces {}.",
+          },
+          {
+            id: 19,
+            front: "What is React.createElement?",
+            back: "An API to create React elements without JSX.",
+          },
+          {
+            id: 20,
+            front: "Is React a library or framework?",
+            back: "Library.",
+          },
+          {
+            id: 21,
+            front: "Why is JSX used in React?",
+            back: "To write HTML-like syntax in JavaScript.",
+          },
+          {
+            id: 22,
+            front: "What are pure components?",
+            back: "Components that render the same output for same props/state.",
+          },
+          {
+            id: 23,
+            front: "What does re-rendering mean?",
+            back: "Recreating the virtual DOM and updating the real DOM.",
+          },
+          {
+            id: 24,
+            front: "What is reconciliation?",
+            back: "React's process to update the DOM efficiently.",
+          },
+          {
+            id: 25,
+            front: "What is the role of Babel?",
+            back: "Transpiles JSX to regular JavaScript.",
+          },
+          {
+            id: 26,
+            front: "Can React be used without JSX?",
+            back: "Yes, using React.createElement directly.",
+          },
+          {
+            id: 27,
+            front: "What is nesting in React components?",
+            back: "Embedding one component inside another.",
+          },
+          {
+            id: 28,
+            front: "What does component-based architecture mean?",
+            back: "UI is built from isolated, reusable components.",
+          },
+          { id: 29, front: "Is React open-source?", back: "Yes." },
+          { id: 30, front: "Who developed React?", back: "Facebook." },
+        ],
+      },
+      {
+        id: 2,
+        title: "Unit 2: SET UP REACT JS ENVIRONMENT",
+        key: "reactjs-setup-env",
+        cards: [
+          {
+            id: 1,
+            front: "What is the CLI in React?",
+            back: "Command Line Interface tool used to create and manage React apps.",
+          },
+          {
+            id: 2,
+            front: "What is the command to create a React app?",
+            back: "npx create-react-app project-name",
+          },
+          {
+            id: 3,
+            front: "What are the advantages of using create-react-app?",
+            back: "Sets up build configuration, bundling, linting, and more.",
+          },
+          {
+            id: 4,
+            front: "How do you install Node.js?",
+            back: "Download from nodejs.org and install using the installer.",
+          },
+          {
+            id: 5,
+            front: "Why is Node.js needed for React?",
+            back: "It runs the development server and manages dependencies.",
+          },
+          {
+            id: 6,
+            front: "What is the role of npm?",
+            back: "Node Package Manager, used to install and manage JavaScript packages.",
+          },
+          {
+            id: 7,
+            front: "What is Babel?",
+            back: "A JavaScript compiler that converts JSX and ES6+ to browser-compatible JS.",
+          },
+          {
+            id: 8,
+            front: "How do you debug a React app?",
+            back: "Using browser DevTools and console.log, or React Developer Tools.",
+          },
+          {
+            id: 9,
+            front: "What is the default port for React development server?",
+            back: "3000",
+          },
+          {
+            id: 10,
+            front: "How to run a React app after creation?",
+            back: "npm start",
+          },
+          {
+            id: 11,
+            front: "What is a build in React?",
+            back: "A production-ready version of the app optimized for performance.",
+          },
+          {
+            id: 12,
+            front: "How to build a production version of a React app?",
+            back: "npm run build",
+          },
+          {
+            id: 13,
+            front: "What is the 'public' folder in React?",
+            back: "Contains static files like index.html and images.",
+          },
+          {
+            id: 14,
+            front: "What is the 'src' folder in React?",
+            back: "Holds the JavaScript and component code of the app.",
+          },
+          {
+            id: 15,
+            front: "What is index.js in React?",
+            back: "The entry point that renders the main App component.",
+          },
+          {
+            id: 16,
+            front: "What is App.js?",
+            back: "The root React component rendered inside index.js.",
+          },
+          {
+            id: 17,
+            front: "Can you rename App.js?",
+            back: "Yes, but you must also update references in index.js.",
+          },
+          {
+            id: 18,
+            front: "What is the node_modules folder?",
+            back: "Stores all installed npm packages.",
+          },
+          {
+            id: 19,
+            front: "How do you install a new package in React?",
+            back: "npm install package-name",
+          },
+          {
+            id: 20,
+            front: "What is package.json?",
+            back: "Configuration file listing project metadata and dependencies.",
+          },
+          {
+            id: 21,
+            front: "What is the benefit of modular folder structure?",
+            back: "Improves maintainability and scalability of the code.",
+          },
+          {
+            id: 22,
+            front: "How do you remove a package?",
+            back: "npm uninstall package-name",
+          },
+          {
+            id: 23,
+            front: "What is the use of .gitignore in React projects?",
+            back: "Lists files/folders Git should ignore like node_modules.",
+          },
+          {
+            id: 24,
+            front: "What is JSX compiled into?",
+            back: "React.createElement calls using Babel.",
+          },
+          {
+            id: 25,
+            front: "How do you open a React app in browser?",
+            back: "npm start automatically launches the app in the default browser.",
+          },
+          {
+            id: 26,
+            front: "What is the purpose of manifest.json?",
+            back: "Defines app metadata like icons, theme color for PWA.",
+          },
+          {
+            id: 27,
+            front: "Can you use TypeScript in create-react-app?",
+            back: "Yes, use npx create-react-app app-name --template typescript",
+          },
+          {
+            id: 28,
+            front: "What is serviceWorker.js?",
+            back: "Enables offline functionality (PWA) in React.",
+          },
+          {
+            id: 29,
+            front: "Why use create-react-app instead of manual setup?",
+            back: "Saves time and reduces complexity for new projects.",
+          },
+          {
+            id: 30,
+            front: "Where is ReactDOM.render used?",
+            back: "In index.js to render App into the root DOM node.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Unit 3: BASIC FEATURES OF REACTJS AND COMPONENTS",
+        key: "reactjs-components-hooks",
+        cards: [
+          {
+            id: 1,
+            front: "What is JSX in React?",
+            back: "A syntax extension that allows mixing HTML with JavaScript.",
+          },
+          {
+            id: 2,
+            front: "What are the two main types of components in React?",
+            back: "Class components and functional components.",
+          },
+          {
+            id: 3,
+            front: "What is a class component?",
+            back: "A component defined using ES6 class syntax.",
+          },
+          {
+            id: 4,
+            front: "What is a functional component?",
+            back: "A component defined using a JavaScript function.",
+          },
+          {
+            id: 5,
+            front: "What is the render() method used for?",
+            back: "To return the JSX that defines the UI of a class component.",
+          },
+          {
+            id: 6,
+            front: "What is a prop in React?",
+            back: "A read-only input passed to a component.",
+          },
+          {
+            id: 7,
+            front: "How do you pass props to a component?",
+            back: "As attributes in JSX tags.",
+          },
+          {
+            id: 8,
+            front: "What is state in React?",
+            back: "A component's private data that affects how it renders.",
+          },
+          {
+            id: 9,
+            front: "Where is state defined in class components?",
+            back: "Inside the constructor using this.state.",
+          },
+          {
+            id: 10,
+            front: "How do you update state in a class component?",
+            back: "Using this.setState().",
+          },
+          {
+            id: 11,
+            front: "What is the useState Hook?",
+            back: "A Hook that allows you to add state to functional components.",
+          },
+          {
+            id: 12,
+            front: "What are Hooks?",
+            back: "Functions that let you use React features in functional components.",
+          },
+          {
+            id: 13,
+            front: "Can you use Hooks in class components?",
+            back: "No, only in functional components.",
+          },
+          {
+            id: 14,
+            front: "What is the useEffect Hook?",
+            back: "A Hook used to handle side effects like API calls or subscriptions.",
+          },
+          {
+            id: 15,
+            front: "What lifecycle method does useEffect replace?",
+            back: "componentDidMount, componentDidUpdate, and componentWillUnmount.",
+          },
+          {
+            id: 16,
+            front: "What is a controlled component?",
+            back: "An input element whose value is controlled by React state.",
+          },
+          {
+            id: 17,
+            front: "How do you handle form input in React?",
+            back: "By using onChange handlers and updating state.",
+          },
+          {
+            id: 18,
+            front: "What is the purpose of componentDidMount?",
+            back: "To run code after the component mounts (e.g., fetch data).",
+          },
+          {
+            id: 19,
+            front: "What is the use of props.children?",
+            back: "To access nested elements or components passed between tags.",
+          },
+          {
+            id: 20,
+            front: "What is a Higher Order Component (HOC)?",
+            back: "A function that takes a component and returns a new component.",
+          },
+          {
+            id: 21,
+            front: "What is the defaultProps in React?",
+            back: "Default property values for components if no value is passed.",
+          },
+          {
+            id: 22,
+            front: "What is the constructor used for in class components?",
+            back: "To initialize state and bind event handlers.",
+          },
+          {
+            id: 23,
+            front: "What is props drilling?",
+            back: "Passing data from parent to deeply nested children via props.",
+          },
+          {
+            id: 24,
+            front: "How do you prevent re-renders in React?",
+            back: "Use memoization with React.memo or PureComponent.",
+          },
+          {
+            id: 25,
+            front: "What is React.Fragment used for?",
+            back: "To group multiple elements without adding extra nodes to the DOM.",
+          },
+          {
+            id: 26,
+            front: "What are lifecycle methods?",
+            back: "Special methods in class components triggered during render phases.",
+          },
+          {
+            id: 27,
+            front: "What is the difference between state and props?",
+            back: "State is internal and changeable; props are external and immutable.",
+          },
+          {
+            id: 28,
+            front: "What are uncontrolled components?",
+            back: "Form elements that manage their own state using the DOM.",
+          },
+          {
+            id: 29,
+            front: "What is conditional rendering?",
+            back: "Rendering different JSX based on conditions using ternary or if statements.",
+          },
+          {
+            id: 30,
+            front: "What is a key in React lists?",
+            back: "A unique identifier used to improve list rendering performance.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Unit 4: Routing with React Router",
+        key: "react-routing",
+        cards: [
+          {
+            id: 1,
+            front: "What is React Router?",
+            back: "A library for handling routing in React applications.",
+          },
+          {
+            id: 2,
+            front: "What is routing in React?",
+            back: "Defining different views or pages that can be navigated to without full-page reloads.",
+          },
+          {
+            id: 3,
+            front: "How do you install React Router?",
+            back: "Using npm: npm install react-router-dom",
+          },
+          {
+            id: 4,
+            front: "What is <BrowserRouter> used for?",
+            back: "It wraps the application and enables client-side routing.",
+          },
+          {
+            id: 5,
+            front: "What does the <Route> component do?",
+            back: "It renders UI when the path matches the current URL.",
+          },
+          {
+            id: 6,
+            front: "How do you navigate between pages in React?",
+            back: "Using the <Link> or <NavLink> component.",
+          },
+          {
+            id: 7,
+            front: "What is the difference between <Link> and <NavLink>?",
+            back: "<NavLink> adds styling when the link is active.",
+          },
+          {
+            id: 8,
+            front: "What is a dynamic route?",
+            back: "A route that uses parameters like /user/:id.",
+          },
+          {
+            id: 9,
+            front: "How do you access route parameters?",
+            back: "Using the useParams() hook.",
+          },
+          {
+            id: 10,
+            front: "What is the useNavigate() hook?",
+            back: "A hook used to programmatically navigate to another route.",
+          },
+          {
+            id: 11,
+            front: "How do you redirect in React Router?",
+            back: "Using the <Navigate> component.",
+          },
+          {
+            id: 12,
+            front: "What is nested routing?",
+            back: "Defining routes within other routes for sub-navigation.",
+          },
+          {
+            id: 13,
+            front: "What is <Outlet> used for?",
+            back: "To render child routes inside a parent component.",
+          },
+          {
+            id: 14,
+            front: "What is a 404 page in React Router?",
+            back: "A fallback route when no other route matches.",
+          },
+          {
+            id: 15,
+            front: "How do you create a 404 Not Found route?",
+            back: "Using path='*' in a <Route>.",
+          },
+          {
+            id: 16,
+            front: "What is route guarding?",
+            back: "Restricting access to routes based on conditions like authentication.",
+          },
+          {
+            id: 17,
+            front: "What is useLocation() hook?",
+            back: "Returns information about the current URL.",
+          },
+          {
+            id: 18,
+            front: "What is the key prop in routing?",
+            back: "Used to force component re-render when route changes.",
+          },
+          {
+            id: 19,
+            front: "How do you create a simple router setup?",
+            back: "Wrap with <BrowserRouter> and define routes with <Route>.",
+          },
+          {
+            id: 20,
+            front: "What does exact do in <Route>?",
+            back: "Ensures route only matches when the path exactly matches.",
+          },
+          {
+            id: 21,
+            front: "What is hash routing?",
+            back: "Routing using URL hash (e.g., #/home) instead of clean paths.",
+          },
+          {
+            id: 22,
+            front: "How to pass state during navigation?",
+            back: "Use useNavigate with { state: data }.",
+          },
+          {
+            id: 23,
+            front: "How to retrieve passed state?",
+            back: "Use useLocation().state in the target component.",
+          },
+          {
+            id: 24,
+            front: "Can you use multiple routers in React?",
+            back: "No, only one <BrowserRouter> should wrap the app.",
+          },
+          {
+            id: 25,
+            front: "What is <Switch> in older versions of React Router?",
+            back: "It rendered the first matching route (replaced by <Routes>).",
+          },
+          {
+            id: 26,
+            front: "What is <Routes> in React Router v6?",
+            back: "A wrapper for all <Route> elements that matches only one at a time.",
+          },
+          {
+            id: 27,
+            front: "How do you make routes case insensitive?",
+            back: "React Router v6 does this by default.",
+          },
+          {
+            id: 28,
+            front: "Can you use query parameters in React Router?",
+            back: "Yes, using URLSearchParams API.",
+          },
+          {
+            id: 29,
+            front: "What is route-based code splitting?",
+            back: "Loading route components lazily using React.lazy.",
+          },
+          {
+            id: 30,
+            front: "What is lazy loading in routing?",
+            back: "Loading components only when needed to improve performance.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Unit 5: Event Handling in React & Working with Forms",
+        key: "react-events-forms",
+        cards: [
+          {
+            id: 1,
+            front: "How does React handle events?",
+            back: "React uses synthetic events that wrap native events for cross-browser compatibility.",
+          },
+          {
+            id: 2,
+            front: "What is a synthetic event?",
+            back: "A wrapper around the browser’s native event system in React.",
+          },
+          {
+            id: 3,
+            front: "How do you handle a click event in React?",
+            back: "Using onClick attribute with a function handler.",
+          },
+          {
+            id: 4,
+            front: "What does onChange do in forms?",
+            back: "Fires an event when the value of an input changes.",
+          },
+          {
+            id: 5,
+            front: "How do you access event target value?",
+            back: "Using event.target.value in the event handler.",
+          },
+          {
+            id: 6,
+            front: "How to bind event handlers in class components?",
+            back: "Using this.handleClick = this.handleClick.bind(this) in constructor.",
+          },
+          {
+            id: 7,
+            front: "How do you pass arguments to event handlers?",
+            back: "Using arrow functions or bind inside JSX.",
+          },
+          {
+            id: 8,
+            front: "How do you prevent default form submission?",
+            back: "By calling event.preventDefault() inside the onSubmit handler.",
+          },
+          {
+            id: 9,
+            front: "What is controlled component in a form?",
+            back: "An input element whose value is controlled by React state.",
+          },
+          {
+            id: 10,
+            front: "How do you update form state?",
+            back: "Using setState or useState inside onChange handlers.",
+          },
+          {
+            id: 11,
+            front: "How do you handle form submission in React?",
+            back: "Use onSubmit on <form> and update state or perform an action.",
+          },
+          {
+            id: 12,
+            front: "What are uncontrolled components?",
+            back: "Form elements where the DOM handles the state.",
+          },
+          {
+            id: 13,
+            front: "How do you use refs with uncontrolled components?",
+            back: "Use useRef() to access input values directly.",
+          },
+          {
+            id: 14,
+            front: "What is the difference between onBlur and onFocus?",
+            back: "onBlur triggers when focus leaves an input; onFocus triggers when it gains focus.",
+          },
+          {
+            id: 15,
+            front: "How do you reset a form in React?",
+            back: "Set state values back to their initial values.",
+          },
+          {
+            id: 16,
+            front: "What are input types supported in React forms?",
+            back: "Text, email, password, checkbox, radio, select, textarea, etc.",
+          },
+          {
+            id: 17,
+            front: "How do you handle checkboxes in React?",
+            back: "Track checked state and update it in onChange handler.",
+          },
+          {
+            id: 18,
+            front: "How do you handle radio buttons in React?",
+            back: "Group with the same name and update selected value in state.",
+          },
+          {
+            id: 19,
+            front: "How do you validate a form in React?",
+            back: "Use conditions inside onSubmit or onChange handlers.",
+          },
+          {
+            id: 20,
+            front: "What is formik?",
+            back: "A popular library for building and validating forms in React.",
+          },
+          {
+            id: 21,
+            front: "What is the advantage of controlled components?",
+            back: "Gives full control of input values via state.",
+          },
+          {
+            id: 22,
+            front: "What’s the purpose of defaultValue in forms?",
+            back: "To set the initial value for uncontrolled components.",
+          },
+          {
+            id: 23,
+            front: "How do you conditionally disable a button in React?",
+            back: "Use disabled attribute with a condition in JSX.",
+          },
+          {
+            id: 24,
+            front: "How do you submit a form programmatically?",
+            back: "Use formRef.current.submit() with useRef.",
+          },
+          {
+            id: 25,
+            front: "Can you combine controlled and uncontrolled inputs?",
+            back: "Not recommended; use one approach consistently.",
+          },
+          {
+            id: 26,
+            front: "What’s the purpose of onInput event?",
+            back: "Fires when user enters input, similar to onChange but more native.",
+          },
+          {
+            id: 27,
+            front: "How to format input on blur?",
+            back: "Use onBlur handler to apply transformation (e.g., trimming whitespace).",
+          },
+          {
+            id: 28,
+            front: "What’s useRef used for in forms?",
+            back: "To get direct access to a DOM element without re-rendering.",
+          },
+          {
+            id: 29,
+            front:
+              "What’s the key difference between HTML and React form handling?",
+            back: "In React, form inputs are typically managed using component state.",
+          },
+          {
+            id: 30,
+            front: "How to show error messages on form input?",
+            back: "Track validation state and conditionally render error messages in JSX.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Unit 6: Introduction to Redux",
+        key: "react-redux",
+        cards: [
+          {
+            id: 1,
+            front: "What is Redux?",
+            back: "A predictable state container for JavaScript applications.",
+          },
+          {
+            id: 2,
+            front: "What are the core principles of Redux?",
+            back: "Single source of truth, state is read-only, changes via pure functions.",
+          },
+          {
+            id: 3,
+            front: "What is a store in Redux?",
+            back: "An object that holds the entire state of the application.",
+          },
+          {
+            id: 4,
+            front: "What is an action in Redux?",
+            back: "An object that describes what happened; must have a 'type' property.",
+          },
+          {
+            id: 5,
+            front: "What is a reducer?",
+            back: "A pure function that returns the new state based on the action and current state.",
+          },
+          {
+            id: 6,
+            front: "What is dispatch() in Redux?",
+            back: "A function used to send actions to the reducer.",
+          },
+          {
+            id: 7,
+            front: "How do you create a Redux store?",
+            back: "Using createStore() from redux.",
+          },
+          {
+            id: 8,
+            front: "What is the role of combineReducers?",
+            back: "Combines multiple reducers into one.",
+          },
+          {
+            id: 9,
+            front: "What is Redux middleware?",
+            back: "A function that intercepts actions before they reach the reducer.",
+          },
+          {
+            id: 10,
+            front: "What is thunk in Redux?",
+            back: "A middleware that lets you write async logic that interacts with the store.",
+          },
+          {
+            id: 11,
+            front: "What is mapStateToProps?",
+            back: "A function to map Redux state to component props.",
+          },
+          {
+            id: 12,
+            front: "What is mapDispatchToProps?",
+            back: "A function to map dispatch actions to component props.",
+          },
+          {
+            id: 13,
+            front: "What is connect() in Redux?",
+            back: "A function to connect React components to the Redux store.",
+          },
+          {
+            id: 14,
+            front: "What is Provider in Redux?",
+            back: "A component that makes the Redux store available to the app.",
+          },
+          {
+            id: 15,
+            front: "How is Redux different from Context API?",
+            back: "Redux is more powerful with middleware and debugging tools.",
+          },
+          {
+            id: 16,
+            front: "What is useSelector() hook?",
+            back: "A React-Redux hook to access state directly in function components.",
+          },
+          {
+            id: 17,
+            front: "What is useDispatch() hook?",
+            back: "A React-Redux hook to dispatch actions from function components.",
+          },
+          {
+            id: 18,
+            front: "Can Redux be used without React?",
+            back: "Yes, it's a standalone state management library.",
+          },
+          {
+            id: 19,
+            front: "Why use Redux?",
+            back: "For managing global state and predictable state updates in complex apps.",
+          },
+          {
+            id: 20,
+            front: "What is action creator?",
+            back: "A function that returns an action object.",
+          },
+          {
+            id: 21,
+            front: "How to perform async calls in Redux?",
+            back: "Using middleware like Redux Thunk or Redux Saga.",
+          },
+          {
+            id: 22,
+            front: "What is initialState in a reducer?",
+            back: "The default state value when the store is first created.",
+          },
+          {
+            id: 23,
+            front: "Can reducers have side effects?",
+            back: "No, reducers must be pure functions.",
+          },
+          {
+            id: 24,
+            front: "What happens if no matching action is found in reducer?",
+            back: "The current state is returned unchanged.",
+          },
+          {
+            id: 25,
+            front: "How do you debug Redux?",
+            back: "Using Redux DevTools browser extension.",
+          },
+          {
+            id: 26,
+            front: "What is immutability in Redux?",
+            back: "The state must not be modified directly; create a new copy instead.",
+          },
+          {
+            id: 27,
+            front: "What is the flow of data in Redux?",
+            back: "UI dispatches action → reducer handles it → new state → UI re-renders.",
+          },
+          {
+            id: 28,
+            front: "How does Redux ensure predictable state?",
+            back: "By using pure functions and strict unidirectional data flow.",
+          },
+          {
+            id: 29,
+            front: "Can multiple components access the same Redux state?",
+            back: "Yes, any component connected to the store can access state.",
+          },
+          {
+            id: 30,
+            front: "What are High Order Components in Redux?",
+            back: "Functions that take a component and return a new connected one (like connect()).",
+          },
+        ],
+      },
+    ],
+  },
   //  AI- II
   {
     subject_name: "Artificial Intelligence - II",
@@ -5340,2487 +7821,6 @@ export const sem3FlashCards = [
             id: 24,
             front: "How do you start a streaming job?",
             back: "`ssc.start()` followed by `ssc.awaitTermination()`",
-          },
-        ],
-      },
-    ],
-  },
-
-  //  MAD
-  {
-    subject_name: "Mobile Apps Development",
-    key: "mobile-app-development",
-    units: [
-      {
-        id: 1,
-        title: "Unit 1: Getting Started with Mobility",
-        key: "mobile-apps-getting-started",
-        cards: [
-          {
-            id: 1,
-            front: "What is the mobility landscape?",
-            back: "It refers to the evolving domain of mobile technology, devices, platforms, and connectivity enabling mobile computing.",
-          },
-          {
-            id: 2,
-            front: "Name major mobile platforms.",
-            back: "Android, iOS, Windows Phone, and HarmonyOS.",
-          },
-          {
-            id: 3,
-            front: "What are native mobile apps?",
-            back: "Apps developed for a specific platform using its SDK and tools, like Java/Kotlin for Android or Swift for iOS.",
-          },
-          {
-            id: 4,
-            front: "What is hybrid mobile app development?",
-            back: "Developing apps using web technologies like HTML, CSS, and JS, then wrapping them in a native container.",
-          },
-          {
-            id: 5,
-            front: "What is the Android platform?",
-            back: "An open-source mobile OS developed by Google based on the Linux kernel, mainly for touch-screen devices.",
-          },
-          {
-            id: 6,
-            front: "What are the layers in Android architecture?",
-            back: "Linux Kernel, Libraries & Android Runtime, Application Framework, and Applications.",
-          },
-          {
-            id: 7,
-            front: "What is 3-tier architecture in mobile computing?",
-            back: "It includes the presentation layer (UI), business logic layer, and data layer, separated for modular development.",
-          },
-          {
-            id: 8,
-            front: "Name some key design considerations for mobile apps.",
-            back: "Screen size, power consumption, limited memory/CPU, network variability, and intuitive UI.",
-          },
-          {
-            id: 9,
-            front: "What tools are needed for Android development?",
-            back: "Android Studio, Android SDK, Emulator, Java/Kotlin, Gradle build system.",
-          },
-          {
-            id: 10,
-            front: "How does an emulator help in mobile development?",
-            back: "It simulates a real mobile device for testing and debugging apps without needing physical hardware.",
-          },
-          {
-            id: 11,
-            front: "What is the function of Android Studio?",
-            back: "It is the official IDE for Android development offering tools for coding, debugging, and app deployment.",
-          },
-          {
-            id: 12,
-            front: "What does SDK stand for?",
-            back: "Software Development Kit – tools and APIs provided to develop apps for a platform.",
-          },
-          {
-            id: 13,
-            front: "What is Gradle used for in Android?",
-            back: "It is the build system for managing dependencies and compiling the app code.",
-          },
-          {
-            id: 14,
-            front: "What is APK?",
-            back: "Android Package Kit – the file format used to distribute and install Android applications.",
-          },
-          {
-            id: 15,
-            front: "Why is testing on multiple devices/emulators important?",
-            back: "To ensure compatibility across various screen sizes, OS versions, and hardware capabilities.",
-          },
-          {
-            id: 16,
-            front: "What is the role of XML in Android development?",
-            back: "Used for designing UI layouts, defining resources, and configuration files.",
-          },
-          {
-            id: 17,
-            front: "What is the role of Java/Kotlin in Android?",
-            back: "They are the primary languages used to develop Android applications’ logic and behavior.",
-          },
-          {
-            id: 18,
-            front: "What is a case study in the context of app development?",
-            back: "A detailed example or real-world scenario that demonstrates app development from planning to deployment.",
-          },
-          {
-            id: 19,
-            front: "What is responsive design in mobile apps?",
-            back: "Designing apps to adapt to different screen sizes and resolutions for a better user experience.",
-          },
-          {
-            id: 20,
-            front: "Why is mobile-first design important?",
-            back: "Because it ensures the app is optimized for mobile constraints, offering better performance and usability.",
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: "Unit 2: Building Blocks of Mobile Apps",
-        key: "mobile-building-blocks",
-        cards: [
-          {
-            id: 1,
-            front: "What are UI resources in Android?",
-            back: "UI resources include layouts, drawables, menus, and strings used to design app interfaces.",
-          },
-          {
-            id: 2,
-            front: "What is an Activity in Android?",
-            back: "An Activity is a single screen with a user interface where users can interact.",
-          },
-          {
-            id: 3,
-            front: "What are the states of an Activity?",
-            back: "Created, Started, Resumed, Paused, Stopped, Destroyed.",
-          },
-          {
-            id: 4,
-            front: "What is the Activity lifecycle?",
-            back: "It’s the sequence of states an Activity goes through from creation to destruction.",
-          },
-          {
-            id: 5,
-            front: "How do Activities interact with each other?",
-            back: "Through Intents, allowing transitions and data sharing between Activities.",
-          },
-          {
-            id: 6,
-            front: "What is AsyncTask?",
-            back: "AsyncTask allows performing background operations and publishing results on the UI thread.",
-          },
-          {
-            id: 7,
-            front: "Why use Threads in Android?",
-            back: "To perform long-running operations in the background without blocking the UI thread.",
-          },
-          {
-            id: 8,
-            front: "What are Services in Android?",
-            back: "Components that run in the background to perform long-running operations.",
-          },
-          {
-            id: 9,
-            front: "What are the states of a Service?",
-            back: "Started, Running, Destroyed.",
-          },
-          {
-            id: 10,
-            front: "What are Notifications in Android?",
-            back: "Messages shown to users outside the app's UI to provide alerts or updates.",
-          },
-          {
-            id: 11,
-            front: "What is a Broadcast Receiver?",
-            back: "A component that responds to system-wide broadcast announcements.",
-          },
-          {
-            id: 12,
-            front: "How to send SMS in Android?",
-            back: "Use the SmsManager API to send SMS messages programmatically.",
-          },
-          {
-            id: 13,
-            front: "What is TelephonyManager?",
-            back: "Provides access to information about the telephony services on the device.",
-          },
-          {
-            id: 14,
-            front: "What is SharedPreferences?",
-            back: "A way to store small key-value pairs of primitive data types persistently.",
-          },
-          {
-            id: 15,
-            front: "What is on-device file I/O?",
-            back: "Reading/writing files using internal/external storage APIs on the device.",
-          },
-          {
-            id: 16,
-            front: "What is SQLite in Android?",
-            back: "A lightweight relational database used for local storage on Android devices.",
-          },
-          {
-            id: 17,
-            front: "How to create a database in Android?",
-            back: "Use SQLiteOpenHelper to manage database creation and versioning.",
-          },
-          {
-            id: 18,
-            front: "What are ContentProviders?",
-            back: "They manage access to a structured set of data for sharing between apps.",
-          },
-          {
-            id: 19,
-            front: "What is Intent?",
-            back: "A messaging object used to request actions from other app components.",
-          },
-          {
-            id: 20,
-            front: "What is an implicit Intent?",
-            back: "An Intent without a specific target component, resolved by the system.",
-          },
-          {
-            id: 21,
-            front: "What is an explicit Intent?",
-            back: "An Intent targeting a specific app component.",
-          },
-          {
-            id: 22,
-            front: "What is a Layout?",
-            back: "A container that defines the structure of the user interface in XML or code.",
-          },
-          {
-            id: 23,
-            front: "What is a Drawable?",
-            back: "A graphic that can be drawn on the screen such as bitmaps, shapes, or vectors.",
-          },
-          {
-            id: 24,
-            front: "How are menus defined in Android?",
-            back: "Using XML files and inflated in code using MenuInflater.",
-          },
-          {
-            id: 25,
-            front: "What is the role of the AndroidManifest.xml?",
-            back: "Declares app components, permissions, and configurations.",
-          },
-          {
-            id: 26,
-            front: "What is the purpose of Handler?",
-            back: "To communicate between threads using messages and runnable objects.",
-          },
-          {
-            id: 27,
-            front: "What is the Looper class?",
-            back: "Used to run a message loop for a thread.",
-          },
-          {
-            id: 28,
-            front: "How to perform network access?",
-            back: "Using HttpUrlConnection, Volley, or Retrofit libraries.",
-          },
-          {
-            id: 29,
-            front: "What are permissions in Android?",
-            back: "They control access to protected features like camera, contacts, and internet.",
-          },
-          {
-            id: 30,
-            front: "What is enterprise data access?",
-            back: "Accessing backend systems (e.g., REST APIs, databases) over internet/intranet.",
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "Unit 3: Sprucing Up Mobile Apps",
-        key: "sprucing-up-mobile-apps",
-        cards: [
-          {
-            id: 1,
-            front: "What are custom views in Android?",
-            back: "User-defined components for custom drawing and interaction.",
-          },
-          {
-            id: 2,
-            front: "What is Canvas in Android?",
-            back: "An interface to draw shapes, text, and images on screen.",
-          },
-          {
-            id: 3,
-            front: "What are animation APIs in Android?",
-            back: "Classes like ObjectAnimator and ViewPropertyAnimator for creating animations.",
-          },
-          {
-            id: 4,
-            front: "What is the difference between frame and tween animation?",
-            back: "Frame uses images; tween uses transformations like rotate and scale.",
-          },
-          {
-            id: 5,
-            front: "What is multimedia support in Android?",
-            back: "Support for audio/video playback, recording, and streaming.",
-          },
-          {
-            id: 6,
-            front: "What class is used to play audio?",
-            back: "MediaPlayer class is used to play audio from files or streams.",
-          },
-          {
-            id: 7,
-            front: "How do you record audio?",
-            back: "Use MediaRecorder with proper permissions.",
-          },
-          {
-            id: 8,
-            front: "What is VideoView?",
-            back: "A widget used to play video files.",
-          },
-          {
-            id: 9,
-            front: "What sensors are available in Android?",
-            back: "Accelerometer, gyroscope, proximity, light, etc.",
-          },
-          {
-            id: 10,
-            front: "What is SensorManager?",
-            back: "Manages all sensors and provides access to sensor data.",
-          },
-          {
-            id: 11,
-            front: "How to detect motion?",
-            back: "Use accelerometer and gyroscope to track movement and rotation.",
-          },
-          {
-            id: 12,
-            front: "What is LocationManager?",
-            back: "Provides access to GPS and network-based location data.",
-          },
-          {
-            id: 13,
-            front: "How do you request location updates?",
-            back: "Using requestLocationUpdates() from LocationManager.",
-          },
-          {
-            id: 14,
-            front: "What is fused location provider?",
-            back: "A Google Play service API for high-accuracy location tracking.",
-          },
-          {
-            id: 15,
-            front: "What is ObjectAnimator?",
-            back: "An animation class that animates properties of objects.",
-          },
-          {
-            id: 16,
-            front: "What are Property Animations?",
-            back: "Animations that change the properties of objects over time.",
-          },
-          {
-            id: 17,
-            front: "What is onDraw() method?",
-            back: "Called when a view should render its content on the screen.",
-          },
-          {
-            id: 18,
-            front: "What is invalidate() method?",
-            back: "Forces a view to redraw by triggering onDraw().",
-          },
-          {
-            id: 19,
-            front: "How to animate a custom view?",
-            back: "By manipulating its properties and calling invalidate().",
-          },
-          {
-            id: 20,
-            front: "What is SurfaceView?",
-            back: "A view for rendering custom graphics in a separate thread.",
-          },
-          {
-            id: 21,
-            front: "What is OpenGL ES?",
-            back: "A graphics API for rendering 2D and 3D graphics.",
-          },
-          {
-            id: 22,
-            front: "What is animation listener?",
-            back: "A callback interface to monitor animation events.",
-          },
-          {
-            id: 23,
-            front: "What are sensors used for?",
-            back: "For motion detection, orientation, and environmental monitoring.",
-          },
-          {
-            id: 24,
-            front: "What is a sensor event?",
-            back: "Data generated by a sensor at a specific time.",
-          },
-          {
-            id: 25,
-            front: "How do you access gyroscope data?",
-            back: "Use SensorManager to register for TYPE_GYROSCOPE.",
-          },
-          {
-            id: 26,
-            front: "What permissions are needed for location?",
-            back: "ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION.",
-          },
-          {
-            id: 27,
-            front: "What is MediaStore API?",
-            back: "An API to access and organize multimedia files on the device.",
-          },
-          {
-            id: 28,
-            front: "What is gesture detection?",
-            back: "Detecting user gestures like fling, tap, or pinch via GestureDetector.",
-          },
-          {
-            id: 29,
-            front: "How do you animate layout changes?",
-            back: "Using TransitionManager and layout transitions.",
-          },
-          {
-            id: 30,
-            front: "What is frame animation?",
-            back: "Playing a sequence of images in order for an animated effect.",
-          },
-        ],
-      },
-      {
-        id: 4,
-        title: "Unit 4: Testing Mobile Apps",
-        key: "mobile-testing",
-        cards: [
-          {
-            id: 1,
-            front: "What is white box testing?",
-            back: "Testing internal logic, code structure, and implementation of the application.",
-          },
-          {
-            id: 2,
-            front: "What is black box testing?",
-            back: "Testing app functionality without knowing internal code structure.",
-          },
-          {
-            id: 3,
-            front: "What is unit testing in Android?",
-            back: "Testing individual methods or classes using frameworks like JUnit.",
-          },
-          {
-            id: 4,
-            front: "What is the purpose of debugging?",
-            back: "To identify and fix bugs in the code during development.",
-          },
-          {
-            id: 5,
-            front: "What is a breakpoint?",
-            back: "A marker to pause code execution and inspect variables or flow.",
-          },
-          {
-            id: 6,
-            front: "How can you debug an Android app?",
-            back: "Using Android Studio debugger and logcat messages.",
-          },
-          {
-            id: 7,
-            front: "What is logcat?",
-            back: "A tool to display log messages from an Android device or emulator.",
-          },
-          {
-            id: 8,
-            front: "What is test automation?",
-            back: "Using tools to automate the process of running tests on mobile apps.",
-          },
-          {
-            id: 9,
-            front: "What is JUnit used for?",
-            back: "Writing and running unit tests in Java-based Android apps.",
-          },
-          {
-            id: 10,
-            front: "What is Robotium?",
-            back: "An Android test framework for automating black box UI tests.",
-          },
-          {
-            id: 11,
-            front: "What is MonkeyTalk?",
-            back: "A tool for automating functional testing of Android/iOS apps.",
-          },
-          {
-            id: 12,
-            front: "What is Espresso?",
-            back: "Google’s framework for writing UI tests for Android apps.",
-          },
-          {
-            id: 13,
-            front: "What is UI Automator?",
-            back: "A tool to test user interactions across multiple apps.",
-          },
-          {
-            id: 14,
-            front: "What is instrumentation testing?",
-            back: "Testing app components (Activity, Service, etc.) using Android’s instrumentation APIs.",
-          },
-          {
-            id: 15,
-            front: "What is code coverage?",
-            back: "A metric showing how much code is tested by automated tests.",
-          },
-          {
-            id: 16,
-            front: "What is the Android Test Orchestrator?",
-            back: "Runs each test in its own Instrumentation instance for isolation.",
-          },
-          {
-            id: 17,
-            front: "What is performance testing?",
-            back: "Ensuring app responds and behaves under various loads and stress.",
-          },
-          {
-            id: 18,
-            front: "What is regression testing?",
-            back: "Retesting the app after changes to ensure existing features still work.",
-          },
-          {
-            id: 19,
-            front: "What is smoke testing?",
-            back: "A basic test to check if the major functions of an app work.",
-          },
-          {
-            id: 20,
-            front: "What is the Android emulator used for in testing?",
-            back: "To simulate real devices for running and testing apps.",
-          },
-          {
-            id: 21,
-            front: "What is ADB?",
-            back: "Android Debug Bridge – a command-line tool to communicate with devices.",
-          },
-          {
-            id: 22,
-            front: "What are test cases?",
-            back: "Defined inputs and expected outputs to verify functionality.",
-          },
-          {
-            id: 23,
-            front: "What is test-driven development (TDD)?",
-            back: "Writing tests before the actual code.",
-          },
-          {
-            id: 24,
-            front: "How are UI tests different from unit tests?",
-            back: "UI tests simulate user actions; unit tests test logic and methods.",
-          },
-          {
-            id: 25,
-            front: "What is an assertion in testing?",
-            back: "A statement that verifies if a condition is true during testing.",
-          },
-          {
-            id: 26,
-            front: "What is mocking in tests?",
-            back: "Simulating objects or services in tests to isolate behavior.",
-          },
-          {
-            id: 27,
-            front: "What is a test suite?",
-            back: "A collection of test cases grouped together.",
-          },
-          {
-            id: 28,
-            front: "What is manual testing?",
-            back: "Testing the app by interacting with it manually without automation.",
-          },
-          {
-            id: 29,
-            front: "What is a bug report?",
-            back: "A documented issue that includes steps to reproduce a problem.",
-          },
-          {
-            id: 30,
-            front: "Why is testing important in mobile development?",
-            back: "To ensure app quality, performance, and reliability across devices.",
-          },
-        ],
-      },
-      {
-        id: 5,
-        title: "Unit 5: Taking Apps to Market and Wireless Languages",
-        key: "mobile-deployment-wireless",
-        cards: [
-          {
-            id: 1,
-            front: "What is app versioning?",
-            back: "Tracking different releases of an app using version codes and names.",
-          },
-          {
-            id: 2,
-            front: "What is signing an APK?",
-            back: "Applying a digital signature to verify the app’s authenticity and integrity.",
-          },
-          {
-            id: 3,
-            front: "What is packaging in Android?",
-            back: "Bundling compiled code, resources, and assets into an APK file.",
-          },
-          {
-            id: 4,
-            front: "What is an APK?",
-            back: "Android Package – the file format used to distribute and install Android apps.",
-          },
-          {
-            id: 5,
-            front: "What is the Google Play Console?",
-            back: "A platform for developers to publish and manage Android apps.",
-          },
-          {
-            id: 6,
-            front: "What is app obfuscation?",
-            back: "Transforming code to make it harder to reverse-engineer, often using ProGuard.",
-          },
-          {
-            id: 7,
-            front: "What is Play Store listing?",
-            back: "Information like app description, screenshots, and icons shown on Play Store.",
-          },
-          {
-            id: 8,
-            front: "What are app release channels?",
-            back: "Tracks like alpha, beta, and production used for controlled app releases.",
-          },
-          {
-            id: 9,
-            front: "What is in-app billing?",
-            back: "A mechanism to sell digital content directly within the app.",
-          },
-          {
-            id: 10,
-            front: "What is HDML?",
-            back: "Handheld Device Markup Language – used for early mobile content.",
-          },
-          {
-            id: 11,
-            front: "What is WML?",
-            back: "Wireless Markup Language – used for designing pages for WAP-enabled mobile devices.",
-          },
-          {
-            id: 12,
-            front: "What is HTML?",
-            back: "HyperText Markup Language – standard language for creating web content.",
-          },
-          {
-            id: 13,
-            front: "What is cHTML?",
-            back: "Compact HTML – a subset of HTML designed for small-screen devices.",
-          },
-          {
-            id: 14,
-            front: "What is XHTML?",
-            back: "Extensible HTML – reformulates HTML using XML.",
-          },
-          {
-            id: 15,
-            front: "What is VoiceXML?",
-            back: "A language for creating voice user interfaces.",
-          },
-          {
-            id: 16,
-            front: "What is app distribution?",
-            back: "The process of making an app available to users through marketplaces or direct links.",
-          },
-          {
-            id: 17,
-            front: "What is beta testing?",
-            back: "Releasing a pre-final version to a limited audience for feedback.",
-          },
-          {
-            id: 18,
-            front: "Why use version codes?",
-            back: "To differentiate updates for the Android system during installations.",
-          },
-          {
-            id: 19,
-            front: "What is ProGuard used for?",
-            back: "To shrink, obfuscate, and optimize code for release builds.",
-          },
-          {
-            id: 20,
-            front: "What are signed and unsigned APKs?",
-            back: "Unsigned APKs are for testing; signed APKs are for distribution.",
-          },
-          {
-            id: 21,
-            front: "What is an Android App Bundle?",
-            back: "A new publishing format that includes all compiled code and resources.",
-          },
-          {
-            id: 22,
-            front: "What is a keystore?",
-            back: "A secure file that stores keys used to sign APKs.",
-          },
-          {
-            id: 23,
-            front: "What is app monetization?",
-            back: "Earning revenue through ads, in-app purchases, or paid downloads.",
-          },
-          {
-            id: 24,
-            front: "What is localization?",
-            back: "Adapting app content to different languages and regions.",
-          },
-          {
-            id: 25,
-            front: "What is responsive design?",
-            back: "Designing UI that works on various screen sizes and orientations.",
-          },
-          {
-            id: 26,
-            front: "What is GDPR in app development?",
-            back: "A regulation that requires user data protection and privacy in apps.",
-          },
-          {
-            id: 27,
-            front: "What is an AAB file?",
-            back: "Android App Bundle – Google’s recommended publishing format.",
-          },
-          {
-            id: 28,
-            front: "How are updates pushed to users?",
-            back: "Through Play Store using updated APK or AAB files.",
-          },
-          {
-            id: 29,
-            front: "What are market guidelines?",
-            back: "Rules set by platforms like Google Play to ensure app quality and safety.",
-          },
-          {
-            id: 30,
-            front: "What is the importance of app analytics?",
-            back: "To track user behavior, crashes, and performance for improvements.",
-          },
-        ],
-      },
-    ],
-  },
-
-  //  WAD
-  {
-    subject_name: "Web Application Development",
-    key: "web-application-development",
-    units: [
-      // Flashcards for Web Application Development
-      {
-        id: 1,
-        title: "Unit 1: Introduction to ASP.NET and .NET Framework",
-        key: "aspnet-intro",
-        cards: [
-          {
-            id: 1,
-            front: "What is ASP.NET?",
-            back: "A web application framework developed by Microsoft for building dynamic websites.",
-          },
-          {
-            id: 2,
-            front: "What is the .NET Framework?",
-            back: "A development platform for building apps with visually stunning user experiences and secure communication.",
-          },
-          {
-            id: 3,
-            front: "What is CLR?",
-            back: "Common Language Runtime – the runtime environment in .NET for executing applications.",
-          },
-          {
-            id: 4,
-            front: "What does CLR manage?",
-            back: "Memory, thread execution, code safety verification, compilation, and other system services.",
-          },
-          {
-            id: 5,
-            front: "What is CTS?",
-            back: "Common Type System – standardizes data types across .NET languages.",
-          },
-          {
-            id: 6,
-            front: "Purpose of CTS?",
-            back: "Allows cross-language integration and type safety.",
-          },
-          {
-            id: 7,
-            front: "What is CLS?",
-            back: "Common Language Specification – defines a subset of features all .NET languages must support.",
-          },
-          {
-            id: 8,
-            front: "Why is CLS important?",
-            back: "Ensures interoperability among .NET languages.",
-          },
-          {
-            id: 9,
-            front: "What is MSIL?",
-            back: "Microsoft Intermediate Language – code generated by compilers before execution.",
-          },
-          {
-            id: 10,
-            front: "What is JIT compiler?",
-            back: "Just-In-Time compiler – converts MSIL to native code at runtime.",
-          },
-          {
-            id: 11,
-            front: "What are framework base classes?",
-            back: "A large class library used in .NET for tasks like file I/O, string management, data access, etc.",
-          },
-          {
-            id: 12,
-            front: "Define managed code.",
-            back: "Code executed by the CLR in .NET is called managed code.",
-          },
-          {
-            id: 13,
-            front: "Define unmanaged code.",
-            back: "Code executed directly by the OS outside the CLR environment.",
-          },
-          {
-            id: 14,
-            front: "What is a namespace?",
-            back: "A logical grouping of classes and types in .NET.",
-          },
-          {
-            id: 15,
-            front: "What is an assembly?",
-            back: "A compiled code library used for deployment, versioning, and security in .NET.",
-          },
-          {
-            id: 16,
-            front: "Difference between DLL and EXE?",
-            back: "DLL is a library; EXE is a standalone executable program.",
-          },
-          {
-            id: 17,
-            front: "What is the GAC?",
-            back: "Global Assembly Cache – stores shared assemblies in .NET.",
-          },
-          {
-            id: 18,
-            front: "Role of metadata in .NET?",
-            back: "Describes the types and members in code and is stored in the assembly.",
-          },
-          {
-            id: 19,
-            front: "What is ILDASM?",
-            back: "Intermediate Language Disassembler – used to view MSIL code.",
-          },
-          {
-            id: 20,
-            front: "What is strong naming in .NET?",
-            back: "Assigning a unique name to assemblies using public/private key pairs.",
-          },
-          {
-            id: 21,
-            front: "What is garbage collection?",
-            back: "Automatic memory management that reclaims unused memory.",
-          },
-          {
-            id: 22,
-            front: "What triggers garbage collection?",
-            back: "Low memory, system calls, or manually via GC.Collect().",
-          },
-          {
-            id: 23,
-            front: "What is the difference between stack and heap?",
-            back: "Stack stores value types; heap stores reference types.",
-          },
-          {
-            id: 24,
-            front: "Define value type.",
-            back: "A type that holds data directly (e.g., int, float).",
-          },
-          {
-            id: 25,
-            front: "Define reference type.",
-            back: "A type that stores a reference to the actual data (e.g., objects).",
-          },
-          {
-            id: 26,
-            front: "What are delegates?",
-            back: "Objects that refer to methods and allow callbacks.",
-          },
-          {
-            id: 27,
-            front: "What is an event in C#?",
-            back: "A message sent by an object to signal an action has occurred.",
-          },
-          {
-            id: 28,
-            front: "What are attributes in .NET?",
-            back: "Used to add metadata like compiler instructions to code.",
-          },
-          {
-            id: 29,
-            front: "What is reflection?",
-            back: "A feature to inspect metadata and access type information at runtime.",
-          },
-          {
-            id: 30,
-            front: "What is the main advantage of .NET?",
-            back: "Rapid development, type safety, performance, and cross-language support.",
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: "Unit 2: ASP.NET Controls, UI Design & Coding",
-        key: "aspnet-controls-ui",
-        cards: [
-          {
-            id: 1,
-            front: "What are ASP.NET server controls?",
-            back: "Controls that run on the server and are processed on the server side.",
-          },
-          {
-            id: 2,
-            front: "Name common ASP.NET input controls.",
-            back: "TextBox, Button, CheckBox, RadioButton, DropDownList.",
-          },
-          {
-            id: 3,
-            front: "What is the purpose of a TextBox?",
-            back: "Allows user input in the form of text.",
-          },
-          {
-            id: 4,
-            front: "What does a Button control do?",
-            back: "Triggers an event when clicked.",
-          },
-          {
-            id: 5,
-            front: "What are List Controls?",
-            back: "Controls like DropDownList, ListBox used to display lists of items.",
-          },
-          {
-            id: 6,
-            front: "What is the role of web.config?",
-            back: "Stores app settings, connection strings, and configuration data.",
-          },
-          {
-            id: 7,
-            front: "What is the purpose of global.asax?",
-            back: "Handles application-level events like Application_Start.",
-          },
-          {
-            id: 8,
-            front: "What is an ASP.NET page?",
-            back: "A web page (.aspx) processed by the ASP.NET engine.",
-          },
-          {
-            id: 9,
-            front: "How are variables declared in C#?",
-            back: 'Using syntax like int x = 10; or string name = "John";',
-          },
-          {
-            id: 10,
-            front: "What are data types in C#?",
-            back: "Types such as int, float, bool, string, char used to define variable types.",
-          },
-          {
-            id: 11,
-            front: "What are conditional statements in C#?",
-            back: "if, else if, else, switch used for decision-making.",
-          },
-          {
-            id: 12,
-            front: "What are loops in C#?",
-            back: "for, while, do-while, foreach used to repeat actions.",
-          },
-          {
-            id: 13,
-            front: "What is a class in C#?",
-            back: "A blueprint for objects containing methods and variables.",
-          },
-          {
-            id: 14,
-            front: "What is an object in C#?",
-            back: "An instance of a class.",
-          },
-          {
-            id: 15,
-            front: "What is inheritance in C#?",
-            back: "A class deriving features from another class.",
-          },
-          {
-            id: 16,
-            front: "What is encapsulation?",
-            back: "Hiding internal state and requiring access through methods.",
-          },
-          {
-            id: 17,
-            front: "What is polymorphism?",
-            back: "Ability to take many forms, e.g., method overloading.",
-          },
-          {
-            id: 18,
-            front: "What is an event handler?",
-            back: "A method that responds to an event like a button click.",
-          },
-          {
-            id: 19,
-            front: "How to write a method in C#?",
-            back: "Use syntax: returnType MethodName(parameters) { }",
-          },
-          {
-            id: 20,
-            front: "What is the use of Label control?",
-            back: "Displays static or dynamic text on a page.",
-          },
-          {
-            id: 21,
-            front: "What is ViewState?",
-            back: "Preserves control data between postbacks.",
-          },
-          {
-            id: 22,
-            front: "Can ASP.NET pages use CSS?",
-            back: "Yes, CSS can be applied to improve page design.",
-          },
-          {
-            id: 23,
-            front: "What is AutoPostBack in controls?",
-            back: "Causes postback automatically when control changes.",
-          },
-          {
-            id: 24,
-            front: "How to bind data to a DropDownList?",
-            back: "Use DataSource and DataBind() method.",
-          },
-          {
-            id: 25,
-            front: "What are CheckBox and RadioButton used for?",
-            back: "To select options; checkbox allows multiple, radio one.",
-          },
-          {
-            id: 26,
-            front: "What is IsPostBack property?",
-            back: "Indicates whether the page is loaded for the first time or due to postback.",
-          },
-          {
-            id: 27,
-            front: "What is Server.Transfer?",
-            back: "Transfers execution to another page on the server.",
-          },
-          {
-            id: 28,
-            front: "What is Response.Redirect?",
-            back: "Redirects the user to another URL.",
-          },
-          {
-            id: 29,
-            front: "What is the role of code-behind file?",
-            back: "Contains C# logic separate from ASPX markup.",
-          },
-          {
-            id: 30,
-            front: 'What does runat="server" mean?',
-            back: "Indicates the control will be processed on the server.",
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "Unit 3: Validation Controls, State Management & Navigation",
-        key: "aspnet-validation-state-navigation",
-        cards: [
-          {
-            id: 1,
-            front: "What is the purpose of validation controls in ASP.NET?",
-            back: "To ensure user input meets specific rules before processing.",
-          },
-          {
-            id: 2,
-            front: "What does RequiredFieldValidator do?",
-            back: "Ensures a form field is not left blank.",
-          },
-          {
-            id: 3,
-            front: "What is RangeValidator used for?",
-            back: "Validates that input falls within a specified range.",
-          },
-          {
-            id: 4,
-            front: "What does CompareValidator do?",
-            back: "Compares the value of one input control to another.",
-          },
-          {
-            id: 5,
-            front: "What does RegularExpressionValidator do?",
-            back: "Validates input against a regular expression pattern.",
-          },
-          {
-            id: 6,
-            front: "What is CustomValidator?",
-            back: "Allows custom validation logic on the client or server side.",
-          },
-          {
-            id: 7,
-            front: "What is ValidationSummary?",
-            back: "Displays a summary of all validation errors on the page.",
-          },
-          {
-            id: 8,
-            front: "Can multiple validators be applied to one control?",
-            back: "Yes, multiple validators can validate a single control.",
-          },
-          {
-            id: 9,
-            front: "What is client-side validation?",
-            back: "Validation performed in the browser before postback.",
-          },
-          {
-            id: 10,
-            front: "What is server-side validation?",
-            back: "Validation done on the server after form submission.",
-          },
-          {
-            id: 11,
-            front: "What is ViewState in ASP.NET?",
-            back: "Used to preserve page and control values between postbacks.",
-          },
-          {
-            id: 12,
-            front: "What is Session state used for?",
-            back: "Stores user data for the duration of the user session.",
-          },
-          {
-            id: 13,
-            front: "What is Application state?",
-            back: "Shared data accessible by all users and sessions of the app.",
-          },
-          {
-            id: 14,
-            front: "What is the purpose of cookies in ASP.NET?",
-            back: "To store small pieces of data on the client side.",
-          },
-          {
-            id: 15,
-            front: "What is URL encoding?",
-            back: "A way to pass state data via the URL.",
-          },
-          {
-            id: 16,
-            front: "What is Master Page in ASP.NET?",
-            back: "Defines a common layout for multiple content pages.",
-          },
-          {
-            id: 17,
-            front: "How to create a Master Page?",
-            back: "Use the Master Page template and define content placeholders.",
-          },
-          {
-            id: 18,
-            front: "What is a Content Page?",
-            back: "A page that uses a Master Page and fills its placeholders.",
-          },
-          {
-            id: 19,
-            front: "Can Master Pages be nested?",
-            back: "Yes, one master can use another as its master.",
-          },
-          {
-            id: 20,
-            front: "How to access Master Page controls from Content Page?",
-            back: 'Use Master.FindControl("id") in the content page\'s code-behind.',
-          },
-          {
-            id: 21,
-            front: "What is Site Navigation in ASP.NET?",
-            back: "Provides structured navigation using sitemap files and controls.",
-          },
-          {
-            id: 22,
-            front: "What is Web.sitemap file?",
-            back: "An XML file that defines the structure of site navigation.",
-          },
-          {
-            id: 23,
-            front: "What is SiteMapPath control?",
-            back: "Displays a breadcrumb navigation based on site hierarchy.",
-          },
-          {
-            id: 24,
-            front: "What is TreeView control?",
-            back: "Displays hierarchical data, often used for site navigation.",
-          },
-          {
-            id: 25,
-            front: "What is Menu control used for?",
-            back: "Displays a menu bar for navigating the site.",
-          },
-          {
-            id: 26,
-            front: "Can cookies be made persistent?",
-            back: "Yes, by setting an expiration date.",
-          },
-          {
-            id: 27,
-            front: "What method is used to store data in Session?",
-            back: 'Session["key"] = value;',
-          },
-          {
-            id: 28,
-            front: "What happens when a session times out?",
-            back: "The server removes the session and its data is lost.",
-          },
-          {
-            id: 29,
-            front: "What is EnableViewState property?",
-            back: "Controls whether a control maintains its state between postbacks.",
-          },
-          {
-            id: 30,
-            front: "What is the difference between Session and ViewState?",
-            back: "Session is user-specific and server-side; ViewState is page-specific and client-side.",
-          },
-        ],
-      },
-      {
-        id: 4,
-        title: "Unit 4: Data Access through ADO.NET",
-        key: "ado-net-data-access",
-        cards: [
-          {
-            id: 1,
-            front: "What is ADO.NET?",
-            back: "A set of classes in .NET for accessing and managing data from various sources.",
-          },
-          {
-            id: 2,
-            front: "What is the main purpose of ADO.NET?",
-            back: "To enable communication between a .NET application and a data source like SQL Server.",
-          },
-          {
-            id: 3,
-            front: "What is a DataSet in ADO.NET?",
-            back: "An in-memory cache of data retrieved from a database.",
-          },
-          {
-            id: 4,
-            front: "What is a DataReader?",
-            back: "A forward-only, read-only stream of data from a database.",
-          },
-          {
-            id: 5,
-            front: "What is SqlConnection?",
-            back: "Used to establish a connection to a SQL Server database.",
-          },
-          {
-            id: 6,
-            front: "What is SqlCommand used for?",
-            back: "To execute SQL queries and stored procedures.",
-          },
-          {
-            id: 7,
-            front: "What is SqlDataAdapter?",
-            back: "Acts as a bridge between a DataSet and the database.",
-          },
-          {
-            id: 8,
-            front: "How do you retrieve data into a GridView?",
-            back: "Bind the GridView to a DataSource like a DataSet or SqlDataSource.",
-          },
-          {
-            id: 9,
-            front: "What is the purpose of SqlDataSource control?",
-            back: "Provides an easy way to connect and interact with a SQL database.",
-          },
-          {
-            id: 10,
-            front: "What is CommandText in SqlCommand?",
-            back: "The SQL query or stored procedure to be executed.",
-          },
-          {
-            id: 11,
-            front: "What is a parameterized query?",
-            back: "A SQL query that uses parameters to prevent SQL injection.",
-          },
-          {
-            id: 12,
-            front: "What is the use of ConnectionString?",
-            back: "Defines how to connect to a database (server, DB name, credentials).",
-          },
-          {
-            id: 13,
-            front: "What is FormView control?",
-            back: "Displays a single record at a time in a customizable form layout.",
-          },
-          {
-            id: 14,
-            front: "What is DetailsView control?",
-            back: "Used to display, insert, edit, and delete a single record.",
-          },
-          {
-            id: 15,
-            front: "What is ListView control?",
-            back: "A flexible control for displaying lists of data with templates.",
-          },
-          {
-            id: 16,
-            front: "How do you update data in GridView?",
-            back: "Enable editing and handle the RowUpdating event.",
-          },
-          {
-            id: 17,
-            front: "What is ExecuteNonQuery used for?",
-            back: "Executes commands that don’t return data (INSERT, UPDATE, DELETE).",
-          },
-          {
-            id: 18,
-            front: "What does ExecuteScalar return?",
-            back: "Returns a single value from the database.",
-          },
-          {
-            id: 19,
-            front: "What does ExecuteReader return?",
-            back: "Returns a DataReader object with the query result.",
-          },
-          {
-            id: 20,
-            front: "What are the steps to connect to a DB using ADO.NET?",
-            back: "1. Create connection, 2. Create command, 3. Execute command, 4. Process results.",
-          },
-          {
-            id: 21,
-            front: "What is connection pooling?",
-            back: "Reusing database connections for better performance.",
-          },
-          {
-            id: 22,
-            front: "What is a DataTable?",
-            back: "A table representation of data in memory, used in a DataSet.",
-          },
-          {
-            id: 23,
-            front: "Can DataSet hold multiple tables?",
-            back: "Yes, a DataSet can contain multiple DataTables.",
-          },
-          {
-            id: 24,
-            front: "What is DataBinding?",
-            back: "The process of binding UI elements to data sources.",
-          },
-          {
-            id: 25,
-            front: "What is the purpose of ObjectDataSource?",
-            back: "Binds data from custom business objects to controls.",
-          },
-          {
-            id: 26,
-            front: "What is SqlException?",
-            back: "An exception thrown when SQL Server returns an error.",
-          },
-          {
-            id: 27,
-            front: "How do you open and close a SqlConnection?",
-            back: "Use conn.Open() and conn.Close() methods.",
-          },
-          {
-            id: 28,
-            front: "What is a stored procedure?",
-            back: "A precompiled SQL statement stored in the database.",
-          },
-          {
-            id: 29,
-            front: "Can ADO.NET work with XML?",
-            back: "Yes, DataSet can read/write XML data using ReadXml/WriteXml.",
-          },
-          {
-            id: 30,
-            front:
-              "What is the difference between connected and disconnected architecture?",
-            back: "Connected uses DataReader (real-time), Disconnected uses DataSet (cached).",
-          },
-        ],
-      },
-      {
-        id: 5,
-        title: "Unit 5: Advanced ASP.NET",
-        key: "advanced-aspnet",
-        cards: [
-          {
-            id: 1,
-            front: "What is AJAX in ASP.NET?",
-            back: "Asynchronous JavaScript and XML – allows web pages to update without full reload.",
-          },
-          {
-            id: 2,
-            front: "What is an UpdatePanel?",
-            back: "A control that allows partial page updates using AJAX.",
-          },
-          {
-            id: 3,
-            front: "What is ScriptManager?",
-            back: "Manages client script for AJAX-enabled ASP.NET web pages.",
-          },
-          {
-            id: 4,
-            front: "What is LINQ?",
-            back: "Language Integrated Query – allows querying of data using C# syntax.",
-          },
-          {
-            id: 5,
-            front: "What is the benefit of LINQ?",
-            back: "Unified querying across databases, XML, objects, and more.",
-          },
-          {
-            id: 6,
-            front: "What is a stored procedure?",
-            back: "A precompiled collection of one or more SQL statements stored in the database.",
-          },
-          {
-            id: 7,
-            front: "How to call a stored procedure in ADO.NET?",
-            back: "Use SqlCommand with CommandType set to StoredProcedure.",
-          },
-          {
-            id: 8,
-            front: "What is XML?",
-            back: "Extensible Markup Language – used to store and transport data.",
-          },
-          {
-            id: 9,
-            front: "How is XML used in ASP.NET?",
-            back: "For configuration, data storage, and communication between systems.",
-          },
-          {
-            id: 10,
-            front: "What is XmlTextReader?",
-            back: "A fast, forward-only reader for XML data.",
-          },
-          {
-            id: 11,
-            front: "What is XmlDocument?",
-            back: "A class for working with XML documents using DOM.",
-          },
-          {
-            id: 12,
-            front: "What is ASP.NET MVC?",
-            back: "A framework for building web apps using Model-View-Controller pattern.",
-          },
-          {
-            id: 13,
-            front: "What is the Model in MVC?",
-            back: "Represents the application's data and business logic.",
-          },
-          {
-            id: 14,
-            front: "What is the View in MVC?",
-            back: "Displays the data (user interface).",
-          },
-          {
-            id: 15,
-            front: "What is the Controller in MVC?",
-            back: "Handles user input and updates the Model and View.",
-          },
-          {
-            id: 16,
-            front: "What is routing in MVC?",
-            back: "A way to map URLs to controllers and actions.",
-          },
-          {
-            id: 17,
-            front: "What is a route in ASP.NET MVC?",
-            back: "A pattern that defines URL structure and maps to a controller/action.",
-          },
-          {
-            id: 18,
-            front: "What is RouteConfig.cs?",
-            back: "Defines route settings in an MVC app.",
-          },
-          {
-            id: 19,
-            front: "What is Razor?",
-            back: "A markup syntax used to embed C# code in HTML for MVC views.",
-          },
-          {
-            id: 20,
-            front: "What is @Html.ActionLink?",
-            back: "Generates a hyperlink to an MVC action.",
-          },
-          {
-            id: 21,
-            front: "What is TempData in MVC?",
-            back: "Stores data temporarily between controller actions.",
-          },
-          {
-            id: 22,
-            front: "What is ViewData?",
-            back: "Used to pass data from controller to view (dictionary-based).",
-          },
-          {
-            id: 23,
-            front: "What is ViewBag?",
-            back: "Dynamic wrapper around ViewData – allows passing data to view.",
-          },
-          {
-            id: 24,
-            front: "What is Partial View?",
-            back: "Reusable view components embedded inside other views.",
-          },
-          {
-            id: 25,
-            front: "What are strongly typed views?",
-            back: "Views bound to specific model classes for compile-time checking.",
-          },
-          {
-            id: 26,
-            front: "What is bundling in ASP.NET?",
-            back: "Combining multiple files into one to reduce HTTP requests.",
-          },
-          {
-            id: 27,
-            front: "What is minification?",
-            back: "Removing unnecessary characters from code to reduce file size.",
-          },
-          {
-            id: 28,
-            front: "What is Web API in ASP.NET?",
-            back: "A framework for building HTTP services used by clients like browsers or mobile apps.",
-          },
-          {
-            id: 29,
-            front: "What is JSON?",
-            back: "JavaScript Object Notation – a lightweight data-interchange format.",
-          },
-          {
-            id: 30,
-            front: "How do you consume a Web API in ASP.NET?",
-            back: "Using HttpClient or AJAX to make requests and handle responses.",
-          },
-        ],
-      },
-    ],
-  },
-
-  //  WAD Using REact
-  {
-    subject_name: "Advanced Web Development using React-JS",
-    key: "advanced-web-development-using-react-js",
-    units: [
-      {
-        id: 1,
-        title: "Unit 1: ReactJS Fundamentals",
-        key: "reactjs-fundamentals",
-        cards: [
-          {
-            id: 1,
-            front: "What is ReactJS?",
-            back: "A JavaScript library for building user interfaces.",
-          },
-          {
-            id: 2,
-            front: "How does ReactJS differ from Angular?",
-            back: "React is a library focused on UI; Angular is a full framework.",
-          },
-          {
-            id: 3,
-            front: "What is React Native?",
-            back: "A framework to build native mobile apps using React.",
-          },
-          {
-            id: 4,
-            front: "What is Vue.js?",
-            back: "A progressive JavaScript framework similar to React but simpler.",
-          },
-          {
-            id: 5,
-            front: "How do you create a React app?",
-            back: "Using create-react-app CLI tool.",
-          },
-          {
-            id: 6,
-            front: "What is JSX?",
-            back: "A syntax extension for JavaScript that resembles HTML.",
-          },
-          {
-            id: 7,
-            front: "What is the virtual DOM?",
-            back: "A lightweight copy of the real DOM used for efficient updates.",
-          },
-          {
-            id: 8,
-            front: "What is a single-page application?",
-            back: "An app that loads a single HTML page and updates dynamically.",
-          },
-          {
-            id: 9,
-            front: "What are class components?",
-            back: "Components written using ES6 classes.",
-          },
-          {
-            id: 10,
-            front: "What are function components?",
-            back: "Simpler components using JavaScript functions.",
-          },
-          {
-            id: 11,
-            front: "What are the benefits of using React?",
-            back: "Reusable components, virtual DOM, unidirectional data flow.",
-          },
-          {
-            id: 12,
-            front: "What is the purpose of components in React?",
-            back: "To break UI into reusable pieces.",
-          },
-          {
-            id: 13,
-            front: "What are props in React?",
-            back: "Inputs to components passed via attributes.",
-          },
-          {
-            id: 14,
-            front: "What is the use of ReactDOM.render?",
-            back: "To render a React component into the DOM.",
-          },
-          {
-            id: 15,
-            front: "What is the main advantage of virtual DOM?",
-            back: "Improves performance by minimizing real DOM manipulation.",
-          },
-          {
-            id: 16,
-            front: "What is a React element?",
-            back: "A description of what you want to see on the screen.",
-          },
-          {
-            id: 17,
-            front: "What are keys in React?",
-            back: "Unique identifiers for elements in a list.",
-          },
-          {
-            id: 18,
-            front: "Can JSX contain JavaScript expressions?",
-            back: "Yes, inside curly braces {}.",
-          },
-          {
-            id: 19,
-            front: "What is React.createElement?",
-            back: "An API to create React elements without JSX.",
-          },
-          {
-            id: 20,
-            front: "Is React a library or framework?",
-            back: "Library.",
-          },
-          {
-            id: 21,
-            front: "Why is JSX used in React?",
-            back: "To write HTML-like syntax in JavaScript.",
-          },
-          {
-            id: 22,
-            front: "What are pure components?",
-            back: "Components that render the same output for same props/state.",
-          },
-          {
-            id: 23,
-            front: "What does re-rendering mean?",
-            back: "Recreating the virtual DOM and updating the real DOM.",
-          },
-          {
-            id: 24,
-            front: "What is reconciliation?",
-            back: "React's process to update the DOM efficiently.",
-          },
-          {
-            id: 25,
-            front: "What is the role of Babel?",
-            back: "Transpiles JSX to regular JavaScript.",
-          },
-          {
-            id: 26,
-            front: "Can React be used without JSX?",
-            back: "Yes, using React.createElement directly.",
-          },
-          {
-            id: 27,
-            front: "What is nesting in React components?",
-            back: "Embedding one component inside another.",
-          },
-          {
-            id: 28,
-            front: "What does component-based architecture mean?",
-            back: "UI is built from isolated, reusable components.",
-          },
-          { id: 29, front: "Is React open-source?", back: "Yes." },
-          { id: 30, front: "Who developed React?", back: "Facebook." },
-        ],
-      },
-      {
-        id: 2,
-        title: "Unit 2: SET UP REACT JS ENVIRONMENT",
-        key: "reactjs-setup-env",
-        cards: [
-          {
-            id: 1,
-            front: "What is the CLI in React?",
-            back: "Command Line Interface tool used to create and manage React apps.",
-          },
-          {
-            id: 2,
-            front: "What is the command to create a React app?",
-            back: "npx create-react-app project-name",
-          },
-          {
-            id: 3,
-            front: "What are the advantages of using create-react-app?",
-            back: "Sets up build configuration, bundling, linting, and more.",
-          },
-          {
-            id: 4,
-            front: "How do you install Node.js?",
-            back: "Download from nodejs.org and install using the installer.",
-          },
-          {
-            id: 5,
-            front: "Why is Node.js needed for React?",
-            back: "It runs the development server and manages dependencies.",
-          },
-          {
-            id: 6,
-            front: "What is the role of npm?",
-            back: "Node Package Manager, used to install and manage JavaScript packages.",
-          },
-          {
-            id: 7,
-            front: "What is Babel?",
-            back: "A JavaScript compiler that converts JSX and ES6+ to browser-compatible JS.",
-          },
-          {
-            id: 8,
-            front: "How do you debug a React app?",
-            back: "Using browser DevTools and console.log, or React Developer Tools.",
-          },
-          {
-            id: 9,
-            front: "What is the default port for React development server?",
-            back: "3000",
-          },
-          {
-            id: 10,
-            front: "How to run a React app after creation?",
-            back: "npm start",
-          },
-          {
-            id: 11,
-            front: "What is a build in React?",
-            back: "A production-ready version of the app optimized for performance.",
-          },
-          {
-            id: 12,
-            front: "How to build a production version of a React app?",
-            back: "npm run build",
-          },
-          {
-            id: 13,
-            front: "What is the 'public' folder in React?",
-            back: "Contains static files like index.html and images.",
-          },
-          {
-            id: 14,
-            front: "What is the 'src' folder in React?",
-            back: "Holds the JavaScript and component code of the app.",
-          },
-          {
-            id: 15,
-            front: "What is index.js in React?",
-            back: "The entry point that renders the main App component.",
-          },
-          {
-            id: 16,
-            front: "What is App.js?",
-            back: "The root React component rendered inside index.js.",
-          },
-          {
-            id: 17,
-            front: "Can you rename App.js?",
-            back: "Yes, but you must also update references in index.js.",
-          },
-          {
-            id: 18,
-            front: "What is the node_modules folder?",
-            back: "Stores all installed npm packages.",
-          },
-          {
-            id: 19,
-            front: "How do you install a new package in React?",
-            back: "npm install package-name",
-          },
-          {
-            id: 20,
-            front: "What is package.json?",
-            back: "Configuration file listing project metadata and dependencies.",
-          },
-          {
-            id: 21,
-            front: "What is the benefit of modular folder structure?",
-            back: "Improves maintainability and scalability of the code.",
-          },
-          {
-            id: 22,
-            front: "How do you remove a package?",
-            back: "npm uninstall package-name",
-          },
-          {
-            id: 23,
-            front: "What is the use of .gitignore in React projects?",
-            back: "Lists files/folders Git should ignore like node_modules.",
-          },
-          {
-            id: 24,
-            front: "What is JSX compiled into?",
-            back: "React.createElement calls using Babel.",
-          },
-          {
-            id: 25,
-            front: "How do you open a React app in browser?",
-            back: "npm start automatically launches the app in the default browser.",
-          },
-          {
-            id: 26,
-            front: "What is the purpose of manifest.json?",
-            back: "Defines app metadata like icons, theme color for PWA.",
-          },
-          {
-            id: 27,
-            front: "Can you use TypeScript in create-react-app?",
-            back: "Yes, use npx create-react-app app-name --template typescript",
-          },
-          {
-            id: 28,
-            front: "What is serviceWorker.js?",
-            back: "Enables offline functionality (PWA) in React.",
-          },
-          {
-            id: 29,
-            front: "Why use create-react-app instead of manual setup?",
-            back: "Saves time and reduces complexity for new projects.",
-          },
-          {
-            id: 30,
-            front: "Where is ReactDOM.render used?",
-            back: "In index.js to render App into the root DOM node.",
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "Unit 3: BASIC FEATURES OF REACTJS AND COMPONENTS",
-        key: "reactjs-components-hooks",
-        cards: [
-          {
-            id: 1,
-            front: "What is JSX in React?",
-            back: "A syntax extension that allows mixing HTML with JavaScript.",
-          },
-          {
-            id: 2,
-            front: "What are the two main types of components in React?",
-            back: "Class components and functional components.",
-          },
-          {
-            id: 3,
-            front: "What is a class component?",
-            back: "A component defined using ES6 class syntax.",
-          },
-          {
-            id: 4,
-            front: "What is a functional component?",
-            back: "A component defined using a JavaScript function.",
-          },
-          {
-            id: 5,
-            front: "What is the render() method used for?",
-            back: "To return the JSX that defines the UI of a class component.",
-          },
-          {
-            id: 6,
-            front: "What is a prop in React?",
-            back: "A read-only input passed to a component.",
-          },
-          {
-            id: 7,
-            front: "How do you pass props to a component?",
-            back: "As attributes in JSX tags.",
-          },
-          {
-            id: 8,
-            front: "What is state in React?",
-            back: "A component's private data that affects how it renders.",
-          },
-          {
-            id: 9,
-            front: "Where is state defined in class components?",
-            back: "Inside the constructor using this.state.",
-          },
-          {
-            id: 10,
-            front: "How do you update state in a class component?",
-            back: "Using this.setState().",
-          },
-          {
-            id: 11,
-            front: "What is the useState Hook?",
-            back: "A Hook that allows you to add state to functional components.",
-          },
-          {
-            id: 12,
-            front: "What are Hooks?",
-            back: "Functions that let you use React features in functional components.",
-          },
-          {
-            id: 13,
-            front: "Can you use Hooks in class components?",
-            back: "No, only in functional components.",
-          },
-          {
-            id: 14,
-            front: "What is the useEffect Hook?",
-            back: "A Hook used to handle side effects like API calls or subscriptions.",
-          },
-          {
-            id: 15,
-            front: "What lifecycle method does useEffect replace?",
-            back: "componentDidMount, componentDidUpdate, and componentWillUnmount.",
-          },
-          {
-            id: 16,
-            front: "What is a controlled component?",
-            back: "An input element whose value is controlled by React state.",
-          },
-          {
-            id: 17,
-            front: "How do you handle form input in React?",
-            back: "By using onChange handlers and updating state.",
-          },
-          {
-            id: 18,
-            front: "What is the purpose of componentDidMount?",
-            back: "To run code after the component mounts (e.g., fetch data).",
-          },
-          {
-            id: 19,
-            front: "What is the use of props.children?",
-            back: "To access nested elements or components passed between tags.",
-          },
-          {
-            id: 20,
-            front: "What is a Higher Order Component (HOC)?",
-            back: "A function that takes a component and returns a new component.",
-          },
-          {
-            id: 21,
-            front: "What is the defaultProps in React?",
-            back: "Default property values for components if no value is passed.",
-          },
-          {
-            id: 22,
-            front: "What is the constructor used for in class components?",
-            back: "To initialize state and bind event handlers.",
-          },
-          {
-            id: 23,
-            front: "What is props drilling?",
-            back: "Passing data from parent to deeply nested children via props.",
-          },
-          {
-            id: 24,
-            front: "How do you prevent re-renders in React?",
-            back: "Use memoization with React.memo or PureComponent.",
-          },
-          {
-            id: 25,
-            front: "What is React.Fragment used for?",
-            back: "To group multiple elements without adding extra nodes to the DOM.",
-          },
-          {
-            id: 26,
-            front: "What are lifecycle methods?",
-            back: "Special methods in class components triggered during render phases.",
-          },
-          {
-            id: 27,
-            front: "What is the difference between state and props?",
-            back: "State is internal and changeable; props are external and immutable.",
-          },
-          {
-            id: 28,
-            front: "What are uncontrolled components?",
-            back: "Form elements that manage their own state using the DOM.",
-          },
-          {
-            id: 29,
-            front: "What is conditional rendering?",
-            back: "Rendering different JSX based on conditions using ternary or if statements.",
-          },
-          {
-            id: 30,
-            front: "What is a key in React lists?",
-            back: "A unique identifier used to improve list rendering performance.",
-          },
-        ],
-      },
-      {
-        id: 4,
-        title: "Unit 4: Routing with React Router",
-        key: "react-routing",
-        cards: [
-          {
-            id: 1,
-            front: "What is React Router?",
-            back: "A library for handling routing in React applications.",
-          },
-          {
-            id: 2,
-            front: "What is routing in React?",
-            back: "Defining different views or pages that can be navigated to without full-page reloads.",
-          },
-          {
-            id: 3,
-            front: "How do you install React Router?",
-            back: "Using npm: npm install react-router-dom",
-          },
-          {
-            id: 4,
-            front: "What is <BrowserRouter> used for?",
-            back: "It wraps the application and enables client-side routing.",
-          },
-          {
-            id: 5,
-            front: "What does the <Route> component do?",
-            back: "It renders UI when the path matches the current URL.",
-          },
-          {
-            id: 6,
-            front: "How do you navigate between pages in React?",
-            back: "Using the <Link> or <NavLink> component.",
-          },
-          {
-            id: 7,
-            front: "What is the difference between <Link> and <NavLink>?",
-            back: "<NavLink> adds styling when the link is active.",
-          },
-          {
-            id: 8,
-            front: "What is a dynamic route?",
-            back: "A route that uses parameters like /user/:id.",
-          },
-          {
-            id: 9,
-            front: "How do you access route parameters?",
-            back: "Using the useParams() hook.",
-          },
-          {
-            id: 10,
-            front: "What is the useNavigate() hook?",
-            back: "A hook used to programmatically navigate to another route.",
-          },
-          {
-            id: 11,
-            front: "How do you redirect in React Router?",
-            back: "Using the <Navigate> component.",
-          },
-          {
-            id: 12,
-            front: "What is nested routing?",
-            back: "Defining routes within other routes for sub-navigation.",
-          },
-          {
-            id: 13,
-            front: "What is <Outlet> used for?",
-            back: "To render child routes inside a parent component.",
-          },
-          {
-            id: 14,
-            front: "What is a 404 page in React Router?",
-            back: "A fallback route when no other route matches.",
-          },
-          {
-            id: 15,
-            front: "How do you create a 404 Not Found route?",
-            back: "Using path='*' in a <Route>.",
-          },
-          {
-            id: 16,
-            front: "What is route guarding?",
-            back: "Restricting access to routes based on conditions like authentication.",
-          },
-          {
-            id: 17,
-            front: "What is useLocation() hook?",
-            back: "Returns information about the current URL.",
-          },
-          {
-            id: 18,
-            front: "What is the key prop in routing?",
-            back: "Used to force component re-render when route changes.",
-          },
-          {
-            id: 19,
-            front: "How do you create a simple router setup?",
-            back: "Wrap with <BrowserRouter> and define routes with <Route>.",
-          },
-          {
-            id: 20,
-            front: "What does exact do in <Route>?",
-            back: "Ensures route only matches when the path exactly matches.",
-          },
-          {
-            id: 21,
-            front: "What is hash routing?",
-            back: "Routing using URL hash (e.g., #/home) instead of clean paths.",
-          },
-          {
-            id: 22,
-            front: "How to pass state during navigation?",
-            back: "Use useNavigate with { state: data }.",
-          },
-          {
-            id: 23,
-            front: "How to retrieve passed state?",
-            back: "Use useLocation().state in the target component.",
-          },
-          {
-            id: 24,
-            front: "Can you use multiple routers in React?",
-            back: "No, only one <BrowserRouter> should wrap the app.",
-          },
-          {
-            id: 25,
-            front: "What is <Switch> in older versions of React Router?",
-            back: "It rendered the first matching route (replaced by <Routes>).",
-          },
-          {
-            id: 26,
-            front: "What is <Routes> in React Router v6?",
-            back: "A wrapper for all <Route> elements that matches only one at a time.",
-          },
-          {
-            id: 27,
-            front: "How do you make routes case insensitive?",
-            back: "React Router v6 does this by default.",
-          },
-          {
-            id: 28,
-            front: "Can you use query parameters in React Router?",
-            back: "Yes, using URLSearchParams API.",
-          },
-          {
-            id: 29,
-            front: "What is route-based code splitting?",
-            back: "Loading route components lazily using React.lazy.",
-          },
-          {
-            id: 30,
-            front: "What is lazy loading in routing?",
-            back: "Loading components only when needed to improve performance.",
-          },
-        ],
-      },
-      {
-        id: 5,
-        title: "Unit 5: Event Handling in React & Working with Forms",
-        key: "react-events-forms",
-        cards: [
-          {
-            id: 1,
-            front: "How does React handle events?",
-            back: "React uses synthetic events that wrap native events for cross-browser compatibility.",
-          },
-          {
-            id: 2,
-            front: "What is a synthetic event?",
-            back: "A wrapper around the browser’s native event system in React.",
-          },
-          {
-            id: 3,
-            front: "How do you handle a click event in React?",
-            back: "Using onClick attribute with a function handler.",
-          },
-          {
-            id: 4,
-            front: "What does onChange do in forms?",
-            back: "Fires an event when the value of an input changes.",
-          },
-          {
-            id: 5,
-            front: "How do you access event target value?",
-            back: "Using event.target.value in the event handler.",
-          },
-          {
-            id: 6,
-            front: "How to bind event handlers in class components?",
-            back: "Using this.handleClick = this.handleClick.bind(this) in constructor.",
-          },
-          {
-            id: 7,
-            front: "How do you pass arguments to event handlers?",
-            back: "Using arrow functions or bind inside JSX.",
-          },
-          {
-            id: 8,
-            front: "How do you prevent default form submission?",
-            back: "By calling event.preventDefault() inside the onSubmit handler.",
-          },
-          {
-            id: 9,
-            front: "What is controlled component in a form?",
-            back: "An input element whose value is controlled by React state.",
-          },
-          {
-            id: 10,
-            front: "How do you update form state?",
-            back: "Using setState or useState inside onChange handlers.",
-          },
-          {
-            id: 11,
-            front: "How do you handle form submission in React?",
-            back: "Use onSubmit on <form> and update state or perform an action.",
-          },
-          {
-            id: 12,
-            front: "What are uncontrolled components?",
-            back: "Form elements where the DOM handles the state.",
-          },
-          {
-            id: 13,
-            front: "How do you use refs with uncontrolled components?",
-            back: "Use useRef() to access input values directly.",
-          },
-          {
-            id: 14,
-            front: "What is the difference between onBlur and onFocus?",
-            back: "onBlur triggers when focus leaves an input; onFocus triggers when it gains focus.",
-          },
-          {
-            id: 15,
-            front: "How do you reset a form in React?",
-            back: "Set state values back to their initial values.",
-          },
-          {
-            id: 16,
-            front: "What are input types supported in React forms?",
-            back: "Text, email, password, checkbox, radio, select, textarea, etc.",
-          },
-          {
-            id: 17,
-            front: "How do you handle checkboxes in React?",
-            back: "Track checked state and update it in onChange handler.",
-          },
-          {
-            id: 18,
-            front: "How do you handle radio buttons in React?",
-            back: "Group with the same name and update selected value in state.",
-          },
-          {
-            id: 19,
-            front: "How do you validate a form in React?",
-            back: "Use conditions inside onSubmit or onChange handlers.",
-          },
-          {
-            id: 20,
-            front: "What is formik?",
-            back: "A popular library for building and validating forms in React.",
-          },
-          {
-            id: 21,
-            front: "What is the advantage of controlled components?",
-            back: "Gives full control of input values via state.",
-          },
-          {
-            id: 22,
-            front: "What’s the purpose of defaultValue in forms?",
-            back: "To set the initial value for uncontrolled components.",
-          },
-          {
-            id: 23,
-            front: "How do you conditionally disable a button in React?",
-            back: "Use disabled attribute with a condition in JSX.",
-          },
-          {
-            id: 24,
-            front: "How do you submit a form programmatically?",
-            back: "Use formRef.current.submit() with useRef.",
-          },
-          {
-            id: 25,
-            front: "Can you combine controlled and uncontrolled inputs?",
-            back: "Not recommended; use one approach consistently.",
-          },
-          {
-            id: 26,
-            front: "What’s the purpose of onInput event?",
-            back: "Fires when user enters input, similar to onChange but more native.",
-          },
-          {
-            id: 27,
-            front: "How to format input on blur?",
-            back: "Use onBlur handler to apply transformation (e.g., trimming whitespace).",
-          },
-          {
-            id: 28,
-            front: "What’s useRef used for in forms?",
-            back: "To get direct access to a DOM element without re-rendering.",
-          },
-          {
-            id: 29,
-            front:
-              "What’s the key difference between HTML and React form handling?",
-            back: "In React, form inputs are typically managed using component state.",
-          },
-          {
-            id: 30,
-            front: "How to show error messages on form input?",
-            back: "Track validation state and conditionally render error messages in JSX.",
-          },
-        ],
-      },
-      {
-        id: 6,
-        title: "Unit 6: Introduction to Redux",
-        key: "react-redux",
-        cards: [
-          {
-            id: 1,
-            front: "What is Redux?",
-            back: "A predictable state container for JavaScript applications.",
-          },
-          {
-            id: 2,
-            front: "What are the core principles of Redux?",
-            back: "Single source of truth, state is read-only, changes via pure functions.",
-          },
-          {
-            id: 3,
-            front: "What is a store in Redux?",
-            back: "An object that holds the entire state of the application.",
-          },
-          {
-            id: 4,
-            front: "What is an action in Redux?",
-            back: "An object that describes what happened; must have a 'type' property.",
-          },
-          {
-            id: 5,
-            front: "What is a reducer?",
-            back: "A pure function that returns the new state based on the action and current state.",
-          },
-          {
-            id: 6,
-            front: "What is dispatch() in Redux?",
-            back: "A function used to send actions to the reducer.",
-          },
-          {
-            id: 7,
-            front: "How do you create a Redux store?",
-            back: "Using createStore() from redux.",
-          },
-          {
-            id: 8,
-            front: "What is the role of combineReducers?",
-            back: "Combines multiple reducers into one.",
-          },
-          {
-            id: 9,
-            front: "What is Redux middleware?",
-            back: "A function that intercepts actions before they reach the reducer.",
-          },
-          {
-            id: 10,
-            front: "What is thunk in Redux?",
-            back: "A middleware that lets you write async logic that interacts with the store.",
-          },
-          {
-            id: 11,
-            front: "What is mapStateToProps?",
-            back: "A function to map Redux state to component props.",
-          },
-          {
-            id: 12,
-            front: "What is mapDispatchToProps?",
-            back: "A function to map dispatch actions to component props.",
-          },
-          {
-            id: 13,
-            front: "What is connect() in Redux?",
-            back: "A function to connect React components to the Redux store.",
-          },
-          {
-            id: 14,
-            front: "What is Provider in Redux?",
-            back: "A component that makes the Redux store available to the app.",
-          },
-          {
-            id: 15,
-            front: "How is Redux different from Context API?",
-            back: "Redux is more powerful with middleware and debugging tools.",
-          },
-          {
-            id: 16,
-            front: "What is useSelector() hook?",
-            back: "A React-Redux hook to access state directly in function components.",
-          },
-          {
-            id: 17,
-            front: "What is useDispatch() hook?",
-            back: "A React-Redux hook to dispatch actions from function components.",
-          },
-          {
-            id: 18,
-            front: "Can Redux be used without React?",
-            back: "Yes, it's a standalone state management library.",
-          },
-          {
-            id: 19,
-            front: "Why use Redux?",
-            back: "For managing global state and predictable state updates in complex apps.",
-          },
-          {
-            id: 20,
-            front: "What is action creator?",
-            back: "A function that returns an action object.",
-          },
-          {
-            id: 21,
-            front: "How to perform async calls in Redux?",
-            back: "Using middleware like Redux Thunk or Redux Saga.",
-          },
-          {
-            id: 22,
-            front: "What is initialState in a reducer?",
-            back: "The default state value when the store is first created.",
-          },
-          {
-            id: 23,
-            front: "Can reducers have side effects?",
-            back: "No, reducers must be pure functions.",
-          },
-          {
-            id: 24,
-            front: "What happens if no matching action is found in reducer?",
-            back: "The current state is returned unchanged.",
-          },
-          {
-            id: 25,
-            front: "How do you debug Redux?",
-            back: "Using Redux DevTools browser extension.",
-          },
-          {
-            id: 26,
-            front: "What is immutability in Redux?",
-            back: "The state must not be modified directly; create a new copy instead.",
-          },
-          {
-            id: 27,
-            front: "What is the flow of data in Redux?",
-            back: "UI dispatches action → reducer handles it → new state → UI re-renders.",
-          },
-          {
-            id: 28,
-            front: "How does Redux ensure predictable state?",
-            back: "By using pure functions and strict unidirectional data flow.",
-          },
-          {
-            id: 29,
-            front: "Can multiple components access the same Redux state?",
-            back: "Yes, any component connected to the store can access state.",
-          },
-          {
-            id: 30,
-            front: "What are High Order Components in Redux?",
-            back: "Functions that take a component and return a new connected one (like connect()).",
           },
         ],
       },

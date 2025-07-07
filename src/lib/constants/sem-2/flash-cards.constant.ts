@@ -3,6 +3,7 @@ export const sem2FlashCards = [
     subject_name: "Artificial Intelligence",
     key: "artificial-intelligence",
     specialization: "ai",
+    course: null,
     units: [
       {
         id: 1,
