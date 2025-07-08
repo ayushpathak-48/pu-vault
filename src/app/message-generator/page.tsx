@@ -135,7 +135,9 @@ const MessageGeneratorPage = () => {
     <>
       <div className="flex items-center justify-center py-10 flex-col gap-4">
         <div className="flex flex-col gap-2 items-center justify-center">
-          <div className="font-medium text-xl">Leave Message Generator</div>
+          <div className="font-medium text-xl">
+            Unmarked Attendance Message Generator
+          </div>
           <div className="text-xs text-muted-foreground text-center px-1">
             Don&apos;t use this for fun or spamming. It&apos;s for students
             whose attendance is marked as absent.
