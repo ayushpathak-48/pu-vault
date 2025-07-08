@@ -8,6 +8,7 @@ import {
   ListTodo,
   MessageCircleQuestion,
   BriefcaseBusiness,
+  MailIcon,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -102,13 +103,13 @@ export const navLinks = [
     icon: HardDriveDownloadIcon,
     sem: [2],
   },
-  // {
-  //   id: 9,
-  //   title: "Attendance Calc",
-  //   href: "/attendance-calculator",
-  //   hideOnMobile: true,
-  //   icon: Calculator,
-  // },
+  {
+    id: 9,
+    title: "Message Generator",
+    href: "/message-generator",
+    hideOnMobile: true,
+    icon: MailIcon,
+  },
   {
     id: 10,
     title: "Settings",

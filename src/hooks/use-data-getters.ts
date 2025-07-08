@@ -17,6 +17,9 @@ import { sem2MCQs } from "@/lib/constants/sem-2/mcqs.constant";
 import { sem3MCQs } from "@/lib/constants/sem-3/mcqs.constant";
 import { sem2TimeTable } from "@/lib/constants/sem-2/time-table.constant";
 import { sem3TimeTable } from "@/lib/constants/sem-3/time-table.constant";
+import { MessageGeneratorSchema } from "@/lib/schema/message-generator-schema";
+import { z } from "zod";
+import { format } from "date-fns";
 
 export const useDataGetters = () => {
   const sem = useDataStore((state) => state.sem);
@@ -75,38 +78,27 @@ export const useDataGetters = () => {
     gender,
     type,
     date,
-    slot,
+    lecture,
     time,
-    areYouPresent,
+    is_present,
+    enrollment,
+    name,
     reason,
-  }: {
-    gender: "male" | "female";
-    type: "whatsapp" | "email";
-    date: string;
-    slot: string;
-    reason: string;
-    time: string;
-    areYouPresent: boolean;
-  }) => {
+  }: z.infer<typeof MessageGeneratorSchema>) => {
+    const formattedDate = format(date, "dd-MM-yyyy");
     if (type == "email")
       return `Respected ${gender == "female" ? "Ma'am" : "Sir"},
 
 I hope you are doing well.
 
-I would like to bring to your attention that I was marked absent for the ${slot} slot on (${date}, ${time}). ${
-        areYouPresent ? "However, I was present in that lecture." : ""
+I would like to bring to your attention that I was marked absent for the lecture: ${lecture} on (${formattedDate}, ${time}). ${
+        is_present ? "However, I was present in that lecture." : ""
       }
-
-${reason ? `Reason: The reason I was absent because ${reason}` : ""}
-
-Details:
-
-Name: Aayush Pathak 
-
-Enrollment No.: 2405112120135
-
-Division: ${division}
-
+${reason ? `\nReason: The reason I was absent because ${reason}\n` : ""}
+Details:-
+Name: ${name}
+Enrollment No.: ${enrollment}
+Division: ${division.charAt(division.length - 1).toUpperCase()}
 Semester: MCA Sem-${sem}
 
 Kindly request you to update the attendance accordingly.
@@ -117,16 +109,14 @@ Aayush Pathak`;
 
     if (type == "whatsapp")
       return `Hello ${gender == "female" ? "Ma'am" : "Sir"},
-I was marked absent today in the ${slot} slot (${time}), ${
-        areYouPresent ? "However, I was present in that lecture." : ""
+I was marked absent in the lecture: ${lecture} (${time}), ${
+        is_present ? "However, I was present in that lecture." : ""
       }
-
-${reason ? `Reason: The reason I was absent because ${reason}` : ""}
-
-Date: ${date}
-Name: Kacha Karan
-Enrollment: 2405112120073
-Division: ${division}, MCA Sem-${sem}
+${reason ? `\nReason: The reason I was absent because ${reason}\n` : ""}
+Date: ${formattedDate}
+Name: ${name}
+Enrollment: ${enrollment}
+Division: ${division.charAt(division.length - 1).toUpperCase()}, MCA Sem-${sem}
 
 Kindly request you to please update my attendance. Thank you!`;
     return "";

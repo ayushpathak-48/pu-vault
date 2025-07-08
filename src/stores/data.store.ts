@@ -3,9 +3,11 @@ import { CourseType } from "@/lib/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+type UserType = { name: string; enrollment: string };
+
 interface SpecializationState {
-  user: string;
-  setUser: (value: string) => void;
+  user: UserType;
+  setUser: (value: UserType) => void;
   specialization: string;
   setSpecialization: (value: string) => void;
   division: string;
