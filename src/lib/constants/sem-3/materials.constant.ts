@@ -110,6 +110,125 @@ export const sem3Materials = [
       //   },
     ],
   },
+  //  Employability Skills
+  {
+    id: 3,
+    subject_name: "Employability Skills",
+    key: "employability-skills",
+    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/employability-skills/.pdf`,
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "Unit-1: Listening Skills",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/1-listening-skills.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Paragraph Completion Worksheet",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/2-paragraph-completion-worksheet.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Paragraph Jumbles Worksheet",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/3-paragraph-jumbles-worksheet.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Creative Writing Prompts",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/4-creative-writing-prompts-1.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Reading Comprehension",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/5-reading-comprehension.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Group Discussion",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/6-group-discussion.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-7: Personal Interview",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/7-personal-interview.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Debate",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/8-debate.pdf`,
+      },
+      {
+        id: 9,
+        title: "Unit-9: Resume Building For Carrer Success",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/employability-skills/9-resume-building-for-career-success.pdf`,
+      },
+    ],
+    practicals_link: [
+      //   {
+      //     id: 0,
+      //     title: "Index",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ajp/index.pdf`,
+      //   },
+    ],
+    // que_papers: [
+    //   {
+    //     id: 1,
+    //     label: "AJP Mid Sem Theory 2025",
+    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
+    //   },
+
+    // ],
+    output_links: [
+      //   {
+      //     id: 0,
+      //     title: "Outputs",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ajp-outputs.pdf`,
+      //   },
+    ],
+  },
+  // Msc.IT
+  // Advanced Web Development Using React Js
+  {
+    id: 7,
+    subject_name: "Advanced Web Development Using React-js",
+    courses: ["mscit"],
+    syllabus_link: ``,
+    key: "advanced-Web-development-using-react-js",
+    notes_link: [
+      {
+        id: 1,
+        title:
+          "Unit-1: Introduction to system and software development process",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/advanced-web-development-using-react-js/1-node-js.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Requirement Analysis and Requirement Engineering",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/advanced-web-development-using-react-js/2-react-introduction.pdf`,
+      },
+    ],
+
+    practicals_link: [
+      // {
+      //   id: 1,
+      //   title: "Practicals",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/se/se-practicals.pdf`,
+      // },
+    ],
+    que_papers: [
+      // {
+      //   id: 1,
+      //   label: "SE Mid Sem Theory 2025",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/mid-sem-2025.pdf`,
+      // },
+      // {
+      //   id: 2,
+      //   label: "SE Mid Sem Answer Key",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/se-answer-key.pdf`,
+      // },
+    ],
+  },
 ];
 
 export const sem3specializationMaterials = [
@@ -150,6 +269,119 @@ export const sem3specializationMaterials = [
         id: 6,
         title: "Unit-6: Prolog",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/6-Prolog.pdf`,
+      },
+    ],
+    practicals_link: [
+      //   {
+      //     id: 0,
+      //     title: "Index",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
+      //   },
+      //   {
+      //     id: 1,
+      //     title: "Practical 1 - Tic Tac Toe Game",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
+      //   },
+    ],
+    que_papers: [
+      //   {
+      //     id: 1,
+      //     label: "AI Mid Sem Theory 2025",
+      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
+      //   },
+    ],
+    output_links: [
+      //   {
+      //     id: 0,
+      //     title: "Outputs",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ai-outputs.pdf`,
+      //   },
+    ],
+  },
+  // FSWD
+  {
+    id: 1,
+    subject_name: "Full Stack Web Development – II",
+    value: "fswd",
+    key: "advanced-full-stack-web-development-II",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/advanced-full-stack-web-development-II.pdf`,
+    notes_link: [
+      // {
+      //   id: 1,
+      //   title: "Unit-1: Introduction to AI with Case Study & Learning",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/1-introduction-to-ai-with-case-study-&-learning.pdf`,
+      // },
+    ],
+    practicals_link: [
+      //   {
+      //     id: 0,
+      //     title: "Index",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
+      //   },
+      //   {
+      //     id: 1,
+      //     title: "Practical 1 - Tic Tac Toe Game",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
+      //   },
+    ],
+    que_papers: [
+      //   {
+      //     id: 1,
+      //     label: "AI Mid Sem Theory 2025",
+      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
+      //   },
+    ],
+    output_links: [
+      //   {
+      //     id: 0,
+      //     title: "Outputs",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ai-outputs.pdf`,
+      //   },
+    ],
+  },
+  // CC
+  {
+    id: 1,
+    subject_name: "Cloud Computing - II",
+    value: "cc",
+    key: "cloud-computing-II",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cloud-computing-II.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title: "Unit-1: Networking in the Cloud",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/1-intro-networking-in-the-cloud.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Working with Google App Engine",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/2-working-with-google-app-engine.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Microsoft Cloud Services",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/3-microsoft-cloud-services.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-4: Amazon Cloud Services",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/4-amazon-cloud-services.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Cloud ML and AI",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/5-cloud-ml-and-ai.pdf`,
+      },
+      {
+        id: 6,
+        title: "Refrence Book: Cloud Computing: A Practical Approach",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/cloud-computing-a-practical-approach`,
+      },
+      {
+        id: 7,
+        title:
+          "Refrence Book: Cloud Computing: A Practical Approach For Learning And Implementation",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cloud-computing-II/cloud-computing-a-practical-approach-for-learning-and-implementation.pdf`,
       },
     ],
     practicals_link: [

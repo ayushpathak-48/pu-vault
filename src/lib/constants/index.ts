@@ -231,21 +231,21 @@ export const divisions = [
   },
   {
     id: 4,
-    label: "Division : D (AI)",
+    label: "Division : D (BDA)",
     value: "div_d",
-    specialization: "ai",
-  },
-  {
-    id: 5,
-    label: "Division : E (BDA)",
-    value: "div_e",
     specialization: "bda",
   },
   {
-    id: 6,
-    label: "Division : F (CC)",
-    value: "div_f",
+    id: 5,
+    label: "Division : E (CC)",
+    value: "div_e",
     specialization: "cc",
+  },
+  {
+    id: 6,
+    label: "Division : F (CSF)",
+    value: "div_f",
+    specialization: "csf",
   },
   {
     id: 7,
@@ -255,28 +255,28 @@ export const divisions = [
   },
   {
     id: 8,
-    label: "Division : H (CSF)",
-    specialization: "csf",
+    label: "Division : H (FSWD)",
+    specialization: "fswd",
     value: "div_h",
   },
   {
     id: 9,
-    label: "Division : I (CSF)",
-    specialization: "csf",
+    label: "Division : I (FSWD)",
+    specialization: "fswd",
     value: "div_i",
   },
-  {
-    id: 10,
-    label: "Division : J (FSWD)",
-    specialization: "fswd",
-    value: "div_j",
-  },
-  {
-    id: 11,
-    label: "Division : K (FSWD)",
-    specialization: "fswd",
-    value: "div_k",
-  },
+  // {
+  //   id: 10,
+  //   label: "Division : J (ALL)",
+  //   specialization: "all",
+  //   value: "div_j",
+  // },
+  // {
+  //   id: 11,
+  //   label: "Division : K (FSWD)",
+  //   specialization: "fswd",
+  //   value: "div_k",
+  // },
 ];
 
 export const weekdays = [
@@ -302,5 +302,10 @@ export const alertContent = [
     id: 1,
     title: "Academic Calendar",
     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/academic-calendar.pdf`,
+  },
+  {
+    id: 2,
+    title: "Research Paper Guidelines",
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
   },
 ];

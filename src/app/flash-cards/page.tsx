@@ -9,6 +9,7 @@ import React from "react";
 
 const FlashCardsPage = () => {
   const specialization = useDataStore((state) => state.specialization);
+  const course = useDataStore((state) => state.course);
 
   const { getFlashCards } = useDataGetters();
   const flashCards = getFlashCards();
@@ -23,7 +24,8 @@ const FlashCardsPage = () => {
         {flashCards.map(
           (subject) =>
             (!subject?.specialization ||
-              specialization == subject?.specialization) && (
+              specialization == subject?.specialization) &&
+            (!subject?.course || subject?.course == course) && (
               <Link
                 key={subject.key}
                 href={`/flash-cards/${subject.key}/${subject.units[0].key}`}
@@ -35,7 +37,7 @@ const FlashCardsPage = () => {
                   <ArrowRight className="group-hover:-translate-x-1 transition-all" />
                 </div>
               </Link>
-            ),
+            )
         )}
       </div>
     </div>

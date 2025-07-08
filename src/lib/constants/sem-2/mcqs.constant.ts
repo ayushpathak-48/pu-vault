@@ -3,6 +3,7 @@ export const sem2MCQs = [
   {
     subject_name: "Advance Java Programming",
     key: "advance-java-programming",
+    course: null,
     units: [
       {
         id: 1,
