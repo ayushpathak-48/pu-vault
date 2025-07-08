@@ -91,7 +91,7 @@ export const navLinks = [
     id: 7,
     title: "Interview Questions",
     href: "/interview",
-    // hideOnMobile: true,
+    hideOnMobile: true,
     icon: MessageCircleQuestion,
     sem: [2],
   },
