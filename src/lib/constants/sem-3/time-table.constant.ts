@@ -850,13 +850,13 @@ export const sem3TimeTable = [
         {
           id: 5,
           label: "Elective - IoT / STQA",
-          classroom: ["308,", "309"],
+          classroom: "308, 309",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 6,
           label: "Elective - IoT / STQA",
-          classroom: ["603,", "604"],
+          classroom: "603, 604",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -939,7 +939,7 @@ export const sem3TimeTable = [
         {
           id: 3,
           label: "Elective - IoT / STQA",
-          classroom: ["303,", "304"],
+          classroom: "303, 304",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -975,14 +975,14 @@ export const sem3TimeTable = [
           id: 3,
           label: "React JS / WAD",
           professor: ["Uma Bharti", "Anmol"],
-          classroom: ["303,304"],
+          classroom: "303, 304",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 4,
           label: "React JS / WAD",
           professor: ["Uma Bharti", "Anmol"],
-          classroom: ["303,304"],
+          classroom: "303, 304",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1102,13 +1102,13 @@ export const sem3TimeTable = [
         {
           id: 4,
           label: "Elective - Internet of Things / STQA",
-          classroom: ["308, 309"],
+          classroom: "308, 309",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 5,
           label: "Elective - Internet of Things / STQA",
-          classroom: ["603, 604"],
+          classroom: "603, 604",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -1211,14 +1211,14 @@ export const sem3TimeTable = [
           id: 3,
           label: "React JS - Uma Bharti / WAD - FA",
           professor: ["Uma Bharti", "FA"],
-          classroom: ["303", "305"],
+          classroom: "303, 305",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 4,
           label: "React JS / WAD ",
           professor: ["Uma Bharti", "FA"],
-          classroom: ["303", "305"],
+          classroom: "303, 305",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1341,13 +1341,13 @@ export const sem3TimeTable = [
         {
           id: 7,
           label: "Elective - IoT / STQA",
-          classroom: ["308", "309"],
+          classroom: "308, 309",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 8,
           label: "Elective - IoT / STQA",
-          classroom: ["603", "604"],
+          classroom: "603, 604",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -1381,7 +1381,7 @@ export const sem3TimeTable = [
         {
           id: 5,
           label: "Elective - IoT / STQA",
-          classroom: ["605", "606", "607"],
+          classroom: "605, 606, 607",
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -1396,7 +1396,7 @@ export const sem3TimeTable = [
           id: 7,
           label: "MAD",
           professor: "HP",
-          //   classroom: "605",
+          classroom: "605",
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
