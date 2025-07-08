@@ -13,7 +13,7 @@ export const BottomTabs = () => {
   if (!bottomTabsEnabled) return;
   return (
     <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100 dark:bg-[#181818]">
-      <div className="flex items-center justify-start h-full">
+      <div className="flex items-center justify-evenly h-full">
         {navLinks.map((link) => {
           if (link?.hideOnMobile) return;
           const activeLink =
