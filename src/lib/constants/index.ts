@@ -9,6 +9,7 @@ import {
   MessageCircleQuestion,
   BriefcaseBusiness,
   MailIcon,
+  UserIcon,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -40,12 +41,7 @@ export const navLinks = [
     icon: ListTodo,
     sem: [2],
   },
-  // {
-  //   id: 12,
-  //   title: "NPTEL Calc",
-  //   href: "/nptel-calculator",
-  //   icon: Calculator,
-  // },
+
   {
     id: 4,
     title: "FlashCards",
@@ -113,6 +109,13 @@ export const navLinks = [
   },
   {
     id: 10,
+    title: "Professors",
+    href: "/professors",
+    hideOnMobile: true,
+    icon: UserIcon,
+  },
+  {
+    id: 13,
     title: "Settings",
     href: "/settings",
     hideOnMobile: true,
