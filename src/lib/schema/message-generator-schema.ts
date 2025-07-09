@@ -13,5 +13,5 @@ export const MessageGeneratorSchema = z.object({
   gender: z.enum(["male", "female"]).default("male"),
   date: z.date(),
   time: z.string(),
-  lecture: z.number(),
+  lecture: z.string(),
 });

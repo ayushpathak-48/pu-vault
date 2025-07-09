@@ -87,7 +87,7 @@ const MessageGeneratorPage = () => {
       gender: "male",
       date: new Date(),
       time: "",
-      lecture: 1,
+      lecture: "1",
     },
   });
 
@@ -97,7 +97,7 @@ const MessageGeneratorPage = () => {
       enrollment: form.getValues("enrollment"),
     });
     const lectureObject = lectureDetails.find(
-      ({ lecture }) => lecture == form.getValues("lecture"),
+      ({ lecture }) => lecture == parseInt(form.getValues("lecture")),
     );
     data.time = lectureObject?.time || "";
     const msg = getMessageFormats(data);
