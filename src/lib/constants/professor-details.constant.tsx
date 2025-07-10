@@ -205,14 +205,32 @@ export const professorDetails = [
   },
   {
     id: 35,
-    name: "Dr. Sujit Singh",
+    name: "Prof. Sujit Singh",
     phone: "+919813769955",
     email: "sujit.singh36858@paruluniversity.ac.in",
   },
   {
     id: 36,
-    name: "Dr. Ramachandran",
+    name: "Prof. Ramachandran",
     phone: "+919384345662",
     email: "ramchandran.p34251@paruluniversity.ac.in",
+  },
+  {
+    id: 37,
+    name: "Prof. Hardik Paramar",
+    phone: "+919586607479",
+    email: "hardik.parmar26611@paruluniversity.ac.in ",
+  },
+  {
+    id: 38,
+    name: "Prof.  Jigar Bhawsar",
+    phone: "+919229891004",
+    email: "jigar.bhawsar24744@paruluniversity.ac.in",
+  },
+  {
+    id: 39,
+    name: "Prof. Vipul Gamit",
+    phone: "+918200012226",
+    email: "vipulbhai.gamit26053@paruluniversity.ac.in",
   },
 ];
