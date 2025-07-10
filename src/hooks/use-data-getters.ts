@@ -105,7 +105,7 @@ Kindly request you to update the attendance accordingly.
 Thank you for your understanding and support.
 
 Best regards,
-Aayush Pathak`;
+${name}`;
 
     if (type == "whatsapp")
       return `Hello ${gender == "female" ? "Ma'am" : "Sir"},
