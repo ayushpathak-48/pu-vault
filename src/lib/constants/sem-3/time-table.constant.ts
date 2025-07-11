@@ -683,7 +683,7 @@ export const sem3TimeTable = [
         {
           id: 3,
           mca: {
-            // label: "",
+            label: "",
           },
           msc_it: {
             label: "React JS",
@@ -695,7 +695,7 @@ export const sem3TimeTable = [
         {
           id: 4,
           mca: {
-            // label: "",
+            label: "",
           },
           msc_it: {
             label: "React JS",
@@ -719,14 +719,14 @@ export const sem3TimeTable = [
             lab: ["611", "612"],
           },
           // col_span: 2,
-          msc_it: {},
+          msc_it: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 7,
           mca: { label: "WAD", professor: "Anmol", classroom: "601" },
-          mdc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -754,9 +754,9 @@ export const sem3TimeTable = [
           mca: {
             label: "WAD",
             professor: "Anmol",
-            classroom: 601,
+            classroom: "601",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -824,7 +824,7 @@ export const sem3TimeTable = [
         {
           id: 8,
           mca: {
-            // label: "",
+            label: "",
           },
           msc_it: {
             label: "React JS",
@@ -850,9 +850,9 @@ export const sem3TimeTable = [
           mca: {
             label: "WAD",
             professor: "Anmol",
-            classroom: 601,
+            classroom: "601",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -879,7 +879,7 @@ export const sem3TimeTable = [
         },
         {
           id: 6,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -923,7 +923,7 @@ export const sem3TimeTable = [
           mca: {
             label: "ES",
             professor: "DBD",
-            classroom: 309,
+            classroom: "309",
           },
           msc_it: {
             label: "React JS [LAB]",
@@ -935,11 +935,11 @@ export const sem3TimeTable = [
         },
         {
           id: 5,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
-            lab: [605, 606, 607],
+            lab: ["605", "606", "607"],
           },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
@@ -966,7 +966,7 @@ export const sem3TimeTable = [
             lab: ["702", "703"],
           },
           // col_span: 2,
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -984,7 +984,7 @@ export const sem3TimeTable = [
         },
         {
           id: 3,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1140,7 +1140,7 @@ export const sem3TimeTable = [
             lab: ["611", "612"],
           },
           // col_span: 2,
-          msc_it: {},
+          msc_it: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
@@ -1153,7 +1153,7 @@ export const sem3TimeTable = [
         },
         {
           id: 8,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "React JS",
             professor: "Uma Bharti",
@@ -1171,7 +1171,7 @@ export const sem3TimeTable = [
         },
         {
           id: 4,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1181,7 +1181,7 @@ export const sem3TimeTable = [
         },
         {
           id: 5,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1217,13 +1217,13 @@ export const sem3TimeTable = [
             lab: ["607", "608"],
           },
           // col_span: 2,
-          msc_it: {},
+          msc_it: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
           id: 5,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             professor: "Akanshan Singh",
             label: "Elective - Internet of Things / STQA [LAB]",
@@ -1245,9 +1245,9 @@ export const sem3TimeTable = [
           mca: {
             label: "WAD",
             professor: "Anmol",
-            classroom: 307,
+            classroom: "307",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1260,7 +1260,7 @@ export const sem3TimeTable = [
         { id: 2, label: "01:15 TO 02:10" },
         {
           id: 3,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Elective - Internet of Things / STQA [LAB]",
             professor: "Akanshan Singh",
@@ -1336,7 +1336,7 @@ export const sem3TimeTable = [
             professor: "FA",
             classroom: "305",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1346,7 +1346,7 @@ export const sem3TimeTable = [
             professor: ["FA", "Dr. Ramachandra P"],
             lab: ["605", "606"],
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -1432,7 +1432,7 @@ export const sem3TimeTable = [
             professor: "Uma Bharti",
             classroom: "302",
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -1457,7 +1457,7 @@ export const sem3TimeTable = [
 
         {
           id: 7,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1467,7 +1467,7 @@ export const sem3TimeTable = [
         },
         {
           id: 8,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1502,7 +1502,7 @@ export const sem3TimeTable = [
             professor: "Uma Bharti",
             lab: ["603"],
           },
-          mca: {},
+          mca: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
@@ -1514,7 +1514,7 @@ export const sem3TimeTable = [
             lab: ["605", "606", "607"],
           },
           // col_span: 2,
-          mca: {},
+          mca: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
@@ -1539,7 +1539,7 @@ export const sem3TimeTable = [
             professor: "FA, Dr. Ramachandra P",
             lab: ["606", "607"],
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -1549,7 +1549,7 @@ export const sem3TimeTable = [
         { id: 2, label: "01:15 to 02:10" },
         {
           id: 5,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1806,7 +1806,7 @@ export const sem3TimeTable = [
         { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "React JS",
             professor: "Uma Bharti",
@@ -1816,7 +1816,7 @@ export const sem3TimeTable = [
         },
         {
           id: 4,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "React JS",
             professor: "Uma Bharti",
@@ -1839,7 +1839,7 @@ export const sem3TimeTable = [
         {
           id: 7,
           mca: { label: "WAD [LAB]", professor: ["FA"], lab: ["609, 610"] },
-          msc_it: {},
+          msc_it: { label: "" },
           row_span: 2,
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
@@ -1900,7 +1900,7 @@ export const sem3TimeTable = [
         {
           id: 6,
           mca: { label: "WAD [LAB]", professor: "FA", lab: ["706, 707"] },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -1918,7 +1918,7 @@ export const sem3TimeTable = [
             professor: "Uma Bharti",
             classroom: "302",
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -1932,7 +1932,7 @@ export const sem3TimeTable = [
             professor: "FA",
             classroom: "601",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1942,7 +1942,7 @@ export const sem3TimeTable = [
             professor: "FA",
             classroom: "309",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -1951,7 +1951,7 @@ export const sem3TimeTable = [
         },
         {
           id: 6,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -1961,7 +1961,7 @@ export const sem3TimeTable = [
         },
         {
           id: 7,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -2008,7 +2008,7 @@ export const sem3TimeTable = [
             professor: "Akanshan Singh",
             lab: ["605", "606", "607"],
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -2040,7 +2040,7 @@ export const sem3TimeTable = [
         { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
@@ -2328,7 +2328,7 @@ export const sem3TimeTable = [
             professor: "Himanshu Kumar Yadav",
             classroom: "309",
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -2338,7 +2338,7 @@ export const sem3TimeTable = [
             professor: ["Himanshu Kumar Yadav", "Sheeja"],
             lab: ["609", "610"],
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -2391,7 +2391,7 @@ export const sem3TimeTable = [
             professor: ["Himanshu Kumar Yadav", "Sheeja"],
             lab: ["704", "705"],
           },
-          msc_it: {},
+          msc_it: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -2427,7 +2427,7 @@ export const sem3TimeTable = [
             professor: "Uma Bharti",
             classroom: "302",
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -2456,7 +2456,7 @@ export const sem3TimeTable = [
             professor: "Akanshan Singh",
             classroom: "308, 309",
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
         {
@@ -2466,7 +2466,7 @@ export const sem3TimeTable = [
             professor: "Akanshan Singh",
             classroom: "603, 604",
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
         },
       ],
@@ -2492,7 +2492,7 @@ export const sem3TimeTable = [
             professor: "Uma Bharti",
             lab: ["603"],
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -2503,7 +2503,7 @@ export const sem3TimeTable = [
             professor: "Akanshan Singh",
             lab: ["605", "606", "607"],
           },
-          mca: {},
+          mca: { label: "" },
           cellClassName: "text-slate-900 dark:!text-gray-300",
           row_span: 2,
         },
@@ -2533,7 +2533,7 @@ export const sem3TimeTable = [
         { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
-          mca: {},
+          mca: { label: "" },
           msc_it: {
             label: "Internet Of Things / STQA",
             professor: "Akanshan Singh",
