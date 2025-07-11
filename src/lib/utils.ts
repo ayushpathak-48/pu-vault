@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -18,13 +19,17 @@ export function getCurrentTime() {
 }
 
 export const checkIsActiveTime = (timeRange: string | undefined) => {
-  if (!timeRange) return;
+  if (!timeRange || !timeRange.includes(" TO ")) return false;
 
   const [startTime, endTime] = timeRange.split(" TO ");
+  if (!startTime || !endTime) return false;
+
   const currentTime = getCurrentTime();
+
   const toMinutes = (time: string) => {
+    if (!time.includes(":")) return 0;
     let [hours, minutes] = time.split(":").map(Number);
-    minutes = minutes;
+    if (isNaN(hours) || isNaN(minutes)) return 0;
     if (hours < 6) hours += 12;
     return hours * 60 + minutes;
   };
