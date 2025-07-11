@@ -22,7 +22,7 @@ export const TimeTableBody = ({
         <tr
           key={i}
           className={cn(
-            "bg-white border-b border-gray-200 dark:bg-[#181818] dark:border-[#282828]",
+            "bg-white border-b border-gray-200 dark:bg-[#181818] dark:border-[#282828]"
           )}
         >
           {table.map(
@@ -60,14 +60,14 @@ export const TimeTableBody = ({
                     isRecess && "bg-neutral-500 text-white",
                     sameDay &&
                       "bg-primary text-black dark:text-gray-300 font-bold",
-                    cellClassName,
+                    cellClassName
                   )}
                 >
                   {isMscItOrMCA ? (
                     <>
                       {mca && course == "mca" ? (
                         <div className="flex flex-col">
-                          <div className="flex flex-col text-purple-400">
+                          <div className={cn("flex flex-col ", cellClassName)}>
                             {/* <div className="font-bold">MCA</div> */}
                             <SingleCell
                               label={mca?.label}
@@ -78,8 +78,8 @@ export const TimeTableBody = ({
                           </div>
                         </div>
                       ) : (
-                        <div className="flex flex-col text-purple-400">
-                          <div className="text-blue-400">
+                        <div className={cn("flex flex-col ", cellClassName)}>
+                          <div className="">
                             {/* <div className="font-bold">MScIt</div> */}
                             <SingleCell
                               label={msc_it?.label}
@@ -101,7 +101,7 @@ export const TimeTableBody = ({
                   )}
                 </td>
               );
-            },
+            }
           )}
         </tr>
       ))}
@@ -134,7 +134,7 @@ const SingleCell = ({
       className={cn(
         "border-2 w-max mx-auto rounded-md border-gray-200 p-1 mt-1 dark:text-gray-300",
         classroom || lab ? "" : "hidden",
-        "dark:!text-gray-300",
+        "dark:!text-gray-300"
       )}
     >
       {classroom && <span>Class: {classroom}</span>}

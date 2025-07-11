@@ -232,7 +232,6 @@ export const divisions = [
     label: "Division : C (AI)",
     value: "div_c",
     specialization: "ai",
-    courses: ["mca"],
   },
   {
     id: 4,
