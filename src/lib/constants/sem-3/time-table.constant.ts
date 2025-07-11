@@ -1300,7 +1300,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "1" },
-        { id: 2, label: "07:30 AM to 08:25 AM" },
+        { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
           mca: {
@@ -1361,7 +1361,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "2" },
-        { id: 2, label: "08:25 AM to 09:20 AM" },
+        { id: 2, label: "08:25 to 09:20" },
         {
           id: 3,
           label: "Minor Project",
@@ -1382,13 +1382,13 @@ export const sem3TimeTable = [
         { id: 1, label: "Short Break" },
         {
           id: 2,
-          label: "09:20 AM to 09:30 AM",
+          label: "09:20 TO 9:30",
           col_span: 7,
         },
       ],
       [
         { id: 1, label: "3" },
-        { id: 2, label: "09:30 AM to 10:25 AM" },
+        { id: 2, label: "09:30 to 10:25" },
         {
           id: 3,
           label: "ES",
@@ -1438,7 +1438,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "4" },
-        { id: 2, label: "10:25 AM to 11:20 AM" },
+        { id: 2, label: "10:25 to 11:20" },
         {
           id: 3,
           label: "OSTF - NPTEL",
@@ -1480,13 +1480,13 @@ export const sem3TimeTable = [
         { id: 1, label: "Recess" },
         {
           id: 2,
-          label: "11:20 AM to 12:20 PM",
+          label: "11:20 to 12:20",
           col_span: 7,
         },
       ],
       [
         { id: 1, label: "5" },
-        { id: 2, label: "12:20 PM to 01:15 PM" },
+        { id: 2, label: "12:20 to 01:15" },
         {
           id: 3,
           label: "CC [LAB]",
@@ -1546,7 +1546,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "6" },
-        { id: 2, label: "01:15 PM to 02:10 PM" },
+        { id: 2, label: "01:15 to 02:10" },
         {
           id: 5,
           mca: {},
@@ -1585,7 +1585,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "1" },
-        { id: 2, label: "07:30 AM to 08:25 AM" },
+        { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
           label: "MAD",
@@ -1622,7 +1622,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "2" },
-        { id: 2, label: "08:25 AM to 09:20 AM" },
+        { id: 2, label: "08:25 to 09:20" },
         {
           id: 3,
           label: "WAD",
@@ -1653,13 +1653,13 @@ export const sem3TimeTable = [
         { id: 1, label: "Short Break" },
         {
           id: 2,
-          label: "09:20 AM to 09:30 AM",
+          label: "09:20 TO 9:30",
           col_span: 7,
         },
       ],
       [
         { id: 1, label: "3" },
-        { id: 2, label: "09:30 AM to 10:25 AM" },
+        { id: 2, label: "09:30 to 10:25" },
         {
           id: 3,
           label: "Library",
@@ -1702,7 +1702,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "4" },
-        { id: 2, label: "10:25 AM to 11:20 AM" },
+        { id: 2, label: "10:25 to 11:20" },
         {
           id: 3,
           label: "ES",
@@ -1715,13 +1715,13 @@ export const sem3TimeTable = [
         { id: 1, label: "Recess" },
         {
           id: 2,
-          label: "11:20 AM to 12:20 PM",
+          label: "11:20 to 12:20",
           col_span: 7,
         },
       ],
       [
         { id: 1, label: "5" },
-        { id: 2, label: "12:20 PM to 01:15 PM" },
+        { id: 2, label: "12:20 to 01:15" },
         {
           id: 3,
           label: "OSTF - NPTEL",
@@ -1753,7 +1753,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "6" },
-        { id: 2, label: "01:15 PM to 02:10 PM" },
+        { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
           label: "CSF",
@@ -1803,7 +1803,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "1" },
-        { id: 2, label: "07:30 AM to 08:25 AM" },
+        { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
           mca: {},
@@ -1846,7 +1846,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "2" },
-        { id: 2, label: "08:25 AM to 09:20 AM" },
+        { id: 2, label: "08:25 to 09:20" },
         {
           id: 3,
           label: "MAD",
@@ -1871,11 +1871,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Short Break" },
-        { id: 2, label: "09:20 AM to 09:30 AM", col_span: 7 },
+        { id: 2, label: "09:20 TO 9:30", col_span: 7 },
       ],
       [
         { id: 1, label: "3" },
-        { id: 2, label: "09:30 AM to 10:25 AM" },
+        { id: 2, label: "09:30 to 10:25" },
         {
           id: 3,
           label: "ES",
@@ -1924,7 +1924,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "4" },
-        { id: 2, label: "10:25 AM to 11:20 AM" },
+        { id: 2, label: "10:25 to 11:20" },
         {
           id: 3,
           mca: {
@@ -1972,11 +1972,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Recess" },
-        { id: 2, label: "11:20 AM to 12:20 PM", col_span: 7 },
+        { id: 2, label: "11:20 to 12:20", col_span: 7 },
       ],
       [
         { id: 1, label: "5" },
-        { id: 2, label: "12:20 PM to 01:15 PM" },
+        { id: 2, label: "12:20 to 01:15" },
         {
           id: 3,
           label: "CSF [LAB]",
@@ -2037,7 +2037,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "6" },
-        { id: 2, label: "01:15 PM to 02:10 PM" },
+        { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
           mca: {},
@@ -2076,7 +2076,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "1" },
-        { id: 2, label: "07:30 AM to 08:25 AM" },
+        { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
           label: "FSW",
@@ -2113,7 +2113,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "2" },
-        { id: 2, label: "08:25 AM to 09:20 AM" },
+        { id: 2, label: "08:25 to 09:20" },
         {
           id: 3,
           label: "WAD",
@@ -2142,11 +2142,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Short Break" },
-        { id: 2, label: "09:20 AM to 09:30 AM", col_span: 7 },
+        { id: 2, label: "09:20 TO 9:30", col_span: 7 },
       ],
       [
         { id: 1, label: "3" },
-        { id: 2, label: "09:30 AM to 10:25 AM" },
+        { id: 2, label: "09:30 to 10:25" },
         {
           id: 3,
           label: "PULMS (Self Learning)",
@@ -2181,7 +2181,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "4" },
-        { id: 2, label: "10:25 AM to 11:20 AM" },
+        { id: 2, label: "10:25 to 11:20" },
         {
           id: 3,
           label: "ES",
@@ -2211,11 +2211,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Recess" },
-        { id: 2, label: "11:20 AM to 12:20 PM", col_span: 7 },
+        { id: 2, label: "11:20 to 12:20", col_span: 7 },
       ],
       [
         { id: 1, label: "5" },
-        { id: 2, label: "12:20 PM to 01:15 PM" },
+        { id: 2, label: "12:20 to 01:15" },
         {
           id: 3,
           label: "OSTF - NPTEL",
@@ -2263,7 +2263,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "6" },
-        { id: 2, label: "01:15 PM to 02:10 PM" },
+        { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
           label: "FSW",
@@ -2292,7 +2292,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "1" },
-        { id: 2, label: "07:30 AM to 08:25 AM" },
+        { id: 2, label: "07:30 to 08:25" },
         {
           id: 3,
           msc_it: {
@@ -2353,7 +2353,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "2" },
-        { id: 2, label: "08:25 AM to 09:20 AM" },
+        { id: 2, label: "08:25 to 09:20" },
 
         {
           id: 3,
@@ -2379,11 +2379,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Short Break" },
-        { id: 2, label: "09:20 AM to 09:30 AM", col_span: 7 },
+        { id: 2, label: "09:20 TO 9:30", col_span: 7 },
       ],
       [
         { id: 1, label: "3" },
-        { id: 2, label: "09:30 AM to 10:25 AM" },
+        { id: 2, label: "09:30 to 10:25" },
         {
           id: 3,
           mca: {
@@ -2433,7 +2433,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "4" },
-        { id: 2, label: "10:25 AM to 11:20 AM" },
+        { id: 2, label: "10:25 to 11:20" },
         {
           id: 3,
           label: "ES",
@@ -2472,11 +2472,11 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "Recess" },
-        { id: 2, label: "11:20 AM to 12:20 PM", col_span: 7 },
+        { id: 2, label: "11:20 to 12:20", col_span: 7 },
       ],
       [
         { id: 1, label: "5" },
-        { id: 2, label: "12:20 PM to 01:15 PM" },
+        { id: 2, label: "12:20 to 01:15" },
         {
           id: 3,
           label: "FSW [LAB]",
@@ -2530,7 +2530,7 @@ export const sem3TimeTable = [
       ],
       [
         { id: 1, label: "6" },
-        { id: 2, label: "01:15 PM to 02:10 PM" },
+        { id: 2, label: "01:15 to 02:10" },
         {
           id: 3,
           mca: {},
