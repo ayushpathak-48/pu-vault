@@ -333,3 +333,5 @@ export const sem1Materials = [
     ],
   },
 ];
+
+export const sem1specializationMaterials = [];

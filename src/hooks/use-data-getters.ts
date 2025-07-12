@@ -17,7 +17,7 @@ import {
 } from "@/lib/constants/sem-2/materials.constant";
 import {
   sem1Materials,
-  // sem1specializationMaterials,
+  sem1specializationMaterials,
 } from "@/lib/constants/sem-1/materials.constant";
 
 import { sem2MCQs } from "@/lib/constants/sem-2/mcqs.constant";
@@ -79,6 +79,7 @@ export const useDataGetters = () => {
 
   // Get Specialization constant
   const getSpecializationMaterials = () => {
+    if (sem === 1) return sem1specializationMaterials;
     if (sem === 2) return sem2specializationMaterials;
     if (sem === 3) return sem3specializationMaterials;
     return [];
