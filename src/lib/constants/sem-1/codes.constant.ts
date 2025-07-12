@@ -3,7 +3,7 @@ export const sem1PracticalCodes = [
   {
     subject_name: "Java Programming",
     key: "java-programming",
-    // specialization: "ai",
+    specialization: null,
     language: "java",
     practicals: [
       //  p-1 Basic datatype and looping
