@@ -42,11 +42,22 @@ export function AppSidebar() {
             value={sem.toString()}
           >
             <ToggleGroupItem
+              value="1"
+              aria-label="Semester 1"
+              className={cn(
+                "!border-gray-500 border",
+                sem == 1 && "!bg-primary/100 !text-primary-foreground"
+              )}
+            >
+              1
+            </ToggleGroupItem>
+
+            <ToggleGroupItem
               value="2"
               aria-label="Semester 2"
               className={cn(
                 "!border-gray-500 border",
-                sem == 2 && "!bg-primary/100 !text-primary-foreground",
+                sem == 2 && "!bg-primary/100 !text-primary-foreground"
               )}
             >
               2
@@ -57,7 +68,7 @@ export function AppSidebar() {
               aria-label="Semester 3"
               className={cn(
                 "!border-gray-500 border",
-                sem == 3 && "!bg-primary/100 !text-primary-foreground",
+                sem == 3 && "!bg-primary/100 !text-primary-foreground"
               )}
             >
               3
@@ -79,7 +90,7 @@ export function AppSidebar() {
                 className={cn(
                   "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc]",
                   activeLink &&
-                    "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
+                    "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary"
                 )}
                 key={link.id}
               >

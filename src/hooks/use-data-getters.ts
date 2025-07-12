@@ -1,6 +1,8 @@
+import { sem1Assignments } from "@/lib/constants/sem-1/assignments.constant";
 import { sem2Assignments } from "@/lib/constants/sem-2/assignments.constant";
 import { sem3Assignments } from "@/lib/constants/sem-3/assignment.constant";
 import { useDataStore } from "@/stores/data.store";
+import { sem1PracticalCodes } from "@/lib/constants/sem-1/codes.constant";
 import { sem2PracticalCodes } from "@/lib/constants/sem-2/codes.constant";
 import { sem3PracticalCodes } from "@/lib/constants/sem-3/codes.constant";
 import { sem3FlashCards } from "@/lib/constants/sem-3/flash-cards.constant";
@@ -13,6 +15,11 @@ import {
   sem2Materials,
   sem2specializationMaterials,
 } from "@/lib/constants/sem-2/materials.constant";
+import {
+  sem1Materials,
+  // sem1specializationMaterials,
+} from "@/lib/constants/sem-1/materials.constant";
+
 import { sem2MCQs } from "@/lib/constants/sem-2/mcqs.constant";
 import { sem3MCQs } from "@/lib/constants/sem-3/mcqs.constant";
 import { sem2TimeTable } from "@/lib/constants/sem-2/time-table.constant";
@@ -27,6 +34,7 @@ export const useDataGetters = () => {
 
   // Get materials   constant
   const getMaterials = () => {
+    if (sem === 1) return sem1Materials;
     if (sem === 2) return sem2Materials;
     if (sem === 3) return sem3Materials;
     return [];
@@ -34,6 +42,7 @@ export const useDataGetters = () => {
 
   // Get assignment constant
   const getAssignments = () => {
+    if (sem === 1) return sem1Assignments;
     if (sem === 2) return sem2Assignments;
     if (sem === 3) return sem3Assignments;
     return [];
@@ -41,6 +50,7 @@ export const useDataGetters = () => {
 
   // Get Practical Codes Constant
   const getPracticalCodes = () => {
+    if (sem === 1) return sem1PracticalCodes;
     if (sem === 2) return sem2PracticalCodes;
     if (sem === 3) return sem3PracticalCodes;
     return [];
