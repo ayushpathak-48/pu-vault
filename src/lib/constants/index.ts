@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
+export const MATERIAL_LINK_BASE_URL_SEM_1 =
+  "https://saviour000.github.io/pu-vault-assets-1";
 export const MATERIAL_LINK_BASE_URL =
   "https://ayushpathak-48.github.io/pu-vault-assets";
 
@@ -128,13 +130,13 @@ export const courses = [
     id: 1,
     label: "MCA",
     value: "mca",
-    semesters: [2, 3],
+    semesters: [1, 2, 3],
   },
   {
     id: 2,
     label: "Msc It",
     value: "mscit",
-    semesters: [2, 3],
+    semesters: [1, 2, 3],
   },
 ];
 
