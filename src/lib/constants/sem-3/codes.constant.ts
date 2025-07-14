@@ -8,11 +8,11 @@ export const sem3PracticalCodes = [
     practicals: [
       {
         key: "guess-number",
-        name: "Practical - 1: Guess a number",
+        name: "Practical : Guess a number",
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical 1 - Guess a number",
+            value: "Practical - Guess a number",
           },
           {
             type: "code",
@@ -63,11 +63,11 @@ You have guessed right number`,
       },
       {
         key: "dfs-water-jug-problem",
-        name: "Practical - 2: DFS Water Jug Problem",
+        name: "Practical : DFS Water Jug Problem",
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical 2 - DFS Water Jug Problem",
+            value: "Practical - DFS Water Jug Problem",
           },
           {
             type: "code",
