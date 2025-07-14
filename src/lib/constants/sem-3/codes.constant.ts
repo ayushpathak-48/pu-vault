@@ -6,16 +6,16 @@
       language: "python",
       practicals: [
         {
-          key: "tic-tac-toe",
-          name: "Practical - 1: Tic Tac Toe",
+          key: "guess-number",
+          name: "Practical - 1: Guess a number",
           pageBlocks: [
             {
               type: "heading",
-              value: "Practical 1 - Tic Tac Toe",
+              value: "Practical 1 - Guess a number",
             },
             {
               type: "code",
-              fileName: "tic-tac-toe.py",
+              fileName: "guess-number.py",
               value: `import random as rd
 
 print("Guessing the number")
