@@ -36,7 +36,7 @@ while True:
         print("Guess a higher number :")
     else:
         print("You have guessed right number")
-        break;
+        break
 `
             }
           ]
