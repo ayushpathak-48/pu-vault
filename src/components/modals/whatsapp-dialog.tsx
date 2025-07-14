@@ -18,14 +18,14 @@ export const WhatsappDialog = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const whatsappDialogClosed = localStorage.getItem("whatsappDialogClosed");
+    const whatsappDialogClosed = localStorage.getItem("whatsappDialogClosed2");
     if (!whatsappDialogClosed) {
       setOpen(true);
     }
   }, []);
 
   const handleCloseClick = () => {
-    localStorage.setItem("whatsappDialogClosed", "true");
+    localStorage.setItem("whatsappDialogClosed2", "true");
     setOpen(false);
   };
 
