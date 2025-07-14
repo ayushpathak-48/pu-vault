@@ -237,7 +237,7 @@ export const sem3specializationMaterials = [
     id: 1,
     subject_name: "Artificial Intelligence - II",
     value: "ai",
-    key: "artificial-intelligence",
+    key: "artificial-intelligence-II",
     syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/artificial-intelligence-II.pdf`,
     notes_link: [
       {
