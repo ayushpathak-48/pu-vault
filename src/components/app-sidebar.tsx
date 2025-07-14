@@ -38,8 +38,10 @@ export function AppSidebar() {
           <ToggleGroup
             type="single"
             variant="default"
-            onValueChange={(value) => (value && value != "" ? setSem(parseInt(value) : ""))}
             value={sem.toString()}
+            onValueChange={(value) =>
+              value != "" ? setSem(parseInt(value)) : ""
+            }
           >
             <ToggleGroupItem
               value="1"
