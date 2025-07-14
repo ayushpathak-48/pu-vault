@@ -3,7 +3,7 @@
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
+  // AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -49,9 +49,9 @@ export const WhatsappDialog = () => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={handleCloseClick}>
+{/*           <AlertDialogCancel onClick={handleCloseClick}>
             Already Joined
-          </AlertDialogCancel>
+          </AlertDialogCancel> */}
           <AlertDialogAction asChild>
             <WhatsappButton />
           </AlertDialogAction>
