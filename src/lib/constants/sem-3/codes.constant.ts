@@ -73,6 +73,7 @@ You have guessed right number`,
               fileName: "dfs-water-jug.py",
               value: `from collections import deque
 
+
 def solve_water(capacity_jug1,capacity_jug2,target):
     queue = deque([(0,0,[])])
     checkpoint = set()
