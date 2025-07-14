@@ -24,10 +24,10 @@ export const WhatsappDialog = () => {
     }
   }, []);
 
-  const handleCloseClick = () => {
-    localStorage.setItem("whatsappDialogClosed2", "true");
-    setOpen(false);
-  };
+  // const handleCloseClick = () => {
+  //   localStorage.setItem("whatsappDialogClosed2", "true");
+  //   setOpen(false);
+  // };
 
   return (
     <AlertDialog open={open}>
