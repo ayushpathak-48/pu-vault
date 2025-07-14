@@ -38,6 +38,33 @@ while True:
 `
             }
           ]
+        },
+{
+          key: "dfs-water-jug-problem",
+          name: "Practical - 2: DFS Water Jug Problem",
+          pageBlocks: [
+            {
+              type: "heading",
+              value: "Practical 2 - DFS Water Jug Problem",
+            },
+            {
+              type: "code",
+              fileName: "dfs-water-jug.py",
+              value: `from collections import deque
+
+def solve_water(capacity_jug1,capacity_jug2,target):
+    queue = deque([(0,0,[])])
+    checkpoint = set()
+
+    while queue:
+        current_jug1,current_jug1,mark = queue.popleft()
+
+        if current_jug1 == target or current_jug2 == target:
+            return mark
+        
+`
+            }
+          ]
         }
         ]
         }
