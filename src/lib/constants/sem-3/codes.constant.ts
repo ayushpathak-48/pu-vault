@@ -57,12 +57,13 @@ def solve_water(capacity_jug1,capacity_jug2,target):
     checkpoint = set()
 
     while queue:
-        current_jug1,current_jug1,mark = queue.popleft()
+        current_jug1,current_jug2,mark = queue.popleft()
 
         if current_jug1 == target or current_jug2 == target:
             return mark
-        
-`
+
+        if(current_jug1,current_jug2) in checkpoint:
+            continue`
             }
           ]
         }
