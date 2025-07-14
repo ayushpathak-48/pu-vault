@@ -24,8 +24,6 @@ print("Range of Numbers")
 start = int(input("enter starting point :"))
 end = int(input("enter ending point :"))
 
-
-
 think = rd.randint(start,end);
 
 while True:
