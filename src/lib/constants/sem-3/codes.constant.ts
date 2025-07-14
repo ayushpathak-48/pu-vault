@@ -36,7 +36,29 @@ while True:
         print("You have guessed right number")
         break
 `
-            }
+            },  
+            {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Guessing the number
+Range of Numbers
+enter starting point :10
+enter ending point :20
+Guess the number :11
+Guess a higher number :
+Guess the number :13
+Guess a higher number :
+Guess the number :15
+Guess a higher number :
+Guess the number :19
+Guess a lower number :
+Guess the number :17
+Guess a higher number :
+Guess the number :18
+You have guessed right number
+`,
+          },
           ]
         },
 {
@@ -94,7 +116,14 @@ if output:
 else:
     print("Solution not Found")
 `
-            }
+            },{
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Solution Found
+Steps: 6
+Path: ['fill jug 2', 'pour jug 2 to jug 1', 'empty jug 1', 'pour jug 2 to jug 1', 'fill jug 2', 'pour jug 2 to jug 1']
+`}
           ]
         }
         ]
