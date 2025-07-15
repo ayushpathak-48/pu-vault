@@ -144,6 +144,16 @@ export type CourseType = "mca" | "mscit";
 
 export const softwareLinks = [
   {
+    id: 10,
+    title: "Visual Studio 2022",
+    link: "https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false",
+  },
+  {
+    id: 11,
+    title: "Android Studio",
+    link: "https://redirector.gvt1.com/edgedl/android/studio/install/2025.1.1.14/android-studio-2025.1.1.14-windows.exe",
+  },
+  {
     id: 1,
     title: "Jar File",
     link: "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.1.0.zip",
