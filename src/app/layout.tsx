@@ -22,7 +22,7 @@ const comicReleif = Poppins({
 
 export const metadata: Metadata = {
   title: "Pu Vault",
-  description: "Parul University MCA sem 2 materials",
+  description: "Parul University MCA sem 1 - 3 materials",
   icons: "/favicon.png",
   manifest: "/manifest.json",
 };
