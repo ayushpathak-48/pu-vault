@@ -5,10 +5,17 @@ import { Info, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import CodeBlock from "../code-block";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useParams, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useDataGetters } from "@/hooks/use-data-getters";
+import { cn } from "@/lib/utils";
 
 type CodeElementType = {
   type: string;
@@ -16,6 +23,8 @@ type CodeElementType = {
   fileName?: string;
   is_output?: boolean;
   language?: string;
+  description?: string;
+  className?: string;
 };
 
 const CodePageClient = () => {
@@ -153,30 +162,56 @@ const CodePageClient = () => {
           <LoaderCircle className="animate-spin size-6" />
         </div>
       ) : (
-        <div className="flex flex-col gap-2 p-2">
+        <div className="flex flex-col gap-3 p-3">
           {practical?.pageBlocks?.map((ele: CodeElementType, i) => (
             <div key={ele.type + "_" + i}>
               {ele.type == "heading" && (
-                <h2 className="text-2xl font-bold text-slate-700 dark:text-slate-300 text-center my-2">
+                <h2
+                  className={cn(
+                    "text-2xl font-bold text-slate-700 dark:text-slate-300 text-center my-2",
+                    ele?.className,
+                  )}
+                >
                   {ele.value}
                 </h2>
               )}
+              {ele.type == "description" && (
+                <p
+                  className={cn(
+                    "text-base text-gray-700 dark:text-gray-400 mt-3",
+                    ele?.className,
+                  )}
+                >
+                  {ele.value}
+                </p>
+              )}
               {ele.type == "code" && (
                 <Card>
-                  <CardHeader className="p-2">
-                    <CardTitle>
-                      {(ele?.is_output || ele?.fileName) && (
+                  <CardHeader
+                    className={cn(
+                      "p-2",
+                      !ele?.is_output &&
+                        !ele?.fileName &&
+                        !ele?.description &&
+                        "hidden",
+                    )}
+                  >
+                    {ele.description && (
+                      <CardDescription>{ele?.description}</CardDescription>
+                    )}
+                    {(ele?.is_output || ele?.fileName) && (
+                      <CardTitle>
                         <span className="text-gray-500 text-sm">
                           {ele?.is_output ? "Output :" : "filename:"}
                         </span>
-                      )}{" "}
-                      {ele.fileName}
-                    </CardTitle>
+                        {ele.fileName}
+                      </CardTitle>
+                    )}{" "}
                   </CardHeader>
                   <CardContent className="p-0">
                     <CodeBlock
                       is_output={ele?.is_output}
-                      code={ele.value}
+                      code={ele.value.trim()}
                       language={
                         ele?.language || practicalSubject?.language || "python"
                       }

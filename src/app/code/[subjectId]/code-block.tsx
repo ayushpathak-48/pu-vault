@@ -2,9 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  oneDark,
+  oneLight,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
 
 const CodeBlock = ({
@@ -17,7 +21,7 @@ const CodeBlock = ({
   language: string;
 }) => {
   const [copied, setCopied] = useState(false);
-
+  const { resolvedTheme } = useTheme();
   const handleCopy = () => {
     try {
       navigator.clipboard.writeText(code);
@@ -53,7 +57,7 @@ const CodeBlock = ({
           showLineNumbers
           wrapLines
           language={language}
-          style={oneDark}
+          style={resolvedTheme == "dark" ? oneDark : oneLight}
           customStyle={{ margin: 0, padding: "10px 0" }}
         >
           {code}

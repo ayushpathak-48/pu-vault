@@ -565,4 +565,748 @@ namespace GenderApp
       },
     ],
   },
+  // MscIt ADV-(ReactJs)
+  {
+    subject_name: "Advanced Web Development Using React-js",
+    key: "advance-web-application-development-using-reactjs",
+    practicals: [
+      {
+        key: "practical-1",
+        name: "Practical - 1: Designing webpages with React.js components",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 1 - Designing webpages with React.js components",
+          },
+          {
+            type: "description",
+            value: "Step: 1 - Run Below Command in terminal",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npx create-react-app my-react-app`,
+          },
+          {
+            type: "description",
+            value: "Step: 2 - Replace App.js file",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "App.js",
+            value: `import "./App.css";
+import MyComponent from "./MyComponent";
+function App() {
+  return (
+    <div className="App">
+      <MyComponent />
+    </div>
+  );
+}
+export default App;`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 3 - Create MyComponent.js file in src folder and replace file with below content",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "MyComponent.js",
+            value: `import React from "react";
+const MyComponent = () => {
+  return (
+    <div>
+      <h1>Hello this is my First React Component</h1>
+    </div>
+  );
+};
+export default MyComponent;`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 5 - Launch the development server with the following command:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm start`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      {
+        key: "practical-2",
+        name: "Practical - 2: TODO app using React.js",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 2 - TODO app using React.js",
+          },
+          {
+            type: "description",
+            value:
+              "Step: 1 - Open your terminal and navigate to your preferred directory. Run the following command to generate a new React app. Replace “todo-app” with your desired project name:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npx create-react-app todo-app`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 2 - Change your working directory to the “todo-app” folder:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `cd todo-app`,
+          },
+          {
+            type: "description",
+            value: "Step: 3 - Install the bootstrap and react-bootstrap module",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm install bootstrap react-bootstrap`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 4 - Write the below code in App.js file in the src directory",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "App.js",
+            value: `import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import ListGroup from "react-bootstrap/ListGroup";
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInput: "",
+      list: [],
+    };
+  }
+  updateInput(value) {
+    this.setState({
+      userInput: value,
+    });
+  }
+  addItem() {
+    if (this.state.userInput !== "") {
+      const userInput = {
+        id: Math.random(),
+        value: this.state.userInput,
+      };
+      const list = [...this.state.list];
+      list.push(userInput);
+      this.setState({
+        list,
+        userInput: "",
+      });
+    }
+  }
+  deleteItem(key) {
+    const list = [...this.state.list];
+    const updateList = list.filter((item) => item.id !== key);
+    this.setState({
+      list: updateList,
+    });
+  }
+  editItem = (index) => {
+    const todos = [...this.state.list];
+    const editedTodo = prompt("Edit the todo:");
+    if (editedTodo !== null && editedTodo.trim() !== "") {
+      let updatedTodos = [...todos];
+      updatedTodos[index].value = editedTodo;
+      this.setState({
+        list: updatedTodos,
+      });
+    }
+  };
+  render() {
+    return (
+      <Container>
+        <Row
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "3rem",
+            fontWeight: "bolder",
+          }}
+        >
+          TODO LIST
+        </Row>
+        <hr />
+        <Row>
+          <Col md={{ span: 5, offset: 4 }}>
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="add item . . . "
+                size="lg"
+                value={this.state.userInput}
+                onChange={(item) => this.updateInput(item.target.value)}
+                aria-label="add something"
+                aria-describedby="basic-addon2"
+              />
+              <InputGroup>
+                <Button
+                  variant="dark"
+                  className="mt-2"
+                  onClick={() => this.addItem()}
+                >
+                  ADD
+                </Button>
+              </InputGroup>
+            </InputGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={{ span: 5, offset: 4 }}>
+            <ListGroup>
+              {this.state.list.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <ListGroup.Item
+                      variant="dark"
+                      action
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {item.value}
+                      <span>
+                        <Button
+                          style={{ marginRight: "10px" }}
+                          variant="light"
+                          onClick={() => this.deleteItem(item.id)}
+                        >
+                          Delete
+                        </Button>
+                        <Button
+                          variant="light"
+                          onClick={() => this.editItem(index)}
+                        >
+                          Edit
+                        </Button>
+                      </span>
+                    </ListGroup.Item>
+                  </div>
+                );
+              })}
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+export default App;
+`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 5 - Launch the development server with the following command:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm start`,
+          },
+        ],
+      },
+      {
+        key: "practical-3",
+        name: "Practical - 3: Quiz app using React.js",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - Quiz app using React.js",
+          },
+          {
+            type: "description",
+            value: "Step: 1 - Create the project file using the command",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npx create-react-app quiz`,
+          },
+          {
+            type: "description",
+            value: "Step: 2 - Navigate to the folder using the command",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `cd quiz`,
+          },
+          {
+            type: "description",
+            value: "Step: 3 - Install the required module using the command",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm i bootstrap`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 4 - Create a folder named components in src folder and create these new files: Option.js, Question.js, QuestionBank.js, and Score.js",
+          },
+          {
+            type: "description",
+            value: "Step: 5 - Replace App.css file with below code",
+          },
+          {
+            type: "code",
+            language: "css",
+            fileName: "App.css",
+            value: `body {
+ background-color: #292b2e;
+ color: #ffffff;
+}
+.app-title {
+ color: #ffffff;
+ margin-top: 2rem;
+}`,
+          },
+          {
+            type: "description",
+            value: "Step: 6 - Replace App.js file with below code",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "App.js",
+            value: `import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Question from "./Components/Question";
+import qBank from "./Components/QuestionBank";
+import Score from "./Components/Score";
+import "./App.css";
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      questionBank: qBank,
+      currentQuestion: 0,
+      selectedOption: "",
+      score: 0,
+      quizEnd: false,
+    };
+  }
+  handleOptionChange = (e) => {
+    this.setState({ selectedOption: e.target.value });
+  };
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    this.checkAnswer();
+    this.handleNextQuestion();
+  };
+  checkAnswer = () => {
+    const { questionBank, currentQuestion, selectedOption } = this.state;
+    if (selectedOption === questionBank[currentQuestion].answer) {
+      this.setState((prevState) => ({ score: prevState.score + 1 }));
+    }
+  };
+  handleNextQuestion = () => {
+    const { questionBank, currentQuestion } = this.state;
+    if (currentQuestion + 1 < questionBank.length) {
+      this.setState((prevState) => ({
+        currentQuestion: prevState.currentQuestion + 1,
+        selectedOption: "",
+      }));
+    } else {
+      this.setState({
+        quizEnd: true,
+      });
+    }
+  };
+  render() {
+    const { questionBank, currentQuestion, selectedOption, score, quizEnd } =
+      this.state;
+    return (
+      <div
+        className="App d-flex flex-column align-items-center
+justify-content-center"
+      >
+        <h1 className="app-title">QUIZ APP</h1>
+        {!quizEnd ? (
+          <Question
+            question={questionBank[currentQuestion]}
+            selectedOption={selectedOption}
+            onOptionChange={this.handleOptionChange}
+            onSubmit={this.handleFormSubmit}
+          />
+        ) : (
+          <Score
+            score={score}
+            onNextQuestion={this.handleNextQuestion}
+            className="score"
+          />
+        )}
+      </div>
+    );
+  }
+}
+export default App;
+`,
+          },
+          {
+            type: "description",
+            value: "Step: 7 - Replace Question.js file with below code",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "Question.js",
+            value: `import React, { Component } from "react";
+import Options from "./Option";
+class Question extends Component {
+  render() {
+    const { question, selectedOption, onOptionChange, onSubmit } = this.props;
+    return (
+      <div className="">
+        <h3>Question {question.id}</h3>
+        <h5 className="mt-2">{question.question}</h5>
+        <form onSubmit={onSubmit} className="mt-2 mb-2">
+          <Options
+            options={question.options}
+            selectedOption={selectedOption}
+            onOptionChange={onOptionChange}
+          />
+          <button
+            type="submit"
+            className="btn btn-primary
+mt-2"
+          >
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
+export default Question;
+`,
+          },
+          {
+            type: "description",
+            value: "Step: 8 - Replace Option.js file with below code",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "Option.js",
+            value: `import React, { Component } from "react";
+class Options extends Component {
+  render() {
+    const { options, selectedOption, onOptionChange } = this.props;
+    return (
+      <div className="options">
+        {options.map((option, index) => (
+          <div key={index} className="form-check">
+            <input
+              type="radio"
+              name="option"
+              value={option}
+              checked={selectedOption === option}
+              onChange={onOptionChange}
+              className="form-check-input"
+            />
+            <label className="form-check-label">{option}</label>
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+export default Options;
+`,
+          },
+          {
+            type: "description",
+            value: "Step: 9 - Replace Score.js file with below code",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "Score.js",
+            value: `import React, { Component } from "react";
+import "../App.css";
+class Score extends Component {
+  render() {
+    const { score, onNextQuestion } = this.props;
+    return (
+      <div>
+        <h2>Results</h2>
+        <h4>Your score: {score}</h4>
+      </div>
+    );
+  }
+}
+export default Score;
+`,
+          },
+          {
+            type: "description",
+            value: "Step: 9 - Replace QuestionBank.js file with below code",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "QuestionBank.js",
+            value: `const QuestionBank = [
+  {
+    id: 1,
+    question: "What is the purpose of the 'useState' hook in React?",
+    options: [
+      "To manage side effects",
+      "To create a new component",
+      "To manage local state in a functional component",
+      "To fetch data from an API",
+    ],
+    answer: "To manage local state in a functional component",
+  },
+  {
+    id: 2,
+    question:
+      "Which method is used to pass data from a parent component to a child component?",
+    options: ["State", "Props", "Context", "Hooks"],
+    answer: "Props",
+  },
+  {
+    id: 3,
+    question:
+      "What will happen if you call 'setState' in a functional component without using a hook?",
+    options: [
+      "It will update the state",
+      "It will cause an error",
+      "It will refresh the component",
+      "Nothing will happen",
+    ],
+    answer: "It will cause an error",
+  },
+  {
+    id: 4,
+    question:
+      "Which of the following hooks is used to perform side effects in a component?",
+    options: ["useState", "useEffect", "useContext", "useReducer"],
+    answer: "useEffect",
+  },
+  {
+    id: 5,
+    question: "What is JSX?",
+    options: [
+      "A JavaScript XML syntax extension",
+      "A data fetching library",
+      "A CSS-in-JS solution",
+      "A browser API",
+    ],
+    answer: "A JavaScript XML syntax extension",
+  },
+];
+
+export default QuestionBank;
+`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 5 - Launch the development server with the following command:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm start`,
+          },
+        ],
+      },
+      {
+        key: "practical-4",
+        name: "Practical - 4: Coin Flipping app - React.js",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 4 - Coin Flipping app - React.js",
+          },
+          {
+            type: "description",
+            value: "Step: 1 - Create the project file using the command",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npx create-react-app flip`,
+          },
+          {
+            type: "description",
+            value: "Step: 2 - Navigate to the folder using the command",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `cd flip`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 3 - Create the folder components and inside the folder create two files FlipCoin.js and Coin.js",
+          },
+          {
+            type: "description",
+            value: "Step: 4 - Replace App.js file",
+          },
+          {
+            type: "code",
+            language: "jsx",
+            fileName: "App.js",
+            value: `import React from "react";
+import FlipCoin from "./components/FlipCoin";
+const App = () => {
+  return (
+    <div className="App">
+      <FlipCoin />
+    </div>
+  );
+};
+export default App;
+`,
+          },
+          {
+            type: "description",
+            value: "Step: 5 - Replace Coin.js file",
+          },
+          {
+            type: "code",
+            fileName: "Coin.js",
+            language: "jsx",
+            value: `import React, { Component } from "react";
+class Coin extends Component {
+  render() {
+    return (
+      <div class="Coin">
+        <img
+          style={{ width: "200px", height: "200px" }}
+          src={this.props.info.imgSrc}
+        />
+      </div>
+    );
+  }
+}
+export default Coin;`,
+          },
+          {
+            type: "description",
+            value: "Step: 6 - Replace FlipCoin.js file",
+          },
+          {
+            type: "code",
+            fileName: "FlipCoin.js",
+            language: "jsx",
+            value: `import React, { Component } from "react";
+import Coin from "./Coin";
+
+class FlipCoin extends Component {
+  static defaultProps = {
+    coins: [
+      {
+        side: "head",
+        imgSrc:
+          "https://media.geeksforgeeks.org/wp-content/uploads/20200916123059/SHalfDollarObverse2016head-300x300.jpg",
+      },
+      {
+        side: "tail",
+        imgSrc:
+          "https://media.geeksforgeeks.org/wp-content/uploads/20200916123125/tails-200x200.jpg",
+      },
+    ],
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currFace: null,
+      totalFlips: 0,
+      heads: 0,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  choice(arr) {
+    const randomIdx = Math.floor(Math.random() * arr.length);
+    return arr[randomIdx];
+  }
+
+  flipCoin() {
+    const newFace = this.choice(this.props.coins);
+    this.setState((curState) => {
+      const heads = curState.heads + (newFace.side === "head" ? 1 : 0);
+      return {
+        currFace: newFace,
+        totalFlips: curState.totalFlips + 1,
+        heads: heads,
+      };
+    });
+  }
+  handleClick() {
+    this.flipCoin();
+  }
+  render() {
+    const { currFace, totalFlips, heads } = this.state;
+    return (
+      <div>
+        <h2>Let's flip a coin</h2>
+        {currFace && <Coin info={currFace} />}
+        <button onClick={this.handleClick}>Flip Me!</button>
+        <p>
+          Out of {totalFlips} flips, there have been
+          {heads} heads and {totalFlips - heads} tails
+        </p>
+      </div>
+    );
+  }
+}
+
+export default FlipCoin;
+`,
+          },
+          {
+            type: "description",
+            value:
+              "Step: 7 - Launch the development server with the following command:",
+          },
+          {
+            type: "code",
+            language: "cmd",
+            value: `npm start`,
+          },
+        ],
+      },
+    ],
+  },
 ];
