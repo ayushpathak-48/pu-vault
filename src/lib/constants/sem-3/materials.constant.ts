@@ -73,8 +73,7 @@ export const sem3Materials = [
     id: 2,
     subject_name: "Web Application Development",
     key: "web-application-development",
-    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/web-application-development/.pdf`,
-    syllabus_link: ``,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/web-application-development.pdf`,
     notes_link: [
       {
         id: 1,
