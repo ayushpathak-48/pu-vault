@@ -313,7 +313,6 @@ Thank You!`,
   {
     subject_name: "Web Application Development",
     key: "web-application-development",
-    language: "asp.net",
     practicals: [
       {
         key: "welcome-to-asp",
@@ -325,6 +324,7 @@ Thank You!`,
           },
           {
             type: "code",
+            language: "html",
             fileName: "Deafult.aspx",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WelcomeApp.Default" %>
 
@@ -344,6 +344,7 @@ Thank You!`,
           },
           {
             type: "code",
+            language: "java",
             fileName: "Deafult.aspx.cs",
             value: `using System;
 
@@ -377,6 +378,7 @@ namespace WelcomeApp
           {
             type: "code",
             fileName: "Deafult.aspx",
+            language: "html",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="program23.WebForm1" %>
 
 <!DOCTYPE html>
@@ -403,6 +405,7 @@ namespace WelcomeApp
           },
           {
             type: "code",
+            language: "java",
             fileName: "Deafult.aspx.cs",
             value: `using System;
 using System.Web.UI;
@@ -459,6 +462,7 @@ namespace program23
           {
             type: "code",
             fileName: "Deafult.aspx",
+            language: "html",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TextboxControlDemo.Default" %>
 
 <!DOCTYPE html>
@@ -478,6 +482,7 @@ namespace program23
           },
           {
             type: "code",
+            language: "java",
             fileName: "Deafult.aspx.cs",
             value: `using System;
 
@@ -515,6 +520,7 @@ namespace TextboxControlDemo
           {
             type: "code",
             fileName: "Deafult.aspx",
+            language: "html",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GenderApp.Default" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -537,6 +543,7 @@ namespace TextboxControlDemo
           {
             type: "code",
             fileName: "Deafult.aspx.cs",
+            language: "java",
             value: `using System;
 namespace GenderApp
 {
