@@ -87,11 +87,32 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [
-      //   {
-      //     id: 0,
-      //     title: "Index",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ajp/index.pdf`,
-      //   },
+      // {
+      //   id: 0,
+      //   title: "Index",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ajp/index.pdf`,
+      // },
+      {
+        id: 1,
+        title: "Practical 1 - Display Welcome Message Using Button Click",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2 - Student Marksheet Using Web Controls",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title:
+          "Practical 3 - Enable/Disable and Resize Textbox Programmatically",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4 - Use of Radio button",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-4.pdf`,
+      },
     ],
     // que_papers: [
     //   {
@@ -102,11 +123,11 @@ export const sem3Materials = [
 
     // ],
     output_links: [
-      //   {
-      //     id: 0,
-      //     title: "Outputs",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ajp-outputs.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/wad-outputs.pdf`,
+      },
     ],
   },
   //  Employability Skills
