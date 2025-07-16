@@ -284,13 +284,23 @@ const MaterialAccordionCard = ({
           </div>
         </Tabs>
 
-        <div className="flex max-md:justify-center mt-3">
+        <div
+          className={cn(
+            "flex max-md:justify-center mt-3",
+            material?.syllabus_link == "" && "hidden",
+          )}
+        >
           <Button size={"sm"} asChild>
             <Link href={material?.syllabus_link} target="_bank">
               View Syllabus
             </Link>
           </Button>
         </div>
+        {material?.syllabus_link == "" && (
+          <Button size={"sm"} disabled>
+            Syllabus Not Updated
+          </Button>
+        )}
       </AccordionContent>
     </AccordionItem>
   );

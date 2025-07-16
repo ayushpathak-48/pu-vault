@@ -144,12 +144,22 @@ export type CourseType = "mca" | "mscit";
 
 export const softwareLinks = [
   {
-    id: 10,
+    id: 13,
+    title: "NodeJs (64-bit)",
+    link: "https://nodejs.org/dist/v22.17.1/node-v22.17.1-x64.msi",
+  },
+  {
+    id: 12,
+    title: "NodeJs (32-bit)",
+    link: "https://nodejs.org/dist/v22.17.1/node-v22.17.1-x86.msi",
+  },
+  {
+    id: 11,
     title: "Visual Studio 2022",
     link: "https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false",
   },
   {
-    id: 11,
+    id: 10,
     title: "Android Studio",
     link: "https://redirector.gvt1.com/edgedl/android/studio/install/2025.1.1.14/android-studio-2025.1.1.14-windows.exe",
   },
