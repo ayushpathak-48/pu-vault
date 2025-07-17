@@ -113,6 +113,11 @@ export const sem3Materials = [
         title: "Practical 4 - Use of Radio button",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-4.pdf`,
       },
+      {
+        id: 5,
+        title: "Practical 5 - ListBox and Image Controls",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-5.pdf`,
+      },
     ],
     // que_papers: [
     //   {
@@ -326,11 +331,11 @@ export const sem3specializationMaterials = [
     key: "advanced-full-stack-web-development-II",
     syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/advanced-full-stack-web-development-II.pdf`,
     notes_link: [
-      // {
-      //   id: 1,
-      //   title: "Unit-1: Introduction to AI with Case Study & Learning",
-      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/1-introduction-to-ai-with-case-study-&-learning.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Unit-1: Java Networking & RMI",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/1-java-networking-&-rmi.pdf`,
+      },
     ],
     practicals_link: [
       //   {
