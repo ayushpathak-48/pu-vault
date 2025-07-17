@@ -563,6 +563,84 @@ namespace GenderApp
           },
         ],
       },
+      {
+        key: "listbox-image-controls",
+        name: "Practical - 5: ListBox and Image Controls",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5 - ListBox and Image Controls",
+          },
+          {
+            type: "code",
+            fileName: "FruitViewer.aspx",
+            language: "html",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FruitViewer.aspx.cs"
+Inherits="FruitImageViewer.FruitViewer" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <title>Fruit Image Viewer</title>
+  </head>
+  <body>
+    <form id="form1" runat="server">
+      <div style="text-align: center; margin-top: 50px">
+        <h2>Fruit Image Viewer</h2>
+
+        <asp:ListBox
+          ID="lstFruits"
+          runat="server"
+          AutoPostBack="True"
+          OnSelectedIndexChanged="lstFruits_SelectedIndexChanged"
+        >
+          <asp:ListItem Text="Apple" Value="apple.jpg" />
+          <asp:ListItem Text="Banana" Value="banana.jpg" />
+          <asp:ListItem Text="Mango" Value="mango.jpg" />
+          <asp:ListItem Text="Orange" Value="orange.jpg" />
+        </asp:ListBox>
+
+        <br /><br />
+
+        <asp:Image ID="imgFruit" runat="server" Width="200px" Height="200px" />
+
+        <br /><br />
+
+        <asp:Label ID="lblMessage" runat="server" Font-Bold="true" />
+      </div>
+    </form>
+  </body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "FruitViewer.aspx.cs",
+            language: "java",
+            value: `using System;
+
+namespace FruitImageViewer
+{
+    public partial class FruitViewer : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                lblMessage.Text = "Please select a fruit to view its image.";
+            }
+        }
+
+        protected void lstFruits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedImage = lstFruits.SelectedValue;
+            imgFruit.ImageUrl = "~/Images/" + selectedImage;
+            lblMessage.Text = "You selected: " + lstFruits.SelectedItem.Text;
+        }
+    }
+}`,
+          },
+        ],
+      },
     ],
   },
   // MscIt ADV-(ReactJs)
@@ -1304,6 +1382,101 @@ export default FlipCoin;
             type: "code",
             language: "cmd",
             value: `npm start`,
+          },
+        ],
+      },
+    ],
+  },
+  // bda
+  {
+    subject_name: "Full Stack Web Development - II",
+    key: "full-stack-web-development-II",
+    specialization: "fswd",
+    language: "java",
+    practicals: [
+      {
+        key: "set-and-map",
+        name: "Practical - 1: WAP to implement connection",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 1 - WAP to implement connection between client and server using socket programming",
+          },
+          {
+            type: "code",
+            fileName: "EchoClient.java",
+            value: `import java.io.*;
+import java.net.*;
+
+public class EchoClient {
+    public static void main(String[] args) {
+        String host = "localhost";
+        int port = 3333;
+
+        try (Socket socket = new Socket(host, port);
+             BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
+             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+             PrintWriter out = new PrintWriter(socket.getOutputStream(), true)
+        ) {
+            System.out.println("Connected to server. Type messages, 'stop' to end.");
+
+            String userLine;
+            while ((userLine = userIn.readLine()) != null) {
+                out.println(userLine);
+                if ("stop".equalsIgnoreCase(userLine.trim())) break;
+                String reply = in.readLine();
+                System.out.println("Server replied: " + reply);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Client terminated.");
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "EchoServer.java",
+            value: `import java.io.*;
+import java.net.*;
+
+public class EchoServer {
+    public static void main(String[] args) {
+        int port = 3333; // Choose your port
+        System.out.println("Server starting on port " + port);
+
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
+            Socket clientSocket = serverSocket.accept();
+            System.out.println("Client connected from " + clientSocket.getRemoteSocketAddress());
+
+            try (
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+            ) {
+                String line;
+                while ((line = in.readLine()) != null) {
+                    if ("stop".equalsIgnoreCase(line.trim())) break;
+                    System.out.println("Received from client: " + line);
+                    out.println("Echo: " + line);
+                }
+            }
+
+            System.out.println("Closing connection with client.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Server shutting down.");
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Server starting on port 3333`,
           },
         ],
       },
