@@ -1387,7 +1387,7 @@ export default FlipCoin;
       },
     ],
   },
-  // bda
+  // fswd
   {
     subject_name: "Full Stack Web Development - II",
     key: "full-stack-web-development-II",
@@ -1476,7 +1476,18 @@ public class EchoServer {
             type: "code",
             language: "text",
             is_output: true,
-            value: `Server starting on port 3333`,
+            value: `Connected to server. Type messages, 'stop' to end.
+Hello      
+Server replied: Echo: Hello
+stop
+Client terminated.
+
+
+Server starting on port 3333
+Client connected from /127.0.0.1:60459
+Received from client: Hello
+Closing connection with client.
+Server shutting down.`,
           },
         ],
       },
