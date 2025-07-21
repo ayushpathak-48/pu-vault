@@ -62,6 +62,186 @@ You have guessed right number`,
         ],
       },
       {
+        key: "8-puzzle-problem",
+        name: "8 Puzzle Problem",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "8 Puzzle Problem",
+          },
+          {
+            type: "code",
+            fileName: "8-puzzle-problem.py",
+            value: `from copy import deepcopy
+
+goal_state = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 0]
+]
+
+moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+def find_zero(state):
+    for i in range(3):
+        for j in range(3):
+            if state[i][j] == 0:
+                return i, j
+
+def is_goal(state):
+    return state == goal_state
+
+def get_neighbors(state):
+    x, y = find_zero(state)
+    neighbors = []
+    for dx, dy in moves:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < 3 and 0 <= ny < 3:
+            new_state = deepcopy(state)
+            new_state[x][y], new_state[nx][ny] = new_state[nx][ny], new_state[x][y]
+            neighbors.append(new_state)
+    return neighbors
+
+def dfs(start_state, max_depth=50):
+    stack = [(start_state, [start_state])]
+    visited = set()
+
+    while stack:
+        state, path = stack.pop()
+        state_tuple = tuple(map(tuple, state))
+
+        if state_tuple in visited:
+            continue
+        visited.add(state_tuple)
+
+        if is_goal(state):
+            return path
+
+        if len(path) <= max_depth:
+            for neighbor in get_neighbors(state):
+                stack.append((neighbor, path + [neighbor]))
+
+    return None
+
+initial_state = [
+    [1, 2, 3],
+    [4, 0, 6],
+    [7, 5, 8]
+]
+
+solution = dfs(initial_state)
+
+if solution:
+    print(f"Solution found in {len(solution)-1} moves using DFS:")
+    for step in solution:
+        for row in step:
+            print(row)
+        print()
+else:
+    print("No solution found (may be due to depth limit).")
+`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Solution found in 2 moves using DFS:
+[1, 2, 3]
+[4, 0, 6]
+[7, 5, 8]
+
+[1, 2, 3]
+[4, 5, 6]
+[7, 0, 8]
+
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 0]`,
+          },
+        ],
+      },
+      {
+        key: "bfs-water-jug",
+        name: "BFS Water Jug Problem",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "BFS Water Jug Problem",
+          },
+          {
+            type: "code",
+            fileName: "bfs-water-jug.py",
+            value: `from collections import deque
+
+def is_valid(state, visited):
+    return state not in visited
+
+def bfs_water_jug(jug1_capacity, jug2_capacity, target):
+    visited = set()
+    parent = {}
+    queue = deque()
+
+    start = (0, 0)
+    queue.append(start)
+    visited.add(start)
+    parent[start] = None
+
+    while queue:
+        x, y = queue.popleft()
+
+        if x == target or y == target:
+            path = []
+            current = (x, y)
+            while current is not None:
+                path.append(current)
+                current = parent[current]
+            path.reverse()
+            return path
+
+        next_states = [
+            (jug1_capacity, y),
+            (x, jug2_capacity),
+            (0, y),
+            (x, 0),
+            (0, x + y) if x + y <= jug2_capacity else (x - (jug2_capacity - y), jug2_capacity),
+            (x + y, 0) if x + y <= jug1_capacity else (jug1_capacity, y - (jug1_capacity - x))
+        ]
+
+        for state in next_states:
+            if is_valid(state, visited):
+                visited.add(state)
+                parent[state] = (x, y)
+                queue.append(state)
+
+    return None
+
+jug1 = 4
+jug2 = 3
+target = 2
+solution_path = bfs_water_jug(jug1, jug2, target)
+
+if solution_path:
+    print("Solution steps:")
+    for step in solution_path:
+        print(step)
+else:
+    print("No solution found.")
+`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Solution steps:
+(0, 0)
+(0, 3)
+(3, 0)
+(3, 3)
+(4, 2)`,
+          },
+        ],
+      },
+      {
         key: "dfs-water-jug-problem",
         name: "Practical : DFS Water Jug Problem",
         pageBlocks: [
