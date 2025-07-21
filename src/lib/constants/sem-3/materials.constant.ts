@@ -443,7 +443,8 @@ export const sem3specializationMaterials = [
     subject_name: "Cyber Security and Forensics - II",
     value: "csf",
     key: "cyber-security-and-forensics-II",
-    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cyber-security-and-forensics-II.pdf`,
+    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cyber-security-and-forensics-II.pdf`,
+    syllabus_link: ``,
     notes_link: [
       {
         id: 1,
