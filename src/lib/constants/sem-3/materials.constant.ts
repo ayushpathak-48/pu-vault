@@ -410,4 +410,47 @@ export const sem3specializationMaterials = [
       //   },
     ],
   },
+
+  // CSF
+  {
+    id: 1,
+    subject_name: "Cyber Security and Forensics - II",
+    value: "csf",
+    key: "cyber-security-and-forensics-II",
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cyber-security-and-forensics-II.pdf`,
+    notes_link: [
+      {
+        id: 1,
+        title:
+          "Unit-1: Cyber Security Introduction and Basic requirements and Cryptography and Steganography",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/1-cyber-security-introduction-and-basic-requirements-and-cryptography-and-steganography.pdf`,
+      },
+    ],
+    practicals_link: [
+      //   {
+      //     id: 0,
+      //     title: "Index",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
+      //   },
+      //   {
+      //     id: 1,
+      //     title: "Practical 1 - Tic Tac Toe Game",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
+      //   },
+    ],
+    que_papers: [
+      //   {
+      //     id: 1,
+      //     label: "AI Mid Sem Theory 2025",
+      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
+      //   },
+    ],
+    output_links: [
+      //   {
+      //     id: 0,
+      //     title: "Outputs",
+      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ai-outputs.pdf`,
+      //   },
+    ],
+  },
 ];
