@@ -499,6 +499,13 @@ Thank You!`,
         name: "Practical - 1: Display Welcome Message using Button Click",
         pageBlocks: [
           {
+            type: "btn",
+            title:
+              "Download Project: Display Welcome Message using Button Click",
+            value:
+              "https://github.com/ayushpathak-48/DisplayMessageOnBtnClick/archive/refs/heads/master.zip",
+          },
+          {
             type: "heading",
             value: "Practical 1 - Display Welcome Message using Button Click",
           },
@@ -749,7 +756,7 @@ namespace GenderApp
         pageBlocks: [
           {
             type: "btn",
-            title: "Download Practical 5",
+            title: "Download Full Project of ListBox and Image Controls",
             value:
               "https://github.com/ayushpathak-48/fruits-website/archive/refs/heads/master.zip",
           },
