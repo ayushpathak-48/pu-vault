@@ -15,7 +15,7 @@ const headingFont = PT_Serif({
   variable: "--font-heading",
 });
 
-const comicReleif = Poppins({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${comicReleif.className} ${headingFont.variable} antialiased `}
+        className={`${poppins.className} ${headingFont.variable} antialiased `}
       >
         <ThemeProvider
           attribute="class"

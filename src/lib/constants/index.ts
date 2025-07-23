@@ -27,7 +27,6 @@ export const navLinks = [
     title: "Materials",
     href: "/",
     icon: HouseIcon,
-    sem: [2],
   },
   {
     id: 12,
@@ -41,7 +40,6 @@ export const navLinks = [
     title: "MCQs",
     href: "/mcqs",
     icon: ListTodo,
-    sem: [2],
   },
 
   {
@@ -49,7 +47,6 @@ export const navLinks = [
     title: "FlashCards",
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
-    sem: [2],
   },
   // {
   //   id: 11,
@@ -63,7 +60,6 @@ export const navLinks = [
     href: "/code",
     // hideOnMobile: true,
     icon: SquareDashedBottomCode,
-    sem: [2],
   },
   {
     id: 3,
@@ -71,7 +67,6 @@ export const navLinks = [
     href: "/time-table",
     // hideOnMobile: true,
     icon: CableCarIcon,
-    sem: [2],
   },
   // {
   //   id: 5,
@@ -92,7 +87,6 @@ export const navLinks = [
     href: "/interview",
     hideOnMobile: true,
     icon: MessageCircleQuestion,
-    sem: [2],
   },
   {
     id: 8,
@@ -100,7 +94,6 @@ export const navLinks = [
     href: "/software-links",
     hideOnMobile: true,
     icon: HardDriveDownloadIcon,
-    sem: [2],
   },
   {
     id: 9,
@@ -120,6 +113,13 @@ export const navLinks = [
     id: 13,
     title: "Settings",
     href: "/settings",
+    hideOnMobile: true,
+    icon: SettingsIcon,
+  },
+  {
+    id: 14,
+    title: "NPTEL Answers",
+    href: "/nptel-assignment-answers",
     hideOnMobile: true,
     icon: SettingsIcon,
   },

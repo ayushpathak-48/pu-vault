@@ -35,7 +35,10 @@ export const Navbar = () => {
       setActivePageTitle("Flash Cards");
     } else {
       setActivePageTitle(
-        () => navLinks.find((link) => link.href.includes(pathname))?.title,
+        () =>
+          navLinks.find(
+            (link) => link.href != "/" && pathname.includes(link.href),
+          )?.title,
       );
     }
     setOpenMobile(false);
