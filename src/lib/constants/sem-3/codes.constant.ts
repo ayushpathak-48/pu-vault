@@ -499,15 +499,15 @@ Thank You!`,
         name: "Practical - 1: Display Welcome Message using Button Click",
         pageBlocks: [
           {
+            type: "heading",
+            value: "Practical 1 - Display Welcome Message using Button Click",
+          },
+          {
             type: "btn",
             title:
               "Download Project: Display Welcome Message using Button Click",
             value:
               "https://github.com/ayushpathak-48/DisplayMessageOnBtnClick/archive/refs/heads/master.zip",
-          },
-          {
-            type: "heading",
-            value: "Practical 1 - Display Welcome Message using Button Click",
           },
           {
             type: "code",
@@ -559,14 +559,14 @@ namespace WelcomeApp
         name: "Practical - 2: Student Marksheet using web controls",
         pageBlocks: [
           {
+            type: "heading",
+            value: "Practical 2 - Student Marksheet using web controls",
+          },
+          {
             type: "btn",
             title: "Download Project: Student Marksheet using web controls",
             value:
               "https://github.com/ayushpathak-48/StudentMarksheet/archive/refs/heads/master.zip",
-          },
-          {
-            type: "heading",
-            value: "Practical 2 - Student Marksheet using web controls",
           },
           {
             type: "code",
@@ -651,6 +651,13 @@ namespace program23
             type: "heading",
             value:
               "Practical 3 - Enable/Disable and Resize TextBox Programmatically",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: Enable/Disable and Resize TextBox Programmatically",
+            value:
+              "https://github.com/ayushpathak-48/TextboxControlDemo/archive/refs/heads/master.zip",
           },
           {
             type: "code",
