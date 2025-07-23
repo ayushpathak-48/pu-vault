@@ -10,6 +10,7 @@ import {
   BriefcaseBusiness,
   MailIcon,
   UserIcon,
+  AwardIcon,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -121,7 +122,7 @@ export const navLinks = [
     title: "NPTEL Answers",
     href: "/nptel-assignment-answers",
     hideOnMobile: true,
-    icon: SettingsIcon,
+    icon: AwardIcon,
   },
 ];
 
