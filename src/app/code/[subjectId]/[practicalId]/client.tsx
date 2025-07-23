@@ -25,6 +25,7 @@ type CodeElementType = {
   language?: string;
   description?: string;
   className?: string;
+  title?: string;
 };
 
 const CodePageClient = () => {
@@ -164,7 +165,22 @@ const CodePageClient = () => {
       ) : (
         <div className="flex flex-col gap-3 p-3">
           {practical?.pageBlocks?.map((ele: CodeElementType, i) => (
-            <div key={ele.type + "_" + i}>
+            <div key={ele.type + "_" + i} className="w-full">
+              {ele.type == "btn" && (
+                <div className="flex items-center justify-between p-4 py-2 rounded bg-gray-50 dark:bg-[#212121]  mx-5">
+                  <div className="font-medium">{ele.title}</div>
+                  <Button className="" asChild size={"sm"}>
+                    <Link
+                      href={ele.value}
+                      target="_blank"
+                      className="bg-primary hover:bg-primary/90"
+                    >
+                      Download File
+                    </Link>
+                  </Button>
+                </div>
+              )}
+
               {ele.type == "heading" && (
                 <h2
                   className={cn(
