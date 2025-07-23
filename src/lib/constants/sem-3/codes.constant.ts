@@ -775,14 +775,14 @@ namespace GenderApp
         name: "Practical - 5: ListBox and Image Controls",
         pageBlocks: [
           {
-            type: "btn",
-            title: "Download Full Project of ListBox and Image Controls",
-            value:
-              "https://github.com/ayushpathak-48/fruits-website/archive/refs/heads/master.zip",
-          },
-          {
             type: "heading",
             value: "Practical 5 - ListBox and Image Controls",
+          },
+          {
+            type: "btn",
+            title: "Download Project: ListBox and Image Controls",
+            value:
+              "https://github.com/ayushpathak-48/FruitImageViewer/archive/refs/heads/master.zip",
           },
           {
             type: "code",
