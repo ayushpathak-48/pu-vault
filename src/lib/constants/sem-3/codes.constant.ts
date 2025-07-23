@@ -559,6 +559,12 @@ namespace WelcomeApp
         name: "Practical - 2: Student Marksheet using web controls",
         pageBlocks: [
           {
+            type: "btn",
+            title: "Download Project: Student Marksheet using web controls",
+            value:
+              "https://github.com/ayushpathak-48/StudentMarksheet/archive/refs/heads/master.zip",
+          },
+          {
             type: "heading",
             value: "Practical 2 - Student Marksheet using web controls",
           },
