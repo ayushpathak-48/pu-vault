@@ -1,7 +1,7 @@
 export const nptelAllWeeksAnswers = [
   {
     key: "week-1",
-    title: "Week 1 - Assignment asnwers",
+    title: "Week 1 - Assignment answers",
     answers: [
       {
         id: 1,
