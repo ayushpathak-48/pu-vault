@@ -5,7 +5,7 @@ export const sem3Materials = [
   {
     id: 1,
     subject_name: "Mobile Apps Development",
-    key: "moblie-apps-development",
+    key: "mobile-apps-development",
     // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/mobile-apps-development-programming.pdf`,
     syllabus_link: ``,
     notes_link: [
@@ -46,11 +46,26 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [
-      //   {
-      //     id: 0,
-      //     title: "Index",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ajp/index.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Practical - 1",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-1.pdf`,
+      },
+      {
+        id: 1,
+        title: "Practical - 2",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-2.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical - 3",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-3.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical - 4",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-4.pdf`,
+      },
     ],
     // que_papers: [
     //   {
@@ -61,11 +76,11 @@ export const sem3Materials = [
 
     // ],
     output_links: [
-      //   {
-      //     id: 0,
-      //     title: "Outputs",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ajp-outputs.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/mad-outputs.pdf`,
+      },
     ],
   },
   //   WAD
@@ -451,6 +466,16 @@ export const sem3specializationMaterials = [
         title:
           "Unit-1: Cyber Security Introduction and Basic requirements and Cryptography and Steganography",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/1-cyber-security-introduction-and-basic-requirements-and-cryptography-and-steganography.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Forensics Introduction",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/2-forensics-introduction.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Networking Basics",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/3-networking-basics.pdf`,
       },
     ],
     practicals_link: [

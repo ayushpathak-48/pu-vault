@@ -836,6 +836,466 @@ namespace FruitImageViewer
       },
     ],
   },
+  // MAD
+  {
+    subject_name: "Mobile Apps Development",
+    key: "mobile-apps-development",
+    practicals: [
+      {
+        key: "message-view",
+        name: "Practical - 1: Message View",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 1 -  Message View",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A9A9A9">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: John Doe"
+        android:textColor="#FF0000"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/qualification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qualification: B.Sc Computer Science"
+        android:textColor="#00FF00"
+        android:layout_below="@id/name"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact: 123-456-7890"
+        android:textColor="#0000FF"
+        android:layout_below="@id/qualification"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: john.doe@example.com"
+        android:textColor="#FFA500"
+        android:layout_below="@id/contact"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address: 123 Main St, City, Country"
+        android:textColor="#800080"
+        android:layout_below="@id/email"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.myinfo;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        findViewById(R.id.name).setBackgroundColor(Color.RED);
+        findViewById(R.id.qualification).setBackgroundColor(Color.GREEN);
+        findViewById(R.id.contact).setBackgroundColor(Color.BLUE);
+        findViewById(R.id.email).setBackgroundColor(Color.YELLOW);
+        findViewById(R.id.address).setBackgroundColor(Color.MAGENTA);
+    }
+}
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      {
+        key: "login-check",
+        name: "Practical - 2: Login Check",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 2 - Login Check",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_below="@id/username"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@id/password"
+        android:layout_marginTop="20dp" />
+</RelativeLayout>`,
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_home.xml",
+            value: `<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A9A9A9">
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.loginmodule;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    EditText username, password;
+    Button loginButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        Button loginButton = findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
+
+                if (user.equals("admin") && pass.equals("1234")) {
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    intent.putExtra("USERNAME", user);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "HomeActivity.java",
+            value: `package com.example.loginmodule;
+
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class HomeActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        TextView welcomeText = findViewById(R.id.welcomeText);
+        String username = getIntent().getStringExtra("USERNAME");
+        welcomeText.setText("Welcome, " + username + "!");
+    }
+}
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      {
+        key: "email-auth",
+        name: "Practical - 3: Email Auth",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - Email Auth",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_below="@id/email"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@id/password"
+        android:layout_marginTop="20dp"
+        android:enabled="false" />
+</RelativeLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.emailvalidationlogin;
+
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    EditText email, password;
+    Button loginButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        loginButton = findViewById(R.id.loginButton);
+
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                validateInputs();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        };
+
+        email.addTextChangedListener(textWatcher);
+        password.addTextChangedListener(textWatcher);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void validateInputs() {
+        String emailInput = email.getText().toString().trim();
+        String passwordInput = password.getText().toString().trim();
+
+        if (Patterns.EMAIL_ADDRESS.matcher(emailInput).matches() && passwordInput.length() >= 4) {
+            loginButton.setEnabled(true);
+        } else {
+            loginButton.setEnabled(false);
+        }
+    }
+}`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      {
+        key: "color-menu",
+        name: "Practical - 4: Color Menu",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 4 - Color Menu",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/color_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a color from the menu"
+        android:textSize="18sp"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>`,
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "options_menu.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/color_red" android:title="Red" />
+    <item android:id="@+id/color_green" android:title="Green" />
+    <item android:id="@+id/color_blue" android:title="Blue" />
+    <item android:id="@+id/color_yellow" android:title="Yellow" />
+</menu>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.bgcolorchanger;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    RelativeLayout rootLayout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        rootLayout = findViewById(R.id.root_layout);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.color_red:
+                rootLayout.setBackgroundColor(Color.RED);
+                return true;
+            case R.id.color_green:
+                rootLayout.setBackgroundColor(Color.GREEN);
+                return true;
+            case R.id.color_blue:
+                rootLayout.setBackgroundColor(Color.BLUE);
+                return true;
+            case R.id.color_yellow:
+                rootLayout.setBackgroundColor(Color.YELLOW);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+    ],
+  },
   // MscIt ADV-(ReactJs)
   {
     subject_name: "Advanced Web Development Using React-js",
