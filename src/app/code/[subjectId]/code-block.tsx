@@ -50,7 +50,7 @@ const CodeBlock = ({
 
       {/* Code Block */}
       <div
-        className="max-h-[400px] overflow-auto rounded-lg rounded-t-none"
+        className="max-h-[800px] overflow-auto rounded-lg rounded-t-none"
         style={{ maxWidth: "100%" }}
       >
         <SyntaxHighlighter
