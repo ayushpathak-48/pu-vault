@@ -6,8 +6,7 @@ export const sem3Materials = [
     id: 1,
     subject_name: "Mobile Apps Development",
     key: "mobile-apps-development",
-    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/mobile-apps-development-programming.pdf`,
-    syllabus_link: ``,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/mobile-apps-development.pdf`,
     notes_link: [
       {
         id: 1,
@@ -350,6 +349,11 @@ export const sem3specializationMaterials = [
         id: 1,
         title: "Unit-1: Java Networking & RMI",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/1-java-networking-&-rmi.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: RMI",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/2-rmi.pdf`,
       },
     ],
     practicals_link: [
