@@ -34,6 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="vtrzY1YqIApSPysm6mMEW85Pl0KVVQShRMdDIvxosck"
+        />
+      </head>
       <body
         className={`${poppins.className} ${headingFont.variable} antialiased `}
       >
