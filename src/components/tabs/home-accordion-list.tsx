@@ -73,7 +73,7 @@ const MaterialAccordionCard = ({
 }: any) => {
   const { getPracticalCodes } = useDataGetters();
   const practicalCodes = getPracticalCodes();
-
+  console.log({ practicalCodes });
   return (
     <AccordionItem
       className="bg-gray-100 dark:bg-[#181818]"
@@ -87,40 +87,38 @@ const MaterialAccordionCard = ({
           onValueChange={setActiveTabSection}
           className="w-full"
         >
-          {material?.practicals_link?.length > 0 && (
-            <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
-              {material.practicals_link?.length > 0 && (
-                <TabsTrigger
-                  value={"notes"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
-                >
-                  Notes
-                </TabsTrigger>
-              )}
+          <TabsList className="w-full flex items-center justify-around py-0 h-max overflow-x-auto border-y">
+            <TabsTrigger
+              value={"notes"}
+              className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
+            >
+              Notes
+            </TabsTrigger>
+            {material.practicals_link?.length > 0 && (
               <TabsTrigger
                 value={"practicals"}
                 className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
               >
-                Journals
+                Journal
               </TabsTrigger>
-              {practicalCodes?.some(({ key }) => key == material?.key) && (
-                <TabsTrigger
-                  value={"codes"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
-                >
-                  Practical Codes
-                </TabsTrigger>
-              )}
-              {material?.que_papers?.length > 0 && (
-                <TabsTrigger
-                  value={"que_papers"}
-                  className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
-                >
-                  Question Papers
-                </TabsTrigger>
-              )}
-            </TabsList>
-          )}
+            )}
+            {practicalCodes?.some(({ key }) => key == material?.key) && (
+              <TabsTrigger
+                value={"codes"}
+                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
+              >
+                Practical Codes
+              </TabsTrigger>
+            )}
+            {material?.que_papers?.length > 0 && (
+              <TabsTrigger
+                value={"que_papers"}
+                className="py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-md data-[state=active]:border-b w-full data-[state=active]:border-primary data-[state=active]:rounded-none"
+              >
+                Question Papers
+              </TabsTrigger>
+            )}
+          </TabsList>
           <div className="md:px-3">
             <TabsContent value={"notes"}>
               {material?.notes_link?.length > 0 ? (
@@ -145,16 +143,6 @@ const MaterialAccordionCard = ({
                             View
                           </Link>
                         </Button>
-                        {/* <Button
-                          className=""
-                          asChild
-                          variant="outline"
-                          size={"icon"}
-                        >
-                          <Link href={note.href} download>
-                            <Download />
-                          </Link>
-                        </Button> */}
                       </div>
                     </div>
                   ))}
