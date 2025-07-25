@@ -1116,6 +1116,12 @@ public class HomeActivity extends AppCompatActivity {
             value: "Practical 3 - Email Auth",
           },
           {
+            type: "btn",
+            title: "Download Project: Email Auth",
+            value:
+              "https://github.com/ayushpathak-48/mad-email-auth/archive/refs/heads/main.zip",
+          },
+          {
             type: "code",
             language: "html",
             fileName: "activity_main.xml",
@@ -1232,6 +1238,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical 4 - Color Menu",
+          },
+          {
+            type: "btn",
+            title: "Download Project: Email Auth",
+            value:
+              "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
           },
           {
             type: "code",
