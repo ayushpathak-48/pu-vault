@@ -870,6 +870,12 @@ namespace FruitImageViewer
             value: "Practical 1 -  Message View",
           },
           {
+            type: "btn",
+            title: "Download Project: Message View",
+            value:
+              "https://github.com/ayushpathak-48/mad-message-view/archive/refs/heads/main.zip",
+          },
+          {
             type: "code",
             language: "html",
             fileName: "activity_main.xml",
