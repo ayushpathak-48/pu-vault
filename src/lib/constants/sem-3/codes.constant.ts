@@ -976,6 +976,12 @@ public class MainActivity extends AppCompatActivity {
             value: "Practical 2 - Login Check",
           },
           {
+            type: "btn",
+            title: "Download Project: Login Check",
+            value:
+              "https://github.com/ayushpathak-48/mad-auth-login-redirect/archive/refs/heads/main.zip",
+          },
+          {
             type: "code",
             language: "html",
             fileName: "activity_main.xml",
@@ -1018,7 +1024,7 @@ public class MainActivity extends AppCompatActivity {
     android:background="#A9A9A9">
 
     <TextView
-        android:id="@+id/welcometext"
+        android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
