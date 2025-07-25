@@ -47,23 +47,38 @@ export const sem3Materials = [
     practicals_link: [
       {
         id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/index.pdf`,
+      },
+      {
+        id: 1,
         title: "Practical - 1",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-1.pdf`,
       },
       {
-        id: 1,
+        id: 2,
         title: "Practical - 2",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-2.pdf`,
       },
       {
-        id: 2,
+        id: 3,
         title: "Practical - 3",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-3.pdf`,
       },
       {
-        id: 3,
+        id: 4,
         title: "Practical - 4",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical - 5",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-5.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical - 7",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-7.pdf`,
       },
     ],
     // que_papers: [
@@ -131,6 +146,31 @@ export const sem3Materials = [
         id: 5,
         title: "Practical 5 - ListBox and Image Controls",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6 - Registration Page",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7 - Required Field Validator",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8 - Registration with Validation",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-8.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9 - Custom Validation",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-9.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 10 - Master Page",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-10.pdf`,
       },
     ],
     // que_papers: [
@@ -311,16 +351,31 @@ export const sem3specializationMaterials = [
       },
     ],
     practicals_link: [
-      //   {
-      //     id: 0,
-      //     title: "Index",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
-      //   },
-      //   {
-      //     id: 1,
-      //     title: "Practical 1 - Tic Tac Toe Game",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
+      },
+      {
+        id: 1,
+        title: "Practical 1 - Tic Tac Toe Game",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2 -  DFS 8 Puzzle problem",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3 - BFS Water Jug Problem",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4 - Travelling Salesman Problem",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-4.pdf`,
+      },
     ],
     que_papers: [
       //   {

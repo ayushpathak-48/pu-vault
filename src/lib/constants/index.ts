@@ -11,6 +11,7 @@ import {
   MailIcon,
   UserIcon,
   AwardIcon,
+  Book,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -69,12 +70,12 @@ export const navLinks = [
     // hideOnMobile: true,
     icon: CableCarIcon,
   },
-  // {
-  //   id: 5,
-  //   title: "Assignments",
-  //   href: "/assignments",
-  //   icon: Book,
-  // },
+  {
+    id: 5,
+    title: "Assignments",
+    href: "/assignments",
+    icon: Book,
+  },
   // {
   //   id: 6,
   //   title: "Important Links",

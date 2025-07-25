@@ -854,6 +854,287 @@ namespace FruitImageViewer
           },
         ],
       },
+      //  p-6
+      {
+        key: "registration-form",
+        name: "Practical - 6: Registration Form",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 6 - Registration Form",
+          },
+          {
+            type: "code",
+            fileName: "Registration.aspx",
+            language: "html",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="WebApplication1.Registration" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>User Registration</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align:center; padding: 20px;">
+            <h2>User Registration Form</h2>
+
+            <asp:Label ID="lblName" runat="server" Text="Name:" AssociatedControlID="txtName" /><br />
+            <asp:TextBox ID="txtName" runat="server" /><br /><br />
+
+            <asp:Label ID="lblDOB" runat="server" Text="Date of Birth (MM/DD/YYYY):" AssociatedControlID="txtDOB" /><br />
+            <asp:TextBox ID="txtDOB" runat="server" /><br /><br />
+
+            <asp:Label ID="lblGender" runat="server" Text="Gender:" /><br />
+            <asp:RadioButton ID="rdoMale" runat="server" GroupName="Gender" Text="Male" />
+            <asp:RadioButton ID="rdoFemale" runat="server" GroupName="Gender" Text="Female" /><br /><br />
+
+            <asp:Label ID="lblEmail" runat="server" Text="Email:" AssociatedControlID="txtEmail" /><br />
+            <asp:TextBox ID="txtEmail" runat="server" /><br /><br />
+
+            <asp:Label ID="lblContact" runat="server" Text="Contact No:" AssociatedControlID="txtContact" /><br />
+            <asp:TextBox ID="txtContact" runat="server" /><br /><br />
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /><br /><br />
+
+            <asp:Label ID="lblResult" runat="server" Font-Bold="true" ForeColor="Blue" />
+        </div>
+    </form>
+</body>
+</html>
+`,
+          },
+          {
+            type: "code",
+            fileName: "Registration.aspx.cs",
+            language: "java",
+            value: `using System;
+
+namespace WebApplication1
+{
+    public partial class Registration : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Optional logic here
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text.Trim();
+            string dob = txtDOB.Text.Trim();
+            string gender = rdoMale.Checked ? "Male" : rdoFemale.Checked ? "Female" : "Not specified";
+            string email = txtEmail.Text.Trim();
+            string contact = txtContact.Text.Trim();
+
+            lblResult.Text = "Registration Details:<br/>" +
+                             $"Name: {name}<br/>" +
+                             $"DOB: {dob}<br/>" +
+                             $"Gender: {gender}<br/>" +
+                             $"Email: {email}<br/>" +
+                             $"Contact No: {contact}";
+        }
+    }
+}`,
+          },
+        ],
+      },
+      //  p-7
+      {
+        key: "required-field-validation",
+        name: "Practical - 7: Required Field Validation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 7 - Required Field Validation",
+          },
+          {
+            type: "code",
+            fileName: "RequiredValidation.aspx",
+            language: "html",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RequiredValidation.aspx.cs" Inherits="RequiredValidation" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Required Field Validation</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align:center">
+            <h2>Required Field Validator Example</h2>
+
+            Enter Name: <asp:TextBox ID="txtName" runat="server" /><br />
+            <asp:RequiredFieldValidator ID="rfvName" runat="server" 
+                ControlToValidate="txtName"
+                ErrorMessage="Name is required!" ForeColor="Red" /><br /><br />
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /><br /><br />
+
+            <asp:Label ID="lblMessage" runat="server" Font-Bold="true" ForeColor="Green" />
+        </div>
+    </form>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "RequiredValidation.aspx.cs",
+            language: "java",
+            value: ` protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            lblMessage.Text = "Hello, " + txtName.Text + "!";
+        }
+    }`,
+          },
+        ],
+      },
+      //  p-8
+      {
+        key: "regitration-page-wid-validation",
+        name: "Practical - 8: Registration Page with Validation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 8 - Registration Page with Validation",
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx",
+            language: "html",
+            value: `<asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>
+<asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Name is required." ForeColor="Red">*</asp:RequiredFieldValidator>
+<br />
+
+<asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+<asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+<asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+    ValidationExpression="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}" ErrorMessage="Invalid Email Format." ForeColor="Red">*</asp:RegularExpressionValidator>
+<br />
+
+<asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+<asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+<asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required." ForeColor="Red">*</asp:RequiredFieldValidator>
+<br />
+
+<asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
+<asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
+<asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword"
+    ErrorMessage="Passwords do not match." ForeColor="Red">*</asp:CompareValidator>
+<br />
+
+<asp:Button ID="btnSubmit" runat="server" Text="Register" OnClick="btnSubmit_Click" />
+<asp:ValidationSummary ID="vsSummary" runat="server" ForeColor="Red" />`,
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx.cs",
+            language: "java",
+            value: `protected void btnSubmit_Click(object sender, EventArgs e)
+{
+    string name = txtName.Text;
+    string email = txtEmail.Text;
+    string password = txtPassword.Text;
+
+    Response.Write("Registration Successful!<br/>");
+    Response.Write("Name: " + name + "<br/>");
+    Response.Write("Email: " + email + "<br/>");
+}`,
+          },
+        ],
+      },
+      //  p-9
+      {
+        key: "custom-validation",
+        name: "Practical - 9: Custom Validation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 9 - Custom Validation",
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx",
+            language: "html",
+            value: `<asp:Label ID="lblInput" runat="server" Text="Enter Username:"></asp:Label>
+<asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+<asp:CustomValidator ID="cvUsername" runat="server" ControlToValidate="txtUsername"
+    ErrorMessage="Username must be at least 5 characters long." OnServerValidate="cvUsername_ServerValidate" ForeColor="Red">*</asp:CustomValidator>
+<br /><br />
+<asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />`,
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx.cs",
+            language: "java",
+            value: `protected void cvUsername_ServerValidate(object source, ServerValidateEventArgs args)
+{
+    if (args.Value.Length >= 5)
+    {
+        args.IsValid = true;
+    }
+    else
+    {
+        args.IsValid = false;
+    }
+}
+
+protected void btnSubmit_Click(object sender, EventArgs e)
+{
+    if (Page.IsValid)
+    {
+        Response.Write("Validation Successful! Username: " + txtUsername.Text);
+    }
+}`,
+          },
+        ],
+      },
+      //  p-10
+      {
+        key: "master-page",
+        name: "Practical - 10: Introduction to Master Page",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 10 - Introduction to Master Page",
+          },
+          {
+            type: "code",
+            fileName: "Site.master",
+            language: "html",
+            value: `<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Master Page Demo</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color:lightgray; padding:10px;">
+            <h2>My Website</h2>
+            <a href="Home.aspx">Home</a> |
+            <a href="About.aspx">About Us</a> |
+            <a href="Contact.aspx">Contact</a>
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "Home.aspx",
+            language: "java",
+            value: `<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Welcome to the Home Page</h3>
+    <p>This is the default content for the home page.</p>
+</asp:Content>`,
+          },
+        ],
+      },
     ],
   },
   // MAD
@@ -1330,6 +1611,258 @@ public class MainActivity extends AppCompatActivity {
 }
 `,
           },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      // p -5
+      {
+        key: "handler-based-counter-app",
+        name: "Practical - 5: Handler-Based Counter App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5 - Handler-Based Counter App",
+          },
+          // {
+          //   type: "btn",
+          //   title: "Download Project: Color Menu",
+          //   value:
+          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
+          // },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="48sp"
+        android:layout_marginBottom="24dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.myapplication;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView textViewCounter;
+    private Button btnStart, btnStop;
+
+    private int counter = 0;
+    private boolean isRunning = false;
+    private Handler handler = new Handler();
+    private Runnable runnable;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize UI components
+        textViewCounter = findViewById(R.id.textViewCounter);
+        btnStart = findViewById(R.id.btnStart);
+        btnStop = findViewById(R.id.btnStop);
+
+        // Define what happens every second
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                if (isRunning) {
+                    counter++;
+                    textViewCounter.setText(String.valueOf(counter));
+                    handler.postDelayed(this, 1000); // Repeat every 1 second
+                }
+            }
+        };
+
+        // Start button logic
+        btnStart.setOnClickListener(v -> {
+            if (!isRunning) {
+                isRunning = true;
+                handler.post(runnable); // Start the counter
+            }
+        });
+
+        // Stop button logic
+        btnStop.setOnClickListener(v -> {
+            isRunning = false;
+            handler.removeCallbacks(runnable); // Stop the counter
+        });
+    }
+}`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      //  p-7
+      {
+        key: "message-service-with-start-stop",
+        name: "Practical - 7: Message Service with Start/Stop",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 7 - Message Service with Start/Stop",
+          },
+          // {
+          //   type: "btn",
+          //   title: "Download Project: Color Menu",
+          //   value:
+          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
+          // },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Music" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Music"
+        android:layout_marginTop="20dp" />
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.myapplication;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnPlay, btnStop;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnPlay = findViewById(R.id.btnPlay);
+        btnStop = findViewById(R.id.btnStop);
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startService(new Intent(MainActivity.this, MyMusicService.class));
+            }
+        });
+
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopService(new Intent(MainActivity.this, MyMusicService.class));
+            }
+        });
+    }
+}
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MyMusicService.java",
+            value: `package com.example.myapplication;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.IBinder;
+
+public class MyMusicService extends Service {
+
+    MediaPlayer player;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        player = MediaPlayer.create(this, R.raw.music); // Your music file
+        player.setLooping(true);
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        player.start();
+        return START_STICKY;
+    }
+
+    @Override
+    public void onDestroy() {
+        player.stop();
+        player.release();
+        super.onDestroy();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+}`,
+          },
+
           // {
           //   type: "code",
           //   language: "text",
