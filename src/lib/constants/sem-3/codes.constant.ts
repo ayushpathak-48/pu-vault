@@ -1241,7 +1241,7 @@ public class MainActivity extends AppCompatActivity {
           },
           {
             type: "btn",
-            title: "Download Project: Email Auth",
+            title: "Download Project: Color Menu",
             value:
               "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
           },
