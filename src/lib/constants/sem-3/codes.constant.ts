@@ -863,16 +863,7 @@ namespace FruitImageViewer
             type: "heading",
             value: "Practical 6 - Registration Form",
           },
-          {
-            type: "code",
-            fileName: "web.config",
-            language: "xml",
-            value: `
-<!-- Add this code in <configuration tag in web.config file  -->            
-<appSettings>
-	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
-</appSettings>`,
-          },
+
           {
             type: "code",
             fileName: "Registration.aspx",
