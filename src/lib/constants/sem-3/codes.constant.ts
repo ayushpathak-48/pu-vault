@@ -865,6 +865,16 @@ namespace FruitImageViewer
           },
           {
             type: "code",
+            fileName: "web.config",
+            language: "xml",
+            value: `
+<!-- Add this code in <configuration tag in web.config file  -->            
+<appSettings>
+	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+</appSettings>`,
+          },
+          {
+            type: "code",
             fileName: "Registration.aspx",
             language: "html",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="WebApplication1.Registration" %>
@@ -950,6 +960,16 @@ namespace WebApplication1
           },
           {
             type: "code",
+            fileName: "web.config",
+            language: "xml",
+            value: `
+<!-- Add this code in <configuration tag in web.config file  -->            
+<appSettings>
+	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+</appSettings>`,
+          },
+          {
+            type: "code",
             fileName: "RequiredValidation.aspx",
             language: "html",
             value: `<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RequiredValidation.aspx.cs" Inherits="RequiredValidation" %>
@@ -999,6 +1019,16 @@ namespace WebApplication1
           {
             type: "heading",
             value: "Practical 8 - Registration Page with Validation",
+          },
+          {
+            type: "code",
+            fileName: "web.config",
+            language: "xml",
+            value: `
+<!-- Add this code in <configuration tag in web.config file  -->            
+<appSettings>
+	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+</appSettings>`,
           },
           {
             type: "code",
@@ -1054,6 +1084,16 @@ namespace WebApplication1
           {
             type: "heading",
             value: "Practical 9 - Custom Validation",
+          },
+          {
+            type: "code",
+            fileName: "web.config",
+            language: "xml",
+            value: `
+<!-- Add this code in <configuration tag in web.config file  -->            
+<appSettings>
+	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+</appSettings>`,
           },
           {
             type: "code",
