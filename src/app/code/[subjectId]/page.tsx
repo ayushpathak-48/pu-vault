@@ -8,7 +8,6 @@ const CodePage = () => {
   const { getPracticalCodes } = useDataGetters();
   const practicalCodes = getPracticalCodes();
   const practicalSubject = practicalCodes.find(({ key }) => key == subjectId);
-  console.log({ subjectId, practicalCodes, practicalSubject });
   return redirect(`/code/${subjectId}/${practicalSubject?.practicals[0].key}`);
 };
 

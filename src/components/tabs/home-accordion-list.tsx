@@ -73,7 +73,6 @@ const MaterialAccordionCard = ({
 }: any) => {
   const { getPracticalCodes } = useDataGetters();
   const practicalCodes = getPracticalCodes();
-  console.log({ practicalCodes });
   return (
     <AccordionItem
       className="bg-gray-100 dark:bg-[#181818]"

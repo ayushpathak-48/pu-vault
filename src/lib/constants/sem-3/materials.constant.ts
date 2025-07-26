@@ -397,7 +397,7 @@ export const sem3specializationMaterials = [
     id: 1,
     subject_name: "Full Stack Web Development – II",
     value: "fswd",
-    key: "advanced-full-stack-web-development-II",
+    key: "full-stack-web-development-II",
     syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/advanced-full-stack-web-development-II.pdf`,
     notes_link: [
       {

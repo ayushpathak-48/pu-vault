@@ -863,7 +863,6 @@ namespace FruitImageViewer
             type: "heading",
             value: "Practical 6 - Registration Form",
           },
-
           {
             type: "code",
             fileName: "Registration.aspx",
