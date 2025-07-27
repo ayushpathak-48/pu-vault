@@ -3,7 +3,7 @@
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
+  // AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -18,16 +18,13 @@ export const WhatsappDialog = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const whatsappDialogClosed = localStorage.getItem("whatsappDialogClosed");
+    const whatsappDialogClosed = localStorage.getItem(
+      "whatsappDialogClosed-27-07",
+    );
     if (!whatsappDialogClosed) {
       setOpen(true);
     }
   }, []);
-
-  const handleCloseClick = () => {
-    localStorage.setItem("whatsappDialogClosed", "true");
-    setOpen(false);
-  };
 
   return (
     <AlertDialog open={open}>
@@ -49,11 +46,8 @@ export const WhatsappDialog = () => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={handleCloseClick}>
-            Already Joined
-          </AlertDialogCancel>
           <AlertDialogAction asChild>
-            <WhatsappButton />
+            <WhatsappButton setOpen={setOpen} />
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
