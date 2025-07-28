@@ -122,11 +122,11 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [
-      // {
-      //   id: 0,
-      //   title: "Index",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ajp/index.pdf`,
-      // },
+      {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/index.pdf`,
+      },
       {
         id: 1,
         title: "Practical 1 - Display Welcome Message Using Button Click",
