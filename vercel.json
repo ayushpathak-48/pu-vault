@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://www.pu-vault.vercel.app/:path*",
+      "destination": "https://pu-vault.vercel.app/:path*",
+      "permanent": true
+    }
+  ]
+}
