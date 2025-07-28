@@ -114,6 +114,12 @@ export const sem3Materials = [
         title: "Unit-2: ASP.Net Server Controls",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/2-asp.net-server-controls.pdf`,
       },
+      {
+        id: 3,
+        title:
+          "Unit-3: ASP.NET Validation Controls, State Management & NavigationValidation Control",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/3-asp.net-validation-controls,-state-management-&-navigationvalidation-control.pdf`,
+      },
     ],
     practicals_link: [
       // {
