@@ -1,7 +1,8 @@
 import { downloadFile } from "@/lib/utils";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, Loader } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { useState } from "react";
 
 export const DownloadAndViewButton = ({
   href,
@@ -10,15 +11,24 @@ export const DownloadAndViewButton = ({
   href: string;
   variant?: "default" | "ghost";
 }) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleDownload = () => {
+    setLoading(true);
+    downloadFile(href)
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
+  };
   return (
     <div className="flex items-center gap-1">
       <Button
         variant={variant}
-        onClick={() => downloadFile(href)}
+        onClick={handleDownload}
         size={"sm"}
         className="size-8"
+        disabled={loading}
       >
-        <ArrowDownToLine />
+        {loading ? <Loader className="animate-spin" /> : <ArrowDownToLine />}
       </Button>
       <Button className="" variant={variant} asChild size={"sm"}>
         <Link
