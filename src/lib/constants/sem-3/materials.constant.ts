@@ -289,11 +289,21 @@ export const sem3Materials = [
     ],
 
     practicals_link: [
-      // {
-      //   id: 1,
-      //   title: "Practicals",
-      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/se/se-practicals.pdf`,
-      // },
+      {
+        id: 1,
+        title: "Practical-1: Create React App",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/advanced-web-development-using-react-js/react-js-practical-1-journal.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical-2: Hello World Component.jsx",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/advanced-web-development-using-react-js/react-js-practical-2-journal.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical-3: Start a React App",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/advanced-web-development-using-react-js/react-js-practical-3-journal.pdf`,
+      },
     ],
     que_papers: [
       // {
