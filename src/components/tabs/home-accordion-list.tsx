@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Send } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { DownloadIcon, Send } from "lucide-react";
+import { cn, downloadFile } from "@/lib/utils";
 import { useQueryState } from "nuqs";
 import { useDataGetters } from "@/hooks/use-data-getters";
 export const HomePageAccordionList = ({
@@ -133,6 +133,12 @@ const MaterialAccordionCard = ({
                         </Link>
                       </div>
                       <div className="flex items-center gap-1">
+                        <Button
+                          onClick={() => downloadFile(note.href)}
+                          size={"sm"}
+                        >
+                          <DownloadIcon />
+                        </Button>
                         <Button className="" asChild size={"sm"}>
                           <Link
                             href={note.href}
@@ -180,15 +186,24 @@ const MaterialAccordionCard = ({
                         {practical.title}
                       </Link>
                     </div>
-                    <Button className="" asChild size={"sm"}>
-                      <Link
-                        href={practical.journal_link}
-                        target="_blank"
-                        className="bg-primary hover:bg-primary/90"
+
+                    <div className="flex items-center gap-1">
+                      <Button
+                        onClick={() => downloadFile(practical.journal_link)}
+                        size={"sm"}
                       >
-                        View
-                      </Link>
-                    </Button>
+                        <DownloadIcon />
+                      </Button>
+                      <Button className="" asChild size={"sm"}>
+                        <Link
+                          href={practical.journal_link}
+                          target="_blank"
+                          className="bg-primary hover:bg-primary/90"
+                        >
+                          View
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -204,15 +219,24 @@ const MaterialAccordionCard = ({
                         {practical.title}
                       </Link>
                     </div>
-                    <Button className="" asChild size={"sm"}>
-                      <Link
-                        href={practical.journal_link}
-                        target="_blank"
-                        className="bg-primary hover:bg-primary/90"
+
+                    <div className="flex items-center gap-1">
+                      <Button
+                        onClick={() => downloadFile(practical.journal_link)}
+                        size={"sm"}
                       >
-                        View
-                      </Link>
-                    </Button>
+                        <DownloadIcon />
+                      </Button>
+                      <Button className="" asChild size={"sm"}>
+                        <Link
+                          href={practical.journal_link}
+                          target="_blank"
+                          className="bg-primary hover:bg-primary/90"
+                        >
+                          View
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -231,14 +255,26 @@ const MaterialAccordionCard = ({
                           {practical.name}
                         </Link>
                       </div>
-                      <Button className="" asChild size={"sm"}>
-                        <Link
-                          href={`/code/${material.key}/${practical.key}`}
-                          className="bg-primary hover:bg-primary/90"
+                      <div className="flex items-center gap-1">
+                        <Button
+                          onClick={() =>
+                            downloadFile(
+                              `/code/${material.key}/${practical.key}`,
+                            )
+                          }
+                          size={"sm"}
                         >
-                          View
-                        </Link>
-                      </Button>
+                          <DownloadIcon />
+                        </Button>
+                        <Button className="" asChild size={"sm"}>
+                          <Link
+                            href={`/code/${material.key}/${practical.key}`}
+                            className="bg-primary hover:bg-primary/90"
+                          >
+                            View
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   ))}
               </div>
@@ -255,15 +291,24 @@ const MaterialAccordionCard = ({
                         {paper.label}
                       </Link>
                     </div>
-                    <Button className="" asChild size={"sm"}>
-                      <Link
-                        target="_blank"
-                        href={paper?.href}
-                        className="bg-primary hover:bg-primary/90"
+
+                    <div className="flex items-center gap-1">
+                      <Button
+                        onClick={() => downloadFile(paper?.href)}
+                        size={"sm"}
                       >
-                        View
-                      </Link>
-                    </Button>
+                        <DownloadIcon />
+                      </Button>
+                      <Button className="" asChild size={"sm"}>
+                        <Link
+                          target="_blank"
+                          href={paper?.href}
+                          className="bg-primary hover:bg-primary/90"
+                        >
+                          View
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>

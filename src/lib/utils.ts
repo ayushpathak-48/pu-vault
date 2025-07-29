@@ -39,3 +39,26 @@ export const checkIsActiveTime = (timeRange: string | undefined) => {
   const end = toMinutes(endTime);
   return current >= start && current < end;
 };
+
+export const downloadFile = async (fileUrl: string) => {
+  try {
+    const response = await fetch(fileUrl, {
+      mode: "cors", // allow CORS
+    });
+
+    if (!response.ok) throw new Error("Network response was not ok");
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = blobUrl;
+    a.download = fileUrl.split("/").pop() || "pdf-file";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (err) {
+    console.error("Download failed:", err);
+  }
+};
