@@ -8,7 +8,7 @@ export const sem3PracticalCodes = [
     practicals: [
       {
         key: "guess-number",
-        name: "Practical : Guess a number",
+        name: "Guess a number",
         pageBlocks: [
           {
             type: "heading",
@@ -243,7 +243,7 @@ else:
       },
       {
         key: "dfs-water-jug-problem",
-        name: "Practical : DFS Water Jug Problem",
+        name: "DFS Water Jug Problem",
         pageBlocks: [
           {
             type: "heading",
@@ -308,6 +308,213 @@ Path: ['fill jug 2', 'pour jug 2 to jug 1', 'empty jug 1', 'pour jug 2 to jug 1'
           },
         ],
       },
+      // tic-tac-toe
+      {
+        key: "tic-tac",
+        name: "Tic Tac Toe",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical - Tic Tac Toe",
+          },
+          {
+            type: "code",
+            fileName: "tic-tac-toe.py",
+            value: `#Implementation of Two Player Tic-Tac-Toe game in Python.
+
+''' We will make the board using dictionary 
+    in which keys will be the location(i.e : top-left,mid-right,etc.)
+    and initialliy it's values will be empty space and then after every move 
+    we will change the value according to player's choice of move. '''
+
+theBoard = {'7': ' ' , '8': ' ' , '9': ' ' ,
+            '4': ' ' , '5': ' ' , '6': ' ' ,
+            '1': ' ' , '2': ' ' , '3': ' ' }
+
+board_keys = []
+
+for key in theBoard:
+    board_keys.append(key)
+
+''' We will have to print the updated board after every move in the game and 
+    thus we will make a function in which we'll define the printBoard function
+    so that we can easily print the board everytime by calling this function. '''
+
+def printBoard(board):
+    print(board['7'] + '|' + board['8'] + '|' + board['9'])
+    print('-+-+-')
+    print(board['4'] + '|' + board['5'] + '|' + board['6'])
+    print('-+-+-')
+    print(board['1'] + '|' + board['2'] + '|' + board['3'])
+
+# Now we'll write the main function which has all the gameplay functionality.
+def game():
+
+    turn = 'X'
+    count = 0
+
+
+    for i in range(10):
+        printBoard(theBoard)
+        print("It's your turn," + turn + ".Move to which place?")
+
+        move = input()        
+
+        if theBoard[move] == ' ':
+            theBoard[move] = turn
+            count += 1
+        else:
+            print("That place is already filled.\\nMove to which place?")
+            continue
+
+        # Now we will check if player X or O has won,for every move after 5 moves. 
+        if count >= 5:
+            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ': # across the top
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")                
+                break
+            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ': # across the middle
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break
+            elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ': # across the bottom
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break
+            elif theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ': # down the left side
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break
+            elif theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ': # down the middle
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break
+            elif theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ': # down the right side
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break 
+            elif theBoard['7'] == theBoard['5'] == theBoard['3'] != ' ': # diagonal
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break
+            elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ': # diagonal
+                printBoard(theBoard)
+                print("\\nGame Over.\\n")                
+                print(" **** " +turn + " won. ****")
+                break 
+
+        # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
+        if count == 9:
+            print("\\nGame Over.\\n")                
+            print("It's a Tie!!")
+
+        # Now we have to change the player after every move.
+        if turn =='X':
+            turn = 'O'
+        else:
+            turn = 'X'        
+    
+    # Now we will ask if player wants to restart the game or not.
+    restart = input("Do want to play Again?(y/n)")
+    if restart == "y" or restart == "Y":  
+        for key in board_keys:
+            theBoard[key] = " "
+
+        game()
+
+if __name__ == "__main__":
+    game()`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: ` | | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+It's your turn, X. Move to which place?`,
+          },
+        ],
+      },
+      // sales-man
+      {
+        key: "salesman",
+        name: "Travelling Salesman Problem",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical - Travelling Salesman Problem",
+          },
+          {
+            type: "code",
+            fileName: "travelling-salesman.py",
+            value: `import itertools
+
+
+graph = [
+    [0,10,15,20],
+    [10,0,35,25],
+    [15,35,0,30],
+    [20,25,30,0],
+]
+
+city_names = ['A', 'B' , 'C', 'D']
+num_cities = len(graph)
+
+start = 0
+cities = list(range(num_cities))
+
+min_cost = float('inf')
+best_paths = []
+
+for perm in itertools.permutations(cities[1:]):
+    path = [start] + list(perm) + [start]  # complete round-trip
+    cost = 0
+    for i in range(len(path) - 1):
+        cost += graph[path[i]][path[i + 1]]
+        
+    name_path = [city_names[i] for i in path]
+    print(f"Path: {'->'.join(name_path)},Cost:{cost}")
+    
+    if cost < min_cost:
+        min_cost = cost
+        best_paths = [path]
+    elif cost == min_cost:
+        best_paths.append(path)
+
+# Print results
+print("\nShortest Path(s):")
+
+for path in best_paths:
+    name_path = [city_names[i] for i in path]
+    print(f'{'->'.join(name_path)}')`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Path: A->B->C->D->A,Cost:80
+Path: A->B->D->C->A,Cost:95
+Path: A->C->B->D->A,Cost:95
+Path: A->C->D->B->A,Cost:80
+Path: A->D->B->C->A,Cost:105
+Path: A->D->C->B->A,Cost:95
+
+Shortest Path(s):
+A->B->C->D->A
+A->C->D->B->A`,
+          },
+        ],
+      },
     ],
   },
   // bda
@@ -327,7 +534,7 @@ Path: ['fill jug 2', 'pour jug 2 to jug 1', 'empty jug 1', 'pour jug 2 to jug 1'
           },
           {
             type: "code",
-            fileName: "guess-number.py",
+            fileName: "set_map.py",
             value: `class Student:
     def _init_(self, name, rollno, m1, m2):
         self.name = name
@@ -1162,6 +1369,148 @@ protected void btnSubmit_Click(object sender, EventArgs e)
     <h3>Welcome to the Home Page</h3>
     <p>This is the default content for the home page.</p>
 </asp:Content>`,
+          },
+        ],
+      },
+      //  p-11
+      {
+        key: "use-of-master-page",
+        name: "Practical - 11: Use of Master Page and Session",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 11 - Use of Master Page and Session",
+          },
+          {
+            type: "code",
+            fileName: "Site.master",
+            language: "html",
+            value: `<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="WebApplication2.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Simple ASP.NET App</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink> |
+            <asp:HyperLink ID="lnkWelcome" runat="server" NavigateUrl="~/Welcome.aspx">Welcome</asp:HyperLink>
+            <hr />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        </div>
+    </form>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "Site.master.cs",
+            language: "html",
+            value: `using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication2
+{
+    public partial class Site : System.Web.UI.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Login.aspx",
+            language: "java",
+            value: `<%@ Page Title="Login" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="WebApplication2.Login" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>Login</h2>
+    <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label><br />
+    Username: <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox><br />
+    Password: <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox><br />
+    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+</asp:Content>`,
+          },
+          {
+            type: "code",
+            fileName: "Login.aspx.cs",
+            language: "java",
+            value: `using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication2
+{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
+            {
+                Session["User"] = txtUsername.Text;
+                Response.Redirect("Welcome.aspx");
+            }
+            else
+            {
+                lblMessage.Text = "Invalid login credentials.";
+            }
+        }
+
+    }`,
+          },
+          {
+            type: "code",
+            fileName: "Welcome.aspx",
+            language: "java",
+            value: `<%@ Page Title="Welcome" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Welcome.aspx.cs" Inherits="WebApplication2.Welcome" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>Welcome</h2>
+    <asp:Label ID="lblWelcome" runat="server" Font-Bold="True"></asp:Label>
+</asp:Content>`,
+          },
+          {
+            type: "code",
+            fileName: "Welcome.aspx.cs",
+            language: "java",
+            value: `using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication2
+{
+    public partial class Welcome : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["User"] != null)
+            {
+                lblWelcome.Text = "Welcome, " + Session["User"].ToString();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+    }
+}`,
           },
         ],
       },
@@ -2654,6 +3003,7 @@ export default FlipCoin;
     specialization: "fswd",
     language: "java",
     practicals: [
+      // P-1
       {
         key: "set-and-map",
         name: "Practical - 1: WAP to implement connection",
@@ -2749,6 +3099,263 @@ Received from client: Hello
 Closing connection with client.
 Server shutting down.`,
           },
+        ],
+      },
+      // P-2
+      // {
+      //   key: "",
+      //   name: "Practical - 2: ",
+      //   pageBlocks: [
+      //     {
+      //       type: "heading",
+      //       value: "Practical 2 -  ",
+      //     },
+      //     {
+      //       type: "code",
+      //       fileName: "",
+      //       value: ``,
+      //     },
+      //     {
+      //       type: "code",
+      //       fileName: "",
+      //       value: ``,
+      //     },
+      //     // {
+      //     //   type: "code",
+      //     //   language: "text",
+      //     //   is_output: true,
+      //     //   value: ``,
+      //     // },
+      //   ],
+      // },
+      //  p-3
+      {
+        key: "fx-shapes",
+        name: "Practical - 3: 2D object Using JAVA FX",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - WAP to implement 2D object Using JAVA FX",
+          },
+          {
+            type: "code",
+            fileName: "TwoDShapes.java",
+            value: `import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.*;
+import javafx.stage.Stage;
+
+public class TwoDShapes extends Application {
+    public void start(Stage primaryStage) {
+        Pane pane = new Pane();
+
+        Rectangle rect = new Rectangle(50, 50, 120, 80);
+        rect.setFill(Color.LIGHTBLUE);
+        rect.setStroke(Color.BLACK);
+
+        Circle circle = new Circle(250, 90, 40);
+        circle.setFill(Color.LIGHTGREEN);
+        circle.setStroke(Color.BLACK);
+
+        Ellipse el = new Ellipse(400, 90, 70, 40);
+        el.setFill(Color.LIGHTPINK);
+        el.setStroke(Color.BLACK);
+
+        Line l = new Line(50, 200, 450, 200);
+        l.setStroke(Color.RED);
+        l.setStrokeWidth(3);
+
+        pane.getChildren().addAll(rect, circle, el, l);
+
+        Scene scene = new Scene(pane, 500, 300);
+        primaryStage.setTitle("JavaFX 2D Shapes");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+// Then give 2 commands in terminal
+//  Check your javafx path once
+
+// Compile :-
+
+// javac --module-path "C:\\javafx-sdk-24.0.2\\lib" --add-modules javafx.controls TwoDShapes.java
+
+// Run :-
+// java --module-path "C:\\javafx-sdk-24.0.2\\lib" --add-modules javafx.controls TwoDShapes`,
+          },
+          {
+            type: "code",
+            fileName: "launch.json",
+            value: `{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run TwoDShapes (JavaFX)",
+            "request": "launch",
+            "mainClass": "TwoDShapes",
+            "projectName": "MyJavaFXProject_b91ac860",
+            "vmArgs": "--module-path C:/javafx-sdk-24.0.2/lib --add-modules javafx.controls,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Run ThreeDObjects (JavaFX 3D)",
+            "request": "launch",
+            "mainClass": "ThreeDObjects",
+            "projectName": "MyJavaFXProject_b91ac860",
+            "vmArgs": "--module-path C:/javafx-sdk-24.0.2/lib --add-modules javafx.controls,javafx.graphics"
+        }
+    ]
+}`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: true,
+          //   value: ``,
+          // },
+        ],
+      },
+      //  p-4
+      {
+        key: "fx-objects",
+        name: "Practical - 4: 3D object Using JAVA FX",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 4 - WAP to implement 3D object Using JAVA FX",
+          },
+          {
+            type: "code",
+            fileName: "ThreeDObjects.java",
+            value: `import javafx.application.Application;
+import javafx.scene.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Box;
+import javafx.scene.shape.Cylinder;
+import javafx.scene.shape.Sphere;
+import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
+
+public class ThreeDObjects extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create Box
+        Box box = new Box(100, 100, 100);
+        PhongMaterial boxMaterial = new PhongMaterial(Color.BLUE);
+        box.setMaterial(boxMaterial);
+        box.setTranslateX(150);
+        box.setTranslateY(150);
+        box.setTranslateZ(400);
+
+        // Create Sphere
+        Sphere sphere = new Sphere(50);
+        PhongMaterial sphereMaterial = new PhongMaterial(Color.ORANGE);
+        sphere.setMaterial(sphereMaterial);
+        sphere.setTranslateX(350);
+        sphere.setTranslateY(150);
+        sphere.setTranslateZ(400);
+
+        // Create Cylinder
+        Cylinder cylinder = new Cylinder(40, 100);
+        PhongMaterial cylinderMaterial = new PhongMaterial(Color.PALEVIOLETRED);
+        cylinder.setMaterial(cylinderMaterial);
+        cylinder.setTranslateX(250);
+        cylinder.setTranslateY(300);
+        cylinder.setTranslateZ(400);
+
+        // Create Point Light
+        PointLight pointLight = new PointLight(Color.WHITE);
+        pointLight.setTranslateX(250);
+        pointLight.setTranslateY(100);
+        pointLight.setTranslateZ(200);
+
+        // Create Ambient Light
+        AmbientLight ambientLight = new AmbientLight(Color.rgb(100, 100, 100));
+
+        // Group all nodes
+        Group root = new Group(box, sphere, cylinder, pointLight, ambientLight);
+
+        // Create and position camera
+        PerspectiveCamera camera = new PerspectiveCamera(true);
+        camera.setTranslateZ(-1000);
+        camera.setNearClip(0.1);
+        camera.setFarClip(2000.0);
+        camera.setFieldOfView(35);
+
+        // Create scene with depth buffer enabled
+        Scene scene = new Scene(root, 600, 400, true);
+        scene.setFill(Color.GRAY);
+        scene.setCamera(camera);
+
+        // Apply rotations to the whole group
+        Rotate rotateX = new Rotate(20, Rotate.X_AXIS);
+        Rotate rotateY = new Rotate(30, Rotate.Y_AXIS);
+        root.getTransforms().addAll(rotateX, rotateY);
+
+        // Setup stage
+        primaryStage.setTitle("JavaFX 3D Objects");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+// Then give 2 commands in terminal
+
+// Compile :-
+
+// javac --module-path "C:\\javafx-sdk-24.0.2\\lib" --add-modules javafx.controls,javafx.graphics ThreeDObjects.java
+
+
+
+// Run :-
+
+// java --module-path "C:\\javafx-sdk-24.0.2\\lib" --add-modules javafx.controls,javafx.graphics ThreeDObjects`,
+          },
+          {
+            type: "code",
+            fileName: "launch.json",
+            value: `{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run TwoDShapes (JavaFX)",
+            "request": "launch",
+            "mainClass": "TwoDShapes",
+            "projectName": "MyJavaFXProject_b91ac860",
+            "vmArgs": "--module-path C:/javafx-sdk-24.0.2/lib --add-modules javafx.controls,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Run ThreeDObjects (JavaFX 3D)",
+            "request": "launch",
+            "mainClass": "ThreeDObjects",
+            "projectName": "MyJavaFXProject_b91ac860",
+            "vmArgs": "--module-path C:/javafx-sdk-24.0.2/lib --add-modules javafx.controls,javafx.graphics"
+        }
+    ]
+}`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: true,
+          //   value: ``,
+          // },
         ],
       },
     ],
