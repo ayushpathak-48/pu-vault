@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export const DownloadAndViewButton = ({
   href,
-  variant,
+  variant = "default",
 }: {
   href: string;
-  variant: "default" | "ghost";
+  variant?: "default" | "ghost";
 }) => {
   return (
     <div className="flex items-center gap-1">
