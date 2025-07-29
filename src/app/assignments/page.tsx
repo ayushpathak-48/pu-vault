@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { CustomErrorPage } from "@/components/custom-error-page";
+import { DownloadAndViewButton } from "@/components/download-and-view-button";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import Link from "next/link";
 import React from "react";
@@ -26,13 +27,7 @@ const AsssignmentsPage = () => {
                 {software.title}
               </h2>
             </Link>
-            <Link
-              href={software.href}
-              target="_blank"
-              className="font-medium text-primary"
-            >
-              View
-            </Link>
+            <DownloadAndViewButton variant="ghost" href={software.href} />
           </div>
         ))}
       </div>

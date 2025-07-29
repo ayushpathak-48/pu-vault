@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 import { useDataStore } from "@/stores/data.store";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { ArrowDownToLine, Send } from "lucide-react";
-import { cn, downloadFile } from "@/lib/utils";
+import { Send } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { useQueryState } from "nuqs";
 import { useDataGetters } from "@/hooks/use-data-getters";
+import { DownloadAndViewButton } from "../download-and-view-button";
 export const HomePageAccordionList = ({
   tabData,
   specializationTabData,
@@ -132,23 +133,6 @@ const MaterialAccordionCard = ({
                           {note.title}
                         </Link>
                       </div>
-                      {/* <div className="flex items-center gap-1">
-                        <Button
-                          onClick={() => downloadFile(note.href)}
-                          size={"sm"}
-                        >
-                          <ArrowDownToLine />
-                        </Button>
-                        <Button className="" asChild size={"sm"}>
-                          <Link
-                            href={note.href}
-                            target="_blank"
-                            className="bg-primary hover:bg-primary/90"
-                          >
-                            View
-                          </Link>
-                        </Button>
-                      </div> */}
                       <DownloadAndViewButton href={note.href} />
                     </div>
                   ))}
@@ -187,24 +171,6 @@ const MaterialAccordionCard = ({
                         {practical.title}
                       </Link>
                     </div>
-
-                    {/* <div className="flex items-center gap-1">
-                      <Button
-                        onClick={() => downloadFile(practical.journal_link)}
-                        size={"sm"}
-                      >
-                        <ArrowDownToLine />
-                      </Button>
-                      <Button className="" asChild size={"sm"}>
-                        <Link
-                          href={practical.journal_link}
-                          target="_blank"
-                          className="bg-primary hover:bg-primary/90"
-                        >
-                          View
-                        </Link>
-                      </Button>
-                    </div> */}
                     <DownloadAndViewButton href={practical.journal_link} />
                   </div>
                 ))}
@@ -221,24 +187,6 @@ const MaterialAccordionCard = ({
                         {practical.title}
                       </Link>
                     </div>
-
-                    {/* <div className="flex items-center gap-1">
-                      <Button
-                        onClick={() => downloadFile(practical.journal_link)}
-                        size={"sm"}
-                      >
-                        <ArrowDownToLine />
-                      </Button>
-                      <Button className="" asChild size={"sm"}>
-                        <Link
-                          href={practical.journal_link}
-                          target="_blank"
-                          className="bg-primary hover:bg-primary/90"
-                        >
-                          View
-                        </Link>
-                      </Button>
-                    </div> */}
                     <DownloadAndViewButton href={practical.journal_link} />
                   </div>
                 ))}
@@ -258,26 +206,6 @@ const MaterialAccordionCard = ({
                           {practical.name}
                         </Link>
                       </div>
-                      {/* <div className="flex items-center gap-1">
-                        <Button
-                          onClick={() =>
-                            downloadFile(
-                              `/code/${material.key}/${practical.key}`,
-                            )
-                          }
-                          size={"sm"}
-                        >
-                          <ArrowDownToLine />
-                        </Button>
-                        <Button className="" asChild size={"sm"}>
-                          <Link
-                            href={`/code/${material.key}/${practical.key}`}
-                            className="bg-primary hover:bg-primary/90"
-                          >
-                            View
-                          </Link>
-                        </Button>
-                      </div> */}
                       <DownloadAndViewButton
                         href={`/code/${material.key}/${practical.key}`}
                       />
@@ -297,24 +225,6 @@ const MaterialAccordionCard = ({
                         {paper.label}
                       </Link>
                     </div>
-
-                    {/* <div className="flex items-center gap-1">
-                      <Button
-                        onClick={() => downloadFile(paper?.href)}
-                        size={"sm"}
-                      >
-                        <ArrowDownToLine />
-                      </Button>
-                      <Button className="" asChild size={"sm"}>
-                        <Link
-                          target="_blank"
-                          href={paper?.href}
-                          className="bg-primary hover:bg-primary/90"
-                        >
-                          View
-                        </Link>
-                      </Button>
-                    </div> */}
                     <DownloadAndViewButton href={paper?.href} />
                   </div>
                 ))}
@@ -342,24 +252,5 @@ const MaterialAccordionCard = ({
         )}
       </AccordionContent>
     </AccordionItem>
-  );
-};
-
-const DownloadAndViewButton = ({ href }: { href: string }) => {
-  return (
-    <div className="flex items-center gap-1">
-      <Button onClick={() => downloadFile(href)} size={"sm"}>
-        <ArrowDownToLine />
-      </Button>
-      <Button className="" asChild size={"sm"}>
-        <Link
-          href={href}
-          target="_blank"
-          className="bg-primary hover:bg-primary/90"
-        >
-          View
-        </Link>
-      </Button>
-    </div>
   );
 };
