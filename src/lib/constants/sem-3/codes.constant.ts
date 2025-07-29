@@ -3102,32 +3102,73 @@ Server shutting down.`,
         ],
       },
       // P-2
-      // {
-      //   key: "",
-      //   name: "Practical - 2: ",
-      //   pageBlocks: [
-      //     {
-      //       type: "heading",
-      //       value: "Practical 2 -  ",
-      //     },
-      //     {
-      //       type: "code",
-      //       fileName: "",
-      //       value: ``,
-      //     },
-      //     {
-      //       type: "code",
-      //       fileName: "",
-      //       value: ``,
-      //     },
-      //     // {
-      //     //   type: "code",
-      //     //   language: "text",
-      //     //   is_output: true,
-      //     //   value: ``,
-      //     // },
-      //   ],
-      // },
+      {
+        key: "",
+        name: "Practical - 2: WAP to implement RMI",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 2 - WAP to implement RMI",
+          },
+          {
+            type: "code",
+            fileName: "Addl.java",
+            value: `import java.rmi.Remote;
+
+public interface AddI extends Remote {
+    public int add(int x, int y) throws Exception;
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Client.java",
+            value: `import java.rmi.*;
+
+public class Client {
+    public static void main(String a[]) throws Exception {
+        AddI obj = (AddI) Naming.lookup("ADD");
+        int n = obj.add(5, 4);
+        System.out.println("addition is:" + n);
+    }
+
+} `,
+          },
+          {
+            type: "code",
+            fileName: "Server.java",
+            value: `import java.rmi.*;
+
+public class Server {
+    public static void main(String a[]) throws Exception {
+        AddC obj = new AddC();
+        Naming.rebind("ADD", obj);
+        System.out.println("Server Started");
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "AddC.java",
+            value: `import java.rmi.server.*;
+
+public class AddC extends UnicastRemoteObject implements AddI {
+    public AddC() throws Exception {
+        super();
+    }
+
+    public int add(int x, int y) {
+        return x + y;
+    }
+} `,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: true,
+          //   value: ``,
+          // },
+        ],
+      },
       //  p-3
       {
         key: "fx-shapes",
