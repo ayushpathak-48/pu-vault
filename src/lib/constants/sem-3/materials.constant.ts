@@ -178,6 +178,11 @@ export const sem3Materials = [
         title: "Practical 10 - Master Page",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-10.pdf`,
       },
+      {
+        id: 11,
+        title: "Practical 11 - Use of Master Page and Session",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-11.pdf`,
+      },
     ],
     // que_papers: [
     //   {
@@ -364,22 +369,27 @@ export const sem3specializationMaterials = [
       },
       {
         id: 1,
-        title: "Practical 1 - Tic Tac Toe Game",
+        title: "Tic Tac Toe Game",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
       },
       {
+        id: 5,
+        title: "Guess Number",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/guess-number.pdf`,
+      },
+      {
         id: 2,
-        title: "Practical 2 -  DFS 8 Puzzle problem",
+        title: " DFS 8 Puzzle problem",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-2.pdf`,
       },
       {
         id: 3,
-        title: "Practical 3 - BFS Water Jug Problem",
+        title: "BFS Water Jug Problem",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-3.pdf`,
       },
       {
         id: 4,
-        title: "Practical 4 - Travelling Salesman Problem",
+        title: "Travelling Salesman Problem",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-4.pdf`,
       },
     ],
@@ -423,11 +433,11 @@ export const sem3specializationMaterials = [
       //     title: "Index",
       //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
       //   },
-      //   {
-      //     id: 1,
-      //     title: "Practical 1 - Tic Tac Toe Game",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
-      //   },
+      {
+        id: 1,
+        title: "Practical 1 - WAP to implement connection",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-1.pdf`,
+      },
     ],
     que_papers: [
       //   {
@@ -437,11 +447,11 @@ export const sem3specializationMaterials = [
       //   },
     ],
     output_links: [
-      //   {
-      //     id: 0,
-      //     title: "Outputs",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ai-outputs.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/fswd-ouputs.pdf`,
+      },
     ],
   },
   // CC
