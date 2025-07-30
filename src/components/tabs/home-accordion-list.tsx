@@ -206,9 +206,11 @@ const MaterialAccordionCard = ({
                           {practical.name}
                         </Link>
                       </div>
-                      <DownloadAndViewButton
-                        href={`/code/${material.key}/${practical.key}`}
-                      />
+                      <Button asChild size={"sm"}>
+                        <Link href={`/code/${material.key}/${practical.key}`}>
+                          View
+                        </Link>
+                      </Button>
                     </div>
                   ))}
               </div>
