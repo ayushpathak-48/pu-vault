@@ -3103,7 +3103,7 @@ Server shutting down.`,
       },
       // P-2
       {
-        key: "",
+        key: "implement-rmi",
         name: "Practical - 2: WAP to implement RMI",
         pageBlocks: [
           {
