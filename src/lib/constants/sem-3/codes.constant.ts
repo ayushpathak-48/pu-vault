@@ -2011,7 +2011,7 @@ public class MainActivity extends AppCompatActivity {
             type: "btn",
             title: "Download Project: Handler-Based Counter App",
             value:
-              "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
+              "https://github.com/ayushpathak-48/mad-handler-based-counter-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -2369,7 +2369,7 @@ public class MyMusicService extends Service {
           },
           {
             type: "code",
-            language: "html",
+            language: "xml",
             fileName: "activity_main.xml",
             value: `<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -2458,6 +2458,7 @@ public class MainActivity extends AppCompatActivity {
           },
           {
             type: "code",
+            language: "xml",
             fileName: "AndroidManifest.xml",
             value: `<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sharedpreference">
