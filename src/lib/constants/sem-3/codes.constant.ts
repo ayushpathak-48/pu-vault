@@ -2007,12 +2007,12 @@ public class MainActivity extends AppCompatActivity {
             type: "heading",
             value: "Practical 5 - Handler-Based Counter App",
           },
-          // {
-          //   type: "btn",
-          //   title: "Download Project: Color Menu",
-          //   value:
-          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
-          // },
+          {
+            type: "btn",
+            title: "Download Project: Handler-Based Counter App",
+            value:
+              "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
+          },
           {
             type: "code",
             language: "html",
@@ -2126,12 +2126,12 @@ public class MainActivity extends AppCompatActivity {
             type: "heading",
             value: "SavedInstanceState App",
           },
-          // {
-          //   type: "btn",
-          //   title: "Download Project: Color Menu",
-          //   value:
-          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
-          // },
+          {
+            type: "btn",
+            title: "Download Project: SavedInstanceState App",
+            value:
+              "https://github.com/ayushpathak-48/savedinstancestate-practical/archive/refs/heads/main.zip",
+          },
           {
             type: "code",
             language: "html",
@@ -2223,19 +2223,19 @@ public class MainActivity extends AppCompatActivity {
       },
       //  p-7
       {
-        key: "message-service-with-start-stop",
-        name: "Message Service with Start/Stop",
+        key: "music-service-with-start-stop",
+        name: "Music Service with Start/Stop",
         pageBlocks: [
           {
             type: "heading",
-            value: " Message Service with Start/Stop",
+            value: "Music Service with Start/Stop",
           },
-          // {
-          //   type: "btn",
-          //   title: "Download Project: Color Menu",
-          //   value:
-          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
-          // },
+          {
+            type: "btn",
+            title: "Download Project: Color Menu",
+            value:
+              "https://github.com/ayushpathak-48/services-project/archive/refs/heads/main.zip",
+          },
           {
             type: "code",
             language: "html",
