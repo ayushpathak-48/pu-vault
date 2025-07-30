@@ -2353,6 +2353,144 @@ public class MyMusicService extends Service {
           // },
         ],
       },
+      {
+        key: "shared-preferences-app",
+        name: "SharedPreference App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "SharedPreference App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: SharedPreference App",
+            value:
+              "https://github.com/ayushpathak-48/mad-sharedpreference/archive/refs/heads/main.zip",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="50dp">
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE" />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOAD" />
+
+    <TextView
+        android:id="@+id/saved_name_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saved name will appear here"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
+
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.sharedpreference;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText nameInput;
+    private TextView savedNameDisplay;
+    private Button saveButton, loadButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        nameInput = findViewById(R.id.name_input);
+        savedNameDisplay = findViewById(R.id.saved_name_display);
+        saveButton = findViewById(R.id.save_button);
+        loadButton = findViewById(R.id.load_button);
+
+        // Load saved name when the app starts
+        loadSavedName();
+
+        saveButton.setOnClickListener(view -> saveName());
+        loadButton.setOnClickListener(view -> loadSavedName());
+    }
+
+    private void saveName() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("name", nameInput.getText().toString());
+        editor.apply();
+    }
+
+    private void loadSavedName() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+        String savedName = sharedPreferences.getString("name", "Saved name will appear here");
+        savedNameDisplay.setText(savedName);
+    }
+}
+
+`,
+          },
+          {
+            type: "code",
+            fileName: "AndroidManifest.xml",
+            value: `<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sharedpreference">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
     ],
   },
   // MscIt ADV-(ReactJs)
