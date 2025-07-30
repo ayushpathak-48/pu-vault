@@ -2118,14 +2118,117 @@ public class MainActivity extends AppCompatActivity {
           // },
         ],
       },
-      //  p-7
       {
-        key: "message-service-with-start-stop",
-        name: "Practical - 7: Message Service with Start/Stop",
+        key: "saved-instance-state",
+        name: "SavedInstanceState App",
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical 7 - Message Service with Start/Stop",
+            value: "SavedInstanceState App",
+          },
+          // {
+          //   type: "btn",
+          //   title: "Download Project: Color Menu",
+          //   value:
+          //     "https://github.com/ayushpathak-48/mad-bg-color-changer/archive/refs/heads/main.zip",
+          // },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editText"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter some text" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        style="bold"
+        android:textSize="20sp"
+        android:layout_below="@id/editText" />
+
+</RelativeLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.savedinstancestatepractical;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText editText;
+    private Button button;
+    private static final String TEXT_KEY = "saved_text";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+
+        // Restore the saved instance state
+        if (savedInstanceState != null) {
+            String savedText = savedInstanceState.getString(TEXT_KEY);
+            editText.setText(savedText);
+        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Save the text when the button is clicked
+                String textToSave = editText.getText().toString();
+                // You can save it to a database or shared preferences if needed
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save the current text in the EditText
+        outState.putString(TEXT_KEY, editText.getText().toString());
+    }
+}
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      //  p-7
+      {
+        key: "message-service-with-start-stop",
+        name: "Message Service with Start/Stop",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: " Message Service with Start/Stop",
           },
           // {
           //   type: "btn",
