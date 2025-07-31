@@ -2393,6 +2393,7 @@ public class MyMusicService extends Service {
           // },
         ],
       },
+      // p-8
       {
         key: "music-service-with-start-stop",
         name: "Practical - 8: Prime Number Notification",
@@ -2403,9 +2404,9 @@ public class MyMusicService extends Service {
           },
           {
             type: "btn",
-            title: "Download Project: Music Service Project",
+            title: "Download Project: Prime Number Notification",
             value:
-              "https://github.com/ayushpathak-48/services-project/archive/refs/heads/main.zip",
+              "https://github.com/ayushpathak-48/mad-p8-notification-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
