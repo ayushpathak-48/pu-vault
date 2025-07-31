@@ -2394,6 +2394,210 @@ public class MyMusicService extends Service {
         ],
       },
       {
+        key: "music-service-with-start-stop",
+        name: "Practical - 8: Prime Number Notification",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical - 8: Prime Number Notification",
+          },
+          {
+            type: "btn",
+            title: "Download Project: Music Service Project",
+            value:
+              "https://github.com/ayushpathak-48/services-project/archive/refs/heads/main.zip",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/lowerBound"
+        android:hint="Enter lower bound"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/upperBound"
+        android:hint="Enter upper bound"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/findButton"
+        android:text="Find Primes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:text="Results will appear here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp" />
+</LinearLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.notificationsapp;
+
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText lowerBoundEditText, upperBoundEditText;
+    private TextView resultTextView;
+    private static final String CHANNEL_ID = "prime_channel";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        checkNotificationPermission();
+
+        lowerBoundEditText = findViewById(R.id.lowerBound);
+        upperBoundEditText = findViewById(R.id.upperBound);
+        resultTextView = findViewById(R.id.resultTextView);
+        Button findButton = findViewById(R.id.findButton);
+
+        createNotificationChannel();
+
+        findButton.setOnClickListener(v -> {
+            int lower = Integer.parseInt(lowerBoundEditText.getText().toString());
+            int upper = Integer.parseInt(upperBoundEditText.getText().toString());
+
+            new Thread(() -> {
+                StringBuilder primes = new StringBuilder();
+                for (int i = lower; i <= upper; i++) {
+                    if (isPrime(i)) primes.append(i).append(" ");
+                }
+
+                String result = primes.toString();
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    resultTextView.setText(result);
+                    showNotification("Prime Numbers :", result + "are the prime numbers between " + lower + " and " + upper + ".");
+                });
+            }).start();
+        });
+    }
+    private boolean isPrime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+    private void showNotification(String title, String message) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(1, builder.build());
+    }
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Prime Channel";
+            String description = "Shows when prime calculation completes";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+    }
+    private void checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1);
+            }
+        }
+    }
+}
+
+`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "AndroidManifest.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:exported="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NotificationsApp">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>`,
+          },
+          {
+            type: "code",
+            language: "text",
+            fileName: "build.gradle",
+            value: `dependencies {
+    ...
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+}`,
+          },
+
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      {
         key: "saved-instance-state",
         name: "SavedInstanceState App",
         pageBlocks: [
