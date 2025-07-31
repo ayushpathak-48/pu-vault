@@ -2118,99 +2118,140 @@ public class MainActivity extends AppCompatActivity {
           // },
         ],
       },
+      //  p-6
       {
-        key: "saved-instance-state",
-        name: "SavedInstanceState App",
+        key: "progress-bar",
+        name: "Practical:6 Progress Bar",
         pageBlocks: [
           {
             type: "heading",
-            value: "SavedInstanceState App",
+            value: "Practical:6 Progress Bar",
           },
           {
             type: "btn",
-            title: "Download Project: SavedInstanceState App",
+            title: "Download Project: Progress Bar practical code",
             value:
-              "https://github.com/ayushpathak-48/savedinstancestate-practical/archive/refs/heads/main.zip",
+              "https://github.com/ayushpathak-48/mad-p6-progress-bar/archive/refs/heads/main.zip",
           },
           {
             type: "code",
             language: "html",
             fileName: "activity_main.xml",
             value: `<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
-
-    <EditText
-        android:id="@+id/editText"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter some text" />
+    android:padding="20dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Progress" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
-        style="bold"
-        android:textSize="20sp"
-        android:layout_below="@id/editText" />
+        android:max="100"
+        android:progress="0"
+        android:layout_marginTop="20dp" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/txtProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress: 0%"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:layout_marginTop="20dp" />
+</LinearLayout>
 `,
           },
           {
             type: "code",
             language: "java",
             fileName: "MainActivity.java",
-            value: `package com.example.savedinstancestatepractical;
+            value: `package com.example.progressbar;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.progressbar.R;
+
 public class MainActivity extends AppCompatActivity {
-    private EditText editText;
-    private Button button;
-    private static final String TEXT_KEY = "saved_text";
+
+    Button btnStart;
+    ProgressBar progressBar;
+    TextView txtProgress, txtMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.editText);
-        button = findViewById(R.id.button);
+        btnStart = findViewById(R.id.btnStart);
+        progressBar = findViewById(R.id.progressBar);
+        txtProgress = findViewById(R.id.txtProgress);
+        txtMessage = findViewById(R.id.txtMessage);
 
-        // Restore the saved instance state
-        if (savedInstanceState != null) {
-            String savedText = savedInstanceState.getString(TEXT_KEY);
-            editText.setText(savedText);
-        }
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Save the text when the button is clicked
-                String textToSave = editText.getText().toString();
-                // You can save it to a database or shared preferences if needed
-            }
+        btnStart.setOnClickListener(v -> {
+            new ProgressTask().execute();
         });
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        // Save the current text in the EditText
-        outState.putString(TEXT_KEY, editText.getText().toString());
+    private class ProgressTask extends AsyncTask<Void, Integer, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar.setProgress(0);
+            txtProgress.setText("Progress: 0%");
+            txtMessage.setText("");
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            int progress = 0;
+            while (progress <= 100) {
+                try {
+                    Thread.sleep(50); // simulate time-consuming task
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                publishProgress(progress);
+                progress++;
+            }
+            return "✅ Task Completed Successfully!";
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            int value = values[0];
+            progressBar.setProgress(value);
+            txtProgress.setText("Progress: " + value + "%");
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            txtMessage.setText(result);
+        }
     }
 }
+
 `,
           },
           // {
@@ -2354,12 +2395,116 @@ public class MyMusicService extends Service {
         ],
       },
       {
-        key: "shared-preferences-app",
-        name: "SharedPreference App",
+        key: "saved-instance-state",
+        name: "SavedInstanceState App",
         pageBlocks: [
           {
             type: "heading",
-            value: "SharedPreference App",
+            value: "SavedInstanceState App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: SavedInstanceState App",
+            value:
+              "https://github.com/ayushpathak-48/savedinstancestate-practical/archive/refs/heads/main.zip",
+          },
+          {
+            type: "code",
+            language: "html",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editText"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter some text" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        style="bold"
+        android:textSize="20sp"
+        android:layout_below="@id/editText" />
+
+</RelativeLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.savedinstancestatepractical;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText editText;
+    private Button button;
+    private static final String TEXT_KEY = "saved_text";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+
+        // Restore the saved instance state
+        if (savedInstanceState != null) {
+            String savedText = savedInstanceState.getString(TEXT_KEY);
+            editText.setText(savedText);
+        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Save the text when the button is clicked
+                String textToSave = editText.getText().toString();
+                // You can save it to a database or shared preferences if needed
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save the current text in the EditText
+        outState.putString(TEXT_KEY, editText.getText().toString());
+    }
+}
+`,
+          },
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
+      // Practical- 14
+      {
+        key: "shared-preferences-app",
+        name: "Practical:14 SharedPreference App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical:14 SharedPreference App",
           },
           {
             type: "btn",
