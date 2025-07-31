@@ -143,6 +143,11 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/index.pdf`,
       },
       {
+        id: 25,
+        title: "Div-B Practical Dates",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/div-b-lab-practical-dates.pdf`,
+      },
+      {
         id: 1,
         title: "Practical 1 - Display Welcome Message Using Button Click",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-1.pdf`,
