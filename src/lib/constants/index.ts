@@ -41,6 +41,7 @@ export const navLinks = [
     id: 11,
     title: "MCQs",
     href: "/mcqs",
+    hideOnMobile: true,
     icon: ListTodo,
   },
 

@@ -25,7 +25,7 @@ export const Navbar = () => {
   const { toggleSidebar, setOpenMobile } = useSidebar();
 
   const [activePageTitle, setActivePageTitle] = useState(
-    navLinks.find((link) => link.href == pathname)?.title,
+    navLinks.find((link) => pathname.includes(link.href))?.title,
   );
 
   useLayoutEffect(() => {
@@ -33,6 +33,8 @@ export const Navbar = () => {
       setActivePageTitle("Source Codes");
     } else if (pathname.includes("/flash-cards")) {
       setActivePageTitle("Flash Cards");
+    } else if (pathname == "/") {
+      setActivePageTitle("Materials");
     } else {
       setActivePageTitle(
         () =>
