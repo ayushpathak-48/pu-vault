@@ -76,9 +76,24 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-5.pdf`,
       },
       {
+        id: 6,
+        title: "Practical - 6",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-6.pdf`,
+      },
+      {
         id: 7,
         title: "Practical - 7",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical: SavedInstance State",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/savedInstance.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical: Shared Preference",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/sharedPreference.pdf`,
       },
     ],
     // que_papers: [
