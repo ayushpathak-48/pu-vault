@@ -328,13 +328,19 @@ export const impLinks = [
 
 export const alertContent = [
   {
+    id: 2,
+    title: "Mid-Term Time Table",
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/mid-term-table.pdf`,
+  },
+  {
     id: 1,
     title: "Academic Calendar",
     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/academic-calendar.pdf`,
   },
-  {
-    id: 2,
-    title: "Research Paper Guidelines",
-    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
-  },
+
+  // {
+  //   id: 2,
+  //   title: "Research Paper Guidelines",
+  //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
+  // },
 ];
