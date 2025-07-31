@@ -2251,7 +2251,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
 `,
           },
           // {
@@ -2265,15 +2264,15 @@ public class MainActivity extends AppCompatActivity {
       //  p-7
       {
         key: "music-service-with-start-stop",
-        name: "Music Service with Start/Stop",
+        name: "Practical - 7: Music Service with Start/Stop",
         pageBlocks: [
           {
             type: "heading",
-            value: "Music Service with Start/Stop",
+            value: "Practical - 7: Music Service with Start/Stop",
           },
           {
             type: "btn",
-            title: "Download Project: Color Menu",
+            title: "Download Project: Music Service Project",
             value:
               "https://github.com/ayushpathak-48/services-project/archive/refs/heads/main.zip",
           },
