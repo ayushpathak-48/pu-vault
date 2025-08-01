@@ -584,16 +584,26 @@ export const sem3specializationMaterials = [
       },
     ],
     practicals_link: [
-      //   {
-      //     id: 0,
-      //     title: "Index",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/index.pdf`,
-      //   },
-      //   {
-      //     id: 1,
-      //     title: "Practical 1 - Tic Tac Toe Game",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-1.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/index.pdf`,
+      },
+      {
+        id: 1,
+        title: "Lab 1 - NMap",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Lab 2 - WireShark",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Lab 3 - DVWA",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-3.pdf`,
+      },
     ],
     que_papers: [
       //   {
@@ -603,11 +613,11 @@ export const sem3specializationMaterials = [
       //   },
     ],
     output_links: [
-      //   {
-      //     id: 0,
-      //     title: "Outputs",
-      //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ai-outputs.pdf`,
-      //   },
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/csf-outputs.pdf`,
+      },
     ],
   },
 ];
