@@ -2395,7 +2395,7 @@ public class MyMusicService extends Service {
       },
       // p-8
       {
-        key: "music-service-with-start-stop",
+        key: "prime-number-notification",
         name: "Practical - 8: Prime Number Notification",
         pageBlocks: [
           {
