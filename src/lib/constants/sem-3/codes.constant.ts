@@ -2396,11 +2396,11 @@ public class MyMusicService extends Service {
       // p-8
       {
         key: "prime-number-notification",
-        name: "Practical - 8: Prime Number Notification",
+        name: "Prime Number Notification",
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical - 8: Prime Number Notification",
+            value: "Prime Number Notification",
           },
           {
             type: "btn",
