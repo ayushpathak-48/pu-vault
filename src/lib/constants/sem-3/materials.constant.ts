@@ -349,6 +349,50 @@ export const sem3Materials = [
       // },
     ],
   },
+  {
+    id: 8,
+    subject_name: "Software Testing and Quality Assurance",
+    courses: ["mscit"],
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/software-testing-and-quality-assurance.pdf`,
+    key: "software-testing-and-quality-assurance",
+    notes_link: [
+      {
+        id: 1,
+        title: "Unit-1: Software Testing Fundamentals",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/1-software-testing-fundamentals.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Levels of Testing",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/2-levels-of-testing.pdf`,
+      },
+      {
+        id: 3,
+        title: "Unit-3: Types of Testing",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/3-types-of-testing.pdf`,
+      },
+    ],
+
+    practicals_link: [
+      // {
+      //   id: 1,
+      //   title: "Practical-1: Create React App",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/advanced-web-development-using-react-js/react-js-practical-1-journal.pdf`,
+      // },
+    ],
+    que_papers: [
+      // {
+      //   id: 1,
+      //   label: "SE Mid Sem Theory 2025",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/mid-sem-2025.pdf`,
+      // },
+      // {
+      //   id: 2,
+      //   label: "SE Mid Sem Answer Key",
+      //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/se/se-answer-key.pdf`,
+      // },
+    ],
+  },
 ];
 
 export const sem3specializationMaterials = [
