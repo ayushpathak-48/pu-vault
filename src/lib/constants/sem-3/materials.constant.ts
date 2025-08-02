@@ -683,6 +683,11 @@ export const sem3specializationMaterials = [
         title: "Question 1 to 14 Notes",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-notes-14-questions.pdf`,
       },
+      {
+        id: 1,
+        title: "Handwritten Question 1 to 14 Notes",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-handwritten-notes-14-questions.pdf`,
+      },
     ],
     practicals_link: [],
   },
