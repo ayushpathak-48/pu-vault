@@ -484,7 +484,7 @@ export const sem3specializationMaterials = [
   },
   // FSWD
   {
-    id: 1,
+    id: 2,
     subject_name: "Full Stack Web Development – II",
     value: "fswd",
     key: "full-stack-web-development-II",
@@ -535,7 +535,7 @@ export const sem3specializationMaterials = [
   },
   // CC
   {
-    id: 1,
+    id: 3,
     subject_name: "Cloud Computing - II",
     value: "cc",
     key: "cloud-computing-II",
@@ -608,7 +608,7 @@ export const sem3specializationMaterials = [
 
   // CSF
   {
-    id: 1,
+    id: 4,
     subject_name: "Cyber Security and Forensics - II",
     value: "csf",
     key: "cyber-security-and-forensics-II",
@@ -668,5 +668,22 @@ export const sem3specializationMaterials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/csf-outputs.pdf`,
       },
     ],
+  },
+  // BDA
+  {
+    id: 5,
+    subject_name: "Big Data Analytics - II",
+    value: "bda",
+    key: "big-data-analysis-II",
+    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/big-data-analytics-II.pdf`,
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "Question 1 to 14 Notes",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-notes-14-questions.pdf`,
+      },
+    ],
+    practicals_link: [],
   },
 ];
