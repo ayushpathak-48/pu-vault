@@ -121,11 +121,11 @@
 *::-webkit-scrollbar {
   height: 3px;
   width: 3px;
-  background-color: #eee;
+  /* background-color: #eee; */
 }
 *::-webkit-scrollbar-thumb {
   height: 3px;
-  background-color: #ccc;
+  background-color: #a9a9a9;
 }
 
 @layer base {
@@ -133,7 +133,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground scroll-smooth;
   }
 }
 

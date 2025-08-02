@@ -500,6 +500,11 @@ export const sem3specializationMaterials = [
         title: "Unit-2: RMI",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/2-rmi.pdf`,
       },
+      {
+        id: 3,
+        title: "Unit-3: JavaFX",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/3-javaFX.pdf`,
+      },
     ],
     practicals_link: [
       //   {
