@@ -626,6 +626,11 @@ export const sem3specializationMaterials = [
         title: "Unit-3: Networking Basics",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/3-networking-basics.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Firewall and Defense",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/4-firewall-and-defense.pdf`,
+      },
     ],
     practicals_link: [
       {
