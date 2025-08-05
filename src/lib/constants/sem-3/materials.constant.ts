@@ -662,6 +662,11 @@ export const sem3specializationMaterials = [
         title: "Unit-3: Networking Basics",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/3-networking-basics.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Firewall and Defense",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/4-firewall-and-defense.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -711,12 +716,22 @@ export const sem3specializationMaterials = [
     notes_link: [
       {
         id: 1,
+        title: "Unit-1: Understanding Analytics and Big Data",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/1-understanding-analytics-and-bigdata.pdf`,
+      },
+      {
+        id: 2,
+        title: "Unit-2: Hadoop Eco System",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/2-hadoopeco-system.pdf`,
+      },
+      {
+        id: 5,
         title: "Question 1 to 14 Notes",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-notes-14-questions.pdf`,
       },
       {
-        id: 2,
-        title: "Question 1 to 14 Handwritten Notes",
+        id: 6,
+        title: "Handwritten Question 1 to 14 Notes",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-handwritten-notes-14-questions.pdf`,
       },
     ],
