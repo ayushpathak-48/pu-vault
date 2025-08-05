@@ -3992,4 +3992,439 @@ public class ThreeDObjects extends Application {
       },
     ],
   },
+  // ostf
+  {
+    subject_name: "OSTF Python Practicals",
+    key: "ostf-python",
+    language: "python",
+    practicals: [
+      // P-1
+      {
+        key: "ostf-practicals",
+        name: "OSTF Python Practicals",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Program 1: Create and Display Elements of a List",
+          },
+          {
+            type: "code",
+            fileName: "program-1.py",
+            value: `# Program to create and display elements of a list
+my_list = [10, 20, 30, 40, 50]
+print("The list is:", my_list)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 2: Add, Update, and Remove Elements from a List",
+          },
+          {
+            type: "code",
+            fileName: "program-2.py",
+            value: `my_list = [1, 2, 3]
+my_list.append(4) # Add
+my_list[1] = 20 # Update index 1
+my_list.remove(3) # Remove element 3
+print("Updated list:", my_list)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 3: Sort a List in Ascending and Descending Order",
+          },
+          {
+            type: "code",
+            fileName: "program-3.py",
+            value: `numbers = [5, 2, 9, 1, 7]
+numbers.sort()
+print("Ascending:", numbers)
+numbers.sort(reverse=True)
+print("Descending:", numbers)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 4: Find the Maximum and Minimum Element in a List",
+          },
+          {
+            type: "code",
+            fileName: "program-4.py",
+            value: `numbers = [10, 25, 5, 75, 30]
+print("Max:", max(numbers))
+print("Min:", min(numbers))
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 5: Count Frequency of Each Element in a List",
+          },
+          {
+            type: "code",
+            fileName: "program-5.py",
+            value: `items = [1, 2, 2, 3, 3, 3, 4]
+frequency = {}
+for item in items:
+ if item in frequency:
+ frequency[item] += 1
+ else:
+ frequency[item] = 1
+print("Frequency of elements:", frequency)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 6: Remove Duplicates from a List",
+          },
+          {
+            type: "code",
+            fileName: "program-6.py",
+            value: `my_list = [1, 2, 2, 3, 4, 4, 5]
+unique_list = list(set(my_list))
+print("List without duplicates:", unique_list)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 7: Find the Sum and Average of List Elements",
+          },
+          {
+            type: "code",
+            fileName: "program-7.py",
+            value: `numbers = [10, 20, 30, 40]
+total = sum(numbers)
+average = total / len(numbers)
+print("Sum:", total)
+print("Average:", average)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 8: Merge Two Lists into One",
+          },
+          {
+            type: "code",
+            fileName: "program-8.py",
+            value: `list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+merged = list1 + list2
+print("Merged list:", merged)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 9: Search an Element in a List",
+          },
+          {
+            type: "code",
+            fileName: "program-9.py",
+            value: `my_list = [10, 20, 30, 40, 50]
+element = 30
+if element in my_list:
+ print(f"{element} found at index {my_list.index(element)}")
+else:
+ print(f"{element} not found")
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 10: Create and Display a Tuple",
+          },
+          {
+            type: "code",
+            fileName: "program-10.py",
+            value: `my_tuple = (10, 20, 30)
+print("Tuple elements:", my_tuple)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 11: Access Elements Using Indexing",
+          },
+          {
+            type: "code",
+            fileName: "program-11.py",
+            value: `my_tuple = (5, 10, 15, 20)
+print("First element:", my_tuple[0])
+print("Last element:", my_tuple[-1])
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 12: Slice a Tuple",
+          },
+          {
+            type: "code",
+            fileName: "program-12.py",
+            value: `my_tuple = (1, 2, 3, 4, 5)
+print("Sliced Tuple (index 1 to 3):", my_tuple[1:4])
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 13: Find the Length, Max, and Min in a Tuple",
+          },
+          {
+            type: "code",
+            fileName: "program-13.py",
+            value: `my_tuple = (8, 2, 10, 4)
+print("Length:", len(my_tuple))
+print("Max:", max(my_tuple))
+print("Min:", min(my_tuple))
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 14: Convert List to Tuple and Vice Versa",
+          },
+          {
+            type: "code",
+            fileName: "program-14.py",
+            value: `list1 = [1, 2, 3]
+tuple1 = tuple(list1)
+print("Tuple:", tuple1)
+new_list = list(tuple1)
+print("List again:", new_list)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 15: Create and Display a Dictionary",
+          },
+          {
+            type: "code",
+            fileName: "program-15.py",
+            value: `student = {"name": "Alice", "age": 20, "grade": "A"}
+print("Student Dictionary:", student)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 16: Add, Update, and Delete Dictionary Elements",
+          },
+          {
+            type: "code",
+            fileName: "program-16.py",
+            value: `student = {"name": "Bob"}
+student["age"] = 21 # Add
+student["name"] = "Robert" # Update
+del student["age"] # Delete
+print("Updated dictionary:", student)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 17: Access Dictionary Values Using Keys",
+          },
+          {
+            type: "code",
+            fileName: "program-17.py",
+            value: `person = {"name": "John", "city": "New York"}
+print("Name:", person.get("name"))
+print("City:", person["city"])
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 18: Iterate Through a Dictionary",
+          },
+          {
+            type: "code",
+            fileName: "program-18.py",
+            value: `fruits = {"apple": 2, "banana": 3, "cherry": 5}
+for key, value in fruits.items():
+ print(key, ":", value)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 19: Merge Two Dictionaries",
+          },
+          {
+            type: "code",
+            fileName: "program-19.py",
+            value: `dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+merged = {**dict1, **dict2}
+print("Merged Dictionary:", merged)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 20: Check if a Number is Palindrome",
+          },
+          {
+            type: "code",
+            fileName: "program-20.py",
+            value: `num = 121
+if str(num) == str(num)[::-1]:
+ print("Palindrome")
+else:
+ print("Not a palindrome")
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 21: Reverse a Number",
+          },
+          {
+            type: "code",
+            fileName: "program-21.py",
+            value: `num = 1234
+rev = 0
+while num > 0:
+ rev = rev * 10 + num % 10
+ num //= 10
+print("Reversed Number:", rev)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 22: Check Prime Number",
+          },
+          {
+            type: "code",
+            fileName: "program-22.py",
+            value: `num = 7
+if num > 1:
+ for i in range(2, num):
+ if num % i == 0:
+ print("Not Prime")
+ break
+ else:
+ print("Prime")
+else:
+ print("Not Prime")
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 23: Generate Fibonacci Series",
+          },
+          {
+            type: "code",
+            fileName: "program-23.py",
+            value: `n = 10
+a, b = 0, 1
+print("Fibonacci Series:")
+for _ in range(n):
+ print(a, end=" ")
+ a, b = b, a + b
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 24: Factorial Using Loop",
+          },
+          {
+            type: "code",
+            fileName: "program-24.py",
+            value: `num = 5
+fact = 1
+for i in range(1, num + 1):
+ fact *= i
+print("Factorial:", fact)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 25: Check Armstrong Number",
+          },
+          {
+            type: "code",
+            fileName: "program-25.py",
+            value: `num = 153
+sum = 0
+temp = num
+while temp > 0:
+ digit = temp % 10
+ sum += digit ** 3
+ temp //= 10
+if num == sum:
+ print("Armstrong Number")
+else:
+ print("Not Armstrong")
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 26: Count Vowels in a String",
+          },
+          {
+            type: "code",
+            fileName: "program-26.py",
+            value: `string = "Hello World"
+vowels = "aeiouAEIOU"
+count = sum(1 for ch in string if ch in vowels)
+print("Vowel Count:", count)
+`,
+          },
+          {
+            type: "heading",
+            value:
+              "Program 27: Find the Largest Element in a List Without max()",
+          },
+          {
+            type: "code",
+            fileName: "program-27.py",
+            value: `numbers = [10, 25, 5, 75, 30]
+largest = numbers[0]
+for num in numbers[1:]:
+ if num > largest:
+ largest = num
+print("Largest element:", largest)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 28: Find Common Elements Between Two Lists",
+          },
+          {
+            type: "code",
+            fileName: "program-28.py",
+            value: `list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common = list(set(list1) & set(list2))
+print("Common Elements:", common)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 29: Find Even and Odd Numbers in a List",
+          },
+          {
+            type: "code",
+            fileName: "program-29.py",
+            value: `numbers = [1, 2, 3, 4, 5, 6]
+even = [num for num in numbers if num % 2 == 0]
+odd = [num for num in numbers if num % 2 != 0]
+print("Even:", even)
+print("Odd:", odd)
+`,
+          },
+          {
+            type: "heading",
+            value: "Program 30: Count Positive, Negative, and Zero in a List",
+          },
+          {
+            type: "code",
+            fileName: "program-30.py",
+            value: `nums = [0, -1, 2, -3, 4, 0]
+pos = neg = zero = 0
+for num in nums:
+ if num > 0:
+ pos += 1
+ elif num < 0:
+ neg += 1
+ else:
+ zero += 1
+print("Positive:", pos)
+print("Negative:", neg)
+print("Zero:", zero)
+`,
+          },
+        ],
+      },
+    ],
+  },
 ];

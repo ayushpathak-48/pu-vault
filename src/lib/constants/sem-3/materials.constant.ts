@@ -297,6 +297,37 @@ export const sem3Materials = [
       //   },
     ],
   },
+  // OSTF Python
+  {
+    id: 9,
+    subject_name: "OSTF Python",
+    courses: ["mca"],
+    key: "ostf-python",
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "OSTF Python Practicals Lab Manual",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/ostf/ostf-python-practical-lab-manual.pdf`,
+      },
+    ],
+    practicals_link: [],
+    // que_papers: [
+    //   {
+    //     id: 1,
+    //     label: "AJP Mid Sem Theory 2025",
+    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
+    //   },
+
+    // ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/mad-outputs.pdf`,
+      },
+    ],
+  },
   // Msc.IT
   // Advanced Web Development Using React Js
   {
@@ -684,8 +715,8 @@ export const sem3specializationMaterials = [
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-notes-14-questions.pdf`,
       },
       {
-        id: 1,
-        title: "Handwritten Question 1 to 14 Notes",
+        id: 2,
+        title: "Question 1 to 14 Handwritten Notes",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-handwritten-notes-14-questions.pdf`,
       },
     ],
