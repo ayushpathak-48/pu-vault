@@ -4064,11 +4064,13 @@ print("Min:", min(numbers))
             fileName: "program-5.py",
             value: `items = [1, 2, 2, 3, 3, 3, 4]
 frequency = {}
+
 for item in items:
- if item in frequency:
- frequency[item] += 1
- else:
- frequency[item] = 1
+    if item in frequency:
+        frequency[item] += 1
+    else:
+        frequency[item] = 1
+
 print("Frequency of elements:", frequency)
 `,
           },
@@ -4286,15 +4288,16 @@ print("Reversed Number:", rev)
             type: "code",
             fileName: "program-22.py",
             value: `num = 7
+
 if num > 1:
- for i in range(2, num):
- if num % i == 0:
- print("Not Prime")
- break
- else:
- print("Prime")
+    for i in range(2, num):
+        if num % i == 0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
 else:
- print("Not Prime")
+    print("Not Prime")
 `,
           },
           {
@@ -4369,9 +4372,11 @@ print("Vowel Count:", count)
             fileName: "program-27.py",
             value: `numbers = [10, 25, 5, 75, 30]
 largest = numbers[0]
+
 for num in numbers[1:]:
- if num > largest:
- largest = num
+    if num > largest:
+        largest = num
+
 print("Largest element:", largest)
 `,
           },
@@ -4411,13 +4416,15 @@ print("Odd:", odd)
             fileName: "program-30.py",
             value: `nums = [0, -1, 2, -3, 4, 0]
 pos = neg = zero = 0
+
 for num in nums:
- if num > 0:
- pos += 1
- elif num < 0:
- neg += 1
- else:
- zero += 1
+    if num > 0:
+        pos += 1
+    elif num < 0:
+        neg += 1
+    else:
+        zero += 1
+
 print("Positive:", pos)
 print("Negative:", neg)
 print("Zero:", zero)
