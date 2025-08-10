@@ -62,3 +62,17 @@ export const downloadFile = async (fileUrl: string) => {
     console.error("Download failed:", err);
   }
 };
+
+export function isWithinTimeRange() {
+  const startHour = 9;
+  const startMinute = 30;
+  const endHour = 11;
+  const endMinute = 30;
+
+  const now = new Date();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const startMinutes = startHour * 60 + startMinute;
+  const endMinutes = endHour * 60 + endMinute;
+
+  return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
+}

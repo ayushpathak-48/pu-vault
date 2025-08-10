@@ -13,16 +13,19 @@ import {
 import { WhatsappButton } from "../WhatsappButton";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { isWithinTimeRange } from "@/lib/utils";
 
 export const WhatsappDialog = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const whatsappDialogClosed = localStorage.getItem(
-      "whatsappDialogClosed-27-07",
-    );
-    if (!whatsappDialogClosed) {
-      setOpen(true);
+    if (!isWithinTimeRange()) {
+      const whatsappDialogClosed = localStorage.getItem(
+        "whatsappDialogClosed-27-07",
+      );
+      if (!whatsappDialogClosed) {
+        setOpen(true);
+      }
     }
   }, []);
 
