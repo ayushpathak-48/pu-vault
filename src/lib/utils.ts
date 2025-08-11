@@ -65,7 +65,7 @@ export const downloadFile = async (fileUrl: string) => {
 
 export function isWithinTimeRange() {
   const startHour = 9;
-  const startMinute = 30;
+  const startMinute = 0;
   const endHour = 11;
   const endMinute = 30;
 
