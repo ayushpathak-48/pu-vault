@@ -536,7 +536,7 @@ A->C->D->B->A`,
             type: "code",
             fileName: "set_map.py",
             value: `class Student:
-    def _init_(self, name, rollno, m1, m2):
+    def __init__(self, name, rollno, m1, m2):
         self.name = name
         self.rollno = rollno
         self.m1 = m1
