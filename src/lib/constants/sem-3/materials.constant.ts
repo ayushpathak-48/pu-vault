@@ -328,6 +328,68 @@ export const sem3Materials = [
       },
     ],
   },
+  //  Minor project
+  {
+    id: 10,
+    subject_name: "Minor Project",
+
+    key: "minor-project",
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "Documentation Guidelines",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/word-file-guidelines.docx`,
+      },
+      {
+        id: 2,
+        title: "PPT Guidelines",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/ppt-guidelines.docx`,
+      },
+      {
+        id: 3,
+        title: "Home Page",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/1-home-page.docx`,
+      },
+      {
+        id: 4,
+        title: "Certificate",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/2-certificate.docx`,
+      },
+      {
+        id: 5,
+        title: "Index",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/3-index.docx`,
+      },
+      {
+        id: 6,
+        title: "Header & Footer",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/4-header_footer.docx`,
+      },
+      {
+        id: 7,
+        title: "Chapter 1: About Department of MCA & M.Sc. IT",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/5-chapter_1.docx`,
+      },
+    ],
+    practicals_link: [],
+    // que_papers: [
+    //   {
+    //     id: 1,
+    //     label: "AJP Mid Sem Theory 2025",
+    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
+    //   },
+
+    // ],
+    // output_links: [
+    //   {
+    //     id: 0,
+    //     title: "Outputs",
+    //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/mad-outputs.pdf`,
+    //   },
+    // ],
+  },
+
   // Msc.IT
   // Advanced Web Development Using React Js
   {
