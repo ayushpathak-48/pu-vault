@@ -96,14 +96,18 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/sharedPreference.pdf`,
       },
     ],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "MAD Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/mad-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "MAD Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/mad-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -204,14 +208,18 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-11.pdf`,
       },
     ],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "WAD Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/wad-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "WAD Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/wad-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -312,14 +320,18 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "OSTF Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ostf-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "OSTF Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ostf-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -561,11 +573,16 @@ export const sem3specializationMaterials = [
       },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "AI-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ai-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "AI-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ai-paper-solution.pdf`,
+      },
     ],
     output_links: [
       //   {
@@ -612,11 +629,16 @@ export const sem3specializationMaterials = [
       },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "FSWD-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/fswd-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "FSWD-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/fswd-paper-solution.pdf`,
+      },
     ],
     output_links: [
       {
