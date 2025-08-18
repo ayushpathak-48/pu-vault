@@ -706,11 +706,16 @@ export const sem3specializationMaterials = [
       //   },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "CC-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/cc-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "CC-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/cc-paper-solution.pdf`,
+      },
     ],
     output_links: [
       //   {
