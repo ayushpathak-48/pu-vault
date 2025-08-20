@@ -756,6 +756,11 @@ export const sem3specializationMaterials = [
         title: "Unit-4: Firewall and Defense",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/4-firewall-and-defense.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: Digital Forensics Introduction & File System",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/5-digital-forensics-introduction-and-file-systems.pdf`,
+      },
     ],
     practicals_link: [
       {
