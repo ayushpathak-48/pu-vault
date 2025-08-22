@@ -2841,6 +2841,166 @@ public class MainActivity extends AppCompatActivity {
           // },
         ],
       },
+      // Tab Host Practical
+      {
+        key: "shared-preferences-app",
+        name: "Practical:14 SharedPreference App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical:14 SharedPreference App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: SharedPreference App",
+            value:
+              "https://github.com/ayushpathak-48/mad-tab-host/archive/refs/heads/main.zip",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+            <include layout="@layout/tab1"/>
+            <include layout="@layout/tab2"/>
+            <include layout="@layout/tab3"/>
+
+        </FrameLayout>
+    </LinearLayout>
+</TabHost>
+
+`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "tab1.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="You're viewing Tab 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "tab2.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab2"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="This is Tab 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "tab3.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab3"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="This is Tab 3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.tabhost;
+
+import android.os.Bundle;
+import android.widget.TabHost;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    TabHost tabHost;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tabHost = findViewById(android.R.id.tabhost);
+        tabHost.setup();
+
+        // Tab 1
+        TabHost.TabSpec spec1 = tabHost.newTabSpec("Tab One");
+        spec1.setContent(R.id.tab1);
+        spec1.setIndicator("Home");
+        tabHost.addTab(spec1);
+
+        // Tab 2
+        TabHost.TabSpec spec2 = tabHost.newTabSpec("Tab Two");
+        spec2.setContent(R.id.tab2);
+        spec2.setIndicator("Profile");
+        tabHost.addTab(spec2);
+
+        // Tab 3
+        TabHost.TabSpec spec3 = tabHost.newTabSpec("Tab Three");
+        spec3.setContent(R.id.tab3);
+        spec3.setIndicator("Settings");
+        tabHost.addTab(spec3);
+    }
+}
+
+`,
+          },
+
+          // {
+          //   type: "code",
+          //   language: "text",
+          //   is_output: false,
+          //   value: ``,
+          // },
+        ],
+      },
     ],
   },
   // MscIt ADV-(ReactJs)
