@@ -207,6 +207,11 @@ export const sem3Materials = [
         title: "Practical 11 - Use of Master Page and Session",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-11.pdf`,
       },
+      {
+        id: 12,
+        title: "Practical 12 - Working with Cookies",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-12.pdf`,
+      },
     ],
     que_papers: [
       {
