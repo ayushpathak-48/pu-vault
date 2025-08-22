@@ -96,14 +96,18 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/sharedPreference.pdf`,
       },
     ],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "MAD Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/mad-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "MAD Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/mad-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -203,15 +207,24 @@ export const sem3Materials = [
         title: "Practical 11 - Use of Master Page and Session",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-11.pdf`,
       },
+      {
+        id: 12,
+        title: "Practical 12 - Working with Cookies",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-12.pdf`,
+      },
     ],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "WAD Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/wad-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "WAD Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/wad-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -312,14 +325,18 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [],
-    // que_papers: [
-    //   {
-    //     id: 1,
-    //     label: "AJP Mid Sem Theory 2025",
-    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
-    //   },
-
-    // ],
+    que_papers: [
+      {
+        id: 1,
+        label: "OSTF Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ostf-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "OSTF Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ostf-paper-solution.pdf`,
+      },
+    ],
     output_links: [
       {
         id: 0,
@@ -328,6 +345,68 @@ export const sem3Materials = [
       },
     ],
   },
+  //  Minor project
+  {
+    id: 10,
+    subject_name: "Minor Project",
+
+    key: "minor-project",
+    syllabus_link: ``,
+    notes_link: [
+      {
+        id: 1,
+        title: "Documentation Guidelines",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/word-file-guidelines.docx`,
+      },
+      {
+        id: 2,
+        title: "PPT Guidelines",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/ppt-guidelines.docx`,
+      },
+      {
+        id: 3,
+        title: "Home Page",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/1-home-page.docx`,
+      },
+      {
+        id: 4,
+        title: "Certificate",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/2-certificate.docx`,
+      },
+      {
+        id: 5,
+        title: "Index",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/3-index.docx`,
+      },
+      {
+        id: 6,
+        title: "Header & Footer",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/4-header_footer.docx`,
+      },
+      {
+        id: 7,
+        title: "Chapter 1: About Department of MCA & M.Sc. IT",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/minor-project/5-chapter_1.docx`,
+      },
+    ],
+    practicals_link: [],
+    // que_papers: [
+    //   {
+    //     id: 1,
+    //     label: "AJP Mid Sem Theory 2025",
+    //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ajp/mid-sem-2025.pdf`,
+    //   },
+
+    // ],
+    // output_links: [
+    //   {
+    //     id: 0,
+    //     title: "Outputs",
+    //     journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/mad-outputs.pdf`,
+    //   },
+    // ],
+  },
+
   // Msc.IT
   // Advanced Web Development Using React Js
   {
@@ -499,11 +578,16 @@ export const sem3specializationMaterials = [
       },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "AI-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ai-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "AI-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/ai-paper-solution.pdf`,
+      },
     ],
     output_links: [
       //   {
@@ -550,11 +634,16 @@ export const sem3specializationMaterials = [
       },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "FSWD-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/fswd-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "FSWD-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/fswd-paper-solution.pdf`,
+      },
     ],
     output_links: [
       {
@@ -622,11 +711,16 @@ export const sem3specializationMaterials = [
       //   },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "CC-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/cc-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "CC-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/cc-paper-solution.pdf`,
+      },
     ],
     output_links: [
       //   {
@@ -667,6 +761,11 @@ export const sem3specializationMaterials = [
         title: "Unit-4: Firewall and Defense",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/4-firewall-and-defense.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: Digital Forensics Introduction & File System",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/5-digital-forensics-introduction-and-file-systems.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -691,11 +790,16 @@ export const sem3specializationMaterials = [
       },
     ],
     que_papers: [
-      //   {
-      //     id: 1,
-      //     label: "AI Mid Sem Theory 2025",
-      //     href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/ai/mid-sem-2025.pdf`,
-      //   },
+      {
+        id: 1,
+        label: "CSF-II Mid Sem Theory 2025",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/csf-mid-term.pdf`,
+      },
+      {
+        id: 2,
+        label: "CSF-II Mid Sem Solution",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/papers/mid-term/csf-paper-solution.pdf`,
+      },
     ],
     output_links: [
       {
