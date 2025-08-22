@@ -3001,16 +3001,16 @@ public class MainActivity extends AppCompatActivity {
       },
       // Tab Host Practical
       {
-        key: "shared-preferences-app",
-        name: "Practical:14 SharedPreference App",
+        key: "tab-host-practical",
+        name: "Tab Host Practical",
         pageBlocks: [
           {
             type: "heading",
-            value: "Practical:14 SharedPreference App",
+            value: "Tab Host Practical",
           },
           {
             type: "btn",
-            title: "Download Project: SharedPreference App",
+            title: "Download Project: Tab Host App",
             value:
               "https://github.com/ayushpathak-48/mad-tab-host/archive/refs/heads/main.zip",
           },
