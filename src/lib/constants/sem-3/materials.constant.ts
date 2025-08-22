@@ -86,6 +86,22 @@ export const sem3Materials = [
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-7.pdf`,
       },
       {
+        id: 10,
+        title: "Practical - 8",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-8.pdf`,
+      },
+      {
+        id: 11,
+        title: "Practical - 9",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-9.pdf`,
+      },
+
+      {
+        id: 12,
+        title: "Practical: Tab Host",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/tab-host.pdf`,
+      },
+      {
         id: 8,
         title: "Practical: SavedInstance State",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/savedInstance.pdf`,
