@@ -329,8 +329,8 @@ export const impLinks = [
 export const alertContent = [
   {
     id: 2,
-    title: "Mid-Term Time Table",
-    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/mid-term-table.pdf`,
+    title: "End Term Time Table",
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/sem-3_time-table.pdf`,
   },
   {
     id: 1,
