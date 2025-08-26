@@ -155,6 +155,11 @@ export const sem3Materials = [
           "Unit-3: ASP.NET Validation Controls, State Management & NavigationValidation Control",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/3-asp.net-validation-controls,-state-management-&-navigationvalidation-control.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Data Access through ADO.NET",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/4-data-access-through-ado.net.pdf`,
+      },
     ],
     practicals_link: [
       {
