@@ -3115,6 +3115,174 @@ public class MainActivity extends AppCompatActivity {
         ],
       },
 
+      //  p-10
+      //  p-10
+      {
+        key: "generate-list",
+        name: "Practical-10: Generate Dynamic List",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-10: Generate Dynamic List",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter a number"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnGenerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate List" />
+
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_second.xml",
+            value: `<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp" />
+
+</ScrollView>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.practical10;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    EditText etNumber;
+    Button btnGenerate;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        etNumber = findViewById(R.id.etNumber);
+        btnGenerate = findViewById(R.id.btnGenerate);
+
+        btnGenerate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String numStr = etNumber.getText().toString().trim();
+                if (!numStr.isEmpty()) {
+                    int num = Integer.parseInt(numStr);
+
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    intent.putExtra("count", num);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "SecondActivity.java",
+            value: `package com.example.practical10;
+
+import static com.example.practical10.R.layout.activity_second;
+
+import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SecondActivity extends AppCompatActivity {
+    LinearLayout container;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(activity_second);
+
+        container = findViewById(R.id.container);
+
+        // Get number from intent
+        int count = getIntent().getIntExtra("count", 0);
+
+        // Dynamically generate TextViews
+        for (int i = 1; i <= count; i++) {
+            TextView tv = new TextView(this);
+            tv.setText("Item " + i);
+            tv.setTextSize(18f);
+            tv.setPadding(10, 10, 10, 10);
+            container.addView(tv);
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "AndroidManifest.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Practical10"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity"></activity>
+    </application>
+
+</manifest>`,
+          },
+        ],
+      },
+
       {
         key: "saved-instance-state",
         name: "SavedInstanceState App",
