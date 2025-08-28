@@ -3282,6 +3282,358 @@ public class SecondActivity extends AppCompatActivity {
           },
         ],
       },
+      //  p-11
+      {
+        key: "practical-11",
+        name: "Practical-11: Phone Dialer App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-11: Phone Dialer App",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "AndroidManifest.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Dialerapp"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:hint="Enter Mobile Number"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnCall"
+        android:text="Make Call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.dialerapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText editTextNumber;
+    Button btnCall;
+    private static final int REQUEST_CALL = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editTextNumber = findViewById(R.id.editTextNumber);
+        btnCall = findViewById(R.id.btnCall);
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makePhoneCall();
+            }
+        });
+    }
+
+    private void makePhoneCall() {
+        String number = editTextNumber.getText().toString();
+
+        if (number.trim().length() > 0) {
+            if (ContextCompat.checkSelfPermission(MainActivity.this,
+                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+            } else {
+                String dial = "tel:" + number;
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+            }
+        } else {
+            Toast.makeText(this, "Enter a valid phone number", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_CALL) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                makePhoneCall();
+            } else {
+                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}`,
+          },
+        ],
+      },
+
+      {
+        key: "practical-12",
+        name: "Practical-12: SMS Manager App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-12: SMS Manager App",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "AndroidManifest.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Smsmanager"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Inbox Messages:"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:id="@+id/listViewMessages"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:dividerHeight="1dp"/>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:hint="Enter phone number"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:hint="Enter message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:text="Send SMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.smsmanager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import android.Manifest;
+import android.content.ContentResolver;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    ListView listViewMessages;
+    EditText editTextNumber, editTextMessage;
+    Button btnSend;
+
+    private static final int REQUEST_SMS_PERMISSION = 123;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        listViewMessages = findViewById(R.id.listViewMessages);
+        editTextNumber = findViewById(R.id.editTextNumber);
+        editTextMessage = findViewById(R.id.editTextMessage);
+        btnSend = findViewById(R.id.btnSend);
+
+        // Request SMS permissions
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS},
+                    REQUEST_SMS_PERMISSION);
+        } else {
+            loadInboxMessages();
+        }
+
+        // Send SMS button click
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendSmsMessage();
+            }
+        });
+    }
+
+    // Load Inbox Messages
+    private void loadInboxMessages() {
+        ArrayList<String> smsList = new ArrayList<>();
+        Uri uriSms = Uri.parse("content://sms/inbox");
+        ContentResolver cr = getContentResolver();
+
+        Cursor cursor = cr.query(uriSms, null, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+                String body = cursor.getString(cursor.getColumnIndexOrThrow("body"));
+                smsList.add("From: " + address + "\\nMessage: " + body);
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, smsList);
+        listViewMessages.setAdapter(adapter);
+    }
+
+    // Send SMS Message
+    private void sendSmsMessage() {
+        String phone = editTextNumber.getText().toString();
+        String message = editTextMessage.getText().toString();
+
+        if (phone.isEmpty() || message.isEmpty()) {
+            Toast.makeText(this, "Please enter number and message", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phone, null, message, null, null);
+            Toast.makeText(this, "SMS Sent!", Toast.LENGTH_SHORT).show();
+            editTextMessage.setText("");
+        } catch (Exception e) {
+            Toast.makeText(this, "Failed to send SMS: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    // Handle permission result
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_SMS_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                loadInboxMessages();
+            } else {
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}`,
+          },
+        ],
+      },
 
       {
         key: "saved-instance-state",
