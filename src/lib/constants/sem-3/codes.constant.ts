@@ -5187,6 +5187,163 @@ public class ThreeDObjects extends Application {
           // },
         ],
       },
+
+      //  p-5
+      {
+        key: "angular-mvc-students",
+        name: "Practical - 5: AngularJS MVC - Student List",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 5 - WAP to implement MVC using AngularJS (Student Management System)",
+          },
+          {
+            type: "code",
+            fileName: "app.js",
+            value: `// Define AngularJS module
+var app = angular.module("studentApp", []);
+
+// Define Controller
+app.controller("StudentController", function ($scope) {
+  // Model: initial data
+  $scope.students = [
+    { name: "Rahul", branch: "CSE" },
+    { name: "Priya", branch: "IT" },
+    { name: "Amit", branch: "ECE" },
+  ];
+
+  // Add Student (Controller logic)
+  $scope.addStudent = function () {
+    if (
+      $scope.newStudent &&
+      $scope.newStudent.name &&
+      $scope.newStudent.branch
+    ) {
+      $scope.students.push({
+        name: $scope.newStudent.name,
+        branch: $scope.newStudent.branch,
+      });
+      $scope.newStudent = {}; // clear input fields
+    }
+  };
+});`,
+          },
+          {
+            type: "code",
+            fileName: "index.html",
+            value: `<!DOCTYPE html>
+<html ng-app="studentApp">
+  <head>
+    <title>AngularJS MVC - Student List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="StudentController">
+    <h2>📘 Student Management</h2>
+
+    <!-- Form to add a student -->
+    <label>Name:</label>
+    <input type="text" ng-model="newStudent.name" placeholder="Enter name" />
+    <label>Branch:</label>
+    <input type="text" ng-model="newStudent.branch" placeholder="Enter branch" />
+    <button ng-click="addStudent()">Add Student</button>
+
+    <hr />
+
+    <!-- View: Student List -->
+    <h3>Student List</h3>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Branch</th>
+      </tr>
+      <tr ng-repeat="s in students track by $index">
+        <td>{{$index + 1}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.branch}}</td>
+      </tr>
+    </table>
+  </body>
+  <script src="app.js"></script>
+</html>`,
+          },
+        ],
+      },
+      //  p-6
+      //  p-6
+      {
+        key: "angular-data-binding",
+        name: "Practical - 6: AngularJS Data Binding (One-way & Two-way)",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 6 - WAP to implement Data Binding (One-way and Two-way) using AngularJS",
+          },
+          {
+            type: "code",
+            fileName: "oneWayBinding.html",
+            value: `<!-- To implement Data binding using Angular JS -->
+<!DOCTYPE html>
+<html lang="en" ng-app="oneWayApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One-way Data Binding Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="OneWayController">
+    <h2>AngularJS One-way Binding</h2>
+
+    <!-- Using Interpolation -->
+    <p>Student Name: {{student.name}}</p>
+    <p>Branch: {{student.branch}}</p>
+
+    <!-- Using ng-bind -->
+    <p ng-bind="student.email"></p>
+
+    <script>
+      var app = angular.module("oneWayApp", []);
+      app.controller("OneWayController", function ($scope) {
+        $scope.student = {
+          name: "John",
+          branch: "MCA",
+          email: "john@gmail.com",
+        };
+      });
+    </script>
+  </body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "twoWayBinding.html",
+            value: `<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS Data Binding Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="BindingController">
+    <h2>Angular JS Two-Way Binding</h2>
+
+    <h3>2. Two-way binding (MVC)</h3>
+    <label>Enter Your Name: </label>
+    <input type="text" ng-model="studentName" />
+    <p>Hello <b>{{studentName}}</b>, nice to meet you!</p>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("BindingController", function ($scope) {
+        $scope.studentName = "tara";
+      });
+    </script>
+  </body>
+</html>`,
+          },
+        ],
+      },
     ],
   },
   // ostf
