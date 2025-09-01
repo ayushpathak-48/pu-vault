@@ -668,6 +668,31 @@ export const sem3specializationMaterials = [
         title: "Practical 1 - WAP to implement connection",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-1.pdf`,
       },
+      {
+        id: 2,
+        title: "Practical 2 - WAP to implement RMI",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3 - WAP to implement 2D object Using JAVA FX",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4 - WAP to implement 3D object Using JAVA FX",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Practical 5 - WAP to implement MVC Using Angular JS",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6 - WAP to implement Data binding Using Angular JS",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/fswd/practical-6.pdf`,
+      },
     ],
     que_papers: [
       {
