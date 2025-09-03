@@ -110,6 +110,21 @@ export const sem3Materials = [
         title: "Practical - 12",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-12.pdf`,
       },
+      {
+        id: 16,
+        title: "Practical - 13",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-13.pdf`,
+      },
+      {
+        id: 17,
+        title: "Practical - 14",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-14.pdf`,
+      },
+      {
+        id: 18,
+        title: "Practical - 15",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/mad/practical-15.pdf`,
+      },
 
       {
         id: 12,
