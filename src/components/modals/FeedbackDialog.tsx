@@ -96,6 +96,7 @@
 
 import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { UAParser } from "ua-parser-js"; // ✅ named import, not default
 
 // Setup Supabase client (replace with your keys)
 const supabase = createClient(
@@ -109,10 +110,24 @@ export const FeedbackDialog = () => {
 
     if (!feedbackSubmitted) {
       const saveVisit = async () => {
-        // Option 1: Insert a row each time a new user visits
-        const { error } = await supabase
-          .from("feedback")
-          .insert([{ feedback: "new-device", name: null }]);
+        const parser = new UAParser();
+        const result = parser.getResult();
+
+        const deviceType = result.device.type || "Desktop";
+        const deviceModel = result.device.model || "";
+        const deviceName = deviceModel
+          ? `${deviceType} (${deviceModel})`
+          : deviceType;
+
+        const browser = result.browser.name || "Unknown Browser";
+        const os = result.os.name || "Unknown OS";
+
+        const { error } = await supabase.from("feedback").insert([
+          {
+            name: "Anonymous",
+            feedback: `new-device | ${deviceName} | ${browser} | ${os}`,
+          },
+        ]);
 
         if (!error) {
           localStorage.setItem("feedbackSubmitted", "true");
