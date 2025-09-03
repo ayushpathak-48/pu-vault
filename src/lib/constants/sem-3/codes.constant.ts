@@ -3634,6 +3634,778 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
+      //  p - 13
+      {
+        key: "practical-13",
+        name: "Practical-13: User Registration App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-13: User Registration App",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:hint="Enter Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="Registered Users:"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewUsers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "user_item.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#EEEEEE"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:text="Name"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:text="Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtPassword"
+        android:text="Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:text="Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:text="Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.userregistration;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.*;
+import java.io.*;
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements UserAdapter.UserActionListener {
+
+    EditText editTextName, editTextEmail, editTextPassword;
+    Button btnRegister;
+    RecyclerView recyclerViewUsers;
+
+    String fileName = "user_data.txt";
+    ArrayList<User> usersList;
+    UserAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editTextName = findViewById(R.id.editTextName);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        btnRegister = findViewById(R.id.btnRegister);
+        recyclerViewUsers = findViewById(R.id.recyclerViewUsers);
+
+        usersList = new ArrayList<>();
+        adapter = new UserAdapter(this, usersList, this);
+        recyclerViewUsers.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewUsers.setAdapter(adapter);
+
+        loadUsersFromFile();
+
+        btnRegister.setOnClickListener(v -> saveUserData());
+    }
+
+    private void saveUserData() {
+        String name = editTextName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        User newUser = new User(name, email, password);
+        usersList.add(newUser);
+        adapter.notifyDataSetChanged();
+        saveAllUsersToFile();
+
+        editTextName.setText("");
+        editTextEmail.setText("");
+        editTextPassword.setText("");
+
+        Toast.makeText(this, "User registered successfully!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void saveAllUsersToFile() {
+        try {
+            FileOutputStream fos = openFileOutput(fileName, MODE_PRIVATE);
+            OutputStreamWriter osw = new OutputStreamWriter(fos);
+
+            for (User u : usersList) {
+                osw.write(u.toString() + "\\n");
+            }
+            osw.close();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error saving file", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void loadUsersFromFile() {
+        try {
+            FileInputStream fis = openFileInput(fileName);
+            BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+            String line;
+            while ((line = br.readLine()) != null) {
+                User user = User.fromString(line);
+                if (user != null) usersList.add(user);
+            }
+            br.close();
+            adapter.notifyDataSetChanged();
+        } catch (FileNotFoundException e) {
+            // First time, ignore
+        } catch (IOException e) {
+            Toast.makeText(this, "Error reading file", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onDelete(User user) {
+        usersList.remove(user);
+        adapter.notifyDataSetChanged();
+        saveAllUsersToFile();
+        Toast.makeText(this, "User deleted", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onEdit(User user, int position) {
+        editTextName.setText(user.name);
+        editTextEmail.setText(user.email);
+        editTextPassword.setText(user.password);
+
+        // Remove old entry (it will be added again after update)
+        usersList.remove(position);
+        adapter.notifyDataSetChanged();
+        saveAllUsersToFile();
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "User.java",
+            value: `package com.example.userregistration;
+
+public class User {
+    String name;
+    String email;
+    String password;
+
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return name + "," + email + "," + password;
+    }
+
+    public static User fromString(String line) {
+        String[] parts = line.split(",");
+        if (parts.length == 3) {
+            return new User(parts[0], parts[1], parts[2]);
+        }
+        return null;
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "UserAdapter.java",
+            value: `package com.example.userregistration;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.view.*;
+import android.widget.*;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
+
+    Context context;
+    ArrayList<User> userList;
+    UserActionListener listener;
+
+    public interface UserActionListener {
+        void onDelete(User user);
+        void onEdit(User user, int position);
+    }
+
+    public UserAdapter(Context context, ArrayList<User> userList, UserActionListener listener) {
+        this.context = context;
+        this.userList = userList;
+        this.listener = listener;
+    }
+
+    @NonNull
+    @Override
+    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.user_item, parent, false);
+        return new UserViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+        User user = userList.get(position);
+        holder.txtName.setText(user.name);
+        holder.txtEmail.setText(user.email);
+        holder.txtPassword.setText(user.password);
+
+        holder.btnDelete.setOnClickListener(v -> {
+            new AlertDialog.Builder(context)
+                    .setTitle("Delete User")
+                    .setMessage("Are you sure you want to delete this user?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        listener.onDelete(user);
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+
+        holder.btnEdit.setOnClickListener(v -> {
+            listener.onEdit(user, position);
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return userList.size();
+    }
+
+    public static class UserViewHolder extends RecyclerView.ViewHolder {
+        TextView txtName, txtEmail, txtPassword;
+        Button btnDelete, btnEdit;
+
+        public UserViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtName = itemView.findViewById(R.id.txtName);
+            txtEmail = itemView.findViewById(R.id.txtEmail);
+            txtPassword = itemView.findViewById(R.id.txtPassword);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
+        }
+    }
+}`,
+          },
+        ],
+      },
+      //  p - 14
+      {
+        key: "practical-14",
+        name: "Practical-14: SharedPreferences App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical-14: SharedPreferences App (Background Color Changer)",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Select Background Color"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnRed"
+        android:text="Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnGreen"
+        android:text="Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnBlue"
+        android:text="Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.sharedpreferencesapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+public class MainActivity extends AppCompatActivity {
+
+    LinearLayout mainLayout;
+    Button btnRed, btnGreen, btnBlue;
+
+    SharedPreferences sharedPreferences;
+    String PREF_NAME = "ColorPref";
+    String KEY_COLOR = "backgroundColor";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mainLayout = findViewById(R.id.mainLayout);
+        btnRed = findViewById(R.id.btnRed);
+        btnGreen = findViewById(R.id.btnGreen);
+        btnBlue = findViewById(R.id.btnBlue);
+
+        // Load SharedPreferences
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        String savedColor = sharedPreferences.getString(KEY_COLOR, "WHITE"); // default White
+
+        // Apply saved color
+        applyColor(savedColor);
+
+        // Button Listeners
+        btnRed.setOnClickListener(v -> saveAndApplyColor("RED"));
+        btnGreen.setOnClickListener(v -> saveAndApplyColor("GREEN"));
+        btnBlue.setOnClickListener(v -> saveAndApplyColor("BLUE"));
+    }
+
+    private void saveAndApplyColor(String color) {
+        // Save in SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_COLOR, color);
+        editor.apply();
+
+        // Apply color immediately
+        applyColor(color);
+    }
+
+    private void applyColor(String color) {
+        switch (color) {
+            case "RED":
+                mainLayout.setBackgroundColor(Color.RED);
+                break;
+            case "GREEN":
+                mainLayout.setBackgroundColor(Color.GREEN);
+                break;
+            case "BLUE":
+                mainLayout.setBackgroundColor(Color.BLUE);
+                break;
+            default:
+                mainLayout.setBackgroundColor(Color.WHITE);
+        }
+    }
+}`,
+          },
+        ],
+      },
+      //   p - 15
+      {
+        key: "practical-15",
+        name: "Practical-15: SQLite User CRUD App",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-15: SQLite User CRUD App",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etId"
+        android:hint="User ID (AutoFill)"
+        android:inputType="number"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:hint="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:hint="Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etContact"
+        android:hint="Contact"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:text="Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:text="Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnList"
+        android:text="List Users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <ListView
+        android:id="@+id/listViewUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.usercrudapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.widget.*;
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText etId, etName, etAddress, etContact;
+    Button btnAdd, btnUpdate, btnDelete, btnList;
+    ListView listViewUsers;
+    DBHelper dbHelper;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> userList;
+    ArrayList<Integer> userIdList;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        etId = findViewById(R.id.etId);
+        etName = findViewById(R.id.etName);
+        etAddress = findViewById(R.id.etAddress);
+        etContact = findViewById(R.id.etContact);
+        btnAdd = findViewById(R.id.btnAdd);
+        btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnList = findViewById(R.id.btnList);
+        listViewUsers = findViewById(R.id.listViewUsers);
+
+        dbHelper = new DBHelper(this);
+        userList = new ArrayList<>();
+        userIdList = new ArrayList<>();
+
+        // ADD
+        btnAdd.setOnClickListener(v -> {
+            boolean inserted = dbHelper.insertUser(
+                    etName.getText().toString(),
+                    etAddress.getText().toString(),
+                    etContact.getText().toString()
+            );
+            if (inserted) {
+                Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show();
+                clearFields();
+                loadUsers();
+            } else {
+                Toast.makeText(this, "Error Adding User", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // UPDATE
+        btnUpdate.setOnClickListener(v -> {
+            boolean updated = dbHelper.updateUser(
+                    etId.getText().toString(),
+                    etName.getText().toString(),
+                    etAddress.getText().toString(),
+                    etContact.getText().toString()
+            );
+            if (updated) {
+                Toast.makeText(this, "User Updated", Toast.LENGTH_SHORT).show();
+                clearFields();
+                loadUsers();
+            } else {
+                Toast.makeText(this, "Error Updating User", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // DELETE
+        btnDelete.setOnClickListener(v -> {
+            boolean deleted = dbHelper.deleteUser(etId.getText().toString());
+            if (deleted) {
+                Toast.makeText(this, "User Deleted", Toast.LENGTH_SHORT).show();
+                clearFields();
+                loadUsers();
+            } else {
+                Toast.makeText(this, "Error Deleting User", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // LIST USERS
+        btnList.setOnClickListener(v -> loadUsers());
+
+        // CLICK ITEM → SHOW IN EDITTEXT
+        listViewUsers.setOnItemClickListener((parent, view, position, id) -> {
+            int userId = userIdList.get(position);
+
+            Cursor cursor = dbHelper.getAllUsers();
+            if (cursor != null) {
+                while (cursor.moveToNext()) {
+                    if (cursor.getInt(0) == userId) {
+                        etId.setText(String.valueOf(cursor.getInt(0)));
+                        etName.setText(cursor.getString(1));
+                        etAddress.setText(cursor.getString(2));
+                        etContact.setText(cursor.getString(3));
+                        break;
+                    }
+                }
+                cursor.close();
+            }
+        });
+    }
+
+    private void loadUsers() {
+        userList.clear();
+        userIdList.clear();
+        Cursor cursor = dbHelper.getAllUsers();
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                String address = cursor.getString(2);
+                String contact = cursor.getString(3);
+
+                userList.add(id + " - " + name + " - " + contact);
+                userIdList.add(id);
+            }
+            cursor.close();
+        }
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, userList);
+        listViewUsers.setAdapter(adapter);
+    }
+
+    private void clearFields() {
+        etId.setText("");
+        etName.setText("");
+        etAddress.setText("");
+        etContact.setText("");
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "DBHelper.java",
+            value: `package com.example.usercrudapp;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    public static final String DATABASE_NAME = "UserDB.db";
+    public static final String TABLE_NAME = "users";
+    public static final String COL_ID = "id";
+    public static final String COL_NAME = "name";
+    public static final String COL_ADDRESS = "address";
+    public static final String COL_CONTACT = "contact";
+
+    public DBHelper(Context context) {
+        super(context, DATABASE_NAME, null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_NAME + " TEXT, " +
+                COL_ADDRESS + " TEXT, " +
+                COL_CONTACT + " TEXT)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+    public boolean insertUser(String name, String address, String contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_NAME, name);
+        cv.put(COL_ADDRESS, address);
+        cv.put(COL_CONTACT, contact);
+        long result = db.insert(TABLE_NAME, null, cv);
+        return result != -1;
+    }
+
+    public boolean updateUser(String id, String name, String address, String contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_NAME, name);
+        cv.put(COL_ADDRESS, address);
+        cv.put(COL_CONTACT, contact);
+        int result = db.update(TABLE_NAME, cv, COL_ID + "=?", new String[]{id});
+        return result > 0;
+    }
+
+    public boolean deleteUser(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int result = db.delete(TABLE_NAME, COL_ID + "=?", new String[]{id});
+        return result > 0;
+    }
+
+    public Cursor getAllUsers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+    }
+}`,
+          },
+        ],
+      },
 
       {
         key: "saved-instance-state",
@@ -5339,6 +6111,242 @@ app.controller("StudentController", function ($scope) {
         $scope.studentName = "tara";
       });
     </script>
+  </body>
+</html>`,
+          },
+        ],
+      },
+      //  p- 7
+      {
+        key: "practical-7",
+        name: "Practical - 7: AngularJS Animations",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 7 - WAP to implement Multiple Animations using AngularJS",
+          },
+          {
+            type: "code",
+            fileName: "animations.html",
+            value: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiple Animations Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <style>
+      .box {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all linear 0.5s;
+        font-size: 16px;
+      }
+      .box.bigger {
+        font-size: 30px;
+      }
+      .box.light-theme {
+        background: #eee;
+        color: #333;
+      }
+
+      .animated-element {
+        background-color: green;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      .bounce {
+        animation: bounce 1s;
+      }
+      .spin {
+        animation: spin 1s;
+      }
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-50px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body ng-app="myApp" ng-controller="mainCtrl">
+    <div
+      class="box"
+      ng-class="{
+        'bigger': state.bigger,
+        'light-theme': state.lightTheme
+      }"
+    >
+      Animate me with ng-class!
+    </div>
+    <button ng-click="toggleBigger()">Toggle Bigger</button>
+    <button ng-click="toggleTheme()">Toggle Theme</button>
+
+    <div class="animated-element"></div>
+    <button ng-click="runBounceSpin()">Bounce, then Spin</button>
+
+    <script>
+      angular
+        .module("myApp", ["ngAnimate"])
+        .controller("mainCtrl", function ($scope, $animate) {
+          $scope.state = { bigger: false, lightTheme: false };
+
+          $scope.toggleBigger = function () {
+            $scope.state.bigger = !$scope.state.bigger;
+          };
+          $scope.toggleTheme = function () {
+            $scope.state.lightTheme = !$scope.state.lightTheme;
+          };
+          $scope.runBounceSpin = function () {
+            var elem = angular.element(
+              document.querySelector(".animated-element")
+            );
+            $animate
+              .addClass(elem, "bounce")
+              .then(function () {
+                return $animate.addClass(elem, "spin");
+              })
+              .then(function () {
+                $animate.removeClass(elem, "bounce spin");
+              });
+          };
+        });
+    </script>
+  </body>
+</html>`,
+          },
+        ],
+      },
+      //  p- 8
+      {
+        key: "practical-8",
+        name: "Practical - 8: AngularJS CRUD Operations",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 8 - WAP to implement CRUD operations using AngularJS",
+          },
+          {
+            type: "code",
+            fileName: "angularCrud.js",
+            value: `var app = angular.module("crudApp", []);
+
+app.controller("myCtrl", function ($scope) {
+  $scope.students = [];
+  $scope.newStudent = {};
+  $scope.editingId = null;
+
+  function resetNew() {
+    $scope.newStudent = {};
+    $scope.editingId = null;
+  }
+
+  $scope.saveRecord = function () {
+    if ($scope.editingId === null) {
+      var nextId = $scope.students.length
+        ? Math.max(...$scope.students.map((s) => s.id)) + 1
+        : 1;
+      $scope.newStudent.id = nextId;
+      $scope.students.push(angular.copy($scope.newStudent));
+    } else {
+      var idx = $scope.students.findIndex((s) => s.id === $scope.editingId);
+      if (idx !== -1) {
+        $scope.students[idx] = angular.copy($scope.newStudent);
+      }
+    }
+    resetNew();
+  };
+
+  $scope.edit = function (id) {
+    var student = $scope.students.find((s) => s.id === id);
+    if (student) {
+      $scope.newStudent = angular.copy(student);
+      $scope.editingId = id;
+    }
+  };
+
+  $scope.delete = function (id) {
+    var idx = $scope.students.findIndex((s) => s.id === id);
+    if (idx !== -1) $scope.students.splice(idx, 1);
+    if ($scope.editingId === id) resetNew();
+  };
+
+  $scope.reset = resetNew;
+});`,
+          },
+          {
+            type: "code",
+            fileName: "index.html",
+            value: `<!DOCTYPE html>
+<html ng-app="crudApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS CRUD Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="angularCrud.js"></script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Student Management</h2>
+
+    <form ng-submit="saveRecord()">
+      <input
+        type="text"
+        ng-model="newStudent.name"
+        placeholder="Name"
+        required
+      />
+      <input
+        type="text"
+        ng-model="newStudent.address"
+        placeholder="Address"
+        required
+      />
+      <input
+        type="text"
+        ng-model="newStudent.dept"
+        placeholder="Department"
+        required
+      />
+      <button type="submit">{{ editingId === null ? 'Add' : 'Update' }}</button>
+      <button type="button" ng-click="reset()">Cancel</button>
+    </form>
+
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Dept</th>
+        <th>Action</th>
+      </tr>
+      <tr ng-repeat="s in students">
+        <td>{{s.name}}</td>
+        <td>{{s.address}}</td>
+        <td>{{s.dept}}</td>
+        <td>
+          <button ng-click="edit(s.id)">Edit</button>
+          <button ng-click="delete(s.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>`,
           },
