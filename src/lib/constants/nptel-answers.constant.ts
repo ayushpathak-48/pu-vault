@@ -212,4 +212,61 @@ export const nptelAllWeeksAnswers = [
       { id: 15, option: 2, answer: "MinMaxScaler" },
     ],
   },
+  {
+    key: "week-8",
+    title: "Week 8 - Assignment answers",
+    answers: [
+      { id: 1, option: 3, answer: "fillna(median)" },
+      { id: 2, option: 4, answer: "MinMaxScaler" },
+      {
+        id: 3,
+        option: 3,
+        answer: "Create synthetic samples for minority class",
+      },
+      { id: 4, option: 2, answer: "Mean = 0 and Standard deviation = 1" },
+      { id: 5, option: 3, answer: "0 to 1" },
+      { id: 6, option: 1, answer: "train_test_split" },
+      { id: 7, option: 3, answer: "Image generation" },
+      {
+        id: 8,
+        option: 3,
+        answer: "Convert categorical data into binary vectors",
+      },
+      { id: 9, option: 3, answer: "KBinsDiscretizer" },
+      { id: 10, option: 3, answer: "F1 Score" },
+      { id: 11, option: 2, answer: "Inputs" },
+      {
+        id: 12,
+        option: [1, 2, 4],
+        answer: [
+          "Drop the attribute, ",
+          "Fill with mean/median, ",
+          "Drop the corresponding record",
+        ],
+      },
+      {
+        id: 13,
+        option: [1, 2, 3],
+        answer: [
+          "Makes the attributes lie in the same range, ",
+          "Prevents domination of large-valued features, ",
+          "Improves model interpretability",
+        ],
+      },
+      {
+        id: 14,
+        option: [1, 2, 3],
+        answer: ["Normalization, ", "Standardization, ", "Min-max scaling"],
+      },
+      {
+        id: 15,
+        option: [1, 3, 4],
+        answer: [
+          "Supervised learning algorithms, ",
+          "Cross-validation techniques, ",
+          "Dimensionality reduction",
+        ],
+      },
+    ],
+  },
 ];
