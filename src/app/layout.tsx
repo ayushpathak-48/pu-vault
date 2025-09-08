@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { FeedbackDialog } from "@/components/modals/FeedbackDialog";
+import { DeviceTracker } from "@/components/modals/DeviceTracker";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
               <WhatsappFloatingButton />
               {/* <WhatsappDialog /> */}
               <FeedbackDialog />
+              <DeviceTracker />
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>
