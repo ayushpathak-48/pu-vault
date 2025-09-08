@@ -4406,6 +4406,744 @@ public class DBHelper extends SQLiteOpenHelper {
           },
         ],
       },
+      //  p -16
+      //   p - 16
+      {
+        key: "practical-16",
+        name: "Practical-16: SQLite Authentication App (Login & Register)",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-16: SQLite Authentication App (Login & Register)",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etUserId"
+        android:hint="User ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "DBHelper.java",
+            value: `package com.example.authapp;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    private static final String DATABASE_NAME = "AuthDB";
+    private static final int DATABASE_VERSION = 1;
+    private static final String TABLE_USERS = "users";
+
+    public DBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String createTable = "CREATE TABLE " + TABLE_USERS + " (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "userid TEXT UNIQUE, " +
+                "password TEXT)";
+        db.execSQL(createTable);
+
+        // Insert default user (for testing)
+        ContentValues values = new ContentValues();
+        values.put("userid", "admin");
+        values.put("password", "1234");
+        db.insert(TABLE_USERS, null, values);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
+        onCreate(db);
+    }
+
+    // Insert new user
+    public boolean insertUser(String userid, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("userid", userid);
+        values.put("password", password);
+        long result = db.insert(TABLE_USERS, null, values);
+        return result != -1;
+    }
+
+    // Check login credentials
+    public boolean checkUser(String userid, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_USERS + " WHERE userid=? AND password=?",
+                new String[]{userid, password});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.authapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.*;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText etUserId, etPassword;
+    Button btnLogin, btnRegister;
+    TextView tvResult;
+    DBHelper dbHelper;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        etUserId = findViewById(R.id.etUserId);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
+        tvResult = findViewById(R.id.tvResult);
+
+        dbHelper = new DBHelper(this);
+
+        // LOGIN
+        btnLogin.setOnClickListener(v -> {
+            String userid = etUserId.getText().toString();
+            String password = etPassword.getText().toString();
+
+            if (dbHelper.checkUser(userid, password)) {
+                tvResult.setText("✅ Login Successful! Welcome " + userid);
+            } else {
+                tvResult.setText("❌ Invalid Credentials");
+            }
+        });
+
+        // REGISTER
+        btnRegister.setOnClickListener(v -> {
+            String userid = etUserId.getText().toString();
+            String password = etPassword.getText().toString();
+
+            boolean inserted = dbHelper.insertUser(userid, password);
+            if (inserted) {
+                tvResult.setText("✅ User Registered Successfully!");
+            } else {
+                tvResult.setText("❌ Registration Failed (UserID already exists)");
+            }
+        });
+    }
+}`,
+          },
+        ],
+      },
+      // p -17
+      //   p - 17
+      {
+        key: "practical-17",
+        name: "Practical-17: Android View Animations (Rotate, Fade, Zoom)",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-17: Android View Animations (Rotate, Fade, Zoom)",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <Spinner
+        android:id="@+id/spinnerAnimations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="209dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/dm" />
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "fade.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.0"
+    android:duration="1000"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"/>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "rotate.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="1000"
+    android:repeatCount="infinite"/>`,
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "zoom.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="1.0"
+    android:toXScale="2.0"
+    android:fromYScale="1.0"
+    android:toYScale="2.0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="1000"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"/>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.animationapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.*;
+
+public class MainActivity extends AppCompatActivity {
+
+    Spinner spinner;
+    ImageView imageView;
+
+    String[] animations = {"Rotate", "Fade", "Zoom"};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        spinner = findViewById(R.id.spinnerAnimations);
+        imageView = findViewById(R.id.imageView);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, animations);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
+                Animation anim = null;
+
+                switch (animations[position]) {
+                    case "Rotate":
+                        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+                        break;
+                    case "Fade":
+                        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
+                        break;
+                    case "Zoom":
+                        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
+                        break;
+                }
+
+                if (anim != null) {
+                    imageView.startAnimation(anim);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
+    }
+}`,
+          },
+        ],
+      },
+      //   p - 18
+      {
+        key: "practical-18",
+        name: "Practical-18: Simple Audio Player (Play, Pause/Resume, Stop)",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical-18: Simple Audio Player (Play, Pause/Resume, Stop)",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Audio Player"
+        android:textSize="20sp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Play"/>
+
+    <Button
+        android:id="@+id/btnPause"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Pause"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnStop"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.audioplayer;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnPlay, btnPause, btnStop;
+    MediaPlayer mediaPlayer;
+    boolean isPaused = false; // to track pause state
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnPlay = findViewById(R.id.btnPlay);
+        btnPause = findViewById(R.id.btnPause);
+        btnStop = findViewById(R.id.btnStop);
+
+        // Load audio file from raw folder
+        mediaPlayer = MediaPlayer.create(this, R.raw.doremon);
+
+        // Play Button
+        btnPlay.setOnClickListener(v -> {
+            if (!mediaPlayer.isPlaying()) {
+                mediaPlayer.start();
+                isPaused = false;
+                btnPause.setText("Pause"); // reset button text
+                Toast.makeText(this, "Playing Audio", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Pause/Resume Button
+        btnPause.setOnClickListener(v -> {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+                isPaused = true;
+                btnPause.setText("Resume"); // change text
+                Toast.makeText(this, "Audio Paused", Toast.LENGTH_SHORT).show();
+            } else if (isPaused) {
+                mediaPlayer.start();
+                isPaused = false;
+                btnPause.setText("Pause"); // change back
+                Toast.makeText(this, "Audio Resumed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Stop Button
+        btnStop.setOnClickListener(v -> {
+            if (mediaPlayer.isPlaying() || isPaused) {
+                mediaPlayer.stop();
+                mediaPlayer = MediaPlayer.create(this, R.raw.doremon); // Reset
+                isPaused = false;
+                btnPause.setText("Pause"); // reset text
+                Toast.makeText(this, "Audio Stopped", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+        super.onDestroy();
+    }
+}`,
+          },
+        ],
+      },
+      //   p - 19
+      {
+        key: "practical-19",
+        name: "Practical-19: Simple Video Player using VideoView",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical-19: Simple Video Player using VideoView",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Video Player"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Pause"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.videoplayer;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.Toast;
+import android.widget.VideoView;
+
+public class MainActivity extends AppCompatActivity {
+
+    VideoView videoView;
+    Button btnPlay, btnPause, btnStop;
+    MediaController mediaController;
+    boolean isPaused = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        videoView = findViewById(R.id.videoView);
+        btnPlay = findViewById(R.id.btnPlay);
+        btnPause = findViewById(R.id.btnPause);
+        btnStop = findViewById(R.id.btnStop);
+
+        // Load video from raw folder
+        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.samplevideo);
+        videoView.setVideoURI(videoUri);
+
+        // Media Controller
+        mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        // Play
+        btnPlay.setOnClickListener(v -> {
+            if (!videoView.isPlaying()) {
+                videoView.start();
+                isPaused = false;
+                btnPause.setText("Pause");
+                Toast.makeText(this, "Video Playing", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Pause/Resume
+        btnPause.setOnClickListener(v -> {
+            if (videoView.isPlaying()) {
+                videoView.pause();
+                isPaused = true;
+                btnPause.setText("Resume");
+                Toast.makeText(this, "Video Paused", Toast.LENGTH_SHORT).show();
+            } else if (isPaused) {
+                videoView.start();
+                isPaused = false;
+                btnPause.setText("Pause");
+                Toast.makeText(this, "Video Resumed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Stop
+        btnStop.setOnClickListener(v -> {
+            if (videoView.isPlaying() || isPaused) {
+                videoView.stopPlayback();
+                videoView.setVideoURI(videoUri); // reset
+                isPaused = false;
+                btnPause.setText("Pause");
+                Toast.makeText(this, "Video Stopped", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}`,
+          },
+        ],
+      },
+      //   p - 20
+      {
+        key: "practical-20",
+        name: "Practical-20: Fetch Current Location using FusedLocationProviderClient",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical-20: Fetch Current Location using FusedLocationProviderClient",
+          },
+          {
+            type: "code",
+            language: "xml",
+            fileName: "activity_main.xml",
+            value: `<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fetching location..."
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnGetLocation"
+        android:text="Get Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>`,
+          },
+          {
+            type: "code",
+            language: "java",
+            fileName: "MainActivity.java",
+            value: `package com.example.locationapp;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final int REQUEST_CODE = 101;
+    private FusedLocationProviderClient fusedLocationClient;
+    private TextView locationText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        locationText = findViewById(R.id.locationText);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        getLastLocation();
+    }
+
+    private void getLastLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+            return;
+        }
+
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    double lat = location.getLatitude();
+                    double lon = location.getLongitude();
+
+                    // Default lat/lon display
+                    String locText = getString(R.string.location_text, lat, lon);
+
+                    // Now get address
+                    Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+                    try {
+                        List<Address> addresses = geocoder.getFromLocation(lat, lon, 1);
+                        if (addresses != null && !addresses.isEmpty()) {
+                            Address address = addresses.get(0);
+                            String fullAddress = address.getAddressLine(0);
+                            locText += "\\nAddress: " + fullAddress;
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(MainActivity.this, "Unable to get address", Toast.LENGTH_SHORT).show();
+                    }
+
+                    locationText.setText(locText);
+
+                } else {
+                    Toast.makeText(MainActivity.this, getString(R.string.location_not_found), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_CODE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            getLastLocation();
+        } else {
+            Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show();
+        }
+    }
+}`,
+          },
+        ],
+      },
 
       {
         key: "saved-instance-state",
