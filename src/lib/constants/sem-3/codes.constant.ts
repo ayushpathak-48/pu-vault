@@ -1672,6 +1672,200 @@ namespace CookieDemo
           },
         ],
       },
+      //  p- 13
+      {
+        key: "crud-ado",
+        name: "Practical - 13 : CRUD Operations using ADO.NET",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 13 - CRUD Operations using ADO.NET",
+          },
+          {
+            type: "code",
+            fileName: "Web.config",
+            language: "java",
+            value: `<configuration>
+  <connectionStrings>
+    <add name="ConnectionString"
+         connectionString="Data Source=YOUR_SERVER_NAME;Initial Catalog=StudentDB;Integrated Security=True"
+         providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.7.2" />
+  </system.web>
+</configuration>`,
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx",
+            language: "java",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication11._Default" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>CRUD Operations using ADO.NET</title>
+    <style>
+        .auto-style1 { width: 137px; }
+        table { margin: 20px; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td colspan="2"><h3>Student Login Info</h3></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Enter Id</td>
+                    <td><asp:TextBox ID="txtId" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Enter Name</td>
+                    <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">Enter Password</td>
+                    <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="btnInsert" runat="server" Text="Insert" OnClick="btnInsert_Click" />
+                        <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click" />
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <hr />
+
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" BorderWidth="1" CellPadding="5"></asp:GridView>
+    </form>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx.cs",
+            language: "java",
+            value: `using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Web.UI;
+
+namespace WebApplication11
+{
+    public partial class _Default : Page
+    {
+        string cs = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                LoadData();
+            }
+        }
+
+        private void LoadData()
+        {
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM info", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+        }
+
+        protected void btnInsert_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                string sql = "INSERT INTO info (Name, Password) VALUES (@Name, @Password)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            Clear();
+            Response.Write("<script>alert('Record Inserted Successfully');</script>");
+            LoadData();
+        }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                string sql = "SELECT * FROM info WHERE Id=@Id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Id", txtId.Text);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtName.Text = dr["Name"].ToString();
+                    txtPassword.Text = dr["Password"].ToString();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Record Not Found');</script>");
+                }
+            }
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                string sql = "UPDATE info SET Name=@Name, Password=@Password WHERE Id=@Id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Id", txtId.Text);
+                cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            Clear();
+            Response.Write("<script>alert('Record Updated Successfully');</script>");
+            LoadData();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                string sql = "DELETE FROM info WHERE Id=@Id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Id", txtId.Text);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            Clear();
+            Response.Write("<script>alert('Record Deleted Successfully');</script>");
+            LoadData();
+        }
+
+        private void Clear()
+        {
+            txtId.Text = "";
+            txtName.Text = "";
+            txtPassword.Text = "";
+        }
+    }
+}`,
+          },
+        ],
+      },
     ],
   },
   // MAD

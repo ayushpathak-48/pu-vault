@@ -288,6 +288,11 @@ export const sem3Materials = [
         title: "Practical 12 - Working with Cookies",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-12.pdf`,
       },
+      {
+        id: 13,
+        title: "Practical 13 - CRUD Operations Combined 13_14_15",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-13_15.pdf`,
+      },
     ],
     que_papers: [
       {
