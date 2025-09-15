@@ -515,6 +515,198 @@ A->C->D->B->A`,
           },
         ],
       },
+      // prolog-knowledge
+      {
+        key: "prolog-knowledge",
+        name: "Prolog Knowledge Base and Query System",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical - Knowledge Base and Query System in Prolog",
+          },
+          {
+            type: "code",
+            fileName: "family-knowledge.pl",
+            value: `% Facts about family relationships
+parent(john, mary).
+parent(john, steve).
+parent(mary, alice).
+parent(mary, bob).
+parent(alice, carol).
+parent(alice, david).
+parent(bob, emily).
+parent(bob, frank).
+
+% Rules to derive additional relationships
+grandparent(GP, GC) :-
+    parent(GP, Parent),
+    parent(Parent, GC).
+
+sibling(X, Y) :-
+    parent(P, X),
+    parent(P, Y), 
+    X \\= Y.
+
+brother(X, Y) :-
+    male(X),
+    sibling(X, Y).
+
+sister(X, Y) :-
+    female(X),
+    sibling(X, Y).
+
+uncle(Uncle, NieceNephew) :-
+    brother(Uncle, Parent),
+    parent(Parent, NieceNephew).
+
+aunt(Aunt, NieceNephew) :-
+    sister(Aunt, Parent),
+    parent(Parent, NieceNephew).
+
+% Define genders
+male(john).
+male(steve).
+male(bob).
+male(carol).
+male(david).
+male(frank).
+
+female(mary).
+female(alice).
+female(emily).
+
+% Example queries:
+% ?- grandparent(GP, emily).
+% ?- uncle(Uncle, carol).
+% ?- aunt(Aunt, david).
+
+
+% Extended family tree
+parent(a,b).
+parent(a,c).
+parent(b,d).
+parent(b,e).
+parent(d,f).
+parent(d,g).
+parent(c,h).
+parent(c,i).
+parent(i,j).
+parent(i,k).
+
+male(a).
+male(b).
+male(e).
+male(f).
+male(g).
+male(h).
+male(i).
+male(k).
+
+female(c).
+female(d).
+female(j).`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `?- grandparent(GP, emily).
+GP = mary ;
+GP = john.
+
+?- uncle(Uncle, carol).
+Uncle = steve ;
+Uncle = bob.
+
+?- aunt(Aunt, david).
+Aunt = emily.`,
+          },
+        ],
+      },
+      // semantic-net
+      {
+        key: "semantic-net",
+        name: "Semantic Net Representation from Prolog Knowledge",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical - Semantic Net (Converted from Prolog Knowledge Base)",
+          },
+          {
+            type: "code",
+            fileName: "semantic-net.py",
+            value: `import networkx as nx
+import matplotlib.pyplot as plt
+
+# Create a directed graph
+G = nx.DiGraph()
+
+# --- Prolog Facts as Semantic Net ---
+
+# Family relationships
+relations = [
+    ("john", "mary", "parent"),
+    ("john", "steve", "parent"),
+    ("mary", "alice", "parent"),
+    ("mary", "bob", "parent"),
+    ("alice", "carol", "parent"),
+    ("alice", "david", "parent"),
+    ("bob", "emily", "parent"),
+    ("bob", "frank", "parent"),
+]
+
+# Genders
+genders = [
+    ("john", "male", "is-a"),
+    ("steve", "male", "is-a"),
+    ("bob", "male", "is-a"),
+    ("carol", "male", "is-a"),
+    ("david", "male", "is-a"),
+    ("frank", "male", "is-a"),
+    ("mary", "female", "is-a"),
+    ("alice", "female", "is-a"),
+    ("emily", "female", "is-a"),
+]
+
+# Add nodes & edges
+for subj, obj, rel in relations + genders:
+    G.add_edge(subj.capitalize(), obj.capitalize(), label=rel)
+
+# Layout
+pos = nx.spring_layout(G, k=0.8, seed=42)
+
+# Draw graph
+plt.figure(figsize=(10, 7))
+nx.draw(
+    G, pos,
+    with_labels=True,
+    node_size=3000,
+    node_color="lightblue",
+    font_size=9,
+    font_weight="bold",
+    arrowsize=15
+)
+
+# Edge labels
+edge_labels = nx.get_edge_attributes(G, 'label')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color="red", font_size=9)
+
+# Show Semantic Net
+plt.title("Semantic Net from Prolog Knowledge Base", fontsize=12, fontweight="bold")
+plt.show()`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Semantic Net Visualization Generated:
+- Parent relationships drawn as edges labeled 'parent'
+- Gender represented as 'is-a' links (e.g., John → Male)
+- Nodes are family members from Prolog facts`,
+          },
+        ],
+      },
     ],
   },
   // bda
