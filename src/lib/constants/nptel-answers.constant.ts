@@ -377,4 +377,58 @@ export const nptelAllWeeksAnswers = [
       },
     ],
   },
+  {
+    key: "week-10",
+    title: "Week 10 - Assignment answers",
+    answers: [
+      { id: 1, option: 3, answer: "Majority of k nearest neighbors" },
+      { id: 2, option: 2, answer: "Euclidean distance" },
+      { id: 3, option: 2, answer: "Better classification ability" },
+      { id: 4, option: 3, answer: "Entropy" },
+      { id: 5, option: 3, answer: "(TP + TN) / (Total)" },
+      { id: 6, option: 3, answer: "Mean Squared Error" },
+      {
+        id: 7,
+        option: 2,
+        answer: "Proportion of variance explained by the model",
+      },
+      { id: 8, option: 2, answer: "No convergence" },
+      { id: 9, option: 2, answer: "Data shows a nonlinear relationship" },
+      { id: 10, option: 2, answer: "Actual positive predicted as positive" },
+      { id: 11, option: [1, 2], answer: ["Regression, ", "Classification"] },
+      {
+        id: 12,
+        option: [1, 2, 3],
+        answer: ["Entropy, ", "Information Gain, ", "Gini Index"],
+      },
+      {
+        id: 13,
+        option: [1, 2, 3],
+        answer: [
+          "Value of k, ",
+          "Distance metric used, ",
+          "Size of the training set",
+        ],
+      },
+      {
+        id: 14,
+        option: [1, 2, 3],
+        answer: [
+          "Mean Absolute Error (MAE), ",
+          "Mean Squared Error (MSE), ",
+          "Root Mean Squared Error (RMSE)",
+        ],
+      },
+      {
+        id: 15,
+        option: [1, 2, 3, 4],
+        answer: [
+          "True Positive, ",
+          "False Positive, ",
+          "False Negative, ",
+          "True Negative",
+        ],
+      },
+    ],
+  },
 ];
