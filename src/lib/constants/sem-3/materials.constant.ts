@@ -657,6 +657,16 @@ export const sem3specializationMaterials = [
         title: "Travelling Salesman Problem",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-4.pdf`,
       },
+      {
+        id: 6,
+        title: "Prolog Knowledge Base Query",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Convert Prolog predicates into Semantic Net.",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-7.pdf`,
+      },
     ],
     que_papers: [
       {
