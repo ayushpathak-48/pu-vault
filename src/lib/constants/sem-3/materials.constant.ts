@@ -425,7 +425,13 @@ export const sem3Materials = [
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/ostf/ostf-python-practical-lab-manual.pdf`,
       },
     ],
-    practicals_link: [],
+    practicals_link: [
+      {
+        id: 1,
+        title: "OSTF All Practicals",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ostf/ostf-journal.pdf`,
+      },
+    ],
     que_papers: [
       {
         id: 1,
