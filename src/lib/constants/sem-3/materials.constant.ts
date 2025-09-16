@@ -687,6 +687,12 @@ export const sem3specializationMaterials = [
         title: "Convert Prolog predicates into Semantic Net.",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-7.pdf`,
       },
+      {
+        id: 8,
+        title:
+          "Demonstrate Supervised Learning using artificial neural network",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-8.pdf`,
+      },
     ],
     que_papers: [
       {
