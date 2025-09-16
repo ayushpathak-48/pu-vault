@@ -2058,6 +2058,532 @@ namespace WebApplication11
           },
         ],
       },
+      //  p- 16
+      {
+        key: "train-crud",
+        name: "Practical - 16 : LINQ to SQL & Stored Procedures",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 16 - LINQ to SQL & Stored Procedures",
+          },
+          {
+            type: "code",
+            fileName: "traindata.aspx",
+            language: "java",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeFile="traindata.aspx.cs"
+Inherits="traindata" %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <form runat="server">
+      Train ID: <asp:TextBox ID="txtID" runat="server" ReadOnly="true" /><br />
+      Name: <asp:TextBox ID="txtName" runat="server" /><br />
+      Type: <asp:TextBox ID="txtType" runat="server" /><br />
+      Arrival: <asp:TextBox ID="txtArrival" runat="server" /><br />
+      Departure: <asp:TextBox ID="txtDeparture" runat="server" /><br />
+      Start: <asp:TextBox ID="txtStart" runat="server" /><br />
+      End: <asp:TextBox ID="txtEnd" runat="server" /><br />
+
+      <asp:Button
+        ID="btnInsert"
+        runat="server"
+        Text="Insert"
+        OnClick="btnInsert_Click"
+      />
+      <asp:Button
+        ID="btnUpdate"
+        runat="server"
+        Text="Update"
+        OnClick="btnUpdate_Click"
+      />
+      <asp:Button
+        ID="btnDelete"
+        runat="server"
+        Text="Delete"
+        OnClick="btnDelete_Click"
+      />
+      <asp:TextBox ID="txtSearch" runat="server" />
+      <asp:Button
+        ID="btnSearch"
+        runat="server"
+        Text="Search"
+        OnClick="btnSearch_Click"
+      />
+      <asp:Button
+        ID="btnShow"
+        runat="server"
+        Text="Show All"
+        OnClick="btnShow_Click"
+      />
+
+      <br /><asp:GridView
+        ID="GridView1"
+        runat="server"
+        AutoGenerateColumns="true"
+      />
+    </form>
+  </body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "traindata.aspx.cs",
+            language: "java",
+            value: `using System;
+using System.Linq;
+
+public partial class traindata : System.Web.UI.Page
+{
+    TrainDataDataContext db = new TrainDataDataContext();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack) ShowAll();
+    }
+
+    void ShowAll()
+    {
+        GridView1.DataSource = db.sp_GetTrains();
+        GridView1.DataBind();
+    }
+
+    protected void btnInsert_Click(object sender, EventArgs e)
+    {
+        db.sp_InsertTrain(txtName.Text, txtType.Text, TimeSpan.Parse(txtArrival.Text),
+                          TimeSpan.Parse(txtDeparture.Text), txtStart.Text, txtEnd.Text);
+        ShowAll();
+    }
+
+    protected void btnUpdate_Click(object sender, EventArgs e)
+    {
+        db.sp_UpdateTrain(int.Parse(txtID.Text), txtName.Text, txtType.Text,
+                          TimeSpan.Parse(txtArrival.Text), TimeSpan.Parse(txtDeparture.Text),
+                          txtStart.Text, txtEnd.Text);
+        ShowAll();
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        db.sp_DeleteTrain(int.Parse(txtID.Text));
+        ShowAll();
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        GridView1.DataSource = db.sp_SearchTrain(txtSearch.Text);
+        GridView1.DataBind();
+    }
+
+    protected void btnShow_Click(object sender, EventArgs e)
+    {
+        ShowAll();
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "train_master.sql",
+            language: "sql",
+            value: `CREATE DATABASE train_master;
+GO
+USE train_master;
+GO
+
+CREATE TABLE train_info (
+    train_id INT IDENTITY(1,1) PRIMARY KEY,
+    train_name NVARCHAR(100),
+    train_type NVARCHAR(50),
+    arrival_time TIME,
+    departure_time TIME,
+    start_location NVARCHAR(100),
+    end_location NVARCHAR(100)
+);
+GO
+
+-- Insert
+CREATE PROC sp_InsertTrain
+ @train_name NVARCHAR(100), @train_type NVARCHAR(50),
+ @arrival_time TIME, @departure_time TIME,
+ @start_location NVARCHAR(100), @end_location NVARCHAR(100)
+AS
+INSERT INTO train_info VALUES(@train_name,@train_type,@arrival_time,@departure_time,@start_location,@end_location);
+GO
+
+-- Update
+CREATE PROC sp_UpdateTrain
+ @train_id INT, @train_name NVARCHAR(100), @train_type NVARCHAR(50),
+ @arrival_time TIME, @departure_time TIME,
+ @start_location NVARCHAR(100), @end_location NVARCHAR(100)
+AS
+UPDATE train_info SET train_name=@train_name, train_type=@train_type,
+ arrival_time=@arrival_time, departure_time=@departure_time,
+ start_location=@start_location, end_location=@end_location
+WHERE train_id=@train_id;
+GO
+
+-- Delete
+CREATE PROC sp_DeleteTrain @train_id INT
+AS DELETE FROM train_info WHERE train_id=@train_id;
+GO
+
+-- View
+CREATE PROC sp_GetTrains AS SELECT * FROM train_info;
+GO
+
+-- Search
+CREATE PROC sp_SearchTrain @keyword NVARCHAR(100)
+AS
+SELECT * FROM train_info 
+WHERE train_name LIKE '%'+@keyword+'%' OR train_type LIKE '%'+@keyword+'%';
+GO`,
+          },
+        ],
+      },
+
+      //  p- 17
+      {
+        key: "calendar-ajax",
+        name: "Practical - 17 : Calendar Navigation using Ajax Calendar Extender",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 17 - Calendar Navigation using Ajax Calendar Extender",
+          },
+          {
+            type: "code",
+            fileName: "CalendarDemo.aspx",
+            language: "java",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CalendarDemo.aspx.cs"
+Inherits="CalendarDemo" %> 
+<%@ Register Assembly="AjaxControlToolkit"
+Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+<html>
+  <head runat="server">
+    <title>Calendar Navigation using Ajax Calendar Extender</title>
+  </head>
+  <body>
+    <form id="form1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+      <div>
+        <h3>Select Date:</h3>
+        <asp:TextBox ID="txtDate" runat="server" Width="150px"></asp:TextBox>
+
+        <!-- CalendarExtender from AjaxControlToolkit -->
+        <asp:CalendarExtender
+          ID="CalendarExtender1"
+          runat="server"
+          TargetControlID="txtDate"
+          Format="dd-MM-yyyy"
+        >
+        </asp:CalendarExtender>
+
+        <br /><br />
+        <asp:Button
+          ID="btnSubmit"
+          runat="server"
+          Text="Show Selected Date"
+          OnClick="btnSubmit_Click"
+        />
+        <br /><br />
+        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+      </div>
+    </form>
+  </body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "CalendarDemo.aspx.cs",
+            language: "java",
+            value: `using System;
+
+public partial class CalendarDemo : System.Web.UI.Page
+{
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        lblResult.Text = "You selected: " + txtDate.Text;
+    }
+}`,
+          },
+        ],
+      },
+
+      //  p- 18
+      {
+        key: "xml-read-write",
+        name: "Practical - 18 : XML Read and Write Demo",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 18 - XML Read and Write Demo",
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx",
+            language: "java",
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
+Inherits="WebApplication17.Default" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <title>XML Read and Write Demo</title>
+  </head>
+  <body>
+    <form id="form1" runat="server">
+      <div style="margin: 20px">
+        <h3>Enter Student Details</h3>
+
+        <asp:TextBox
+          ID="txtName"
+          runat="server"
+          Placeholder="Enter Name"
+        ></asp:TextBox>
+        <br /><br />
+
+        <asp:TextBox
+          ID="txtAge"
+          runat="server"
+          Placeholder="Enter Age"
+        ></asp:TextBox>
+        <br /><br />
+
+        <asp:Button
+          ID="btnWrite"
+          Text="Write to XML"
+          runat="server"
+          OnClick="btnWrite_Click"
+        />
+        <br /><br />
+
+        <asp:Button
+          ID="btnRead"
+          Text="Read from XML"
+          runat="server"
+          OnClick="btnRead_Click"
+        />
+        <br /><br />
+
+        <asp:Label ID="lblOutput" runat="server" ForeColor="Green"></asp:Label>
+      </div>
+    </form>
+  </body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "Default.aspx.cs",
+            language: "java",
+            value: `using System;
+using System.Data;
+using System.Xml;
+
+public partial class _Default : System.Web.UI.Page
+{
+    string path = @"D:\\student.xml"; // XML file path
+
+    protected void btnWrite_Click(object sender, EventArgs e)
+    {
+        XmlDocument doc = new XmlDocument();
+        doc.Load(path);
+
+        XmlElement student = doc.CreateElement("Student");
+
+        XmlElement name = doc.CreateElement("Name");
+        name.InnerText = txtName.Text;
+
+        XmlElement age = doc.CreateElement("Age");
+        age.InnerText = txtAge.Text;
+
+        student.AppendChild(name);
+        student.AppendChild(age);
+
+        doc.DocumentElement.AppendChild(student);
+        doc.Save(path);
+
+        lblOutput.Text = "Data written successfully!";
+    }
+
+    protected void btnRead_Click(object sender, EventArgs e)
+    {
+        DataSet ds = new DataSet();
+        ds.ReadXml(path);
+
+        lblOutput.Text = "Students:<br/>";
+        foreach (DataRow row in ds.Tables[0].Rows)
+        {
+            lblOutput.Text += row["Name"] + " - " + row["Age"] + "<br/>";
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "student.xml",
+            language: "xml",
+            value: `<Students>
+    <Student>
+        <Name>Rahul</Name>
+        <Age>21</Age>
+    </Student>
+</Students>`,
+          },
+        ],
+      },
+      //  p- 19
+      {
+        key: "mvc-book-crud",
+        name: "Practical - 19 : ASP.NET MVC CRUD using Entity Framework (Book Management)",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 19 - ASP.NET MVC CRUD using Entity Framework (Book Management)",
+          },
+          {
+            type: "code",
+            fileName: "Book.cs",
+            language: "csharp",
+            value: `using System.ComponentModel.DataAnnotations;
+
+public class Book
+{
+    public int book_id { get; set; }
+
+    [Required(ErrorMessage = "Book name is required")]
+    public string book_name { get; set; }
+
+    [Required(ErrorMessage = "Author is required")]
+    public string author { get; set; }
+
+    [Range(1, 9999, ErrorMessage = "Enter valid price")]
+    public decimal price { get; set; }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "BookController.cs",
+            language: "csharp",
+            value: `using System.Linq;
+using System.Web.Mvc;
+
+public class BookController : Controller
+{
+    BookDBContext db = new BookDBContext();
+
+    // View All
+    public ActionResult Index()
+    {
+        return View(db.Books.ToList());
+    }
+
+    // Insert
+    public ActionResult Create() => View();
+
+    [HttpPost]
+    public ActionResult Create(Book b)
+    {
+        if (ModelState.IsValid)
+        {
+            db.Books.Add(b);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        return View(b);
+    }
+
+    // Search
+    public ActionResult Search(string name)
+    {
+        var result = db.Books.Where(x => x.book_name.Contains(name)).ToList();
+        return View("Index", result);
+    }
+
+    // Update
+    public ActionResult Edit(int id)
+    {
+        return View(db.Books.Find(id));
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Book b)
+    {
+        if (ModelState.IsValid)
+        {
+            db.Entry(b).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        return View(b);
+    }
+
+    // Delete
+    public ActionResult Delete(int id)
+    {
+        var b = db.Books.Find(id);
+        db.Books.Remove(b);
+        db.SaveChanges();
+        return RedirectToAction("Index");
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "Index.cshtml",
+            language: "html",
+            value: `@model IEnumerable<Book>
+<h2>Book List</h2>
+
+<form method="get" action="/Book/Search">
+    <input type="text" name="name" placeholder="Search by name" />
+    <input type="submit" value="Search" />
+</form>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.book_id</td>
+            <td>@item.book_name</td>
+            <td>@item.author</td>
+            <td>@item.price</td>
+            <td>
+                <a href="/Book/Edit/@item.book_id">Edit</a> |
+                <a href="/Book/Delete/@item.book_id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Book/Create">Add New Book</a>`,
+          },
+          {
+            type: "code",
+            fileName: "book_master.sql",
+            language: "sql",
+            value: `CREATE DATABASE book_master;
+USE book_master;
+
+CREATE TABLE book_info (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_name VARCHAR(100),
+    author VARCHAR(100),
+    price DECIMAL(10,2)
+);`,
+          },
+        ],
+      },
     ],
   },
   // MAD
