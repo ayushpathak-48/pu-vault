@@ -448,7 +448,7 @@ export const sem3Materials = [
       {
         id: 0,
         title: "Outputs",
-        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/mad-outputs.pdf`,
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ostf-outputs.pdf`,
       },
     ],
   },
