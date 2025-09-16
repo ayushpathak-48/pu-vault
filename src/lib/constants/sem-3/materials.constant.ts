@@ -293,6 +293,26 @@ export const sem3Materials = [
         title: "Practical 13 - CRUD Operations Combined 13_14_15",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-13_15.pdf`,
       },
+      {
+        id: 14,
+        title: "Practical 16 - LINQ and Stored Procedure",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-16.pdf`,
+      },
+      {
+        id: 15,
+        title: "Practical 17 - Ajax",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-17.pdf`,
+      },
+      {
+        id: 16,
+        title: "Practical 18 - XML",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-18.pdf`,
+      },
+      {
+        id: 17,
+        title: "Practical 19 - Introduction to MVC",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/wad/practical-19.pdf`,
+      },
     ],
     que_papers: [
       {
