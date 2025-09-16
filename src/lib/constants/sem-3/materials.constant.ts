@@ -422,7 +422,7 @@ export const sem3Materials = [
       {
         id: 1,
         title: "OSTF Python Practicals Lab Manual",
-        href: `${MATERIAL_LINK_BAE_URL_SEM_3}/materials/ostf/ostf-python-practical-lab-manual.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/ostf/ostf-python-practical-lab-manual.pdf`,
       },
     ],
     practicals_link: [
