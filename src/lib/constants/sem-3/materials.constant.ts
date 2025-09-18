@@ -426,11 +426,11 @@ export const sem3Materials = [
       },
     ],
     practicals_link: [
-      {
-        id: 1,
-        title: "OSTF All Practicals",
-        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ostf/ostf-journal.pdf`,
-      },
+      // {
+      //   id: 1,
+      //   title: "OSTF All Practicals",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ostf/ostf-journal.pdf`,
+      // },
     ],
     que_papers: [
       {
