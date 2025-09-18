@@ -445,11 +445,11 @@ export const sem3Materials = [
       },
     ],
     output_links: [
-      {
-        id: 0,
-        title: "Outputs",
-        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ostf-outputs.pdf`,
-      },
+      // {
+      //   id: 0,
+      //   title: "Outputs",
+      //   journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/ostf-outputs.pdf`,
+      // },
     ],
   },
   //  Minor project
