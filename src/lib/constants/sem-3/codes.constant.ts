@@ -708,13 +708,12 @@ plt.show()`,
         ],
       },
       {
-        key: "semantic-net",
-        name: "Semantic Net Representation from Prolog Knowledge",
+        key: "travelling-salesman-prolog",
+        name: "Travelling Salesman Problem using Prolog",
         pageBlocks: [
           {
             type: "heading",
-            value:
-              "Practical - Semantic Net (Converted from Prolog Knowledge Base)",
+            value: "Practical - Travelling Salesman Problem using prolog",
           },
           {
             type: "code",
