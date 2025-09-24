@@ -699,6 +699,11 @@ export const sem3specializationMaterials = [
           "Demonstrate Supervised Learning using artificial neural network",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-8.pdf`,
       },
+      {
+        id: 9,
+        title: "Travelling salesman using prolog",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/ai/practical-9.pdf`,
+      },
     ],
     que_papers: [
       {
