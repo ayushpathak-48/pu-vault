@@ -717,7 +717,7 @@ plt.show()`,
           },
           {
             type: "code",
-            fileName: "semantic-net.py",
+            fileName: "travelling-salesman-prolog.py",
             value: `% tsp.pl
 % Simple exhaustive TSP for a small set of cities (symmetric distances)
 
