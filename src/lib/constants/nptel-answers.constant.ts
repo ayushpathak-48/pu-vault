@@ -323,4 +323,65 @@ export const nptelAllWeeksAnswers = [
       },
     ],
   },
+  {
+    key: "week-10",
+    title: "Week 10 - Assignment answers",
+    answers: [
+      { id: 1, option: 2, answer: "A cluster" },
+      { id: 2, option: 3, answer: "Classification" },
+      { id: 3, option: 1, answer: "Number of clusters" },
+      { id: 4, option: 3, answer: "Single linkage" },
+      { id: 5, option: 2, answer: "Algorithm overshoots minimum" },
+      {
+        id: 6,
+        option: 3,
+        answer: "Good performance on training but poor on testing",
+      },
+      {
+        id: 7,
+        option: 2,
+        answer: "Reduce model complexity and prevent overfitting",
+      },
+      { id: 8, option: 2, answer: "Sigmoid" },
+      { id: 9, option: 1, answer: "Binary classification" },
+      { id: 10, option: [2, 3], answer: ["Sigmoid, ", "Tanh"] },
+      {
+        id: 11,
+        option: [1, 2, 3],
+        answer: [
+          "Clustering, ",
+          "Association Rule Mining, ",
+          "Anomaly Detection",
+        ],
+      },
+      {
+        id: 12,
+        option: [1, 2, 3],
+        answer: [
+          "Learning Rate, ",
+          "Number of Hidden Layers, ",
+          "Maximum Iterations",
+        ],
+      },
+      {
+        id: 13,
+        option: [1, 2, 4],
+        answer: ["L1 Regularization, ", "L2 Regularization, ", "Dropout"],
+      },
+      {
+        id: 14,
+        option: [1, 2, 3],
+        answer: ["Single linkage, ", "Complete linkage, ", "Centroid"],
+      },
+      {
+        id: 15,
+        option: [1, 2, 4],
+        answer: [
+          "Neither underfitting nor overfitting ,",
+          "Good performance on validation set ,",
+          "Generalizing well to unseen data",
+        ],
+      },
+    ],
+  },
 ];
