@@ -10,6 +10,7 @@ import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { FeedbackDialog } from "@/components/modals/FeedbackDialog";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
+import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -59,8 +60,9 @@ export default function RootLayout({
               <BottomTabs />
               <Toaster position="top-center" />
               <WhatsappFloatingButton />
-              {/* <WhatsappDialog /> */}
               <FeedbackDialog />
+              {/* <WhatsappDialog /> */}
+              <FeedbackFloatingDialog />
               <DeviceTracker />
             </ClientProvider>
           </NuqsAdapter>
