@@ -18,7 +18,7 @@ export const WhatsappDialog = () => {
 
   useEffect(() => {
     const whatsappDialogClosed = localStorage.getItem(
-      "whatsappDialogClosed-27-07",
+      "whatsappDialogClosed-27-07"
     );
     if (!whatsappDialogClosed) {
       setOpen(true);

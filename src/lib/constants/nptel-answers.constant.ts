@@ -384,4 +384,59 @@ export const nptelAllWeeksAnswers = [
       },
     ],
   },
+  {
+    key: "week-11",
+    title: "Week 11 - Assignment answers",
+    answers: [
+      { id: 1, option: 3, answer: "Backpropagation" },
+      { id: 2, option: 2, answer: "TensorFlow" },
+      { id: 3, option: 3, answer: "Feature/Independent variable" },
+      { id: 4, option: 2, answer: "Image and video processing" },
+      { id: 5, option: 2, answer: "Pooling layer" },
+      { id: 6, option: 2, answer: "Bag of Words" },
+      { id: 7, option: 2, answer: "Sequential data" },
+      { id: 8, option: 2, answer: "Tokenization" },
+      { id: 9, option: 2, answer: "Automatically learn spatial hierarchies" },
+      { id: 10, option: 2, answer: "Map words into numerical vectors" },
+      {
+        id: 11,
+        option: [1, 2, 3],
+        answer: [
+          "Computer Vision, ",
+          "Speech Recognition, ",
+          "Natural Language Processing",
+        ],
+      },
+      {
+        id: 12,
+        option: [1, 2, 3],
+        answer: ["Convolutional Layer, ", "Pooling Layer, ", "Flatten Layer"],
+      },
+      {
+        id: 13,
+        option: [1, 2, 3, 4],
+        answer: [
+          "One-to-one, ",
+          "One-to-many, ",
+          "Many-to-one, ",
+          "Many-to-many",
+        ],
+      },
+      {
+        id: 14,
+        option: [1, 2, 3, 4],
+        answer: [
+          "Data requirements, ",
+          "Need for Feature Engineering, ",
+          "Interpretability, ",
+          "Model complexity",
+        ],
+      },
+      {
+        id: 15,
+        option: [1, 2, 3],
+        answer: ["Tokenization, ", "Padding, ", "Vectorization"],
+      },
+    ],
+  },
 ];

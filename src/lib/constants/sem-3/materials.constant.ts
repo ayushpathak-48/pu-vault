@@ -215,6 +215,11 @@ export const sem3Materials = [
         title: "Unit-4: Data Access through ADO.NET",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/4-data-access-through-ado.net.pdf`,
       },
+      {
+        id: 5,
+        title: "Unit-5: Advanced ASP.net",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/web-application-development/5-advanced-asp.net.pdf`,
+      },
     ],
     practicals_link: [
       {
@@ -637,19 +642,29 @@ export const sem3specializationMaterials = [
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/3-uncertain-reasoning.pdf`,
       },
       {
+        id: 7,
+        title: "Unit-4: Understanding",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/4-understanding.pdf`,
+      },
+      {
         id: 4,
-        title: "Unit-4: Natural Language Processing",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/4-natural-language-processing.pdf`,
+        title: "Unit-5: Natural Language Processing",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/5-natural-language-processing.pdf`,
       },
       {
         id: 5,
-        title: "Unit-5: Neural Networks",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/5-neural-networks.pdf`,
+        title: "Unit-6: Neural Networks",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/6-neural-networks.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Expert System",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/8-expert-system.pdf`,
       },
       {
         id: 6,
-        title: "Unit-6: Prolog",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/6-Prolog.pdf`,
+        title: "Unit-9: Prolog",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/9-prolog.pdf`,
       },
     ],
     practicals_link: [
@@ -890,8 +905,8 @@ export const sem3specializationMaterials = [
     subject_name: "Cyber Security and Forensics - II",
     value: "csf",
     key: "cyber-security-and-forensics-II",
-    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/cyber-security-and-forensics-II.pdf`,
-    syllabus_link: ``,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/csf.pdf`,
+
     notes_link: [
       {
         id: 1,
@@ -918,6 +933,26 @@ export const sem3specializationMaterials = [
         id: 5,
         title: "Unit-5: Digital Forensics Introduction & File System",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/5-digital-forensics-introduction-and-file-systems.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Log System",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/6-log-system.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-7: Vulnerability Assessment",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/7-vulnerability-assessment.pdf`,
+      },
+      {
+        id: 8,
+        title: "Unit-8: Malware Analysis",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/8-malware-analysis.pdf`,
+      },
+      {
+        id: 9,
+        title: "Unit-9: Static Analysis",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/cyber-security-and-forensics-II/9-static-analysis.pdf`,
       },
     ],
     practicals_link: [
