@@ -976,6 +976,16 @@ export const sem3specializationMaterials = [
         title: "Lab 3 - DVWA",
         journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-3.pdf`,
       },
+      {
+        id: 4,
+        title: "Lab 4 - Nessus Vulnerability Scanner",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Lab 5 - ANY.RUN Malware Sandbox",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/csf/lab-5.pdf`,
+      },
     ],
     que_papers: [
       {
