@@ -490,6 +490,7 @@ export const nptelAllWeeksAnswers = [
         id: 15,
         option: [1, 2],
         answer: ["Features, ", "Response"],
+        // New just
       },
     ],
   },
