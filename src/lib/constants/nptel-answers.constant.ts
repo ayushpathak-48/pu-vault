@@ -439,4 +439,58 @@ export const nptelAllWeeksAnswers = [
       },
     ],
   },
+  {
+    key: "week-12",
+    title: "Week 12 - Assignment answers",
+    answers: [
+      { id: 1, option: 3, answer: "Regression" },
+      { id: 2, option: 3, answer: "Root Mean Squared Error" },
+      { id: 3, option: 3, answer: "80%–20%" },
+      { id: 4, option: 3, answer: "train_test_split()" },
+      { id: 5, option: 3, answer: "0 to 1" },
+      { id: 6, option: 1, answer: "StandardScaler" },
+      { id: 7, option: 4, answer: "Actual negative predicted as negative" },
+      {
+        id: 8,
+        option: 2,
+        answer:
+          "Considers total true positives, false positives, and false negatives",
+      },
+      { id: 9, option: 3, answer: "accuracy_score" },
+      { id: 10, option: 3, answer: "Gradient Boosting" },
+      {
+        id: 11,
+        option: [1, 2, 3],
+        answer: [
+          "Kaggle, ",
+          "AWS datasets, ",
+          "UCI Machine Learning Repository",
+        ],
+      },
+      {
+        id: 12,
+        option: [1, 2, 3],
+        answer: ["Data loading, ", "Data visualization, ", "Model fine-tuning"],
+      },
+      {
+        id: 13,
+        option: [1, 2, 3],
+        answer: [
+          "Supervised learning, ",
+          "Unsupervised learning, ",
+          "Dimensionality reduction",
+        ],
+      },
+      {
+        id: 14,
+        option: [1, 2],
+        answer: ["dropna(), ", "fillna()"],
+      },
+      {
+        id: 15,
+        option: [1, 2],
+        answer: ["Features, ", "Response"],
+      },
+    ],
+  },
 ];
