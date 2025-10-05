@@ -45,7 +45,14 @@ export const HomePageAccordionList = ({
     >
       {specializationTabData.map((item: any) => {
         if (item.value == specialization) {
-          return <MaterialAccordionCard key={item.id} material={item} />;
+          return (
+            <MaterialAccordionCard
+              setActiveTabSection={setActiveTabSection}
+              activeTabSection={activeTabSection}
+              key={item.id}
+              material={item}
+            />
+          );
         }
       })}
       {tabData.map((material: any) => {
@@ -182,7 +189,7 @@ const MaterialAccordionCard = ({
                     className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"
                   >
                     <div className="text-md font-medium">
-                      <Link href={practical.journal_link}>
+                      <Link target="_blank" href={practical.journal_link}>
                         <span className="custom-heading">Journal:</span>{" "}
                         {practical.title}
                       </Link>

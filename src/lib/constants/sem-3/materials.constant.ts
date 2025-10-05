@@ -1037,6 +1037,70 @@ export const sem3specializationMaterials = [
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/bda-handwritten-notes-14-questions.pdf`,
       },
     ],
-    practicals_link: [],
+    practicals_link: [
+      {
+        id: 0,
+        title: "Index",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/index.pdf`,
+      },
+      {
+        id: 1,
+        title: "Practical 1 - Set & Map",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-1.pdf`,
+      },
+      {
+        id: 2,
+        title: "Practical 2 - Crud Operation in MongoDB",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-2.pdf`,
+      },
+      {
+        id: 3,
+        title: "Practical 3 - Purches.txt",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-3.pdf`,
+      },
+      {
+        id: 4,
+        title: "Practical 4 - TF-IDF data frame",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-4.pdf`,
+      },
+
+      {
+        id: 5,
+        title: "Practical 5 - Linux Based",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Practical 6 - Hive-Hive Server",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-6.pdf`,
+      },
+      {
+        id: 7,
+        title: "Practical 7 - Spark Application - Word Count",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-7.pdf`,
+      },
+      {
+        id: 8,
+        title: "Practical 8 - Count Frequency",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-8.pdf`,
+      },
+      {
+        id: 9,
+        title: "Practical 9 - Sorted By frequency",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-9.pdf`,
+      },
+      {
+        id: 10,
+        title: "Practical 10 - Pair by Frequency",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/bda/practical-10.pdf`,
+      },
+    ],
+    output_links: [
+      {
+        id: 0,
+        title: "Outputs",
+        journal_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/practicals/outputs/bda-outputs.pdf`,
+      },
+    ],
   },
 ];
