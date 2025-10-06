@@ -8069,6 +8069,467 @@ app.controller("myCtrl", function ($scope) {
           },
         ],
       },
+      //  p- 9
+      {
+        key: "practical-9",
+        name: "Practical - 9: MongoDB Installation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 9 - Steps to Install MongoDB on Different Operating Systems",
+          },
+          {
+            type: "paragraph",
+            value: `This practical demonstrates how to install MongoDB on Windows, Linux (Ubuntu/Debian), and macOS systems.`,
+          },
+          {
+            type: "subheading",
+            value: "1. Install MongoDB on Windows",
+          },
+          {
+            type: "list",
+            value: [
+              "Go to the MongoDB official website: https://www.mongodb.com/try/download/community",
+              "Download the latest MongoDB Community Server (MSI file).",
+              "Run the downloaded .msi file and choose Complete setup.",
+              "Check the option “Install MongoDB as a Service” and click Next.",
+              "Finish the installation. MongoDB service will start automatically.",
+            ],
+          },
+          {
+            type: "subheading",
+            value: "Verify Installation (Windows)",
+          },
+          {
+            type: "code",
+            fileName: "cmd",
+            value: `mongod --version`,
+          },
+          {
+            type: "paragraph",
+            value:
+              "If it displays the version information, MongoDB is installed successfully.",
+          },
+          {
+            type: "subheading",
+            value: "MongoDB Compass (GUI Tool)",
+          },
+          {
+            type: "paragraph",
+            value:
+              "If selected during installation, MongoDB Compass can be used to manage databases through a graphical interface.",
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "subheading",
+            value: "2. Install MongoDB on Linux (Ubuntu/Debian)",
+          },
+          {
+            type: "code",
+            fileName: "linux-install.sh",
+            value: `# 1. Import MongoDB GPG Key
+curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \\
+sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg --dearmor
+
+# 2. Add MongoDB Repository
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] \\
+https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | \\
+sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+# 3. Update & Install
+sudo apt update
+sudo apt install -y mongodb-org
+
+# 4. Start MongoDB
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+# 5. Check Status
+sudo systemctl status mongod`,
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "subheading",
+            value: "3. Install MongoDB on macOS (with Homebrew)",
+          },
+          {
+            type: "code",
+            fileName: "mac-install.sh",
+            value: `# 1. Update Homebrew
+brew update
+
+# 2. Install MongoDB
+brew tap mongodb/brew
+brew install mongodb-community@6.0
+
+# 3. Start MongoDB Service
+brew services start mongodb-community@6.0
+
+# 4. Verify Installation
+mongosh   # Opens the MongoDB shell`,
+          },
+        ],
+      },
+      //  p- 10
+      {
+        key: "practical-10",
+        name: "Practical - 10: Database Connectivity using MongoDB",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 10 - WAP to Implement Database Connectivity using MongoDB",
+          },
+          {
+            type: "paragraph",
+            value:
+              "This practical demonstrates how to connect a Java program to MongoDB, perform basic database operations, and verify the connection.",
+          },
+          {
+            type: "subheading",
+            value: "1. Install MongoDB",
+          },
+          {
+            type: "paragraph",
+            value:
+              "Ensure MongoDB is installed and running locally or use a cloud-hosted MongoDB instance (e.g., MongoDB Atlas).",
+          },
+          {
+            type: "subheading",
+            value: "2. Add MongoDB Java Driver",
+          },
+          {
+            type: "paragraph",
+            value:
+              "You can add the MongoDB driver using Maven or by manually adding the JAR file to your Java project.",
+          },
+          {
+            type: "subheading",
+            value: "🔧 Maven Dependency",
+          },
+          {
+            type: "code",
+            fileName: "pom.xml",
+            value: `<dependency>
+  <groupId>org.mongodb</groupId>
+  <artifactId>mongodb-driver-sync</artifactId>
+  <version>4.11.1</version> <!-- Use latest version -->
+</dependency>`,
+          },
+          {
+            type: "subheading",
+            value: "3. Java Program: MongoDBConnectionExample.java",
+          },
+          {
+            type: "code",
+            fileName: "MongoDBConnectionExample.java",
+            value: `import com.mongodb.client.*;
+import com.mongodb.client.model.Filters;
+import org.bson.Document;
+import static com.mongodb.client.model.Filters.eq;
+
+public class MongoDBConnectionExample {
+    public static void main(String[] args) {
+        // 1. Connect to MongoDB
+        String uri = "mongodb://localhost:27017";
+        try (MongoClient mongoClient = MongoClients.create(uri)) {
+
+            // 2. Access database
+            MongoDatabase database = mongoClient.getDatabase("testdb");
+
+            // 3. Access collection
+            MongoCollection<Document> collection = database.getCollection("users");
+
+            // 4. Insert a document
+            Document doc = new Document("name", "Alice")
+                    .append("email", "alice@example.com")
+                    .append("age", 30);
+            collection.insertOne(doc);
+            System.out.println("Document inserted");
+
+            // 5. Read documents
+            FindIterable<Document> users = collection.find();
+            System.out.println("Users in database:");
+            for (Document user : users) {
+                System.out.println(user.toJson());
+            }
+
+        } catch (Exception e) {
+            System.err.println("MongoDB connection failed: " + e.getMessage());
+        }
+    }
+}`,
+          },
+          {
+            type: "subheading",
+            value: "4. Output Example",
+          },
+          {
+            type: "code",
+            fileName: "output",
+            value: `Document inserted
+Users in database:
+{"_id": {"$oid": "652e9b1a9f1c9b1f7c0a1234"}, "name": "Alice", "email": "alice@example.com", "age": 30}`,
+          },
+          {
+            type: "paragraph",
+            value:
+              "✅ This program connects to MongoDB, inserts a sample document into the 'users' collection, and retrieves all user records.",
+          },
+        ],
+      },
+      //  p- 11
+      {
+        key: "practical-11",
+        name: "Practical - 11: CRUD Operations using MongoDB",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 11 - WAP to Implement CRUD Operations using MongoDB",
+          },
+          {
+            type: "paragraph",
+            value:
+              "This practical demonstrates how to perform Create, Read, Update, and Delete (CRUD) operations on a MongoDB database using Java.",
+          },
+          {
+            type: "subheading",
+            value: "1. Add MongoDB Java Driver",
+          },
+          {
+            type: "paragraph",
+            value:
+              "You can add the MongoDB Java driver via Maven or by manually downloading the JAR file and adding it to your project classpath.",
+          },
+          {
+            type: "subheading",
+            value: "🔧 Maven Dependency (if using Maven)",
+          },
+          {
+            type: "code",
+            fileName: "pom.xml",
+            value: `<dependency>
+  <groupId>org.mongodb</groupId>
+  <artifactId>mongodb-driver-sync</artifactId>
+  <version>4.11.1</version> <!-- Use latest version -->
+</dependency>`,
+          },
+          {
+            type: "subheading",
+            value: "2. Java Program: MongoCRUDExample.java",
+          },
+          {
+            type: "code",
+            fileName: "MongoCRUDExample.java",
+            value: `import com.mongodb.client.*;
+import org.bson.Document;
+import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.set;
+
+public class MongoCRUDExample {
+    public static void main(String[] args) {
+        String uri = "mongodb://localhost:27017";
+
+        try (MongoClient mongoClient = MongoClients.create(uri)) {
+            MongoDatabase database = mongoClient.getDatabase("testdb");
+            MongoCollection<Document> collection = database.getCollection("users");
+
+            // 1️ CREATE
+            Document user = new Document("name", "John Doe")
+                    .append("email", "john@example.com")
+                    .append("age", 28);
+            collection.insertOne(user);
+            System.out.println("Inserted: " + user.toJson());
+
+            // 2️ READ
+            System.out.println("All users:");
+            FindIterable<Document> users = collection.find();
+            for (Document doc : users) {
+                System.out.println(doc.toJson());
+            }
+
+            // 3️ UPDATE
+            collection.updateOne(eq("name", "John Doe"), set("age", 30));
+            System.out.println("Updated John's age to 30");
+
+            // Read again to verify update
+            Document updatedUser = collection.find(eq("name", "John Doe")).first();
+            System.out.println("After update: " + updatedUser.toJson());
+
+            // 4️ DELETE
+            collection.deleteOne(eq("name", "John Doe"));
+            System.out.println("Deleted user 'John Doe'");
+
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}`,
+          },
+          {
+            type: "subheading",
+            value: "3. How to Run",
+          },
+          {
+            type: "list",
+            value: [
+              "Ensure MongoDB is running on `localhost:27017`.",
+              "Add the MongoDB driver JAR file to your classpath (or use Maven).",
+              "Compile the Java file:",
+              "javac -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample.java",
+              "Run the program:",
+              "java -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample",
+            ],
+          },
+          {
+            type: "subheading",
+            value: "4. Expected Output",
+          },
+          {
+            type: "code",
+            fileName: "output",
+            value: `Inserted: {"_id": {"$oid": "652ea2b89f1c9b1f7c0a1234"}, "name": "John Doe", "email": "john@example.com", "age": 28}
+All users:
+{"_id": {"$oid": "652ea2b89f1c9b1f7c0a1234"}, "name": "John Doe", "email": "john@example.com", "age": 28}
+Updated John's age to 30
+After update: {"_id": {"$oid": "652ea2b89f1c9b1f7c0a1234"}, "name": "John Doe", "email": "john@example.com", "age": 30}
+Deleted user 'John Doe'`,
+          },
+          {
+            type: "paragraph",
+            value:
+              "✅ This program demonstrates all four CRUD operations (Create, Read, Update, Delete) using the MongoDB Java driver.",
+          },
+        ],
+      },
+      //  p- 12
+      {
+        key: "practical-12",
+        name: "Practical - 12: Implement Node.js with MongoDB",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 12 - WAP to Implement Node.js with MongoDB",
+          },
+          {
+            type: "paragraph",
+            value:
+              "This practical demonstrates how to connect a Node.js application to MongoDB using Mongoose and perform CRUD operations (Create, Read, Update, Delete).",
+          },
+          {
+            type: "subheading",
+            value: "Step 1: Project Setup",
+          },
+          {
+            type: "list",
+            value: [
+              "Create a new folder and navigate into it:",
+              "`mkdir node-mongo-crud`",
+              "`cd node-mongo-crud`",
+              "Initialize a new Node.js project:",
+              "`npm init -y`",
+              "Install dependencies:",
+              "`npm install mongoose`",
+            ],
+          },
+          {
+            type: "subheading",
+            value: "Step 2: index.js – Node.js + MongoDB Script",
+          },
+          {
+            type: "code",
+            fileName: "index.js",
+            value: `const mongoose = require('mongoose');
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/mydb', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Connection error:', err));
+
+// Define schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number
+});
+
+// Create model
+const User = mongoose.model('User', userSchema);
+
+// CRUD Operations
+async function runCRUD() {
+  // 1. CREATE
+  const user = new User({
+    name: 'Alice',
+    email: 'alice@example.com',
+    age: 24
+  });
+
+  await user.save();
+  console.log('User added:', user);
+
+  // 2. READ
+  const users = await User.find();
+  console.log('Users in DB:', users);
+
+  // 3. UPDATE
+  const updatedUser = await User.findOneAndUpdate(
+    { name: 'Alice' },
+    { age: 25 },
+    { new: true }
+  );
+  console.log('User updated:', updatedUser);
+
+  // 4. DELETE
+  const deletedUser = await User.findOneAndDelete({ name: 'Alice' });
+  console.log('User deleted:', deletedUser);
+
+  mongoose.connection.close();
+}
+
+runCRUD();`,
+          },
+          {
+            type: "subheading",
+            value: "How to Run",
+          },
+          {
+            type: "list",
+            value: [
+              "Ensure MongoDB is running on `localhost:27017`.",
+              "Run the script using Node.js:",
+              "`node index.js`",
+            ],
+          },
+          {
+            type: "subheading",
+            value: "Output Example",
+          },
+          {
+            type: "code",
+            fileName: "output",
+            value: `Connected to MongoDB
+User added: { name: 'Alice', email: 'alice@example.com', age: 24 }
+Users in DB: [ { _id: ObjectId('652eabcd1234...'), name: 'Alice', email: 'alice@example.com', age: 24 } ]
+User updated: { name: 'Alice', email: 'alice@example.com', age: 25 }
+User deleted: { name: 'Alice', email: 'alice@example.com', age: 25 }`,
+          },
+          {
+            type: "paragraph",
+            value:
+              "✅ This Node.js program connects to MongoDB using Mongoose, performs CRUD operations, and then closes the connection.",
+          },
+        ],
+      },
     ],
   },
   // ostf
