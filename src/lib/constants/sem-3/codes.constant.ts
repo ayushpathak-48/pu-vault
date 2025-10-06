@@ -8087,16 +8087,16 @@ app.controller("myCtrl", function ($scope) {
             type: "subheading",
             value: "1. Install MongoDB on Windows",
           },
-          {
-            type: "list",
-            value: [
-              "Go to the MongoDB official website: https://www.mongodb.com/try/download/community",
-              "Download the latest MongoDB Community Server (MSI file).",
-              "Run the downloaded .msi file and choose Complete setup.",
-              "Check the option “Install MongoDB as a Service” and click Next.",
-              "Finish the installation. MongoDB service will start automatically.",
-            ],
-          },
+          // {
+          //   type: "list",
+          //   value: [
+          //     "Go to the MongoDB official website: https://www.mongodb.com/try/download/community",
+          //     "Download the latest MongoDB Community Server (MSI file).",
+          //     "Run the downloaded .msi file and choose Complete setup.",
+          //     "Check the option “Install MongoDB as a Service” and click Next.",
+          //     "Finish the installation. MongoDB service will start automatically.",
+          //   ],
+          // },
           {
             type: "subheading",
             value: "Verify Installation (Windows)",
@@ -8120,9 +8120,9 @@ app.controller("myCtrl", function ($scope) {
             value:
               "If selected during installation, MongoDB Compass can be used to manage databases through a graphical interface.",
           },
-          {
-            type: "divider",
-          },
+          // {
+          //   type: "divider",
+          // },
           {
             type: "subheading",
             value: "2. Install MongoDB on Linux (Ubuntu/Debian)",
@@ -8150,9 +8150,9 @@ sudo systemctl enable mongod
 # 5. Check Status
 sudo systemctl status mongod`,
           },
-          {
-            type: "divider",
-          },
+          // {
+          //   type: "divider",
+          // },
           {
             type: "subheading",
             value: "3. Install MongoDB on macOS (with Homebrew)",
@@ -8376,17 +8376,17 @@ public class MongoCRUDExample {
             type: "subheading",
             value: "3. How to Run",
           },
-          {
-            type: "list",
-            value: [
-              "Ensure MongoDB is running on `localhost:27017`.",
-              "Add the MongoDB driver JAR file to your classpath (or use Maven).",
-              "Compile the Java file:",
-              "javac -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample.java",
-              "Run the program:",
-              "java -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample",
-            ],
-          },
+          // {
+          //   type: "list",
+          //   value: [
+          //     "Ensure MongoDB is running on `localhost:27017`.",
+          //     "Add the MongoDB driver JAR file to your classpath (or use Maven).",
+          //     "Compile the Java file:",
+          //     "javac -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample.java",
+          //     "Run the program:",
+          //     "java -cp .:mongodb-driver-sync-4.11.1.jar MongoCRUDExample",
+          //   ],
+          // },
           {
             type: "subheading",
             value: "4. Expected Output",
@@ -8426,18 +8426,18 @@ Deleted user 'John Doe'`,
             type: "subheading",
             value: "Step 1: Project Setup",
           },
-          {
-            type: "list",
-            value: [
-              "Create a new folder and navigate into it:",
-              "`mkdir node-mongo-crud`",
-              "`cd node-mongo-crud`",
-              "Initialize a new Node.js project:",
-              "`npm init -y`",
-              "Install dependencies:",
-              "`npm install mongoose`",
-            ],
-          },
+          // {
+          //   type: "list",
+          //   value: [
+          //     "Create a new folder and navigate into it:",
+          //     "`mkdir node-mongo-crud`",
+          //     "`cd node-mongo-crud`",
+          //     "Initialize a new Node.js project:",
+          //     "`npm init -y`",
+          //     "Install dependencies:",
+          //     "`npm install mongoose`",
+          //   ],
+          // },
           {
             type: "subheading",
             value: "Step 2: index.js – Node.js + MongoDB Script",
@@ -8502,14 +8502,14 @@ runCRUD();`,
             type: "subheading",
             value: "How to Run",
           },
-          {
-            type: "list",
-            value: [
-              "Ensure MongoDB is running on `localhost:27017`.",
-              "Run the script using Node.js:",
-              "`node index.js`",
-            ],
-          },
+          // {
+          //   type: "list",
+          //   value: [
+          //     "Ensure MongoDB is running on `localhost:27017`.",
+          //     "Run the script using Node.js:",
+          //     "`node index.js`",
+          //   ],
+          // },
           {
             type: "subheading",
             value: "Output Example",
