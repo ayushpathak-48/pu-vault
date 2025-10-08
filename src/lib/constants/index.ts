@@ -330,7 +330,7 @@ export const alertContent = [
   {
     id: 2,
     title: "End Term Time Table",
-    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/sem-3_time-table.pdf`,
+    href: `${MATERIAL_LINK_BASE_URL_SEM_3}/revised_timetable.pdf`,
   },
   {
     id: 1,
