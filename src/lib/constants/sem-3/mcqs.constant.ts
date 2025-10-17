@@ -23089,6 +23089,1910 @@ export const sem3MCQs = [
           },
         ],
       },
+      {
+        id: 2,
+        title: "Week 2: Assignment 2",
+        key: "week-2-assignment-2",
+        all_mcqs: [
+          {
+            id: 1,
+            title: "What are the two main branches of Statistics?",
+            options: [
+              "Descriptive and Inferential Statistics",
+              "Qualitative and Quantitative Statistics",
+              "Population and Sampling Statistics",
+              "Hypothesis and Probability Statistics",
+            ],
+            correct_option: 0,
+            solution:
+              "The two main branches of Statistics are Descriptive Statistics (summarizing data) and Inferential Statistics (making predictions from data).",
+          },
+          {
+            id: 2,
+            title:
+              "Which of the following measures are considered measures of centrality? *(Select all that apply)*",
+            options: ["Mean", "Variance", "Median", "Mode"],
+            correct_option: [0, 2, 3],
+            solution:
+              "Mean, Median, and Mode are measures of central tendency. Variance measures dispersion, not centrality.",
+          },
+          {
+            id: 3,
+            title: "In a box plot, what does the box represent?",
+            options: [
+              "Mean and Range",
+              "Interquartile Range (IQR)",
+              "Maximum and Minimum",
+              "Variance and Standard Deviation",
+            ],
+            correct_option: 1,
+            solution:
+              "The box in a box plot represents the Interquartile Range (IQR), which contains the middle 50% of the data.",
+          },
+          {
+            id: 4,
+            title:
+              "Which sampling method involves dividing the population into groups and selecting entire groups?",
+            options: [
+              "Simple Random Sampling",
+              "Stratified Sampling",
+              "Cluster Sampling",
+              "Systematic Sampling",
+            ],
+            correct_option: 2,
+            solution:
+              "Cluster Sampling involves dividing the population into clusters and selecting entire clusters for the sample.",
+          },
+          {
+            id: 5,
+            title: "Which of the following are types of hypothesis tests?",
+            options: ["T-test", "Z-test", "Chi-square Test", "ANOVA"],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "Common hypothesis tests include T-test, Z-test, Chi-square Test, and ANOVA.",
+          },
+          {
+            id: 6,
+            title: "The P-value indicates:",
+            options: [
+              "Sample size",
+              "Statistical significance",
+              "Confidence interval",
+              "Population parameter",
+            ],
+            correct_option: 1,
+            solution:
+              "The P-value is used to determine statistical significance in hypothesis testing.",
+          },
+          {
+            id: 7,
+            title:
+              "Which test is used to compare means from two different samples?",
+            options: [
+              "One-sample t-test",
+              "Two-sample t-test",
+              "ANOVA",
+              "Chi-square Test",
+            ],
+            correct_option: 1,
+            solution:
+              "A Two-sample t-test compares the means of two independent groups to check for statistically significant differences.",
+          },
+          {
+            id: 8,
+            title: "Conditional probability is denoted as:",
+            options: ["P(A or B)", "P(A and B)", "P(A|B)", "P(B)"],
+            correct_option: 2,
+            solution:
+              "Conditional probability, the probability of A given B, is denoted as P(A|B).",
+          },
+          {
+            id: 9,
+            title:
+              "Which rule is used to calculate the probability of two independent events happening together?",
+            options: [
+              "Addition Rule",
+              "Multiplication Rule",
+              "Subtraction Rule",
+              "Division Rule",
+            ],
+            correct_option: 1,
+            solution:
+              "The Multiplication Rule calculates the probability of two independent events occurring together.",
+          },
+          {
+            id: 10,
+            title:
+              "Which of the following are foundational rules of probability?",
+            options: [
+              "Probability of Impossible Event is 0",
+              "Probability of Certain Event is 1",
+              "Addition Rule",
+              "Multiplication Rule",
+            ],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "Foundational probability rules include: Impossible event = 0, Certain event = 1, Addition Rule, and Multiplication Rule.",
+          },
+          {
+            id: 11,
+            title: "In statistics, degrees of freedom (DF) is calculated as:",
+            options: ["N - 1", "N + 1", "2N", "N/2"],
+            correct_option: 0,
+            solution:
+              "Degrees of freedom are typically calculated as N - 1, where N is the sample size.",
+          },
+          {
+            id: 12,
+            title: "What type of data is 'Red, Blue, Green' categorized as?",
+            options: [
+              "Quantitative Discrete",
+              "Quantitative Continuous",
+              "Qualitative Nominal",
+              "Qualitative Ordinal",
+            ],
+            correct_option: 2,
+            solution:
+              "'Red, Blue, Green' are categories with no inherent order, making them Qualitative Nominal data.",
+          },
+          {
+            id: 13,
+            title:
+              "Which plot is mainly used to describe frequencies of categorical data?",
+            options: [
+              "Histogram",
+              "Frequency Plot",
+              "Scatter Plot",
+              "Box Plot",
+            ],
+            correct_option: 1,
+            solution:
+              "A Frequency Plot (or bar chart) is used to show counts or frequencies of categorical data.",
+          },
+          {
+            id: 14,
+            title: "In hypothesis testing, a two-tailed test is used when:",
+            options: [
+              "Testing for a specific direction",
+              "Testing for no specific direction",
+              "Testing variance only",
+              "Testing standard deviation only",
+            ],
+            correct_option: 1,
+            solution:
+              "A two-tailed test checks for differences in either direction, without specifying a direction in advance.",
+          },
+          {
+            id: 15,
+            title:
+              "Which of the following are important components of a Box and Whisker plot?",
+            options: ["Minimum", "Maximum", "Median", "Quartiles"],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "A Box and Whisker plot shows Minimum, Maximum, Median, and Quartiles to summarize data distribution.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Week 3: Assignment 3",
+        key: "week-3-assignment-3",
+        all_mcqs: [
+          {
+            id: 1,
+            title: "Which of the following are numeric data types in Python?",
+            options: [
+              "Integer, Float",
+              "Integer, Float, Boolean",
+              "Complex, String, List",
+              "Float, Set, Dictionary",
+            ],
+            correct_option: 0,
+            solution:
+              "In Python, Integer and Float are numeric data types. Boolean is not typically counted as numeric for this context.",
+          },
+          {
+            id: 2,
+            title:
+              "Which function is used to read input from the user in Python?",
+            options: ["read()", "scanf()", "input()", "readline()"],
+            correct_option: 2,
+            solution:
+              "The input() function is used to read a string from the user in Python.",
+          },
+          {
+            id: 3,
+            title:
+              "What will be the data type of value returned by the input() function?",
+            options: ["Integer", "String", "Float", "Boolean"],
+            correct_option: 1,
+            solution: "The input() function always returns a string in Python.",
+          },
+          {
+            id: 4,
+            title: "Which operator is used for string concatenation in Python?",
+            options: ["*", "+", "&", "%"],
+            correct_option: 1,
+            solution:
+              "The '+' operator is used to concatenate strings in Python.",
+          },
+          {
+            id: 5,
+            title:
+              "Which of the following is NOT an example of decision-making structures?",
+            options: ["If", "if-else", "if-elif-else", "for"],
+            correct_option: 3,
+            solution:
+              "'for' is a loop structure, not a decision-making structure.",
+          },
+          {
+            id: 6,
+            title:
+              "Which statement is used to skip the execution inside loops?",
+            options: ["Continue", "Break", "Exit", "return"],
+            correct_option: 0,
+            solution:
+              "The continue statement skips the rest of the current iteration in a loop and moves to the next iteration.",
+          },
+          {
+            id: 7,
+            title: "Which loop will always execute at least once?",
+            options: [
+              "for loop",
+              "while loop",
+              "do-while loop(conceptually)",
+              "nested loop",
+            ],
+            correct_option: 2,
+            solution:
+              "A do-while loop (conceptually) executes the block at least once before checking the condition.",
+          },
+          {
+            id: 8,
+            title: "What is the correct syntax of a for loop in Python?",
+            options: [
+              "for (int i=0; i < n; i++)",
+              "for variable in sequence:",
+              "for variable range():",
+              "for sequence in variable:",
+            ],
+            correct_option: 1,
+            solution:
+              "In Python, the for loop iterates over a sequence using the syntax: for variable in sequence:",
+          },
+          {
+            id: 9,
+            title:
+              "In Python, which loop checks the condition before executing the block?",
+            options: ["for loop", "while loop", "nested loop", "infinite loop"],
+            correct_option: 1,
+            solution:
+              "A while loop checks the condition before executing the block.",
+          },
+          {
+            id: 10,
+            title: "Which operator returns True if both operands are True?",
+            options: ["or", "and", "not", "xor"],
+            correct_option: 1,
+            solution:
+              "The 'and' operator returns True only if both operands are True.",
+          },
+          {
+            id: 11,
+            title: "Which are logical operators in Python?",
+            options: ["and", "or", "not", "in"],
+            correct_option: [0, 1, 2],
+            solution:
+              "Logical operators in Python are: and, or, not. 'in' is a membership operator.",
+          },
+          {
+            id: 12,
+            title: "What does the 'pass' statement do in Python?",
+            options: [
+              "Terminates a loop",
+              "Skips execution",
+              "Acts as a placeholder",
+              "Reverses condition",
+            ],
+            correct_option: 2,
+            solution:
+              "The 'pass' statement acts as a placeholder in Python and does nothing when executed.",
+          },
+          {
+            id: 13,
+            title: "Which symbol represents exponentiation in Python?",
+            options: ["^", "**", "*", "//"],
+            correct_option: 1,
+            solution: "The '**' operator is used for exponentiation in Python.",
+          },
+          {
+            id: 14,
+            title: "What will be the result of 7 // 2 in Python?",
+            options: ["3.5", "4", "3", "2"],
+            correct_option: 2,
+            solution:
+              "The '//' operator performs floor division, so 7 // 2 equals 3.",
+          },
+          {
+            id: 15,
+            title: "What does a function definition start with in Python?",
+            options: ["function", "func", "def", "define"],
+            correct_option: 2,
+            solution:
+              "A function in Python is defined using the 'def' keyword.",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Week 4: Assignment 4",
+        key: "week-4-assignment-4",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "Which data type in Python is mutable and stores data in key-value pairs?",
+            options: ["List", "Tuple", "Set", "Dictionary"],
+            correct_option: 3,
+            solution:
+              "A Dictionary is mutable and stores data in key-value pairs.",
+          },
+          {
+            id: 2,
+            title: "Which function is used to create an empty dictionary?",
+            options: ["list()", "dict()", "set()", "tuple()"],
+            correct_option: 1,
+            solution:
+              "The dict() function creates an empty dictionary in Python.",
+          },
+          {
+            id: 3,
+            title:
+              "Which of the following methods returns all the keys of a dictionary?",
+            options: ["items()", "values()", "keys()", "get()"],
+            correct_option: 2,
+            solution: "The keys() method returns all the keys of a dictionary.",
+          },
+          {
+            id: 4,
+            title:
+              "Which method can update multiple entries in a dictionary at once?",
+            options: ["add()", "update()", "insert()", "extend()"],
+            correct_option: 1,
+            solution:
+              "The update() method allows updating multiple entries in a dictionary at once.",
+          },
+          {
+            id: 5,
+            title: "Which of the following is TRUE about dictionary keys?",
+            options: [
+              "Keys can be mutable",
+              "Keys can be duplicated",
+              "Keys must be immutable",
+              "Keys must be integers",
+            ],
+            correct_option: 2,
+            solution:
+              "Dictionary keys must be immutable (e.g., strings, numbers, tuples).",
+          },
+          {
+            id: 6,
+            title: "Which data type does NOT support duplicate elements?",
+            options: ["List", "Tuple", "Set", "String"],
+            correct_option: 2,
+            solution: "A Set does not allow duplicate elements in Python.",
+          },
+          {
+            id: 7,
+            title: "Which function is used to create an empty set?",
+            options: ["__set()", "set()", "set__()", "set[]"],
+            correct_option: 1,
+            solution: "The set() function creates an empty set in Python.",
+          },
+          {
+            id: 8,
+            title:
+              "Which operation is used for intersection of two sets in Python?",
+            options: ["|", "&", "-", "^"],
+            correct_option: 1,
+            solution: "The '&' operator returns the intersection of two sets.",
+          },
+          {
+            id: 9,
+            title: "Which string method converts a string into lowercase?",
+            options: ["upper()", "swapcase()", "casefold()", "title()"],
+            correct_option: 2,
+            solution:
+              "The casefold() method converts a string into lowercase (more aggressive than lower()).",
+          },
+          {
+            id: 10,
+            title: "Which function returns the number of elements in a set?",
+            options: ["count()", "len()", "min()", "max()"],
+            correct_option: 1,
+            solution:
+              "The len() function returns the number of elements in a set.",
+          },
+          {
+            id: 11,
+            title: "Which data type is ordered and immutable?",
+            options: ["List", "Set", "Dictionary", "Tuple"],
+            correct_option: 3,
+            solution: "A Tuple is ordered and immutable in Python.",
+          },
+          {
+            id: 12,
+            title: "Which of the following is used to create a tuple?",
+            options: ["{}", "[]", "()", "<>"],
+            correct_option: 2,
+            solution: "Parentheses '()' are used to create a tuple in Python.",
+          },
+          {
+            id: 13,
+            title: "Which string operation is used for concatenation?",
+            options: ["*", "+", "-", "/"],
+            correct_option: 1,
+            solution: "The '+' operator concatenates strings in Python.",
+          },
+          {
+            id: 14,
+            title: "Which method of list adds an element at the end?",
+            options: ["insert()", "append()", "extend()", "add()"],
+            correct_option: 1,
+            solution:
+              "The append() method adds an element at the end of a list.",
+          },
+          {
+            id: 15,
+            title:
+              "Which set operation results in elements only present in the first set and not in second?",
+            options: [
+              "Intersection",
+              "Union",
+              "Difference",
+              "Symmetric Difference",
+            ],
+            correct_option: 2,
+            solution:
+              "The Difference operation returns elements only in the first set and not in the second.",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Week 5: Assignment 5",
+        key: "week-5-assignment-5",
+        all_mcqs: [
+          {
+            id: 1,
+            title: "Which of the following is NOT a pillar of OOP?",
+            options: [
+              "Encapsulation",
+              "Inheritance",
+              "Compilation",
+              "Polymorphism",
+            ],
+            correct_option: 2,
+            solution:
+              "Compilation is not a pillar of OOP. The pillars are Encapsulation, Inheritance, Polymorphism, and Abstraction.",
+          },
+          {
+            id: 2,
+            title: "Which method is a constructor in Python classes?",
+            options: ["__start__", "__init__", "__create__", "__construct__"],
+            correct_option: 1,
+            solution: "__init__ is the constructor method in Python classes.",
+          },
+          {
+            id: 3,
+            title: "Which keyword is used to inherit a class in Python?",
+            options: [
+              "implements",
+              "extends",
+              "superclass",
+              "(SuperclassName)",
+            ],
+            correct_option: 3,
+            solution:
+              "In Python, a class inherits from a superclass by specifying the superclass name in parentheses: class SubClass(SuperClassName):",
+          },
+          {
+            id: 4,
+            title:
+              "Which function is used to represent the object as a string?",
+            options: ["__str__", "__print__", "__repr__", "__show__"],
+            correct_option: 0,
+            solution:
+              "The __str__ method returns a string representation of the object.",
+          },
+          {
+            id: 5,
+            title: "Which of the following is an example of exception?",
+            options: ["SyntaxError", "BugError", "TypeError", "Extends"],
+            correct_option: [0, 2],
+            solution:
+              "SyntaxError and TypeError are examples of exceptions in Python.",
+          },
+          {
+            id: 6,
+            title:
+              "Which block is executed whether an exception occurs or not?",
+            options: ["try", "except", "finally", "else"],
+            correct_option: 2,
+            solution:
+              "The finally block is executed regardless of whether an exception occurs.",
+          },
+          {
+            id: 7,
+            title:
+              "Which mode opens a file for writing only and overwrites existing content?",
+            options: ["r", "w", "a", "r+"],
+            correct_option: 1,
+            solution:
+              "The 'w' mode opens a file for writing and overwrites existing content.",
+          },
+          {
+            id: 8,
+            title: "Which method is used to write multiple lines into a file?",
+            options: ["write()", "writelines()", "lines()", "readline()"],
+            correct_option: 1,
+            solution:
+              "The writelines() method writes multiple lines to a file.",
+          },
+          {
+            id: 9,
+            title: "Which attribute returns True if file is closed?",
+            options: ["file.mode", "file.name", "file.closed", "file.open"],
+            correct_option: 2,
+            solution:
+              "The file.closed attribute returns True if the file is closed.",
+          },
+          {
+            id: 10,
+            title: "Which method reads a single line from a file?",
+            options: ["read()", "readline()", "readlines()", "writelines()"],
+            correct_option: 1,
+            solution: "The readline() method reads a single line from a file.",
+          },
+          {
+            id: 11,
+            title: "Which function is used to change file pointer location?",
+            options: ["read()", "seek()", "readline()", "write()"],
+            correct_option: 1,
+            solution: "The seek() function changes the file pointer location.",
+          },
+          {
+            id: 12,
+            title: "Which statement is TRUE about a module?",
+            options: [
+              "It contains only functions",
+              "It contains only classes",
+              "It can contain both functions and classes",
+              "It cannot be imported",
+            ],
+            correct_option: 2,
+            solution:
+              "A module in Python can contain both functions and classes.",
+          },
+          {
+            id: 13,
+            title:
+              "What file must be created to make Python treat a directory as a package?",
+            options: [
+              "__main__.py",
+              "__init__.py",
+              "__start__.py",
+              "__package__.py",
+            ],
+            correct_option: 1,
+            solution:
+              "__init__.py must be created to treat a directory as a package in Python.",
+          },
+          {
+            id: 14,
+            title: "Which of the following is a benefit of modules?",
+            options: [
+              "Slower execution",
+              "Easier maintenance",
+              "Limited reusability",
+              "Higher memory usage",
+            ],
+            correct_option: 1,
+            solution:
+              "Modules provide easier maintenance and better reusability.",
+          },
+          {
+            id: 15,
+            title: "Which keyword is used to import a package or module?",
+            options: ["using", "import", "include", "module"],
+            correct_option: 1,
+            solution:
+              "The import keyword is used to import a package or module in Python.",
+          },
+        ],
+      },
+      {
+        id: 6,
+        title: "Week 6: Assignment 6",
+        key: "week-6-assignment-6",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "Which library is primarily used for numerical operations on arrays in Python?",
+            options: ["Pandas", "Matplotlib", "NumPy", "TensorFlow"],
+            correct_option: 2,
+            solution:
+              "NumPy is the core library in Python for numerical operations on arrays.",
+          },
+          {
+            id: 2,
+            title: "What method in NumPy is used to generate random integers?",
+            options: ["randinteger()", "randint()", "random()", "choice()"],
+            correct_option: 1,
+            solution:
+              "The randint() function generates random integers in NumPy.",
+          },
+          {
+            id: 3,
+            title: "Which method in NumPy randomly shuffles elements in-place?",
+            options: ["permutation()", "shuffle()", "choice()", "flip()"],
+            correct_option: 1,
+            solution:
+              "The shuffle() function randomly shuffles elements of an array in-place.",
+          },
+          {
+            id: 4,
+            title: "What does broadcasting in NumPy allow?",
+            options: [
+              "Resize arrays automatically",
+              "Perform operations on arrays with different shapes",
+              "Copy arrays",
+              "View arrays",
+            ],
+            correct_option: 1,
+            solution:
+              "Broadcasting allows operations on arrays with different shapes without explicitly reshaping them.",
+          },
+          {
+            id: 5,
+            title:
+              "Which attribute gives the number of dimensions in a NumPy array?",
+            options: ["ndim", "shape", "size", "dtype"],
+            correct_option: 0,
+            solution:
+              "The ndim attribute gives the number of dimensions in a NumPy array.",
+          },
+          {
+            id: 6,
+            title:
+              "Which NumPy function is used to create an array filled with zeros?",
+            options: ["ones()", "empty()", "zeros()", "zerosonly()"],
+            correct_option: 2,
+            solution:
+              "The zeros() function creates a NumPy array filled with zeros.",
+          },
+          {
+            id: 7,
+            title:
+              "Which data type in NumPy represents a double precision float?",
+            options: ["float16", "float32", "float64", "complex64"],
+            correct_option: 2,
+            solution:
+              "float64 represents a double precision floating-point number in NumPy.",
+          },
+          {
+            id: 8,
+            title:
+              "In NumPy, which function is used to find the mean of array elements?",
+            options: ["sum()", "mean()", "std()", "median()"],
+            correct_option: 1,
+            solution:
+              "The mean() function computes the average of array elements.",
+          },
+          {
+            id: 9,
+            title:
+              "What is returned by pandas.Series if the index is not specified?",
+            options: [
+              "Random index",
+              "Custom labels",
+              "Default numerical index",
+              "None",
+            ],
+            correct_option: 2,
+            solution:
+              "If the index is not specified, pandas.Series assigns a default numerical index starting from 0.",
+          },
+          {
+            id: 10,
+            title: "Which function reads a CSV file into a pandas DataFrame?",
+            options: [
+              "read_table()",
+              "read_csv()",
+              "csv_read()",
+              "read_json()",
+            ],
+            correct_option: 1,
+            solution:
+              "The read_csv() function reads a CSV file into a pandas DataFrame.",
+          },
+          {
+            id: 11,
+            title:
+              "Which method is used to print entire DataFrame as a string?",
+            options: ["info()", "head()", "describe()", "to_string()"],
+            correct_option: 3,
+            solution:
+              "The to_string() method prints the entire DataFrame as a string.",
+          },
+          {
+            id: 12,
+            title:
+              "Which method splits a DataFrame column into multiple columns?",
+            options: [
+              "split()",
+              "str.split()",
+              "column_split()",
+              "split_column()",
+            ],
+            correct_option: 1,
+            solution:
+              "str.split() method splits a column into multiple columns based on a delimiter.",
+          },
+          {
+            id: 13,
+            title: "Which method returns descriptive statistics of DataFrame?",
+            options: ["summary()", "info()", "describe()", "details()"],
+            correct_option: 2,
+            solution:
+              "The describe() method provides descriptive statistics of a DataFrame.",
+          },
+          {
+            id: 14,
+            title: "Which function in pandas is used to group data?",
+            options: ["group()", "groupdata()", "groupby()", "datagroup()"],
+            correct_option: 2,
+            solution:
+              "The groupby() function groups data in a DataFrame based on one or more columns.",
+          },
+          {
+            id: 15,
+            title: "Which method returns first 5 rows of a DataFrame?",
+            options: ["head()", "top()", "first()", "summary()"],
+            correct_option: 0,
+            solution:
+              "The head() method returns the first 5 rows of a DataFrame by default.",
+          },
+        ],
+      },
+      {
+        id: 7,
+        title: "Week 7: Assignment 7",
+        key: "week-7-assignment-7",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "Which function in Pandas is used to write a DataFrame to a CSV file?",
+            options: ["to_csv()", "save_csv()", "write_csv()", "export_csv()"],
+            correct_option: 0,
+            solution:
+              "The to_csv() function writes a Pandas DataFrame to a CSV file.",
+          },
+          {
+            id: 2,
+            title:
+              "In pandas merge operation, which 'how' argument performs intersection of two DataFrames?",
+            options: ["left", "right", "inner", "outer"],
+            correct_option: 2,
+            solution:
+              "The 'inner' argument in merge() performs an intersection of two DataFrames.",
+          },
+          {
+            id: 3,
+            title:
+              "Which join includes all records from the left DataFrame and matching records from the right DataFrame?",
+            options: ["Right Join", "Outer Join", "Left Join", "Inner Join"],
+            correct_option: 2,
+            solution:
+              "Left Join includes all records from the left DataFrame and matches from the right DataFrame.",
+          },
+          {
+            id: 4,
+            title: "Which method is used for a full outer join in pandas?",
+            options: [
+              "merge(..., how='outer')",
+              "join(..., how='full')",
+              "combine(..., how='all')",
+              "outerjoin()",
+            ],
+            correct_option: 0,
+            solution:
+              "merge(..., how='outer') performs a full outer join in pandas.",
+          },
+          {
+            id: 5,
+            title:
+              "Which Python library is primarily used for creating visualizations?",
+            options: ["NumPy", "Pandas", "PlotVisual", "Seaborn"],
+            correct_option: 3,
+            solution:
+              "Seaborn is a Python library primarily used for data visualization.",
+          },
+          {
+            id: 6,
+            title:
+              "Which plot in Seaborn is used for kernel density estimation?",
+            options: ["histplot()", "kdeplot()", "scatterplot()", "barplot()"],
+            correct_option: 1,
+            solution:
+              "kdeplot() is used for kernel density estimation in Seaborn.",
+          },
+          {
+            id: 7,
+            title:
+              "Which plot is best for representing pairwise relationships in a dataset?",
+            options: ["boxplot", "heatmap", "pairplot", "violinplot"],
+            correct_option: 2,
+            solution:
+              "pairplot() is used to represent pairwise relationships in a dataset.",
+          },
+          {
+            id: 8,
+            title: "Which visualization represents a correlation matrix?",
+            options: ["pairplot", "barplot", "heatmap", "lineplot"],
+            correct_option: 2,
+            solution:
+              "A heatmap is commonly used to visualize a correlation matrix.",
+          },
+          {
+            id: 9,
+            title: "Which Matplotlib function is used to plot histograms?",
+            options: ["hist()", "histplot()", "plot()", "kdeplot()"],
+            correct_option: 0,
+            solution: "The hist() function in Matplotlib plots histograms.",
+          },
+          {
+            id: 10,
+            title:
+              "Which type of plot displays the five-number summary (min, Q1, median, Q3, max)?",
+            options: ["scatter plot", "box plot", "violin plot", "histogram"],
+            correct_option: 1,
+            solution:
+              "A box plot displays the five-number summary of a dataset.",
+          },
+          {
+            id: 11,
+            title: "Which library is abbreviated as sklearn?",
+            options: ["TensorFlow", "PyTorch", "Scikit-learn", "NumPy"],
+            correct_option: 2,
+            solution:
+              "sklearn is the abbreviation for the Scikit-learn library.",
+          },
+          {
+            id: 12,
+            title:
+              "Which sklearn module is used to split a dataset into training and testing sets?",
+            options: [
+              "model_selection",
+              "preprocessing",
+              "decomposition",
+              "metrics",
+            ],
+            correct_option: 0,
+            solution:
+              "model_selection module provides functions to split datasets into training and testing sets.",
+          },
+          {
+            id: 13,
+            title:
+              "Which sklearn model is used for K-Nearest Neighbors classification?",
+            options: [
+              "DecisionTreeClassifier",
+              "KNeighborsClassifier",
+              "RandomForestClassifier",
+              "LogisticRegression",
+            ],
+            correct_option: 1,
+            solution:
+              "KNeighborsClassifier is used for K-Nearest Neighbors classification.",
+          },
+          {
+            id: 14,
+            title: "Which method reduces the number of features in a dataset?",
+            options: [
+              "Feature Selection",
+              "Dimensionality Reduction",
+              "Model Evaluation",
+              "Preprocessing",
+            ],
+            correct_option: 1,
+            solution:
+              "Dimensionality Reduction reduces the number of features while preserving information.",
+          },
+          {
+            id: 15,
+            title:
+              "Which method in sklearn is used for feature scaling to bring features between 0 and 1?",
+            options: [
+              "StandardScaler",
+              "MinMaxScaler",
+              "RobustScaler",
+              "MaxAbsScaler",
+            ],
+            correct_option: 1,
+            solution:
+              "MinMaxScaler scales features to a fixed range, usually between 0 and 1.",
+          },
+        ],
+      },
+      {
+        id: 8,
+        title: "Week 8: Assignment 8",
+        key: "week-8-assignment-8",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "In handling missing values, which method replaces missing entries with the median of the column?",
+            options: ["dropna", "drop", "fillna(median)", "fillna(0)"],
+            correct_option: 2,
+            solution:
+              "fillna(median) replaces missing values with the median of the respective column.",
+          },
+          {
+            id: 2,
+            title: "Which Scikit-learn class is used for Min-max scaling?",
+            options: [
+              "StandardScaler",
+              "KBinsDiscretizer",
+              "OneHotEncoder",
+              "MinMaxScaler",
+            ],
+            correct_option: 3,
+            solution:
+              "MinMaxScaler scales features to a fixed range, typically 0 to 1.",
+          },
+          {
+            id: 3,
+            title: "What does SMOTE primarily do in class imbalance handling?",
+            options: [
+              "Undersample majority class",
+              "Oversample minority class with duplication",
+              "Create synthetic samples for minority class",
+              "Remove outliers from the minority class",
+            ],
+            correct_option: 2,
+            solution:
+              "SMOTE generates synthetic samples for the minority class to handle class imbalance.",
+          },
+          {
+            id: 4,
+            title: "In standardization, each feature has:",
+            options: [
+              "Mean = 1 and Standard deviation = 0",
+              "Mean = 0 and Standard deviation = 1",
+              "Mean = 0 and Standard deviation = 0",
+              "Mean = 1 and Standard deviation = 1",
+            ],
+            correct_option: 1,
+            solution:
+              "Standardization transforms features to have mean 0 and standard deviation 1.",
+          },
+          {
+            id: 5,
+            title:
+              "In the standard Min-max scaling, the values are shifted to a range of:",
+            options: ["-1 to 1", "0 to 10", "0 to 1", "-5 to 5"],
+            correct_option: 2,
+            solution:
+              "Min-max scaling shifts feature values to the range 0 to 1.",
+          },
+          {
+            id: 6,
+            title:
+              "What method in Scikit-learn is used to split a dataset into training and testing parts?",
+            options: [
+              "train_test_split",
+              "train_split",
+              "test_train_split",
+              "dataset_split",
+            ],
+            correct_option: 0,
+            solution:
+              "train_test_split() splits a dataset into training and testing sets.",
+          },
+          {
+            id: 7,
+            title: "Which of the following is NOT a property of Scikit-learn?",
+            options: [
+              "Cross-validation",
+              "Feature selection",
+              "Image generation",
+              "Dimensionality reduction",
+            ],
+            correct_option: 2,
+            solution:
+              "Scikit-learn does not provide image generation; it focuses on machine learning tasks.",
+          },
+          {
+            id: 8,
+            title: "What is the purpose of the `OneHotEncoder`?",
+            options: [
+              "Normalize continuous values",
+              "Discretize features",
+              "Convert categorical data into binary vectors",
+              "Standardize numerical attributes",
+            ],
+            correct_option: 2,
+            solution:
+              "OneHotEncoder converts categorical variables into binary vector representation.",
+          },
+          {
+            id: 9,
+            title:
+              "Which technique is used for discretization in Scikit-learn?",
+            options: [
+              "StandardScaler",
+              "MinMaxScaler",
+              "KBinsDiscretizer",
+              "OneHotEncoder",
+            ],
+            correct_option: 2,
+            solution:
+              "KBinsDiscretizer is used to discretize continuous features into bins.",
+          },
+          {
+            id: 10,
+            title:
+              "In sklearn, which evaluation metric measures the balance between precision and recall?",
+            options: ["Accuracy", "Recall", "F1 Score", "ROC-AUC"],
+            correct_option: 2,
+            solution:
+              "F1 Score provides a harmonic mean of precision and recall to evaluate classifier performance.",
+          },
+          {
+            id: 11,
+            title: "In a dataset, 'features' are also known as:",
+            options: ["Labels", "Inputs", "Outputs", "Responses"],
+            correct_option: 1,
+            solution:
+              "Features are the input variables used by a model to make predictions.",
+          },
+          {
+            id: 12,
+            title: "Which of the following are ways to handle missing data?",
+            options: [
+              "Drop the attribute",
+              "Fill with mean/median",
+              "Over-sample missing entries",
+              "Drop the corresponding record",
+            ],
+            correct_option: [0, 1, 3],
+            solution:
+              "Missing data can be handled by dropping the attribute, filling with mean/median, or dropping the record.",
+          },
+          {
+            id: 13,
+            title: "What does Feature Scaling help with?",
+            options: [
+              "Makes the attributes lie in the same range",
+              "Prevents domination of large-valued features",
+              "Improves model interpretability",
+              "Helps datasets grow in size",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Feature scaling ensures features are in the same range, prevents large features dominating, and improves interpretability.",
+          },
+          {
+            id: 14,
+            title: "Which are methods of feature scaling?",
+            options: [
+              "Normalization",
+              "Standardization",
+              "Min-max scaling",
+              "Stratification",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Common feature scaling methods include Normalization, Standardization, and Min-max scaling.",
+          },
+          {
+            id: 15,
+            title: "Properties of Scikit-learn include:",
+            options: [
+              "Supervised learning algorithms",
+              "Image editing tools",
+              "Cross-validation techniques",
+              "Dimensionality reduction",
+            ],
+            correct_option: [0, 2, 3],
+            solution:
+              "Scikit-learn provides supervised learning algorithms, cross-validation, and dimensionality reduction tools.",
+          },
+        ],
+      },
+      {
+        id: 9,
+        title: "Week 9: Assignment 9",
+        key: "week-9-assignment-9",
+        all_mcqs: [
+          {
+            id: 1,
+            title: "In KNN, the class of a new point is decided based on:",
+            options: [
+              "Weighted average",
+              "Median",
+              "Majority of k nearest neighbors",
+              "Mode of the entire dataset",
+            ],
+            correct_option: 2,
+            solution:
+              "KNN classifies a new point based on the majority class among its k nearest neighbors.",
+          },
+          {
+            id: 2,
+            title: "Which distance metric is most commonly used in KNN?",
+            options: [
+              "Manhattan distance",
+              "Euclidean distance",
+              "Cosine similarity",
+              "Hamming distance",
+            ],
+            correct_option: 1,
+            solution:
+              "Euclidean distance is the most common metric used in KNN to measure closeness between points.",
+          },
+          {
+            id: 3,
+            title: "In Decision Trees, lower entropy implies:",
+            options: [
+              "Higher randomness",
+              "Better classification ability",
+              "Poor attribute relevance",
+              "Poor accuracy",
+            ],
+            correct_option: 1,
+            solution:
+              "Lower entropy indicates less disorder and better ability to classify data correctly.",
+          },
+          {
+            id: 4,
+            title:
+              "What is used to measure the 'goodness' of an attribute in a Decision Tree?",
+            options: [
+              "Mean Squared Error",
+              "Confusion Matrix",
+              "Entropy",
+              "Standard Deviation",
+            ],
+            correct_option: 2,
+            solution:
+              "Entropy measures the amount of uncertainty or disorder; lower entropy means a better attribute for splitting.",
+          },
+          {
+            id: 5,
+            title: "What is the formula for accuracy in classification?",
+            options: [
+              "(TP + FN) / (Total)",
+              "(TN + FP) / (Total)",
+              "(TP + TN) / (Total)",
+              "(FP + FN) / (Total)",
+            ],
+            correct_option: 2,
+            solution:
+              "Accuracy = (TP + TN) / Total, representing the proportion of correctly classified instances.",
+          },
+          {
+            id: 6,
+            title:
+              "Which of the following is a performance metric for regression?",
+            options: [
+              "Confusion Matrix",
+              "Precision",
+              "Mean Squared Error",
+              "Recall",
+            ],
+            correct_option: 2,
+            solution:
+              "Mean Squared Error (MSE) measures the average squared difference between predicted and actual values in regression.",
+          },
+          {
+            id: 7,
+            title: "What does R-squared (R²) represent?",
+            options: [
+              "Total error",
+              "Proportion of variance explained by the model",
+              "Average precision",
+              "Number of trees",
+            ],
+            correct_option: 1,
+            solution:
+              "R² measures how well the regression model explains the variability of the target variable.",
+          },
+          {
+            id: 8,
+            title: "In Gradient Descent, a too high learning rate may cause:",
+            options: [
+              "Slow convergence",
+              "No convergence",
+              "Very small steps",
+              "Underfitting",
+            ],
+            correct_option: 1,
+            solution:
+              "A learning rate that is too high may overshoot minima and prevent convergence.",
+          },
+          {
+            id: 9,
+            title: "Polynomial Regression is used when:",
+            options: [
+              "The data follows a straight line",
+              "Data shows a nonlinear relationship",
+              "There is only one feature",
+              "Regression is not required",
+            ],
+            correct_option: 1,
+            solution:
+              "Polynomial Regression is used when the relationship between independent and dependent variables is nonlinear.",
+          },
+          {
+            id: 10,
+            title: "In a confusion matrix, True Positive (TP) means:",
+            options: [
+              "Actual positive predicted as negative",
+              "Actual positive predicted as positive",
+              "Actual negative predicted as positive",
+              "Actual negative predicted as negative",
+            ],
+            correct_option: 1,
+            solution:
+              "True Positive (TP) refers to instances correctly predicted as positive.",
+          },
+          {
+            id: 11,
+            title: "Which are types of supervised learning tasks?",
+            options: [
+              "Regression",
+              "Classification",
+              "Clustering",
+              "Reinforcement Learning",
+            ],
+            correct_option: [0, 1],
+            solution:
+              "Supervised learning tasks include Regression and Classification where labeled data is used.",
+          },
+          {
+            id: 12,
+            title:
+              "Which measures can be used for attribute selection in Decision Trees?",
+            options: ["Entropy", "Information Gain", "Gini Index", "R-squared"],
+            correct_option: [0, 1, 2],
+            solution:
+              "Entropy, Information Gain, and Gini Index are commonly used to select the best attribute for splitting.",
+          },
+          {
+            id: 13,
+            title: "In KNN, performance may vary based on:",
+            options: [
+              "Value of k",
+              "Distance metric used",
+              "Size of the training set",
+              "None of these",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "KNN performance depends on the choice of k, the distance metric, and the size of the training dataset.",
+          },
+          {
+            id: 14,
+            title: "Error measures used for regression models are:",
+            options: [
+              "Mean Absolute Error (MAE)",
+              "Mean Squared Error( MSE)",
+              "Root Mean Squared Error (RMSE)",
+              "F1-Score",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Regression error metrics include MAE, MSE, and RMSE. F1-Score is used for classification.",
+          },
+          {
+            id: 15,
+            title: "Confusion Matrix contains:",
+            options: [
+              "True Positive",
+              "False Positive",
+              "False Negative",
+              "True Negative",
+            ],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "A confusion matrix contains TP, FP, FN, and TN to evaluate classification performance.",
+          },
+        ],
+      },
+      {
+        id: 10,
+        title: "Week 10: Assignment 10",
+        key: "week-10-assignment-10",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "In hierarchical clustering, initially each data point is considered as:",
+            options: ["A class", "A cluster", "A centroid", "A noise"],
+            correct_option: 1,
+            solution:
+              "In hierarchical clustering, each data point starts as its own cluster, which are later merged based on similarity.",
+          },
+          {
+            id: 2,
+            title:
+              "Which of the following is NOT a type of unsupervised learning task?",
+            options: [
+              "Clustering",
+              "Anomaly Detection",
+              "Classification",
+              "None of these",
+            ],
+            correct_option: 2,
+            solution:
+              "Classification is a supervised learning task because it requires labeled data.",
+          },
+          {
+            id: 3,
+            title: "In K-means clustering, the K refers to:",
+            options: [
+              "Number of clusters",
+              "Number of features",
+              "Number of classes",
+              "Number of models",
+            ],
+            correct_option: 0,
+            solution:
+              "In K-means, K specifies the number of clusters to partition the data into.",
+          },
+          {
+            id: 4,
+            title:
+              "Which linkage method in hierarchical clustering considers the closest points between clusters?",
+            options: [
+              "Complete linkage",
+              "Average linkage",
+              "Single linkage",
+              "Centroid linkage",
+            ],
+            correct_option: 2,
+            solution:
+              "Single linkage defines the distance between two clusters as the shortest distance between points in the clusters.",
+          },
+          {
+            id: 5,
+            title: "What happens if the learning rate in an ANN is too high?",
+            options: [
+              "Very slow training",
+              "Algorithm overshoots minimum",
+              "Perfect convergence",
+              "Underfitting",
+            ],
+            correct_option: 1,
+            solution:
+              "A very high learning rate can cause the gradient descent algorithm to overshoot minima, preventing convergence.",
+          },
+          {
+            id: 6,
+            title: "Overfitting means:",
+            options: [
+              "Good performance on testing data",
+              "Poor performance on training data",
+              "Good performance on training but poor on testing",
+              "Poor performance on both",
+            ],
+            correct_option: 2,
+            solution:
+              "Overfitting occurs when a model performs well on training data but fails to generalize to unseen testing data.",
+          },
+          {
+            id: 7,
+            title: "Regularization is primarily used to:",
+            options: [
+              "Increase training accuracy",
+              "Reduce model complexity and prevent overfitting",
+              "Decrease learning rate",
+              "Increase testing error",
+            ],
+            correct_option: 1,
+            solution:
+              "Regularization techniques like L1, L2, and Dropout help reduce model complexity and prevent overfitting.",
+          },
+          {
+            id: 8,
+            title:
+              "In binary classification using ANN, which activation function is often used in the output layer?",
+            options: ["ReLU", "Sigmoid", "Tanh", "Softmax"],
+            correct_option: 1,
+            solution:
+              "Sigmoid activation is commonly used in binary classification because it outputs values between 0 and 1.",
+          },
+          {
+            id: 9,
+            title: "Logistic Regression helps in:",
+            options: [
+              "Binary classification",
+              "Restricting output between 0 and 1",
+              "Regression for continuous variables",
+              "Drawing decision boundaries",
+            ],
+            correct_option: [0, 1, 3],
+            solution:
+              "Logistic Regression is used for binary classification, outputs probabilities between 0 and 1, and defines decision boundaries.",
+          },
+          {
+            id: 10,
+            title:
+              "Which types of activation functions are commonly used in neural networks?",
+            options: ["Linear", "Sigmoid", "Tanh", "None of these"],
+            correct_option: [0, 1, 2],
+            solution:
+              "Common activation functions include Linear, Sigmoid, and Tanh functions.",
+          },
+          {
+            id: 11,
+            title: "In unsupervised learning, tasks include:",
+            options: [
+              "Clustering",
+              "Association Rule Mining",
+              "Anomaly Detection",
+              "Classification",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Unsupervised learning tasks include Clustering, Association Rule Mining, and Anomaly Detection.",
+          },
+          {
+            id: 12,
+            title: "Hyperparameters of a learning model include:",
+            options: [
+              "Learning Rate",
+              "Number of Hidden Layers",
+              "Maximum Iterations",
+              "Model Weights",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Hyperparameters like Learning Rate, Number of Hidden Layers, and Maximum Iterations are set before training; model weights are learned.",
+          },
+          {
+            id: 13,
+            title: "Regularization techniques include:",
+            options: [
+              "L1 Regularization",
+              "L2 Regularization",
+              "Cross-validation",
+              "Dropout",
+            ],
+            correct_option: [0, 1, 3],
+            solution:
+              "L1, L2, and Dropout are regularization techniques used to reduce overfitting.",
+          },
+          {
+            id: 14,
+            title:
+              "Cluster similarity measures in hierarchical clustering include:",
+            options: [
+              "Single linkage",
+              "Complete linkage",
+              "Centroid",
+              "Regression Line fitting",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Similarity between clusters can be measured using Single linkage, Complete linkage, or Centroid methods.",
+          },
+          {
+            id: 15,
+            title: "Desired characteristics of a good model include:",
+            options: [
+              "Neither underfitting nor overfitting",
+              "Good performance on validation set",
+              "Memorizing all training data",
+              "Generalizing well to unseen data",
+            ],
+            correct_option: [0, 1, 3],
+            solution:
+              "A good model generalizes well, avoids underfitting/overfitting, and performs well on validation data.",
+          },
+        ],
+      },
+      {
+        id: 11,
+        title: "Week 11: Assignment 11",
+        key: "week-11-assignment-11",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "In deep learning, which technique adjusts the model weights based on the error?",
+            options: [
+              "Forward Propagation",
+              "Batch Normalization",
+              "Backpropagation",
+              "Clustering",
+            ],
+            correct_option: 2,
+            solution:
+              "Backpropagation adjusts the model weights by propagating the error backward through the network.",
+          },
+          {
+            id: 2,
+            title:
+              "Which library is commonly used for developing deep learning models?",
+            options: ["NumPy", "TensorFlow", "Pandas", "Matplotlib"],
+            correct_option: 1,
+            solution:
+              "TensorFlow is a widely used library for building and training deep learning models.",
+          },
+          {
+            id: 3,
+            title:
+              "In traditional image classification, each pixel of a grayscale image is considered:",
+            options: [
+              "Output",
+              "Label",
+              "Feature/Independent variable",
+              "Target variable",
+            ],
+            correct_option: 2,
+            solution:
+              "Each pixel is treated as a feature or independent variable in traditional image classification.",
+          },
+          {
+            id: 4,
+            title: "CNNs are particularly good for:",
+            options: [
+              "Tabular data",
+              "Image and video processing",
+              "Time-series forecasting",
+              "Anomaly detection",
+            ],
+            correct_option: 1,
+            solution:
+              "Convolutional Neural Networks (CNNs) excel at capturing spatial hierarchies in images and videos.",
+          },
+          {
+            id: 5,
+            title:
+              "In CNNs, the layer that helps reduce spatial dimensions is called:",
+            options: [
+              "Convolutional layer",
+              "Pooling layer",
+              "Fully connected layer",
+              "Normalization layer",
+            ],
+            correct_option: 1,
+            solution:
+              "Pooling layers reduce the spatial dimensions of feature maps, helping with translation invariance and reducing computation.",
+          },
+          {
+            id: 6,
+            title:
+              "In the traditional approach to text classification, which method is often used?",
+            options: [
+              "Image Embedding",
+              "Bag of Words",
+              "Word Augmentation",
+              "Principal Component Analysis",
+            ],
+            correct_option: 1,
+            solution:
+              "Bag of Words is a traditional method that represents text as vectors based on word frequency.",
+          },
+          {
+            id: 7,
+            title: "RNNs are particularly useful for:",
+            options: [
+              "Tabular datasets",
+              "Sequential data",
+              "Image classification",
+              "Data visualization",
+            ],
+            correct_option: 1,
+            solution:
+              "Recurrent Neural Networks (RNNs) are designed to handle sequential data like time series or text.",
+          },
+          {
+            id: 8,
+            title: "Which preprocessing step converts text into tokens?",
+            options: [
+              "Normalization",
+              "Tokenization",
+              "Padding",
+              "Vectorization",
+            ],
+            correct_option: 1,
+            solution:
+              "Tokenization splits text into individual tokens (words or subwords) for further processing.",
+          },
+          {
+            id: 9,
+            title:
+              "What is the major advantage of using CNNs over traditional image classification methods?",
+            options: [
+              "Manual feature extraction is better",
+              "Automatically learn spatial hierarchies",
+              "Require less data",
+              "Only for black-and-white images",
+            ],
+            correct_option: 1,
+            solution:
+              "CNNs automatically learn spatial hierarchies of features, removing the need for manual feature engineering.",
+          },
+          {
+            id: 10,
+            title: "In text classification, Word Embedding is created to:",
+            options: [
+              "Increase dataset size",
+              "Map words into numerical vectors",
+              "Perform clustering",
+              "Select best features",
+            ],
+            correct_option: 1,
+            solution:
+              "Word embeddings convert words into dense numerical vectors representing semantic meaning.",
+          },
+          {
+            id: 11,
+            title: "Applications of Deep Learning include:",
+            options: [
+              "Computer Vision",
+              "Speech Recognition",
+              "Natural Language Processing",
+              "Decision Trees",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Deep Learning is widely used in Computer Vision, Speech Recognition, and Natural Language Processing tasks.",
+          },
+          {
+            id: 12,
+            title: "Key components of a CNN include:",
+            options: [
+              "Convolutional Layer",
+              "Pooling Layer",
+              "Flatten Layer",
+              "RNN Layer",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "CNNs typically include Convolutional, Pooling, and Flatten layers to extract and prepare features for classification.",
+          },
+          {
+            id: 13,
+            title: "RNN types include:",
+            options: [
+              "One-to-one",
+              "One-to-many",
+              "Many-to-one",
+              "Many-to-many",
+            ],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "RNNs can be designed as one-to-one, one-to-many, many-to-one, or many-to-many depending on input/output sequences.",
+          },
+          {
+            id: 14,
+            title:
+              "Deep Learning differs from traditional Machine Learning in terms of:",
+            options: [
+              "Data requirements",
+              "Need for Feature Engineering",
+              "Interpretability",
+              "Model complexity",
+            ],
+            correct_option: [0, 1, 2, 3],
+            solution:
+              "Deep Learning often requires more data, reduces the need for manual feature engineering, can be less interpretable, and has higher model complexity.",
+          },
+          {
+            id: 15,
+            title: "Preprocessing steps in text classification include:",
+            options: ["Tokenization", "Padding", "Vectorization", "Pooling"],
+            correct_option: [0, 1, 2],
+            solution:
+              "Text preprocessing typically includes Tokenization, Padding, and Vectorization before feeding data to models.",
+          },
+        ],
+      },
+      {
+        id: 12,
+        title: "Week 12: Assignment 12",
+        key: "week-12-assignment-12",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "The California housing price prediction problem is an example of:",
+            options: [
+              "Classification",
+              "Clustering",
+              "Regression",
+              "Reinforcement Learning",
+            ],
+            correct_option: 2,
+            solution:
+              "Predicting housing prices involves predicting a continuous value, which is a regression problem.",
+          },
+          {
+            id: 2,
+            title:
+              "Which performance metric is commonly used for regression problems?",
+            options: [
+              "Precision",
+              "Recall",
+              "Root Mean Squared Error",
+              "F1 Score",
+            ],
+            correct_option: 2,
+            solution:
+              "Root Mean Squared Error (RMSE) measures the average squared difference between predicted and actual values in regression.",
+          },
+          {
+            id: 3,
+            title:
+              "In traditional machine learning, what is the typical ratio for splitting a dataset into training and testing sets?",
+            options: ["40%–60%", "50%–50%", "80%–20%", "55%–45%"],
+            correct_option: 2,
+            solution:
+              "An 80%–20% split is commonly used, where 80% of data is for training and 20% for testing.",
+          },
+          {
+            id: 4,
+            title:
+              "Which scikit-learn function is used for splitting datasets?",
+            options: [
+              "split_dataset()",
+              "data_split()",
+              "train_test_split()",
+              "dataset_partition()",
+            ],
+            correct_option: 2,
+            solution:
+              "The function train_test_split() splits data into training and testing subsets.",
+          },
+          {
+            id: 5,
+            title:
+              "Min-max scaling transforms features to a range typically between:",
+            options: ["-1 to 1", "0 to 10", "0 to 1", "-5 to 5"],
+            correct_option: 2,
+            solution:
+              "Min-max scaling normalizes feature values to a range of 0 to 1.",
+          },
+          {
+            id: 6,
+            title: "Which scaler in scikit-learn is used for standardization?",
+            options: [
+              "StandardScaler",
+              "MinMaxScaler",
+              "RobustScaler",
+              "NormalScaler",
+            ],
+            correct_option: 0,
+            solution:
+              "StandardScaler standardizes features to have mean = 0 and standard deviation = 1.",
+          },
+          {
+            id: 7,
+            title:
+              "In a confusion matrix for binary classification, True Negative (TN) means:",
+            options: [
+              "Actual negative predicted as positive",
+              "Actual positive predicted as negative",
+              "Actual positive predicted as positive",
+              "Actual negative predicted as negative",
+            ],
+            correct_option: 3,
+            solution:
+              "True Negative (TN) refers to cases where the actual class is negative and predicted as negative.",
+          },
+          {
+            id: 8,
+            title: "Micro-averaging in multi-class classification:",
+            options: [
+              "Averages precision and recall for each class",
+              "Considers total true positives, false positives, and false negatives",
+              "Considers each class separately",
+              "Ignores true negatives",
+            ],
+            correct_option: 1,
+            solution:
+              "Micro-averaging aggregates the contributions of all classes to compute overall precision and recall.",
+          },
+          {
+            id: 9,
+            title:
+              "In sklearn, which metric is used to measure how often the classifier is correct?",
+            options: [
+              "precision_score",
+              "recall_score",
+              "accuracy_score",
+              "roc_auc_score",
+            ],
+            correct_option: 2,
+            solution:
+              "Accuracy_score measures the proportion of correctly predicted instances over total instances.",
+          },
+          {
+            id: 10,
+            title:
+              "Which of the following is an ensemble method in scikit-learn?",
+            options: ["KNN", "SVM", "Gradient Boosting", "Logistic Regression"],
+            correct_option: 2,
+            solution:
+              "Gradient Boosting is an ensemble technique that builds models sequentially to reduce prediction errors.",
+          },
+          {
+            id: 11,
+            title:
+              "Popular sources to obtain datasets for machine learning projects include:",
+            options: [
+              "Kaggle",
+              "AWS datasets",
+              "UCI Machine Learning Repository",
+              "Data Visualization tools",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Datasets can be obtained from Kaggle, AWS datasets, and UCI Machine Learning Repository. Data visualization tools do not provide datasets.",
+          },
+          {
+            id: 12,
+            title:
+              "In an end-to-end machine learning project, key steps include:",
+            options: [
+              "Data loading",
+              "Data visualization",
+              "Model fine-tuning",
+              "Ignoring evaluation",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "End-to-end ML projects include loading data, visualizing it, preprocessing, modeling, and fine-tuning. Ignoring evaluation is incorrect.",
+          },
+          {
+            id: 13,
+            title: "Scikit-learn supports:",
+            options: [
+              "Supervised learning",
+              "Unsupervised learning",
+              "Dimensionality reduction",
+              "Image captioning",
+            ],
+            correct_option: [0, 1, 2],
+            solution:
+              "Scikit-learn provides tools for supervised and unsupervised learning as well as dimensionality reduction. It does not perform image captioning.",
+          },
+          {
+            id: 14,
+            title: "For data cleaning, which techniques are available?",
+            options: ["dropna()", "fillna()", "dropAll()", "None of these"],
+            correct_option: [0, 1],
+            solution:
+              "dropna() removes missing values and fillna() replaces them. dropAll() is not a valid function.",
+          },
+          {
+            id: 15,
+            title: "Components of a typical dataset include:",
+            options: ["Features", "Response", "Model", "Hyperparameters"],
+            correct_option: [0, 1],
+            solution:
+              "Typical datasets contain features (input variables) and response (target variable). Model and hyperparameters are separate concepts.",
+          },
+        ],
+      },
     ],
   },
 ];
