@@ -22907,7 +22907,7 @@ export const sem3MCQs = [
               "Statistics, Computer Science, and Domain Expertise",
               "Data Warehousing, Data Lakes, and Visualization",
             ],
-            correct_options: [3],
+            correct_option: 2,
             solution:
               "Data Science integrates statistics for analysis, computer science for computation, and domain expertise for context.",
           },
@@ -22921,7 +22921,7 @@ export const sem3MCQs = [
               "It is transactional data that reflects business activities",
               "It only includes data collected via APIs and sensors",
             ],
-            correct_options: [2],
+            correct_option: 1,
             solution:
               "Unstructured data lacks a fixed schema and includes data such as text, audio, images, and videos.",
           },
@@ -22930,7 +22930,7 @@ export const sem3MCQs = [
             title:
               "Which of the following Python libraries are commonly used in Data Science?",
             options: ["Pandas", "NumPy", "TensorFlow", "Bootstrap"],
-            correct_options: [1, 2, 3],
+            correct_option: [0, 1, 2],
             solution:
               "Pandas, NumPy, and TensorFlow are core Python libraries used in data science for analysis, numerical computation, and machine learning respectively.",
           },
@@ -22944,7 +22944,7 @@ export const sem3MCQs = [
               "Data scientists typically focus on post-analysis interpretation, while machine learning engineers focus on deployment and maintenance",
               "Data scientists build autonomous systems that function without human intervention",
             ],
-            correct_options: [3],
+            correct_option: 2,
             solution:
               "Data scientists focus on exploration and interpretation, while ML engineers handle operational deployment and maintenance.",
           },
@@ -22957,7 +22957,7 @@ export const sem3MCQs = [
               "Data preprocessing",
               "Modeling and Evaluation",
             ],
-            correct_options: [2],
+            correct_option: 1,
             solution:
               "Knowledge Representation is more specific to AI knowledge engineering; it's not a typical Data Science lifecycle stage.",
           },
@@ -22971,7 +22971,7 @@ export const sem3MCQs = [
               "Communication and Perception",
               "Decision Making",
             ],
-            correct_options: [1, 3, 4],
+            correct_option: [0, 2, 3],
             solution:
               "AI encompasses capabilities like problem solving, perception/communication, and decision making; data preprocessing is a data engineering task.",
           },
@@ -22984,7 +22984,7 @@ export const sem3MCQs = [
               "James Gosling",
               "Tim Berners-Lee",
             ],
-            correct_options: [2],
+            correct_option: 1,
             solution:
               "Python was created by Guido van Rossum in the late 1980s / early 1990s.",
           },
@@ -22997,7 +22997,7 @@ export const sem3MCQs = [
               "Platform Dependent",
               "Portable",
             ],
-            correct_options: [1, 2, 4],
+            correct_option: [0, 1, 3],
             solution:
               "Python is object-oriented, open-source, and portable (platform-independent).",
           },
@@ -23006,7 +23006,7 @@ export const sem3MCQs = [
             title:
               "Which of the following is a web-based interactive development environment ideal for data science?",
             options: ["IDLE", "Colab", "Notepad++", "Sublime Text"],
-            correct_options: [2],
+            correct_option: 1,
             solution:
               "Google Colab provides cloud-hosted Jupyter notebooks suitable for data science workflows.",
           },
@@ -23015,7 +23015,7 @@ export const sem3MCQs = [
             title:
               "Google Colab is primarily based on which open-source project?",
             options: ["Jupyter", "TensorFlow", "Anaconda", "PyTorch"],
-            correct_options: [1],
+            correct_option: 0,
             solution:
               "Google Colab builds on the Jupyter notebook ecosystem to provide an online execution environment.",
           },
@@ -23028,7 +23028,7 @@ export const sem3MCQs = [
               "Integration with Kaggle datasets",
               "Automatic storage and version control",
             ],
-            correct_options: [1, 3, 4],
+            correct_option: [0, 2, 3],
             solution:
               "Colab ships common libraries, integrates with Kaggle and Google Drive (auto-save/versioning). It does not run offline without internet.",
           },
@@ -23041,7 +23041,7 @@ export const sem3MCQs = [
               "Google Drive",
               "Microsoft OneDrive",
             ],
-            correct_options: [3],
+            correct_option: 2,
             solution:
               "By default Colab saves notebooks to the user's Google Drive.",
           },
@@ -23055,7 +23055,7 @@ export const sem3MCQs = [
               "Outcome (0 or 1)",
               "BMI",
             ],
-            correct_options: [3],
+            correct_option: 2,
             solution:
               "The 'Outcome' column is the target: 1 indicates diabetes, 0 indicates no diabetes.",
           },
@@ -23069,7 +23069,7 @@ export const sem3MCQs = [
               "Total Rooms",
               "Median House Value",
             ],
-            correct_options: [4],
+            correct_option: 3,
             solution:
               "The common supervised task on that dataset is predicting 'Median House Value'.",
           },
@@ -23083,7 +23083,7 @@ export const sem3MCQs = [
               "Use FTP client to import the repository",
               "Convert GitHub files into .csv first",
             ],
-            correct_options: [2],
+            correct_option: 1,
             solution:
               "Open the notebook's .ipynb on GitHub and click 'Open in Colab' (or use Colab's GitHub integration).",
           },

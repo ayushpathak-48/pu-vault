@@ -16,13 +16,30 @@ const AllMcqQuestions = ({ allMcqs }: { allMcqs: any }) => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const onOptionSelect = (que: any, i: any) => {
-    setSelectedOptions({ ...selectedOptions, [que.id]: i });
+  const onOptionSelect = (que: any, i: any, type = "single") => {
+    if (type == "single")
+      setSelectedOptions({ ...selectedOptions, [que.id]: i });
+    else if (type == "multiple") {
+      const prevSelectedOptions = selectedOptions[que.id] || [];
+      let updatedOptions = [];
+      if (prevSelectedOptions.includes(i)) {
+        updatedOptions = prevSelectedOptions.filter((option: any) => option !== i);
+      } else {
+        updatedOptions = [...prevSelectedOptions, i];
+      }
+      setSelectedOptions({ ...selectedOptions, [que.id]: updatedOptions });
+    }
   };
 
   const handleSubmitQuiz = () => {
     const unAttempted = allMcqs.length - Object.keys(selectedOptions).length;
+    console.log({ allMcqs, selectedOptions });
     const correctOptions = allMcqs.filter((que: any) => {
+      if (Array.isArray(que.correct_option)) {
+        const selectedOpts = selectedOptions[que.id] || [];
+        if (selectedOpts.length !== que.correct_option.length) return false;
+        return que.correct_option.every((opt: any) => selectedOpts.includes(opt));
+      }
       return que.correct_option == selectedOptions[que.id];
     });
     const incorrectOptions =
