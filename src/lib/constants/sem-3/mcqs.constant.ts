@@ -22888,6 +22888,209 @@ export const sem3MCQs = [
       },
     ],
   },
+  {
+    subject_name: "Data Science using Python",
+    key: "dsup",
+    units: [
+      {
+        id: 1,
+        title: "Week 1: Assignment 1",
+        key: "week-1-assignment-1",
+        all_mcqs: [
+          {
+            id: 1,
+            title:
+              "What are the three core disciplines that Data Science combines?",
+            options: [
+              "Mathematics, Computer Engineering, and Artificial Intelligence",
+              "Programming, Database Management, and Neural Networks",
+              "Statistics, Computer Science, and Domain Expertise",
+              "Data Warehousing, Data Lakes, and Visualization",
+            ],
+            correct_options: [3],
+            solution:
+              "Data Science integrates statistics for analysis, computer science for computation, and domain expertise for context.",
+          },
+          {
+            id: 2,
+            title:
+              "Which of the following statements best describes unstructured data?",
+            options: [
+              "It is organized into rows and columns and stored in relational databases",
+              "It includes data like text, speech, and video that doesn’t fit into traditional tables",
+              "It is transactional data that reflects business activities",
+              "It only includes data collected via APIs and sensors",
+            ],
+            correct_options: [2],
+            solution:
+              "Unstructured data lacks a fixed schema and includes data such as text, audio, images, and videos.",
+          },
+          {
+            id: 3,
+            title:
+              "Which of the following Python libraries are commonly used in Data Science?",
+            options: ["Pandas", "NumPy", "TensorFlow", "Bootstrap"],
+            correct_options: [1, 2, 3],
+            solution:
+              "Pandas, NumPy, and TensorFlow are core Python libraries used in data science for analysis, numerical computation, and machine learning respectively.",
+          },
+          {
+            id: 4,
+            title:
+              "Which of the following statements correctly differentiate Data Science from Machine Learning?",
+            options: [
+              "Data scientists primarily focus on model deployment and monitoring",
+              "Machine learning engineers are responsible for reporting findings",
+              "Data scientists typically focus on post-analysis interpretation, while machine learning engineers focus on deployment and maintenance",
+              "Data scientists build autonomous systems that function without human intervention",
+            ],
+            correct_options: [3],
+            solution:
+              "Data scientists focus on exploration and interpretation, while ML engineers handle operational deployment and maintenance.",
+          },
+          {
+            id: 5,
+            title: "Which stage is NOT part of the Data Science lifecycle?",
+            options: [
+              "Data collection",
+              "Knowledge Representation",
+              "Data preprocessing",
+              "Modeling and Evaluation",
+            ],
+            correct_options: [2],
+            solution:
+              "Knowledge Representation is more specific to AI knowledge engineering; it's not a typical Data Science lifecycle stage.",
+          },
+          {
+            id: 6,
+            title:
+              "Which of the following tasks constitute the Artificial Intelligence?",
+            options: [
+              "Problem Solving",
+              "Data Preprocessing",
+              "Communication and Perception",
+              "Decision Making",
+            ],
+            correct_options: [1, 3, 4],
+            solution:
+              "AI encompasses capabilities like problem solving, perception/communication, and decision making; data preprocessing is a data engineering task.",
+          },
+          {
+            id: 7,
+            title: "Who developed the Python programming language?",
+            options: [
+              "Dennis Ritchie",
+              "Guido van Rossum",
+              "James Gosling",
+              "Tim Berners-Lee",
+            ],
+            correct_options: [2],
+            solution:
+              "Python was created by Guido van Rossum in the late 1980s / early 1990s.",
+          },
+          {
+            id: 8,
+            title: "Which of the following are features of Python?",
+            options: [
+              "Object-Oriented",
+              "Open Source",
+              "Platform Dependent",
+              "Portable",
+            ],
+            correct_options: [1, 2, 4],
+            solution:
+              "Python is object-oriented, open-source, and portable (platform-independent).",
+          },
+          {
+            id: 9,
+            title:
+              "Which of the following is a web-based interactive development environment ideal for data science?",
+            options: ["IDLE", "Colab", "Notepad++", "Sublime Text"],
+            correct_options: [2],
+            solution:
+              "Google Colab provides cloud-hosted Jupyter notebooks suitable for data science workflows.",
+          },
+          {
+            id: 10,
+            title:
+              "Google Colab is primarily based on which open-source project?",
+            options: ["Jupyter", "TensorFlow", "Anaconda", "PyTorch"],
+            correct_options: [1],
+            solution:
+              "Google Colab builds on the Jupyter notebook ecosystem to provide an online execution environment.",
+          },
+          {
+            id: 11,
+            title: "Which of the following are features of Google Colab?",
+            options: [
+              "Pre-installed data science libraries",
+              "Offline execution without internet",
+              "Integration with Kaggle datasets",
+              "Automatic storage and version control",
+            ],
+            correct_options: [1, 3, 4],
+            solution:
+              "Colab ships common libraries, integrates with Kaggle and Google Drive (auto-save/versioning). It does not run offline without internet.",
+          },
+          {
+            id: 12,
+            title: "Where are Colab notebook files stored by default?",
+            options: [
+              "Local system",
+              "AWS S3",
+              "Google Drive",
+              "Microsoft OneDrive",
+            ],
+            correct_options: [3],
+            solution:
+              "By default Colab saves notebooks to the user's Google Drive.",
+          },
+          {
+            id: 13,
+            title:
+              "In the Pima Indians Diabetes Dataset, what is the dependent variable that the model tries to predict?",
+            options: [
+              "Pregnancies",
+              "Glucose concentration",
+              "Outcome (0 or 1)",
+              "BMI",
+            ],
+            correct_options: [3],
+            solution:
+              "The 'Outcome' column is the target: 1 indicates diabetes, 0 indicates no diabetes.",
+          },
+          {
+            id: 14,
+            title:
+              "The objective of the California Housing Prices Dataset is to predict:",
+            options: [
+              "Ocean Proximity",
+              "Median Income",
+              "Total Rooms",
+              "Median House Value",
+            ],
+            correct_options: [4],
+            solution:
+              "The common supervised task on that dataset is predicting 'Median House Value'.",
+          },
+          {
+            id: 15,
+            title:
+              "When accessing a GitHub project in Colab, what is the correct approach?",
+            options: [
+              "Download the repository and extract manually",
+              "Open the .ipynb file and click 'Open in Colab'",
+              "Use FTP client to import the repository",
+              "Convert GitHub files into .csv first",
+            ],
+            correct_options: [2],
+            solution:
+              "Open the notebook's .ipynb on GitHub and click 'Open in Colab' (or use Colab's GitHub integration).",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 //  {
