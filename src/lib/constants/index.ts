@@ -344,3 +344,8 @@ export const alertContent = [
   //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
   // },
 ];
+
+export const telegramBotChatIds = {
+  githubPuVaultChannel: "-1002996348697",
+  puVaultVisitorsChannel: "-1002945174240",
+};

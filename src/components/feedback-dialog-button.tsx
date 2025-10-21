@@ -20,6 +20,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { sendBotMessage } from "@/lib/utils";
 
 // ✅ Setup Supabase client
 const supabase = createClient(
@@ -52,6 +53,15 @@ export const FeedbackFloatingDialog = () => {
       setName("");
       setFeedback("");
       setOpen(false);
+      const message = `
+📩 <b>New Feedback Received!</b>
+
+👤 <b>Name:</b> ${name?.trim() || "Anonymous"}
+💬 <b>Feedback:</b> ${feedback}
+🕒 <b>Time:</b> ${new Date().toLocaleString()}
+    `;
+
+      sendBotMessage({ message });
     } catch (err) {
       console.error("Error submitting feedback:", err);
       toast.error("❌ Failed to submit feedback. Please try again.");

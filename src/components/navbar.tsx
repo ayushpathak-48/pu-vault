@@ -1,6 +1,6 @@
 "use client";
 
-import { CourseType, navLinks } from "@/lib/constants";
+import { CourseType, navLinks, telegramBotChatIds } from "@/lib/constants";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
@@ -9,10 +9,8 @@ import { MenuIcon, SearchIcon, SettingsIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import SearchModal from "./search-modal";
-import { DataDialog } from "./modals/data-dialog";
-import { cn } from "@/lib/utils";
+import { cn, sendBotMessage } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
-import { WhatsappDialog } from "./modals/whatsapp-dialog";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -24,26 +22,37 @@ export const Navbar = () => {
 
   const { toggleSidebar, setOpenMobile } = useSidebar();
 
+  const { course, division, sem, specialization, user } = useDataStore((state) => state);
+
   const [activePageTitle, setActivePageTitle] = useState(
     navLinks.find((link) => pathname.includes(link.href))?.title,
   );
 
   useLayoutEffect(() => {
-    if (pathname.includes("/code")) {
-      setActivePageTitle("Source Codes");
-    } else if (pathname.includes("/flash-cards")) {
-      setActivePageTitle("Flash Cards");
-    } else if (pathname == "/") {
-      setActivePageTitle("Materials");
-    } else {
-      setActivePageTitle(
-        () =>
-          navLinks.find(
-            (link) => link.href != "/" && pathname.includes(link.href),
-          )?.title,
-      );
-    }
+    setActivePageTitle(
+      () =>
+        navLinks.find(
+          (link) => link.href != "/" && pathname.startsWith(link.href),
+        )?.title,
+    );
     setOpenMobile(false);
+
+    const pageName = pathname;
+
+    const message = `
+👀 <b>New Page View Alert!</b>
+
+🌐 <b>Page:</b> ${pageName}
+👤 <b>Name:</b> ${user?.name || "Anonymous"}
+🪪 <b>Enrollment No.:</b> ${user?.enrollment || "-"}
+🎓 <b>Course:</b> ${course}
+🏫 <b>Division:</b> ${division}
+📘 <b>Semester:</b> ${sem}
+🧠 <b>Specialization:</b> ${specialization}
+🕒 <b>Time:</b> ${new Date().toLocaleString()}
+    `;
+    sendBotMessage({ chatId: telegramBotChatIds.puVaultVisitorsChannel, message });
+
   }, [pathname]);
 
   useLayoutEffect(() => {
@@ -100,8 +109,7 @@ export const Navbar = () => {
           <SearchModal />
         </div>
       </div>
-      <WhatsappDialog />
-      <DataDialog />
+      {/* <WhatsappDialog /> */}
     </>
   );
 };

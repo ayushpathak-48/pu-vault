@@ -8,9 +8,9 @@ import { BottomTabs } from "@/components/bottom-tabs";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { FeedbackDialog } from "@/components/modals/FeedbackDialog";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
 import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
+import { DataDialog } from "@/components/modals/data-dialog";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -59,9 +59,8 @@ export default function RootLayout({
               </div>
               <BottomTabs />
               <Toaster position="top-center" />
+              <DataDialog />
               <WhatsappFloatingButton />
-              <FeedbackDialog />
-              {/* <WhatsappDialog /> */}
               <FeedbackFloatingDialog />
               <DeviceTracker />
             </ClientProvider>

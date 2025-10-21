@@ -1,6 +1,7 @@
 /* eslint-disable prefer-const */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { telegramBotChatIds } from "./constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -76,3 +77,28 @@ export function isWithinTimeRange() {
 
   return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
 }
+
+export const sendBotMessage = async ({
+  chatId = telegramBotChatIds.githubPuVaultChannel,
+  message,
+}: {
+  chatId?: string | number;
+  message: string;
+}) => {
+  try {
+    const botToken = "8486418181:AAHoVP7pzdWvUuqld0o0YCfAn4ephqT0Mx0";
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "HTML", // or "MarkdownV2"
+      }),
+    });
+  } catch (error) {
+    console.error("Error sending bot message:", error);
+  }
+};
