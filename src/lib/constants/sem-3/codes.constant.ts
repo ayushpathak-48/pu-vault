@@ -3539,11 +3539,12 @@ public class MyMusicService extends Service {
             type: "heading",
             value: "Practical-8:Simple Notification Example",
           },
-          // {
-          //   type: "btn",
-          //   title: "Download Project: Simple Notification Example",
-          //   value: "https://github.com/your-repo-link.zip",
-          // },
+          {
+            type: "btn",
+            title: "Download Project: Simple Notification Example",
+            value:
+              "https://github.com/ayushpathak-48/mad-simple-notification-app/archive/refs/heads/main.zip",
+          },
           {
             type: "code",
             language: "xml",
@@ -3947,11 +3948,12 @@ public class MainActivity extends AppCompatActivity {
             type: "heading",
             value: "Practical-9:Read Contacts",
           },
-          // {
-          //   type: "btn",
-          //   title: "Download Project: Read Contacts",
-          //   value: "https://github.com/your-repo-link.zip",
-          // },
+          {
+            type: "btn",
+            title: "Download Project: Read Contacts",
+            value:
+              "https://github.com/ayushpathak-48/mad-read-contacts/archive/refs/heads/main.zip",
+          },
           {
             type: "code",
             language: "xml",
@@ -4093,8 +4095,6 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-
-      //  p-10
       //  p-10
       {
         key: "generate-list",
@@ -4103,6 +4103,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-10: Generate Dynamic List",
+          },
+          {
+            type: "btn",
+            title: "Download Project: Generate Dynamic List",
+            value:
+              "https://github.com/ayushpathak-48/mad-generate-dynamic-list/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -4271,6 +4277,12 @@ public class SecondActivity extends AppCompatActivity {
             value: "Practical-11: Phone Dialer App",
           },
           {
+            type: "btn",
+            title: "Download Project: Phone Dialer App",
+            value:
+              "https://github.com/ayushpathak-48/mad-phone-dialer-app/archive/refs/heads/main.zip",
+          },
+          {
             type: "code",
             language: "xml",
             fileName: "AndroidManifest.xml",
@@ -4404,7 +4416,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-
+      // p-12
       {
         key: "practical-12",
         name: "Practical-12: SMS Manager App",
@@ -4412,6 +4424,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-12: SMS Manager App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: SMS Manager App",
+            value:
+              "https://github.com/ayushpathak-48/mad-sms-manager-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -4613,7 +4631,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-      //  p - 13
+      //  p-13
       {
         key: "practical-13",
         name: "Practical-13: User Registration App",
@@ -4621,6 +4639,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-13: User Registration App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: User Registration App",
+            value:
+              "https://github.com/ayushpathak-48/mad-user-registration-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -4960,7 +4984,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
           },
         ],
       },
-      //  p - 14
+      //  p-14
       {
         key: "practical-14",
         name: "Practical-14: SharedPreferences App",
@@ -4969,6 +4993,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             type: "heading",
             value:
               "Practical-14: SharedPreferences App (Background Color Changer)",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: SharedPreferences App (Background Color Changer)",
+            value:
+              "https://github.com/ayushpathak-48/mad-shared-preference-app-bg-changer/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5085,7 +5116,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-      //   p - 15
+      //   p-15
       {
         key: "practical-15",
         name: "Practical-15: SQLite User CRUD App",
@@ -5093,6 +5124,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-15: SQLite User CRUD App",
+          },
+          {
+            type: "btn",
+            title: "Download Project: SQLite User CRUD App",
+            value:
+              "https://github.com/ayushpathak-48/mad-user-crud-app-using-sqlite/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5385,8 +5422,7 @@ public class DBHelper extends SQLiteOpenHelper {
           },
         ],
       },
-      //  p -16
-      //   p - 16
+      //   p-16
       {
         key: "practical-16",
         name: "Practical-16: SQLite Authentication App (Login & Register)",
@@ -5394,6 +5430,13 @@ public class DBHelper extends SQLiteOpenHelper {
           {
             type: "heading",
             value: "Practical-16: SQLite Authentication App (Login & Register)",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: SQLite Authentication App (Login & Register)",
+            value:
+              "https://github.com/ayushpathak-48/mad-sqlite-auth-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5568,8 +5611,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-      // p -17
-      //   p - 17
+      //   p-17
       {
         key: "practical-17",
         name: "Practical-17: Android View Animations (Rotate, Fade, Zoom)",
@@ -5577,6 +5619,13 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-17: Android View Animations (Rotate, Fade, Zoom)",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: Android View Animations (Rotate, Fade, Zoom)",
+            value:
+              "https://github.com/ayushpathak-48/mad-animation-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5708,7 +5757,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-      //   p - 18
+      //   p-18
       {
         key: "practical-18",
         name: "Practical-18: Simple Audio Player (Play, Pause/Resume, Stop)",
@@ -5717,6 +5766,13 @@ public class MainActivity extends AppCompatActivity {
             type: "heading",
             value:
               "Practical-18: Simple Audio Player (Play, Pause/Resume, Stop)",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: Simple Audio Player (Play, Pause/Resume, Stop)",
+            value:
+              "https://github.com/ayushpathak-48/mad-audio-player/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5844,7 +5900,6 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
-      //   p - 19
       {
         key: "simple-video-player",
         name: "Simple Video Player using VideoView",
@@ -5852,6 +5907,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Simple Video Player using VideoView",
+          },
+          {
+            type: "btn",
+            title: "Download Project: Simple Video Player using VideoView",
+            value:
+              "https://github.com/ayushpathak-48/mad-video-player/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -5986,6 +6047,7 @@ public class MainActivity extends AppCompatActivity {
           },
         ],
       },
+      // p-19
       {
         key: "practical-19",
         name: "Practical-19: Web Browser using WebView",
@@ -5993,6 +6055,12 @@ public class MainActivity extends AppCompatActivity {
           {
             type: "heading",
             value: "Practical-19: Web Browser using WebView",
+          },
+          {
+            type: "btn",
+            title: "Download Project: Web Browser using WebView",
+            value:
+              "https://github.com/ayushpathak-48/web-browser-using-web-view/archive/refs/heads/main.zip",
           },
           {
             type: "code",
@@ -6252,6 +6320,13 @@ public class MainActivity extends AppCompatActivity {
             type: "heading",
             value:
               "Practical-20: Fetch Current Location using FusedLocationProviderClient",
+          },
+          {
+            type: "btn",
+            title:
+              "Download Project: Fetch Current Location using FusedLocationProviderClient",
+            value:
+              "https://github.com/ayushpathak-48/mad-location-app/archive/refs/heads/main.zip",
           },
           {
             type: "code",
