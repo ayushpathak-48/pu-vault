@@ -18,6 +18,9 @@ import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { useDataStore } from "@/stores/data.store";
+import { FeedbackFloatingDialog } from "./feedback-dialog-button";
+import { Button } from "./ui/button";
+import { MessageSquarePlus } from "lucide-react";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -91,7 +94,7 @@ export function AppSidebar() {
                 className={cn(
                   "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc] text-sm",
                   activeLink &&
-                    "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
+                  "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
                 )}
                 key={link.id}
               >
@@ -101,9 +104,21 @@ export function AppSidebar() {
             );
           })}
         </SidebarGroup>
-        {/* <SidebarGroup>
-          <InstallPWAButton />
-        </SidebarGroup> */}
+        <SidebarGroup>
+          <FeedbackFloatingDialog trigger={
+            <Button
+              variant={"outline"}
+              className={cn(
+                "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc] text-sm",
+              )}
+            >
+              <MessageSquarePlus
+                className="size-4"
+              />
+              Feedback
+            </Button>
+          } />
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="border-t">
         <ToggleMode />

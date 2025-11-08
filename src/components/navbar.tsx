@@ -51,6 +51,7 @@ export const Navbar = () => {
 🧠 <b>Specialization:</b> ${specialization}
 🕒 <b>Time:</b> ${new Date().toLocaleString()}
     `;
+    if (window.location.hostname === "localhost") return;
     sendBotMessage({ chatId: telegramBotChatIds.puVaultVisitorsChannel, message });
 
   }, [pathname]);

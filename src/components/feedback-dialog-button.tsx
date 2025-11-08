@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { createClient } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import {
@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogFooter,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,7 +21,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { sendBotMessage } from "@/lib/utils";
+import { cn, sendBotMessage } from "@/lib/utils";
+import { MessageSquarePlus } from "lucide-react";
 
 // ✅ Setup Supabase client
 const supabase = createClient(
@@ -28,7 +30,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export const FeedbackFloatingDialog = () => {
+export const FeedbackFloatingDialog = ({ trigger }: { trigger?: any }) => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -71,31 +73,32 @@ export const FeedbackFloatingDialog = () => {
   };
 
   return (
-    <div className="fixed bottom-28 right-5 lg:bottom-24 lg:right-10 z-50">
-      {/* Floating Feedback Button */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <div onClick={() => setOpen(true)} className="cursor-pointer">
-              <div className="size-10 rounded-full shadow-lg bg-white p-1 cursor-pointer">
-                <Image
-                  src="/icons/feedback-icon.png"
-                  alt="Feedback"
-                  height={40}
-                  width={40}
-                  className="w-full h-full object-contain animate-pulse"
-                />
+    <>
+      <div className="fixed bottom-28 right-5 lg:bottom-24 lg:right-10 z-50">
+        {/* Floating Feedback Button */}
+        {!trigger && <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div onClick={() => setOpen(true)} className="cursor-pointer">
+                <div className="size-10 rounded-full shadow-lg bg-white p-1 cursor-pointer flex items-center justify-center">
+                  <MessageSquarePlus
+                    className={cn(
+                      "size-6 text-gray-500 active:scale-[0.95] transition-all")}
+                  />
+                </div>
               </div>
-            </div>
-          </TooltipTrigger>
-          <TooltipContent>
-            <div>Give Feedback</div>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-
+            </TooltipTrigger>
+            <TooltipContent>
+              <div>Give Feedback</div>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>}
+      </div>
       {/* Feedback Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
+        {
+          trigger && <DialogTrigger asChild className="p-0">{trigger}</DialogTrigger>
+        }
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>We value your feedback</DialogTitle>
@@ -127,6 +130,6 @@ export const FeedbackFloatingDialog = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
 };

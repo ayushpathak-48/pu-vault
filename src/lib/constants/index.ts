@@ -1,5 +1,4 @@
 import {
-  CableCarIcon,
   HardDriveDownloadIcon,
   HouseIcon,
   SquareDashedBottomCode,
@@ -64,13 +63,13 @@ export const navLinks = [
     // hideOnMobile: true,
     icon: SquareDashedBottomCode,
   },
-  {
-    id: 3,
-    title: "Time Table",
-    href: "/time-table",
-    // hideOnMobile: true,
-    icon: CableCarIcon,
-  },
+  // {
+  //   id: 3,
+  //   title: "Time Table",
+  //   href: "/time-table",
+  //   // hideOnMobile: true,
+  //   icon: CableCarIcon,
+  // },
   {
     id: 5,
     title: "Assignments",

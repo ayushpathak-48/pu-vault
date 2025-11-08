@@ -3,9 +3,12 @@
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
+import { MessageSquarePlus } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { Fragment } from "react";
+import { FeedbackFloatingDialog } from "./feedback-dialog-button";
+import { Button } from "./ui/button";
 export const BottomTabs = () => {
   const pathname = usePathname();
   const bottomTabsEnabled = useDataStore((state) => state.bottomTabsEnabled);
@@ -44,6 +47,25 @@ export const BottomTabs = () => {
             </Fragment>
           );
         })}
+        <FeedbackFloatingDialog trigger={
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className="!w-20 !h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-0"
+          >
+            <MessageSquarePlus
+              className={cn(
+                "!size-6 text-gray-500 active:scale-[0.95] transition-all")}
+            />
+            <span
+              className={cn(
+                "text-[10px] text-wrap truncate text-center font-medium text-gray-500"
+              )}
+            >
+              Feedback
+            </span>
+          </Button>
+        } />
       </div>
     </div>
   );

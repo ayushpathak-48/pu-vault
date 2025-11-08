@@ -2972,27 +2972,1554 @@ void bubbleSort(int arr[], int n)
       },
     ],
   },
+  //   PHP
+  {
+    subject_name: "PHP",
+    key: "php",
+    specialization: null,
+    language: "php",
+    practicals: [
+      //  p-1
+      {
+        key: "personal-profile-design",
+        name: "Practical - 1: Personal Profile Design Using HTML & CSS",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 1 - Personal Profile Design Using HTML & CSS",
+          },
+          {
+            type: "code",
+            fileName: "personal_profile_design.php",
+            value: `<?php
+$name = "Ayush Gandhi";
+$role = "Back-end Developer";
+$email = "ayush@example.com";
+$phone = "+91 98765 43210";
+$edu = [
+    ["BCA", "XYZ University", "2025"],
+    ["12th", "ABC School", "2022"],
+    ["10th", "ABC School", "2020"]
 ];
+$pic = "profile.jpg";
+$workspace = "http://localhost/workspace/";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Profile Page</h2>
+    <img src="<?= $pic ?>" width="120"><br>
+    <b>Name:</b> <?= $name ?><br>
+    <b>Role:</b> <?= $role ?><br>
+    <b>Email:</b> <?= $email ?><br>
+    <b>Phone:</b> <?= $phone ?><br>
 
-// Example Empty box
-// {
-//     key: "crud-operations",
-//     name: "Practical - 2: JDBC Connectivity & Crud Operations ",
-//     pageBlocks: [
-//       {
-//         type: "heading",
-//         value: "Practical 2- JDBC Connectivity & Crud Operations",
-//       },
-//       {
-//         type: "code",
-//         fileName: "main.java",
-//         value: ``,
-//       },
-//     ],
-//   },
+    <h3>Education</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Degree</th>
+            <th>College</th>
+            <th>Year</th>
+        </tr>
+        <?php
+        foreach ($edu as $e) {
+            echo "<tr>
+                    <td>{$e[0]}</td>
+                    <td>{$e[1]}</td>
+                    <td>{$e[2]}</td>
+                  </tr>";
+        }
+        ?>
+    </table>
 
-//   {
-//     type: "code",
-//     fileName: "registration.html",
-//     value: ``,
-//   },
+    <h3>Workspace</h3>
+    <a href="<?= $workspace ?>">My Workspace</a>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-2
+      {
+        key: "web-page-design-with-css",
+        name: "Practical - 2: Web Page Design Using CSS",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 2 - Web Page Design Using CSS",
+          },
+          {
+            type: "code",
+            fileName: "web_page_design.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>My Styled PHP Page</title>
+    <style>
+        /* CSS Tags */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* CSS Class */
+        .container {
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* CSS Grouping */
+        p, li {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><?php echo "Welcome to My PHP Website"; ?></h1>
+        <p>This page is styled using a general stylesheet (merged into this file).</p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Reusable CSS classes</li>
+            <li>Grouped selectors for efficiency</li>
+            <li>Consistent design in one file</li>
+        </ul>
+
+        <a href="#" class="btn">Sample Button</a>
+    </div>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-3
+      {
+        key: "admission-registration-form",
+        name: "Practical - 3: Admission Registration Form",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - Admission Registration Form",
+          },
+          {
+            type: "code",
+            fileName: "registration_form.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Admission Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 40%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        .btn {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eaf3ff;
+            border-left: 4px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Registration Form</h2>
+
+        <form method="post">
+            <label>Full Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number:</label>
+            <input type="text" name="phone" required>
+
+            <label>Course Applied:</label>
+            <select name="course" required>
+                <option value="">-- Select Course --</option>
+                <option value="BCA">BCA</option>
+                <option value="BSc CS">B.Sc Computer Science</option>
+                <option value="MCA">MCA</option>
+                <option value="MBA">MBA</option>
+            </select>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+
+            <input type="submit" class="btn" value="Register">
+        </form>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $course = $_POST['course'];
+            $dob = $_POST['dob'];
+
+            echo "<div class='result'>";
+            echo "<h3>Registration Successful!</h3>";
+            echo "<p><strong>Name:</strong> $name</p>";
+            echo "<p><strong>Email:</strong> $email</p>";
+            echo "<p><strong>Phone:</strong> $phone</p>";
+            echo "<p><strong>Course:</strong> $course</p>";
+            echo "<p><strong>DOB:</strong> $dob</p>";
+            echo "</div>";
+        }
+        ?>
+    </div>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-4
+      {
+        key: "type-conversion",
+        name: "Practical - 4: Type Conversion through script",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 4 - Type Conversion through script",
+          },
+          {
+            type: "code",
+            fileName: "type_conversion.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Type Conversion</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+
+        th {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">PHP Type Conversion</h2>
+
+    <table>
+        <tr>
+            <th>Variable Name</th>
+            <th>Variable Type</th>
+            <th>Converted Type</th>
+            <th>Converted Value</th>
+        </tr>
+
+        <?php
+        $num = 100;     // integer
+        $str = "250";   // string
+
+        $vars = [
+            "num" => $num,
+            "str" => $str
+        ];
+
+        $types = ["integer", "double", "string", "boolean"];
+
+        foreach ($vars as $name => $value) {
+            $originalType = gettype($value);
+
+            foreach ($types as $t) {
+                $converted = $value;
+                settype($converted, $t);
+
+                echo "
+                <tr>
+                    <td>$name</td>
+                    <td>$originalType</td>
+                    <td>$t</td>
+                    <td>" . var_export($converted, true) . "</td>
+                </tr>";
+            }
+        }
+        ?>
+    </table>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-5
+      {
+        key: "course-details-web-page",
+        name: "Practical - 5: Course Details Web Page",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5 - Course Details Web Page",
+          },
+          {
+            type: "code",
+            fileName: "course_details.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .course {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .c1 { color: red; }
+        .c2 { color: green; }
+        .c3 { color: blue; }
+        .c4 { color: orange; }
+        .c5 { color: purple; }
+    </style>
+</head>
+<body>
+    <h2>Course Details</h2>
+
+    <?php
+    $courses = ["BCA", "B.Sc Computer Science", "MCA", "MBA", "B.Com"];
+    $colors = ["c1", "c2", "c3", "c4", "c5"];
+
+    foreach ($courses as $i => $course) {
+        $class = $colors[$i % count($colors)];
+        echo "<div class='course $class'>$course</div>";
+    }
+    ?>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-6
+      {
+        key: "string-operations",
+        name: "Practical - 6: String Operations",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 6 - String Operations",
+          },
+          {
+            type: "code",
+            fileName: "string_operations.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>String Operations</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #007BFF;
+            color: white;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">PHP String Operations</h2>
+
+    <form method="post">
+        <input type="text" name="str1" placeholder="Enter String 1" required>
+        <input type="text" name="str2" placeholder="Enter String 2" required>
+        <input type="submit" value="Perform Operations">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $str1 = $_POST['str1'];
+        $str2 = $_POST['str2'];
+
+        echo "<table>
+                <tr>
+                    <th>String Value 1</th>
+                    <th>String Value 2</th>
+                    <th>Operation</th>
+                    <th>Result</th>
+                </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>$str2</td>
+                <td>Concatenation</td>
+                <td>" . ($str1 . $str2) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>-</td>
+                <td>Length of String 1</td>
+                <td>" . strlen($str1) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str2</td>
+                <td>-</td>
+                <td>Length of String 2</td>
+                <td>" . strlen($str2) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>$str2</td>
+                <td>Comparison (strcmp)</td>
+                <td>" . strcmp($str1, $str2) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>-</td>
+                <td>Uppercase (Str1)</td>
+                <td>" . strtoupper($str1) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str2</td>
+                <td>-</td>
+                <td>Lowercase (Str2)</td>
+                <td>" . strtolower($str2) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>-</td>
+                <td>Reverse (Str1)</td>
+                <td>" . strrev($str1) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str2</td>
+                <td>-</td>
+                <td>Reverse (Str2)</td>
+                <td>" . strrev($str2) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str1</td>
+                <td>-</td>
+                <td>Substring (first 3 chars)</td>
+                <td>" . substr($str1, 0, 3) . "</td>
+              </tr>";
+
+        echo "<tr>
+                <td>$str2</td>
+                <td>-</td>
+                <td>Substring (first 3 chars)</td>
+                <td>" . substr($str2, 0, 3) . "</td>
+              </tr>";
+
+        echo "</table>";
+    }
+    ?>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-7
+      {
+        key: "login-and-signup-page",
+        name: "Practical - 7: Login and Signup Page",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 7 - Login and Signup Page",
+          },
+          {
+            type: "code",
+            fileName: "login_signup.php",
+            value: `<?php
+session_start();
+
+$page = $_GET['page'] ?? 'home';
+
+if ($page == "login" && $_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_POST['username'] == "admin" && $_POST['password'] == "123") {
+        $_SESSION['user'] = $_POST['username'];
+        $page = "profile";
+    } else {
+        $error = "Invalid Login!";
+    }
+}
+
+if ($page == "signup" && $_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['signup'] = $_POST['username'];
+    $page = "registration";
+}
+
+if ($page == "logout") {
+    session_destroy();
+    header("Location:?page=home");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login & Signup System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+            background: #f7f7f7;
+        }
+
+        form {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            margin: 6px;
+            padding: 8px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <?php if ($page == "home"): ?>
+        <h2>Welcome</h2>
+        <a href="?page=login">Login</a> | <a href="?page=signup">Sign Up</a>
+
+    <?php elseif ($page == "login"): ?>
+        <h2>Login</h2>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        <p class="error"><?= $error ?? "" ?></p>
+        <a href="?page=home">Back</a>
+
+    <?php elseif ($page == "signup"): ?>
+        <h2>Sign Up</h2>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="?page=home">Back</a>
+
+    <?php elseif ($page == "profile" && isset($_SESSION['user'])): ?>
+        <h2>Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</h2>
+        <p>This is your Profile Page.</p>
+        <a href="?page=logout">Logout</a>
+
+    <?php elseif ($page == "registration" && isset($_SESSION['signup'])): ?>
+        <h2>Registration Page</h2>
+        <p>Signup Successful for <b><?= htmlspecialchars($_SESSION['signup']) ?></b>. Complete registration:</p>
+        <form>
+            <input type="text" placeholder="Full Name"><br>
+            <input type="text" placeholder="Course"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="?page=home">Back</a>
+
+    <?php else: ?>
+        <h2>Access Denied</h2>
+        <a href="?page=home">Home</a>
+    <?php endif; ?>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-8
+      {
+        key: "result-generator",
+        name: "Practical - 8: Student Result Generation System",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 8 - Student Result Generation System",
+          },
+          {
+            type: "code",
+            fileName: "result_generator.php",
+            value: `<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result System</title>
+</head>
+<body style="text-align:center;">
+    <h2>Student Result Generation System</h2>
+    <form method="post">
+        <h3>Student Detail Entry</h3>
+        Name: <input type="text" name="name" required>
+        Roll: <input type="text" name="roll" required>
+        Class: <input type="text" name="class" required><br><br>
+
+        <h3>Marks Entry</h3>
+        English: <input type="number" name="eng" required>
+        Maths: <input type="number" name="math" required>
+        Science: <input type="number" name="sci" required>
+        Computer: <input type="number" name="comp" required><br><br>
+
+        <input type="submit" name="submit" value="Generate Result">
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $roll = $_POST['roll'];
+        $class = $_POST['class'];
+
+        $marks = [
+            "English" => $_POST['eng'],
+            "Maths" => $_POST['math'],
+            "Science" => $_POST['sci'],
+            "Computer" => $_POST['comp']
+        ];
+
+        $total = array_sum($marks);
+        $per = $total / 4;
+
+        echo "<h3>Marksheet</h3>
+        Name: $name | Roll: $roll | Class: $class <br><br>
+        <table border='1' cellpadding='5'>
+            <tr><th>Subject</th><th>Marks</th></tr>";
+
+        foreach ($marks as $sub => $m) {
+            echo "<tr><td>$sub</td><td>$m</td></tr>";
+        }
+
+        echo "</table><br>Total: $total | Percentage: $per%<br>";
+
+        if ($per >= 60) $res = "First Division";
+        elseif ($per >= 45) $res = "Second Division";
+        elseif ($per >= 33) $res = "Pass";
+        else $res = "Fail";
+
+        echo "Result: <b>$res</b><br><br>";
+        echo "<h3>Result Analysis</h3>";
+        echo "Highest: " . max($marks) . " | Lowest: " . min($marks) . " | Average: " . ($total / 4);
+    }
+    ?>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-9
+      {
+        key: "date-and-time-functions",
+        name: "Practical - 9: Date and Time Functions",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 9 - Date and Time Functions",
+          },
+          {
+            type: "code",
+            fileName: "date_time_functions.php",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Date & Time Functions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: auto;
+            margin-top: 40px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">PHP Date & Time Functions</h2>
+    <table>
+        <tr>
+            <th>Given Date/Time</th>
+            <th>Operation</th>
+            <th>Result</th>
+        </tr>
+        <?php
+        $now = date("Y-m-d H:i:s");
+        echo "<tr><td>$now</td><td>Current Date & Time</td><td>$now</td></tr>";
+        echo "<tr><td>$now</td><td>Current Date</td><td>" . date("d-m-Y") . "</td></tr>";
+        echo "<tr><td>$now</td><td>Current Time</td><td>" . date("h:i:s A") . "</td></tr>";
+        echo "<tr><td>$now</td><td>Day of Week</td><td>" . date("l") . "</td></tr>";
+        echo "<tr><td>$now</td><td>Month</td><td>" . date("F") . "</td></tr>";
+        echo "<tr><td>$now</td><td>Timestamp</td><td>" . time() . "</td></tr>";
+
+        $future = strtotime("+7 days");
+        echo "<tr><td>$now</td><td>Date after 7 Days</td><td>" . date("d-m-Y", $future) . "</td></tr>";
+
+        $past = strtotime("-1 month");
+        echo "<tr><td>$now</td><td>Date before 1 Month</td><td>" . date("d-m-Y", $past) . "</td></tr>";
+
+        $custom = mktime(0, 0, 0, 12, 25, 2025);
+        echo "<tr><td>25-Dec-2025</td><td>Custom Date</td><td>" . date("l, d F Y", $custom) . "</td></tr>";
+        ?>
+    </table>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+      //  p-10
+      {
+        key: "server-side-validation",
+        name: "Practical - 10: Server Side Validation",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 10 -Server Side Validation",
+          },
+          {
+            type: "code",
+            fileName: "date_time_functions.php",
+            value: `<?php
+$nameErr = $emailErr = $phoneErr = $rollErr = "";
+$name = $email = $phone = $roll = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!preg_match("/^[a-zA-Z ]+$/", $_POST['name']))
+        $nameErr = "Only letters allowed!";
+    else
+        $name = $_POST['name'];
+
+    if (!preg_match("/^[\w\.-]+@[\w\.-]+\.\w{2,6}$/", $_POST['email']))
+        $emailErr = "Invalid email!";
+    else
+        $email = $_POST['email'];
+
+    if (!preg_match("/^[0-9]{10}$/", $_POST['phone']))
+        $phoneErr = "Enter 10 digit number!";
+    else
+        $phone = $_POST['phone'];
+
+    if (!preg_match("/^[A-Za-z0-9]+$/", $_POST['roll']))
+        $rollErr = "Only letters & digits!";
+    else
+        $roll = $_POST['roll'];
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Online Placement Registration Form</h2>
+    <form method="post">
+        Name: <input type="text" name="name" value="<?= $name ?>">
+        <span class="error"><?= $nameErr ?></span><br><br>
+
+        Email: <input type="text" name="email" value="<?= $email ?>">
+        <span class="error"><?= $emailErr ?></span><br><br>
+
+        Phone: <input type="text" name="phone" value="<?= $phone ?>">
+        <span class="error"><?= $phoneErr ?></span><br><br>
+
+        Roll No: <input type="text" name="roll" value="<?= $roll ?>">
+        <span class="error"><?= $rollErr ?></span><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <?php
+    if ($name && $email && $phone && $roll) {
+        echo "<h3 style='color:green;'>Registration Successful!</h3>";
+        echo "Name: $name <br>Email: $email <br>Phone: $phone <br>Roll No: $roll";
+    }
+    ?>
+</body>
+</html>
+`,
+          },
+        ],
+      },
+    ],
+  },
+  //   ADBMS
+  {
+    subject_name: "ADBMS",
+    key: "adbms",
+    specialization: null,
+    language: "sql",
+    practicals: [
+      //  p-1
+      {
+        key: "practical-1",
+        name: "Practical - 1: Basic SQL Commands",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 1 - Basic SQL Commands",
+          },
+          {
+            type: "description",
+            value: "CREATE TABLE Command",
+          },
+          {
+            type: "code",
+            value: `CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    BirthDate DATE,
+    HireDate DATE,
+    Salary DECIMAL(10, 2)
+);
+`,
+          },
+          {
+            type: "description",
+            value: "ALTER TABLE Command: Add a new column:",
+          },
+          {
+            type: "code",
+            value: `ALTER TABLE Employees
+ADD Email VARCHAR(100);`,
+          },
+          {
+            type: "description",
+            value: "ALTER TABLE Command: Remove a column:",
+          },
+          {
+            type: "code",
+            value: `ALTER TABLE Employees
+DROP COLUMN Email;`,
+          },
+          {
+            type: "description",
+            value: "INSERT TABLE Command",
+          },
+          {
+            type: "code",
+            value: `INSERT INTO Employees VALUES 
+    (100, 'John', 'Doe', '05-15-2000', '01-01-2024', 60000.00);`,
+          },
+          {
+            type: "description",
+            value: "Display all records command",
+          },
+          {
+            type: "code",
+            value: `SELECT * FROM Employees;`,
+          },
+          {
+            type: "description",
+            value: "UPDATE TABLE Command",
+          },
+          {
+            type: "code",
+            value: `UPDATE Employees
+SET Salary = 65000.00
+WHERE EmployeeID = 100;`,
+          },
+          {
+            type: "description",
+            value: "RENAME TABLE Command",
+          },
+          {
+            type: "code",
+            value: `ALTER TABLE Employees RENAME TO Staff;`,
+          },
+          {
+            type: "description",
+            value: "DELETE Command",
+          },
+          {
+            type: "code",
+            value: `DELETE FROM Employees WHERE EmployeeID = 100;`,
+          },
+          {
+            type: "description",
+            value: "DROP Command",
+          },
+          {
+            type: "code",
+            value: `DROP TABLE Employees;`,
+          },
+        ],
+      },
+      //  p-2
+      {
+        key: "practical-2",
+        name: "Practical - 2: Basic SQL Commands - Part 2",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 2 - Basic SQL Commands - Part 2",
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to retrieve all columns and rows from the Employees table.",
+          },
+          {
+            type: "code",
+            value: `SELECT * FROM Employees;`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find all customers whose last name is 'Doe'.",
+          },
+          {
+            type: "code",
+            value: `SELECT * FROM Employees WHERE LastName = 'Doe';`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to list all books from the Books table, ordered by publication year in descending order.",
+          },
+          {
+            type: "code",
+            value: `SELECT * FROM Books ORDER BY publication_year DESC;`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find the total number of orders in the Orders table",
+          },
+          {
+            type: "code",
+            value: `SELECT COUNT(*) AS total_orders FROM Orders;`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find the average salary of employees in each department. Assume you have the Employees table with columns EmployeeID, FirstName, LastName, Salary, and DepartmentID.",
+          },
+          {
+            type: "code",
+            value: `SELECT DepartmentID, AVG(Salary) AS average_salary FROM Employees GROUP BY DepartmentID;`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to list all unique job titles from the Employees table.",
+          },
+          {
+            type: "code",
+            value: `SELECT DISTINCT JobTitle FROM Employees;`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find all products from the Products table where the product name contains the word 'Laptop'.",
+          },
+          {
+            type: "code",
+            value: `SELECT * FROM Products WHERE  ProductName LIKE '%Laptop%';`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find the names of employees who have a salary greater than the average salary of all employees.",
+          },
+          {
+            type: "code",
+            value: `SELECT FirstName, LastName FROM Employees WHERE Salary > (SELECT AVG(Salary) FROM Employees);`,
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find the union of all product names from the Products table and all customer names from the Customers table.",
+          },
+          {
+            type: "code",
+            value: `SELECT ProductName AS Name FROM Products UNION ALL SELECT FirstName AS Name FROM Customers;`,
+          },
+        ],
+      },
+      //  p-3
+      {
+        key: "practical-3",
+        name: "Practical - 3: Joins",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 3 - Joins",
+          },
+          {
+            type: "description",
+            value:
+              "Write an SQL query to find the names of customers and their associated orders. Assume you have two tables: Customers and Orders. Customers has columns CustomerID and CustomerName, and Orders has columns OrderID, CustomerID, and OrderDate.",
+          },
+          {
+            type: "code",
+            value: `SELECT
+    Customers.CustomerName,
+    Orders.OrderID,
+    Orders.OrderDate
+FROM
+    Customers
+INNER JOIN Orders
+    ON Customers.CustomerID = Orders.CustomerID;`,
+          },
+          {
+            type: "description",
+            value:
+              "Question: Write an SQL query to list all customers and any orders they may have. Include customers who do not have any orders. Use the same Customers and Orders tables.",
+          },
+          {
+            type: "code",
+            value: `SELECT
+    Customersu.CustomerName,
+    Orders.OrderID,
+    Orders.OrderDate
+FROM
+    Customersu
+LEFT JOIN Orders
+    ON Customersu.CustomerID = Orders.CustomerID;`,
+          },
+          {
+            type: "description",
+            value:
+              "RIGHT JOIN (RIGHT OUTER JOIN) Question:Write an SQL query to list all orders and any associated customer details. Include orders that do not have an  associated customer. Use the Customers and Orders tables. ",
+          },
+          {
+            type: "code",
+            value: `SELECT
+    Orders.OrderID,
+    Orders.OrderDate,
+    Customersu.CustomerName
+FROM
+    Orders
+RIGHT JOIN Customersu
+    ON Orders.CustomerID = Customersu.CustomerID;`,
+          },
+          {
+            type: "description",
+            value:
+              "SELF JOIN: Write an SQL query to find pairs of employees who work in the same department. Assume you have an Employees table with columns EmployeeID, EmployeeName, and DepartmentID",
+          },
+          {
+            type: "code",
+            value: `SELECT e1.EmployeeID AS Employee1_ID, 
+       e1.EmployeeName AS Employee1_Name,
+       e2.EmployeeID AS Employee2_ID, 
+       e2.EmployeeName AS Employee2_Name,
+       e1.DepartmentID
+FROM Employees e1
+JOIN Employees e2
+  ON e1.DepartmentID = e2.DepartmentID
+  AND e1.EmployeeID < e2.EmployeeID
+ORDER BY e1.DepartmentID, e1.EmployeeID, e2.EmployeeID;`,
+          },
+          {
+            type: "description",
+            value: "CROSS JOIN",
+          },
+          {
+            type: "code",
+            value: `SELECT p.ProductID, 
+       p.ProductName, 
+       c.CategoryID, 
+       c.CategoryName
+FROM Products p
+CROSS JOIN Categories c;`,
+          },
+        ],
+      },
+      //  p-4
+      {
+        key: "practical-4",
+        name: "Practical - 4: PL/SQL program to find total and average of 4 subjects and display the grade",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 4 - PL/SQL program to find total and average of 4 subjects and display the grade",
+          },
+          {
+            type: "description",
+            value: "Create a Table to Store Student Marks",
+          },
+          {
+            type: "code",
+            value: `CREATE TABLE student_marks (
+    student_id NUMBER PRIMARY KEY,
+    subject1_marks NUMBER,
+    subject2_marks NUMBER,
+    subject3_marks NUMBER,
+    subject4_marks NUMBER
+);`,
+          },
+          {
+            type: "description",
+            value: "Insert Some Sample Data into the Table",
+          },
+          {
+            type: "code",
+            value: `INSERT INTO student_marks (student_id, subject1_marks, subject2_marks, subject3_marks, subject4_marks)
+VALUES (1, 85, 90, 78, 92);
+
+INSERT INTO student_marks (student_id, subject1_marks, subject2_marks, subject3_marks, subject4_marks)
+VALUES (2, 70, 75, 80, 88);
+
+INSERT INTO student_marks (student_id, subject1_marks, subject2_marks, subject3_marks, subject4_marks)
+VALUES (3, 60, 65, 72, 58);`,
+          },
+          {
+            type: "description",
+            value: "PL/SQL Block to Calculate Total, Average, and Grade",
+          },
+          {
+            type: "code",
+            value: `DECLARE
+    -- Declare variables for total, average, and grade
+    v_total NUMBER;
+    v_avg   NUMBER;
+    v_grade CHAR(1);
+
+    -- Cursor to fetch student data
+    CURSOR student_cursor IS
+        SELECT student_id,
+               subject1_marks,
+               subject2_marks,
+               subject3_marks,
+               subject4_marks
+        FROM student_marks;
+BEGIN
+    -- Loop through each student record
+    FOR student IN student_cursor LOOP
+        -- Calculate total and average
+        v_total := student.subject1_marks
+                 + student.subject2_marks
+                 + student.subject3_marks
+                 + student.subject4_marks;
+
+        v_avg := v_total / 4;
+
+        -- Assign grade based on average
+        IF v_avg >= 90 THEN
+            v_grade := 'A';
+        ELSIF v_avg >= 75 THEN
+            v_grade := 'B';
+        ELSIF v_avg >= 60 THEN
+            v_grade := 'C';
+        ELSE
+            v_grade := 'D';
+        END IF;
+
+        -- Output the results
+        DBMS_OUTPUT.PUT_LINE('Student ID   : ' || student.student_id);
+        DBMS_OUTPUT.PUT_LINE('Total Marks  : ' || v_total);
+        DBMS_OUTPUT.PUT_LINE('Average Marks: ' || v_avg);
+        DBMS_OUTPUT.PUT_LINE('Grade        : ' || v_grade);
+        DBMS_OUTPUT.PUT_LINE('----------------------------------');
+    END LOOP;
+END;
+/`,
+          },
+          {
+            type: "description",
+            value: "Sample Output in Table Format:",
+          },
+          {
+            type: "code",
+            value: `SELECT student_id, 
+       (subject1_marks + subject2_marks + subject3_marks + subject4_marks) AS total_marks,
+       ((subject1_marks + subject2_marks + subject3_marks + subject4_marks) / 4) AS average_marks,
+       CASE
+           WHEN ((subject1_marks + subject2_marks + subject3_marks + subject4_marks) / 4) >= 90 THEN 'A'
+           WHEN ((subject1_marks + subject2_marks + subject3_marks + subject4_marks) / 4) >= 75 THEN 'B'
+           WHEN ((subject1_marks + subject2_marks + subject3_marks + subject4_marks) / 4) >= 60 THEN 'C'
+           ELSE 'D'
+       END AS grade
+FROM student_marks;`,
+          },
+        ],
+      },
+      //  p-5
+      {
+        key: "practical-5",
+        name: "Practical - 5: PL/SQL Factorial program using functions",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 5  - PL/SQL Factorial program using functions",
+          },
+
+          {
+            type: "code",
+            value: `--Creating a function to calculate factorial
+ CREATE OR REPLACE FUNCTION factorial (n IN NUMBER) 
+RETURN NUMBER 
+IS
+ result NUMBER := 1;
+ BEGIN
+ -- Loop to calculate factorial and display intermediate steps
+ FOR i IN 1..n LOOP
+ result := result * i;
+ -- Displaying each step in tabular format 
+DBMS_OUTPUT.PUT_LINE('Step ' || i || ': ' || i || ' x ‘ || (result / i) || ' = ' || result);
+ END LOOP; 
+RETURN result;
+ END;
+ / 
+`,
+          },
+          {
+            type: "code",
+            value: `--Using a fixed value for num (e.g., num = 5)
+ DECLARE
+ num NUMBER := 5; -- Hardcoded value
+ fact NUMBER;
+ BEGIN
+ -- Displaying the header for the table
+ DBMS_OUTPUT.PUT_LINE('-----------------------------------------');
+ DBMS_OUTPUT.PUT_LINE('Step | Multiplier | Previous Result | Current Result'); 
+ DBMS_OUTPUT.PUT_LINE('-----------------------------------------');
+ -- Calling the factorial function
+ fact := factorial(num); 
+--Displaying the factorial result
+ DBMS_OUTPUT.PUT_LINE('-----------------------------------------');
+ DBMS_OUTPUT.PUT_LINE('The factorial of ' || num || ' is: ' || fact);
+ END;
+ / 
+`,
+          },
+        ],
+      },
+      //  p-6
+      {
+        key: "practical-6",
+        name: "Practical - 6: PL/SQL program to generate Fibonacci series using functions",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 6 - PL/SQL program to generate Fibonacci series using functions",
+          },
+          {
+            type: "code",
+            value: `-- Create a function to calculate the nth Fibonacci number
+CREATE OR REPLACE FUNCTION fibonacci (n IN NUMBER) 
+RETURN NUMBER 
+IS
+   -- Declare variables for Fibonacci calculation
+   a NUMBER := 0;
+   b NUMBER := 1;
+   c NUMBER := 0;
+BEGIN
+   -- Special case for 1st term (Fibonacci number at position 1)
+   IF n = 1 THEN
+      RETURN a;
+   ELSIF n = 2 THEN
+      RETURN b;
+   ELSE
+      -- Loop to calculate Fibonacci numbers for positions greater than 2
+      FOR i IN 3..n LOOP
+         c := a + b;      -- Fibonacci relation: F(n) = F(n-1) + F(n-2)
+         a := b;          -- Move a to the next position
+         b := c;          -- Move b to the next position
+      END LOOP;
+      RETURN c;           -- Return the Fibonacci number at position n
+   END IF;
+END;
+/
+`,
+          },
+          {
+            type: "code",
+            value: `-- Anonymous PL/SQL Block to generate Fibonacci series
+DECLARE
+   num_terms NUMBER := 10;  -- Set the number of terms to generate
+   i NUMBER;
+   fib NUMBER;
+BEGIN
+   -- Displaying the Fibonacci series header
+   DBMS_OUTPUT.PUT_LINE('Fibonacci Series:');
+   DBMS_OUTPUT.PUT_LINE('------------------');
+   
+   -- Loop to call the Fibonacci function and display the series
+   FOR i IN 1..num_terms LOOP
+      fib := fibonacci(i); -- Get the Fibonacci number at position i
+      DBMS_OUTPUT.PUT_LINE('Term ' || i || ': ' || fib); -- Print each term
+   END LOOP;
+END;
+/
+`,
+          },
+        ],
+      },
+      //  p-7
+      {
+        key: "practical-7",
+        name: "Practical - 7: Create Procedure to check number is prime or not",
+        pageBlocks: [
+          {
+            type: "heading",
+            value:
+              "Practical 7 - Create Procedure to check number is prime or not",
+          },
+          {
+            type: "code",
+            value: `CREATE OR REPLACE PROCEDURE check_prime (num IN NUMBER) IS 
+   -- Declare a variable to check for divisibility 
+   is_prime BOOLEAN := TRUE; 
+BEGIN 
+   -- Special case: Numbers less than 2 are not prime 
+   IF num <= 1 THEN 
+      is_prime := FALSE; 
+   ELSIF num = 2 THEN 
+      -- 2 is a prime number 
+      is_prime := TRUE; 
+   ELSE 
+ -- Loop to check divisibility from 2 to sqrt(num) 
+      FOR i IN 2..TRUNC(SQRT(num)) LOOP 
+         IF num MOD i = 0 THEN 
+            is_prime := FALSE;  -- If divisible by i, then it's not prime 
+            EXIT;  -- Exit the loop early as we found a divisor 
+         END IF; 
+      END LOOP; 
+   END IF;
+ -- Display the result based on whether the number is prime or not 
+   IF is_prime THEN 
+      DBMS_OUTPUT.PUT_LINE(num || ' is a prime number.'); 
+   ELSE   
+ DBMS_OUTPUT.PUT_LINE(num || ' is not a prime number.'); 
+   END IF; 
+END; 
+/  
+DECLARE 
+   num NUMBER := 29;  -- You can change this number to test other values 
+BEGIN 
+   -- Call the procedure to check if the number is prime 
+   check_prime(num); 
+END; 
+/`,
+          },
+        ],
+      },
+      //  p-8
+      {
+        key: "practical-8",
+        name: "Practical - 8: PL/SQL program to print Armstrong numbers",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 8 - PL/SQL program to print Armstrong numbers",
+          },
+          {
+            type: "code",
+            value: `DECLARE
+    num           NUMBER;        -- Current number to check
+    temp_num      NUMBER;        -- Copy of the number for manipulation
+    original_num  NUMBER;        -- Original number for comparison
+    sum           NUMBER := 0;   -- Sum of powers of digits
+    remainder     NUMBER;
+    num_digits    NUMBER;
+BEGIN
+    -- Loop through numbers from 1 to 999
+    FOR num IN 1..999 LOOP
+        original_num := num;
+        temp_num := num;
+        sum := 0;
+
+        -- Calculate number of digits
+        num_digits := LENGTH(TO_CHAR(num));
+
+        -- Calculate the sum of each digit raised to the power of num_digits
+        WHILE temp_num > 0 LOOP
+            remainder := MOD(temp_num, 10);
+            sum := sum + POWER(remainder, num_digits);
+            temp_num := TRUNC(temp_num / 10);
+        END LOOP;
+
+        -- Check if the number is an Armstrong number
+        IF sum = original_num THEN
+            DBMS_OUTPUT.PUT_LINE(original_num || ' is an Armstrong number.');
+        END IF;
+    END LOOP;
+END;
+/
+
+`,
+          },
+        ],
+      },
+    ],
+  },
+];

@@ -41,16 +41,6 @@ const page = () => {
               className="rounded-md cursor-pointer"
             />
           </div>
-          //   <iframe
-          //     className="h-[214px] w-[381px] rounded-md"
-          //     key={video.key}
-          //     src={`https://www.youtube.com/embed/${video.videoId}`}
-          //     title="YouTube video player"
-          //     frameBorder="0"
-          //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          //     referrerPolicy="strict-origin-when-cross-origin"
-          //     allowFullScreen
-          //   ></iframe>
         ))}
       </div>
     </div>
