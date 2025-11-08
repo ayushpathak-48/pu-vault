@@ -108,9 +108,26 @@ export const DataDialog = () => {
     formState: { errors },
   } = form;
 
+  const isShowDialog = () => {
+    const now = new Date();
+    const istTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+
+    const start = new Date(istTime);
+    start.setHours(8, 45, 0, 0); // 8:45 AM
+    const end = new Date(istTime);
+    end.setHours(10, 0, 0, 0);   // 10:00 AM
+
+    if (istTime >= start && istTime <= end) {
+      return false;
+    }
+    return true;
+
+  }
+
   useEffect(() => {
     if (hydrated) {
       if (!course || !sem || !user?.name || !user?.enrollment) {
+        if (!isShowDialog()) return;
         setOpen(true);
       } else {
         setOpen(false);
