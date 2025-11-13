@@ -1863,46 +1863,24 @@ namespace CookieDemo
             type: "code",
             fileName: "Welcome.aspx",
             language: "java",
-            value: `using System;
-using System.Web;
+            value: `<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="CookieDemo.Welcome" %>
 
-namespace CookieDemo
-{
-    public partial class Default : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                if (Request.Cookies["UserName"] != null)
-                {
-                    txtName.Text = Request.Cookies["UserName"].Value;
-                    lblMessage.Text = "Cookie loaded: " + txtName.Text;
-                }
-            }
-        }
-
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            HttpCookie cookie = new HttpCookie("UserName");
-            cookie.Value = txtName.Text;
-            cookie.Expires = DateTime.Now.AddYears(1);
-            Response.Cookies.Add(cookie);
-
-            lblMessage.Text = "Cookie saved successfully!";
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (Request.Cookies["UserName"] != null)
-            {
-                Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
-                lblMessage.Text = "Cookie deleted!";
-                txtName.Text = "";
-            }
-        }
-    }
-}`,
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="font-family: Arial; padding:20px;">
+            <h2>Welcome Page</h2>
+            <asp:Label ID="lblWelcome" runat="server" Font-Size="Large" ForeColor="Blue"></asp:Label>
+            <br /><br />
+            <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="~/Default.aspx">Back to Home</asp:HyperLink>
+        </div>
+    </form>
+</body>
+</html>`,
           },
           {
             type: "code",
