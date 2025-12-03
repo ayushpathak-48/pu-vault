@@ -6,7 +6,8 @@ export const sem3Materials = [
     id: 1,
     subject_name: "Mobile Apps Development",
     key: "mobile-apps-development",
-    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/mobile-apps-development.pdf`,
+    syllabus_link: ``,
+    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/mobile-apps-development.pdf`,
     notes_link: [
       {
         id: 1,
