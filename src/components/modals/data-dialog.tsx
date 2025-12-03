@@ -128,7 +128,7 @@ export const DataDialog = () => {
     if (hydrated) {
       if (!course || !sem || !user?.name || !user?.enrollment) {
         if (!isShowDialog()) return;
-        // setOpen(true);
+        setOpen(true);
       } else {
         setOpen(false);
       }
