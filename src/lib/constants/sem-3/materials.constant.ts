@@ -764,6 +764,26 @@ export const sem3specializationMaterials = [
         title: "Unit-3: JavaFX",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/3-javaFX.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Java Struts",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/4-java-struts-pu-vault.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Bundled Validation",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/5-bundled-validation-pu-vault.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Angular JS",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/6-angular-js-pu-vault.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-7: MongoDB",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/7-mongodb-pu-vault.pdf`,
+      },
     ],
     practicals_link: [
       //   {
