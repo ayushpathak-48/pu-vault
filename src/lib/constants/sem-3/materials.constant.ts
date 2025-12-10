@@ -782,7 +782,7 @@ export const sem3specializationMaterials = [
       {
         id: 7,
         title: "Unit-7: MongoDB",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/7-mongodb-pu-vault.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/fullstack-web-development-II/7-mongo-db-pu-vault.pdf`,
       },
     ],
     practicals_link: [
