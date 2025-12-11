@@ -658,6 +658,11 @@ export const sem3specializationMaterials = [
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/6-neural-networks.pdf`,
       },
       {
+        id: 10,
+        title: "Unit-7: Genetic Algorithms",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/7-genetic-algorithm.pdf`,
+      },
+      {
         id: 8,
         title: "Unit-8: Expert System",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/artificial-intelligence-II/8-expert-system.pdf`,
