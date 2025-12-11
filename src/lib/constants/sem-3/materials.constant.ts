@@ -1039,8 +1039,8 @@ export const sem3specializationMaterials = [
     subject_name: "Big Data Analytics - II",
     value: "bda",
     key: "big-data-analysis-II",
-    // syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/big-data-analytics-II.pdf`,
-    syllabus_link: ``,
+    syllabus_link: `${MATERIAL_LINK_BASE_URL_SEM_3}/syllabus/big-data-analytics-ii.pdf`,
+    // syllabus_link: ``,
     notes_link: [
       {
         id: 1,
@@ -1052,6 +1052,23 @@ export const sem3specializationMaterials = [
         title: "Unit-2: Hadoop Eco System",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/2-hadoopeco-system.pdf`,
       },
+      {
+        id: 3,
+        title:
+          "Unit-3: Customizing MapReduce Execution and Implementing MapReduce Program",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/3-customizing-map-reduce-execution-and-implementing-map-reduce-program.pdf`,
+      },
+      {
+        id: 4,
+        title: "Unit-5: MapReduce Based Machine Learning",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/4-map-reduce-based-machine-learning.pdf`,
+      },
+      {
+        id: 7,
+        title: "Unit-6: Spark Framework",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/big-data-analytics-II/6-spark-framework.pdf`,
+      },
+
       {
         id: 5,
         title: "Question 1 to 14 Notes",
