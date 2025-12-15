@@ -597,17 +597,17 @@ export const sem3Materials = [
       {
         id: 4,
         title: "Unit-4: Black box and white box testing",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-4.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/stqa-unit-4.pdf`,
       },
       {
         id: 5,
         title: "Unit-5: Software quality and reliability",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-5.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/stqa-unit-5.pdf`,
       },
       {
         id: 6,
         title: "Unit-6: Software quality assurance",
-        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-6.pdf`,
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/stqa-unit-6.pdf`,
       },
     ],
 
