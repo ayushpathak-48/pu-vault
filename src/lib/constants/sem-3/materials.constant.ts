@@ -594,6 +594,21 @@ export const sem3Materials = [
         title: "Unit-3: Types of Testing",
         href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/3-types-of-testing.pdf`,
       },
+      {
+        id: 4,
+        title: "Unit-4: Black box and white box testing",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-4.pdf`,
+      },
+      {
+        id: 5,
+        title: "Unit-5: Software quality and reliability",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-5.pdf`,
+      },
+      {
+        id: 6,
+        title: "Unit-6: Software quality assurance",
+        href: `${MATERIAL_LINK_BASE_URL_SEM_3}/materials/software-testing-and-quality-assurance/sqa-unit-6.pdf`,
+      },
     ],
 
     practicals_link: [
