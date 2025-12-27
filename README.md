@@ -2,7 +2,21 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started .
 
-First, run the development server:
+## Add environment variables in .env.local file
+```
+# Google Analytics Measurement Id
+NEXT_PUBLIC_GA_MEASUREMENT_ID=
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_TELEGRAM_BOT_TOKEN=
+```
+
+Then run the below command to install dependencies
+```
+npm install
+```
+
+then, run the development server:
 
 ```bash
 npm run dev
