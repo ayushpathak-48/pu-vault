@@ -95,7 +95,7 @@ export const sendBotMessage = async ({
       body: JSON.stringify({
         chat_id: chatId,
         text: message,
-        parse_mode: "HTML", // or "MarkdownV2"
+        parse_mode: "HTML",
       }),
     });
   } catch (error) {
