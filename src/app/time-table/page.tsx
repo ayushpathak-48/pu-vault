@@ -1,3 +1,13 @@
+"use client";
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
 
 // import { CustomErrorPage } from "@/components/custom-error-page";
 // import { SingleWeekTimeTableBody } from "@/components/single-week-time-table-body";
