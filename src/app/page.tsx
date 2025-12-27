@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { CustomErrorPage } from "@/components/custom-error-page";
@@ -18,7 +19,6 @@ export default function Home() {
       {alertContent?.length > 0 &&
         <><div className="flex items-center flex-col gap-2 p-2 md:p-5">
           <div className="text-lg font-medium">Important Links</div>
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           {alertContent?.map((alert: any) => (
             <div
               key={alert?.id}
