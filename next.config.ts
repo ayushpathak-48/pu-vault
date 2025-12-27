@@ -1,13 +1,19 @@
-import withPWA from "next-pwa";
+// import withPWA from "next-pwa";
 
-const nextConfig = withPWA({
-  dest: "public",
-  register: true,
-  skipWaiting: true,
-})({
+// const nextConfig = withPWA({
+//   dest: "public",
+//   register: true,
+//   skipWaiting: true,
+// })({
+//   images: {
+//     domains: ["i.ytimg.com"],
+//   },
+// });
+
+const nextConfig = {
   images: {
     domains: ["i.ytimg.com"],
   },
-});
+};
 
 export default nextConfig;
