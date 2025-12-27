@@ -1,5 +1,3 @@
-"use client";
-
 import { CustomErrorPage } from "@/components/custom-error-page";
 import { SingleWeekTimeTableBody } from "@/components/single-week-time-table-body";
 import { TimeTableBody } from "@/components/time-table-body";

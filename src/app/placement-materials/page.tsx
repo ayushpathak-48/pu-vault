@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
 import { placementMaterials } from "@/lib/constants/placement-materials.constants";
 import Link from "next/link";
 import React from "react";

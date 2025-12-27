@@ -1,3 +1,4 @@
+"use client";
 import { AttendanceCalcForm } from "@/components/attendance-calc-form";
 
 const AttendanceCalculatorPage = () => {
