@@ -3,7 +3,7 @@ import {
   ytVideoCategories,
   ytVideos,
 } from "@/lib/constants/sem-2/yt-tutorials.constant";
-import Image from "next/image";
+// import Image from "next/image";
 
 const page = () => {
   return (
@@ -33,13 +33,13 @@ const page = () => {
       <div className="flex items-center gap-6 p-2 mt-2 flex-wrap justify-evenly">
         {ytVideos.map((video) => (
           <div key={video.key} className="h-[214px] w-[318px] rounded-md">
-            <Image
+            {/* <Image
               src={`https://i.ytimg.com/vi/${video.videoId}/hq720.jpg`}
               alt={video.title}
               height={214}
               width={318}
               className="rounded-md cursor-pointer"
-            />
+            /> */}
           </div>
         ))}
       </div>
