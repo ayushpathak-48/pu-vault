@@ -316,15 +316,6 @@ export const weekdays = [
   "Saturday",
 ];
 
-export const impLinks = [
-  {
-    id: 1,
-    title: "Software Engineering",
-    href: `${MATERIAL_LINK_BASE_URL}/assignments/se-assignment.pdf`,
-  },
-  // Succesfully
-];
-
 export const alertContent = [
   // {
   //   id: 2,
