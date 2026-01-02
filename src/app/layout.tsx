@@ -11,7 +11,6 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
 import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
 import { DataDialog } from "@/components/modals/data-dialog";
-import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -64,9 +63,6 @@ export default function RootLayout({
               <WhatsappFloatingButton />
               <FeedbackFloatingDialog />
               <DeviceTracker />
-              {/* <GravityStarsBackground />
-               */}
-              <GravityStarsBackground starsCount={100} className="fixed inset-0 flex items-center justify-center rounded-xl" />
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>

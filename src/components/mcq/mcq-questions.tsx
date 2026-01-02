@@ -33,7 +33,6 @@ const AllMcqQuestions = ({ allMcqs }: { allMcqs: any }) => {
 
   const handleSubmitQuiz = () => {
     const unAttempted = allMcqs.length - Object.keys(selectedOptions).length;
-    console.log({ allMcqs, selectedOptions });
     const correctOptions = allMcqs.filter((que: any) => {
       if (Array.isArray(que.correct_option)) {
         const selectedOpts = selectedOptions[que.id] || [];

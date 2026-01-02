@@ -40,9 +40,6 @@ export default function Home() {
           <Separator className="my-2" />
         </>
       }
-      <div className="text-lg font-medium flex items-center justify-center text-center">
-        Materials
-      </div>
       {materials.length > 0 || specializationMaterials.length > 0 ? (
         <div className="p-5 h-full">
           <HomePageAccordionList

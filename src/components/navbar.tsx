@@ -3,7 +3,7 @@
 import { CourseType, navLinks, telegramBotChatIds } from "@/lib/constants";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { MenuIcon, SearchIcon, SettingsIcon } from "lucide-react";
 import { Button } from "./ui/button";
@@ -24,25 +24,30 @@ export const Navbar = () => {
 
   const { course, division, sem, specialization, user } = useDataStore((state) => state);
 
-  const [activePageTitle, setActivePageTitle] = useState(
-    navLinks.find((link) => pathname.includes(link.href))?.title,
-  );
+  // const [activePageTitle, setActivePageTitle] = useState(
+  //   navLinks.find((link) => pathname.includes(link.href))?.title,
+  // );
 
-  useLayoutEffect(() => {
-    setActivePageTitle(
-      () =>
-        navLinks.find(
-          (link) => link.href != "/" && pathname.startsWith(link.href),
-        )?.title,
+
+
+  const activePageTitle = useMemo(() => {
+    const currentLink = navLinks.find(
+      (link) => link.href != "/" && pathname.startsWith(link.href),
     );
-    setOpenMobile(false);
+    return currentLink?.title || "Pu Vault";
+  }, [pathname, navLinks]);
 
-    const pageName = pathname;
+  useEffect(() => {
+    setOpenMobile(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (window.location.hostname === "localhost") return;
 
     const message = `
 👀 <b>New Page View Alert!</b>
 
-🌐 <b>Page:</b> ${pageName}
+🌐 <b>Page:</b> ${pathname}
 👤 <b>Name:</b> ${user?.name || "Anonymous"}
 🪪 <b>Enrollment No.:</b> ${user?.enrollment || "-"}
 🎓 <b>Course:</b> ${course}
@@ -50,13 +55,18 @@ export const Navbar = () => {
 📘 <b>Semester:</b> ${sem}
 🧠 <b>Specialization:</b> ${specialization}
 🕒 <b>Time:</b> ${new Date().toLocaleString()}
-    `;
-    if (window.location.hostname === "localhost") return;
-    sendBotMessage({ chatId: telegramBotChatIds.puVaultVisitorsChannel, message });
+`;
 
+    sendBotMessage({
+      chatId: telegramBotChatIds.puVaultVisitorsChannel,
+      message,
+    });
   }, [pathname]);
 
+
   useLayoutEffect(() => {
+
+
     if (courseParam && ["mca", "mscit"].includes(courseParam)) {
       setCourse(courseParam);
     }

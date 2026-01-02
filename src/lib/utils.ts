@@ -86,7 +86,7 @@ export const sendBotMessage = async ({
   message: string;
 }) => {
   try {
-    const botToken = process.env.NEXT_TELEGRAM_BOT_TOKEN!;
+    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN!;
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",
       headers: {
