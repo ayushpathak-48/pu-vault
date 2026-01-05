@@ -39,6 +39,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="e9eIkOpqVq_U5Yr9k7MwVzJYOte8oSit0W8UW3ZbpIU" />
+        <meta name="google-adsense-account" content="ca-pub-6721729055053884" />
+
       </head>
       <body
         className={`${poppins.className} ${headingFont.variable} antialiased `}
