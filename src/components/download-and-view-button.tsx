@@ -1,3 +1,4 @@
+"use client";
 import { downloadFile } from "@/lib/utils";
 import { ArrowDownToLine, Loader } from "lucide-react";
 import { Button } from "./ui/button";
