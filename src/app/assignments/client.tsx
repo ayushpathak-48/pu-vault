@@ -1,9 +1,9 @@
+"use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CustomErrorPage } from "@/components/custom-error-page";
 import { DownloadAndViewButton } from "@/components/download-and-view-button";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import Link from "next/link";
-import React from "react";
 
 const AsssignmentsPage = () => {
     const { getAssignments } = useDataGetters();
