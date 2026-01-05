@@ -42,6 +42,12 @@ export default function Footer() {
                         >
                             Terms & Conditions
                         </Link>
+                        <Link
+                            href="/disclaimer"
+                            className="text-muted-foreground hover:text-foreground transition"
+                        >
+                            Disclaimer
+                        </Link>
                     </nav>
 
                 </div>

@@ -10,7 +10,8 @@ import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
 import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
-import { DataDialog } from "@/components/modals/data-dialog";
+// import { DataDialog } from "@/components/modals/data-dialog";
+import Footer from "@/components/footer";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -57,10 +58,11 @@ export default function RootLayout({
                 <main className="w-full max-md:pb-14 pt-16 md:pt-20 z-[5] relative">
                   {children}
                 </main>
+                <Footer />
               </div>
               <BottomTabs />
               <Toaster position="top-center" />
-              <DataDialog />
+              {/* <DataDialog /> */}
               <WhatsappFloatingButton />
               <FeedbackFloatingDialog />
               <DeviceTracker />
