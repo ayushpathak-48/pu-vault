@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useDataStore } from "@/stores/data.store";
-import React from "react";
 
 const SettingsPage = () => {
   const bottomTabsEnabled = useDataStore((state) => state.bottomTabsEnabled);

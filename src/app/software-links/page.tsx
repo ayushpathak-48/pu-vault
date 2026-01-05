@@ -1,6 +1,11 @@
 import { softwareLinks } from "@/lib/constants";
+import { Metadata } from "next";
 import Link from "next/link";
-import React from "react";
+
+export const metadata: Metadata = {
+  title: 'Software Links - Pu-Vault',
+  description: 'Access a comprehensive collection of software download links for various tools and applications. Enhance your productivity with our curated list of essential software resources.',
+};
 
 const SoftwareLinksPage = () => {
   return (

@@ -6,7 +6,7 @@ import { professorDetails } from "@/lib/constants/professor-details.constant";
 import { MailIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ProfessorsPage = () => {
   const [searchText, setSearchText] = useState("");
@@ -25,10 +25,10 @@ const ProfessorsPage = () => {
         {professorDetails.filter(({ name }) =>
           name.toLowerCase().includes(searchText.toLowerCase()),
         ).length == 0 && (
-          <div className="h-40 text-center flex items-center justify-center">
-            No Professor Found with the name {searchText}
-          </div>
-        )}
+            <div className="h-40 text-center flex items-center justify-center">
+              No Professor Found with the name {searchText}
+            </div>
+          )}
         {professorDetails
           .filter(({ name }) =>
             name.toLowerCase().includes(searchText.toLowerCase()),

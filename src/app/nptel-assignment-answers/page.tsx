@@ -1,6 +1,13 @@
 import { nptelAllWeeksAnswers } from "@/lib/constants/nptel-answers.constant";
 import { ArrowRight } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'NPTEL Assignment Answers - Pu-Vault',
+  description: 'Access a comprehensive collection of NPTEL assignment answers for various subjects and courses. Enhance your learning with our detailed solutions designed to help students excel in their studies.',
+}
+
 
 const page = () => {
   return (

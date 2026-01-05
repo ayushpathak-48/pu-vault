@@ -1,6 +1,11 @@
 import { interviewQuestions } from "@/lib/constants/sem-2/interviewQuestions.constant";
+import { Metadata } from "next";
 import Link from "next/link";
-import React from "react";
+
+export const metadata: Metadata = {
+  title: 'Interview Questions - Pu-Vault',
+  description: 'Access a curated collection of interview questions for various subjects and courses. Prepare effectively with our comprehensive question bank designed to help students excel in their interviews.',
+}
 
 const SoftwareLinksPage = () => {
   return (

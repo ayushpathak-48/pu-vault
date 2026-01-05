@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { placementMaterials } from "@/lib/constants/placement-materials.constants";
+import { Metadata } from "next";
 import Link from "next/link";
-import React from "react";
+
+export const metadata: Metadata = {
+  title: 'Placement Materials - Pu-Vault',
+  description: 'Access a comprehensive collection of placement materials for various subjects and courses. Prepare effectively with our detailed resources designed to help students excel in their placements.',
+}
 
 const PlacementMaterialsPage = () => {
   return (

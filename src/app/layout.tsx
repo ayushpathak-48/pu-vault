@@ -10,8 +10,9 @@ import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
 import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
-// import { DataDialog } from "@/components/modals/data-dialog";
 import Footer from "@/components/footer";
+
+// import { DataDialog } from "@/components/modals/data-dialog";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
