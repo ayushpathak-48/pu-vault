@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://pu-vault.vercel.app/" />
+        <meta name="google-site-verification" content="e9eIkOpqVq_U5Yr9k7MwVzJYOte8oSit0W8UW3ZbpIU" />
       </head>
       <body
         className={`${poppins.className} ${headingFont.variable} antialiased `}
