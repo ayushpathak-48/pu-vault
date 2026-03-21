@@ -40,7 +40,7 @@ const ProfessorsPage = () => {
             >
               <div className="flex flex-col gap-0.5">
                 <h2 className="text-sm">{professor.name}</h2>
-                <p className="text-secondary text-sm">
+                <p className="text-accent-foreground text-sm">
                   {professor.contact} ● {professor.email}
                 </p>
               </div>
