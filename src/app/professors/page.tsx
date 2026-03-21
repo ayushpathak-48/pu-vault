@@ -38,7 +38,12 @@ const ProfessorsPage = () => {
               key={professor.id}
               className="flex items-center justify-between gap-2 bg-gray-100 dark:bg-[#181818] p-4 rounded-lg flex-wrap"
             >
-              <h2 className="text-sm">{professor.name}</h2>
+              <div className="flex flex-col gap-0.5">
+                <h2 className="text-sm">{professor.name}</h2>
+                <p className="text-secondary text-sm">
+                  {professor.contact} ● {professor.email}
+                </p>
+              </div>
               <div className="flex items-center gap-2 justify-evenly">
                 <Button variant={"outline"} size={"sm"} asChild>
                   <Link
