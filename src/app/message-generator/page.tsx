@@ -392,7 +392,7 @@ const MessageGeneratorPage = () => {
                       <Button variant={"outline"} size={"sm"} asChild>
                         <Link
                           href={`https://wa.me/${
-                            professor.phone
+                            professor.contact
                           }?text=${encodeURIComponent(message)}`}
                           target="_blank"
                           className="font-medium primary"

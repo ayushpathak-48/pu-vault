@@ -25,10 +25,10 @@ const ProfessorsPage = () => {
         {professorDetails.filter(({ name }) =>
           name.toLowerCase().includes(searchText.toLowerCase()),
         ).length == 0 && (
-            <div className="h-40 text-center flex items-center justify-center">
-              No Professor Found with the name {searchText}
-            </div>
-          )}
+          <div className="h-40 text-center flex items-center justify-center">
+            No Professor Found with the name {searchText}
+          </div>
+        )}
         {professorDetails
           .filter(({ name }) =>
             name.toLowerCase().includes(searchText.toLowerCase()),
@@ -42,7 +42,7 @@ const ProfessorsPage = () => {
               <div className="flex items-center gap-2 justify-evenly">
                 <Button variant={"outline"} size={"sm"} asChild>
                   <Link
-                    href={`tel:${professor.phone}`}
+                    href={`tel:${professor.contact}`}
                     target="_blank"
                     className="font-medium primary"
                   >
@@ -51,7 +51,7 @@ const ProfessorsPage = () => {
                 </Button>
                 <Button variant={"secondary"} size={"icon"} asChild>
                   <Link
-                    href={`https://wa.me/${professor.phone}`}
+                    href={`https://wa.me/${professor.contact}`}
                     target="_blank"
                     className="font-medium primary"
                   >

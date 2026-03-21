@@ -4,6 +4,30 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type UserType = { name: string; enrollment: string };
+export type ProjectMemberType = {
+  name: string;
+  enrollment: string;
+  mobile: string;
+  program: string;
+};
+
+export type ProjectType = {
+  s_no: number;
+  members: Array<ProjectMemberType>;
+  project_title: string;
+  project_description: string;
+  front_end: string;
+  back_end: string;
+};
+export type ProjectDetailsType = {
+  company_name: string;
+  address: string;
+  website: string;
+  contact: string;
+  mentor: string;
+  internal_guide: string;
+  projects: Array<ProjectType>;
+};
 
 interface SpecializationState {
   user: UserType;
@@ -20,6 +44,8 @@ interface SpecializationState {
   setColor: (value: string) => void;
   bottomTabsEnabled: boolean;
   setBottomTabsEnabled: (value: boolean) => void;
+  projectDetails: ProjectDetailsType[] | null;
+  setProjectDetails: (value: ProjectDetailsType[]) => void;
   hydrated: boolean; // NEW state to track hydration
 }
 
@@ -40,7 +66,8 @@ export const useDataStore = create<SpecializationState>()(
       setColor: (value) => set({ color: value }),
       bottomTabsEnabled: get()?.bottomTabsEnabled || true,
       setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),
-
+      projectDetails: get()?.projectDetails || null,
+      setProjectDetails: (value) => set({ projectDetails: value }),
       hydrated: false,
     }),
     {

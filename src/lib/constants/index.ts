@@ -30,6 +30,12 @@ export const navLinks = [
     icon: HouseIcon,
   },
   {
+    id: 16,
+    title: "Project Details",
+    href: "/project-details",
+    icon: AwardIcon,
+  },
+  {
     id: 12,
     title: "Placement",
     href: "/placement-materials",
@@ -43,46 +49,25 @@ export const navLinks = [
     hideOnMobile: true,
     icon: ListTodo,
   },
-
   {
     id: 4,
     title: "FlashCards",
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
   },
-  // {
-  //   id: 11,
-  //   title: "Youtube Tutorials",
-  //   href: "/youtube-tutorials",
-  //   icon: MonitorPlay,
-  // },
   {
     id: 2,
     title: "Source Codes",
     href: "/code",
-    // hideOnMobile: true,
     icon: SquareDashedBottomCode,
   },
-  // {
-  //   id: 3,
-  //   title: "Time Table",
-  //   href: "/time-table",
-  //   // hideOnMobile: true,
-  //   icon: CableCarIcon,
-  // },
   {
     id: 5,
     title: "Assignments",
     href: "/assignments",
     icon: Book,
+    hideOnMobile: true,
   },
-  // {
-  //   id: 6,
-  //   title: "Important Links",
-  //   href: "/imp-links",
-  //   icon: LinkIcon,
-  //   hideOnMobile: true,
-  // },
   {
     id: 7,
     title: "Interview Questions",
