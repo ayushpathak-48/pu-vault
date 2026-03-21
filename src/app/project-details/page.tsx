@@ -87,7 +87,9 @@ export default function CompanyProjectPage() {
               currentMember: member,
               internalGuideDetails:
                 professorDetails.find(
-                  (prof) => prof.name === details.internal_guide,
+                  (prof) =>
+                    prof.name.toLowerCase() ===
+                    details.internal_guide.toLowerCase(),
                 ) || null,
             };
             break;
