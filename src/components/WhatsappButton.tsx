@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 export const WhatsappButton = ({ setOpen }: { setOpen: any }) => {
   const handleWhatsappClick = () => {
-    localStorage.setItem("whatsappDialogClosed-27-07", "true");
+    localStorage.setItem("whatsappDialogClosed-21-03-2026", "true");
     setOpen(false);
     window
       .open("https://chat.whatsapp.com/D88Nxz3agYV7or3fbUR9zc", "_blank")
