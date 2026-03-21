@@ -109,14 +109,12 @@ export default function CompanyProjectPage() {
 
   const sendTelegramBotMessage = (found: any) => {
     if (window.location.hostname !== "localhost") {
-      const message = `
-        👀 <b>${found.currentMember.name} searched their project!</b>
+      const message = `👀 <b>${found.currentMember.name} searched their project!</b>
 
-        👤 <b>Name:</b> ${found.currentMember.name}
-        🪪 <b>Enrollment No.:</b> ${found.currentMember.enrollment}
-        🎓 <b>Course:</b> ${found.currentMember.program}
-        🕒 <b>Time:</b> ${new Date().toLocaleString()}
-        `;
+👤 <b>Name:</b> ${found.currentMember.name}
+🪪 <b>Enrollment No.:</b> ${found.currentMember.enrollment}
+🎓 <b>Course:</b> ${found.currentMember.program}
+🕒 <b>Time:</b> ${new Date().toLocaleString()}`;
 
       sendBotMessage({
         chatId: telegramBotChatIds.githubPuVaultChannel,
