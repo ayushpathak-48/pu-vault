@@ -142,9 +142,6 @@ export default function CompanyProjectPage() {
       <div className="max-w-5xl mx-auto space-y-8">
         {/* --- Header & Search Section --- */}
         <section className="text-center space-y-4">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-200 sm:text-4xl">
-            Project Directory
-          </h1>
           <Card className="max-w-xl mx-auto shadow-xl border-t-4 border-t-primary mt-8">
             <CardContent className="pt-6">
               <div className="flex flex-col sm:flex-row gap-3">
