@@ -58,7 +58,6 @@ export default function CompanyProjectPage() {
         if (json && Array.isArray(json) && json.length > 0) {
           setProjectDetails(json);
         }
-        if (enrollment !== "") handleSearch();
       } catch (err) {
         setError("Failed to load data");
       } finally {
@@ -67,6 +66,12 @@ export default function CompanyProjectPage() {
     };
     fetchInitialData();
   }, [setProjectDetails]);
+
+  useEffect(() => {
+    if (projectDetails && projectDetails.length > 0 && !result) {
+      if (enrollment !== "") handleSearch();
+    }
+  }, [projectDetails]);
 
   const handleSearch = () => {
     setError("");
