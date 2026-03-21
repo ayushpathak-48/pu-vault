@@ -53,9 +53,7 @@ export default function CompanyProjectPage() {
     const fetchInitialData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          "https://fitcspgproject.github.io/pgproject/data1.json",
-        );
+        const res = await fetch(process.env.NEXT_PUBLIC_PROJECT_DATA_URL!);
         const json = await res.json();
         if (json && Array.isArray(json) && json.length > 0) {
           setProjectDetails(json);
