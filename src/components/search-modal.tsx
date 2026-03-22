@@ -47,7 +47,6 @@ const SearchModal = ({
   const practicalCodes = getPracticalCodes();
 
   const materialsData = [...specializationMaterials, ...materials];
-
   const [open, setOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
 
@@ -132,7 +131,7 @@ const SearchModal = ({
         (title + " Assignements").toLowerCase().includes(keyword.toLowerCase()),
       ),
     );
-
+    console.log({ tempPracticals });
     setFilteredData({
       notes: tempNotes,
       practicals: tempPracticals,
@@ -232,27 +231,28 @@ const SearchModal = ({
             className={filteredData.practicals?.length > 0 ? "" : "hidden"}
             heading="Journals"
           >
-            {filteredData.practicals.map((notesArr) =>
-              notesArr.map((note) => (
-                <CommandItem
-                  key={note.id}
-                  onSelect={() => handleRedirect(note.journal_link, "_blank")}
-                >
-                  <NotebookPen className="!size-4" />
-                  <span>{note.title}</span>
-                  <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
-                    {
-                      materialsData.find(({ practicals_link }) =>
-                        practicals_link.some(
-                          ({ journal_link }) =>
-                            journal_link == note.journal_link,
-                        ),
-                      )?.subject_name
-                    }
-                  </span>
-                </CommandItem>
-              )),
-            )}
+            {filteredData.practicals.length > 0 &&
+              filteredData.practicals?.map((notesArr) =>
+                notesArr?.map((note) => (
+                  <CommandItem
+                    key={note.id}
+                    onSelect={() => handleRedirect(note.journal_link, "_blank")}
+                  >
+                    <NotebookPen className="!size-4" />
+                    <span>{note.title}</span>
+                    <span className="text-xs text-gray-400 ml-auto whitespace-nowrap">
+                      {
+                        materialsData.find(({ practicals_link }) =>
+                          practicals_link?.some(
+                            ({ journal_link }) =>
+                              journal_link == note.journal_link,
+                          ),
+                        )?.subject_name
+                      }
+                    </span>
+                  </CommandItem>
+                )),
+              )}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup

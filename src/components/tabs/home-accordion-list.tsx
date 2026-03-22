@@ -183,7 +183,7 @@ const MaterialAccordionCard = ({
                 ))}
               </div>
               <div className="flex items-center flex-col gap-2">
-                {material.practicals_link.map((practical: any) => (
+                {material?.practicals_link?.map((practical: any) => (
                   <div
                     key={practical.id}
                     className="bg-gray-50 dark:bg-[#212121] p-2 w-full flex items-center justify-between gap-2"

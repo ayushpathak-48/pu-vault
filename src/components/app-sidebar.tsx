@@ -37,7 +37,7 @@ export function AppSidebar() {
       </SidebarGroup>
       {sem && (
         <SidebarGroup className="flex-row flex items-center justify-between">
-          <div className="font-medium pl-2">Semester</div>
+          <div className="font-medium pl-2">Sem: </div>
           <ToggleGroup
             type="single"
             variant="default"
@@ -78,12 +78,23 @@ export function AppSidebar() {
             >
               3
             </ToggleGroupItem>
+            <ToggleGroupItem
+              value="4"
+              aria-label="Semester 4"
+              className={cn(
+                "!border-gray-500 border",
+                sem == 4 && "!bg-primary/100 !text-primary-foreground",
+              )}
+            >
+              4
+            </ToggleGroupItem>
           </ToggleGroup>
         </SidebarGroup>
       )}
       <SidebarContent>
         <SidebarGroup>
           {navLinks.map((link) => {
+            if (link.sem && sem && !link.sem.includes(sem)) return;
             const activeLink =
               (link.href != "/" && pathname.startsWith(link.href)) ||
               pathname == link.href;
@@ -94,7 +105,7 @@ export function AppSidebar() {
                 className={cn(
                   "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc] text-sm",
                   activeLink &&
-                  "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
+                    "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
                 )}
                 key={link.id}
               >
@@ -105,19 +116,19 @@ export function AppSidebar() {
           })}
         </SidebarGroup>
         <SidebarGroup>
-          <FeedbackFloatingDialog trigger={
-            <Button
-              variant={"outline"}
-              className={cn(
-                "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc] text-sm",
-              )}
-            >
-              <MessageSquarePlus
-                className="size-4"
-              />
-              Feedback
-            </Button>
-          } />
+          <FeedbackFloatingDialog
+            trigger={
+              <Button
+                variant={"outline"}
+                className={cn(
+                  "w-full flex items-center gap-2 py-2 px-4 font-medium rounded-sm  hover:text-primary transition-all dark:text-[#ccc] text-sm",
+                )}
+              >
+                <MessageSquarePlus className="size-4" />
+                Feedback
+              </Button>
+            }
+          />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="border-t">

@@ -22,6 +22,9 @@ export const MATERIAL_LINK_BASE_URL =
 export const MATERIAL_LINK_BASE_URL_SEM_3 =
   "https://saviour000.github.io/pu-vault-assets-3";
 
+export const MATERIAL_LINK_BASE_URL_SEM_4 =
+  "https://ayushpathak-48.github.io/pu-vault-assets-4";
+
 export const navLinks = [
   {
     id: 1,
@@ -34,6 +37,7 @@ export const navLinks = [
     title: "Project Details",
     href: "/project-details",
     icon: AwardIcon,
+    sem: [4],
   },
   {
     id: 12,
@@ -48,18 +52,21 @@ export const navLinks = [
     href: "/mcqs",
     hideOnMobile: true,
     icon: ListTodo,
+    sem: [1, 2, 3],
   },
   {
     id: 4,
     title: "FlashCards",
     href: "/flash-cards",
     icon: SquareAsteriskIcon,
+    sem: [1, 2, 3],
   },
   {
     id: 2,
     title: "Source Codes",
     href: "/code",
     icon: SquareDashedBottomCode,
+    sem: [1, 2, 3],
   },
   {
     id: 5,
@@ -67,6 +74,7 @@ export const navLinks = [
     href: "/assignments",
     icon: Book,
     hideOnMobile: true,
+    sem: [1, 2, 3],
   },
   {
     id: 7,
@@ -109,6 +117,7 @@ export const navLinks = [
     href: "/nptel-assignment-answers",
     hideOnMobile: true,
     icon: AwardIcon,
+    sem: [1, 2, 3],
   },
 ];
 
@@ -117,13 +126,13 @@ export const courses = [
     id: 1,
     label: "MCA",
     value: "mca",
-    semesters: [1, 2, 3],
+    semesters: [1, 2, 3, 4],
   },
   {
     id: 2,
     label: "Msc It",
     value: "mscit",
-    semesters: [1, 2, 3],
+    semesters: [1, 2, 3, 4],
   },
 ];
 

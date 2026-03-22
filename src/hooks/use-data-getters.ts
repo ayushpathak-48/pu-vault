@@ -27,6 +27,7 @@ import { sem3TimeTable } from "@/lib/constants/sem-3/time-table.constant";
 import { MessageGeneratorSchema } from "@/lib/schema/message-generator-schema";
 import { z } from "zod";
 import { format } from "date-fns";
+import { sem4Materials } from "@/lib/constants/sem-4/materials.constants";
 
 export const useDataGetters = () => {
   const sem = useDataStore((state) => state.sem);
@@ -37,6 +38,7 @@ export const useDataGetters = () => {
     if (sem === 1) return sem1Materials;
     if (sem === 2) return sem2Materials;
     if (sem === 3) return sem3Materials;
+    if (sem === 4) return sem4Materials;
     return [];
   };
 
