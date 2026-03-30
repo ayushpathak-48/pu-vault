@@ -29,6 +29,19 @@ export type ProjectDetailsType = {
   projects: Array<ProjectType>;
 };
 
+export type ExamDetailsType = {
+  "Group ID": string;
+  Members: [
+    {
+      Name: string;
+      Enrollment: string;
+    },
+  ];
+  Project_Title: string;
+  "Reporting Time": string;
+  "External Examiner": string;
+};
+
 interface SpecializationState {
   user: UserType;
   setUser: (value: UserType) => void;
@@ -46,6 +59,8 @@ interface SpecializationState {
   setBottomTabsEnabled: (value: boolean) => void;
   projectDetails: ProjectDetailsType[] | null;
   setProjectDetails: (value: ProjectDetailsType[]) => void;
+  examDetails: ExamDetailsType[] | null;
+  setExamDetails: (value: ExamDetailsType[]) => void;
   hydrated: boolean; // NEW state to track hydration
 }
 
@@ -68,6 +83,8 @@ export const useDataStore = create<SpecializationState>()(
       setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),
       projectDetails: get()?.projectDetails || null,
       setProjectDetails: (value) => set({ projectDetails: value }),
+      examDetails: get()?.examDetails || null,
+      setExamDetails: (value) => set({ examDetails: value }),
       hydrated: false,
     }),
     {

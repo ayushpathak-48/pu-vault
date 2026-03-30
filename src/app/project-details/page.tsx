@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
+  ExamDetailsType,
   ProjectDetailsType,
   ProjectMemberType,
   ProjectType,
@@ -35,19 +36,61 @@ import { sendBotMessage } from "@/lib/utils";
 import { telegramBotChatIds } from "@/lib/constants";
 import { professorDetails } from "@/lib/constants/professor-details.constant";
 
+const roomMapping = new Map([
+  ["HARDIK ISHWARBHAI PATEL", "Bhagat Singh 301"],
+  ["RONESHKUMAR GANGAVANI", "Bhagat Singh 301"],
+  ["KAUSHAL GIRISHKUMAR GOR", "Bhagat Singh 302"],
+  ["NAVTEJ PRAHLADBHAI BHATT", "Bhagat Singh 302"],
+  ["Akilhusein Zulfikar Surti", "Bhagat Singh 303"],
+  ["Dr.Arpan Raval", "Bhagat Singh 304"],
+  ["Ms.Lisa Shah", "Bhagat Singh 305"],
+  ["Kinjal Acharya", "Bhagat Singh 306"],
+  ["PATEL JIGNESH TULSIDAS", "Bhagat Singh 307"],
+  ["Mr.Anupam Mund", "Bhagat Singh 308"],
+  ["Prashant Shah", "Bhagat Singh 309"],
+  ["PRAVINKUMAR RAMESHBHAI PATEL", "Bhagat Singh 601"],
+  ["Kaniya Agrawal", "Bhagat Singh 602"],
+  ["Thakkar Meet Bharatbhai", "Bhagat Singh 603"],
+  ["Vishal Makwana", "Bhagat Singh 604"],
+  ["Jalpa Harshit Desai", "Bhagat Singh 605"],
+  ["Smruti Sharma", "Bhagat Singh 606"],
+  ["Divya Agrawal", "Bhagat Singh 607"],
+  ["Dr.Raj Sinha", "New Building(Front of Subhash Chandra Bose Building) 210"],
+  [
+    "Dr.Ramchandran",
+    "New Building(Front of Subhash Chandra Bose Building) 209",
+  ],
+  [
+    "Dr. Ratnesh Namdeo",
+    "New Building(Front of Subhash Chandra Bose Building) 211",
+  ],
+]);
+
 export default function CompanyProjectPage() {
-  const { user, setUser, projectDetails, setProjectDetails } = useDataStore();
+  const {
+    user,
+    setUser,
+    projectDetails,
+    setProjectDetails,
+    examDetails,
+    setExamDetails,
+  } = useDataStore();
   const [enrollment, setEnrollment] = useState(user.enrollment || "");
   const [result, setResult] = useState<
     | (ProjectDetailsType & {
         currentMember: ProjectMemberType;
         currentProject: ProjectType;
         internalGuideDetails: (typeof professorDetails)[0] | null;
+        examDetails: ExamDetailsType;
       })
     | null
   >(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    console.log({ examDetails });
+  }, [examDetails]);
 
   useEffect(() => {
     const fetchInitialData = async () => {
@@ -58,6 +101,13 @@ export default function CompanyProjectPage() {
         if (json && Array.isArray(json) && json.length > 0) {
           setProjectDetails(json);
         }
+        const examRes = await fetch(
+          process.env.NEXT_PUBLIC_PROJECT_EXAM_DETAIL_DATA_URL!,
+        );
+        const examJson = await examRes.json();
+        if (examJson && Array.isArray(examJson) && examJson.length > 0) {
+          setExamDetails(examJson);
+        }
       } catch (err) {
         setError("Failed to load data");
       } finally {
@@ -65,7 +115,7 @@ export default function CompanyProjectPage() {
       }
     };
     fetchInitialData();
-  }, [setProjectDetails]);
+  }, [setProjectDetails, setExamDetails]);
 
   useEffect(() => {
     if (projectDetails && projectDetails.length > 0 && !result) {
@@ -85,6 +135,10 @@ export default function CompanyProjectPage() {
               ...details,
               currentProject: project,
               currentMember: member,
+              examDetails:
+                examDetails?.find(
+                  (detail) => parseInt(detail["Group ID"]) === project.s_no,
+                ) || null,
               internalGuideDetails:
                 professorDetails.find(
                   (prof) =>
@@ -175,11 +229,41 @@ export default function CompanyProjectPage() {
         )}
 
         {/* --- Results Section --- */}
-        {result && (
+        {!loading && result && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Left Column: Personal & Company Info */}
             <div className="lg:col-span-1 space-y-6">
               {/* Profile Card */}
+              <Card className="overflow-hidden shadow-primary shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
+                    <Badge
+                      className="font-mono text-md font-medium"
+                      variant={"secondary"}
+                    >
+                      Exam Venue and time
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-2 pb-6 text-md">
+                  <h3 className="font-medium text-slate-800 dark:text-slate-300">
+                    <span className="text-muted-foreground">Venue: </span>
+                    {roomMapping.get(result.examDetails["External Examiner"])}
+                  </h3>
+                  <Separator className="my-1 bg-primary/40" />
+                  <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
+                    <span className="text-muted-foreground">
+                      Reporting Time:{" "}
+                    </span>{" "}
+                    {result.examDetails["Reporting Time"]}
+                  </div>
+                  <Separator className="my-1 bg-primary/40" />
+                  <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
+                    <span className="text-muted-foreground">Examiner: </span>{" "}
+                    {result.examDetails["External Examiner"]}
+                  </div>
+                </CardContent>
+              </Card>
               <Card className="overflow-hidden">
                 <CardHeader>
                   <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
@@ -221,9 +305,9 @@ export default function CompanyProjectPage() {
                   Internal Guide
                 </Badge>
                 <CardContent className="pt-2 pb-6">
-                  <h2 className="text-xl font-bold text-slate-800 dark:text-slate-300">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-300">
                     {result.internal_guide}
-                  </h2>
+                  </h3>
                   {result.internalGuideDetails && (
                     <div className="mt-6 space-y-3">
                       <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
