@@ -87,6 +87,29 @@ export default function CompanyProjectPage() {
   >(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [studentsInSameClass, setStudentsInSameClass] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!result || !result.examDetails["External Examiner"]) return;
+
+    const getStudentsByExaminer = (data: any[], examiner: string) => {
+      return data
+        .filter((item) => item["External Examiner"] === examiner)
+        .flatMap((item) =>
+          item.Members.map((member: any) => ({
+            name: member.Name,
+            enrollment: member.Enrollment,
+            project: item.Project_Title,
+            groupId: item["Group ID"],
+          })),
+        );
+    };
+    const students = getStudentsByExaminer(
+      examDetails || [],
+      result.examDetails["External Examiner"],
+    );
+    setStudentsInSameClass(students);
+  }, [result]);
 
   useEffect(() => {
     const fetchInitialData = async () => {
@@ -331,7 +354,7 @@ export default function CompanyProjectPage() {
               </Card>
 
               {/* Company Sidebar Card */}
-              <Card>
+              {/* <Card>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                     Internship Provider
@@ -377,7 +400,7 @@ export default function CompanyProjectPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
 
             {/* Right Column: Project & Team */}
@@ -485,6 +508,35 @@ export default function CompanyProjectPage() {
               </div>
             </div>
           </div>
+        )}
+        <Separator className="my-3" />
+        {result && studentsInSameClass.length > 0 && (
+          <>
+            <div className="text-lg font-medium text-center">
+              Students in same class
+            </div>
+            <div className="grid gap-4">
+              {studentsInSameClass.map((student, index) => (
+                <Card key={index} className="rounded-2xl shadow-sm">
+                  <CardContent className="p-4 flex justify-between items-center">
+                    <div>
+                      <p className="text-lg font-semibold">{student.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        Enrollment: {student.enrollment}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Project: {student.project}
+                      </p>
+                    </div>
+
+                    <div className="text-sm font-medium text-primary">
+                      Group {student.groupId}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
