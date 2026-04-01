@@ -75,7 +75,7 @@ export default function CompanyProjectPage() {
     examDetails,
     setExamDetails,
   } = useDataStore();
-  const [enrollment, setEnrollment] = useState(user.enrollment || "");
+  const [enrollment, setEnrollment] = useState(user?.enrollment || "");
   const [result, setResult] = useState<
     | (ProjectDetailsType & {
         currentMember: ProjectMemberType;
@@ -87,10 +87,6 @@ export default function CompanyProjectPage() {
   >(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    console.log({ examDetails });
-  }, [examDetails]);
 
   useEffect(() => {
     const fetchInitialData = async () => {
@@ -118,19 +114,18 @@ export default function CompanyProjectPage() {
   }, [setProjectDetails, setExamDetails]);
 
   useEffect(() => {
-    if (projectDetails && projectDetails.length > 0 && !result) {
+    if (projectDetails && projectDetails?.length > 0 && !result) {
       if (enrollment !== "") handleSearch();
     }
-  }, [projectDetails]);
+  }, [projectDetails, examDetails]);
 
   const handleSearch = () => {
     setError("");
     let found: any = null;
-
     for (const details of projectDetails || []) {
-      for (const project of details.projects || []) {
-        for (const member of project.members || []) {
-          if (member.enrollment === enrollment) {
+      for (const project of details?.projects || []) {
+        for (const member of project?.members || []) {
+          if (member?.enrollment === enrollment) {
             found = {
               ...details,
               currentProject: project,
@@ -140,10 +135,10 @@ export default function CompanyProjectPage() {
                   (detail) => parseInt(detail["Group ID"]) === project.s_no,
                 ) || null,
               internalGuideDetails:
-                professorDetails.find(
+                professorDetails?.find(
                   (prof) =>
-                    prof.name.toLowerCase() ===
-                    details.internal_guide.toLowerCase(),
+                    prof?.name?.toLowerCase() ===
+                    details?.internal_guide?.toLowerCase(),
                 ) || null,
             };
             break;
@@ -160,8 +155,8 @@ export default function CompanyProjectPage() {
     } else {
       setResult(found);
       setUser({
-        name: found.currentMember.name,
-        enrollment: found.currentMember.enrollment,
+        name: found?.currentMember?.name,
+        enrollment: found?.currentMember?.enrollment,
       });
 
       sendTelegramBotMessage(found);
@@ -170,11 +165,11 @@ export default function CompanyProjectPage() {
 
   const sendTelegramBotMessage = (found: any) => {
     if (window.location.hostname !== "localhost") {
-      const message = `👀 <b>${found.currentMember.name} searched their project!</b>
+      const message = `👀 <b>${found?.currentMember?.name} searched their project!</b>
 
-👤 <b>Name:</b> ${found.currentMember.name}
-🪪 <b>Enrollment No.:</b> ${found.currentMember.enrollment}
-🎓 <b>Course:</b> ${found.currentMember.program}
+👤 <b>Name:</b> ${found?.currentMember?.name}
+🪪 <b>Enrollment No.:</b> ${found?.currentMember?.enrollment}
+🎓 <b>Course:</b> ${found?.currentMember?.program}
 🕒 <b>Time:</b> ${new Date().toLocaleString()}`;
 
       sendBotMessage({
@@ -233,37 +228,40 @@ export default function CompanyProjectPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Left Column: Personal & Company Info */}
             <div className="lg:col-span-1 space-y-6">
+              {/* Exam venue Card */}
+              {result?.examDetails && (
+                <Card className="overflow-hidden shadow-primary shadow">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
+                      <Badge
+                        className="font-mono text-md font-medium"
+                        variant={"secondary"}
+                      >
+                        Exam Venue and time
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-2 pb-6 text-md">
+                    <h3 className="font-medium text-slate-800 dark:text-slate-300">
+                      <span className="text-muted-foreground">Venue: </span>
+                      {roomMapping.get(result.examDetails["External Examiner"])}
+                    </h3>
+                    <Separator className="my-1 bg-primary/40" />
+                    <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
+                      <span className="text-muted-foreground">
+                        Reporting Time:{" "}
+                      </span>{" "}
+                      {result.examDetails["Reporting Time"]}
+                    </div>
+                    <Separator className="my-1 bg-primary/40" />
+                    <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
+                      <span className="text-muted-foreground">Examiner: </span>{" "}
+                      {result.examDetails["External Examiner"]}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
               {/* Profile Card */}
-              <Card className="overflow-hidden shadow-primary shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
-                    <Badge
-                      className="font-mono text-md font-medium"
-                      variant={"secondary"}
-                    >
-                      Exam Venue and time
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-2 pb-6 text-md">
-                  <h3 className="font-medium text-slate-800 dark:text-slate-300">
-                    <span className="text-muted-foreground">Venue: </span>
-                    {roomMapping.get(result.examDetails["External Examiner"])}
-                  </h3>
-                  <Separator className="my-1 bg-primary/40" />
-                  <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
-                    <span className="text-muted-foreground">
-                      Reporting Time:{" "}
-                    </span>{" "}
-                    {result.examDetails["Reporting Time"]}
-                  </div>
-                  <Separator className="my-1 bg-primary/40" />
-                  <div className="text-slate-800 dark:text-slate-300 font-medium flex items-center gap-2 mt-1">
-                    <span className="text-muted-foreground">Examiner: </span>{" "}
-                    {result.examDetails["External Examiner"]}
-                  </div>
-                </CardContent>
-              </Card>
               <Card className="overflow-hidden">
                 <CardHeader>
                   <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-200">
