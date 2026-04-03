@@ -182,7 +182,7 @@ export const professorDetails = [
   {
     id: 31,
     name: "Dr. Sumit Soni",
-    contact: "9893514207",
+    contact: "7987163377",
     email: "sumit.soni33594@paruluniversity.ac.in",
   },
   {
