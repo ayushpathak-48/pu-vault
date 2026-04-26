@@ -2448,6 +2448,255 @@ Login Successful!`,
           },
         ],
       },
+      //  pra - 12 data-driven-web-service
+      {
+        key: "data-driven-restful-service",
+        name: "Practical - 12: Data Driven RESTful Service",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 12 - Data Driven RESTful Service",
+          },
+          {
+            type: "code",
+            fileName: "Index.html",
+            language: "html",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="http://localhost:8081/Practical_122/webapi/student/register" method="post">
+
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Course: <input type="text" name="course"><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "StudentService.java",
+            value: `package com.example;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/student")
+public class StudentService {
+
+    @POST
+    @Path("/register")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String registerStudent(
+            @FormParam("name") String name,
+            @FormParam("email") String email,
+            @FormParam("course") String course) {
+
+        return "Student Registered Successfully!\\n"
+                + "Name: " + name
+                + "\\nEmail: " + email
+                + "\\nCourse: " + course;
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "MyApplication.java",
+            value: `import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/webapi")
+public class MyApplication extends Application {
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Student Registered Successfully!
+Name: kirtan patel
+Email: kirtanpatel@example.com
+Course: Advanced Java Programming`,
+          },
+        ],
+      },
+        //  pra - 13 restful-crud-phonebook
+        {
+        key: "restful-crud-phonebook",
+        name: "Practical - 13: RESTful Web Service - CRUD Operations",
+        pageBlocks: [
+          {
+          type: "heading",
+          value: "Practical 13 - RESTful Web Service - CRUD Operations",
+          },
+          {
+          type: "code",
+          fileName: "index.jsp",
+          language: "html",
+          value: `<h2>Phonebook CRUD</h2>
+
+    <form action="api/phone/add" method="get">
+      Name: <input type="text" name="name">
+      <input type="submit" value="Add">
+    </form>
+
+    <br>
+
+    <form action="api/phone/update" method="get">
+      ID: <input type="text" name="id">
+      Name: <input type="text" name="name">
+      <input type="submit" value="Update">
+    </form>
+
+    <br>
+
+    <form action="api/phone/delete" method="get">
+      ID: <input type="text" name="id">
+      <input type="submit" value="Delete">
+    </form>
+
+    <br>
+
+    <a href="api/phone/view">View All</a>`,
+          },
+          {
+          type: "code",
+          fileName: "PhoneBookService.java",
+          value: `package com.example;
+
+    import javax.ws.rs.*;
+    import java.sql.*;
+
+    @Path("/phone")
+    public class PhoneBookService {
+
+      private Connection con;
+
+      // Constructor (runs once)
+      public PhoneBookService() {
+        try {
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          con = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/phonebook",
+            "root", "");
+        } catch (Exception e) {
+          System.out.println(e);
+        }
+      }
+
+      // CREATE
+      @GET
+      @Path("/add")
+      public String add(@QueryParam("name") String name) {
+        try {
+          PreparedStatement ps = con.prepareStatement(
+            "INSERT INTO contacts(name) VALUES(?)");
+          ps.setString(1, name);
+          ps.executeUpdate();
+          return "Added";
+        } catch (Exception e) {
+          return e.toString();
+        }
+      }
+
+      // READ
+      @GET
+      @Path("/view")
+      public String view() {
+        String r = "";
+        try {
+          ResultSet rs = con.createStatement()
+              .executeQuery("SELECT * FROM contacts");
+
+          while (rs.next())
+            r += rs.getInt(1) + " : " + rs.getString(2) + "\\n";
+
+        } catch (Exception e) {
+          r = e.toString();
+        }
+        return r;
+      }
+
+      // UPDATE
+      @GET
+      @Path("/update")
+      public String update(@QueryParam("id") int id,
+                 @QueryParam("name") String name) {
+        try {
+          PreparedStatement ps = con.prepareStatement(
+            "UPDATE contacts SET name=? WHERE id=?");
+          ps.setString(1, name);
+          ps.setInt(2, id);
+          ps.executeUpdate();
+          return "Updated";
+        } catch (Exception e) {
+          return e.toString();
+        }
+      }
+
+      // DELETE
+      @GET
+      @Path("/delete")
+      public String delete(@QueryParam("id") int id) {
+        try {
+          PreparedStatement ps = con.prepareStatement(
+            "DELETE FROM contacts WHERE id=?");
+          ps.setInt(1, id);
+          ps.executeUpdate();
+          return "Deleted";
+        } catch (Exception e) {
+          return e.toString();
+        }
+      }
+    }`,
+          },
+          {
+          type: "code",
+          fileName: "MyApp.java",
+          value: `package com.example;
+
+    import javax.ws.rs.ApplicationPath;
+    import javax.ws.rs.core.Application;
+
+    @ApplicationPath("/api")
+    public class MyApp extends Application {
+    }`,
+          },
+          {
+          type: "code",
+          fileName: "database.sql",
+          language: "sql",
+          value: `CREATE DATABASE phonebook;
+
+    CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100)
+    );`,
+          },
+          {
+          type: "code",
+          language: "text",
+          is_output: true,
+          value: `Added
+    Updated
+    Deleted
+    1 : Rahul
+    2 : Priya`,
+          },
+        ],
+        },
     ],
   },
   //   DCN
