@@ -14,6 +14,7 @@ import Footer from "@/components/footer";
 
 import { DataDialog } from "@/components/modals/data-dialog";
 import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
+import { AppInstallModal } from "@/components/modals/AppInstallModal";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -72,6 +73,7 @@ export default function RootLayout({
               <FeedbackFloatingDialog />
               <DeviceTracker />
               <WhatsappDialog />
+              <AppInstallModal />
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>
