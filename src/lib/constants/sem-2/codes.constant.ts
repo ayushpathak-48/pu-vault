@@ -1902,103 +1902,549 @@ context.getAttribute("activeUsers"); if (activeUsers == null) { activeUsers = 0;
           },
           {
             type: "code",
-            fileName: "CurrencyConverterService.java",
-            value: `package in.ga.services;
+            fileName: "CurrencyServlet.java",
+            value: `// Simple RESTful Service
+// Develop a simple JAX-RS service that provides currency conversion.
 
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import java.util.HashMap;
-import java.util.Map;
+package com.example;
 
-@Path("/currency")
-public class CurrencyConverterService {
+import java.io.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-    private static final Map<String, Double> exchangeRates = new HashMap<>();
+@WebServlet("/convert")
+public class CurrencyServlet extends HttpServlet {
 
-    static {
-        exchangeRates.put("USD_TO_INR", 83.0);
-        exchangeRates.put("EUR_TO_INR", 90.0);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String from = request.getParameter("from");
+        String to = request.getParameter("to");
+        double amount = Double.parseDouble(request.getParameter("amount"));
+
+        double result = convert(from, to, amount);
+
+        response.setContentType("text/plain");
+        PrintWriter out = response.getWriter();
+        out.println("Converted Amount: " + result);
     }
 
-    @GET
-    @Path("/convert")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response convertCurrency(@QueryParam("from") String from,
-            @QueryParam("to") String to,
-            @QueryParam("amount") double amount) {
-        String key = from.toUpperCase() + "_TO_" + to.toUpperCase();
-        if (!exchangeRates.containsKey(key)) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Exchange rate for " + key + " not available.")
-                    .build();
-        }
-        double rate = exchangeRates.get(key);
-        double convertedAmount = amount * rate;
-        Map<String, Object> response = new HashMap<>();
-        response.put("from", from);
-        response.put("to", to);
-        response.put("amount", amount);
-        response.put("convertedAmount", convertedAmount);
-        return Response.ok(response).build();
+    private double convert(String from, String to, double amount) {
+        double usd = 83, inr = 1, eur = 90;
+
+        double fromRate = from.equalsIgnoreCase("USD") ? usd :
+                          from.equalsIgnoreCase("EUR") ? eur : inr;
+
+        double toRate = to.equalsIgnoreCase("USD") ? usd :
+                        to.equalsIgnoreCase("EUR") ? eur : inr;
+
+        return (amount / fromRate) * toRate;
     }
-}
-    
-// Output Link http://localhost:8081/mavenproject1/ws/currency/convert?from=USD&to=INR&amount=100`,
-          },
-          {
-            type: "code",
-            fileName: "web.xml",
-            language: "html",
-            value: `<servlet>
-<servlet-name>Jersey REST Service</servlet-name>
-<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-<init-param>
-<param-name>jersey.config.server.provider.packages</param-name>
-<param-value>in.ga.services</param-value>
-</init-param>
-<load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-<servlet-name>Jersey REST Service</servlet-name>
-<url-pattern>/ws/*</url-pattern>
-</servlet-mapping>`,
-          },
-          {
-            type: "code",
-            fileName: "pom.xml",
-            language: "html",
-            value: `<dependency>
-<groupId>org.glassfish.jersey.core</groupId>
-<artifactId>jersey-common</artifactId>
-<version>3.1.10</version>
-</dependency>
-<dependency>
-<groupId>org.glassfish.jersey.containers</groupId>
-<artifactId>jersey-container-servlet</artifactId>
-<version>3.1.10</version>
-</dependency>
-<dependency>
-<groupId>org.glassfish.jersey.inject</groupId>
-<artifactId>jersey-hk2</artifactId>
-<version>3.1.10</version>
-</dependency>
-<dependency>
-<groupId>org.glassfish.jersey.media</groupId>
-<artifactId>jersey-media-json-jackson</artifactId>
-<version>3.1.10</version>
-</dependency>`,
+}`,
           },
           {
             type: "code",
             language: "text",
             is_output: true,
-            value: `{
-  "amount": 5,
-  "convertedAmount": 415,
-  "from": "USD",
-  "to": "INR"
+            value: `http://localhost:8080/Practical_111/convert?from=USD&to=INR&amount=10
+
+Converted Amount: 10.0`,
+          },
+        ],
+      },
+      //  pra - 12 data-driven-restful-service
+      {
+        key: "data-driven-restful-service",
+        name: "Practical - 12: Data Driven RESTful Service",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 12 - Data Driven RESTful Service",
+          },
+          {
+            type: "code",
+            fileName: "Index.html",
+            language: "html",
+            value: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="http://localhost:8081/Practical_122/webapi/student/register" method="post">
+
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Course: <input type="text" name="course"><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "StudentService.java",
+            value: `package com.example;
+
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/student")
+public class StudentService {
+
+    @POST
+    @Path("/register")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String registerStudent(
+            @FormParam("name") String name,
+            @FormParam("email") String email,
+            @FormParam("course") String course) {
+
+        return "Student Registered Successfully!\\n"
+                + "Name: " + name
+                + "\\nEmail: " + email
+                + "\\nCourse: " + course;
+    }
 }`,
+          },
+          {
+            type: "code",
+            fileName: "MyApplication.java",
+            value: `import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/webapi")
+public class MyApplication extends Application {
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Student Registered Successfully!
+Name: Demo User
+Email: demo@example.com
+Course: MCA`,
+          },
+        ],
+      },
+      //  pra - 13 hibernate-crud
+      {
+        key: "hibernate-crud",
+        name: "Practical - 13: Hibernate CRUD",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 13 - Hibernate CRUD",
+          },
+          {
+            type: "code",
+            fileName: "Student.java",
+            value: `import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Student {
+    @Id
+    private int id;
+    private String name;
+
+    private String course;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCourse() {
+      return course;
+    }
+
+    public void setCourse(String course) {
+      this.course = course;
+    }
+
+    @Override
+    public String toString() {
+      return "Student{id=" + id + ", name='" + name + "', course='" + course + "'}";
+    }
+}`,
+          },
+          {
+        type: "code",
+        fileName: "HibernateUtil.java",
+        value: `import org.hibernate.SessionFactory;
+  import org.hibernate.cfg.Configuration;
+
+  public class HibernateUtil {
+    private static final SessionFactory sessionFactory = buildSessionFactory();
+
+    private static SessionFactory buildSessionFactory() {
+      try {
+        return new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).buildSessionFactory();
+      } catch (Throwable ex) {
+        throw new ExceptionInInitializerError(ex);
+      }
+    }
+
+    public static SessionFactory getSessionFactory() {
+      return sessionFactory;
+    }
+  }`,
+        },
+        {
+        type: "code",
+        fileName: "StudentCrudDemo.java",
+        value: `import org.hibernate.Session;
+  import org.hibernate.Transaction;
+
+  public class StudentCrudDemo {
+    public static void main(String[] args) {
+      // CREATE
+      Session session = HibernateUtil.getSessionFactory().openSession();
+      Transaction tx = session.beginTransaction();
+
+      Student s = new Student();
+      s.setId(101);
+      s.setName("Aayush");
+      s.setCourse("MCA");
+      session.save(s);
+      tx.commit();
+      session.close();
+
+      // READ
+      session = HibernateUtil.getSessionFactory().openSession();
+      Student fetched = session.get(Student.class, 101);
+      System.out.println("Fetched: " + fetched);
+      session.close();
+
+      // UPDATE
+      session = HibernateUtil.getSessionFactory().openSession();
+      tx = session.beginTransaction();
+      Student update = session.get(Student.class, 101);
+      update.setCourse("MCA-AI");
+      session.update(update);
+      tx.commit();
+      session.close();
+
+      // DELETE
+      session = HibernateUtil.getSessionFactory().openSession();
+      tx = session.beginTransaction();
+      Student delete = session.get(Student.class, 101);
+      session.delete(delete);
+      tx.commit();
+      session.close();
+
+      HibernateUtil.getSessionFactory().close();
+    }
+  }`,
+        },
+        {
+        type: "code",
+        fileName: "hibernate.cfg.xml",
+        language: "html",
+        value: `<?xml version='1.0' encoding='utf-8'?>
+  <!DOCTYPE hibernate-configuration PUBLIC
+      "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+      "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+  <hibernate-configuration>
+    <session-factory>
+      <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ajp</property>
+      <property name="hibernate.connection.username">root</property>
+      <property name="hibernate.connection.password"></property>
+
+      <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+      <property name="hibernate.hbm2ddl.auto">update</property>
+      <property name="hibernate.show_sql">true</property>
+
+      <mapping class="Student"/>
+    </session-factory>
+  </hibernate-configuration>`,
+        },
+        {
+        type: "code",
+        language: "text",
+        is_output: true,
+        value: `Fetched: Student{id=101, name='Aayush', course='MCA'}
+  Hibernate: update Student set course=? where id=?
+  Hibernate: delete from Student where id=?`,
+          },
+        ],
+      },
+      //  pra - 14 jax-rs-client
+      {
+        key: "jax-rs-client",
+        name: "Practical - 14: JAX-RS Client",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 14 - JAX-RS Client",
+          },
+          {
+            type: "code",
+            fileName: "index.jsp",
+            language: "html",
+            value: `<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title>JAX-RS Client</title>
+</head>
+<body>
+<h2>Student Data</h2>
+<pre>
+\${data}
+</pre>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "ClientServlet.java",
+            value: `package com.servlet;
+
+import com.client.MyClient;
+import java.io.IOException;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/client")
+public class ClientServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String result = MyClient.getData();
+
+        request.setAttribute("data", result);
+
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "MyApplication.java",
+            value: `package com.api;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/webapi")
+public class ApplicationConfig extends Application {
+}`,
+          },
+          {
+            type: "code",
+            fileName: "MyClient.java",
+            value: `package com.client;
+
+import javax.ws.rs.client.*;
+import javax.ws.rs.core.MediaType;
+
+public class MyClient {
+
+    private static final String URL = "http://localhost:8080/Practical_14/webapi/students";
+
+    public static String getData() {
+        Client client = ClientBuilder.newClient();
+        String response = client
+                .target(URL)
+                .request(MediaType.APPLICATION_JSON)
+                .get(String.class);
+        client.close();
+        return response;
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "StudentResource.java",
+            value: `package com.api;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+@Path("/students")
+public class StudentResource {
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getStudents() {
+        return "[{\\"id\\":1,\\"name\\":\\"Abc\\"},{\\"id\\":2,\\"name\\":\\"\\"}]";
+    }
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `[
+  {"id":1,"name":"Abc"},
+  {"id":2,"name":""}
+]`,
+          },
+        ],
+      },
+      //  pra - 15 auth-service-jax-rs-client
+      {
+        key: "auth-service-jax-rs-client",
+        name: "Practical - 15: Authentication using JAX-RS Client",
+        pageBlocks: [
+          {
+            type: "heading",
+            value: "Practical 15 - Authentication using JAX-RS Client",
+          },
+          {
+            type: "code",
+            fileName: "index.jsp",
+            language: "html",
+            value: `<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+<h2>Login Form</h2>
+<form action="login" method="post">
+    Username: <input type="text" name="username"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    <input type="submit" value="Login">
+</form>
+
+<br>
+<h3>
+  \${message}
+</h3>
+</body>
+</html>`,
+          },
+          {
+            type: "code",
+            fileName: "AuthClient.java",
+            value: `package com.client;
+
+import javax.ws.rs.client.*;
+import javax.ws.rs.core.*;
+
+public class AuthClient {
+    private static final String URL = "http://localhost:8080/Practical_15/webapi/auth";
+
+    public static String authenticate(String username, String password) {
+        System.out.println("Calling API: " + URL);
+        Client client = ClientBuilder.newClient();
+        Form form = new Form();
+        form.param("username", username);
+        form.param("password", password);
+
+        String response = client.target(URL)
+                .request(MediaType.TEXT_PLAIN)
+                .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED), String.class);
+
+        client.close();
+        return response;
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "AuthResource.java",
+            value: `package com.api;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+@Path("/auth")
+public class AuthResource {
+
+    @POST
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String login(@FormParam("username") String username,
+                        @FormParam("password") String password) {
+        System.out.println("API Called: " + username);
+        if ("admin".equals(username) && "1234".equals(password)) {
+            return "SUCCESS";
+        } else {
+            return "FAIL";
+        }
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "LoginServlet.java",
+            value: `package com.servlet;
+
+import com.client.AuthClient;
+import java.io.IOException;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        System.out.println("Servlet Received: " + username);
+        String result = AuthClient.authenticate(username, password);
+
+        if ("SUCCESS".equals(result)) {
+            request.setAttribute("message", "Login Successful!");
+        } else {
+            request.setAttribute("message", "Invalid Credentials!");
+        }
+
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+}`,
+          },
+          {
+            type: "code",
+            fileName: "MyApplication.java",
+            value: `package com.api;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/webapi")
+public class ApplicationConfig extends Application {
+}`,
+          },
+          {
+            type: "code",
+            language: "text",
+            is_output: true,
+            value: `Username: admin
+Password: 1234
+Login Successful!`,
           },
         ],
       },
@@ -5628,110 +6074,1435 @@ ON c.customer_id = o.customer_id;`,
     language: "javascript",
     practicals: [
       {
-        key: "image-enhancement",
-        name: "Write a program for image enhancement",
+        key: "dda-line-drawing-algorithm",
+        name: "Practical - 1: Implement and visualize a line using DDA algorithm",
         pageBlocks: [
           {
             type: "heading",
-            value: "Write a program for image enhancement",
+            value:
+              "Practical 1 - Implement and visualize a line using the Digital Differential Analyzer (DDA) algorithm",
           },
           {
             type: "code",
-            value: `img = imread('peppers.png');
-bright_img = img + 50; % Increase brightness
+            fileName: "dda_line.c",
+            language: "c",
+            value: `#include <GL/glut.h>
+#include <math.h>
 
-imshowpair(img, bright_img, 'montage');
-title('Original Image (Left) and Brightened Image (Right)');
-`,
+void drawDDA(int x1, int y1, int x2, int y2) {
+
+ float dx = x2 - x1;
+    float dy = y2 - y1;
+    float steps = (fabs(dx) > fabs(dy)) ? fabs(dx) : fabs(dy);
+
+    float Xinc = dx / steps;
+    float Yinc = dy / steps;
+    float x = x1, y = y1;
+
+    glBegin(GL_POINTS);
+    for (int i = 0; i < (int)steps; i++) {  // C99 fix applied
+        glVertex2i(round(x), round(y));//2D vertex
+        x += Xinc;
+        y += Yinc;
+    }
+    glEnd();
+    glFlush();
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);//clear buffer
+
+    // Draw a line from (50, 100) to (300, 250)
+    drawDDA(50, 100, 300, 250);
+}
+
+void init() {
+    glClearColor(0.0, 0.0, 0.0, 1.0);  // Set background color to black
+    glMatrixMode(GL_PROJECTION);//which matrix is working // Controls viewing volume camera,clipping.
+    gluOrtho2D(0, 500, 0, 500);  // Set coordinate system
+}
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("DDA Line Drawing Algorithm");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}`,
           },
         ],
       },
       {
-        key: "image-compression",
-        name: "Write a program for image compression",
+        key: "bresenham-line-drawing-algorithm",
+        name: "Practical - 2: Implement Bresenham's line drawing algorithm",
         pageBlocks: [
           {
             type: "heading",
-            value: "Write a program for image compression",
+            value:
+              "Practical 2 - Implement the Bresenham's line drawing algorithm to render an efficient line",
           },
           {
             type: "code",
-            value: `img = imread('peppers.png');
-small_img = imresize(img, 0.5); % Compress (reduce size)
-big_img = imresize(small_img, 2); % Resize back to original
+            fileName: "bresenham_line.c",
+            language: "c",
+            value: `#include <GL/glut.h>
+#include <math.h>
 
-imshowpair(img, big_img, 'montage');
-title('Original Image (Left) and Compressed-Reconstructed Image (Right)');
-`,
+// Draw a single pixel
+void drawPixel(int x, int y) {
+glBegin(GL_POINTS);
+glVertex2i(x, y);
+glEnd();
+}
+
+// Bresenham's Line Drawing Algorithm
+void drawLine(int x0, int y0, int x1, int y1) {
+int dx = abs(x1 - x0);
+int dy = abs(y1 - y0);
+int sx = (x0 < x1) ? 1 : -1;
+int sy = (y0 < y1) ? 1 : -1;
+int err = dx - dy;
+while (1) {
+drawPixel(x0, y0);
+if (x0 == x1 && y0 == y1)
+break;
+int e2 = 2 * err;
+if (e2 > -dy) {
+err -= dy;
+x0 += sx;
+}
+if (e2 < dx) {
+err += dx;
+y0 += sy;
+}
+}
+}
+
+// Display callback
+void display() {
+glClear(GL_COLOR_BUFFER_BIT);
+glColor3f(1.0, 1.0, 1.0); // White line
+drawLine(50, 50, 300, 200);
+glFlush();
+}
+
+// Initialize OpenGL
+void init() {
+glClearColor(0.0, 0.0, 0.0, 1.0); // Black background
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluOrtho2D(0, 400, 0, 400); // 2D coordinate system
+}
+
+// Main function
+int main(int argc, char** argv) {
+glutInit(&argc, argv);
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize(400, 400);
+glutInitWindowPosition(100, 100);
+glutCreateWindow("Bresenham Line Drawing - OpenGL");
+init();
+glutDisplayFunc(display);
+glutMainLoop();
+return 0;
+}`,
           },
         ],
       },
       {
-        key: "color-image-processing",
-        name: "Write a program for color image processing",
+        key: "midpoint-circle-algorithm",
+        name: "Practical - 3: Draw a circle using Midpoint Circle Algorithm",
         pageBlocks: [
           {
             type: "heading",
-            value: "Write a program for color image processing",
+            value: "Practical 3 - Draw a circle using the Midpoint Circle Algorithm",
           },
           {
             type: "code",
-            value: `img = imread('peppers.png');
+            fileName: "midpoint_circle.c",
+            language: "c",
+            value: `#include <GL/glut.h>
+#include <stdio.h>
 
-red = img(:,:,1);
-green = img(:,:,2);
-blue = img(:,:,3);
+int radius;
 
-subplot(2,2,1); imshow(img); title('Original');
-subplot(2,2,2); imshow(red); title('Red Channel');
-subplot(2,2,3); imshow(green); title('Green Channel');
-subplot(2,2,4); imshow(blue); title('Blue Channel');
+void plotcirclepoints(int xc,int yc,int x,int y)
+{
+    glBegin(GL_POINTS);
+    glVertex2i(xc + x, yc + y);
+    glVertex2i(xc - x, yc + y);
+    glVertex2i(xc + x, yc - y);
+    glVertex2i(xc - x, yc - y);
+    glVertex2i(xc + y, yc + x);
+    glVertex2i(xc - y, yc + x);
+    glVertex2i(xc + y, yc - x);
+    glVertex2i(xc - y, yc - x);
+    glEnd();
+}
 
-`,
+void drawcircle(int xc, int yc, int r)
+{
+    int x = 0;
+    int y = r;
+    int d = 3 - 2 * r;
+
+    plotcirclepoints(xc, yc, x, y);
+    while (x <= y)
+    {
+        x++;
+        if (d < 0)
+        {
+            d = d + 4 * x + 6;
+        }
+        else
+        {
+            y--;
+            d = d + 4 * (x - y) + 10;
+        }
+        plotcirclepoints(xc, yc, x, y);
+    }
+}
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0, 0.0, 0.0);
+    glPointSize(2.0);
+    drawcircle(0, 0, radius);
+    glFlush();
+}
+
+void init()
+{
+    glClearColor(0.0, 0.0, 0.0, 1.0);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-200, 200, -200, 200);
+}
+
+int main(int argc, char **argv)
+{
+    printf("enter the radius of the circle");
+    scanf("%d", &radius);
+
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Creating Circle Drawing Algorithm");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}`,
           },
         ],
       },
       {
-        key: "image-segmentation",
-        name: "Write a program for image segmentation",
+        key: "bresenham-circle-drawing-algorithm",
+        name: "Practical - 4: Implement Bresenham's circle drawing algorithm",
         pageBlocks: [
           {
             type: "heading",
-            value: "Write a program for image segmentation",
+            value:
+              "Practical 4 - Implement Bresenham's circle drawing algorithm to generate a circle",
           },
           {
             type: "code",
-            value: `img = imread('cameraman.tif');
-threshold = 100;
-binary_img = img > threshold;
+            fileName: "bresenham_circle.c",
+            language: "c",
+            value: `#include <GL/glut.h>
+#include <stdio.h>
 
-imshow(binary_img);
-title('Segmented Image (Thresholding)');
-`,
+int radius;
+
+/* Function to plot symmetric points */
+void plotCirclePoints(int xc, int yc, int x, int y)
+{
+    glBegin(GL_POINTS);
+    glVertex2i(xc + x, yc + y);
+    glVertex2i(xc - x, yc + y);
+    glVertex2i(xc + x, yc - y);
+    glVertex2i(xc - x, yc - y);
+    glVertex2i(xc + y, yc + x);
+    glVertex2i(xc - y, yc + x);
+    glVertex2i(xc + y, yc - x);
+    glVertex2i(xc - y, yc - x);
+    glEnd();
+}
+
+/* Bresenham's Circle Drawing Algorithm */
+void drawCircle(int xc, int yc, int r)
+{
+    int x = 0;
+    int y = r;
+    int d = 3 - 2 * r;
+
+    plotCirclePoints(xc, yc, x, y);
+    while (x <= y)
+    {
+        x++;
+        if (d < 0)
+        {
+            d = d + 4 * x + 6;
+        }
+        else
+        {
+            y--;
+            d = d + 4 * (x - y) + 10;
+        }
+        plotCirclePoints(xc, yc, x, y);
+    }
+}
+
+/* Display Function */
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0, 0.0, 0.0);   // Red color
+    glPointSize(2.0);
+    drawCircle(0, 0, radius);
+    glFlush();
+}
+
+/* Initialization */
+void init()
+{
+    glClearColor(0.0, 0.0, 0.0, 1.0); // Black background
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-200, 200, -200, 200);
+}
+
+/* Main Function */
+int main(int argc, char** argv)
+{
+    printf("Enter the radius of the circle: ");
+    scanf("%d", &radius);
+
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Bresenham Circle Drawing Algorithm");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}`,
           },
         ],
       },
+          {
+          key: "midpoint-ellipse-algorithm",
+          name: "Practical - 5: Draw an ellipse using Midpoint Ellipse Algorithm",
+          pageBlocks: [
+            {
+            type: "heading",
+            value: "Practical 5 - Draw an ellipse using the Midpoint Ellipse Algorithm",
+            },
+            {
+            type: "code",
+            fileName: "midpoint_ellipse.c",
+            language: "c",
+            value: `#include <GL/glut.h>
+      #include <stdio.h>
+      #include <math.h>
+
+      int rx, ry, xc = 0, yc = 0;
+
+      void plotPoints(int x, int y)
       {
-        key: "image-morphology",
-        name: "Write a program for image morphology",
-        pageBlocks: [
+        glBegin(GL_POINTS);
+        glVertex2i(xc + x, yc + y);
+        glVertex2i(xc - x, yc + y);
+        glVertex2i(xc + x, yc - y);
+        glVertex2i(xc - x, yc - y);
+        glEnd();
+      }
+
+      void midpointEllipse()
+      {
+        float dx, dy, d1, d2;
+        int x = 0;
+        int y = ry;
+
+        d1 = (ry * ry) - (rx * rx * ry) + (0.25 * rx * rx);
+        dx = 2 * ry * ry * x;
+        dy = 2 * rx * rx * y;
+
+        while (dx < dy)
+        {
+          plotPoints(x, y);
+
+          if (d1 < 0)
           {
-            type: "heading",
-            value: "Write a program for image morphology",
+            x++;
+            dx = dx + (2 * ry * ry);
+            d1 = d1 + dx + (ry * ry);
+          }
+          else
+          {
+            x++;
+            y--;
+            dx = dx + (2 * ry * ry);
+            dy = dy - (2 * rx * rx);
+            d1 = d1 + dx - dy + (ry * ry);
+          }
+        }
+
+        d2 = ((ry * ry) * ((x + 0.5) * (x + 0.5))) +
+           ((rx * rx) * ((y - 1) * (y - 1))) -
+           (rx * rx * ry * ry);
+
+        while (y >= 0)
+        {
+          plotPoints(x, y);
+
+          if (d2 > 0)
+          {
+            y--;
+            dy = dy - (2 * rx * rx);
+            d2 = d2 + (rx * rx) - dy;
+          }
+          else
+          {
+            y--;
+            x++;
+            dx = dx + (2 * ry * ry);
+            dy = dy - (2 * rx * rx);
+            d2 = d2 + dx - dy + (rx * rx);
+          }
+        }
+      }
+
+      void display()
+      {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glColor3f(1.0, 1.0, 1.0);
+        midpointEllipse();
+        glFlush();
+      }
+
+      void init()
+      {
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        gluOrtho2D(-500, 500, -500, 500);
+      }
+
+      int main(int argc, char** argv)
+      {
+        printf("Enter rx: ");
+        scanf("%d", &rx);
+        printf("Enter ry: ");
+        scanf("%d", &ry);
+
+        glutInit(&argc, argv);
+        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+        glutInitWindowSize(500, 500);
+        glutInitWindowPosition(100, 100);
+        glutCreateWindow("Midpoint Ellipse Algorithm - OpenGL");
+
+        init();
+        glutDisplayFunc(display);
+        glutMainLoop();
+
+        return 0;
+      }`,
+            },
+          ],
+          },
+            {
+            key: "scanline-and-boundary-fill-algorithms",
+            name: "Practical - 6: Implement Scan-line and Boundary Fill algorithms",
+            pageBlocks: [
+              {
+              type: "heading",
+              value: "Practical 6 - Implement Scan-line and Boundary Fill algorithms for polygon filling",
+              },
+              {
+              type: "code",
+              fileName: "boundary_fill_4_connected.c",
+              language: "c",
+              value: `#include <GL/glut.h>
+        #include <stdio.h>
+
+        // Boundary color (Black)
+        float boundaryColor[3] = {0.0, 0.0, 0.0};
+
+        // Fill color (Red)
+        float fillColor[3] = {1.0, 0.0, 0.0};
+
+        // Function to set pixel
+        void setPixel(int x, int y)
+        {
+          glColor3fv(fillColor);
+          glBegin(GL_POINTS);
+          glVertex2i(x, y);
+          glEnd();
+          glFlush();
+        }
+
+        // Function to get pixel color
+        void getPixel(int x, int y, float color[3])
+        {
+          glReadPixels(x, y, 1, 1, GL_RGB, GL_FLOAT, color);
+        }
+
+        // Boundary Fill Function (4-connected)
+        void boundaryFill(int x, int y)
+        {
+          float currentColor[3];
+
+          getPixel(x, y, currentColor);
+
+          // If current pixel is not boundary and not already filled
+          if ((currentColor[0] != boundaryColor[0] ||
+             currentColor[1] != boundaryColor[1] ||
+             currentColor[2] != boundaryColor[2]) &&
+
+            (currentColor[0] != fillColor[0] ||
+             currentColor[1] != fillColor[1] ||
+             currentColor[2] != fillColor[2]))
+          {
+            setPixel(x, y);
+
+            // Recursive calls (4 directions)
+            boundaryFill(x+1, y);
+            boundaryFill(x-1, y);
+            boundaryFill(x, y+1);
+            boundaryFill(x, y-1);
+          }
+        }
+
+        // Draw polygon boundary
+        void drawPolygon()
+        {
+          glColor3fv(boundaryColor);
+
+          glBegin(GL_LINE_LOOP);
+            glVertex2i(150,150);
+            glVertex2i(350,150);
+            glVertex2i(350,350);
+            glVertex2i(150,350);
+          glEnd();
+
+          glFlush();
+        }
+
+        // Mouse function to start filling
+        void mouse(int button, int state, int x, int y)
+        {
+          if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+          {
+            boundaryFill(x, 500 - y);  // Adjust y coordinate
+          }
+        }
+
+        // Display function
+        void display()
+        {
+          glClear(GL_COLOR_BUFFER_BIT);
+          drawPolygon();
+        }
+
+        // Initialization
+        void init()
+        {
+          glClearColor(1,1,1,1);  // White background
+          gluOrtho2D(0,500,0,500);
+        }
+
+        // Main function
+        int main(int argc, char** argv)
+        {
+          glutInit(&argc, argv);
+          glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+          glutInitWindowSize(500,500);
+          glutCreateWindow("Boundary Fill Algorithm - C");
+
+          init();
+          glutDisplayFunc(display);
+          glutMouseFunc(mouse);
+          glutMainLoop();
+
+          return 0;
+        }`,
+              },
+              {
+              type: "code",
+              fileName: "boundary_fill_8_connected.c",
+              language: "c",
+              value: `#include <GL/glut.h>
+        #include <stdio.h>
+
+        float boundaryColor[3] = {1.0, 0.0, 0.0}; // Red boundary
+        float fillColor[3] = {0.0, 1.0, 0.0};     // Green fill
+
+        void getPixel(int x, int y, float color[3]) {
+          glReadPixels(x, y, 1, 1, GL_RGB, GL_FLOAT, color);
+        }
+
+        void setPixel(int x, int y) {
+          glColor3fv(fillColor);
+          glBegin(GL_POINTS);
+          glVertex2i(x, y);
+          glEnd();
+          glFlush();
+        }
+
+        void boundaryFill8(int x, int y) {
+          float currentColor[3];
+          getPixel(x, y, currentColor);
+
+          if ((currentColor[0] != boundaryColor[0] ||
+             currentColor[1] != boundaryColor[1] ||
+             currentColor[2] != boundaryColor[2]) &&
+            (currentColor[0] != fillColor[0] ||
+             currentColor[1] != fillColor[1] ||
+             currentColor[2] != fillColor[2])) {
+
+            setPixel(x, y);
+
+            boundaryFill8(x+1, y);
+            boundaryFill8(x-1, y);
+            boundaryFill8(x, y+1);
+            boundaryFill8(x, y-1);
+            boundaryFill8(x+1, y+1);
+            boundaryFill8(x-1, y+1);
+            boundaryFill8(x+1, y-1);
+            boundaryFill8(x-1, y-1);
+          }
+        }
+
+        void display() {
+          glClear(GL_COLOR_BUFFER_BIT);
+
+          // Draw boundary (Square)
+          glColor3f(1.0, 0.0, 0.0);
+          glBegin(GL_LINE_LOOP);
+          glVertex2i(100, 100);
+          glVertex2i(200, 100);
+          glVertex2i(200, 200);
+          glVertex2i(100, 200);
+          glEnd();
+
+          glFlush();
+
+          boundaryFill8(150, 150); // Seed point
+        }
+
+        void init() {
+          glClearColor(1.0, 1.0, 1.0, 0.0);
+          gluOrtho2D(0, 300, 0, 300);
+        }
+
+        int main(int argc, char** argv) {
+          glutInit(&argc, argv);
+          glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+          glutInitWindowSize(300, 300);
+          glutCreateWindow("8-Connected Boundary Fill");
+          init();
+          glutDisplayFunc(display);
+          glutMainLoop();
+          return 0;
+        }`,
+              },
+              {
+              type: "code",
+              fileName: "scanline_fill.c",
+              language: "c",
+              value: `#include <GL/glut.h>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int x[10], y[10];   // polygon vertices
+        int n = 4;          // number of vertices
+
+        // Function to draw a pixel
+        void drawPixel(int px, int py)
+        {
+          glBegin(GL_POINTS);
+          glVertex2i(px, py);
+          glEnd();
+        }
+
+        // Scan-line filling function
+        void scanline()
+        {
+          int i, j, k;
+          int ymin = 500, ymax = 0;
+          int interx[10];
+
+          // Find ymin and ymax
+          for(i = 0; i < n; i++)
+          {
+            if(y[i] < ymin)
+              ymin = y[i];
+            if(y[i] > ymax)
+              ymax = y[i];
+          }
+
+          // Move scanline from ymin to ymax
+          for(int scan = ymin; scan <= ymax; scan++)
+          {
+            k = 0;   // reset intersection counter
+
+            // Check each edge
+            for(i = 0; i < n; i++)
+            {
+              int next = (i + 1) % n;
+
+              // Ignore horizontal edges
+              if(y[i] == y[next])
+                continue;
+
+              // Check if scanline intersects edge
+              if(scan >= (y[i] < y[next] ? y[i] : y[next]) &&
+                 scan <  (y[i] > y[next] ? y[i] : y[next]))
+              {
+                interx[k] = x[i] + (scan - y[i]) *
+                       (x[next] - x[i]) /
+                       (y[next] - y[i]);
+                k++;
+              }
+            }
+
+            // Sort intersection points (simple bubble sort)
+            for(i = 0; i < k-1; i++)
+            {
+              for(j = i+1; j < k; j++)
+              {
+                if(interx[i] > interx[j])
+                {
+                  int temp = interx[i];
+                  interx[i] = interx[j];
+                  interx[j] = temp;
+                }
+              }
+            }
+
+            // Fill between pairs
+            for(i = 0; i < k; i += 2)
+            {
+              for(j = interx[i]; j <= interx[i+1]; j++)
+              {
+                drawPixel(j, scan);
+              }
+            }
+          }
+        }
+
+        // Display function
+        void display()
+        {
+          glClear(GL_COLOR_BUFFER_BIT);
+          glColor3f(1, 0, 0);   // red fill color
+          scanline();
+          glFlush();
+        }
+
+        // Initialization
+        void init()
+        {
+          glClearColor(1,1,1,1);
+          gluOrtho2D(0, 500, 0, 500);
+        }
+
+        // Main function
+        int main(int argc, char** argv)
+        {
+          // Define polygon vertices
+          x[0] = 100; y[0] = 100;
+          x[1] = 200; y[1] = 300;
+          x[2] = 350; y[2] = 250;
+          x[3] = 300; y[3] = 100;
+
+          glutInit(&argc, argv);
+          glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+          glutInitWindowSize(500, 500);
+          glutCreateWindow("Scan Line Polygon Fill - C");
+
+          init();
+          glutDisplayFunc(display);
+          glutMainLoop();
+
+          return 0;
+        }`,
+              },
+            ],
+            },
+          {
+            key: "flood-fill-algorithm",
+            name: "Practical - 7: Implement Flood Fill Algorithm",
+            pageBlocks: [
+              {
+                type: "heading",
+                value: "Practical 7 - Implement Flood Fill Algorithm to fill a closed shape with color",
+              },
+              {
+                type: "code",
+                fileName: "flood_fill.c",
+                language: "c",
+                value: `#include <GL/glut.h>
+    #include <stdio.h>
+
+    float fillColor[] = {1.0, 0.0, 0.0};
+    float oldColor[]  = {1.0, 1.0, 1.0};
+
+    void getPixel(int x, int y, float color[3])
+    {
+        glReadPixels(x, y, 1, 1, GL_RGB, GL_FLOAT, color);
+    }
+
+    void setPixel(int x, int y)
+    {
+        glColor3fv(fillColor);
+        glBegin(GL_POINTS);
+        glVertex2i(x, y);
+        glEnd();
+        glFlush();
+    }
+
+    void floodFill(int x, int y)
+    {
+        float current[3];
+        getPixel(x, y, current);
+
+        if (current[0] == oldColor[0] &&
+            current[1] == oldColor[1] &&
+            current[2] == oldColor[2])
+        {
+            setPixel(x, y);
+
+            floodFill(x + 1, y);
+            floodFill(x - 1, y);
+            floodFill(x, y + 1);
+            floodFill(x, y - 1);
+        }
+    }
+
+    void display()
+    {
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        glColor3f(0.0, 0.0, 0.0);
+        glBegin(GL_LINE_LOOP);
+            glVertex2i(200, 200);
+            glVertex2i(400, 200);
+            glVertex2i(400, 400);
+            glVertex2i(200, 400);
+        glEnd();
+
+        floodFill(300, 300);
+
+        glFlush();
+    }
+
+    void init()
+    {
+        glClearColor(1.0, 1.0, 1.0, 1.0);
+        gluOrtho2D(0, 500, 0, 500);
+    }
+
+    int main(int argc, char** argv)
+    {
+        glutInit(&argc, argv);
+        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+        glutInitWindowSize(500, 500);
+        glutCreateWindow("Simple Flood Fill");
+
+        init();
+        glutDisplayFunc(display);
+
+        glutMainLoop();
+        return 0;
+    }`,
+              },
+            ],
           },
           {
-            type: "code",
-            value: `img = imread('text.png');
-se = strel('square', 3); % Square structuring element
-dilated_img = imdilate(img, se);
+            key: "2d-transformations",
+            name: "Practical - 8: Perform translation, scaling, rotation, reflection, and shearing on 2D objects",
+            pageBlocks: [
+              {
+                type: "heading",
+                value:
+                  "Practical 8 - Perform translation, scaling, rotation, reflection, and shearing on 2D objects",
+              },
+              {
+                type: "code",
+                fileName: "2d_transformations.c",
+                language: "c",
+                value: `#include <GL/glut.h>
+#include <math.h>
 
-imshowpair(img, dilated_img, 'montage');
-title('Original Image (Left) and Dilated Image (Right)');
+// Original triangle points
+float x1 = 50, y1 = 50;
+float x2 = 100, y2 = 50;
+float x3 = 75, y3 = 100;
 
-`,
+// Function to draw triangle
+void drawTriangle(float a1, float b1, float a2, float b2, float a3, float b3) {
+    glBegin(GL_TRIANGLES);
+    glVertex2f(a1, b1);
+    glVertex2f(a2, b2);
+    glVertex2f(a3, b3);
+    glEnd();
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Original
+    glColor3f(1.0f, 0.0f, 0.0f);
+    drawTriangle(x1, y1, x2, y2, x3, y3);
+
+    // Translation
+    glColor3f(0.0f, 1.0f, 0.0f);
+    drawTriangle(x1 + 100, y1 + 50, x2 + 100, y2 + 50, x3 + 100, y3 + 50);
+
+    // Scaling
+    glColor3f(0.0f, 0.0f, 1.0f);
+    drawTriangle(x1 * 1.5f, y1 * 1.5f, x2 * 1.5f, y2 * 1.5f, x3 * 1.5f, y3 * 1.5f);
+
+    // Rotation
+    float angle = 45.0f * 3.1416f / 180.0f;
+    float rx1 = x1 * cos(angle) - y1 * sin(angle);
+    float ry1 = x1 * sin(angle) + y1 * cos(angle);
+    float rx2 = x2 * cos(angle) - y2 * sin(angle);
+    float ry2 = x2 * sin(angle) + y2 * cos(angle);
+    float rx3 = x3 * cos(angle) - y3 * sin(angle);
+    float ry3 = x3 * sin(angle) + y3 * cos(angle);
+
+    glColor3f(1.0f, 1.0f, 0.0f);
+    drawTriangle(rx1, ry1, rx2, ry2, rx3, ry3);
+
+    // Reflection (about X-axis)
+    glColor3f(1.0f, 0.0f, 1.0f);
+    drawTriangle(x1, -y1, x2, -y2, x3, -y3);
+
+    // Shearing (X-direction)
+    float shx = 1.0f;
+    glColor3f(1.0f, 0.5f, 0.0f);
+    drawTriangle(
+        x1 + shx * y1, y1,
+        x2 + shx * y2, y2,
+        x3 + shx * y3, y3
+    );
+
+    glFlush();
+}
+
+void init() {
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-300, 300, -300, 300);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("All 2D Transformations");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}`,
+              },
+            ],
           },
-        ],
-      },
+          {
+            key: "cohen-sutherland-line-clipping",
+            name: "Practical - 9: Implement the Cohen-Sutherland algorithm for line clipping within a viewport",
+            pageBlocks: [
+              {
+                type: "heading",
+                value:
+                  "Practical 9 - Implement the Cohen-Sutherland algorithm for line clipping within a viewport",
+              },
+              {
+                type: "code",
+                fileName: "cohen_sutherland_clipping.c",
+                language: "c",
+                value: `#include <GL/glut.h>
+
+// Clipping window
+float xmin = 100, ymin = 100, xmax = 300, ymax = 300;
+
+// Line points
+float x1 = 50, y1 = 50, x2 = 350, y2 = 350;
+
+// Region codes
+int getCode(float x, float y) {
+    int code = 0;
+
+    if (x < xmin) code |= 1;   // LEFT
+    if (x > xmax) code |= 2;   // RIGHT
+    if (y < ymin) code |= 4;   // BOTTOM
+    if (y > ymax) code |= 8;   // TOP
+
+    return code;
+}
+
+void clipLine() {
+    float lx1 = x1, ly1 = y1, lx2 = x2, ly2 = y2;
+    int c1 = getCode(lx1, ly1);
+    int c2 = getCode(lx2, ly2);
+    float x, y;
+
+    while (1) {
+        if (c1 == 0 && c2 == 0) {
+            break;
+        }
+
+        if (c1 & c2) {
+            return;
+        }
+
+        int c = c1 ? c1 : c2;
+
+        if (c & 8) {
+            x = lx1 + (lx2 - lx1) * (ymax - ly1) / (ly2 - ly1);
+            y = ymax;
+        } else if (c & 4) {
+            x = lx1 + (lx2 - lx1) * (ymin - ly1) / (ly2 - ly1);
+            y = ymin;
+        } else if (c & 2) {
+            y = ly1 + (ly2 - ly1) * (xmax - lx1) / (lx2 - lx1);
+            x = xmax;
+        } else {
+            y = ly1 + (ly2 - ly1) * (xmin - lx1) / (lx2 - lx1);
+            x = xmin;
+        }
+
+        if (c == c1) {
+            lx1 = x;
+            ly1 = y;
+            c1 = getCode(lx1, ly1);
+        } else {
+            lx2 = x;
+            ly2 = y;
+            c2 = getCode(lx2, ly2);
+        }
+    }
+
+    glColor3f(0.0f, 1.0f, 0.0f);
+    glBegin(GL_LINES);
+    glVertex2f(lx1, ly1);
+    glVertex2f(lx2, ly2);
+    glEnd();
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Viewport
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(xmin, ymin);
+    glVertex2f(xmax, ymin);
+    glVertex2f(xmax, ymax);
+    glVertex2f(xmin, ymax);
+    glEnd();
+
+    // Original line
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glBegin(GL_LINES);
+    glVertex2f(50, 50);
+    glVertex2f(350, 350);
+    glEnd();
+
+    // Clipped line
+    clipLine();
+
+    glFlush();
+}
+
+void init() {
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0, 400, 0, 400);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(400, 400);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Line Clipping");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}`,
+              },
+            ],
+          },
+          {
+            key: "sutherland-hodgman-polygon-clipping",
+            name: "Practical - 10: Implement the Sutherland-Hodgman algorithm for polygon clipping",
+            pageBlocks: [
+              {
+                type: "heading",
+                value:
+                  "Practical 10 - Implement the Sutherland-Hodgman algorithm for polygon clipping",
+              },
+              {
+                type: "code",
+                fileName: "sutherland_hodgman_clipping.c",
+                language: "c",
+                value: `#include <GL/glut.h>
+
+typedef struct {
+    float x, y;
+} Point;
+
+#define MAX 20
+
+Point poly[MAX] = {
+    {50, 150},
+    {200, 50},
+    {350, 150},
+    {200, 300}
+};
+Point clipped[MAX];
+int n = 4;
+
+// Clipping window
+float xmin = 100, ymin = 100, xmax = 300, ymax = 300;
+
+void drawPolygon(Point p[], int count) {
+    if (count <= 0) {
+        return;
+    }
+
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < count; i++) {
+        glVertex2f(p[i].x, p[i].y);
+    }
+    glEnd();
+}
+
+int inside(Point p, int edge) {
+    switch (edge) {
+        case 0: return p.x >= xmin; // Left
+        case 1: return p.x <= xmax; // Right
+        case 2: return p.y >= ymin; // Bottom
+        default: return p.y <= ymax; // Top
+    }
+}
+
+Point intersect(Point s, Point e, int edge) {
+    Point p;
+
+    if (edge == 0 || edge == 1) {
+        float xedge = (edge == 0) ? xmin : xmax;
+        p.x = xedge;
+        p.y = s.y + (e.y - s.y) * (xedge - s.x) / (e.x - s.x);
+    } else {
+        float yedge = (edge == 2) ? ymin : ymax;
+        p.y = yedge;
+        p.x = s.x + (e.x - s.x) * (yedge - s.y) / (e.y - s.y);
+    }
+
+    return p;
+}
+
+int clipWithEdge(Point input[], int inCount, Point output[], int edge) {
+    if (inCount <= 0) {
+        return 0;
+    }
+
+    int outCount = 0;
+    Point s = input[inCount - 1];
+
+    for (int i = 0; i < inCount; i++) {
+        Point e = input[i];
+        int sIn = inside(s, edge);
+        int eIn = inside(e, edge);
+
+        if (eIn) {
+            if (!sIn) {
+                output[outCount++] = intersect(s, e, edge);
+            }
+            output[outCount++] = e;
+        } else if (sIn) {
+            output[outCount++] = intersect(s, e, edge);
+        }
+
+        s = e;
+    }
+
+    return outCount;
+}
+
+int clipPolygon(Point input[], int inCount, Point output[]) {
+    Point temp1[MAX], temp2[MAX];
+    int count = inCount;
+
+    for (int i = 0; i < inCount; i++) {
+        temp1[i] = input[i];
+    }
+
+    count = clipWithEdge(temp1, count, temp2, 0);
+    count = clipWithEdge(temp2, count, temp1, 1);
+    count = clipWithEdge(temp1, count, temp2, 2);
+    count = clipWithEdge(temp2, count, temp1, 3);
+
+    for (int i = 0; i < count; i++) {
+        output[i] = temp1[i];
+    }
+
+    return count;
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Clipping window
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(xmin, ymin);
+    glVertex2f(xmax, ymin);
+    glVertex2f(xmax, ymax);
+    glVertex2f(xmin, ymax);
+    glEnd();
+
+    // Original polygon
+    glColor3f(1.0f, 0.0f, 0.0f);
+    drawPolygon(poly, n);
+
+    // Clipped polygon
+    int newn = clipPolygon(poly, n, clipped);
+    glColor3f(0.0f, 1.0f, 0.0f);
+    drawPolygon(clipped, newn);
+
+    glFlush();
+}
+
+void init() {
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0, 500, 0, 500);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Polygon Clipping");
+
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+                return 0;
+}`,
+              },
+            ],
+          },
+          {
+            key: "3d-transformations",
+            name: "Practical - 11: Perform 3D translation, scaling, rotation, reflection, and shearing",
+            pageBlocks: [
+              {
+                type: "heading",
+                value:
+                  "Practical 11 - Perform 3D translation, scaling, rotation, reflection, and shearing",
+              },
+              {
+                type: "code",
+                fileName: "3d_transformations.c",
+                language: "c",
+                value: `#include <GL/glut.h>
+#include <stdlib.h>
+
+// Transformation variables
+float tx = 0.0f, ty = 0.0f, tz = 0.0f;
+float sx = 1.0f, sy = 1.0f, sz = 1.0f;
+float angle = 0.0f;
+
+int mode = 0;
+// 1=translate, 2=scale, 3=rotate, 4=reflect, 5=shear
+
+// Draw coordinate axes
+void drawAxes() {
+    glBegin(GL_LINES);
+
+    // X axis (Red)
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(3.0f, 0.0f, 0.0f);
+
+    // Y axis (Green)
+    glColor3f(0.0f, 1.0f, 0.0f);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, 3.0f, 0.0f);
+
+    // Z axis (Blue)
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, 0.0f, 3.0f);
+
+    glEnd();
+}
+
+// Apply 3D shear
+void applyShear() {
+    GLfloat shearMatrix[] = {
+        1.0f, 0.5f, 0.0f, 0.0f,
+        0.5f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f, 1.0f
+    };
+    glMultMatrixf(shearMatrix);
+}
+
+// Apply reflection across the YZ plane
+void applyReflection() {
+    GLfloat reflectMatrix[] = {
+        -1.0f, 0.0f, 0.0f, 0.0f,
+         0.0f, 1.0f, 0.0f, 0.0f,
+         0.0f, 0.0f, 1.0f, 0.0f,
+         0.0f, 0.0f, 0.0f, 1.0f
+    };
+    glMultMatrixf(reflectMatrix);
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(4.0, 4.0, 6.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
+    drawAxes();
+
+    // Original object
+    glPushMatrix();
+    glTranslatef(1.5f, 0.0f, 0.0f);
+    glColor3f(0.0f, 1.0f, 0.0f);
+    glutWireCube(1.0);
+    glPopMatrix();
+
+    // Reflected object
+    if (mode == 4) {
+        glPushMatrix();
+        applyReflection();
+        glTranslatef(1.5f, 0.0f, 0.0f);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glutWireCube(1.0);
+        glPopMatrix();
+    }
+
+    // Other transforms
+    if (mode != 4) {
+        glPushMatrix();
+        glTranslatef(1.5f, 0.0f, 0.0f);
+
+        if (mode == 1) {
+            glTranslatef(tx, ty, tz);
+        } else if (mode == 2) {
+            glScalef(sx, sy, sz);
+        } else if (mode == 3) {
+            glRotatef(angle, 1.0f, 1.0f, 1.0f);
+        } else if (mode == 5) {
+            applyShear();
+        }
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glutWireCube(1.0);
+        glPopMatrix();
+    }
+
+    glutSwapBuffers();
+}
+
+void keyboard(unsigned char key, int x, int y) {
+    (void)x;
+    (void)y;
+
+    switch (key) {
+        case 't':
+            mode = 1;
+            tx += 0.3f;
+            break;
+        case 's':
+            mode = 2;
+            sx += 0.2f;
+            sy += 0.2f;
+            sz += 0.2f;
+            break;
+        case 'r':
+            mode = 3;
+            angle += 10.0f;
+            break;
+        case 'f':
+            mode = 4;
+            break;
+        case 'h':
+            mode = 5;
+            break;
+        case 'c':
+            tx = ty = tz = 0.0f;
+            sx = sy = sz = 1.0f;
+            angle = 0.0f;
+            mode = 0;
+            break;
+        case 27:
+            exit(0);
+    }
+
+    glutPostRedisplay();
+}
+
+void init() {
+    glEnable(GL_DEPTH_TEST);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+}
+
+void reshape(int w, int h) {
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(60.0, (float)w / (float)h, 1.0, 100.0);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("3D Transformations - OpenGL");
+
+    init();
+    glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
+    glutKeyboardFunc(keyboard);
+
+    glutMainLoop();
+    return 0;
+}`,
+              },
+            ],
+          },
     ],
   },
 ];
