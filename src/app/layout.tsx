@@ -14,8 +14,8 @@ import Footer from "@/components/footer";
 
 import { DataDialog } from "@/components/modals/data-dialog";
 import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
-import { AppInstallModal } from "@/components/modals/AppInstallModal";
-import { VaultXToast } from "@/components/modals/VaultXToast";
+import { FeaturedAppsBanner } from "@/components/featured-apps-banner";
+import Link from "next/link";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -63,6 +63,17 @@ export default function RootLayout({
               <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
                 <Navbar />
                 <main className="w-full max-md:pb-14 pt-16 md:pt-20 z-[5] relative h-full">
+                  <div className="px-3 md:px-5 pt-3 md:pt-5 pb-0">
+                    <div className="flex items-center justify-between mb-2 px-1">
+                      <h2 className="text-sm font-semibold text-muted-foreground flex items-center gap-1.5">
+                        <span>✨</span> Featured Apps
+                      </h2>
+                      <Link href="/featured-apps" className="text-xs font-semibold text-primary hover:underline">
+                        View All
+                      </Link>
+                    </div>
+                    <FeaturedAppsBanner />
+                  </div>
                   {children}
                 </main>
                 <Footer />
@@ -74,8 +85,6 @@ export default function RootLayout({
               <FeedbackFloatingDialog />
               <DeviceTracker />
               <WhatsappDialog />
-              <AppInstallModal />
-              <VaultXToast />
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>

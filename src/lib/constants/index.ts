@@ -1,3 +1,4 @@
+import { Description } from "@radix-ui/react-dialog";
 import {
   HardDriveDownloadIcon,
   HouseIcon,
@@ -32,13 +33,13 @@ export const navLinks = [
     href: "/",
     icon: HouseIcon,
   },
-  {
-    id: 16,
-    title: "Project Details",
-    href: "/project-details",
-    icon: AwardIcon,
-    sem: [4],
-  },
+  // {
+  //   id: 16,
+  //   title: "Project Details",
+  //   href: "/project-details",
+  //   icon: AwardIcon,
+  //   sem: [4],
+  // },
   {
     id: 12,
     title: "Placement",
@@ -332,3 +333,22 @@ export const telegramBotChatIds = {
   githubPuVaultChannel: "-1002996348697",
   puVaultVisitorsChannel: "-1002945174240",
 };
+
+export const featuredApps = [
+  {
+    id: 1,
+    name: "Vault X",
+    href: "https://play.google.com/store/apps/details?id=com.vaultx.vault_x",
+    description: "Your Internet, Organized 🔐",
+    heroImage: "/apps/vault-x/hero.jpeg",
+    logoImage: "/apps/vault-x/logo.png",
+  },
+  {
+    id: 2,
+    name: "Trust Tracker",
+    href: "https://play.google.com/store/apps/details?id=com.trusttracker.trust_tracker_flutter",
+    description: "Track what matters. Build trust. 🛡️",
+    heroImage: "/apps/trust-tracker/hero.png",
+    logoImage: "/apps/trust-tracker/logo.png",
+  }
+];
