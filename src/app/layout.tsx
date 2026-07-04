@@ -99,8 +99,8 @@ export default function RootLayout({
     data-message=""
     data-color="#26B0A1"
     data-position="Left"
-    data-x_margin="18"
-    data-y_margin="18"
+    data-x_margin="48"
+    data-y_margin="48"
   />
       </body>
     </html>
