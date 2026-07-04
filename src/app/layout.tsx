@@ -98,7 +98,7 @@ export default function RootLayout({
     data-description="Support me on Buy me a coffee!"
     data-message=""
     data-color="#26B0A1"
-    data-position="Right"
+    data-position="Left"
     data-x_margin="18"
     data-y_margin="18"
   />
