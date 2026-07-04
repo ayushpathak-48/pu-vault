@@ -16,6 +16,7 @@ import { DataDialog } from "@/components/modals/data-dialog";
 import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
 import { FeaturedAppsBanner } from "@/components/featured-apps-banner";
 import Link from "next/link";
+import Script from "next/script";
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -88,6 +89,19 @@ export default function RootLayout({
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>
+<Script
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    strategy="afterInteractive"
+    data-name="BMC-Widget"
+    data-cfasync="false"
+    data-id="puvault"
+    data-description="Support me on Buy me a coffee!"
+    data-message=""
+    data-color="#26B0A1"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="18"
+  />
       </body>
     </html>
   );
