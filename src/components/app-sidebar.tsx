@@ -108,6 +108,7 @@ export function AppSidebar() {
                     "bg-gray-200 dark:bg-[#101010] border-l-4 border-primary",
                 )}
                 key={link.id}
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 <Icon className="size-4" />
                 {link.title}
