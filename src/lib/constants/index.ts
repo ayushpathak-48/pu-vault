@@ -12,6 +12,7 @@ import {
   UserIcon,
   AwardIcon,
   Book,
+  Gamepad2,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -46,6 +47,12 @@ export const navLinks = [
     href: "/placement-materials",
     hideOnMobile: true,
     icon: BriefcaseBusiness,
+  },
+  {
+    id: 15,
+    title: "Games",
+    href: "https://www.samast.pro/games?utm_source=pu_vault&utm_medium=sidebar&utm_campaign=cross_promotion",
+    icon: Gamepad2,
   },
   {
     id: 11,
@@ -120,6 +127,7 @@ export const navLinks = [
     icon: AwardIcon,
     sem: [1, 2, 3],
   },
+
 ];
 
 export const courses = [
@@ -336,6 +344,14 @@ export const telegramBotChatIds = {
 
 export const featuredApps = [
   {
+    id: 0,
+    name: "Samast",
+    href: "https://samast.pro/?utm_source=pu_vault&utm_medium=featured_apps_banner&utm_campaign=cross_promotion",
+    description: "The Ultimate Client-Side Tools Platform",
+    heroImage: "/apps/samast/hero.jpg",
+    logoImage: "/apps/samast/logo.png",
+  },
+  {
     id: 1,
     name: "Vault X",
     href: "https://play.google.com/store/apps/details?id=com.vaultx.vault_x",
@@ -350,5 +366,13 @@ export const featuredApps = [
     description: "Track what matters. Build trust. 🛡️",
     heroImage: "/apps/trust-tracker/hero.png",
     logoImage: "/apps/trust-tracker/logo.png",
+  },
+  {
+    id: 3,
+    name: "Snap Docs",
+    href: "https://play.google.com/store/apps/details?id=com.snapdocs.app",
+    description: "Scan, crop, organize notes and documents.",
+    heroImage: "/apps/snapdocs/hero.png",
+    logoImage: "/apps/snapdocs/icon.png",
   }
 ];
