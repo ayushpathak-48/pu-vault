@@ -28,6 +28,7 @@ export const BottomTabs = () => {
               <Link
                 href={link.href}
                 className="w-20 h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-1"
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 <Icon
                   className={cn(

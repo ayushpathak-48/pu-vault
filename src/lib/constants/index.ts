@@ -13,6 +13,7 @@ import {
   AwardIcon,
   Book,
   Gamepad2,
+  Wrench,
 } from "lucide-react";
 
 export const APP_NAME = "Pu Vault";
@@ -50,6 +51,12 @@ export const navLinks = [
   },
   {
     id: 15,
+    title: "Tools",
+    href: "https://samast.pro",
+    icon: Wrench,
+  },
+  {
+    id: 16,
     title: "Games",
     href: "https://www.samast.pro/games?utm_source=pu_vault&utm_medium=sidebar&utm_campaign=cross_promotion",
     icon: Gamepad2,
