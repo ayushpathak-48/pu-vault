@@ -8,7 +8,7 @@ import { Check } from "lucide-react";
 import {
   COLOR_THEMES,
   applyThemeColor,
-  THEME_COLOR_STORAGE_KEY,
+  getSavedThemeColor,
 } from "@/lib/theme-color";
 
 export const ToggleThemeColor = ({ className }: { className?: string }) => {
@@ -22,12 +22,8 @@ export const ToggleThemeColor = ({ className }: { className?: string }) => {
 
   // Determine current active color
   const activeColor = mounted
-    ? color ||
-      (typeof window !== "undefined"
-        ? localStorage.getItem(THEME_COLOR_STORAGE_KEY)
-        : "blue") ||
-      "blue"
-    : "blue";
+    ? (color || getSavedThemeColor())
+    : getSavedThemeColor();
 
   const handleSelectColor = (selectedKey: string) => {
     applyThemeColor(selectedKey);

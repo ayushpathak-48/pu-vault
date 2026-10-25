@@ -48,12 +48,53 @@ export const COLOR_THEMES: ThemeColorItem[] = [
 
 export const THEME_COLOR_STORAGE_KEY = "theme-color";
 
+/**
+ * Retrieve the saved theme color from cookie or localStorage synchronously.
+ */
+export function getSavedThemeColor(): string {
+  if (typeof window === "undefined") return "blue";
+
+  try {
+    // 1. Try cookie first (synced across browser tabs & sessions)
+    const match = document.cookie.match(new RegExp("(^| )theme-color=([^;]+)"));
+    if (match && match[2]) {
+      const decoded = decodeURIComponent(match[2]).trim();
+      if (COLOR_THEMES.some((t) => t.colorKey === decoded)) {
+        return decoded;
+      }
+    }
+
+    // 2. Try explicit localStorage key
+    const local = localStorage.getItem(THEME_COLOR_STORAGE_KEY);
+    if (local && COLOR_THEMES.some((t) => t.colorKey === local)) {
+      return local;
+    }
+
+    // 3. Try Zustand persisted client-data
+    const clientData = localStorage.getItem("client-data");
+    if (clientData) {
+      const parsed = JSON.parse(clientData);
+      if (
+        parsed?.state?.color &&
+        COLOR_THEMES.some((t) => t.colorKey === parsed.state.color)
+      ) {
+        return parsed.state.color;
+      }
+    }
+  } catch {}
+
+  return "blue";
+}
+
+/**
+ * Applies the CSS variables to document.documentElement and persists to localStorage + cookie.
+ */
 export function applyThemeColor(colorKey?: string | null) {
   if (typeof window === "undefined") return;
 
   const resolvedKey =
     colorKey ||
-    localStorage.getItem(THEME_COLOR_STORAGE_KEY) ||
+    getSavedThemeColor() ||
     "blue";
 
   const current =
@@ -71,5 +112,6 @@ export function applyThemeColor(colorKey?: string | null) {
 
   try {
     localStorage.setItem(THEME_COLOR_STORAGE_KEY, current.colorKey);
+    document.cookie = `theme-color=${current.colorKey}; path=/; max-age=31536000; SameSite=Lax`;
   } catch {}
 }

@@ -2,6 +2,7 @@
 import { CourseType } from "@/lib/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { getSavedThemeColor } from "@/lib/theme-color";
 
 type UserType = { name: string; enrollment: string };
 
@@ -79,7 +80,7 @@ export const useDataStore = create<SpecializationState>()(
       setCourse: (value) => set({ course: value }),
       sem: 3,
       setSem: (value) => set({ sem: value }),
-      color: "blue",
+      color: getSavedThemeColor(),
       setColor: (value) => set({ color: value }),
       bottomTabsEnabled: true,
       setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),

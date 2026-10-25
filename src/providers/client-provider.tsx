@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { useDataStore } from "@/stores/data.store";
 import {
   applyThemeColor,
-  THEME_COLOR_STORAGE_KEY,
+  getSavedThemeColor,
 } from "@/lib/theme-color";
 
 export default function ClientProvider({
@@ -17,23 +17,23 @@ export default function ClientProvider({
 }) {
   const color = useDataStore((state) => state.color);
   const setColor = useDataStore((state) => state.setColor);
-  const hydrated = useDataStore((state) => state.hydrated);
+  const isInitialMount = useRef(true);
 
-  // Sync saved theme color on mount and rehydration
+  // 1. Initial mount: Ensure saved theme color from storage is applied
   useEffect(() => {
-    const saved = localStorage.getItem(THEME_COLOR_STORAGE_KEY);
+    const saved = getSavedThemeColor();
     if (saved) {
       applyThemeColor(saved);
-      if (saved !== color) {
+      if (color !== saved) {
         setColor(saved);
       }
-    } else if (color) {
-      applyThemeColor(color);
     }
-  }, [hydrated]);
+    isInitialMount.current = false;
+  }, []);
 
-  // Sync whenever user changes color in data store
+  // 2. Subsequent user changes: Apply when user explicitly changes color in store
   useEffect(() => {
+    if (isInitialMount.current) return;
     if (color) {
       applyThemeColor(color);
     }

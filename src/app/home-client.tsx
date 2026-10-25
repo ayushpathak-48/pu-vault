@@ -9,10 +9,7 @@ import { useDataStore } from "@/stores/data.store";
 import { alertContent } from "@/lib/constants";
 import Link from "next/link";
 import {
-  Calculator,
-  CalendarDays,
   Code2,
-  ListTodo,
   Sparkles,
   BookOpen,
   ArrowRight,
@@ -30,113 +27,48 @@ export default function Home() {
   const sem = useDataStore((state) => state.sem);
   const specialization = useDataStore((state) => state.specialization);
 
-  const quickActions = [
-    {
-      title: "Attendance",
-      desc: "Calculate target & bunks",
-      href: "/attendance-calculator",
-      icon: Calculator,
-      iconColor: "text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20",
-    },
-    {
-      title: "Source Codes",
-      desc: "Lab practicals & solutions",
-      href: "/code",
-      icon: Code2,
-      iconColor: "text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-500/20",
-    },
-    {
-      title: "Assignments",
-      desc: "Course practical & theory tasks",
-      href: "/assignments",
-      icon: BookOpen,
-      iconColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-    },
-    {
-      title: "MCQs Quiz",
-      desc: "Unit practice & mock tests",
-      href: "/mcqs",
-      icon: ListTodo,
-      iconColor: "text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20",
-    },
-  ];
-
   return (
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
-      {/* Hero Welcome Glass Banner */}
+      {/* Minimal Greeting Header Bar */}
       <div>
-        <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] p-6 md:p-8 shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase tracking-wide backdrop-blur-md">
-                  {course} • Semester {sem}
+        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] px-4 py-3.5 sm:px-6 sm:py-4 shadow-[0_8px_30px_rgb(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10">
+            <div className="flex items-center gap-2.5 flex-wrap min-w-0">
+              <h1 className="text-base sm:text-lg font-extrabold tracking-tight text-foreground truncate">
+                {user?.name ? `Hey, ${user.name.split(" ")[0]}!` : "Welcome to PU Vault"}
+              </h1>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase tracking-wide backdrop-blur-md">
+                  {course} • Sem {sem}
                 </span>
                 {specialization && (
-                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/50 dark:bg-white/[0.06] text-muted-foreground border border-white/60 dark:border-white/[0.08] backdrop-blur-md uppercase">
-                    Track: {specialization}
+                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-white/50 dark:bg-white/[0.06] text-muted-foreground border border-white/60 dark:border-white/[0.08] backdrop-blur-md uppercase">
+                    {specialization}
                   </span>
                 )}
               </div>
-              <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-                {user?.name ? `Welcome back, ${user.name.split(" ")[0]}!` : "Welcome to PU Vault"}
-              </h1>
-              <p className="text-sm text-muted-foreground max-w-xl leading-relaxed">
-                Your one-stop academic companion. Access lecture notes, lab manuals, assignments, and exam preparation resources.
-              </p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Button asChild size="default" className="rounded-2xl shadow-xs gap-2 font-semibold">
+            <div className="flex items-center gap-2 shrink-0">
+              <Button asChild size="sm" className="rounded-xl h-9 px-3.5 text-xs font-semibold shadow-xs gap-1.5">
                 <Link href="/code">
-                  <Code2 className="size-4" />
-                  Source Codes
+                  <Code2 className="size-3.5" />
+                  Codes
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                size="default"
-                className="rounded-2xl gap-2 font-medium border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md"
+                size="sm"
+                className="rounded-xl h-9 px-3.5 text-xs font-medium border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md gap-1.5"
               >
                 <Link href="/assignments">
-                  <BookOpen className="size-4" />
+                  <BookOpen className="size-3.5" />
                   Assignments
                 </Link>
               </Button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Quick Access Glass Tiles */}
-      <div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 md:gap-4">
-          {quickActions.map((action) => {
-            const Icon = action.icon;
-            return (
-              <Link
-                key={action.href}
-                href={action.href}
-                className="p-5 md:p-6 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_24px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group min-h-[140px]"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`p-2.5 rounded-2xl ${action.iconColor} border shadow-2xs backdrop-blur-md`}>
-                    <Icon className="size-5" />
-                  </div>
-                  <ArrowRight className="size-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-muted-foreground group-hover:text-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm text-foreground">
-                    {action.title}
-                  </h3>
-                  <p className="text-[11px] text-muted-foreground leading-tight mt-1 line-clamp-1">
-                    {action.desc}
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
         </div>
       </div>
 
