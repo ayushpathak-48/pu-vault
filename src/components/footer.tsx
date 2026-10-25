@@ -134,12 +134,12 @@ export default function Footer() {
             <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />
             <span>by</span>
             <a
-              href="https://ap-kk-apps.vercel.app/"
+              href="https://samyukt.pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+              className="font-bold text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
             >
-              Aayush & Karan
+              Samyukt
             </a>
           </div>
         </div>

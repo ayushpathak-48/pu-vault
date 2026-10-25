@@ -37,7 +37,7 @@ export const ToggleThemeColor = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      {COLOR_THEMES.map(({ colorKey, bgClass, name }) => {
+      {COLOR_THEMES.map(({ colorKey, hex, name }) => {
         const isSelected = activeColor === colorKey;
 
         return (
@@ -46,20 +46,17 @@ export const ToggleThemeColor = ({ className }: { className?: string }) => {
               type="button"
               onClick={() => handleSelectColor(colorKey)}
               aria-label={`Theme color ${name}`}
+              style={{ backgroundColor: hex }}
               className={cn(
-                "size-6 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 cursor-pointer",
-                bgClass,
+                "size-6 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 cursor-pointer shadow-xs",
                 isSelected
-                  ? "ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-zinc-950 scale-105 shadow-sm"
-                  : "hover:scale-105 opacity-80 hover:opacity-100",
+                  ? "ring-2 ring-foreground ring-offset-2 ring-offset-white dark:ring-offset-zinc-950 scale-110 shadow-sm"
+                  : "hover:scale-105 opacity-85 hover:opacity-100",
               )}
             >
               {isSelected && (
                 <Check
-                  className={cn(
-                    "size-3 text-white drop-shadow-xs",
-                    colorKey === "gray" && "text-black",
-                  )}
+                  className="size-3.5 text-white drop-shadow-sm"
                   strokeWidth={3}
                 />
               )}

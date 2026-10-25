@@ -12,6 +12,7 @@ export interface ThemeColorItem {
   name: string;
   colorLight: string;
   colorDark: string;
+  hex: string;
   bgClass: string;
   primaryForegroundLight?: string;
   primaryForegroundDark?: string;
@@ -23,6 +24,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Ocean Blue",
     colorLight: "217 91% 54%",
     colorDark: "215 95% 62%",
+    hex: "#3b82f6",
     bgClass: "bg-blue-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "220 40% 98%",
@@ -32,6 +34,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Cyan Teal",
     colorLight: "188 95% 40%",
     colorDark: "186 95% 52%",
+    hex: "#06b6d4",
     bgClass: "bg-cyan-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 100%",
@@ -41,6 +44,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Rose Pink",
     colorLight: "340 85% 54%",
     colorDark: "340 95% 66%",
+    hex: "#ec4899",
     bgClass: "bg-pink-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 100%",
@@ -50,6 +54,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Amber Gold",
     colorLight: "38 96% 48%",
     colorDark: "40 98% 58%",
+    hex: "#f59e0b",
     bgClass: "bg-amber-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 10%",
@@ -59,6 +64,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Emerald Green",
     colorLight: "152 76% 42%",
     colorDark: "152 82% 54%",
+    hex: "#10b981",
     bgClass: "bg-emerald-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 100%",
@@ -68,6 +74,7 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Electric Violet",
     colorLight: "265 85% 58%",
     colorDark: "265 95% 70%",
+    hex: "#8b5cf6",
     bgClass: "bg-purple-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 100%",
@@ -77,7 +84,8 @@ export const COLOR_THEMES: ThemeColorItem[] = [
     name: "Neutral Slate",
     colorLight: "220 14% 45%",
     colorDark: "220 14% 75%",
-    bgClass: "bg-zinc-400 dark:bg-zinc-500",
+    hex: "#71717a",
+    bgClass: "bg-zinc-500",
     primaryForegroundLight: "0 0% 100%",
     primaryForegroundDark: "0 0% 0%",
   },
