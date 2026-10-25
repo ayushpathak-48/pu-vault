@@ -95,9 +95,12 @@ export const HomePageAccordionList = ({
     const term = searchFilter.toLowerCase();
     const nameMatches = item?.subject_name?.toLowerCase().includes(term);
     const notesMatch = item?.notes_link?.some((n: any) =>
-      n?.title?.toLowerCase().includes(term),
+      (n?.title || n?.label || "").toLowerCase().includes(term),
     );
-    return nameMatches || notesMatch;
+    const papersMatch = item?.que_papers?.some((p: any) =>
+      (p?.label || p?.title || "").toLowerCase().includes(term),
+    );
+    return nameMatches || notesMatch || papersMatch;
   });
 
   return (
@@ -420,6 +423,7 @@ const MaterialAccordionCard = ({
               <div className="flex flex-col gap-2">
                 {material.que_papers.map((paper: any, idx: number) => {
                   const fileHref = paper.href || paper.link || "";
+                  const paperTitle = paper.label || paper.title || paper.name || "Exam Paper";
                   return (
                     <div
                       key={paper.id ?? `paper_${idx}`}
@@ -433,11 +437,11 @@ const MaterialAccordionCard = ({
                             href={fileHref}
                             className="text-sm font-medium hover:text-primary transition-colors truncate"
                           >
-                            {paper.title}
+                            {paperTitle}
                           </Link>
                         ) : (
                           <span className="text-sm font-medium text-foreground truncate">
-                            {paper.title}
+                            {paperTitle}
                           </span>
                         )}
                       </div>
