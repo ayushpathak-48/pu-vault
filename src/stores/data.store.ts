@@ -95,6 +95,10 @@ export const useDataStore = create<SpecializationState>()(
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.hydrated = true;
+          const savedColor = getSavedThemeColor();
+          if (savedColor && (!state.color || state.color === "blue")) {
+            state.color = savedColor;
+          }
         }
       },
     },

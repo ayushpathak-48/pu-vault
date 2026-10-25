@@ -78,12 +78,12 @@ export const Navbar = () => {
               />
             </div>
           </Link>
-          <div className="flex flex-col">
-            <h1 className="font-extrabold text-lg md:text-2xl text-foreground tracking-tight leading-tight">
+          <div className="flex flex-col min-w-0">
+            <h1 className="font-extrabold text-base sm:text-lg md:text-2xl text-foreground tracking-tight leading-tight truncate max-w-[140px] xs:max-w-[200px] sm:max-w-none">
               {activePageTitle}
             </h1>
             <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="uppercase font-bold text-primary px-1.5 py-0.2 rounded-md bg-primary/10 border border-primary/20">
+              <span className="uppercase font-bold text-primary px-1.5 py-0.2 rounded-md bg-primary/15 border border-primary/25">
                 {course}
               </span>
               <span>•</span>

@@ -31,14 +31,14 @@ export default function Home() {
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
       {/* Minimal Greeting Header Bar */}
       <div>
-        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] px-4 py-3.5 sm:px-6 sm:py-4 shadow-[0_8px_30px_rgb(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
+        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-r from-primary/[0.08] via-white/65 dark:via-zinc-900/40 to-transparent backdrop-blur-2xl backdrop-saturate-180 border border-primary/25 dark:border-primary/20 px-4 py-3.5 sm:px-6 sm:py-4 shadow-[0_8px_30px_rgb(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10">
             <div className="flex items-center gap-2.5 flex-wrap min-w-0">
               <h1 className="text-base sm:text-lg font-extrabold tracking-tight text-foreground truncate">
                 {user?.name ? `Hey, ${user.name.split(" ")[0]}!` : "Welcome to PU Vault"}
               </h1>
               <div className="flex items-center gap-1.5 flex-wrap">
-                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase tracking-wide backdrop-blur-md">
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/25 uppercase tracking-wide backdrop-blur-md">
                   {course} • Sem {sem}
                 </span>
                 {specialization && (

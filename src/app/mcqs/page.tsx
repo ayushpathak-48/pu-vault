@@ -30,7 +30,7 @@ const McqsPage = () => {
       <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/20 uppercase flex items-center gap-1 backdrop-blur-md">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase flex items-center gap-1 backdrop-blur-md">
               <ListTodo className="size-3" /> Online Mock Quiz
             </span>
             <span className="text-xs text-muted-foreground font-medium">
@@ -58,9 +58,9 @@ const McqsPage = () => {
               key={subject.key}
               href={`/mcqs/${subject.key}/${subject.units[0].key}`}
             >
-              <div className="p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-blue-500/50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-between gap-4 group">
+              <div className="p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-primary/50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-between gap-4 group">
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="size-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="size-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <Layers className="size-5" />
                   </div>
                   <div className="min-w-0 space-y-0.5">

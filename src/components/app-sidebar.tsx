@@ -85,7 +85,7 @@ export function AppSidebar() {
                   className={cn(
                     "h-7 rounded-lg text-xs font-bold transition-all flex items-center justify-center cursor-pointer border",
                     sem === s
-                      ? "bg-white dark:bg-zinc-800 text-primary shadow-xs border-white/80 dark:border-white/10"
+                      ? "bg-primary text-primary-foreground shadow-xs border-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground hover:bg-white/40 dark:hover:bg-white/[0.06]",
                   )}
                 >
@@ -126,9 +126,9 @@ export function AppSidebar() {
                       href={link.href}
                       key={link.id}
                       className={cn(
-                        "w-full flex items-center justify-between h-9 px-3 font-medium rounded-xl transition-colors duration-150 text-[13px] group border select-none",
+                        "w-full flex items-center justify-between h-9 px-3 font-medium rounded-xl transition-all duration-150 text-[13px] group border select-none relative",
                         activeLink
-                          ? "bg-primary/12 text-primary font-bold shadow-xs border-primary/20 backdrop-blur-md"
+                          ? "bg-primary/15 text-primary font-bold shadow-xs border-primary/25 backdrop-blur-md before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1 before:bg-primary before:rounded-r-full"
                           : "border-transparent text-muted-foreground hover:bg-black/[0.04] dark:hover:bg-white/[0.06] hover:text-foreground hover:border-black/[0.04] dark:hover:border-white/[0.06]",
                       )}
                       {...(isExternal

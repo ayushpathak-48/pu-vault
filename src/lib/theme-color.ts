@@ -1,61 +1,97 @@
-export type ThemeColorKey = "blue" | "cyan" | "pink" | "amber" | "gray";
+export type ThemeColorKey =
+  | "blue"
+  | "cyan"
+  | "pink"
+  | "amber"
+  | "emerald"
+  | "purple"
+  | "gray";
 
 export interface ThemeColorItem {
   colorKey: ThemeColorKey;
-  colorValue: string;
-  bgClass: string;
   name: string;
-  primaryForeground?: string;
+  colorLight: string;
+  colorDark: string;
+  bgClass: string;
+  primaryForegroundLight?: string;
+  primaryForegroundDark?: string;
 }
 
 export const COLOR_THEMES: ThemeColorItem[] = [
   {
     colorKey: "blue",
-    colorValue: "217.2 91.2% 59.8%",
-    bgClass: "bg-blue-500",
     name: "Ocean Blue",
-    primaryForeground: "0 0% 100%",
+    colorLight: "217 91% 54%",
+    colorDark: "215 95% 62%",
+    bgClass: "bg-blue-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "220 40% 98%",
   },
   {
     colorKey: "cyan",
-    colorValue: "191.6 91.4% 36.5%",
-    bgClass: "bg-cyan-500",
     name: "Cyan Teal",
-    primaryForeground: "0 0% 100%",
+    colorLight: "188 95% 40%",
+    colorDark: "186 95% 52%",
+    bgClass: "bg-cyan-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 100%",
   },
   {
     colorKey: "pink",
-    colorValue: "335.1 77.6% 42%",
-    bgClass: "bg-pink-500",
     name: "Rose Pink",
-    primaryForeground: "0 0% 100%",
+    colorLight: "340 85% 54%",
+    colorDark: "340 95% 66%",
+    bgClass: "bg-pink-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 100%",
   },
   {
     colorKey: "amber",
-    colorValue: "32.1 94.6% 43.7%",
-    bgClass: "bg-amber-500",
     name: "Amber Gold",
-    primaryForeground: "0 0% 100%",
+    colorLight: "38 96% 48%",
+    colorDark: "40 98% 58%",
+    bgClass: "bg-amber-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 10%",
+  },
+  {
+    colorKey: "emerald",
+    name: "Emerald Green",
+    colorLight: "152 76% 42%",
+    colorDark: "152 82% 54%",
+    bgClass: "bg-emerald-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 100%",
+  },
+  {
+    colorKey: "purple",
+    name: "Electric Violet",
+    colorLight: "265 85% 58%",
+    colorDark: "265 95% 70%",
+    bgClass: "bg-purple-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 100%",
   },
   {
     colorKey: "gray",
-    colorValue: "220 13% 91%",
-    bgClass: "bg-zinc-400 dark:bg-zinc-500",
     name: "Neutral Slate",
-    primaryForeground: "0 0% 0%",
+    colorLight: "220 14% 45%",
+    colorDark: "220 14% 75%",
+    bgClass: "bg-zinc-400 dark:bg-zinc-500",
+    primaryForegroundLight: "0 0% 100%",
+    primaryForegroundDark: "0 0% 0%",
   },
 ];
 
 export const THEME_COLOR_STORAGE_KEY = "theme-color";
 
 /**
- * Retrieve the saved theme color from cookie or localStorage synchronously.
+ * Retrieve saved theme color synchronously.
  */
 export function getSavedThemeColor(): string {
   if (typeof window === "undefined") return "blue";
 
   try {
-    // 1. Try cookie first (synced across browser tabs & sessions)
     const match = document.cookie.match(new RegExp("(^| )theme-color=([^;]+)"));
     if (match && match[2]) {
       const decoded = decodeURIComponent(match[2]).trim();
@@ -64,13 +100,11 @@ export function getSavedThemeColor(): string {
       }
     }
 
-    // 2. Try explicit localStorage key
     const local = localStorage.getItem(THEME_COLOR_STORAGE_KEY);
     if (local && COLOR_THEMES.some((t) => t.colorKey === local)) {
       return local;
     }
 
-    // 3. Try Zustand persisted client-data
     const clientData = localStorage.getItem("client-data");
     if (clientData) {
       const parsed = JSON.parse(clientData);
@@ -87,7 +121,7 @@ export function getSavedThemeColor(): string {
 }
 
 /**
- * Applies the CSS variables to document.documentElement and persists to localStorage + cookie.
+ * Applies the CSS variables to document.documentElement and persists to storage.
  */
 export function applyThemeColor(colorKey?: string | null) {
   if (typeof window === "undefined") return;
@@ -100,13 +134,17 @@ export function applyThemeColor(colorKey?: string | null) {
   const current =
     COLOR_THEMES.find((t) => t.colorKey === resolvedKey) || COLOR_THEMES[0];
   const root = document.documentElement;
+  const isDark = root.classList.contains("dark");
 
-  root.style.setProperty("--primary", current.colorValue);
-  root.style.setProperty("--ring", current.colorValue);
-  root.style.setProperty("--sidebar-ring", current.colorValue);
-  root.style.setProperty("--sidebar-primary", current.colorValue);
+  const val = isDark ? current.colorDark : current.colorLight;
+  const fg = isDark
+    ? (current.primaryForegroundDark || "0 0% 100%")
+    : (current.primaryForegroundLight || "0 0% 100%");
 
-  const fg = current.primaryForeground || "0 0% 100%";
+  root.style.setProperty("--primary", val);
+  root.style.setProperty("--ring", val);
+  root.style.setProperty("--sidebar-ring", val);
+  root.style.setProperty("--sidebar-primary", val);
   root.style.setProperty("--primary-foreground", fg);
   root.style.setProperty("--sidebar-primary-foreground", fg);
 

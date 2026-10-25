@@ -49,7 +49,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6721729055053884" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var c=null,m=document.cookie.match(new RegExp("(^| )theme-color=([^;]+)"));if(m&&m[2])c=decodeURIComponent(m[2]);if(!c)c=localStorage.getItem("theme-color");if(!c){var d=localStorage.getItem("client-data");if(d){var p=JSON.parse(d);if(p&&p.state&&p.state.color)c=p.state.color;}}var t={blue:"217.2 91.2% 59.8%",cyan:"191.6 91.4% 36.5%",pink:"335.1 77.6% 42%",amber:"32.1 94.6% 43.7%",gray:"220 13% 91%"};if(c&&t[c]){var v=t[c],r=document.documentElement;r.style.setProperty("--primary",v);r.style.setProperty("--ring",v);r.style.setProperty("--sidebar-ring",v);r.style.setProperty("--sidebar-primary",v);if(c==="gray"){r.style.setProperty("--primary-foreground","0 0% 0%");r.style.setProperty("--sidebar-primary-foreground","0 0% 0%");}else{r.style.setProperty("--primary-foreground","0 0% 100%");r.style.setProperty("--sidebar-primary-foreground","0 0% 100%");}}}catch(e){}})();`,
+            __html: `(function(){try{var c=null,m=document.cookie.match(new RegExp("(^| )theme-color=([^;]+)"));if(m&&m[2])c=decodeURIComponent(m[2]);if(!c)c=localStorage.getItem("theme-color");if(!c){var d=localStorage.getItem("client-data");if(d){var p=JSON.parse(d);if(p&&p.state&&p.state.color)c=p.state.color;}}var t={blue:{l:"217 91% 54%",d:"215 95% 62%",fgl:"0 0% 100%",fgd:"220 40% 98%"},cyan:{l:"188 95% 40%",d:"186 95% 52%",fgl:"0 0% 100%",fgd:"0 0% 100%"},pink:{l:"340 85% 54%",d:"340 95% 66%",fgl:"0 0% 100%",fgd:"0 0% 100%"},amber:{l:"38 96% 48%",d:"40 98% 58%",fgl:"0 0% 100%",fgd:"0 0% 10%"},emerald:{l:"152 76% 42%",d:"152 82% 54%",fgl:"0 0% 100%",fgd:"0 0% 100%"},purple:{l:"265 85% 58%",d:"265 95% 70%",fgl:"0 0% 100%",fgd:"0 0% 100%"},gray:{l:"220 14% 45%",d:"220 14% 75%",fgl:"0 0% 100%",fgd:"0 0% 0%"}};if(c&&t[c]){var r=document.documentElement,th=localStorage.getItem("theme"),isD=r.classList.contains("dark")||(th==="dark")||(th!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches),v=isD?t[c].d:t[c].l,fg=isD?t[c].fgd:t[c].fgl;r.style.setProperty("--primary",v);r.style.setProperty("--ring",v);r.style.setProperty("--sidebar-ring",v);r.style.setProperty("--sidebar-primary",v);r.style.setProperty("--primary-foreground",fg);r.style.setProperty("--sidebar-primary-foreground",fg);}}catch(e){}})();`,
           }}
         />
       </head>
@@ -69,8 +69,11 @@ export default function RootLayout({
                 aria-hidden="true"
                 className="fixed inset-0 pointer-events-none -z-10 select-none overflow-hidden"
               >
-                {/* Soft top ambient studio lighting falloff */}
-                <div className="absolute top-0 inset-x-0 h-[380px] bg-gradient-to-b from-black/[0.02] to-transparent dark:from-white/[0.03] dark:to-transparent" />
+                {/* Luminous dynamic ambient theme aura bloom */}
+                <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] sm:w-[950px] h-[340px] bg-primary/[0.14] dark:bg-primary/[0.22] blur-[120px] rounded-full pointer-events-none transition-colors duration-500" />
+
+                {/* Soft top ambient studio lighting falloff with live accent tint */}
+                <div className="absolute top-0 inset-x-0 h-[450px] bg-gradient-to-b from-primary/[0.10] dark:from-primary/[0.15] via-primary/[0.03] to-transparent pointer-events-none transition-colors duration-500" />
 
                 {/* Precision architectural micro-dot grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_60%,transparent_100%)] opacity-35 dark:opacity-45" />

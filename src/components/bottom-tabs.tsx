@@ -71,7 +71,7 @@ export const BottomTabs = () => {
                 className={cn(
                   "p-1.5 rounded-xl transition-all duration-200",
                   isActive &&
-                    "bg-primary/15 text-primary scale-105 border border-primary/20 backdrop-blur-md shadow-2xs",
+                    "bg-primary/20 text-primary scale-105 border border-primary/30 backdrop-blur-md shadow-xs",
                 )}
               >
                 <Icon
@@ -89,6 +89,9 @@ export const BottomTabs = () => {
               >
                 {tab.title}
               </span>
+              {isActive && (
+                <div className="size-1 rounded-full bg-primary mt-0.5 animate-in fade-in" />
+              )}
             </Link>
           );
         })}

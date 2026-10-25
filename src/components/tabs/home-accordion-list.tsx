@@ -152,7 +152,7 @@ const MaterialAccordionCard = ({
 
   return (
     <AccordionItem
-      className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:shadow-lg"
+      className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-lg"
       value={material.key}
     >
       <AccordionTrigger className="px-5 py-4 hover:no-underline group">
@@ -191,14 +191,14 @@ const MaterialAccordionCard = ({
           <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto p-1 bg-white/40 dark:bg-black/30 backdrop-blur-md border border-white/50 dark:border-white/[0.08] rounded-xl gap-1 mb-4">
             <TabsTrigger
               value="notes"
-              className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
+              className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
             >
               Notes ({notesCount})
             </TabsTrigger>
             {journalCount > 0 && (
               <TabsTrigger
                 value="practicals"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Journals ({journalCount})
               </TabsTrigger>
@@ -206,7 +206,7 @@ const MaterialAccordionCard = ({
             {hasPracticalCodes && (
               <TabsTrigger
                 value="codes"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Practical Codes
               </TabsTrigger>
@@ -214,7 +214,7 @@ const MaterialAccordionCard = ({
             {quePapersCount > 0 && (
               <TabsTrigger
                 value="que_papers"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Exam Papers ({quePapersCount})
               </TabsTrigger>

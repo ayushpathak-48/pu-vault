@@ -33,7 +33,7 @@ export const ToggleThemeColor = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "w-full flex items-center justify-between px-2.5 py-2 rounded-2xl bg-white/50 dark:bg-zinc-900/60 border border-white/60 dark:border-white/[0.08] backdrop-blur-md",
+        "w-full grid grid-cols-7 place-items-center py-2 px-1 rounded-2xl bg-white/50 dark:bg-zinc-900/60 border border-white/60 dark:border-white/[0.08] backdrop-blur-md",
         className,
       )}
     >
@@ -50,14 +50,14 @@ export const ToggleThemeColor = ({ className }: { className?: string }) => {
                 "size-6 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 cursor-pointer",
                 bgClass,
                 isSelected
-                  ? "ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-zinc-950 scale-110 shadow-xs"
+                  ? "ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-zinc-950 scale-105 shadow-sm"
                   : "hover:scale-105 opacity-80 hover:opacity-100",
               )}
             >
               {isSelected && (
                 <Check
                   className={cn(
-                    "size-3 text-white",
+                    "size-3 text-white drop-shadow-xs",
                     colorKey === "gray" && "text-black",
                   )}
                   strokeWidth={3}

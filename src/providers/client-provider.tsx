@@ -39,6 +39,22 @@ export default function ClientProvider({
     }
   }, [color]);
 
+  // 3. Listen to light/dark mode changes and re-tune accent color
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.attributeName === "class") {
+          applyThemeColor(useDataStore.getState().color);
+        }
+      }
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <SidebarProvider>
       <AppSidebar />
