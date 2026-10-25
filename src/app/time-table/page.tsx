@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState, useMemo } from "react";
@@ -9,16 +10,9 @@ import {
   Clock,
   MapPin,
   User,
-  GraduationCap,
-  Sparkles,
-  Layers,
-  ChevronRight,
-  BookOpen,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Select,
   SelectContent,
@@ -66,7 +60,6 @@ export default function TimeTablePage() {
   }, [rawTimetable, selectedDivKey]);
 
   // Extract lectures for the selected day
-  // Row 0 has headers: [Lecture No, Timing, Monday(2), Tuesday(3), Wednesday(4), Thursday(5), Friday(6), Saturday(7)]
   const dailyLectures = useMemo(() => {
     if (!currentDivisionData?.data || currentDivisionData.data.length < 2) {
       return [];
@@ -116,7 +109,7 @@ export default function TimeTablePage() {
   if (!rawTimetable || rawTimetable.length === 0) {
     return (
       <div className="p-6 md:p-10 max-w-4xl mx-auto text-center space-y-4">
-        <div className="size-16 rounded-3xl bg-muted/50 border flex items-center justify-center mx-auto text-muted-foreground">
+        <div className="size-16 rounded-3xl bg-white/50 dark:bg-white/[0.06] border border-white/60 dark:border-white/[0.1] backdrop-blur-xl flex items-center justify-center mx-auto text-muted-foreground shadow-xs">
           <CalendarDays className="size-8" />
         </div>
         <h2 className="text-xl font-bold">Timetable Not Available</h2>
@@ -130,17 +123,17 @@ export default function TimeTablePage() {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 md:px-8 py-6 space-y-6">
       {/* Header Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 shadow-xs">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 md:p-6 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/20 text-primary uppercase">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase tracking-wide backdrop-blur-md">
               Semester {sem} • {course.toUpperCase()}
             </span>
             <span className="text-xs font-medium text-muted-foreground flex items-center gap-1">
               <Clock className="size-3" /> Live Schedule
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-foreground">
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
             Class Time Table
           </h1>
           <p className="text-xs text-muted-foreground">
@@ -158,7 +151,7 @@ export default function TimeTablePage() {
                 setStoreDivision(val);
               }}
             >
-              <SelectTrigger className="rounded-xl h-10 bg-background border-border/70 font-semibold text-xs">
+              <SelectTrigger className="rounded-xl h-10 bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border-white/60 dark:border-white/[0.1] font-semibold text-xs">
                 <SelectValue placeholder="Select Division" />
               </SelectTrigger>
               <SelectContent>
@@ -171,13 +164,13 @@ export default function TimeTablePage() {
             </Select>
           </div>
 
-          <div className="flex items-center p-1 rounded-xl bg-muted/60 border border-border/50">
+          <div className="flex items-center p-1 rounded-xl bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl border border-white/50 dark:border-white/[0.08]">
             <button
               onClick={() => setViewMode("day")}
               className={cn(
                 "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all",
                 viewMode === "day"
-                  ? "bg-background text-primary shadow-xs"
+                  ? "bg-white/80 dark:bg-white/15 text-primary font-bold shadow-xs"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
@@ -188,7 +181,7 @@ export default function TimeTablePage() {
               className={cn(
                 "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all",
                 viewMode === "week"
-                  ? "bg-background text-primary shadow-xs"
+                  ? "bg-white/80 dark:bg-white/15 text-primary font-bold shadow-xs"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
@@ -211,10 +204,10 @@ export default function TimeTablePage() {
                   key={day}
                   onClick={() => setSelectedDayIndex(idx)}
                   className={cn(
-                    "flex flex-col items-center justify-center min-w-[100px] flex-1 py-2.5 px-3 rounded-2xl border transition-all text-center",
+                    "flex flex-col items-center justify-center min-w-[100px] flex-1 py-2.5 px-3 rounded-2xl border backdrop-blur-xl transition-all text-center",
                     isSelected
-                      ? "bg-primary text-primary-foreground border-primary shadow-md font-bold scale-[1.02]"
-                      : "bg-card border-border/60 hover:border-primary/40 text-muted-foreground hover:text-foreground",
+                      ? "bg-primary text-primary-foreground border-primary/40 shadow-md font-bold scale-[1.02]"
+                      : "bg-white/50 dark:bg-zinc-900/40 border-white/60 dark:border-white/[0.08] hover:border-primary/40 text-muted-foreground hover:text-foreground",
                   )}
                 >
                   <span className="text-xs uppercase tracking-wider">
@@ -246,32 +239,32 @@ export default function TimeTablePage() {
                 {weekdays[selectedDayIndex]} Schedule • {currentDivisionData?.title || "Division"}
               </h2>
               <span className="text-xs text-muted-foreground font-medium">
-                {dailyLectures.filter((l) => !l.isEmpty).length} Active Classes
+                {dailyLectures.filter((l: any) => !l.isEmpty).length} Active Classes
               </span>
             </div>
 
             {dailyLectures.length === 0 ? (
-              <div className="p-8 text-center rounded-2xl border border-dashed text-muted-foreground">
+              <div className="p-8 text-center rounded-2xl border border-dashed border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md text-muted-foreground">
                 No classes scheduled for this day.
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {dailyLectures.map((item, idx) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                {dailyLectures.map((item: any, idx: number) => (
                   <div
                     key={`${item.slot}_${idx}`}
                     className={cn(
-                      "p-4 rounded-2xl border transition-all flex flex-col justify-between relative overflow-hidden",
+                      "p-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden",
                       item.isEmpty
-                        ? "bg-muted/15 border-dashed border-border/50 opacity-60"
+                        ? "bg-white/30 dark:bg-white/[0.02] border-dashed border-white/40 dark:border-white/[0.06] opacity-60"
                         : item.isLab
-                        ? "bg-card border-purple-500/30 hover:border-purple-500 shadow-xs"
-                        : "bg-card border-border/70 hover:border-primary/50 shadow-xs hover:shadow-md",
+                        ? "bg-purple-500/10 dark:bg-purple-950/20 border-purple-500/30 hover:border-purple-500 shadow-xs"
+                        : "bg-white/65 dark:bg-zinc-900/40 border-white/60 dark:border-white/[0.08] hover:border-primary/50 shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-md",
                     )}
                   >
                     {/* Top slot pill */}
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-1.5">
-                        <span className="size-6 rounded-lg bg-primary/10 text-primary font-bold text-xs flex items-center justify-center">
+                        <span className="size-6 rounded-lg bg-primary/10 text-primary border border-primary/20 backdrop-blur-md font-bold text-xs flex items-center justify-center">
                           {item.slot}
                         </span>
                         <span className="text-xs font-semibold text-muted-foreground flex items-center gap-1">
@@ -280,7 +273,7 @@ export default function TimeTablePage() {
                         </span>
                       </div>
                       {item.isLab ? (
-                        <Badge className="bg-purple-500/15 text-purple-600 dark:text-purple-400 hover:bg-purple-500/20 text-[10px] font-bold border-none">
+                        <Badge className="bg-purple-500/15 text-purple-600 dark:text-purple-400 hover:bg-purple-500/20 text-[10px] font-bold border-none backdrop-blur-md">
                           LAB PRACTICAL
                         </Badge>
                       ) : !item.isEmpty ? (
@@ -316,7 +309,7 @@ export default function TimeTablePage() {
                     </div>
 
                     {/* Location Badge (Room or Lab) */}
-                    <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-xs">
+                    <div className="mt-3 pt-2.5 border-t border-white/40 dark:border-white/[0.06] flex items-center justify-between text-xs">
                       {item.classroom && (
                         <span className="flex items-center gap-1 font-semibold text-foreground">
                           <MapPin className="size-3 text-red-500" />
@@ -355,10 +348,10 @@ export default function TimeTablePage() {
             </span>
           </div>
 
-          <div className="w-full overflow-x-auto rounded-2xl border border-border/70 shadow-sm bg-card">
+          <div className="w-full overflow-x-auto rounded-3xl border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl">
             <table className="w-full text-xs text-left border-collapse min-w-[750px]">
               <thead>
-                <tr className="bg-muted/50 border-b border-border/60">
+                <tr className="bg-white/40 dark:bg-white/[0.04] border-b border-white/40 dark:border-white/[0.08]">
                   <th className="p-3 font-bold text-center w-14">#</th>
                   <th className="p-3 font-bold text-left w-32">Time</th>
                   {weekdays.map((day, dIdx) => (
@@ -374,13 +367,13 @@ export default function TimeTablePage() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border/40">
+              <tbody className="divide-y divide-white/30 dark:divide-white/[0.04]">
                 {currentDivisionData?.data?.slice(1).map((row: any[], rIdx: number) => (
                   <tr
                     key={rIdx}
-                    className="hover:bg-muted/30 transition-colors"
+                    className="hover:bg-white/40 dark:hover:bg-white/[0.04] transition-colors"
                   >
-                    <td className="p-3 font-bold text-center text-muted-foreground bg-muted/20">
+                    <td className="p-3 font-bold text-center text-muted-foreground bg-white/20 dark:bg-white/[0.02]">
                       {row[0]?.label || rIdx + 1}
                     </td>
                     <td className="p-3 font-semibold text-muted-foreground whitespace-nowrap">
@@ -403,7 +396,7 @@ export default function TimeTablePage() {
                         <td
                           key={dayIdx}
                           className={cn(
-                            "p-2.5 text-center align-top border-l border-border/40",
+                            "p-2.5 text-center align-top border-l border-white/30 dark:border-white/[0.04]",
                             dayIdx === currentDayIndex && "bg-primary/5",
                             isLab && "bg-purple-500/5",
                           )}
@@ -426,7 +419,7 @@ export default function TimeTablePage() {
                                 </span>
                               )}
                               {room && (
-                                <span className="inline-block text-[9px] font-semibold px-1 py-0.2 rounded bg-muted text-muted-foreground">
+                                <span className="inline-block text-[9px] font-semibold px-1 py-0.2 rounded bg-white/50 dark:bg-white/[0.06] text-muted-foreground border border-white/40 dark:border-white/[0.08]">
                                   {room}
                                 </span>
                               )}

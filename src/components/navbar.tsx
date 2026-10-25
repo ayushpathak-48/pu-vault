@@ -74,33 +74,35 @@ export const Navbar = () => {
   }, [courseParam, divisionParam, setCourse, setDivision]);
 
   return (
-    <header className="fixed top-0 z-[40] md:w-[calc(100%-16rem)] ml-auto w-full h-16 lg:h-20 bg-background/85 backdrop-blur-md border-b border-border/50 px-4 md:px-8 transition-colors">
+    <header className="fixed top-0 z-[40] md:w-[calc(100%-16rem)] ml-auto w-full h-16 lg:h-20 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 md:px-8 transition-colors">
       <div className="flex items-center justify-between h-full w-full gap-4">
         {/* Left: Mobile branding & page title */}
         <div className="flex items-center gap-3">
           <Link href={"/"} className="md:hidden flex items-center gap-2">
-            <Image
-              src={"/favicon.png"}
-              height={32}
-              width={32}
-              alt="Logo"
-              className="size-8 rounded-lg shadow-sm"
-            />
+            <div className="size-8 rounded-xl overflow-hidden shadow-xs border border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] p-0.5 flex items-center justify-center">
+              <Image
+                src={"/favicon.png"}
+                height={28}
+                width={28}
+                alt="Logo"
+                className="size-7 rounded-lg"
+              />
+            </div>
           </Link>
           <div className="flex flex-col">
-            <h1 className="font-bold text-lg md:text-2xl text-foreground tracking-tight leading-tight">
+            <h1 className="font-extrabold text-lg md:text-2xl text-foreground tracking-tight leading-tight">
               {activePageTitle}
             </h1>
             <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="uppercase font-semibold text-primary">
+              <span className="uppercase font-bold text-primary px-1.5 py-0.2 rounded-md bg-primary/10 border border-primary/20">
                 {course}
               </span>
               <span>•</span>
-              <span>Semester {sem}</span>
+              <span className="font-medium">Semester {sem}</span>
               {division && (
                 <>
                   <span>•</span>
-                  <span>Div {division.replace("div_", "").toUpperCase()}</span>
+                  <span className="font-medium">Div {division.replace("div_", "").toUpperCase()}</span>
                 </>
               )}
             </div>
@@ -119,7 +121,11 @@ export const Navbar = () => {
             <SearchModal
               hideShortcut
               triggerContent={
-                <Button variant="ghost" size="icon" className="size-9 rounded-xl">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
+                >
                   <Search className="size-4 text-muted-foreground" />
                 </Button>
               }
@@ -129,9 +135,9 @@ export const Navbar = () => {
           {/* Settings shortcut button */}
           <Button
             asChild
-            variant="ghost"
+            variant="outline"
             size="icon"
-            className="size-9 rounded-xl text-muted-foreground hover:text-foreground"
+            className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl text-muted-foreground hover:text-foreground"
           >
             <Link href="/settings" title="Settings">
               <Settings className="size-4" />
@@ -143,7 +149,7 @@ export const Navbar = () => {
             <Button
               variant="outline"
               size="icon"
-              className="size-9 rounded-xl border-border/60"
+              className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
               onClick={toggleSidebar}
               aria-label="Toggle navigation"
             >

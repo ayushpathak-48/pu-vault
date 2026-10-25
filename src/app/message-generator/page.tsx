@@ -14,7 +14,6 @@ import {
   MailIcon,
   Copy,
   Check,
-  Send,
   MessageSquare,
   Sparkles,
   Info,
@@ -23,7 +22,6 @@ import { Calendar } from "@/components/ui/calendar";
 import { MessageGeneratorSchema } from "@/lib/schema/message-generator-schema";
 import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Form,
   FormControl,
@@ -111,7 +109,6 @@ export default function MessageGeneratorPage() {
   };
 
   useEffect(() => {
-    // Generate initial sample preview
     const values = form.getValues();
     if (values.name && values.enrollment) {
       generateMessage(values);
@@ -120,14 +117,14 @@ export default function MessageGeneratorPage() {
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 md:px-8 py-6 space-y-6">
-      {/* Header Banner */}
-      <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 via-indigo-500/5 to-transparent border border-blue-500/20 shadow-xs space-y-1">
+      {/* Header Glass Banner */}
+      <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-1.5">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 uppercase flex items-center gap-1">
+          <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/20 uppercase flex items-center gap-1 backdrop-blur-md">
             <MailIcon className="size-3" /> Communication Tool
           </span>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+        <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
           Attendance Discrepancy Message Generator
         </h1>
         <p className="text-xs md:text-sm text-muted-foreground max-w-xl leading-relaxed">
@@ -137,7 +134,7 @@ export default function MessageGeneratorPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Form Column */}
-        <div className="lg:col-span-7 p-6 rounded-3xl bg-card border border-border/70 shadow-md">
+        <div className="lg:col-span-7 p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)]">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -254,7 +251,7 @@ export default function MessageGeneratorPage() {
                             <Button
                               variant="outline"
                               className={cn(
-                                "w-full rounded-xl h-10 pl-3 text-left font-normal text-xs border-border/70",
+                                "w-full rounded-xl h-10 pl-3 text-left font-normal text-xs border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-zinc-900/40",
                                 !field.value && "text-muted-foreground",
                               )}
                             >
@@ -288,7 +285,7 @@ export default function MessageGeneratorPage() {
                   control={form.control}
                   name="is_present"
                   render={({ field }) => (
-                    <FormItem className="flex items-center justify-between rounded-xl border border-border/70 p-3 h-10 mt-auto">
+                    <FormItem className="flex items-center justify-between rounded-xl border border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-white/[0.04] p-3 h-10 mt-auto backdrop-blur-md">
                       <FormLabel className="text-xs font-medium cursor-pointer">
                         I was physically present
                       </FormLabel>
@@ -323,7 +320,7 @@ export default function MessageGeneratorPage() {
                 )}
               />
 
-              <Button type="submit" className="w-full rounded-xl font-bold h-11 gap-2 shadow-sm">
+              <Button type="submit" className="w-full rounded-xl font-bold h-11 gap-2 shadow-xs bg-primary text-primary-foreground hover:bg-primary/90">
                 <Sparkles className="size-4" /> Generate Formatted Message
               </Button>
             </form>
@@ -332,8 +329,8 @@ export default function MessageGeneratorPage() {
 
         {/* Live Preview Column */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="p-6 rounded-3xl bg-card border border-border/70 shadow-md space-y-4">
-            <div className="flex items-center justify-between border-b border-border/40 pb-3">
+          <div className="p-6 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] space-y-4">
+            <div className="flex items-center justify-between border-b border-white/40 dark:border-white/[0.06] pb-3">
               <div className="flex items-center gap-2">
                 <MessageSquare className="size-4 text-primary" />
                 <h3 className="font-bold text-sm text-foreground">Generated Message Preview</h3>
@@ -365,13 +362,13 @@ export default function MessageGeneratorPage() {
                 <Textarea
                   readOnly
                   value={message}
-                  className="min-h-[260px] font-mono text-xs rounded-2xl bg-muted/30 border-border/60 leading-relaxed resize-none p-4"
+                  className="min-h-[260px] font-mono text-xs rounded-2xl bg-white/40 dark:bg-black/30 border border-white/50 dark:border-white/[0.08] backdrop-blur-md leading-relaxed resize-none p-4"
                 />
 
                 <div className="flex items-center gap-2">
                   <Button
                     onClick={handleCopy}
-                    className="flex-1 rounded-xl h-10 font-semibold text-xs gap-1.5 shadow-sm"
+                    className="flex-1 rounded-xl h-10 font-semibold text-xs gap-1.5 shadow-xs bg-primary text-primary-foreground hover:bg-primary/90"
                   >
                     <Copy className="size-3.5" /> Copy to Clipboard
                   </Button>
@@ -397,7 +394,7 @@ export default function MessageGeneratorPage() {
                 </div>
               </div>
             ) : (
-              <div className="p-10 text-center rounded-2xl border border-dashed text-muted-foreground space-y-2">
+              <div className="p-10 text-center rounded-3xl border border-dashed border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md text-muted-foreground space-y-2">
                 <Info className="size-8 mx-auto text-muted-foreground" />
                 <p className="text-xs">
                   Fill in your lecture details and click <strong>&quot;Generate Formatted Message&quot;</strong> to see the preview here.

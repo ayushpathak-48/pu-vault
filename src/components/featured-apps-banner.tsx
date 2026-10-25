@@ -3,15 +3,14 @@
 import { useApps } from "@/hooks/use-apps";
 import { resolveAppIcon } from "@/lib/services/apps.service";
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowUpRight, Sparkles, Smartphone } from "lucide-react";
+import { ArrowUpRight, Smartphone } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 export function FeaturedAppsBanner() {
-  const { apps, loading } = useApps();
+  const { apps } = useApps();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -43,7 +42,7 @@ export function FeaturedAppsBanner() {
 
   return (
     <div
-      className="w-full relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary/10 via-card to-primary/5 border border-primary/20 shadow-xs group h-[74px]"
+      className="w-full relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] group h-[76px]"
       ref={emblaRef}
     >
       <div className="flex h-full touch-pan-y">
@@ -53,16 +52,16 @@ export function FeaturedAppsBanner() {
 
           return (
             <div key={app.id} className="min-w-0 flex-[0_0_100%] h-full relative">
-              <div className="absolute inset-0 flex items-center justify-between px-3.5 md:px-5 z-10">
-                <div className="flex items-center gap-3 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-between px-4 md:px-6 z-10">
+                <div className="flex items-center gap-3.5 overflow-hidden">
                   {/* Icon */}
-                  <div className="relative size-11 shrink-0 rounded-xl overflow-hidden border border-border/80 bg-background shadow-xs flex items-center justify-center">
+                  <div className="relative size-12 shrink-0 rounded-2xl overflow-hidden border border-white/60 dark:border-white/[0.1] bg-white/70 dark:bg-black/40 backdrop-blur-md shadow-2xs flex items-center justify-center p-0.5">
                     {iconSrc ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={iconSrc}
                         alt={`${app.appName} logo`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-xl"
                         loading="lazy"
                       />
                     ) : (
@@ -73,15 +72,15 @@ export function FeaturedAppsBanner() {
                   {/* Info */}
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm md:text-base font-bold text-foreground truncate">
+                      <h3 className="text-sm md:text-base font-extrabold text-foreground tracking-tight truncate">
                         {app.appName}
                       </h3>
                       <Badge
                         variant="secondary"
-                        className={`text-[10px] px-1.5 py-0 rounded font-semibold ${
+                        className={`text-[10px] px-2 py-0.2 rounded-full font-bold backdrop-blur-md ${
                           isLive
-                            ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/20"
-                            : "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/20"
+                            ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25"
+                            : "bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/25"
                         }`}
                       >
                         {isLive ? "Play Store" : "Coming Soon"}
@@ -97,7 +96,7 @@ export function FeaturedAppsBanner() {
                 <Button
                   asChild
                   size="sm"
-                  className="shrink-0 ml-3 rounded-xl h-8 text-xs px-3.5 font-semibold gap-1 bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="shrink-0 ml-3 rounded-xl h-8.5 text-xs px-4 font-bold gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs"
                 >
                   <Link
                     href={app.playStoreUrl || "/featured-apps"}

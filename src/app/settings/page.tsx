@@ -16,9 +16,7 @@ import {
   User,
   GraduationCap,
   Palette,
-  Smartphone,
   Save,
-  CheckCircle2,
   FileText,
   Shield,
   Info,
@@ -52,10 +50,10 @@ export default function SettingsPage() {
       {/* Header */}
       <div className="space-y-1">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-xl bg-primary/10 text-primary">
+          <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
             <Settings className="size-5" />
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
             Settings & Preferences
           </h1>
         </div>
@@ -65,9 +63,9 @@ export default function SettingsPage() {
       </div>
 
       <div className="space-y-6">
-        {/* Student Profile Card */}
-        <div className="p-6 rounded-3xl bg-card border border-border/70 shadow-sm space-y-4">
-          <div className="flex items-center gap-2.5 pb-2 border-b border-border/40">
+        {/* Student Profile Glass Card */}
+        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
+          <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <User className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">Student Identity</h2>
           </div>
@@ -101,15 +99,15 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <Button type="submit" size="sm" className="rounded-xl font-semibold gap-1.5">
+            <Button type="submit" size="sm" className="rounded-xl font-semibold gap-1.5 shadow-xs">
               <Save className="size-3.5" /> Save Profile
             </Button>
           </form>
         </div>
 
-        {/* Academic Configuration */}
-        <div className="p-6 rounded-3xl bg-card border border-border/70 shadow-sm space-y-4">
-          <div className="flex items-center gap-2.5 pb-2 border-b border-border/40">
+        {/* Academic Configuration Glass Card */}
+        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
+          <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <GraduationCap className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">
               Academic Curriculum
@@ -128,18 +126,18 @@ export default function SettingsPage() {
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold">Batch & Division</Label>
+              <Label className="text-xs font-semibold">Batch &amp; Division</Label>
               <SelectDivision />
             </div>
           </div>
         </div>
 
-        {/* Appearance & Themes */}
-        <div className="p-6 rounded-3xl bg-card border border-border/70 shadow-sm space-y-5">
-          <div className="flex items-center gap-2.5 pb-2 border-b border-border/40">
+        {/* Appearance & Themes Glass Card */}
+        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5">
+          <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <Palette className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">
-              Theme & Interface
+              Theme &amp; Interface
             </h2>
           </div>
 
@@ -159,7 +157,7 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          <div className="pt-3 border-t border-border/40 flex items-center justify-between">
+          <div className="pt-4 border-t border-white/40 dark:border-white/[0.06] flex items-center justify-between">
             <div className="space-y-0.5">
               <Label htmlFor="bottomTabSwitch" className="text-sm font-semibold cursor-pointer">
                 Mobile Bottom Navigation Bar
@@ -177,7 +175,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Legal & App Links */}
-        <div className="p-6 rounded-3xl bg-muted/20 border border-border/50 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="p-5 rounded-2xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl border border-white/50 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
           <div className="flex items-center gap-4 flex-wrap">
             <Link href="/about" className="hover:text-foreground transition-colors flex items-center gap-1">
               <Info className="size-3" /> About PU Vault

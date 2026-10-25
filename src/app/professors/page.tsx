@@ -51,22 +51,22 @@ export default function ProfessorsPage() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 md:px-8 py-6 space-y-6">
-      {/* Header Banner */}
-      <div className="p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="space-y-1">
+      {/* Header Glass Banner */}
+      <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary uppercase flex items-center gap-1">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase flex items-center gap-1 backdrop-blur-md">
               <Users className="size-3" /> Faculty Directory
             </span>
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs text-muted-foreground font-medium">
               {professorDetails.length} Faculty Members
             </span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-            Professors & Faculty Contacts
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+            Professors &amp; Faculty Contacts
           </h1>
           <p className="text-xs md:text-sm text-muted-foreground max-w-lg leading-relaxed">
-            Find official email addresses and phone numbers of Department of MCA & MScIT professors, coordinators, and guides.
+            Find official email addresses and phone numbers of Department of MCA &amp; MScIT professors, coordinators, and guides.
           </p>
         </div>
 
@@ -77,14 +77,14 @@ export default function ProfessorsPage() {
             placeholder="Search by faculty name or email..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            className="pl-10 h-10 rounded-xl bg-background border-border/70 text-xs shadow-xs"
+            className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
           />
         </div>
       </div>
 
       {/* Directory Grid */}
       {filtered.length === 0 ? (
-        <div className="p-12 text-center rounded-2xl border border-dashed border-border/80 bg-muted/20 space-y-2">
+        <div className="p-12 text-center rounded-3xl border border-dashed border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md space-y-2">
           <GraduationCap className="size-8 mx-auto text-muted-foreground" />
           <h3 className="font-semibold text-sm">No faculty member found</h3>
           <p className="text-xs text-muted-foreground">
@@ -94,7 +94,7 @@ export default function ProfessorsPage() {
             size="sm"
             variant="outline"
             onClick={() => setSearchText("")}
-            className="rounded-lg text-xs mt-2"
+            className="rounded-xl text-xs mt-2"
           >
             Clear Search
           </Button>
@@ -107,10 +107,10 @@ export default function ProfessorsPage() {
               return (
                 <div
                   key={prof.id}
-                  className="p-4 rounded-2xl bg-card border border-border/70 hover:border-primary/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-3 group"
+                  className="p-4.5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-primary/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between space-y-3 group"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="size-11 rounded-2xl bg-primary/10 text-primary font-bold text-sm flex items-center justify-center shrink-0 border border-primary/20 group-hover:scale-105 transition-transform">
+                    <div className="size-11 rounded-2xl bg-primary/10 text-primary font-bold text-sm flex items-center justify-center shrink-0 border border-primary/20 backdrop-blur-md group-hover:scale-105 transition-transform">
                       {initials}
                     </div>
                     <div className="min-w-0 flex-1 space-y-1">
@@ -162,44 +162,25 @@ export default function ProfessorsPage() {
                     </div>
                   </div>
 
-                  {/* Actions Bar */}
-                  <div className="pt-2 border-t border-border/40 flex items-center justify-end gap-1.5">
+                  {/* Actions */}
+                  <div className="pt-2.5 border-t border-white/40 dark:border-white/[0.06] flex items-center justify-end gap-1.5">
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button
-                          variant="outline"
-                          size="sm"
-                          className="rounded-xl h-8 text-xs font-semibold gap-1.5"
                           asChild
-                        >
-                          <Link href={`tel:${prof.contact}`}>
-                            <Phone className="size-3.5 text-primary" /> Call
-                          </Link>
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Call {prof.contact}</p>
-                      </TooltipContent>
-                    </Tooltip>
-
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          variant="secondary"
+                          variant="ghost"
                           size="icon"
-                          className="size-8 rounded-xl"
-                          asChild
+                          className="size-8 rounded-xl hover:bg-emerald-500/10 hover:text-emerald-600"
                         >
                           <Link
-                            href={`https://wa.me/91${prof.contact.replace(/\D/g, "")}`}
+                            href={`https://wa.me/91${prof.contact}?text=Hello Professor ${prof.name}, I am a student at Parul University reaching out regarding academics.`}
                             target="_blank"
-                            rel="noopener noreferrer"
                           >
                             <Image
-                              src={"/icons/whatsapp.png"}
-                              height={16}
-                              width={16}
+                              src="/icons/whatsapp.png"
                               alt="WhatsApp"
+                              width={16}
+                              height={16}
                               className="size-4"
                             />
                           </Link>
@@ -213,13 +194,31 @@ export default function ProfessorsPage() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button
-                          variant="secondary"
-                          size="icon"
-                          className="size-8 rounded-xl"
                           asChild
+                          variant="ghost"
+                          size="icon"
+                          className="size-8 rounded-xl hover:bg-blue-500/10 hover:text-blue-600"
+                        >
+                          <Link href={`tel:${prof.contact}`}>
+                            <Phone className="size-3.5" />
+                          </Link>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Call {prof.contact}</p>
+                      </TooltipContent>
+                    </Tooltip>
+
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="icon"
+                          className="size-8 rounded-xl hover:bg-primary/10 hover:text-primary"
                         >
                           <Link href={`mailto:${prof.email}`}>
-                            <Mail className="size-3.5 text-primary" />
+                            <Mail className="size-3.5" />
                           </Link>
                         </Button>
                       </TooltipTrigger>

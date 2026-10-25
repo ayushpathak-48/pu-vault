@@ -81,7 +81,7 @@ export const HomePageAccordionList = ({
           placeholder="Filter subjects, topics, or notes..."
           value={searchFilter}
           onChange={(e) => setSearchFilter(e.target.value)}
-          className="pl-10 h-10 rounded-xl bg-card border-border/70 focus-visible:ring-primary shadow-xs"
+          className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] shadow-xs"
         />
         {searchFilter && (
           <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">
@@ -91,7 +91,7 @@ export const HomePageAccordionList = ({
       </div>
 
       {filteredItems.length === 0 ? (
-        <div className="p-8 text-center rounded-2xl border border-dashed border-border/80 bg-muted/20">
+        <div className="p-8 text-center rounded-2xl border border-dashed border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md">
           <BookOpen className="size-8 mx-auto text-muted-foreground mb-2" />
           <h3 className="text-sm font-semibold text-foreground">
             No matching subjects or materials found
@@ -103,7 +103,7 @@ export const HomePageAccordionList = ({
             size="sm"
             variant="outline"
             onClick={() => setSearchFilter("")}
-            className="mt-3 rounded-lg text-xs"
+            className="mt-3 rounded-xl text-xs"
           >
             Clear Filter
           </Button>
@@ -152,12 +152,12 @@ const MaterialAccordionCard = ({
 
   return (
     <AccordionItem
-      className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-xs hover:border-border transition-all data-[state=open]:shadow-md"
+      className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:shadow-lg"
       value={material.key}
     >
       <AccordionTrigger className="px-5 py-4 hover:no-underline group">
-        <div className="flex items-center gap-3 text-left w-full pr-4">
-          <div className="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+        <div className="flex items-center gap-3.5 text-left w-full pr-4">
+          <div className="size-10 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
             <BookOpen className="size-5" />
           </div>
           <div className="flex-1 min-w-0">
@@ -166,7 +166,7 @@ const MaterialAccordionCard = ({
                 {material.subject_name}
               </h3>
               {material.specialization && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase backdrop-blur-md">
                   Specialization
                 </span>
               )}
@@ -188,17 +188,17 @@ const MaterialAccordionCard = ({
           onValueChange={setActiveTabSection}
           className="w-full"
         >
-          <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto p-1 bg-muted/40 rounded-xl gap-1 mb-4">
+          <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto p-1 bg-white/40 dark:bg-black/30 backdrop-blur-md border border-white/50 dark:border-white/[0.08] rounded-xl gap-1 mb-4">
             <TabsTrigger
               value="notes"
-              className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:shadow-xs data-[state=active]:text-primary"
+              className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
             >
               Notes ({notesCount})
             </TabsTrigger>
             {journalCount > 0 && (
               <TabsTrigger
                 value="practicals"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:shadow-xs data-[state=active]:text-primary"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
               >
                 Journals ({journalCount})
               </TabsTrigger>
@@ -206,7 +206,7 @@ const MaterialAccordionCard = ({
             {hasPracticalCodes && (
               <TabsTrigger
                 value="codes"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:shadow-xs data-[state=active]:text-primary"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
               >
                 Practical Codes
               </TabsTrigger>
@@ -214,7 +214,7 @@ const MaterialAccordionCard = ({
             {quePapersCount > 0 && (
               <TabsTrigger
                 value="que_papers"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:shadow-xs data-[state=active]:text-primary"
+                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-white/80 dark:data-[state=active]:bg-white/10 data-[state=active]:shadow-xs data-[state=active]:text-primary transition-all"
               >
                 Exam Papers ({quePapersCount})
               </TabsTrigger>
@@ -228,7 +228,7 @@ const MaterialAccordionCard = ({
                 {material.notes_link.map((note: any) => (
                   <div
                     key={note.id}
-                    className="p-3 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors flex items-center justify-between gap-3"
+                    className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
                       <FileText className="size-4 text-primary shrink-0" />
@@ -245,7 +245,7 @@ const MaterialAccordionCard = ({
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-muted/20 border border-dashed text-center gap-2">
+              <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white/30 dark:bg-white/[0.02] border border-dashed border-white/50 dark:border-white/[0.08] text-center gap-2">
                 <p className="text-xs text-muted-foreground">
                   No notes uploaded yet for {material.subject_name}.
                 </p>
@@ -262,124 +262,122 @@ const MaterialAccordionCard = ({
             )}
           </TabsContent>
 
-          {/* Practical Journals Tab Content */}
-          <TabsContent value="practicals" className="space-y-2 mt-0">
-            <div className="flex flex-col gap-2">
-              {material?.output_links?.map((practical: any) => (
-                <div
-                  key={`out_${practical.id}`}
-                  className="p-3 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors flex items-center justify-between gap-3"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
-                    <span className="text-xs font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                      Output
-                    </span>
-                    <Link
-                      target="_blank"
-                      href={practical.journal_link}
-                      className="text-sm font-medium hover:text-primary transition-colors truncate"
+          {/* Practicals / Journals Tab Content */}
+          <TabsContent value="practicals" className="space-y-3 mt-0">
+            {material?.practicals_link?.length > 0 && (
+              <div className="space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  Practical Questions &amp; Assignments
+                </h4>
+                <div className="flex flex-col gap-2">
+                  {material.practicals_link.map((practical: any) => (
+                    <div
+                      key={practical.id}
+                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
                     >
-                      {practical.title}
-                    </Link>
-                  </div>
-                  <DownloadAndViewButton href={practical.journal_link} />
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <FileCode className="size-4 text-purple-500 shrink-0" />
+                        <Link
+                          target="_blank"
+                          href={practical.href}
+                          className="text-sm font-medium hover:text-primary transition-colors truncate"
+                        >
+                          {practical.title}
+                        </Link>
+                      </div>
+                      <DownloadAndViewButton href={practical.href} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            )}
 
-              {material?.practicals_link?.map((practical: any) => (
-                <div
-                  key={`prac_${practical.id}`}
-                  className="p-3 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors flex items-center justify-between gap-3"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <FileCode className="size-4 text-primary shrink-0" />
-                    <span className="text-xs font-bold uppercase text-primary bg-primary/10 px-1.5 py-0.5 rounded">
-                      Journal
-                    </span>
-                    <Link
-                      target="_blank"
-                      href={practical.journal_link}
-                      className="text-sm font-medium hover:text-primary transition-colors truncate"
+            {material?.output_links?.length > 0 && (
+              <div className="space-y-2 pt-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  Solved Practical Output &amp; Manuals
+                </h4>
+                <div className="flex flex-col gap-2">
+                  {material.output_links.map((output: any) => (
+                    <div
+                      key={output.id}
+                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
                     >
-                      {practical.title}
-                    </Link>
-                  </div>
-                  <DownloadAndViewButton href={practical.journal_link} />
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
+                        <Link
+                          target="_blank"
+                          href={output.href}
+                          className="text-sm font-medium hover:text-primary transition-colors truncate"
+                        >
+                          {output.title}
+                        </Link>
+                      </div>
+                      <DownloadAndViewButton href={output.href} />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </TabsContent>
 
           {/* Practical Codes Tab Content */}
-          <TabsContent value="codes" className="space-y-2 mt-0">
-            <div className="flex flex-col gap-2">
-              {practicalCodes
-                ?.find(({ key }) => key === material?.key)
-                ?.practicals.map((practical) => (
-                  <div
-                    key={practical.key}
-                    className="p-3 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors flex items-center justify-between gap-3"
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <Code className="size-4 text-purple-500 shrink-0" />
-                      <Link
-                        href={`/code/${material.key}/${practical.key}`}
-                        className="text-sm font-medium hover:text-primary transition-colors truncate"
-                      >
-                        {practical.name}
-                      </Link>
-                    </div>
-                    <Button asChild size="sm" variant="secondary" className="rounded-lg h-8 text-xs font-semibold">
-                      <Link href={`/code/${material.key}/${practical.key}`}>
-                        View Code
-                      </Link>
-                    </Button>
-                  </div>
-                ))}
-            </div>
+          <TabsContent value="codes" className="mt-0">
+            {hasPracticalCodes ? (
+              <div className="p-4 rounded-xl bg-purple-500/10 backdrop-blur-md border border-purple-500/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="space-y-1 text-center sm:text-left">
+                  <h4 className="font-bold text-sm text-foreground flex items-center gap-2 justify-center sm:justify-start">
+                    <Code className="size-4 text-purple-500" />
+                    Interactive Code Viewer &amp; Solutions
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Browse verified code solutions, copy scripts, and view line-by-line syntax for {material.subject_name}.
+                  </p>
+                </div>
+                <Button asChild size="sm" className="rounded-xl shrink-0 gap-1.5">
+                  <Link href={`/code/${material.key}`}>
+                    <span>Open Code Editor</span>
+                    <ExternalLink className="size-3.5" />
+                  </Link>
+                </Button>
+              </div>
+            ) : (
+              <div className="p-6 text-center text-xs text-muted-foreground">
+                No code repository linked for this subject.
+              </div>
+            )}
           </TabsContent>
 
           {/* Question Papers Tab Content */}
           <TabsContent value="que_papers" className="space-y-2 mt-0">
-            <div className="flex flex-col gap-2">
-              {material?.que_papers?.map((paper: any) => (
-                <div
-                  key={paper.id}
-                  className="p-3 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors flex items-center justify-between gap-3"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <GraduationCap className="size-4 text-amber-500 shrink-0" />
-                    <Link
-                      target="_blank"
-                      href={paper?.href}
-                      className="text-sm font-medium hover:text-primary transition-colors truncate"
-                    >
-                      {paper.label}
-                    </Link>
+            {material?.que_papers?.length > 0 ? (
+              <div className="flex flex-col gap-2">
+                {material.que_papers.map((paper: any) => (
+                  <div
+                    key={paper.id}
+                    className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <GraduationCap className="size-4 text-amber-500 shrink-0" />
+                      <Link
+                        target="_blank"
+                        href={paper.href}
+                        className="text-sm font-medium hover:text-primary transition-colors truncate"
+                      >
+                        {paper.title}
+                      </Link>
+                    </div>
+                    <DownloadAndViewButton href={paper.href} />
                   </div>
-                  <DownloadAndViewButton href={paper?.href} />
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="p-6 text-center text-xs text-muted-foreground">
+                No past question papers uploaded yet.
+              </div>
+            )}
           </TabsContent>
         </Tabs>
-
-        {/* Syllabus Footer Link with corrected target="_blank" */}
-        <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between">
-          <span className="text-xs text-muted-foreground">Course Syllabus:</span>
-          {material?.syllabus_link ? (
-            <Button size="sm" variant="ghost" className="rounded-lg h-7 text-xs font-semibold gap-1 text-primary hover:text-primary/80" asChild>
-              <Link href={material.syllabus_link} target="_blank">
-                View Official Syllabus <ExternalLink className="size-3" />
-              </Link>
-            </Button>
-          ) : (
-            <span className="text-xs text-muted-foreground/70 italic">
-              Syllabus not available
-            </span>
-          )}
-        </div>
       </AccordionContent>
     </AccordionItem>
   );

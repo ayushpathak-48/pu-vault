@@ -48,8 +48,8 @@ export const BottomTabs = () => {
   ];
 
   return (
-    <nav className="z-[40] fixed md:hidden bottom-0 inset-x-0 h-16 bg-background/90 backdrop-blur-lg border-t border-border/60 shadow-lg px-2">
-      <div className="flex items-center justify-around h-full max-w-lg mx-auto">
+    <nav className="z-[40] fixed md:hidden bottom-3 inset-x-3 max-w-md mx-auto h-15 rounded-3xl bg-white/70 dark:bg-zinc-950/70 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] px-2">
+      <div className="flex items-center justify-around h-full w-full">
         {mobileTabs.map((tab) => {
           const isActive =
             (tab.href !== "/" && pathname.startsWith(tab.href)) ||
@@ -61,28 +61,29 @@ export const BottomTabs = () => {
               key={tab.href}
               href={tab.href}
               className={cn(
-                "flex flex-col items-center justify-center flex-1 py-1 px-2 rounded-xl transition-all duration-200 group relative",
+                "flex flex-col items-center justify-center flex-1 py-1 px-1 rounded-2xl transition-all duration-200 group relative",
                 isActive
-                  ? "text-primary font-semibold"
+                  ? "text-primary font-bold"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
               <div
                 className={cn(
-                  "p-1 rounded-xl transition-all",
-                  isActive && "bg-primary/10 scale-105",
+                  "p-1.5 rounded-xl transition-all duration-200",
+                  isActive &&
+                    "bg-primary/15 text-primary scale-105 border border-primary/20 backdrop-blur-md shadow-2xs",
                 )}
               >
                 <Icon
                   className={cn(
-                    "size-5 transition-transform group-active:scale-95",
+                    "size-4.5 transition-transform group-active:scale-95",
                     isActive ? "text-primary" : "text-muted-foreground",
                   )}
                 />
               </div>
               <span
                 className={cn(
-                  "text-[10px] tracking-tight truncate",
+                  "text-[10px] tracking-tight truncate mt-0.5",
                   isActive ? "text-primary font-bold" : "text-muted-foreground",
                 )}
               >

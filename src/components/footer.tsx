@@ -1,20 +1,20 @@
 import Link from "next/link";
-import { Heart, ArrowUpRight, GraduationCap } from "lucide-react";
+import { Heart, GraduationCap } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border/60 bg-card/60 backdrop-blur-md">
+    <footer className="w-full border-t border-white/50 dark:border-white/[0.08] bg-white/50 dark:bg-zinc-950/50 backdrop-blur-2xl backdrop-saturate-180">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-10">
           {/* Brand & Description */}
           <div className="md:col-span-2 lg:col-span-2 flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <div className="size-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+            <div className="flex items-center gap-2.5">
+              <div className="size-9 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center font-bold shadow-2xs">
                 <GraduationCap className="size-5" />
               </div>
-              <h3 className="text-xl font-bold tracking-tight text-foreground">
+              <h3 className="text-xl font-extrabold tracking-tight text-foreground">
                 PU Vault
               </h3>
             </div>
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Quick Academic Links */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-foreground uppercase tracking-wider">
               Academics
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Student Utilities */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-foreground uppercase tracking-wider">
               Utilities
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Info & Legal */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-foreground uppercase tracking-wider">
               Information
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-white/40 dark:border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© {currentYear} PU Vault. Built for Parul University students.</p>
           <div className="flex items-center gap-1.5 flex-wrap justify-center">
             <span>Maintained with</span>
@@ -137,7 +137,7 @@ export default function Footer() {
               href="https://ap-kk-apps.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+              className="font-semibold text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
             >
               Aayush & Karan
             </a>

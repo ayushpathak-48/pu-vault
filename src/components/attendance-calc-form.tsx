@@ -18,7 +18,6 @@ import {
   Calculator,
   CheckCircle2,
   AlertTriangle,
-  Sparkles,
   RefreshCcw,
   Percent,
   CalendarCheck,
@@ -69,19 +68,9 @@ export function AttendanceCalcForm() {
     let canBunkSlots = 0;
 
     if (currentPercentage >= target) {
-      // How many can I bunk?
-      // (present) / (total + x) >= targetDecimal
-      // present >= targetDecimal * (total + x)
-      // present - targetDecimal * total >= targetDecimal * x
-      // x <= (present - targetDecimal * total) / targetDecimal
       canBunkSlots = Math.floor((present - targetDecimal * total) / targetDecimal);
       if (canBunkSlots < 0) canBunkSlots = 0;
     } else {
-      // How many do I need to attend consecutively?
-      // (present + x) / (total + x) >= targetDecimal
-      // present + x >= targetDecimal * total + targetDecimal * x
-      // x * (1 - targetDecimal) >= targetDecimal * total - present
-      // x >= (targetDecimal * total - present) / (1 - targetDecimal)
       requiredSlots = Math.ceil(
         (targetDecimal * total - present) / (1 - targetDecimal),
       );
@@ -129,7 +118,7 @@ export function AttendanceCalcForm() {
   return (
     <div className="w-full max-w-xl mx-auto space-y-6">
       {/* Target Percentage Preset Selector */}
-      <div className="flex items-center justify-between p-3 rounded-2xl bg-muted/40 border border-border/60">
+      <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/50 dark:bg-white/[0.04] backdrop-blur-xl border border-white/60 dark:border-white/[0.08] shadow-xs">
         <span className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1.5">
           <Percent className="size-3.5 text-primary" /> Target Goal
         </span>
@@ -140,10 +129,10 @@ export function AttendanceCalcForm() {
               type="button"
               onClick={() => handleTargetChange(t)}
               className={cn(
-                "px-3 py-1 rounded-xl text-xs font-bold transition-all",
+                "px-3 py-1 rounded-xl text-xs font-bold transition-all backdrop-blur-md",
                 targetPercent === t
                   ? "bg-primary text-primary-foreground shadow-xs scale-105"
-                  : "bg-background text-muted-foreground hover:text-foreground border border-border/50",
+                  : "bg-white/60 dark:bg-white/[0.06] text-muted-foreground hover:text-foreground border border-white/50 dark:border-white/[0.08]",
               )}
             >
               {t}%
@@ -152,11 +141,11 @@ export function AttendanceCalcForm() {
         </div>
       </div>
 
-      {/* Main Calculation Card */}
+      {/* Main Calculation Glass Card */}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="p-6 rounded-3xl bg-card border border-border/70 shadow-md space-y-5"
+          className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
@@ -171,7 +160,7 @@ export function AttendanceCalcForm() {
                     <Input
                       type="number"
                       placeholder="e.g. 80"
-                      className="rounded-xl h-11 bg-background text-base font-semibold"
+                      className="rounded-xl h-11 bg-white/50 dark:bg-zinc-900/40 text-base font-bold"
                       {...field}
                     />
                   </FormControl>
@@ -192,7 +181,7 @@ export function AttendanceCalcForm() {
                     <Input
                       type="number"
                       placeholder="e.g. 62"
-                      className="rounded-xl h-11 bg-background text-base font-semibold"
+                      className="rounded-xl h-11 bg-white/50 dark:bg-zinc-900/40 text-base font-bold"
                       {...field}
                     />
                   </FormControl>
@@ -202,105 +191,116 @@ export function AttendanceCalcForm() {
             />
           </div>
 
-          <div className="flex items-center gap-2 pt-1">
+          <div className="flex items-center gap-2.5 pt-2">
             <Button
               type="submit"
-              className="flex-1 rounded-xl h-11 font-bold text-sm shadow-sm gap-2"
+              className="flex-1 rounded-xl h-11 font-bold shadow-xs gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <Calculator className="size-4" />
-              Calculate Attendance & Bunk Limit
+              Calculate Status
             </Button>
             {result && (
               <Button
                 type="button"
                 variant="outline"
                 onClick={resetForm}
-                className="rounded-xl size-11 p-0 shrink-0 border-border/70"
-                title="Reset calculator"
+                className="rounded-xl h-11 px-4 text-xs font-semibold gap-1.5"
               >
-                <RefreshCcw className="size-4 text-muted-foreground" />
+                <RefreshCcw className="size-3.5" />
+                Reset
               </Button>
             )}
           </div>
         </form>
       </Form>
 
-      {/* Results Dashboard */}
+      {/* Results View */}
       {result && (
-        <div className="space-y-4 animate-in fade-in-50 duration-300">
-          {/* Main Percentage Card */}
-          <div
-            className={cn(
-              "p-6 rounded-3xl border shadow-sm flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left",
-              result.isSafe
-                ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-950 dark:text-emerald-100"
-                : "bg-rose-500/10 border-rose-500/30 text-rose-950 dark:text-rose-100",
-            )}
-          >
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-background/80 shadow-xs">
-                {result.isSafe ? (
-                  <>
-                    <CheckCircle2 className="size-3.5 text-emerald-600" />
-                    <span className="text-emerald-700 dark:text-emerald-300">
-                      Eligible for University Exams
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <AlertTriangle className="size-3.5 text-rose-600" />
-                    <span className="text-rose-700 dark:text-rose-300">
-                      Attendance Shortage Warning
-                    </span>
-                  </>
-                )}
+        <div className="p-6 rounded-3xl bg-white/70 dark:bg-zinc-900/50 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_14px_40px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.9)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5 animate-in fade-in slide-in-from-bottom-3 duration-300">
+          <div className="flex items-center justify-between pb-4 border-b border-white/40 dark:border-white/[0.06]">
+            <div>
+              <span className="text-xs uppercase font-extrabold tracking-wider text-muted-foreground">
+                Current Attendance
+              </span>
+              <div className="flex items-baseline gap-2 mt-0.5">
+                <span
+                  className={cn(
+                    "text-4xl font-extrabold tracking-tight",
+                    result.isSafe
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-destructive",
+                  )}
+                >
+                  {result.currentPercentage.toFixed(1)}%
+                </span>
+                <span className="text-xs text-muted-foreground font-semibold">
+                  ({result.presentSlots} / {result.totalSlots} Slots)
+                </span>
               </div>
-              <h3 className="text-sm font-semibold text-muted-foreground pt-1">
-                Your Current Attendance
-              </h3>
-              <div className="text-4xl md:text-5xl font-black tracking-tight text-foreground">
-                {result.currentPercentage.toFixed(1)}%
-              </div>
-              <p className="text-xs text-muted-foreground">
-                Attended {result.presentSlots} out of {result.totalSlots} total sessions
-              </p>
             </div>
 
-            {/* Smart Action Result Badge */}
-            <div className="p-4 rounded-2xl bg-background/90 border border-border/60 shadow-xs max-w-xs w-full space-y-1 text-center">
+            <div
+              className={cn(
+                "p-3 rounded-2xl border backdrop-blur-md flex items-center gap-2",
+                result.isSafe
+                  ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/25"
+                  : "bg-destructive/10 text-destructive border-destructive/25",
+              )}
+            >
               {result.isSafe ? (
                 <>
-                  <div className="flex items-center justify-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase">
-                    <Zap className="size-3.5" /> Bunk Calculator
-                  </div>
-                  <div className="text-3xl font-extrabold text-foreground">
-                    {result.canBunkSlots}
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-snug">
-                    You can safely miss up to{" "}
-                    <strong className="text-foreground">
-                      {result.canBunkSlots} lectures
-                    </strong>{" "}
-                    and still remain at {targetPercent}%+.
-                  </p>
+                  <CheckCircle2 className="size-5" />
+                  <span className="text-xs font-bold">Exam Eligible</span>
                 </>
               ) : (
                 <>
-                  <div className="flex items-center justify-center gap-1 text-rose-600 dark:text-rose-400 font-bold text-xs uppercase">
-                    <CalendarCheck className="size-3.5" /> Classes Required
-                  </div>
-                  <div className="text-3xl font-extrabold text-foreground">
-                    {result.requiredSlots}
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-snug">
-                    You need to attend next{" "}
-                    <strong className="text-foreground">
-                      {result.requiredSlots} lectures
-                    </strong>{" "}
-                    without bunking to hit {targetPercent}%.
-                  </p>
+                  <AlertTriangle className="size-5" />
+                  <span className="text-xs font-bold">Shortage Warning</span>
                 </>
               )}
+            </div>
+          </div>
+
+          {/* Actionable Advice Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {result.isSafe ? (
+              <div className="p-4 rounded-2xl bg-emerald-500/10 dark:bg-emerald-950/20 border border-emerald-500/20 backdrop-blur-md space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                  <Zap className="size-4" /> Safe to Bunk
+                </div>
+                <div className="text-2xl font-black text-emerald-800 dark:text-emerald-300">
+                  {result.canBunkSlots} {result.canBunkSlots === 1 ? "Slot" : "Slots"}
+                </div>
+                <p className="text-[11px] text-emerald-700/80 dark:text-emerald-400/80 leading-relaxed">
+                  You can safely miss up to {result.canBunkSlots} more lecture
+                  {result.canBunkSlots === 1 ? "" : "s"} while still staying above your {targetPercent}% target.
+                </p>
+              </div>
+            ) : (
+              <div className="p-4 rounded-2xl bg-destructive/10 dark:bg-destructive/20 border border-destructive/20 backdrop-blur-md space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-destructive">
+                  <AlertTriangle className="size-4" /> Classes Required
+                </div>
+                <div className="text-2xl font-black text-destructive">
+                  {result.requiredSlots} {result.requiredSlots === 1 ? "Slot" : "Slots"}
+                </div>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  You need to attend next {result.requiredSlots} consecutive lecture
+                  {result.requiredSlots === 1 ? "" : "s"} without missing any to reach {targetPercent}%.
+                </p>
+              </div>
+            )}
+
+            <div className="p-4 rounded-2xl bg-white/50 dark:bg-white/[0.04] border border-white/50 dark:border-white/[0.08] backdrop-blur-md space-y-1 flex flex-col justify-between">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground">
+                <CalendarCheck className="size-4 text-primary" /> Target Rule
+              </div>
+              <div className="text-xl font-bold text-foreground">
+                {targetPercent}% Target
+              </div>
+              <p className="text-[11px] text-muted-foreground leading-relaxed">
+                Parul University mandates minimum 75% attendance to sit for mid-sem and end-sem exams.
+              </p>
             </div>
           </div>
         </div>
