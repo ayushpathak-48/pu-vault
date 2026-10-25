@@ -1,72 +1,146 @@
 import Link from "next/link";
-import { Heart, ArrowUpRight } from "lucide-react";
+import { Heart, ArrowUpRight, GraduationCap } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="w-full border-t border-border/60 bg-card/60 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-10">
-
           {/* Brand & Description */}
           <div className="md:col-span-2 lg:col-span-2 flex flex-col gap-4">
-            <h3 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              PU Vault
-            </h3>
+            <div className="flex items-center gap-2">
+              <div className="size-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+                <GraduationCap className="size-5" />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight text-foreground">
+                PU Vault
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[90%]">
-              The ultimate resource hub for Parul University students. Access study materials, previous year papers, attendance calculators, and essential tools to ace your academics.
+              The premier open-access student resource portal for Parul University. Access lecture notes, lab practical codes, timetables, and attendance tools crafted for academic excellence.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-semibold text-foreground">Resources</h4>
-            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <li><Link href="/assignments" className="hover:text-primary transition-colors">Assignments</Link></li>
-              <li><Link href="/placement-materials" className="hover:text-primary transition-colors">Placement Materials</Link></li>
-              <li><Link href="/attendance-calculator" className="hover:text-primary transition-colors">Attendance Calculator</Link></li>
-              <li><Link href="/mcqs" className="hover:text-primary transition-colors">MCQs Practice</Link></li>
-            </ul>
-          </div>
-
-          {/* Legal & Info */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-semibold text-foreground">Company</h4>
-            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-            </ul>
-          </div>
-
-          {/* Promotion / Sponsors */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-semibold text-foreground">Other Products</h4>
-            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
+          {/* Quick Academic Links */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+              Academics
+            </h4>
+            <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
               <li>
-                <a href="https://samast.pro/?utm_source=pu_vault&utm_medium=footer&utm_campaign=cross_promotion" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1 w-fit">
-                  samast.pro
-                  <ArrowUpRight className="h-3 w-3" />
-                </a>
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Study Materials
+                </Link>
+              </li>
+              <li>
+                <Link href="/code" className="hover:text-primary transition-colors">
+                  Practical Codes
+                </Link>
+              </li>
+              <li>
+                <Link href="/time-table" className="hover:text-primary transition-colors">
+                  Time Table
+                </Link>
+              </li>
+              <li>
+                <Link href="/assignments" className="hover:text-primary transition-colors">
+                  Assignments
+                </Link>
+              </li>
+              <li>
+                <Link href="/mcqs" className="hover:text-primary transition-colors">
+                  MCQ Quizzes
+                </Link>
               </li>
             </ul>
           </div>
 
+          {/* Student Utilities */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+              Utilities
+            </h4>
+            <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
+              <li>
+                <Link href="/attendance-calculator" className="hover:text-primary transition-colors">
+                  Attendance Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/professors" className="hover:text-primary transition-colors">
+                  Faculty Contacts
+                </Link>
+              </li>
+              <li>
+                <Link href="/software-links" className="hover:text-primary transition-colors">
+                  Software Downloads
+                </Link>
+              </li>
+              <li>
+                <Link href="/youtube-tutorials" className="hover:text-primary transition-colors">
+                  Video Tutorials
+                </Link>
+              </li>
+              <li>
+                <Link href="/placement-materials" className="hover:text-primary transition-colors">
+                  Placement Hub
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Info & Legal */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider">
+              Information
+            </h4>
+            <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
+              <li>
+                <Link href="/about" className="hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-primary transition-colors">
+                  Contact & Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-primary transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/disclaimer" className="hover:text-primary transition-colors">
+                  Disclaimer
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-          <p>© {currentYear} PU Vault. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <p>© {currentYear} PU Vault. Built for Parul University students.</p>
           <div className="flex items-center gap-1.5 flex-wrap justify-center">
-            <span>Built with</span>
-            <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" />
+            <span>Maintained with</span>
+            <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />
             <span>by</span>
-            <a href="https://ap-kk-apps.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline">
+            <a
+              href="https://ap-kk-apps.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
               Aayush & Karan
             </a>
-            <span className="hidden sm:inline">for Parul University students</span>
           </div>
         </div>
       </div>

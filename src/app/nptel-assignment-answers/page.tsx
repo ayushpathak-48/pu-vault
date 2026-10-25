@@ -1,31 +1,57 @@
 import { nptelAllWeeksAnswers } from "@/lib/constants/nptel-answers.constant";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Layers } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'NPTEL Assignment Answers - Pu-Vault',
-  description: 'Access a comprehensive collection of NPTEL assignment answers for various subjects and courses. Enhance your learning with our detailed solutions designed to help students excel in their studies.',
-}
+  title: "NPTEL Assignment Answers | PU Vault",
+  description: "Week-by-week verified assignment answers and solutions for NPTEL Swayam online courses.",
+};
 
-
-const page = () => {
+export default function NptelAnswersPage() {
   return (
-    <div className="p-5 flex flex-col gap-10 w-full">
-      <div className="flex flex-col gap-4">
-        {nptelAllWeeksAnswers.map((week) => (
+    <div className="w-full max-w-5xl mx-auto px-4 md:px-8 py-6 space-y-6">
+      {/* Header Banner */}
+      <div className="p-6 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-transparent border border-emerald-500/20 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 uppercase flex items-center gap-1">
+              <Award className="size-3" /> Swayam / NPTEL Portal
+            </span>
+          </div>
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+            NPTEL Weekly Assignment Answers
+          </h1>
+          <p className="text-xs md:text-sm text-muted-foreground max-w-lg leading-relaxed">
+            Verified answer keys and solutions for compulsory NPTEL certifications across all academic weeks.
+          </p>
+        </div>
+      </div>
+
+      {/* Weeks Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
+        {nptelAllWeeksAnswers.map((week, idx) => (
           <Link key={week.key} href={`/nptel-assignment-answers/${week.key}`}>
-            <div className="flex group border border-transparent hover:text-primary hover:border-primary/50 cursor-pointer items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg">
-              <h2 className="text-base md:text-lg font-medium hover:text-primary transition-all">
-                {week.title}
-              </h2>
-              <ArrowRight className="group-hover:-translate-x-1 transition-all" />
+            <div className="p-4 rounded-2xl bg-card border border-border/70 hover:border-emerald-500/40 shadow-xs hover:shadow-md transition-all flex items-center justify-between gap-4 group">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="size-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  W{idx + 1}
+                </div>
+                <div className="min-w-0">
+                  <h2 className="text-sm font-bold text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors truncate">
+                    {week.title}
+                  </h2>
+                  <span className="text-[11px] text-muted-foreground">
+                    {week.answers?.length || 0} Questions Answered
+                  </span>
+                </div>
+              </div>
+
+              <ArrowRight className="size-4 text-muted-foreground group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0" />
             </div>
           </Link>
         ))}
       </div>
     </div>
   );
-};
-
-export default page;
+}

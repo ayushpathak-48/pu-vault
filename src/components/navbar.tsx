@@ -3,46 +3,42 @@
 import { CourseType, navLinks, telegramBotChatIds } from "@/lib/constants";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
-import { MenuIcon, SearchIcon, SettingsIcon } from "lucide-react";
+import { Menu, Search, Settings } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import SearchModal from "./search-modal";
-import { cn, sendBotMessage } from "@/lib/utils";
+import { sendBotMessage } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
 
 export const Navbar = () => {
   const pathname = usePathname();
-  const courseParam = useSearchParams().get("course") as CourseType;
-  const divisionParam = useSearchParams().get("div");
+  const searchParams = useSearchParams();
+  const courseParam = searchParams.get("course") as CourseType;
+  const divisionParam = searchParams.get("div");
 
   const setCourse = useDataStore((state) => state.setCourse);
   const setDivision = useDataStore((state) => state.setDivision);
 
   const { toggleSidebar, setOpenMobile } = useSidebar();
-
-  const { course, division, sem, specialization, user } = useDataStore((state) => state);
-
-  // const [activePageTitle, setActivePageTitle] = useState(
-  //   navLinks.find((link) => pathname.includes(link.href))?.title,
-  // );
-
-
+  const { course, division, sem, specialization, user } = useDataStore(
+    (state) => state,
+  );
 
   const activePageTitle = useMemo(() => {
     const currentLink = navLinks.find(
-      (link) => link.href != "/" && pathname.startsWith(link.href),
+      (link) => link.href !== "/" && pathname.startsWith(link.href),
     );
-    return currentLink?.title || "Pu Vault";
-  }, [pathname, navLinks]);
-
-  useEffect(() => {
-    setOpenMobile(false);
+    return currentLink?.title || (pathname === "/" ? "Study Materials" : "PU Vault");
   }, [pathname]);
 
   useEffect(() => {
-    if (window.location.hostname === "localhost") return;
+    setOpenMobile(false);
+  }, [pathname, setOpenMobile]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hostname === "localhost") return;
 
     const message = `
 👀 <b>New Page View Alert!</b>
@@ -61,12 +57,9 @@ export const Navbar = () => {
       chatId: telegramBotChatIds.puVaultVisitorsChannel,
       message,
     });
-  }, [pathname]);
-
+  }, [pathname, course, division, sem, specialization, user]);
 
   useLayoutEffect(() => {
-
-
     if (courseParam && ["mca", "mscit"].includes(courseParam)) {
       setCourse(courseParam);
     }
@@ -78,49 +71,87 @@ export const Navbar = () => {
     ) {
       setDivision(divisionParam);
     }
-  }, [courseParam, divisionParam]);
+  }, [courseParam, divisionParam, setCourse, setDivision]);
 
   return (
-    <>
-      <div className="bg-gray-50 dark:bg-[#181818] shadow md:w-[calc(100%-16rem)] ml-auto w-full flex items-center justify-between h-16 lg:h-20 px-4 lg:px-20 py-4 lg:py-10 fixed top-0 z-[40]">
-        <div className="flex items-center justify-center gap-2 w-max  ">
-          <Link href={"/"} className="md:hidden">
-            <Image src={"/favicon.png"} height={40} width={40} alt="Logo" />
+    <header className="fixed top-0 z-[40] md:w-[calc(100%-16rem)] ml-auto w-full h-16 lg:h-20 bg-background/85 backdrop-blur-md border-b border-border/50 px-4 md:px-8 transition-colors">
+      <div className="flex items-center justify-between h-full w-full gap-4">
+        {/* Left: Mobile branding & page title */}
+        <div className="flex items-center gap-3">
+          <Link href={"/"} className="md:hidden flex items-center gap-2">
+            <Image
+              src={"/favicon.png"}
+              height={32}
+              width={32}
+              alt="Logo"
+              className="size-8 rounded-lg shadow-sm"
+            />
           </Link>
-          <Link href={"/settings"} className="md:hidden">
-            <SettingsIcon className="size-4 text-gray-400 cursor-pointer" />
-          </Link>
+          <div className="flex flex-col">
+            <h1 className="font-bold text-lg md:text-2xl text-foreground tracking-tight leading-tight">
+              {activePageTitle}
+            </h1>
+            <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
+              <span className="uppercase font-semibold text-primary">
+                {course}
+              </span>
+              <span>•</span>
+              <span>Semester {sem}</span>
+              {division && (
+                <>
+                  <span>•</span>
+                  <span>Div {division.replace("div_", "").toUpperCase()}</span>
+                </>
+              )}
+            </div>
+          </div>
         </div>
-        <div className="max-md:text-center max-md:w-full custom-heading font-semibold text-2xl lg:text-3xl">
-          {activePageTitle}
-        </div>
-        <div className="md:hidden">
-          <SearchModal
-            hideShortcut
-            triggerContent={
-              <SearchIcon
-                className={cn(
-                  "size-6 text-gray-500 active:scale-[0.95] transition-all",
-                )}
-              />
-            }
-          />
-        </div>
-        <div className="md:hidden">
+
+        {/* Right: Search, Quick settings, Mobile sidebar toggle */}
+        <div className="flex items-center gap-2">
+          {/* Desktop search bar */}
+          <div className="hidden md:block">
+            <SearchModal />
+          </div>
+
+          {/* Mobile search button */}
+          <div className="md:hidden">
+            <SearchModal
+              hideShortcut
+              triggerContent={
+                <Button variant="ghost" size="icon" className="size-9 rounded-xl">
+                  <Search className="size-4 text-muted-foreground" />
+                </Button>
+              }
+            />
+          </div>
+
+          {/* Settings shortcut button */}
           <Button
-            variant={"ghost"}
-            size={"icon"}
-            className="min-h-6 min-w-6 !size-6"
-            onClick={toggleSidebar}
+            asChild
+            variant="ghost"
+            size="icon"
+            className="size-9 rounded-xl text-muted-foreground hover:text-foreground"
           >
-            <MenuIcon className="" />
+            <Link href="/settings" title="Settings">
+              <Settings className="size-4" />
+            </Link>
           </Button>
-        </div>
-        <div className="max-md:hidden">
-          <SearchModal />
+
+          {/* Mobile menu trigger */}
+          <div className="md:hidden">
+            <Button
+              variant="outline"
+              size="icon"
+              className="size-9 rounded-xl border-border/60"
+              onClick={toggleSidebar}
+              aria-label="Toggle navigation"
+            >
+              <Menu className="size-4" />
+            </Button>
+          </div>
         </div>
       </div>
-      {/* <WhatsappDialog /> */}
-    </>
+    </header>
   );
 };

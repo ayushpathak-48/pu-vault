@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import {
   Dialog,
@@ -23,12 +22,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn, sendBotMessage } from "@/lib/utils";
 import { MessageSquarePlus } from "lucide-react";
-
-// ✅ Setup Supabase client
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { getSupabaseClient } from "@/lib/supabase";
 
 export const FeedbackFloatingDialog = ({ trigger }: { trigger?: any }) => {
   const [open, setOpen] = useState(false);
@@ -41,27 +35,32 @@ export const FeedbackFloatingDialog = ({ trigger }: { trigger?: any }) => {
     setLoading(true);
 
     try {
-      const { error } = await supabase.from("feedback").insert([
-        {
-          name: name.trim() || "Anonymous", // 👤 fallback to Anonymous
-          feedback,
-        },
-      ]);
-
-      if (error) throw error;
+      const supabase = getSupabaseClient();
+      if (supabase) {
+        const { error } = await supabase.from("feedback").insert([
+          {
+            name: name.trim() || "Anonymous",
+            feedback,
+          },
+        ]);
+        if (error) console.warn("Supabase feedback insert error:", error);
+      }
 
       toast.success("Feedback submitted successfully!");
       localStorage.setItem("feedbackSubmitted", "true");
+      const savedName = name;
+      const savedFeedback = feedback;
       setName("");
       setFeedback("");
       setOpen(false);
+
       const message = `
 📩 <b>New Feedback Received!</b>
 
-👤 <b>Name:</b> ${name?.trim() || "Anonymous"}
-💬 <b>Feedback:</b> ${feedback}
+👤 <b>Name:</b> ${savedName?.trim() || "Anonymous"}
+💬 <b>Feedback:</b> ${savedFeedback}
 🕒 <b>Time:</b> ${new Date().toLocaleString()}
-    `;
+      `;
 
       sendBotMessage({ message });
     } catch (err) {
@@ -74,58 +73,61 @@ export const FeedbackFloatingDialog = ({ trigger }: { trigger?: any }) => {
 
   return (
     <>
-      <div className="fixed bottom-28 right-5 lg:bottom-24 lg:right-10 z-50">
-        {/* Floating Feedback Button */}
-        {!trigger && <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <div onClick={() => setOpen(true)} className="cursor-pointer">
-                <div className="size-10 rounded-full shadow-lg bg-white p-1 cursor-pointer flex items-center justify-center">
-                  <MessageSquarePlus
-                    className={cn(
-                      "size-6 text-gray-500 active:scale-[0.95] transition-all")}
-                  />
+      {!trigger && (
+        <div className="fixed bottom-28 right-5 lg:bottom-24 lg:right-10 z-50">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div onClick={() => setOpen(true)} className="cursor-pointer">
+                  <div className="size-10 rounded-full shadow-lg bg-card border hover:border-primary/50 transition-all p-1 cursor-pointer flex items-center justify-center">
+                    <MessageSquarePlus
+                      className={cn(
+                        "size-5 text-primary active:scale-[0.95] transition-all",
+                      )}
+                    />
+                  </div>
                 </div>
-              </div>
-            </TooltipTrigger>
-            <TooltipContent>
-              <div>Give Feedback</div>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>}
-      </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <div>Give Feedback</div>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      )}
+
       {/* Feedback Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
-        {
-          trigger && <DialogTrigger asChild className="p-0">{trigger}</DialogTrigger>
-        }
+        {trigger && (
+          <DialogTrigger asChild className="p-0">
+            {trigger}
+          </DialogTrigger>
+        )}
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>We value your feedback</DialogTitle>
           </DialogHeader>
 
-          {/* Optional Name Field */}
           <Input
             placeholder="Your name (optional)"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mb-3"
+            className="mb-1"
           />
 
-          {/* Feedback Textarea */}
           <Textarea
-            placeholder="Type your feedback here..."
+            placeholder="Type your suggestions, issues or feedback here..."
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
             className="min-h-[120px]"
           />
 
-          <DialogFooter>
+          <DialogFooter className="gap-2 sm:gap-0">
             <Button variant="ghost" onClick={() => setOpen(false)}>
               Cancel
             </Button>
             <Button onClick={handleSubmit} disabled={loading}>
-              {loading ? "Submitting..." : "Submit"}
+              {loading ? "Submitting..." : "Submit Feedback"}
             </Button>
           </DialogFooter>
         </DialogContent>

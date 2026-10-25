@@ -1,4 +1,3 @@
-import { Description } from "@radix-ui/react-dialog";
 import {
   HardDriveDownloadIcon,
   HouseIcon,
@@ -14,9 +13,13 @@ import {
   Book,
   Gamepad2,
   Wrench,
+  Calculator,
+  CalendarDays,
+  Video,
+  Sparkles,
 } from "lucide-react";
 
-export const APP_NAME = "Pu Vault";
+export const APP_NAME = "PU Vault";
 export const MATERIAL_LINK_BASE_URL_SEM_1 =
   "https://saviour000.github.io/pu-vault-assets-1";
 export const MATERIAL_LINK_BASE_URL =
@@ -28,53 +31,25 @@ export const MATERIAL_LINK_BASE_URL_SEM_3 =
 export const MATERIAL_LINK_BASE_URL_SEM_4 =
   "https://ayushpathak-48.github.io/pu-vault-assets-4";
 
-export const navLinks = [
+export interface NavLinkItem {
+  id: number;
+  title: string;
+  href: string;
+  icon: any;
+  hideOnMobile?: boolean;
+  sem?: number[];
+  category?: "academics" | "practice" | "campus" | "explore";
+  badge?: string;
+}
+
+export const navLinks: NavLinkItem[] = [
+  // Academics
   {
     id: 1,
     title: "Materials",
     href: "/",
     icon: HouseIcon,
-  },
-  // {
-  //   id: 16,
-  //   title: "Project Details",
-  //   href: "/project-details",
-  //   icon: AwardIcon,
-  //   sem: [4],
-  // },
-  {
-    id: 12,
-    title: "Placement",
-    href: "/placement-materials",
-    hideOnMobile: true,
-    icon: BriefcaseBusiness,
-  },
-  {
-    id: 15,
-    title: "Tools",
-    href: "https://samast.pro",
-    icon: Wrench,
-  },
-  {
-    id: 16,
-    title: "Games",
-    href: "https://www.samast.pro/games?utm_source=pu_vault&utm_medium=sidebar&utm_campaign=cross_promotion",
-    icon: Gamepad2,
-  },
-  {
-    id: 11,
-    title: "MCQs",
-    href: "/mcqs",
-    hideOnMobile: true,
-    icon: ListTodo,
-    sem: [1, 2, 3],
-  },
-  {
-    id: 4,
-    title: "FlashCards",
-    href: "/flash-cards",
-    icon: SquareAsteriskIcon,
-    sem: [1, 2, 3],
+    category: "academics",
   },
   {
     id: 2,
@@ -82,6 +57,14 @@ export const navLinks = [
     href: "/code",
     icon: SquareDashedBottomCode,
     sem: [1, 2, 3],
+    category: "academics",
+  },
+  {
+    id: 3,
+    title: "Time Table",
+    href: "/time-table",
+    icon: CalendarDays,
+    category: "academics",
   },
   {
     id: 5,
@@ -90,41 +73,41 @@ export const navLinks = [
     icon: Book,
     hideOnMobile: true,
     sem: [1, 2, 3],
+    category: "academics",
+  },
+
+  // Practice & Prep
+  {
+    id: 11,
+    title: "MCQs Quiz",
+    href: "/mcqs",
+    icon: ListTodo,
+    sem: [1, 2, 3],
+    category: "practice",
+  },
+  {
+    id: 4,
+    title: "FlashCards",
+    href: "/flash-cards",
+    icon: SquareAsteriskIcon,
+    sem: [1, 2, 3],
+    category: "practice",
   },
   {
     id: 7,
-    title: "Interview Questions",
+    title: "Interview Prep",
     href: "/interview",
     hideOnMobile: true,
     icon: MessageCircleQuestion,
+    category: "practice",
   },
   {
-    id: 8,
-    title: "Softwares",
-    href: "/software-links",
+    id: 17,
+    title: "Tutorials",
+    href: "/youtube-tutorials",
     hideOnMobile: true,
-    icon: HardDriveDownloadIcon,
-  },
-  {
-    id: 9,
-    title: "Message Generator",
-    href: "/message-generator",
-    hideOnMobile: true,
-    icon: MailIcon,
-  },
-  {
-    id: 10,
-    title: "Professors",
-    href: "/professors",
-    hideOnMobile: true,
-    icon: UserIcon,
-  },
-  {
-    id: 13,
-    title: "Settings",
-    href: "/settings",
-    hideOnMobile: true,
-    icon: SettingsIcon,
+    icon: Video,
+    category: "practice",
   },
   {
     id: 14,
@@ -133,8 +116,83 @@ export const navLinks = [
     hideOnMobile: true,
     icon: AwardIcon,
     sem: [1, 2, 3],
+    category: "practice",
   },
 
+  // Campus & Utilities
+  {
+    id: 18,
+    title: "Attendance Calc",
+    href: "/attendance-calculator",
+    icon: Calculator,
+    category: "campus",
+  },
+  {
+    id: 9,
+    title: "Message Generator",
+    href: "/message-generator",
+    hideOnMobile: true,
+    icon: MailIcon,
+    category: "campus",
+  },
+  {
+    id: 10,
+    title: "Professors",
+    href: "/professors",
+    hideOnMobile: true,
+    icon: UserIcon,
+    category: "campus",
+  },
+  {
+    id: 8,
+    title: "Softwares",
+    href: "/software-links",
+    hideOnMobile: true,
+    icon: HardDriveDownloadIcon,
+    category: "campus",
+  },
+
+  // Explore & Extras
+  {
+    id: 12,
+    title: "Placement Hub",
+    href: "/placement-materials",
+    hideOnMobile: true,
+    icon: BriefcaseBusiness,
+    category: "explore",
+  },
+  {
+    id: 19,
+    title: "Featured Apps",
+    href: "/featured-apps",
+    hideOnMobile: true,
+    icon: Sparkles,
+    category: "explore",
+  },
+  {
+    id: 15,
+    title: "Tools (Samast)",
+    href: "https://samast.pro",
+    icon: Wrench,
+    hideOnMobile: true,
+    category: "explore",
+  },
+  {
+    id: 16,
+    title: "Games",
+    href: "https://www.samast.pro/games?utm_source=pu_vault&utm_medium=sidebar&utm_campaign=cross_promotion",
+    icon: Gamepad2,
+    hideOnMobile: true,
+    category: "explore",
+  },
+  {
+    id: 13,
+    title: "Settings",
+    href: "/settings",
+    hideOnMobile: true,
+    icon: SettingsIcon,
+    category: "campus",
+  },
 ];
 
 export const courses = [
@@ -177,33 +235,32 @@ export const softwareLinks = [
   },
   {
     id: 1,
-    title: "Jar File",
+    title: "MySQL Connector/J (Jar)",
     link: "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.1.0.zip",
   },
   {
     id: 8,
-    title: "JSON Jar File (FSWD) ",
+    title: "JSON Jar File (FSWD)",
     link: "https://repo1.maven.org/maven2/org/json/json/20210307/json-20210307.jar",
   },
-
   {
     id: 2,
-    title: "IntelliJ IDE",
+    title: "IntelliJ IDEA Community",
     link: "https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC",
   },
   {
     id: 3,
-    title: "Netbeans",
+    title: "Apache NetBeans",
     link: "https://www.apache.org/dyn/closer.lua/netbeans/netbeans-installers/25/Apache-NetBeans-25-bin-windows-x64.exe",
   },
   {
     id: 4,
-    title: "TomCat Server",
+    title: "Apache Tomcat Server",
     link: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.100/bin/apache-tomcat-9.0.100.exe",
   },
   {
     id: 5,
-    title: "MacroMedia Flash",
+    title: "Macromedia Flash 8",
     link: "https://macromedia-flash-8.en.softonic.com/download",
   },
   {
@@ -213,7 +270,7 @@ export const softwareLinks = [
   },
   {
     id: 7,
-    title: "Kali Linux",
+    title: "Kali Linux Installer",
     link: "https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-installer-amd64.iso",
   },
 ];
@@ -303,18 +360,6 @@ export const divisions = [
     specialization: "fswd",
     value: "div_i",
   },
-  // {
-  //   id: 10,
-  //   label: "Division : J (ALL)",
-  //   specialization: "all",
-  //   value: "div_j",
-  // },
-  // {
-  //   id: 11,
-  //   label: "Division : K (FSWD)",
-  //   specialization: "fswd",
-  //   value: "div_k",
-  // },
 ];
 
 export const weekdays = [
@@ -326,23 +371,7 @@ export const weekdays = [
   "Saturday",
 ];
 
-export const alertContent = [
-  // {
-  //   id: 2,
-  //   title: "End Term Time Table",
-  //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/revised_timetable.pdf`,
-  // },
-  // {
-  //   id: 1,
-  //   title: "Academic Calendar",
-  //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/academic-calendar.pdf`,
-  // },
-  // {
-  //   id: 2,
-  //   title: "Research Paper Guidelines",
-  //   href: `${MATERIAL_LINK_BASE_URL_SEM_3}/research-paper-guidelines.pdf`,
-  // },
-];
+export const alertContent = [];
 
 export const telegramBotChatIds = {
   githubPuVaultChannel: "-1002996348697",
@@ -381,5 +410,5 @@ export const featuredApps = [
     description: "Scan, crop, organize notes and documents.",
     heroImage: "/apps/snapdocs/hero.png",
     logoImage: "/apps/snapdocs/icon.png",
-  }
+  },
 ];

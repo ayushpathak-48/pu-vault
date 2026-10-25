@@ -1,12 +1,13 @@
 "use client";
 
 import {
-  AlertDialog,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,6 +18,7 @@ import { useDataStore } from "@/stores/data.store";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { GraduationCap, Sparkles } from "lucide-react";
 
 // 🧠 Zod Schema
 const formSchema = z.object({
@@ -50,20 +52,25 @@ export const DataDialog = () => {
   } = form;
 
   const isShowDialog = () => {
+    // Check if dismissed in this session
+    if (sessionStorage.getItem("dataDialogDismissed")) {
+      return false;
+    }
     const now = new Date();
-    const istTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+    const istTime = new Date(
+      now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }),
+    );
 
     const start = new Date(istTime);
     start.setHours(8, 45, 0, 0); // 8:45 AM
     const end = new Date(istTime);
-    end.setHours(10, 0, 0, 0);   // 10:00 AM
+    end.setHours(10, 0, 0, 0); // 10:00 AM
 
     if (istTime >= start && istTime <= end) {
       return false;
     }
     return true;
-
-  }
+  };
 
   useEffect(() => {
     if (hydrated) {
@@ -84,57 +91,95 @@ export const DataDialog = () => {
     setOpen(false);
   };
 
-  return (
-    <AlertDialog open={open}>
-      <AlertDialogContent className="max-md:max-w-[93%] rounded-md">
-        <AlertDialogHeader>
-          <AlertDialogTitle className="flex items-center gap-1 text-lg font-semibold">
-            Pu Vault
-          </AlertDialogTitle>
-        </AlertDialogHeader>
+  const handleSkip = () => {
+    sessionStorage.setItem("dataDialogDismissed", "true");
+    setOpen(false);
+  };
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-2">
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent className="max-w-md w-[92vw] rounded-2xl p-6 border shadow-2xl">
+        <DialogHeader className="space-y-2">
+          <div className="flex items-center gap-2">
+            <div className="p-2 rounded-xl bg-primary/10 text-primary">
+              <GraduationCap className="size-6" />
+            </div>
+            <div>
+              <DialogTitle className="text-xl font-bold">
+                Personalize PU Vault
+              </DialogTitle>
+              <DialogDescription className="text-xs text-muted-foreground">
+                Set your details once to customize your materials, timetables, and assignments.
+              </DialogDescription>
+            </div>
+          </div>
+        </DialogHeader>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-2">
           {/* Name Field */}
-          <div className="space-y-1">
-            <Label htmlFor="name">Name</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="name" className="text-xs font-semibold">
+              Full Name
+            </Label>
             <Input
               id="name"
-              placeholder="Enter your full name"
+              placeholder="e.g. Rahul Sharma"
+              className="rounded-xl h-10"
               {...register("name")}
             />
             {errors.name && (
-              <p className="text-sm text-red-500">{errors.name.message}</p>
+              <p className="text-xs text-destructive">{errors.name.message}</p>
             )}
           </div>
 
           {/* Enrollment Field */}
-          <div className="space-y-1">
-            <Label htmlFor="enrollment">Enrollment No.</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="enrollment" className="text-xs font-semibold">
+              Enrollment Number
+            </Label>
             <Input
               id="enrollment"
-              placeholder="Enter enrollment number"
+              placeholder="e.g. 230303126001"
+              className="rounded-xl h-10"
               {...register("enrollment")}
             />
             {errors.enrollment && (
-              <p className="text-sm text-red-500">
+              <p className="text-xs text-destructive">
                 {errors.enrollment.message}
               </p>
             )}
           </div>
 
-          {/* Course Select */}
-          <CourseSelectBox />
+          <div className="grid grid-cols-2 gap-3 pt-1">
+            {/* Course Select */}
+            <div className="space-y-1.5">
+              <Label className="text-xs font-semibold">Course</Label>
+              <CourseSelectBox />
+            </div>
 
-          {/* Semester Select */}
-          <SemSelectBox />
+            {/* Semester Select */}
+            <div className="space-y-1.5">
+              <Label className="text-xs font-semibold">Semester</Label>
+              <SemSelectBox />
+            </div>
+          </div>
 
-          <AlertDialogFooter>
-            <Button type="submit" className="w-full">
-              Save changes
+          <DialogFooter className="flex-col sm:flex-row gap-2 pt-2">
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={handleSkip}
+              className="rounded-xl text-xs text-muted-foreground hover:text-foreground"
+            >
+              Skip for now
             </Button>
-          </AlertDialogFooter>
+            <Button type="submit" className="rounded-xl font-semibold gap-1.5">
+              <Sparkles className="size-4" />
+              Save & Continue
+            </Button>
+          </DialogFooter>
         </form>
-      </AlertDialogContent>
-    </AlertDialog>
+      </DialogContent>
+    </Dialog>
   );
 };

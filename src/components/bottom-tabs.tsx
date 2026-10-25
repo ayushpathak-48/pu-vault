@@ -1,73 +1,97 @@
 "use client";
 
-import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useDataStore } from "@/stores/data.store";
-import { MessageSquarePlus } from "lucide-react";
+import {
+  House,
+  Code2,
+  Calculator,
+  CalendarDays,
+  ListTodo,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { Fragment } from "react";
-import { FeedbackFloatingDialog } from "./feedback-dialog-button";
-import { Button } from "./ui/button";
+import React from "react";
+
 export const BottomTabs = () => {
   const pathname = usePathname();
   const bottomTabsEnabled = useDataStore((state) => state.bottomTabsEnabled);
 
-  if (!bottomTabsEnabled) return;
+  if (!bottomTabsEnabled) return null;
+
+  const mobileTabs = [
+    {
+      title: "Materials",
+      href: "/",
+      icon: House,
+    },
+    {
+      title: "Codes",
+      href: "/code",
+      icon: Code2,
+    },
+    {
+      title: "Attendance",
+      href: "/attendance-calculator",
+      icon: Calculator,
+    },
+    {
+      title: "Timetable",
+      href: "/time-table",
+      icon: CalendarDays,
+    },
+    {
+      title: "MCQs",
+      href: "/mcqs",
+      icon: ListTodo,
+    },
+  ];
+
   return (
-    <div className="z-[40] fixed md:hidden bottom-0 h-14 inset-x-0 bg-gray-100 dark:bg-[#181818]">
-      <div className="flex items-center justify-evenly h-full">
-        {navLinks.map((link) => {
-          if (link?.hideOnMobile) return;
-          const activeLink =
-            (link.href != "/" && pathname.startsWith(link.href)) ||
-            pathname == link.href;
-          const Icon = link.icon;
+    <nav className="z-[40] fixed md:hidden bottom-0 inset-x-0 h-16 bg-background/90 backdrop-blur-lg border-t border-border/60 shadow-lg px-2">
+      <div className="flex items-center justify-around h-full max-w-lg mx-auto">
+        {mobileTabs.map((tab) => {
+          const isActive =
+            (tab.href !== "/" && pathname.startsWith(tab.href)) ||
+            pathname === tab.href;
+          const Icon = tab.icon;
+
           return (
-            <Fragment key={link.id}>
-              <Link
-                href={link.href}
-                className="w-20 h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-1"
-                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            <Link
+              key={tab.href}
+              href={tab.href}
+              className={cn(
+                "flex flex-col items-center justify-center flex-1 py-1 px-2 rounded-xl transition-all duration-200 group relative",
+                isActive
+                  ? "text-primary font-semibold"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              <div
+                className={cn(
+                  "p-1 rounded-xl transition-all",
+                  isActive && "bg-primary/10 scale-105",
+                )}
               >
                 <Icon
                   className={cn(
-                    "size-6 text-gray-500 active:scale-[0.95] transition-all",
-                    activeLink && "text-primary",
+                    "size-5 transition-transform group-active:scale-95",
+                    isActive ? "text-primary" : "text-muted-foreground",
                   )}
                 />
-                <span
-                  className={cn(
-                    "text-[10px] text-wrap truncate text-center font-medium text-gray-500",
-                    activeLink && "text-primary",
-                  )}
-                >
-                  {link.title}
-                </span>
-              </Link>
-            </Fragment>
+              </div>
+              <span
+                className={cn(
+                  "text-[10px] tracking-tight truncate",
+                  isActive ? "text-primary font-bold" : "text-muted-foreground",
+                )}
+              >
+                {tab.title}
+              </span>
+            </Link>
           );
         })}
-        <FeedbackFloatingDialog trigger={
-          <Button
-            variant={"ghost"}
-            size={"icon"}
-            className="!w-20 !h-full flex items-center justify-center hover:bg-gray-200 hover:dark:bg-gray-800 flex-col gap-0"
-          >
-            <MessageSquarePlus
-              className={cn(
-                "!size-6 text-gray-500 active:scale-[0.95] transition-all")}
-            />
-            <span
-              className={cn(
-                "text-[10px] text-wrap truncate text-center font-medium text-gray-500"
-              )}
-            >
-              Feedback
-            </span>
-          </Button>
-        } />
       </div>
-    </div>
+    </nav>
   );
 };

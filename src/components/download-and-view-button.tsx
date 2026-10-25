@@ -1,16 +1,23 @@
 "use client";
+
 import { downloadFile } from "@/lib/utils";
-import { ArrowDownToLine, Loader } from "lucide-react";
+import { ArrowDownToLine, Eye, Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export const DownloadAndViewButton = ({
   href,
   variant = "default",
 }: {
   href: string;
-  variant?: "default" | "ghost";
+  variant?: "default" | "ghost" | "outline";
 }) => {
   const [loading, setLoading] = useState(false);
 
@@ -20,26 +27,43 @@ export const DownloadAndViewButton = ({
       .then(() => setLoading(false))
       .catch(() => setLoading(false));
   };
+
   return (
-    <div className="flex items-center gap-1">
-      <Button
-        variant={variant}
-        onClick={handleDownload}
-        size={"sm"}
-        className="size-8"
-        disabled={loading}
-      >
-        {loading ? <Loader className="animate-spin" /> : <ArrowDownToLine />}
-      </Button>
-      <Button className="" variant={variant} asChild size={"sm"}>
-        <Link
-          href={href}
-          target="_blank"
-          className={variant == "ghost" ? "text-primary" : ""}
+    <TooltipProvider>
+      <div className="flex items-center gap-1.5 shrink-0">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant={variant === "ghost" ? "ghost" : "outline"}
+              onClick={handleDownload}
+              size="icon"
+              className="size-8 rounded-xl border-border/70 hover:border-primary/50 text-muted-foreground hover:text-foreground shadow-2xs"
+              disabled={loading}
+            >
+              {loading ? (
+                <Loader2 className="size-3.5 animate-spin" />
+              ) : (
+                <ArrowDownToLine className="size-3.5" />
+              )}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent className="text-xs">
+            <span>Download PDF</span>
+          </TooltipContent>
+        </Tooltip>
+
+        <Button
+          variant={variant === "ghost" ? "secondary" : "default"}
+          size="sm"
+          className="rounded-xl h-8 px-3 text-xs font-semibold gap-1 shadow-2xs"
+          asChild
         >
-          View
-        </Link>
-      </Button>
-    </div>
+          <Link href={href} target="_blank" rel="noopener noreferrer">
+            <Eye className="size-3 mr-0.5" />
+            View
+          </Link>
+        </Button>
+      </div>
+    </TooltipProvider>
   );
 };

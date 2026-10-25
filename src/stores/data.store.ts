@@ -4,6 +4,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type UserType = { name: string; enrollment: string };
+
 export type ProjectMemberType = {
   name: string;
   enrollment: string;
@@ -19,6 +20,7 @@ export type ProjectType = {
   front_end: string;
   back_end: string;
 };
+
 export type ProjectDetailsType = {
   company_name: string;
   address: string;
@@ -61,29 +63,29 @@ interface SpecializationState {
   setProjectDetails: (value: ProjectDetailsType[]) => void;
   examDetails: ExamDetailsType[] | null;
   setExamDetails: (value: ExamDetailsType[]) => void;
-  hydrated: boolean; // NEW state to track hydration
+  hydrated: boolean;
 }
 
 export const useDataStore = create<SpecializationState>()(
   persist(
-    (set, get) => ({
-      user: get()?.user,
+    (set) => ({
+      user: { name: "", enrollment: "" },
       setUser: (value) => set({ user: value }),
-      specialization: get()?.specialization || "ai",
+      specialization: "ai",
       setSpecialization: (value) => set({ specialization: value }),
-      division: get()?.division || "div_a",
+      division: "div_a",
       setDivision: (value) => set({ division: value }),
-      course: get()?.course || "mca",
+      course: "mca",
       setCourse: (value) => set({ course: value }),
-      sem: get()?.sem || 3,
+      sem: 3,
       setSem: (value) => set({ sem: value }),
-      color: get()?.color || "blue",
+      color: "blue",
       setColor: (value) => set({ color: value }),
-      bottomTabsEnabled: get()?.bottomTabsEnabled || true,
+      bottomTabsEnabled: true,
       setBottomTabsEnabled: (value) => set({ bottomTabsEnabled: value }),
-      projectDetails: get()?.projectDetails || [],
+      projectDetails: [],
       setProjectDetails: (value) => set({ projectDetails: value }),
-      examDetails: get()?.examDetails || [],
+      examDetails: [],
       setExamDetails: (value) => set({ examDetails: value }),
       hydrated: false,
     }),

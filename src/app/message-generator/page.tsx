@@ -1,4 +1,5 @@
 "use client";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -8,13 +9,21 @@ import { Switch } from "@/components/ui/switch";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { CalendarIcon, MailIcon } from "lucide-react";
+import {
+  CalendarIcon,
+  MailIcon,
+  Copy,
+  Check,
+  Send,
+  MessageSquare,
+  Sparkles,
+  Info,
+} from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { MessageGeneratorSchema } from "@/lib/schema/message-generator-schema";
 import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
 import {
   Form,
   FormControl,
@@ -36,44 +45,24 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useDataStore } from "@/stores/data.store";
-import { professorDetails } from "@/lib/constants/professor-details.constant";
-import Link from "next/link";
 import { toast } from "sonner";
+import Image from "next/image";
 
 const lectureDetails = [
-  {
-    lecture: 1,
-    time: "07:30 TO 08:25",
-  },
-  {
-    lecture: 2,
-    time: "08:25 TO 09:20",
-  },
-  {
-    lecture: 3,
-    time: "09:30 TO 10:25",
-  },
-  {
-    lecture: 4,
-    time: "10:25 TO 11:20",
-  },
-  {
-    lecture: 5,
-    time: "12:20 TO 01:15",
-  },
-  {
-    lecture: 6,
-    time: "01:15 TO 02:10",
-  },
+  { lecture: 1, time: "07:30 TO 08:25" },
+  { lecture: 2, time: "08:25 TO 09:20" },
+  { lecture: 3, time: "09:30 TO 10:25" },
+  { lecture: 4, time: "10:25 TO 11:20" },
+  { lecture: 5, time: "12:20 TO 01:15" },
+  { lecture: 6, time: "01:15 TO 02:10" },
 ];
 
-const MessageGeneratorPage = () => {
+export default function MessageGeneratorPage() {
   const { getMessageFormats } = useDataGetters();
   const user = useDataStore((state) => state.user);
   const setUser = useDataStore((state) => state.setUser);
 
   const [message, setMessage] = useState("");
-  const [searchText, setSearchText] = useState("");
   const [copied, setCopied] = useState(false);
 
   const form = useForm<z.infer<typeof MessageGeneratorSchema>>({
@@ -86,355 +75,338 @@ const MessageGeneratorPage = () => {
       type: "whatsapp",
       gender: "male",
       date: new Date(),
-      time: "",
+      time: "07:30 TO 08:25",
       lecture: "1",
     },
   });
 
-  function onSubmit(data: z.infer<typeof MessageGeneratorSchema>) {
-    setUser({
-      name: form.getValues("name"),
-      enrollment: form.getValues("enrollment"),
-    });
+  function generateMessage(data: z.infer<typeof MessageGeneratorSchema>) {
     const lectureObject = lectureDetails.find(
-      ({ lecture }) => lecture == parseInt(form.getValues("lecture")),
+      ({ lecture }) => lecture === parseInt(data.lecture),
     );
-    data.time = lectureObject?.time || "";
+    data.time = lectureObject?.time || "07:30 TO 08:25";
     const msg = getMessageFormats(data);
     setMessage(msg);
+  }
 
-    const element = document.getElementById("generated-message");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", inline: "start" });
-    }
+  function onSubmit(data: z.infer<typeof MessageGeneratorSchema>) {
+    setUser({
+      name: data.name,
+      enrollment: data.enrollment,
+    });
+    generateMessage(data);
+    toast.success("Message generated successfully!");
   }
 
   const handleCopy = () => {
+    if (!message) return;
     try {
       navigator.clipboard.writeText(message);
       setCopied(true);
-      toast.success("Message copied to clipboard");
+      toast.success("Message copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
-      console.log({ error });
-      toast.success("Failed to copy! Try manually...");
+    } catch {
+      toast.error("Failed to copy. Please copy manually.");
     }
   };
 
   useEffect(() => {
-    const subscription = form.watch((_, { name }) => {
-      if (name != "type") {
-        setMessage("");
-      }
-    });
-
-    return () => subscription.unsubscribe(); // cleanup on unmount
-  }, [form]);
+    // Generate initial sample preview
+    const values = form.getValues();
+    if (values.name && values.enrollment) {
+      generateMessage(values);
+    }
+  }, []);
 
   return (
-    <>
-      <div className="flex items-center justify-center py-10 flex-col gap-4">
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <div className="font-medium text-xl">
-            Unmarked Attendance Message Generator
-          </div>
-          <div className="text-xs text-muted-foreground text-center px-1">
-            Don&apos;t use this for fun or spamming. It&apos;s for students
-            whose attendance is marked as absent.
+    <div className="w-full max-w-5xl mx-auto px-4 md:px-8 py-6 space-y-6">
+      {/* Header Banner */}
+      <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 via-indigo-500/5 to-transparent border border-blue-500/20 shadow-xs space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 uppercase flex items-center gap-1">
+            <MailIcon className="size-3" /> Communication Tool
+          </span>
+        </div>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+          Attendance Discrepancy Message Generator
+        </h1>
+        <p className="text-xs md:text-sm text-muted-foreground max-w-xl leading-relaxed">
+          Quickly generate formal, polite emails and WhatsApp messages for your professors and course coordinators if you were mistakenly marked absent.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        {/* Form Column */}
+        <div className="lg:col-span-7 p-6 rounded-3xl bg-card border border-border/70 shadow-md">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-semibold">Your Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter Full Name" className="rounded-xl h-10" {...field} />
+                      </FormControl>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="enrollment"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-semibold">Enrollment No.</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter Enrollment" className="rounded-xl h-10" {...field} />
+                      </FormControl>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <FormField
+                  control={form.control}
+                  name="lecture"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-semibold">Lecture Slot</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="rounded-xl h-10 text-xs">
+                            <SelectValue placeholder="Slot" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {lectureDetails.map((l) => (
+                            <SelectItem key={l.lecture} value={l.lecture.toString()} className="text-xs">
+                              Lecture {l.lecture} ({l.time})
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="gender"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-semibold">Addressing</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="rounded-xl h-10 text-xs">
+                            <SelectValue placeholder="Salutation" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="male" className="text-xs">Sir</SelectItem>
+                          <SelectItem value="female" className="text-xs">Ma&apos;am</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="type"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-semibold">Format</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="rounded-xl h-10 text-xs">
+                            <SelectValue placeholder="Type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="whatsapp" className="text-xs">WhatsApp</SelectItem>
+                          <SelectItem value="email" className="text-xs">Formal Email</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="date"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel className="text-xs font-semibold">Lecture Date</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full rounded-xl h-10 pl-3 text-left font-normal text-xs border-border/70",
+                                !field.value && "text-muted-foreground",
+                              )}
+                            >
+                              {field.value ? (
+                                format(field.value, "PPP")
+                              ) : (
+                                <span>Pick lecture date</span>
+                              )}
+                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={field.value}
+                            onSelect={field.onChange}
+                            disabled={(date) =>
+                              date > new Date() || date < new Date("2024-01-01")
+                            }
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="is_present"
+                  render={({ field }) => (
+                    <FormItem className="flex items-center justify-between rounded-xl border border-border/70 p-3 h-10 mt-auto">
+                      <FormLabel className="text-xs font-medium cursor-pointer">
+                        I was physically present
+                      </FormLabel>
+                      <FormControl>
+                        <Switch
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <FormField
+                control={form.control}
+                name="reason"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-xs font-semibold">
+                      Reason (Optional if you were absent)
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g. unwell / attending campus interview"
+                        className="rounded-xl h-10 text-xs"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+
+              <Button type="submit" className="w-full rounded-xl font-bold h-11 gap-2 shadow-sm">
+                <Sparkles className="size-4" /> Generate Formatted Message
+              </Button>
+            </form>
+          </Form>
+        </div>
+
+        {/* Live Preview Column */}
+        <div className="lg:col-span-5 space-y-4">
+          <div className="p-6 rounded-3xl bg-card border border-border/70 shadow-md space-y-4">
+            <div className="flex items-center justify-between border-b border-border/40 pb-3">
+              <div className="flex items-center gap-2">
+                <MessageSquare className="size-4 text-primary" />
+                <h3 className="font-bold text-sm text-foreground">Generated Message Preview</h3>
+              </div>
+              {message && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleCopy}
+                  className="rounded-xl h-8 text-xs font-semibold gap-1.5"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="size-3.5 text-emerald-500" />
+                      <span className="text-emerald-600 dark:text-emerald-400">Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="size-3.5" />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </Button>
+              )}
+            </div>
+
+            {message ? (
+              <div className="space-y-4">
+                <Textarea
+                  readOnly
+                  value={message}
+                  className="min-h-[260px] font-mono text-xs rounded-2xl bg-muted/30 border-border/60 leading-relaxed resize-none p-4"
+                />
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    onClick={handleCopy}
+                    className="flex-1 rounded-xl h-10 font-semibold text-xs gap-1.5 shadow-sm"
+                  >
+                    <Copy className="size-3.5" /> Copy to Clipboard
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="rounded-xl h-10 px-3 text-xs"
+                    onClick={() => {
+                      window.open(
+                        `https://wa.me/?text=${encodeURIComponent(message)}`,
+                        "_blank",
+                      );
+                    }}
+                    title="Send via WhatsApp"
+                  >
+                    <Image
+                      src="/icons/whatsapp.png"
+                      height={18}
+                      width={18}
+                      alt="WhatsApp"
+                      className="size-4"
+                    />
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className="p-10 text-center rounded-2xl border border-dashed text-muted-foreground space-y-2">
+                <Info className="size-8 mx-auto text-muted-foreground" />
+                <p className="text-xs">
+                  Fill in your lecture details and click <strong>&quot;Generate Formatted Message&quot;</strong> to see the preview here.
+                </p>
+              </div>
+            )}
           </div>
         </div>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="md:w-2/3 space-y-6 rounded-lg p-4 border border-gray-800"
-          >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter Name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="enrollment"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Enrollment Id</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="number"
-                      placeholder="Enter Enrollment Id"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="reason"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Reason</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter Reason" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="date"
-              render={({ field }) => (
-                <FormItem className="flex flex-col w-max">
-                  <FormLabel>Date</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-[240px] pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground",
-                          )}
-                        >
-                          {field.value ? (
-                            format(field.value, "PPP")
-                          ) : (
-                            <span>Pick a date</span>
-                          )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) =>
-                          date > new Date() || date < new Date("1900-01-01")
-                        }
-                        captionLayout="dropdown"
-                      />
-                    </PopoverContent>
-                  </Popover>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="lecture"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>lecture</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value.toString()}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a verified lecture to display" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {lectureDetails.map((lecture) => (
-                        <SelectItem
-                          key={lecture.lecture}
-                          value={lecture.lecture.toString()}
-                        >
-                          {lecture.lecture}) Time:- {lecture.time}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="is_present"
-              render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-                  <div className="space-y-0.5">
-                    <FormLabel>Are you present in the lecture?</FormLabel>
-                  </div>
-                  <FormControl>
-                    <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                      aria-readonly
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <div className="flex items-center justify-center gap-4 w-full">
-              <Button
-                type="button"
-                variant={"outline"}
-                className={cn(
-                  form.watch("gender") == "male" &&
-                    "border-primary text-primary",
-                )}
-                onClick={() => form.setValue("gender", "male")}
-              >
-                Sir
-              </Button>
-              <Button
-                type="button"
-                variant={"outline"}
-                className={cn(
-                  form.watch("gender") == "female" &&
-                    "border-primary text-primary",
-                )}
-                onClick={() => form.setValue("gender", "female")}
-              >
-                Ma&apos;am
-              </Button>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <Button
-                type="button"
-                variant={"outline"}
-                className="border border-primary bg-secondary"
-                onClick={() => {
-                  form.setValue("type", "whatsapp");
-                  form.handleSubmit(onSubmit)();
-                }}
-              >
-                Generate Message
-              </Button>
-              <Button
-                type="button"
-                variant={"outline"}
-                className="border border-primary bg-secondary"
-                onClick={() => {
-                  form.setValue("type", "email");
-                  form.handleSubmit(onSubmit)();
-                }}
-              >
-                Generate Email
-              </Button>
-            </div>
-          </form>
-        </Form>
-        {message && (
-          <div id="generated-message" className=" px-5 w-full">
-            <Separator />
-            <div className="w-full md:w-2/3 flex flex-col gap-2 mx-auto my-3">
-              <div className="flex items-center justify-between gap-2">
-                <Label
-                  htmlFor="message"
-                  className="text-xl font-medium text-primary"
-                >
-                  Generated Message
-                </Label>
-                <Button
-                  type="button"
-                  variant={copied ? "outline" : "default"}
-                  onClick={handleCopy}
-                >
-                  {copied ? "Copied..." : "Copy"}
-                </Button>
-              </div>
-              <Textarea
-                rows={15}
-                disabled
-                id="message"
-                className="bg-secondary resize-none text-md disabled:opacity-85"
-                value={message}
-                onChange={() => {}}
-              ></Textarea>
-            </div>
-            <Separator />
-            <div className="flex items-center justify-between py-2 mt-3 flex-wrap gap-2 max-sm:justify-center">
-              <div className="font-medium text-lg">Send to Professor</div>
-              <Input
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                placeholder="Search Professor name..."
-                className="max-w-sm"
-              />
-            </div>
-            <div className="min-h-40 flex flex-col gap-2 w-full">
-              {professorDetails.filter(({ name }) =>
-                name.toLowerCase().includes(searchText.toLowerCase()),
-              ).length == 0 && (
-                <div className="h-40 text-center flex items-center justify-center">
-                  No Professor Found with the name {searchText}
-                </div>
-              )}
-              {professorDetails
-                .filter(({ name }) =>
-                  name.toLowerCase().includes(searchText.toLowerCase()),
-                )
-                .map((professor) => (
-                  <div
-                    key={professor.id}
-                    className="flex items-center justify-between bg-gray-100 dark:bg-[#181818] p-4 rounded-lg"
-                  >
-                    <h2>{professor.name}</h2>
-                    <div className="flex items-center gap-2">
-                      <Button variant={"outline"} size={"sm"} asChild>
-                        <Link
-                          href={`https://wa.me/${
-                            professor.contact
-                          }?text=${encodeURIComponent(message)}`}
-                          target="_blank"
-                          className="font-medium primary"
-                        >
-                          Whatsapp
-                        </Link>
-                      </Button>
-                      <Button variant={"secondary"} size={"sm"} asChild>
-                        <Link
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${
-                            professor.email
-                          }&su=Attendance%20Not%20Marked&body=${encodeURIComponent(
-                            message,
-                          )}`}
-                          target="_blank"
-                          className="font-medium primary"
-                        >
-                          Gmail
-                        </Link>
-                      </Button>
-                      <Button variant={"secondary"} size={"sm"} asChild>
-                        <Link
-                          href={`mailto:${
-                            professor.email
-                          }?subject=Attendance%20Not%20Marked&body=${encodeURIComponent(
-                            message,
-                          )}`}
-                          target="_blank"
-                          className="font-medium primary"
-                        >
-                          <MailIcon />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        )}
       </div>
-    </>
+    </div>
   );
-};
-
-export default MessageGeneratorPage;
+}

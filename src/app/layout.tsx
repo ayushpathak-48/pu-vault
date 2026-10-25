@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, PT_Serif } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import ClientProvider from "@/providers/client-provider";
 import { Navbar } from "@/components/navbar";
@@ -11,12 +12,8 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { DeviceTracker } from "@/components/modals/DeviceTracker";
 import { FeedbackFloatingDialog } from "@/components/feedback-dialog-button";
 import Footer from "@/components/footer";
-
 import { DataDialog } from "@/components/modals/data-dialog";
 import { WhatsappDialog } from "@/components/modals/whatsapp-dialog";
-import { FeaturedAppsBanner } from "@/components/featured-apps-banner";
-import Link from "next/link";
-
 
 const headingFont = PT_Serif({
   subsets: ["latin"],
@@ -30,8 +27,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Pu Vault",
-  description: "Parul University MCA sem 1 - 3 materials",
+  title: "PU Vault | Parul University Student Portal",
+  description: "Comprehensive study materials, notes, lab practical codes, assignments, timetable, and attendance tools for Parul University students.",
   icons: "/favicon.png",
   manifest: "/manifest.json",
 };
@@ -51,7 +48,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6721729055053884" />
       </head>
       <body
-        className={`${poppins.className} ${headingFont.variable} antialiased `}
+        className={`${poppins.className} ${headingFont.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"
@@ -61,26 +58,19 @@ export default function RootLayout({
         >
           <NuqsAdapter>
             <ClientProvider>
-              <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative">
-                <Navbar />
-                <main className="w-full max-md:pb-14 pt-16 md:pt-20 z-[5] relative h-full">
-                  <div className="px-3 md:px-5 pt-3 md:pt-5 pb-0">
-                    <div className="flex items-center justify-between mb-2 px-1">
-                      <h2 className="text-sm font-semibold text-muted-foreground flex items-center gap-1.5">
-                        <span>✨</span> Featured Apps
-                      </h2>
-                      <Link href="/featured-apps" className="text-xs font-semibold text-primary hover:underline">
-                        View All
-                      </Link>
-                    </div>
-                    <FeaturedAppsBanner />
-                  </div>
-                  {children}
+              <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative min-h-screen flex flex-col justify-between">
+                <Suspense fallback={<div className="h-16 lg:h-20 bg-background/85 border-b" />}>
+                  <Navbar />
+                </Suspense>
+                <main className="w-full max-md:pb-16 pt-16 md:pt-20 z-[5] relative flex-1">
+                  <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
+                    {children}
+                  </Suspense>
                 </main>
                 <Footer />
               </div>
               <BottomTabs />
-              <Toaster position="top-center" />
+              <Toaster position="top-center" richColors />
               <DataDialog />
               <WhatsappFloatingButton />
               <FeedbackFloatingDialog />
@@ -89,7 +79,6 @@ export default function RootLayout({
             </ClientProvider>
           </NuqsAdapter>
         </ThemeProvider>
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="puvault" data-description="Support me on Buy me a coffee!" data-message="" data-color="#26B0A1" data-position="Left" data-x_margin="18" data-y_margin="50"></script>
       </body>
     </html>
   );
