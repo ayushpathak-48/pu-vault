@@ -89,9 +89,6 @@ export const BottomTabs = () => {
               >
                 {tab.title}
               </span>
-              {isActive && (
-                <div className="size-1 rounded-full bg-primary mt-0.5 animate-in fade-in" />
-              )}
             </Link>
           );
         })}

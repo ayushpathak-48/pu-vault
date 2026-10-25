@@ -46,7 +46,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+    <div className="w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 md:space-y-8">
       {/* Header */}
       <div className="space-y-1">
         <div className="flex items-center gap-2">
@@ -62,9 +62,9 @@ export default function SettingsPage() {
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-3.5 sm:space-y-6">
         {/* Student Profile Glass Card */}
-        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
+        <div className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <User className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">Student Identity</h2>
@@ -106,7 +106,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Academic Configuration Glass Card */}
-        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
+        <div className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <GraduationCap className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">
@@ -133,7 +133,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Appearance & Themes Glass Card */}
-        <div className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5">
+        <div className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5">
           <div className="flex items-center gap-2.5 pb-3 border-b border-white/40 dark:border-white/[0.06]">
             <Palette className="size-4 text-primary" />
             <h2 className="text-base font-bold text-foreground">
@@ -175,7 +175,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Legal & App Links */}
-        <div className="p-5 rounded-2xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl border border-white/50 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl border border-white/50 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
           <div className="flex items-center gap-4 flex-wrap">
             <Link href="/about" className="hover:text-foreground transition-colors flex items-center gap-1">
               <Info className="size-3" /> About PU Vault

@@ -63,11 +63,11 @@ export const Navbar = () => {
   }, [courseParam, setCourse]);
 
   return (
-    <header className="fixed top-0 right-0 left-0 md:left-64 z-[40] h-16 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 sm:px-6 lg:px-8 transition-colors">
-      <div className="flex items-center justify-between h-full w-full max-w-6xl mx-auto gap-4">
+    <header className="fixed top-0 right-0 left-0 md:left-64 z-[40] h-16 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-3 sm:px-6 lg:px-8 transition-colors">
+      <div className="flex items-center justify-between h-full w-full max-w-6xl mx-auto gap-2 sm:gap-4 min-w-0">
         {/* Left: Mobile branding & page title */}
-        <div className="flex items-center gap-3">
-          <Link href={"/"} className="md:hidden flex items-center gap-2">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <Link href={"/"} className="md:hidden flex items-center gap-2 shrink-0">
             <div className="size-8 rounded-xl overflow-hidden shadow-xs border border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] p-0.5 flex items-center justify-center">
               <Image
                 src={"/favicon.png"}
@@ -78,8 +78,8 @@ export const Navbar = () => {
               />
             </div>
           </Link>
-          <div className="flex flex-col min-w-0">
-            <h1 className="font-extrabold text-base sm:text-lg md:text-2xl text-foreground tracking-tight leading-tight truncate max-w-[140px] xs:max-w-[200px] sm:max-w-none">
+          <div className="flex flex-col min-w-0 flex-1">
+            <h1 className="font-extrabold text-sm sm:text-base md:text-2xl text-foreground tracking-tight leading-tight truncate">
               {activePageTitle}
             </h1>
             <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
@@ -101,7 +101,7 @@ export const Navbar = () => {
         </div>
 
         {/* Right: Search, Quick settings, Mobile sidebar toggle */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Desktop search bar */}
           <div className="hidden md:block">
             <SearchModal />
@@ -115,7 +115,7 @@ export const Navbar = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
+                  className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
                 >
                   <Search className="size-4 text-muted-foreground" />
                 </Button>
@@ -128,10 +128,10 @@ export const Navbar = () => {
             asChild
             variant="outline"
             size="icon"
-            className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl text-muted-foreground hover:text-foreground"
+            className="size-9 sm:size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl text-muted-foreground hover:text-foreground"
           >
             <Link href="/settings" title="Settings">
-              <Settings className="size-4.5" />
+              <Settings className="size-4" />
             </Link>
           </Button>
 
@@ -140,11 +140,11 @@ export const Navbar = () => {
             <Button
               variant="outline"
               size="icon"
-              className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
+              className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
               onClick={toggleSidebar}
               aria-label="Toggle navigation"
             >
-              <Menu className="size-4.5" />
+              <Menu className="size-4" />
             </Button>
           </div>
         </div>

@@ -42,31 +42,31 @@ const McqCard = ({
   };
 
   return (
-    <div className="rounded-3xl border border-white/60 dark:border-white/[0.08] bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden transition-all">
+    <div className="rounded-xl sm:rounded-3xl border border-white/60 dark:border-white/[0.08] bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden transition-all">
       {/* Header bar */}
-      <div className="w-full bg-white/50 dark:bg-zinc-900/60 border-b border-white/50 dark:border-white/[0.08] px-5 py-3 flex items-center justify-between">
+      <div className="w-full bg-white/50 dark:bg-zinc-900/60 border-b border-white/50 dark:border-white/[0.08] px-3.5 sm:px-5 py-2 sm:py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="size-6 rounded-lg bg-primary/10 text-primary border border-primary/20 text-xs font-bold flex items-center justify-center">
+          <span className="size-5 sm:size-6 rounded-md sm:rounded-lg bg-primary/10 text-primary border border-primary/20 text-[10px] sm:text-xs font-bold flex items-center justify-center">
             {index + 1}
           </span>
-          <span className="text-xs font-bold text-foreground uppercase tracking-wide">
+          <span className="text-[11px] sm:text-xs font-bold text-foreground uppercase tracking-wide">
             Question {index + 1}
           </span>
         </div>
 
         {isSubmitted && (
-          <div className="text-xs font-semibold">
+          <div className="text-[11px] sm:text-xs font-semibold">
             {selectedOptions[que.id] === undefined ? (
-              <span className="text-muted-foreground bg-muted/50 px-2.5 py-0.5 rounded-full border border-border/50">
+              <span className="text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-0.5 rounded-full border border-border/50">
                 Unattempted
               </span>
             ) : isCorrect(selectedOptions[que.id]) ? (
-              <span className="text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1">
-                <CheckCircle2 className="size-3.5" /> Correct Answer
+              <span className="text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 sm:px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1">
+                <CheckCircle2 className="size-3 sm:size-3.5" /> Correct Answer
               </span>
             ) : (
-              <span className="text-red-600 dark:text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20 flex items-center gap-1">
-                <XCircle className="size-3.5" /> Incorrect
+              <span className="text-red-600 dark:text-red-400 bg-red-500/10 px-2 sm:px-2.5 py-0.5 rounded-full border border-red-500/20 flex items-center gap-1">
+                <XCircle className="size-3 sm:size-3.5" /> Incorrect
               </span>
             )}
           </div>
@@ -74,12 +74,12 @@ const McqCard = ({
       </div>
 
       {/* Question & Options Content */}
-      <div className="p-5 md:p-6 space-y-4">
-        <h3 className="font-bold text-base md:text-lg text-foreground leading-snug">
+      <div className="p-3.5 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
+        <h3 className="font-bold text-sm sm:text-base md:text-lg text-foreground leading-snug">
           {que?.title}
         </h3>
 
-        <div className="grid grid-cols-1 gap-2.5">
+        <div className="grid grid-cols-1 gap-2 sm:gap-2.5">
           {que?.options.map((option: string, i: number) => {
             const selected = isSelected(i);
             const correct = isCorrect(i);
@@ -110,7 +110,7 @@ const McqCard = ({
                   );
                 }}
                 className={cn(
-                  "flex items-center gap-3.5 px-4 py-3 rounded-2xl border transition-all cursor-pointer backdrop-blur-md select-none text-sm",
+                  "flex items-center gap-2.5 sm:gap-3.5 px-3 sm:px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl border transition-all cursor-pointer backdrop-blur-md select-none text-xs sm:text-sm",
                   statusClasses,
                 )}
               >

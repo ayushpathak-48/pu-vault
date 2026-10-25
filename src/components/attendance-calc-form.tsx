@@ -118,18 +118,18 @@ export function AttendanceCalcForm() {
   return (
     <div className="w-full max-w-xl mx-auto space-y-6">
       {/* Target Percentage Preset Selector */}
-      <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/50 dark:bg-white/[0.04] backdrop-blur-xl border border-white/60 dark:border-white/[0.08] shadow-xs">
-        <span className="text-xs font-bold text-muted-foreground uppercase flex items-center gap-1.5">
+      <div className="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/50 dark:bg-white/[0.04] backdrop-blur-xl border border-white/60 dark:border-white/[0.08] shadow-xs">
+        <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase flex items-center gap-1.5">
           <Percent className="size-3.5 text-primary" /> Target Goal
         </span>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5">
           {[75, 80, 85, 90].map((t) => (
             <button
               key={t}
               type="button"
               onClick={() => handleTargetChange(t)}
               className={cn(
-                "px-3 py-1 rounded-xl text-xs font-bold transition-all backdrop-blur-md",
+                "px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all backdrop-blur-md",
                 targetPercent === t
                   ? "bg-primary text-primary-foreground shadow-xs scale-105"
                   : "bg-white/60 dark:bg-white/[0.06] text-muted-foreground hover:text-foreground border border-white/50 dark:border-white/[0.08]",
@@ -145,7 +145,7 @@ export function AttendanceCalcForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="p-6 md:p-7 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5"
+          className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4 sm:space-y-5"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
@@ -216,16 +216,16 @@ export function AttendanceCalcForm() {
 
       {/* Results View */}
       {result && (
-        <div className="p-6 rounded-3xl bg-white/70 dark:bg-zinc-900/50 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_14px_40px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.9)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-5 animate-in fade-in slide-in-from-bottom-3 duration-300">
-          <div className="flex items-center justify-between pb-4 border-b border-white/40 dark:border-white/[0.06]">
+        <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/70 dark:bg-zinc-900/50 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_14px_40px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.9)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-4 sm:space-y-5 animate-in fade-in slide-in-from-bottom-3 duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 pb-3.5 sm:pb-4 border-b border-white/40 dark:border-white/[0.06]">
             <div>
-              <span className="text-xs uppercase font-extrabold tracking-wider text-muted-foreground">
+              <span className="text-[11px] sm:text-xs uppercase font-extrabold tracking-wider text-muted-foreground">
                 Current Attendance
               </span>
               <div className="flex items-baseline gap-2 mt-0.5">
                 <span
                   className={cn(
-                    "text-4xl font-extrabold tracking-tight",
+                    "text-3xl sm:text-4xl font-extrabold tracking-tight",
                     result.isSafe
                       ? "text-emerald-600 dark:text-emerald-400"
                       : "text-destructive",
@@ -241,7 +241,7 @@ export function AttendanceCalcForm() {
 
             <div
               className={cn(
-                "p-3 rounded-2xl border backdrop-blur-md flex items-center gap-2",
+                "p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border backdrop-blur-md flex items-center gap-1.5 sm:gap-2",
                 result.isSafe
                   ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/25"
                   : "bg-destructive/10 text-destructive border-destructive/25",
@@ -249,12 +249,12 @@ export function AttendanceCalcForm() {
             >
               {result.isSafe ? (
                 <>
-                  <CheckCircle2 className="size-5" />
+                  <CheckCircle2 className="size-4 sm:size-5" />
                   <span className="text-xs font-bold">Exam Eligible</span>
                 </>
               ) : (
                 <>
-                  <AlertTriangle className="size-5" />
+                  <AlertTriangle className="size-4 sm:size-5" />
                   <span className="text-xs font-bold">Shortage Warning</span>
                 </>
               )}
@@ -262,13 +262,13 @@ export function AttendanceCalcForm() {
           </div>
 
           {/* Actionable Advice Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
             {result.isSafe ? (
-              <div className="p-4 rounded-2xl bg-emerald-500/10 dark:bg-emerald-950/20 border border-emerald-500/20 backdrop-blur-md space-y-1">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-emerald-500/10 dark:bg-emerald-950/20 border border-emerald-500/20 backdrop-blur-md space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
-                  <Zap className="size-4" /> Safe to Bunk
+                  <Zap className="size-3.5 sm:size-4" /> Safe to Bunk
                 </div>
-                <div className="text-2xl font-black text-emerald-800 dark:text-emerald-300">
+                <div className="text-xl sm:text-2xl font-black text-emerald-800 dark:text-emerald-300">
                   {result.canBunkSlots} {result.canBunkSlots === 1 ? "Slot" : "Slots"}
                 </div>
                 <p className="text-[11px] text-emerald-700/80 dark:text-emerald-400/80 leading-relaxed">
@@ -277,7 +277,7 @@ export function AttendanceCalcForm() {
                 </p>
               </div>
             ) : (
-              <div className="p-4 rounded-2xl bg-destructive/10 dark:bg-destructive/20 border border-destructive/20 backdrop-blur-md space-y-1">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-destructive/10 dark:bg-destructive/20 border border-destructive/20 backdrop-blur-md space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-destructive">
                   <AlertTriangle className="size-4" /> Classes Required
                 </div>

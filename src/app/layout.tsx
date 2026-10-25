@@ -79,7 +79,7 @@ export default function RootLayout({
                 <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_60%,transparent_100%)] opacity-35 dark:opacity-45" />
               </div>
 
-              <div className="md:w-[calc(100%-16rem)] ml-auto w-full relative min-h-screen flex flex-col justify-between">
+              <div className="md:w-[calc(100%-16rem)] ml-auto w-full min-w-0 max-w-full overflow-x-hidden relative min-h-screen flex flex-col justify-between">
                 <Suspense
                   fallback={
                     <div className="h-16 bg-background/60 backdrop-blur-xl border-b border-white/20" />
@@ -87,7 +87,7 @@ export default function RootLayout({
                 >
                   <Navbar />
                 </Suspense>
-                <main className="w-full max-md:pb-24 pt-16 z-[5] relative flex-1">
+                <main className="w-full min-w-0 max-w-full overflow-x-hidden max-md:pb-24 pt-16 z-[5] relative flex-1">
                   <Suspense
                     fallback={
                       <div className="p-8 text-center text-muted-foreground animate-pulse">

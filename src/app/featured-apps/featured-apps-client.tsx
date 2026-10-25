@@ -52,9 +52,9 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
   ).length;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 md:space-y-8">
       {/* Header Area */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <Link
           href="/"
           className="inline-flex items-center text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors group"
@@ -68,10 +68,10 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider backdrop-blur-md">
               <Sparkles className="size-3.5" /> Mobile Apps &amp; Utilities
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
               Featured Applications
             </h1>
-            <p className="text-muted-foreground text-sm max-w-2xl leading-relaxed">
+            <p className="text-muted-foreground text-xs sm:text-sm max-w-2xl leading-relaxed">
               Explore privacy-first Android applications, offline student utilities, audio engines, and productivity tools.
             </p>
           </div>
@@ -83,16 +83,16 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
               placeholder="Search apps, tools, stack..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
+              className="pl-10 h-9 sm:h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
             />
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 pt-2 overflow-x-auto pb-1 scrollbar-none">
+        <div className="flex items-center gap-2 pt-1 sm:pt-2 overflow-x-auto pb-1 scrollbar-none">
           <button
             onClick={() => setStatusFilter("all")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border backdrop-blur-md ${
+            className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold whitespace-nowrap transition-all border backdrop-blur-md ${
               statusFilter === "all"
                 ? "bg-primary text-primary-foreground border-primary/40 shadow-xs"
                 : "bg-white/50 dark:bg-white/[0.06] border-white/60 dark:border-white/[0.1] text-muted-foreground hover:text-foreground hover:bg-white/70"
@@ -147,7 +147,7 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
             {filteredApps.map((app) => {
               const iconSrc = resolveAppIcon(app.iconUrl);
               const isLive = app.status === "production" || app.status === "published";
@@ -155,22 +155,22 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
               return (
                 <div
                   key={app.id}
-                  className="flex flex-col bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group justify-between"
+                  className="flex flex-col bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group justify-between"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     {/* Top Row: App Icon + Status */}
                     <div className="flex items-start justify-between gap-3">
-                      <div className="size-14 rounded-2xl overflow-hidden border border-white/60 dark:border-white/[0.1] bg-white/70 dark:bg-black/30 backdrop-blur-md shadow-xs shrink-0 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
+                      <div className="size-11 sm:size-14 rounded-xl sm:rounded-2xl overflow-hidden border border-white/60 dark:border-white/[0.1] bg-white/70 dark:bg-black/30 backdrop-blur-md shadow-xs shrink-0 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
                         {iconSrc ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
                             src={iconSrc}
                             alt={`${app.appName} icon`}
-                            className="w-full h-full object-cover rounded-xl"
+                            className="w-full h-full object-cover rounded-lg sm:rounded-xl"
                             loading="lazy"
                           />
                         ) : (
-                          <Smartphone className="size-7 text-primary" />
+                          <Smartphone className="size-6 sm:size-7 text-primary" />
                         )}
                       </div>
 
@@ -254,10 +254,10 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
                   </div>
 
                   {/* Action Button */}
-                  <div className="pt-4 mt-4 border-t border-white/40 dark:border-white/[0.06]">
+                  <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-white/40 dark:border-white/[0.06]">
                     <Button
                       asChild
-                      className="w-full rounded-2xl font-bold text-xs h-11 shadow-xs gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                      className="w-full rounded-xl sm:rounded-2xl font-bold text-xs h-9 sm:h-11 shadow-xs gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                     >
                       <Link
                         href={app.playStoreUrl || "#"}

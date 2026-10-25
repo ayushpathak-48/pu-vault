@@ -22,9 +22,9 @@ export default function PlacementMaterialsPage() {
   );
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 md:space-y-8">
       {/* Header Banner */}
-      <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase flex items-center gap-1">
@@ -49,14 +49,14 @@ export default function PlacementMaterialsPage() {
             placeholder="Search company (e.g. TCS, Deloitte)..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10 h-10 rounded-xl bg-background border-border/70 text-xs shadow-xs"
+            className="pl-10 h-9 sm:h-10 rounded-xl bg-background border-border/70 text-xs shadow-xs"
           />
         </div>
       </div>
 
       {/* Company Grid */}
       {filtered.length === 0 ? (
-        <div className="p-10 text-center rounded-2xl border border-dashed text-muted-foreground space-y-2">
+        <div className="p-8 sm:p-10 text-center rounded-2xl border border-dashed text-muted-foreground space-y-2">
           <Building2 className="size-8 mx-auto text-muted-foreground" />
           <h3 className="font-semibold text-sm">No companies found</h3>
           <p className="text-xs">Try searching for Accenture, Cognizant, or Capgemini.</p>
@@ -70,23 +70,23 @@ export default function PlacementMaterialsPage() {
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3.5">
           {filtered.map((item: any) => {
             const initial = item.title.slice(0, 2).toUpperCase();
             return (
               <div
                 key={item.id}
-                className="p-4 rounded-2xl bg-card border border-border/70 hover:border-amber-500/40 shadow-xs hover:shadow-md transition-all flex items-center justify-between gap-3 group"
+                className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-card border border-border/70 hover:border-amber-500/40 shadow-xs hover:shadow-md transition-all flex items-center justify-between gap-3 group"
               >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="size-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-xs flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:scale-105 transition-transform">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <div className="size-8 sm:size-10 rounded-lg sm:rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-xs flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:scale-105 transition-transform">
                     {initial}
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-bold text-sm text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors truncate">
+                    <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors truncate">
                       {item.title}
                     </h3>
-                    <span className="text-[11px] text-muted-foreground flex items-center gap-1">
+                    <span className="text-[10px] sm:text-[11px] text-muted-foreground flex items-center gap-1">
                       <FolderOpen className="size-3" /> Drive Folder
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function PlacementMaterialsPage() {
                     asChild
                     size="sm"
                     variant="outline"
-                    className="rounded-xl h-10 px-4 text-xs font-semibold gap-1.5 hover:border-amber-500/50"
+                    className="rounded-lg sm:rounded-xl h-8 sm:h-9 px-2.5 sm:px-4 text-xs font-semibold gap-1.5 hover:border-amber-500/50"
                   >
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
                       Open <ExternalLink className="size-3 text-muted-foreground" />

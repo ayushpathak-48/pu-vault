@@ -61,9 +61,9 @@ export default function YouTubeTutorialsPage() {
   });
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 md:space-y-8">
       {/* Header Glass Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/25 uppercase flex items-center gap-1 backdrop-blur-md">
@@ -85,7 +85,7 @@ export default function YouTubeTutorialsPage() {
             placeholder="Search topic or channel..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
+            className="pl-10 h-9 sm:h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
           />
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function YouTubeTutorialsPage() {
             key={cat.key}
             onClick={() => setSelectedCategory(cat.key)}
             className={cn(
-              "px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border backdrop-blur-md",
+              "px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold whitespace-nowrap transition-all border backdrop-blur-md",
               selectedCategory === cat.key
                 ? "bg-primary text-primary-foreground border-primary/40 shadow-xs"
                 : "bg-white/50 dark:bg-white/[0.06] border-white/60 dark:border-white/[0.1] text-muted-foreground hover:text-foreground hover:bg-white/70",
@@ -129,11 +129,11 @@ export default function YouTubeTutorialsPage() {
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
           {filteredVideos.map((video) => (
             <div
               key={video.key}
-              className="group flex flex-col rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-xl hover:-translate-y-1 hover:border-primary/40 transition-all duration-300"
+              className="group flex flex-col rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-xl hover:-translate-y-1 hover:border-primary/40 transition-all duration-300"
             >
               {/* Thumbnail Container */}
               <div
@@ -150,8 +150,8 @@ export default function YouTubeTutorialsPage() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                  <div className="size-12 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform backdrop-blur-xs">
-                    <Play className="size-5 fill-white ml-0.5" />
+                  <div className="size-10 sm:size-12 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform backdrop-blur-xs">
+                    <Play className="size-4 sm:size-5 fill-white ml-0.5" />
                   </div>
                 </div>
 
@@ -163,9 +163,9 @@ export default function YouTubeTutorialsPage() {
               </div>
 
               {/* Video Info */}
-              <div className="p-5 flex flex-col flex-1 justify-between gap-3">
+              <div className="p-3.5 sm:p-5 flex flex-col flex-1 justify-between gap-2.5 sm:gap-3">
                 <div className="space-y-1">
-                  <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-muted-foreground">
                     <span className="font-semibold text-primary truncate">
                       {video.channel}
                     </span>
@@ -177,23 +177,23 @@ export default function YouTubeTutorialsPage() {
                     onClick={() =>
                       setActiveVideo({ title: video.title, videoId: video.videoId })
                     }
-                    className="font-bold text-sm text-foreground line-clamp-2 cursor-pointer group-hover:text-primary transition-colors leading-snug"
+                    className="font-bold text-xs sm:text-sm text-foreground line-clamp-2 cursor-pointer group-hover:text-primary transition-colors leading-snug"
                   >
                     {video.title}
                   </h3>
                 </div>
 
                 {/* Bottom actions */}
-                <div className="pt-2 border-t border-white/40 dark:border-white/[0.06] flex items-center justify-between">
+                <div className="pt-2 border-t border-white/40 dark:border-white/[0.06] flex items-center justify-between gap-2">
                   <Button
                     size="sm"
                     variant="ghost"
                     onClick={() =>
                       setActiveVideo({ title: video.title, videoId: video.videoId })
                     }
-                    className="h-10 text-xs font-semibold px-3 rounded-xl gap-1.5"
+                    className="h-8 sm:h-10 text-xs font-semibold px-2.5 sm:px-3 rounded-lg sm:rounded-xl gap-1.5"
                   >
-                    <Play className="size-3.5 text-red-500 fill-red-500" />
+                    <Play className="size-3 sm:size-3.5 text-red-500 fill-red-500" />
                     Watch Video
                   </Button>
 
@@ -201,7 +201,7 @@ export default function YouTubeTutorialsPage() {
                     size="sm"
                     variant="outline"
                     asChild
-                    className="h-10 text-xs px-3 rounded-xl gap-1.5 text-muted-foreground hover:text-foreground border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.04]"
+                    className="h-8 sm:h-10 text-xs px-2.5 sm:px-3 rounded-lg sm:rounded-xl gap-1.5 text-muted-foreground hover:text-foreground border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.04]"
                   >
                     <a
                       href={`https://www.youtube.com/watch?v=${video.videoId}`}

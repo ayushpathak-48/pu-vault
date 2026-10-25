@@ -64,25 +64,25 @@ const CodePage = () => {
   }
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6">
+    <div className="w-full max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 min-w-0 max-w-full">
       {/* Navigation & Practical Switcher Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <Button
             asChild
             variant="outline"
             size="icon"
-            className="size-9 rounded-xl shrink-0 border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md"
+            className="size-8 sm:size-9 rounded-xl shrink-0 border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md"
           >
             <Link href="/code" title="Back to All Practicals">
               <ArrowLeft className="size-4" />
             </Link>
           </Button>
           <div className="min-w-0">
-            <span className="text-xs font-bold text-primary uppercase tracking-wide">
+            <span className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-wide truncate block">
               {practicalSubject?.subject_name}
             </span>
-            <h1 className="text-lg md:text-xl font-extrabold text-foreground truncate">
+            <h1 className="text-base sm:text-lg md:text-xl font-extrabold text-foreground truncate">
               {practical.name}
             </h1>
           </div>
@@ -97,7 +97,7 @@ const CodePage = () => {
               router.push(href);
             }}
           >
-            <SelectTrigger className="w-full rounded-xl bg-white/50 dark:bg-white/[0.06] backdrop-blur-md border border-white/60 dark:border-white/[0.1] text-xs font-semibold h-10 shadow-xs">
+            <SelectTrigger className="w-full rounded-xl bg-white/50 dark:bg-white/[0.06] backdrop-blur-md border border-white/60 dark:border-white/[0.1] text-xs font-semibold h-9 sm:h-10 shadow-xs">
               <SelectValue placeholder="Select Practical Program" />
             </SelectTrigger>
             <SelectContent className="rounded-2xl bg-white/80 dark:bg-zinc-950/80 backdrop-blur-2xl border border-white/60 dark:border-white/[0.12]">

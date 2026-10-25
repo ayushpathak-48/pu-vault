@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-white/40 dark:border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-white/40 dark:border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground text-center md:text-left">
           <p>© {currentYear} PU Vault. Built for Parul University students.</p>
           <div className="flex items-center gap-1.5 flex-wrap justify-center">
             <span>Maintained with</span>

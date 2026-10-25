@@ -519,7 +519,7 @@ export default function CompanyProjectPage() {
             <div className="grid gap-4">
               {studentsInSameClass.map((student, index) => (
                 <Card key={index} className="rounded-2xl shadow-sm">
-                  <CardContent className="p-4 flex justify-between items-center">
+                  <CardContent className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                     <div>
                       <p className="text-lg font-semibold">{student.name}</p>
                       <p className="text-sm text-muted-foreground">

@@ -151,7 +151,7 @@ const CodeBlock = ({
             variant="ghost"
             size="sm"
             onClick={handleCopy}
-            className="h-9 px-3 text-xs text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 rounded-xl gap-1.5 transition-all"
+            className="h-8 sm:h-9 px-2.5 sm:px-3 text-xs text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 rounded-lg sm:rounded-xl gap-1.5 transition-all"
           >
             {copied ? (
               <>
@@ -183,18 +183,18 @@ const CodeBlock = ({
 
   // Polished Apple Glass IDE Editor Frame for Source Code
   return (
-    <div className="rounded-2xl overflow-hidden border border-white/60 dark:border-white/[0.08] bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl backdrop-saturate-180 shadow-[0_12px_36px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] my-4">
+    <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/60 dark:border-white/[0.08] bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl backdrop-saturate-180 shadow-[0_12px_36px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] my-3 sm:my-4">
       {/* Editor Header Bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-white/60 dark:bg-zinc-900/60 border-b border-white/50 dark:border-white/[0.08] backdrop-blur-md">
-        <div className="flex items-center gap-3 min-w-0">
+      <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 bg-white/60 dark:bg-zinc-900/60 border-b border-white/50 dark:border-white/[0.08] backdrop-blur-md">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           {/* macOS window controls */}
-          <div className="flex items-center gap-1.5 shrink-0">
-            <span className="size-2.5 rounded-full bg-[#ff5f56] inline-block shadow-2xs" />
-            <span className="size-2.5 rounded-full bg-[#ffbd2e] inline-block shadow-2xs" />
-            <span className="size-2.5 rounded-full bg-[#27c93f] inline-block shadow-2xs" />
+          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+            <span className="size-2 sm:size-2.5 rounded-full bg-[#ff5f56] inline-block shadow-2xs" />
+            <span className="size-2 sm:size-2.5 rounded-full bg-[#ffbd2e] inline-block shadow-2xs" />
+            <span className="size-2 sm:size-2.5 rounded-full bg-[#27c93f] inline-block shadow-2xs" />
           </div>
 
-          <div className="flex items-center gap-2 truncate">
+          <div className="flex items-center gap-1.5 sm:gap-2 truncate">
             <FileCode className="size-3.5 text-primary shrink-0" />
             <span className="text-xs font-mono font-semibold text-foreground truncate">
               {fileName || "Solution Code"}
@@ -210,7 +210,7 @@ const CodeBlock = ({
           variant="outline"
           size="sm"
           onClick={handleCopy}
-          className="h-9 px-3.5 text-xs rounded-xl gap-1.5 bg-white/50 dark:bg-zinc-800/60 backdrop-blur-md border border-white/60 dark:border-white/[0.1] shadow-2xs hover:bg-white/80 dark:hover:bg-zinc-700/60 transition-all shrink-0 font-medium"
+          className="h-8 sm:h-9 px-2.5 sm:px-3.5 text-xs rounded-lg sm:rounded-xl gap-1 sm:gap-1.5 bg-white/50 dark:bg-zinc-800/60 backdrop-blur-md border border-white/60 dark:border-white/[0.1] shadow-2xs hover:bg-white/80 dark:hover:bg-zinc-700/60 transition-all shrink-0 font-medium"
         >
           {copied ? (
             <>
@@ -222,7 +222,8 @@ const CodeBlock = ({
           ) : (
             <>
               <Copy className="size-3 text-muted-foreground" />
-              <span>Copy Code</span>
+              <span className="hidden xs:inline">Copy Code</span>
+              <span className="xs:hidden">Copy</span>
             </>
           )}
         </Button>

@@ -132,10 +132,11 @@ const FlashCardsPageClient = () => {
           disabled={currentUnitIndex <= 0}
           variant="ghost"
           size="sm"
-          className="rounded-xl h-8 text-xs font-semibold"
+          className="rounded-xl h-9 sm:h-10 px-2 sm:px-3 text-xs font-semibold shrink-0"
           onClick={handleClickPreviousUnit}
         >
-          <ChevronLeft className="size-3.5 mr-1" /> Prev Unit
+          <ChevronLeft className="size-3.5 sm:mr-1" />
+          <span className="hidden xs:inline">Prev</span>
         </Button>
 
         <Tabs value={chapter.key} className="flex-1 max-w-lg overflow-hidden">
@@ -164,11 +165,12 @@ const FlashCardsPageClient = () => {
         <Button
           variant="ghost"
           size="sm"
-          className="rounded-xl h-10 text-xs font-semibold"
+          className="rounded-xl h-9 sm:h-10 px-2 sm:px-3 text-xs font-semibold shrink-0"
           disabled={!subject?.units || currentUnitIndex >= subject.units.length - 1}
           onClick={handleClickNextUnit}
         >
-          Next Unit <ChevronRight className="size-3.5 ml-1" />
+          <span className="hidden xs:inline">Next</span>
+          <ChevronRight className="size-3.5 sm:ml-1" />
         </Button>
       </div>
 

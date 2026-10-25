@@ -152,26 +152,26 @@ const MaterialAccordionCard = ({
 
   return (
     <AccordionItem
-      className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-lg"
+      className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-lg"
       value={material.key}
     >
-      <AccordionTrigger className="px-5 py-4 hover:no-underline group">
-        <div className="flex items-center gap-3.5 text-left w-full pr-4">
-          <div className="size-10 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-            <BookOpen className="size-5" />
+      <AccordionTrigger className="px-3.5 py-3 sm:px-5 sm:py-4 hover:no-underline group">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 text-left w-full pr-2 sm:pr-4">
+          <div className="size-8 sm:size-10 rounded-lg sm:rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <BookOpen className="size-4 sm:size-5" />
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+              <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors truncate">
                 {material.subject_name}
               </h3>
               {material.specialization && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase backdrop-blur-md">
+                <span className="text-[10px] font-bold px-1.5 py-0.2 sm:px-2 sm:py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase backdrop-blur-md">
                   Specialization
                 </span>
               )}
             </div>
-            <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground flex-wrap">
+            <div className="flex items-center gap-1.5 sm:gap-2 mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-muted-foreground flex-wrap">
               <span>{notesCount} Notes</span>
               {journalCount > 0 && <span>• {journalCount} Journals</span>}
               {hasPracticalCodes && <span>• Codes Available</span>}
@@ -181,24 +181,24 @@ const MaterialAccordionCard = ({
         </div>
       </AccordionTrigger>
 
-      <AccordionContent className="px-4 md:px-6 pb-5 pt-1">
+      <AccordionContent className="px-3 sm:px-5 pb-3.5 sm:pb-5 pt-1">
         <Tabs
           defaultValue="notes"
           value={activeTabSection}
           onValueChange={setActiveTabSection}
           className="w-full"
         >
-          <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto p-1 bg-white/40 dark:bg-black/30 backdrop-blur-md border border-white/50 dark:border-white/[0.08] rounded-xl gap-1 mb-4">
+          <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto p-1 bg-white/40 dark:bg-black/30 backdrop-blur-md border border-white/50 dark:border-white/[0.08] rounded-xl gap-1 mb-3 sm:mb-4">
             <TabsTrigger
               value="notes"
-              className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
+              className="rounded-lg py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
             >
               Notes ({notesCount})
             </TabsTrigger>
             {journalCount > 0 && (
               <TabsTrigger
                 value="practicals"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
+                className="rounded-lg py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Journals ({journalCount})
               </TabsTrigger>
@@ -206,7 +206,7 @@ const MaterialAccordionCard = ({
             {hasPracticalCodes && (
               <TabsTrigger
                 value="codes"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
+                className="rounded-lg py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Practical Codes
               </TabsTrigger>
@@ -214,7 +214,7 @@ const MaterialAccordionCard = ({
             {quePapersCount > 0 && (
               <TabsTrigger
                 value="que_papers"
-                className="rounded-lg py-2 text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
+                className="rounded-lg py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs transition-all"
               >
                 Exam Papers ({quePapersCount})
               </TabsTrigger>

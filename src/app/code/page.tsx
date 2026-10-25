@@ -45,34 +45,34 @@ export default function PracticalCodesPage() {
   });
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3.5 sm:py-6 md:py-8 space-y-3.5 sm:space-y-6 md:space-y-8">
       {/* Header Glass Banner */}
-      <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="space-y-1.5">
+      <div className="p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
+        <div className="space-y-1 sm:space-y-1.5">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase flex items-center gap-1 backdrop-blur-md">
+            <span className="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase flex items-center gap-1 backdrop-blur-md">
               <Code2 className="size-3" /> Lab Practical Codes
             </span>
-            <span className="text-xs text-muted-foreground font-medium">
+            <span className="text-[11px] sm:text-xs text-muted-foreground font-medium">
               Semester {sem}
             </span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
             Practical Code Library
           </h1>
-          <p className="text-xs md:text-sm text-muted-foreground max-w-lg leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-lg leading-relaxed">
             Tested lab programs, code implementations, expected outputs, and syntax-highlighted solutions for university practical exams.
           </p>
         </div>
 
         {/* Search */}
         <div className="relative w-full md:w-72">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-3.5 sm:size-4 text-muted-foreground" />
           <Input
             placeholder="Search practical or program..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
+            className="pl-9 sm:pl-10 h-9 sm:h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
           />
         </div>
       </div>
@@ -116,39 +116,39 @@ export default function PracticalCodesPage() {
             <AccordionItem
               key={subject.key}
               value={subject.key}
-              className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:shadow-lg"
+              className="bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/80 dark:hover:border-white/20 transition-all data-[state=open]:shadow-lg"
             >
-              <AccordionTrigger className="px-5 py-4 hover:no-underline group">
-                <div className="flex items-center gap-3.5 text-left w-full pr-4">
-                  <div className="size-10 rounded-2xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <Terminal className="size-5" />
+              <AccordionTrigger className="px-3.5 py-3 sm:px-5 sm:py-4 hover:no-underline group">
+                <div className="flex items-center gap-2.5 sm:gap-3.5 text-left w-full pr-2 sm:pr-4">
+                  <div className="size-8 sm:size-10 rounded-lg sm:rounded-2xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <Terminal className="size-4 sm:size-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors">
                       {subject.subject_name}
                     </h3>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-[11px] sm:text-xs text-muted-foreground">
                       {subject.practicals.length} Practical Programs
                     </p>
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="px-4 md:px-6 pb-4 pt-1 space-y-2">
+              <AccordionContent className="px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 pt-1 space-y-1.5 sm:space-y-2">
                 {subject.practicals.map((practical, idx) => (
                   <Link
                     key={practical.key}
                     href={`/code/${subject.key}/${practical.key}`}
-                    className="flex items-center justify-between p-3.5 rounded-2xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/70 dark:hover:bg-white/[0.08] hover:border-primary/40 transition-all group shadow-2xs"
+                    className="flex items-center justify-between p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/70 dark:hover:bg-white/[0.08] hover:border-primary/40 transition-all group shadow-2xs"
                   >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="size-6 rounded-lg bg-white/70 dark:bg-white/[0.08] border border-white/60 dark:border-white/[0.1] text-[11px] font-bold flex items-center justify-center text-muted-foreground shrink-0 backdrop-blur-md">
+                    <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                      <span className="size-5 sm:size-6 rounded-md sm:rounded-lg bg-white/70 dark:bg-white/[0.08] border border-white/60 dark:border-white/[0.1] text-[10px] sm:text-[11px] font-bold flex items-center justify-center text-muted-foreground shrink-0 backdrop-blur-md">
                         {idx + 1}
                       </span>
-                      <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                      <span className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                         {practical.name}
                       </span>
                     </div>
-                    <ArrowRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 ml-2" />
+                    <ArrowRight className="size-3.5 sm:size-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 ml-1.5" />
                   </Link>
                 ))}
               </AccordionContent>
