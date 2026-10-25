@@ -16,11 +16,9 @@ import { usePathname } from "next/navigation";
 import { SelectSpecialization } from "./select-specialization";
 import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
-import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { useDataStore } from "@/stores/data.store";
 import { FeedbackFloatingDialog } from "./feedback-dialog-button";
-import { Button } from "./ui/button";
-import { MessageSquarePlus, Sparkles } from "lucide-react";
+import { MessageSquarePlus, Sparkles, ExternalLink } from "lucide-react";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -35,7 +33,7 @@ export function AppSidebar() {
   ];
 
   return (
-    <Sidebar className="border-r border-white/50 dark:border-white/[0.08] bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180">
+    <Sidebar className="border-r border-white/50 dark:border-white/[0.08] bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 select-none">
       {/* Brand Header */}
       <SidebarHeader className="h-16 px-4 flex flex-row items-center border-b border-white/50 dark:border-white/[0.08] shrink-0">
         <Link href="/" className="flex items-center gap-2.5 group w-full">
@@ -64,50 +62,43 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
 
-      {/* Academic Config Section */}
-      <div className="p-3 pb-2 space-y-2.5 border-b border-white/40 dark:border-white/[0.06] bg-white/30 dark:bg-white/[0.02]">
-        <div>
-          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1 px-1">
-            Specialization
+      {/* Academic Configuration Widget */}
+      <div className="p-3 space-y-2.5 border-b border-white/40 dark:border-white/[0.06] bg-white/30 dark:bg-white/[0.02] shrink-0">
+        <div className="space-y-1">
+          <span className="text-[10px] font-bold text-muted-foreground/80 uppercase tracking-wider block px-1">
+            Specialization Track
           </span>
           <SelectSpecialization />
         </div>
+
         {sem && (
-          <div className="flex items-center justify-between px-1 py-1">
-            <span className="text-xs font-semibold text-muted-foreground">
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold text-muted-foreground/80 uppercase tracking-wider block px-1">
               Semester
             </span>
-            <ToggleGroup
-              type="single"
-              variant="default"
-              value={sem.toString()}
-              onValueChange={(value) =>
-                value !== "" ? setSem(parseInt(value)) : ""
-              }
-              className="gap-1 bg-white/50 dark:bg-white/[0.06] backdrop-blur-md p-0.5 rounded-xl border border-white/50 dark:border-white/[0.08]"
-            >
+            <div className="w-full grid grid-cols-4 gap-1 p-1 rounded-xl bg-white/40 dark:bg-zinc-900/40 border border-white/50 dark:border-white/[0.08] backdrop-blur-md">
               {[1, 2, 3, 4].map((s) => (
-                <ToggleGroupItem
+                <button
                   key={s}
-                  value={s.toString()}
-                  aria-label={`Semester ${s}`}
+                  type="button"
+                  onClick={() => setSem(s)}
                   className={cn(
-                    "size-7 text-xs font-bold rounded-lg transition-all",
+                    "h-7 rounded-lg text-xs font-bold transition-all flex items-center justify-center cursor-pointer border",
                     sem === s
-                      ? "bg-primary text-primary-foreground shadow-xs"
-                      : "text-muted-foreground hover:text-foreground",
+                      ? "bg-white dark:bg-zinc-800 text-primary shadow-xs border-white/80 dark:border-white/10"
+                      : "border-transparent text-muted-foreground hover:text-foreground hover:bg-white/40 dark:hover:bg-white/[0.06]",
                   )}
                 >
-                  {s}
-                </ToggleGroupItem>
+                  Sem {s}
+                </button>
               ))}
-            </ToggleGroup>
+            </div>
           </div>
         )}
       </div>
 
       {/* Categorized Navigation */}
-      <SidebarContent className="px-2.5 py-3 space-y-4">
+      <SidebarContent className="px-3 py-3 space-y-4 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-white/20 dark:scrollbar-thumb-white/[0.08]">
         {categories.map((cat) => {
           const links = navLinks.filter((l) => {
             if (l.category !== cat.key) return false;
@@ -119,7 +110,7 @@ export function AppSidebar() {
 
           return (
             <SidebarGroup key={cat.key} className="p-0">
-              <SidebarGroupLabel className="text-[11px] uppercase tracking-wider font-extrabold text-muted-foreground/75 px-2 py-1 mb-1">
+              <SidebarGroupLabel className="text-[11px] uppercase tracking-wider font-extrabold text-muted-foreground/60 px-2 py-1 mb-1 block">
                 {cat.label}
               </SidebarGroupLabel>
               <div className="space-y-1">
@@ -128,37 +119,41 @@ export function AppSidebar() {
                     (link.href !== "/" && pathname.startsWith(link.href)) ||
                     pathname === link.href;
                   const Icon = link.icon;
+                  const isExternal = link.href.startsWith("http");
 
                   return (
                     <Link
                       href={link.href}
                       key={link.id}
                       className={cn(
-                        "w-full flex items-center justify-between py-2 px-3 font-medium rounded-xl transition-all duration-200 text-sm group",
+                        "w-full flex items-center justify-between h-9 px-3 font-medium rounded-xl transition-colors duration-150 text-[13px] group border select-none",
                         activeLink
-                          ? "bg-primary/15 text-primary font-bold shadow-xs border border-primary/20 backdrop-blur-md"
-                          : "text-muted-foreground hover:bg-white/50 dark:hover:bg-white/[0.06] hover:text-foreground hover:border hover:border-white/40 dark:hover:border-white/[0.06]",
+                          ? "bg-primary/12 text-primary font-bold shadow-xs border-primary/20 backdrop-blur-md"
+                          : "border-transparent text-muted-foreground hover:bg-black/[0.04] dark:hover:bg-white/[0.06] hover:text-foreground hover:border-black/[0.04] dark:hover:border-white/[0.06]",
                       )}
-                      {...(link.href.startsWith("http")
+                      {...(isExternal
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
                     >
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2.5 min-w-0">
                         <Icon
                           className={cn(
-                            "size-4 shrink-0 transition-transform group-hover:scale-110",
+                            "size-4 shrink-0 transition-colors",
                             activeLink
                               ? "text-primary"
                               : "text-muted-foreground group-hover:text-foreground",
                           )}
                         />
-                        <span>{link.title}</span>
+                        <span className="truncate">{link.title}</span>
                       </div>
-                      {link.href === "/featured-apps" && (
-                        <span className="flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+
+                      {link.href === "/featured-apps" ? (
+                        <span className="flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/20 shrink-0">
                           <Sparkles className="size-2.5" /> New
                         </span>
-                      )}
+                      ) : isExternal ? (
+                        <ExternalLink className="size-3 opacity-40 group-hover:opacity-80 transition-opacity shrink-0" />
+                      ) : null}
                     </Link>
                   );
                 })}
@@ -167,32 +162,34 @@ export function AppSidebar() {
           );
         })}
 
-        {/* Feedback Action */}
+        {/* Feedback Quick Action */}
         <SidebarGroup className="p-0 pt-2">
           <FeedbackFloatingDialog
             trigger={
-              <Button
-                variant="outline"
-                className="w-full justify-start gap-2.5 rounded-xl border border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-white/[0.04] backdrop-blur-md hover:bg-white/70 dark:hover:bg-white/[0.08] text-sm font-medium text-muted-foreground hover:text-foreground h-9 px-3"
+              <button
+                type="button"
+                className="w-full flex items-center justify-between h-9 px-3 rounded-xl border border-white/50 dark:border-white/[0.08] bg-white/30 dark:bg-white/[0.03] backdrop-blur-md hover:bg-white/60 dark:hover:bg-white/[0.08] hover:border-primary/40 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-all cursor-pointer group shadow-2xs"
               >
-                <MessageSquarePlus className="size-4 text-primary" />
-                <span>Submit Feedback</span>
-              </Button>
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <MessageSquarePlus className="size-4 text-primary shrink-0" />
+                  <span className="truncate">Submit Feedback</span>
+                </div>
+              </button>
             }
           />
         </SidebarGroup>
       </SidebarContent>
 
       {/* Footer Customization Controls */}
-      <SidebarFooter className="border-t border-white/50 dark:border-white/[0.08] p-3 bg-white/30 dark:bg-white/[0.02] space-y-2.5 overflow-hidden shrink-0">
+      <SidebarFooter className="border-t border-white/50 dark:border-white/[0.08] p-3.5 bg-white/30 dark:bg-white/[0.02] space-y-2.5 overflow-hidden shrink-0">
         <div className="space-y-1">
-          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block px-1">
+          <span className="text-[10px] font-bold text-muted-foreground/80 uppercase tracking-wider block px-1">
             Appearance
           </span>
           <ToggleMode />
         </div>
         <div className="space-y-1">
-          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block px-1">
+          <span className="text-[10px] font-bold text-muted-foreground/80 uppercase tracking-wider block px-1">
             Accent Theme
           </span>
           <ToggleThemeColor />
