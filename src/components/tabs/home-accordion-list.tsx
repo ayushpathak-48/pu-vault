@@ -22,12 +22,20 @@ import {
   Code,
   CheckCircle2,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useQueryState } from "nuqs";
 import { useDataGetters } from "@/hooks/use-data-getters";
 import { DownloadAndViewButton } from "../download-and-view-button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
+import { sem1Materials } from "@/lib/constants/sem-1/materials.constant";
+import { sem2Materials } from "@/lib/constants/sem-2/materials.constant";
+import { sem3Materials } from "@/lib/constants/sem-3/materials.constant";
+
+const allMaterialsCatalog: Array<{ key: string; sem: number; item: any }> = [
+  ...sem1Materials.map((item) => ({ key: item.key, sem: 1, item })),
+  ...sem2Materials.map((item) => ({ key: item.key, sem: 2, item })),
+  ...sem3Materials.map((item) => ({ key: item.key, sem: 3, item })),
+];
 
 export const HomePageAccordionList = ({
   tabData,
@@ -38,6 +46,8 @@ export const HomePageAccordionList = ({
 }) => {
   const specialization = useDataStore((state) => state.specialization);
   const course = useDataStore((state) => state.course);
+  const sem = useDataStore((state) => state.sem);
+  const setSem = useDataStore((state) => state.setSem);
 
   const [activeSubject, setActiveSubject] = useQueryState("subject", {
     defaultValue: "",
@@ -49,18 +59,36 @@ export const HomePageAccordionList = ({
 
   const [searchFilter, setSearchFilter] = useState("");
 
-  const activeSpecializationItems = specializationTabData.filter(
+  // Automatically switch semester if activeSubject in URL query belongs to another semester
+  useEffect(() => {
+    if (activeSubject) {
+      const match = allMaterialsCatalog.find((m) => m.key === activeSubject);
+      if (match && match.sem && match.sem !== sem) {
+        setSem(match.sem);
+      }
+    }
+  }, [activeSubject, sem, setSem]);
+
+  const activeSpecializationItems = (specializationTabData || []).filter(
     (item: any) => item.value === specialization,
   );
 
-  const activeGeneralItems = tabData.filter((material: any) => {
+  const activeGeneralItems = (tabData || []).filter((material: any) => {
     if (material?.courses?.length > 0 && !material?.courses?.includes(course)) {
       return false;
     }
     return true;
   });
 
-  const allItems = [...activeSpecializationItems, ...activeGeneralItems];
+  let allItems = [...activeSpecializationItems, ...activeGeneralItems];
+
+  // If activeSubject is requested but not in the current semester list, include it immediately
+  if (activeSubject && !allItems.some((item: any) => item.key === activeSubject)) {
+    const fallbackMatch = allMaterialsCatalog.find((m) => m.key === activeSubject);
+    if (fallbackMatch) {
+      allItems = [fallbackMatch.item, ...allItems];
+    }
+  }
 
   const filteredItems = allItems.filter((item: any) => {
     if (!searchFilter.trim()) return true;
@@ -113,10 +141,10 @@ export const HomePageAccordionList = ({
           type="single"
           collapsible
           className="w-full flex flex-col gap-3"
-          value={activeSubject}
+          value={activeSubject || undefined}
           onValueChange={(data) => {
             setActiveTabSection("notes");
-            setActiveSubject(data);
+            setActiveSubject(data || "");
           }}
         >
           {filteredItems.map((item: any) => (
@@ -142,13 +170,24 @@ const MaterialAccordionCard = ({
   const practicalCodes = getPracticalCodes();
 
   const notesCount = material?.notes_link?.length || 0;
-  const journalCount =
-    (material?.practicals_link?.length || 0) +
-    (material?.output_links?.length || 0);
+  const practicalsCount = material?.practicals_link?.length || 0;
+  const outputsCount = material?.output_links?.length || 0;
+  const journalCount = practicalsCount + outputsCount;
   const quePapersCount = material?.que_papers?.length || 0;
-  const hasPracticalCodes = practicalCodes?.some(
-    ({ key }) => key === material?.key,
+
+  const hasPracticalCodes = (practicalCodes || []).some(
+    ({ key }: { key: string }) => key === material?.key,
   );
+
+  // Determine valid tab options for this specific card
+  const validTabs: string[] = ["notes"];
+  if (journalCount > 0) validTabs.push("practicals");
+  if (hasPracticalCodes) validTabs.push("codes");
+  if (quePapersCount > 0) validTabs.push("que_papers");
+
+  const resolvedTab = validTabs.includes(activeTabSection)
+    ? activeTabSection
+    : "notes";
 
   return (
     <AccordionItem
@@ -184,7 +223,7 @@ const MaterialAccordionCard = ({
       <AccordionContent className="px-3 sm:px-5 pb-3.5 sm:pb-5 pt-1">
         <Tabs
           defaultValue="notes"
-          value={activeTabSection}
+          value={resolvedTab}
           onValueChange={setActiveTabSection}
           className="w-full"
         >
@@ -225,24 +264,33 @@ const MaterialAccordionCard = ({
           <TabsContent value="notes" className="space-y-2 mt-0">
             {material?.notes_link?.length > 0 ? (
               <div className="flex flex-col gap-2">
-                {material.notes_link.map((note: any) => (
-                  <div
-                    key={note.id}
-                    className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <FileText className="size-4 text-primary shrink-0" />
-                      <Link
-                        target="_blank"
-                        href={note.href}
-                        className="text-sm font-medium hover:text-primary transition-colors truncate"
-                      >
-                        {note.title}
-                      </Link>
+                {material.notes_link.map((note: any, idx: number) => {
+                  const fileHref = note.href || note.link || "";
+                  return (
+                    <div
+                      key={note.id ?? `note_${idx}`}
+                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <FileText className="size-4 text-primary shrink-0" />
+                        {fileHref ? (
+                          <Link
+                            target="_blank"
+                            href={fileHref}
+                            className="text-sm font-medium hover:text-primary transition-colors truncate"
+                          >
+                            {note.title}
+                          </Link>
+                        ) : (
+                          <span className="text-sm font-medium text-foreground truncate">
+                            {note.title}
+                          </span>
+                        )}
+                      </div>
+                      <DownloadAndViewButton href={fileHref} />
                     </div>
-                    <DownloadAndViewButton href={note.href} />
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white/30 dark:bg-white/[0.02] border border-dashed border-white/50 dark:border-white/[0.08] text-center gap-2">
@@ -270,24 +318,33 @@ const MaterialAccordionCard = ({
                   Practical Questions &amp; Assignments
                 </h4>
                 <div className="flex flex-col gap-2">
-                  {material.practicals_link.map((practical: any) => (
-                    <div
-                      key={practical.id}
-                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
-                    >
-                      <div className="flex items-center gap-2.5 min-w-0">
-                        <FileCode className="size-4 text-purple-500 shrink-0" />
-                        <Link
-                          target="_blank"
-                          href={practical.href}
-                          className="text-sm font-medium hover:text-primary transition-colors truncate"
-                        >
-                          {practical.title}
-                        </Link>
+                  {material.practicals_link.map((practical: any, idx: number) => {
+                    const fileHref = practical.href || practical.journal_link || practical.link || "";
+                    return (
+                      <div
+                        key={practical.id ?? `prac_${idx}`}
+                        className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <FileCode className="size-4 text-purple-500 shrink-0" />
+                          {fileHref ? (
+                            <Link
+                              target="_blank"
+                              href={fileHref}
+                              className="text-sm font-medium hover:text-primary transition-colors truncate"
+                            >
+                              {practical.title}
+                            </Link>
+                          ) : (
+                            <span className="text-sm font-medium text-foreground truncate">
+                              {practical.title}
+                            </span>
+                          )}
+                        </div>
+                        <DownloadAndViewButton href={fileHref} />
                       </div>
-                      <DownloadAndViewButton href={practical.href} />
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -298,24 +355,33 @@ const MaterialAccordionCard = ({
                   Solved Practical Output &amp; Manuals
                 </h4>
                 <div className="flex flex-col gap-2">
-                  {material.output_links.map((output: any) => (
-                    <div
-                      key={output.id}
-                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
-                    >
-                      <div className="flex items-center gap-2.5 min-w-0">
-                        <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
-                        <Link
-                          target="_blank"
-                          href={output.href}
-                          className="text-sm font-medium hover:text-primary transition-colors truncate"
-                        >
-                          {output.title}
-                        </Link>
+                  {material.output_links.map((output: any, idx: number) => {
+                    const fileHref = output.href || output.journal_link || output.link || "";
+                    return (
+                      <div
+                        key={output.id ?? `out_${idx}`}
+                        className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
+                          {fileHref ? (
+                            <Link
+                              target="_blank"
+                              href={fileHref}
+                              className="text-sm font-medium hover:text-primary transition-colors truncate"
+                            >
+                              {output.title}
+                            </Link>
+                          ) : (
+                            <span className="text-sm font-medium text-foreground truncate">
+                              {output.title}
+                            </span>
+                          )}
+                        </div>
+                        <DownloadAndViewButton href={fileHref} />
                       </div>
-                      <DownloadAndViewButton href={output.href} />
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -352,24 +418,33 @@ const MaterialAccordionCard = ({
           <TabsContent value="que_papers" className="space-y-2 mt-0">
             {material?.que_papers?.length > 0 ? (
               <div className="flex flex-col gap-2">
-                {material.que_papers.map((paper: any) => (
-                  <div
-                    key={paper.id}
-                    className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <GraduationCap className="size-4 text-amber-500 shrink-0" />
-                      <Link
-                        target="_blank"
-                        href={paper.href}
-                        className="text-sm font-medium hover:text-primary transition-colors truncate"
-                      >
-                        {paper.title}
-                      </Link>
+                {material.que_papers.map((paper: any, idx: number) => {
+                  const fileHref = paper.href || paper.link || "";
+                  return (
+                    <div
+                      key={paper.id ?? `paper_${idx}`}
+                      className="p-3 rounded-xl bg-white/40 dark:bg-white/[0.03] backdrop-blur-md border border-white/50 dark:border-white/[0.06] hover:bg-white/60 dark:hover:bg-white/[0.08] transition-all flex items-center justify-between gap-3 shadow-2xs"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <GraduationCap className="size-4 text-amber-500 shrink-0" />
+                        {fileHref ? (
+                          <Link
+                            target="_blank"
+                            href={fileHref}
+                            className="text-sm font-medium hover:text-primary transition-colors truncate"
+                          >
+                            {paper.title}
+                          </Link>
+                        ) : (
+                          <span className="text-sm font-medium text-foreground truncate">
+                            {paper.title}
+                          </span>
+                        )}
+                      </div>
+                      <DownloadAndViewButton href={fileHref} />
                     </div>
-                    <DownloadAndViewButton href={paper.href} />
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="p-6 text-center text-xs text-muted-foreground">
