@@ -52,9 +52,9 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
   ).length;
 
   return (
-    <div className="w-full min-h-[calc(100vh-5rem)] pb-20">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
       {/* Header Area */}
-      <div className="pt-8 pb-6 px-4 md:px-8 max-w-6xl mx-auto space-y-4">
+      <div className="space-y-4">
         <Link
           href="/"
           className="inline-flex items-center text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors group"
@@ -126,7 +126,7 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
       </div>
 
       {/* Grid Area */}
-      <div className="px-4 md:px-8 max-w-6xl mx-auto">
+      <div>
         {filteredApps.length === 0 ? (
           <div className="p-12 text-center rounded-3xl border border-dashed border-white/60 dark:border-white/[0.1] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md space-y-3">
             <Smartphone className="size-10 mx-auto text-muted-foreground" />

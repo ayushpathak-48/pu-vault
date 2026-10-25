@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const AttendanceCalculatorPage = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 md:px-8 py-8 space-y-6">
+    <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
       <div className="text-center space-y-2 max-w-lg mx-auto">
-        <div className="size-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-xs">
+        <div className="size-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-xs border border-primary/20 backdrop-blur-md">
           <Calculator className="size-6" />
         </div>
         <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
@@ -25,8 +25,8 @@ const AttendanceCalculatorPage = () => {
       <AttendanceCalcForm />
 
       {/* Parul University Rule Info Box */}
-      <div className="max-w-xl mx-auto p-4 rounded-2xl bg-muted/30 border border-border/50 text-xs text-muted-foreground space-y-1.5">
-        <div className="font-bold text-foreground flex items-center gap-1.5">
+      <div className="w-full p-5 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.08] shadow-xs text-xs text-muted-foreground space-y-2">
+        <div className="font-bold text-foreground flex items-center gap-2">
           <ShieldCheck className="size-4 text-emerald-500" />
           Parul University Academic Policy Reminder
         </div>

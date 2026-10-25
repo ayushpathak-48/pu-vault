@@ -116,7 +116,7 @@ export default function MessageGeneratorPage() {
   }, []);
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 md:px-8 py-6 space-y-6">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
       {/* Header Glass Banner */}
       <div className="p-6 md:p-7 rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] space-y-1.5">
         <div className="flex items-center gap-2">

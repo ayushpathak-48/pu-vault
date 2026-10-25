@@ -62,10 +62,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="w-full h-full pb-10">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
       {/* Hero Welcome Glass Banner */}
-      <div className="px-4 md:px-8 pt-4 pb-2">
-        <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] p-5 md:p-7 shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
+      <div>
+        <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] p-6 md:p-8 shadow-[0_12px_36px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)]">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
             <div className="space-y-2">
               <div className="flex items-center gap-2 flex-wrap">
@@ -110,15 +110,15 @@ export default function Home() {
       </div>
 
       {/* Quick Access Glass Tiles */}
-      <div className="px-4 md:px-8 py-3">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 md:gap-4">
           {quickActions.map((action) => {
             const Icon = action.icon;
             return (
               <Link
                 key={action.href}
                 href={action.href}
-                className="p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_24px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group min-h-[140px]"
+                className="p-5 md:p-6 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_24px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group min-h-[140px]"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className={`p-2.5 rounded-2xl ${action.iconColor} border shadow-2xs backdrop-blur-md`}>
@@ -141,7 +141,7 @@ export default function Home() {
       </div>
 
       {/* Featured Apps Showcase Banner */}
-      <div className="px-4 md:px-8 py-2">
+      <div>
         <div className="flex items-center justify-between mb-2.5 px-1">
           <h2 className="text-xs font-bold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Sparkles className="size-3.5 text-amber-500" /> Featured Apps &amp; Tools
@@ -158,8 +158,8 @@ export default function Home() {
 
       {/* Important Alerts & Links if available */}
       {alertContent && alertContent.length > 0 && (
-        <div className="px-4 md:px-8 py-3">
-          <div className="p-5 rounded-2xl bg-amber-500/10 backdrop-blur-xl border border-amber-500/25 space-y-3 shadow-xs">
+        <div>
+          <div className="p-5 md:p-6 rounded-3xl bg-amber-500/10 backdrop-blur-xl border border-amber-500/25 space-y-3 shadow-xs">
             <h3 className="text-sm font-bold text-amber-800 dark:text-amber-300 flex items-center gap-2">
               <span>🔔</span> Important Updates
             </h3>
@@ -167,7 +167,7 @@ export default function Home() {
               {alertContent.map((alert: any) => (
                 <div
                   key={alert.id}
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-white/50 dark:border-white/[0.08] text-sm shadow-2xs"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-white/50 dark:border-white/[0.08] text-sm shadow-2xs"
                 >
                   <span className="font-semibold text-foreground">{alert.title}</span>
                   <Button asChild size="sm" variant="outline" className="rounded-xl h-9 text-xs font-semibold">
@@ -183,11 +183,11 @@ export default function Home() {
       )}
 
       {/* Subject Materials Section */}
-      <div className="px-4 md:px-8 pt-4">
-        <div className="flex items-center justify-between mb-3.5 px-1">
+      <div>
+        <div className="flex items-center justify-between mb-4 px-1">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
-              <BookOpen className="size-4.5" />
+            <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+              <BookOpen className="size-5" />
             </div>
             <div>
               <h2 className="text-lg md:text-xl font-extrabold text-foreground tracking-tight">

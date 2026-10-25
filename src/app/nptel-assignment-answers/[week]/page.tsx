@@ -12,9 +12,9 @@ const NptelWeekPage = async ({ params }: any) => {
   if (!answers) return redirect("/nptel-assignment-answers");
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 md:px-8 py-6 space-y-6">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6">
       {/* Top Header */}
-      <div className="flex items-center justify-between gap-4 p-4 rounded-2xl bg-card border border-border/70 shadow-xs">
+      <div className="flex items-center justify-between gap-4 p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-2xl border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)]">
         <div className="flex items-center gap-3">
           <Button
             asChild

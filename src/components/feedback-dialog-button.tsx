@@ -108,21 +108,23 @@ export const FeedbackFloatingDialog = ({ trigger }: { trigger?: any }) => {
             <DialogTitle>We value your feedback</DialogTitle>
           </DialogHeader>
 
-          <Input
-            placeholder="Your name (optional)"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="mb-1"
-          />
+          <div className="space-y-3 my-1">
+            <Input
+              placeholder="Your name (optional)"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="rounded-xl h-10"
+            />
 
-          <Textarea
-            placeholder="Type your suggestions, issues or feedback here..."
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
-            className="min-h-[120px]"
-          />
+            <Textarea
+              placeholder="Type your suggestions, issues or feedback here..."
+              value={feedback}
+              onChange={(e) => setFeedback(e.target.value)}
+              className="rounded-xl min-h-[120px] resize-none"
+            />
+          </div>
 
-          <DialogFooter className="gap-2 sm:gap-0">
+          <DialogFooter className="gap-2 sm:gap-0 pt-2">
             <Button variant="ghost" onClick={() => setOpen(false)}>
               Cancel
             </Button>

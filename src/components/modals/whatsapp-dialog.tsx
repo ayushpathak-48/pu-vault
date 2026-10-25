@@ -40,7 +40,7 @@ export const WhatsappDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-md w-[92vw] rounded-2xl p-6 border shadow-2xl">
+      <DialogContent className="max-w-md w-[92vw]">
         <DialogHeader className="space-y-3">
           <div className="flex items-center gap-3">
             <div className="relative size-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">

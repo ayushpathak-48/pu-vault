@@ -49,7 +49,7 @@ export function FeaturedAppsBanner() {
 
   return (
     <div
-      className="w-full relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] group h-[76px]"
+      className="w-full relative overflow-hidden rounded-3xl bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl backdrop-saturate-180 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.85)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] group h-20"
       ref={emblaRef}
     >
       <div className="flex h-full touch-pan-y">

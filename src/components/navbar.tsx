@@ -63,8 +63,8 @@ export const Navbar = () => {
   }, [courseParam, setCourse]);
 
   return (
-    <header className="fixed top-0 right-0 left-0 md:left-64 z-[40] h-16 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 md:px-8 transition-colors">
-      <div className="flex items-center justify-between h-full w-full gap-4">
+    <header className="fixed top-0 right-0 left-0 md:left-64 z-[40] h-16 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 sm:px-6 lg:px-8 transition-colors">
+      <div className="flex items-center justify-between h-full w-full max-w-6xl mx-auto gap-4">
         {/* Left: Mobile branding & page title */}
         <div className="flex items-center gap-3">
           <Link href={"/"} className="md:hidden flex items-center gap-2">

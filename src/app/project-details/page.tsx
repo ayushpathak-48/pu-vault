@@ -210,11 +210,12 @@ export default function CompanyProjectPage() {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8">
-      <div className="max-w-5xl mx-auto space-y-8">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 space-y-6 md:space-y-8">
+      <div className="space-y-6">
+      
         {/* --- Header & Search Section --- */}
         <section className="text-center space-y-4">
-          <Card className="max-w-xl mx-auto shadow-xl border-t-4 border-t-primary mt-8">
+          <Card className="max-w-xl mx-auto shadow-xl border-t-4 border-t-primary">
             <CardContent className="pt-6">
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex-1 relative">
