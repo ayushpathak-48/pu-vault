@@ -1,15 +1,25 @@
-"use client";
+import { redirect } from "next/navigation";
+import { sem2MCQs } from "@/lib/constants/sem-2/mcqs.constant";
+import { sem3MCQs } from "@/lib/constants/sem-3/mcqs.constant";
 
-import { useDataGetters } from "@/hooks/use-data-getters";
-import { redirect, useParams } from "next/navigation";
+interface McqsSubjectPageProps {
+  params: Promise<{ subjectId: string }>;
+}
 
-const CodePage = () => {
-  const { getFlashCards } = useDataGetters();
-  const flashCards = getFlashCards();
+export default async function McqsSubjectRedirectPage({ params }: McqsSubjectPageProps) {
+  const { subjectId } = await params;
 
-  const { subjectId } = useParams();
-  const subject = flashCards.find(({ key }) => key == subjectId);
-  return redirect(`/mcqs/${subjectId}/${subject?.units[0]?.key}`);
-};
+  const allSubjects = [
+    ...sem2MCQs,
+    ...sem3MCQs,
+  ];
 
-export default CodePage;
+  const subject = allSubjects.find((s) => s.key === subjectId);
+  const firstUnit = subject?.units?.[0];
+
+  if (!firstUnit?.key) {
+    redirect("/mcqs");
+  }
+
+  redirect(`/mcqs/${subjectId}/${firstUnit.key}`);
+}

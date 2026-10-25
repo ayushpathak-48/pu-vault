@@ -1,14 +1,25 @@
-"use client";
+import { redirect } from "next/navigation";
+import { sem2FlashCards } from "@/lib/constants/sem-2/flash-cards.constant";
+import { sem3FlashCards } from "@/lib/constants/sem-3/flash-cards.constant";
 
-import { useDataGetters } from "@/hooks/use-data-getters";
-import { redirect, useParams } from "next/navigation";
+interface FlashCardsSubjectPageProps {
+  params: Promise<{ subjectId: string }>;
+}
 
-const CodePage = () => {
-  const { subjectId } = useParams();
-  const { getFlashCards } = useDataGetters();
-  const flashCards = getFlashCards();
-  const subject = flashCards.find(({ key }) => key == subjectId);
-  return redirect(`/flash-cards/${subjectId}/${subject?.units[0]?.key}`);
-};
+export default async function FlashCardsSubjectRedirectPage({ params }: FlashCardsSubjectPageProps) {
+  const { subjectId } = await params;
 
-export default CodePage;
+  const allSubjects = [
+    ...sem2FlashCards,
+    ...sem3FlashCards,
+  ];
+
+  const subject = allSubjects.find((s) => s.key === subjectId);
+  const firstUnit = subject?.units?.[0];
+
+  if (!firstUnit?.key) {
+    redirect("/flash-cards");
+  }
+
+  redirect(`/flash-cards/${subjectId}/${firstUnit.key}`);
+}

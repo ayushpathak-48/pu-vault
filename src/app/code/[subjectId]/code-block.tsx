@@ -14,9 +14,7 @@ import {
   Copy,
   Terminal,
   FileCode,
-  Sparkles,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
   code: string;
@@ -96,7 +94,7 @@ const formatLanguageLabel = (lang?: string): string => {
 };
 
 const CodeBlock = ({
-  code,
+  code = "",
   language = "python",
   fileName,
   description,
@@ -110,12 +108,25 @@ const CodeBlock = ({
     setMounted(true);
   }, []);
 
+  const safeCode = typeof code === "string" ? code : code != null ? String(code) : "";
   const isDark = mounted ? resolvedTheme === "dark" : true;
   const normLang = normalizeLanguage(language, is_output);
 
-  const handleCopy = () => {
+  const handleCopy = async () => {
     try {
-      navigator.clipboard.writeText(code);
+      if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(safeCode);
+      } else if (typeof document !== "undefined") {
+        const textArea = document.createElement("textarea");
+        textArea.value = safeCode;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
       setCopied(true);
       toast.success(
         is_output
@@ -124,22 +135,22 @@ const CodeBlock = ({
       );
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      toast.error("Failed to copy. Please copy manually.");
+      toast.error("Failed to copy. Please select and copy manually.");
     }
   };
 
   // Dedicated Terminal Window for Expected Output
   if (is_output) {
     return (
-      <div className="rounded-2xl overflow-hidden border border-emerald-500/30 dark:border-emerald-500/20 bg-zinc-950 shadow-[0_8px_30px_rgba(0,0,0,0.25)] my-4">
+      <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/30 dark:border-emerald-500/20 bg-zinc-950 shadow-[0_8px_30px_rgba(0,0,0,0.25)] my-3 sm:my-4">
         {/* Terminal Title Bar */}
-        <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-900/90 border-b border-zinc-800/80 backdrop-blur-md">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 bg-zinc-900/90 border-b border-zinc-800/80 backdrop-blur-md">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* macOS window controls */}
-            <div className="flex items-center gap-1.5">
-              <span className="size-2.5 rounded-full bg-red-500/80 inline-block" />
-              <span className="size-2.5 rounded-full bg-amber-500/80 inline-block" />
-              <span className="size-2.5 rounded-full bg-emerald-500/80 inline-block" />
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <span className="size-2 sm:size-2.5 rounded-full bg-red-500/80 inline-block" />
+              <span className="size-2 sm:size-2.5 rounded-full bg-amber-500/80 inline-block" />
+              <span className="size-2 sm:size-2.5 rounded-full bg-emerald-500/80 inline-block" />
             </div>
             <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400">
               <Terminal className="size-3.5" />
@@ -168,14 +179,14 @@ const CodeBlock = ({
         </div>
 
         {description && (
-          <div className="px-4 py-2 bg-zinc-900/40 border-b border-zinc-800/50 text-xs text-zinc-400">
+          <div className="px-3 sm:px-4 py-2 bg-zinc-900/40 border-b border-zinc-800/50 text-xs text-zinc-400 leading-relaxed">
             {description}
           </div>
         )}
 
         {/* Console Content */}
-        <div className="p-4 overflow-x-auto text-xs md:text-sm font-mono text-zinc-200 whitespace-pre leading-relaxed scrollbar-thin select-text">
-          {code}
+        <div className="p-3.5 sm:p-4 overflow-x-auto text-xs md:text-sm font-mono text-zinc-200 whitespace-pre leading-relaxed scrollbar-thin select-text">
+          {safeCode}
         </div>
       </div>
     );
@@ -230,7 +241,7 @@ const CodeBlock = ({
       </div>
 
       {description && (
-        <div className="px-4 py-2 bg-muted/20 border-b border-white/40 dark:border-white/[0.06] text-xs text-muted-foreground leading-relaxed">
+        <div className="px-3 sm:px-4 py-2 bg-muted/20 border-b border-white/40 dark:border-white/[0.06] text-xs text-muted-foreground leading-relaxed">
           {description}
         </div>
       )}
@@ -240,29 +251,38 @@ const CodeBlock = ({
         className="max-h-[750px] overflow-auto text-xs md:text-sm font-mono scrollbar-thin"
         style={{ maxWidth: "100%" }}
       >
-        <SyntaxHighlighter
-          showLineNumbers
-          wrapLongLines={false}
-          language={normLang}
-          style={isDark ? vscDarkPlus : vs}
-          customStyle={{
-            margin: 0,
-            padding: "16px 12px",
-            fontSize: "13px",
-            lineHeight: "1.6",
-            background: isDark ? "#18181b" : "#fbfbfb",
-            border: 0,
-          }}
-          lineNumberStyle={{
-            minWidth: "3.25em",
-            paddingRight: "1.25em",
-            color: isDark ? "#71717a" : "#94a3b8",
-            textAlign: "right",
-            userSelect: "none",
-          }}
-        >
-          {code}
-        </SyntaxHighlighter>
+        {mounted ? (
+          <SyntaxHighlighter
+            showLineNumbers
+            wrapLongLines={false}
+            language={normLang}
+            style={isDark ? vscDarkPlus : vs}
+            customStyle={{
+              margin: 0,
+              padding: "16px 12px",
+              fontSize: "13px",
+              lineHeight: "1.6",
+              background: isDark ? "#18181b" : "#fbfbfb",
+              border: 0,
+            }}
+            lineNumberStyle={{
+              minWidth: "3.25em",
+              paddingRight: "1.25em",
+              color: isDark ? "#71717a" : "#94a3b8",
+              textAlign: "right",
+              userSelect: "none",
+            }}
+          >
+            {safeCode}
+          </SyntaxHighlighter>
+        ) : (
+          <pre
+            className="m-0 p-4 font-mono text-[13px] leading-relaxed overflow-x-auto text-zinc-800 dark:text-zinc-200"
+            style={{ background: "#18181b" }}
+          >
+            <code>{safeCode}</code>
+          </pre>
+        )}
       </div>
     </div>
   );

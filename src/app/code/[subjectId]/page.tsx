@@ -1,14 +1,27 @@
-"use client";
+import { redirect } from "next/navigation";
+import { sem1PracticalCodes } from "@/lib/constants/sem-1/codes.constant";
+import { sem2PracticalCodes } from "@/lib/constants/sem-2/codes.constant";
+import { sem3PracticalCodes } from "@/lib/constants/sem-3/codes.constant";
 
-import { useDataGetters } from "@/hooks/use-data-getters";
-import { redirect, useParams } from "next/navigation";
+interface CodeSubjectPageProps {
+  params: Promise<{ subjectId: string }>;
+}
 
-const CodePage = () => {
-  const { subjectId } = useParams();
-  const { getPracticalCodes } = useDataGetters();
-  const practicalCodes = getPracticalCodes();
-  const practicalSubject = practicalCodes.find(({ key }) => key == subjectId);
-  return redirect(`/code/${subjectId}/${practicalSubject?.practicals[0].key}`);
-};
+export default async function CodeSubjectRedirectPage({ params }: CodeSubjectPageProps) {
+  const { subjectId } = await params;
 
-export default CodePage;
+  const allSubjects = [
+    ...sem1PracticalCodes,
+    ...sem2PracticalCodes,
+    ...sem3PracticalCodes,
+  ];
+
+  const practicalSubject = allSubjects.find((s) => s.key === subjectId);
+  const firstPractical = practicalSubject?.practicals?.[0];
+
+  if (!firstPractical?.key) {
+    redirect("/code");
+  }
+
+  redirect(`/code/${subjectId}/${firstPractical.key}`);
+}
