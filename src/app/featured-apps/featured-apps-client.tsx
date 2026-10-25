@@ -257,7 +257,7 @@ export default function FeaturedAppsClient({ initialApps }: FeaturedAppsClientPr
                   <div className="pt-4 mt-4 border-t border-white/40 dark:border-white/[0.06]">
                     <Button
                       asChild
-                      className="w-full rounded-xl font-semibold text-xs h-9 shadow-xs gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90"
+                      className="w-full rounded-2xl font-bold text-xs h-11 shadow-xs gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                     >
                       <Link
                         href={app.playStoreUrl || "#"}

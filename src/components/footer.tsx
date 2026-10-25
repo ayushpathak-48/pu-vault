@@ -19,7 +19,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[90%]">
-              The premier open-access student resource portal for Parul University. Access lecture notes, lab practical codes, timetables, and attendance tools crafted for academic excellence.
+              The premier open-access student resource portal for Parul University. Access lecture notes, lab practical codes, assignments, and attendance tools crafted for academic excellence.
             </p>
           </div>
 
@@ -40,8 +40,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/time-table" className="hover:text-primary transition-colors">
-                  Time Table
+                <Link href="/youtube-tutorials" className="hover:text-primary transition-colors">
+                  Video Tutorials
                 </Link>
               </li>
               <li>

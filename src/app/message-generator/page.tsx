@@ -340,7 +340,7 @@ export default function MessageGeneratorPage() {
                   size="sm"
                   variant="outline"
                   onClick={handleCopy}
-                  className="rounded-xl h-8 text-xs font-semibold gap-1.5"
+                  className="rounded-xl h-9 px-3 text-xs font-semibold gap-1.5"
                 >
                   {copied ? (
                     <>
@@ -368,7 +368,7 @@ export default function MessageGeneratorPage() {
                 <div className="flex items-center gap-2">
                   <Button
                     onClick={handleCopy}
-                    className="flex-1 rounded-xl h-10 font-semibold text-xs gap-1.5 shadow-xs bg-primary text-primary-foreground hover:bg-primary/90"
+                    className="flex-1 rounded-xl h-11 font-semibold text-xs gap-1.5 shadow-xs bg-primary text-primary-foreground hover:bg-primary/90"
                   >
                     <Copy className="size-3.5" /> Copy to Clipboard
                   </Button>

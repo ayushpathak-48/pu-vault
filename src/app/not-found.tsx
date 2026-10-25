@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Home, Calendar, Calculator } from "lucide-react";
+import { Home, BookOpen, Calculator } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -32,8 +32,8 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button asChild variant="outline" className="rounded-xl font-medium">
-            <Link href="/time-table">
-              <Calendar className="size-4 mr-2" /> Time Table
+            <Link href="/assignments">
+              <BookOpen className="size-4 mr-2" /> Assignments
             </Link>
           </Button>
         </div>

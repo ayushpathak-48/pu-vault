@@ -6,7 +6,7 @@ import {
   House,
   Code2,
   Calculator,
-  CalendarDays,
+  BookOpen,
   ListTodo,
 } from "lucide-react";
 import Link from "next/link";
@@ -31,14 +31,14 @@ export const BottomTabs = () => {
       icon: Code2,
     },
     {
+      title: "Assignments",
+      href: "/assignments",
+      icon: BookOpen,
+    },
+    {
       title: "Attendance",
       href: "/attendance-calculator",
       icon: Calculator,
-    },
-    {
-      title: "Timetable",
-      href: "/time-table",
-      icon: CalendarDays,
     },
     {
       title: "MCQs",

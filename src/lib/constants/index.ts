@@ -60,18 +60,10 @@ export const navLinks: NavLinkItem[] = [
     category: "academics",
   },
   {
-    id: 3,
-    title: "Time Table",
-    href: "/time-table",
-    icon: CalendarDays,
-    category: "academics",
-  },
-  {
     id: 5,
     title: "Assignments",
     href: "/assignments",
     icon: Book,
-    hideOnMobile: true,
     sem: [1, 2, 3],
     category: "academics",
   },
@@ -278,27 +270,27 @@ export const softwareLinks = [
 export const specializations = [
   {
     id: 1,
-    label: "Artificial Intelligence - I",
+    label: "Artificial Intelligence (AI)",
     value: "ai",
   },
   {
     id: 2,
-    label: "Cyber Security and Forensics - I",
+    label: "Cyber Security & Forensics (CSF)",
     value: "csf",
   },
   {
     id: 3,
-    label: "Full Stack Web Developer - I",
+    label: "Full Stack Web Development (FSWD)",
     value: "fswd",
   },
   {
     id: 4,
-    label: "Big Data Analytics - I",
+    label: "Big Data Analytics (BDA)",
     value: "bda",
   },
   {
     id: 5,
-    label: "Cloud Computing - I",
+    label: "Cloud Computing (CC)",
     value: "cc",
   },
 ];

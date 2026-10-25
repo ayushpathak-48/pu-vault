@@ -14,14 +14,9 @@ import { toast } from "sonner";
 export const CourseSelectBox = ({ showToast }: { showToast?: boolean }) => {
   const course = useDataStore((state) => state.course);
   const setCourse = useDataStore((state) => state.setCourse);
-  const setDivision = useDataStore((state) => state.setDivision);
-  const division = useDataStore((state) => state.division);
 
   const handleSelect = (data: CourseType) => {
     setCourse(data);
-    if (data == "mscit" && ["div_a", "div_b", "div_c"].includes(division)) {
-      setDivision("div_d");
-    }
     if (showToast) {
       toast.success("Course Changed Successfully");
     }
@@ -29,7 +24,7 @@ export const CourseSelectBox = ({ showToast }: { showToast?: boolean }) => {
 
   return (
     <Select value={course} onValueChange={handleSelect}>
-      <SelectTrigger className="w-full ">
+      <SelectTrigger className="w-full">
         <SelectValue placeholder="Select Course" />
       </SelectTrigger>
       <SelectContent>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { CourseSelectBox } from "@/components/course-select-box";
-import { SelectDivision } from "@/components/select-division";
+import { SelectSpecialization } from "@/components/select-specialization";
 import { SemSelectBox } from "@/components/sem-select-box";
 import { ToggleMode } from "@/components/toggle-mode";
 import { ToggleThemeColor } from "@/components/toggle-theme-color";
@@ -58,7 +58,7 @@ export default function SettingsPage() {
           </h1>
         </div>
         <p className="text-xs md:text-sm text-muted-foreground">
-          Manage your student profile, academic semester, division, and interface appearance.
+          Manage your student profile, academic semester, specialization, and interface appearance.
         </p>
       </div>
 
@@ -99,8 +99,8 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            <Button type="submit" size="sm" className="rounded-xl font-semibold gap-1.5 shadow-xs">
-              <Save className="size-3.5" /> Save Profile
+            <Button type="submit" size="default" className="rounded-xl font-semibold gap-2 shadow-xs">
+              <Save className="size-4" /> Save Profile
             </Button>
           </form>
         </div>
@@ -126,8 +126,8 @@ export default function SettingsPage() {
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold">Batch &amp; Division</Label>
-              <SelectDivision />
+              <Label className="text-xs font-semibold">Specialization Track</Label>
+              <SelectSpecialization />
             </div>
           </div>
         </div>

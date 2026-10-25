@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SelectDivision } from "./select-division";
+import { SelectSpecialization } from "./select-specialization";
 import { ToggleMode } from "./toggle-mode";
 import { ToggleThemeColor } from "./toggle-theme-color";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
@@ -37,27 +37,27 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r border-white/50 dark:border-white/[0.08] bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180">
       {/* Brand Header */}
-      <SidebarHeader className="p-4 pb-3 border-b border-white/40 dark:border-white/[0.06]">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative size-10 rounded-2xl overflow-hidden shadow-xs group-hover:scale-105 transition-transform bg-white/50 dark:bg-white/[0.06] border border-white/60 dark:border-white/[0.1] p-1 flex items-center justify-center">
+      <SidebarHeader className="h-16 px-4 flex flex-row items-center border-b border-white/50 dark:border-white/[0.08] shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 group w-full">
+          <div className="relative size-9 rounded-xl overflow-hidden shadow-xs group-hover:scale-105 transition-transform bg-white/50 dark:bg-white/[0.06] border border-white/60 dark:border-white/[0.1] p-1 flex items-center justify-center shrink-0">
             <Image
               src={"/favicon.png"}
-              height={36}
-              width={36}
+              height={32}
+              width={32}
               alt="PU Vault"
-              className="size-8 object-contain"
+              className="size-7 object-contain"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-lg tracking-tight text-foreground">
+              <span className="font-extrabold text-base tracking-tight text-foreground truncate">
                 PU Vault
               </span>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20">
+              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-primary/15 text-primary border border-primary/20 shrink-0">
                 PRO
               </span>
             </div>
-            <span className="text-[11px] text-muted-foreground font-medium">
+            <span className="text-[10px] text-muted-foreground font-medium truncate">
               Student Resource Hub
             </span>
           </div>
@@ -67,7 +67,10 @@ export function AppSidebar() {
       {/* Academic Config Section */}
       <div className="p-3 pb-2 space-y-2.5 border-b border-white/40 dark:border-white/[0.06] bg-white/30 dark:bg-white/[0.02]">
         <div>
-          <SelectDivision />
+          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1 px-1">
+            Specialization
+          </span>
+          <SelectSpecialization />
         </div>
         {sem && (
           <div className="flex items-center justify-between px-1 py-1">
@@ -181,9 +184,17 @@ export function AppSidebar() {
       </SidebarContent>
 
       {/* Footer Customization Controls */}
-      <SidebarFooter className="border-t border-white/40 dark:border-white/[0.06] p-3 bg-white/30 dark:bg-white/[0.02] space-y-2">
-        <div className="flex items-center justify-between gap-2">
+      <SidebarFooter className="border-t border-white/50 dark:border-white/[0.08] p-3 bg-white/30 dark:bg-white/[0.02] space-y-2.5 overflow-hidden shrink-0">
+        <div className="space-y-1">
+          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block px-1">
+            Appearance
+          </span>
           <ToggleMode />
+        </div>
+        <div className="space-y-1">
+          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block px-1">
+            Accent Theme
+          </span>
           <ToggleThemeColor />
         </div>
       </SidebarFooter>

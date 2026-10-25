@@ -38,7 +38,14 @@ export function FeaturedAppsBanner() {
     return () => clearInterval(interval);
   }, [scrollNext]);
 
-  if (!apps || apps.length === 0) return null;
+  // STRICT: Only show apps that are currently live on Google Play Store (exclude coming soon)
+  const playStoreApps = (apps || []).filter(
+    (app) =>
+      (app.status === "production" || app.status === "published") &&
+      Boolean(app.playStoreUrl),
+  );
+
+  if (playStoreApps.length === 0) return null;
 
   return (
     <div
@@ -46,7 +53,7 @@ export function FeaturedAppsBanner() {
       ref={emblaRef}
     >
       <div className="flex h-full touch-pan-y">
-        {apps.map((app) => {
+        {playStoreApps.map((app) => {
           const iconSrc = resolveAppIcon(app.iconUrl);
           const isLive = app.status === "production" || app.status === "published";
 
@@ -77,13 +84,9 @@ export function FeaturedAppsBanner() {
                       </h3>
                       <Badge
                         variant="secondary"
-                        className={`text-[10px] px-2 py-0.2 rounded-full font-bold backdrop-blur-md ${
-                          isLive
-                            ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25"
-                            : "bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/25"
-                        }`}
+                        className="text-[10px] px-2 py-0.5 rounded-full font-bold backdrop-blur-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 shrink-0"
                       >
-                        {isLive ? "Play Store" : "Coming Soon"}
+                        Play Store
                       </Badge>
                     </div>
                     <p className="text-muted-foreground text-xs truncate max-w-md">
@@ -96,14 +99,14 @@ export function FeaturedAppsBanner() {
                 <Button
                   asChild
                   size="sm"
-                  className="shrink-0 ml-3 rounded-xl h-8.5 text-xs px-4 font-bold gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs"
+                  className="shrink-0 ml-3 rounded-xl h-10 text-xs px-4 font-bold gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs"
                 >
                   <Link
-                    href={app.playStoreUrl || "/featured-apps"}
-                    target={app.playStoreUrl ? "_blank" : undefined}
+                    href={app.playStoreUrl}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>{isLive ? "Get App" : "View"}</span>
+                    <span>Get App</span>
                     <ArrowUpRight className="size-3.5" />
                   </Link>
                 </Button>

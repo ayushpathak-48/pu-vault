@@ -105,7 +105,7 @@ const FlashCardsPageClient = () => {
             asChild
             variant="ghost"
             size="icon"
-            className="size-9 rounded-xl shrink-0"
+            className="size-10 rounded-xl shrink-0"
           >
             <Link href="/flash-cards" title="Back to All Flashcards">
               <ArrowLeft className="size-4" />
@@ -145,7 +145,7 @@ const FlashCardsPageClient = () => {
           >
             {subject?.units?.map((ele) => (
               <TabsTrigger
-                className="text-xs font-semibold rounded-xl h-8 px-3 shrink-0 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
+                className="text-xs font-semibold rounded-xl h-10 px-3.5 shrink-0 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
                 key={ele.key}
                 value={ele.key}
                 asChild
@@ -164,7 +164,7 @@ const FlashCardsPageClient = () => {
         <Button
           variant="ghost"
           size="sm"
-          className="rounded-xl h-8 text-xs font-semibold"
+          className="rounded-xl h-10 text-xs font-semibold"
           disabled={!subject?.units || currentUnitIndex >= subject.units.length - 1}
           onClick={handleClickNextUnit}
         >

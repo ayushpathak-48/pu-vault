@@ -14,9 +14,12 @@ import {
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { specializations } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export default function PracticalCodesPage() {
   const specialization = useDataStore((state) => state.specialization);
+  const setSpecialization = useDataStore((state) => state.setSpecialization);
   const sem = useDataStore((state) => state.sem);
   const { getPracticalCodes } = useDataGetters();
   const practicalCodes = getPracticalCodes();
@@ -72,6 +75,24 @@ export default function PracticalCodesPage() {
             className="pl-10 h-10 rounded-xl bg-white/50 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/60 dark:border-white/[0.1] text-xs shadow-xs"
           />
         </div>
+      </div>
+
+      {/* Specialization Track Filter Pills */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+        {specializations.map((spec) => (
+          <button
+            key={spec.value}
+            onClick={() => setSpecialization(spec.value)}
+            className={cn(
+              "px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border backdrop-blur-md",
+              specialization === spec.value
+                ? "bg-primary text-primary-foreground border-primary/40 shadow-xs"
+                : "bg-white/50 dark:bg-white/[0.06] border-white/60 dark:border-white/[0.1] text-muted-foreground hover:text-foreground hover:bg-white/70",
+            )}
+          >
+            {spec.label}
+          </button>
+        ))}
       </div>
 
       {/* Accordion of Practicals by Subject */}

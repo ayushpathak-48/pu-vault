@@ -37,13 +37,13 @@ export const DownloadAndViewButton = ({
               variant={variant === "ghost" ? "ghost" : "outline"}
               onClick={handleDownload}
               size="icon"
-              className="size-8 rounded-xl border-border/70 hover:border-primary/50 text-muted-foreground hover:text-foreground shadow-2xs"
+              className="size-10 rounded-xl border-border/70 hover:border-primary/50 text-muted-foreground hover:text-foreground shadow-2xs"
               disabled={loading}
             >
               {loading ? (
-                <Loader2 className="size-3.5 animate-spin" />
+                <Loader2 className="size-4 animate-spin" />
               ) : (
-                <ArrowDownToLine className="size-3.5" />
+                <ArrowDownToLine className="size-4" />
               )}
             </Button>
           </TooltipTrigger>
@@ -55,11 +55,11 @@ export const DownloadAndViewButton = ({
         <Button
           variant={variant === "ghost" ? "secondary" : "default"}
           size="sm"
-          className="rounded-xl h-8 px-3 text-xs font-semibold gap-1 shadow-2xs"
+          className="rounded-xl h-10 px-4 text-xs font-semibold gap-1.5 shadow-2xs"
           asChild
         >
           <Link href={href} target="_blank" rel="noopener noreferrer">
-            <Eye className="size-3 mr-0.5" />
+            <Eye className="size-3.5 mr-0.5" />
             View
           </Link>
         </Button>

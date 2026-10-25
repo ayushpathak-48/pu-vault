@@ -97,7 +97,7 @@ export default function PlacementMaterialsPage() {
                     asChild
                     size="sm"
                     variant="outline"
-                    className="rounded-xl h-8 text-xs font-semibold gap-1 hover:border-amber-500/50"
+                    className="rounded-xl h-10 px-4 text-xs font-semibold gap-1.5 hover:border-amber-500/50"
                   >
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
                       Open <ExternalLink className="size-3 text-muted-foreground" />

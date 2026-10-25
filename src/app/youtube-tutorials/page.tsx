@@ -191,9 +191,9 @@ export default function YouTubeTutorialsPage() {
                     onClick={() =>
                       setActiveVideo({ title: video.title, videoId: video.videoId })
                     }
-                    className="h-8 text-xs font-semibold px-2.5 rounded-xl gap-1"
+                    className="h-10 text-xs font-semibold px-3 rounded-xl gap-1.5"
                   >
-                    <Play className="size-3 text-red-500 fill-red-500" />
+                    <Play className="size-3.5 text-red-500 fill-red-500" />
                     Watch Video
                   </Button>
 
@@ -201,7 +201,7 @@ export default function YouTubeTutorialsPage() {
                     size="sm"
                     variant="outline"
                     asChild
-                    className="h-8 text-xs px-2.5 rounded-xl gap-1 text-muted-foreground hover:text-foreground border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.04]"
+                    className="h-10 text-xs px-3 rounded-xl gap-1.5 text-muted-foreground hover:text-foreground border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.04]"
                   >
                     <a
                       href={`https://www.youtube.com/watch?v=${video.videoId}`}

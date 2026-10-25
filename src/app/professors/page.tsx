@@ -170,7 +170,7 @@ export default function ProfessorsPage() {
                           asChild
                           variant="ghost"
                           size="icon"
-                          className="size-8 rounded-xl hover:bg-emerald-500/10 hover:text-emerald-600"
+                          className="size-9 rounded-xl hover:bg-emerald-500/10 hover:text-emerald-600"
                         >
                           <Link
                             href={`https://wa.me/91${prof.contact}?text=Hello Professor ${prof.name}, I am a student at Parul University reaching out regarding academics.`}
@@ -179,8 +179,8 @@ export default function ProfessorsPage() {
                             <Image
                               src="/icons/whatsapp.png"
                               alt="WhatsApp"
-                              width={16}
-                              height={16}
+                              width={18}
+                              height={18}
                               className="size-4"
                             />
                           </Link>
@@ -197,10 +197,10 @@ export default function ProfessorsPage() {
                           asChild
                           variant="ghost"
                           size="icon"
-                          className="size-8 rounded-xl hover:bg-blue-500/10 hover:text-blue-600"
+                          className="size-9 rounded-xl hover:bg-blue-500/10 hover:text-blue-600"
                         >
                           <Link href={`tel:${prof.contact}`}>
-                            <Phone className="size-3.5" />
+                            <Phone className="size-4" />
                           </Link>
                         </Button>
                       </TooltipTrigger>
@@ -215,10 +215,10 @@ export default function ProfessorsPage() {
                           asChild
                           variant="ghost"
                           size="icon"
-                          className="size-8 rounded-xl hover:bg-primary/10 hover:text-primary"
+                          className="size-9 rounded-xl hover:bg-primary/10 hover:text-primary"
                         >
                           <Link href={`mailto:${prof.email}`}>
-                            <Mail className="size-3.5" />
+                            <Mail className="size-4" />
                           </Link>
                         </Button>
                       </TooltipTrigger>

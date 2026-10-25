@@ -16,13 +16,11 @@ export const Navbar = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const courseParam = searchParams.get("course") as CourseType;
-  const divisionParam = searchParams.get("div");
 
   const setCourse = useDataStore((state) => state.setCourse);
-  const setDivision = useDataStore((state) => state.setDivision);
 
   const { toggleSidebar, setOpenMobile } = useSidebar();
-  const { course, division, sem, specialization, user } = useDataStore(
+  const { course, sem, specialization, user } = useDataStore(
     (state) => state,
   );
 
@@ -47,7 +45,6 @@ export const Navbar = () => {
 👤 <b>Name:</b> ${user?.name || "Anonymous"}
 🪪 <b>Enrollment No.:</b> ${user?.enrollment || "-"}
 🎓 <b>Course:</b> ${course}
-🏫 <b>Division:</b> ${division}
 📘 <b>Semester:</b> ${sem}
 🧠 <b>Specialization:</b> ${specialization}
 🕒 <b>Time:</b> ${new Date().toLocaleString()}
@@ -57,24 +54,16 @@ export const Navbar = () => {
       chatId: telegramBotChatIds.puVaultVisitorsChannel,
       message,
     });
-  }, [pathname, course, division, sem, specialization, user]);
+  }, [pathname, course, sem, specialization, user]);
 
   useLayoutEffect(() => {
     if (courseParam && ["mca", "mscit"].includes(courseParam)) {
       setCourse(courseParam);
     }
-    if (
-      divisionParam &&
-      ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"].includes(
-        divisionParam,
-      )
-    ) {
-      setDivision(divisionParam);
-    }
-  }, [courseParam, divisionParam, setCourse, setDivision]);
+  }, [courseParam, setCourse]);
 
   return (
-    <header className="fixed top-0 z-[40] md:w-[calc(100%-16rem)] ml-auto w-full h-16 lg:h-20 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 md:px-8 transition-colors">
+    <header className="fixed top-0 right-0 left-0 md:left-64 z-[40] h-16 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-2xl backdrop-saturate-180 border-b border-white/50 dark:border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] px-4 md:px-8 transition-colors">
       <div className="flex items-center justify-between h-full w-full gap-4">
         {/* Left: Mobile branding & page title */}
         <div className="flex items-center gap-3">
@@ -99,10 +88,12 @@ export const Navbar = () => {
               </span>
               <span>•</span>
               <span className="font-medium">Semester {sem}</span>
-              {division && (
+              {specialization && (
                 <>
                   <span>•</span>
-                  <span className="font-medium">Div {division.replace("div_", "").toUpperCase()}</span>
+                  <span className="uppercase font-semibold text-[11px] px-2 py-0.5 rounded-full bg-white/50 dark:bg-white/[0.08] border border-white/60 dark:border-white/[0.1] text-foreground tracking-wide backdrop-blur-md">
+                    {specialization}
+                  </span>
                 </>
               )}
             </div>
@@ -124,7 +115,7 @@ export const Navbar = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
+                  className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
                 >
                   <Search className="size-4 text-muted-foreground" />
                 </Button>
@@ -137,10 +128,10 @@ export const Navbar = () => {
             asChild
             variant="outline"
             size="icon"
-            className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl text-muted-foreground hover:text-foreground"
+            className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl text-muted-foreground hover:text-foreground"
           >
             <Link href="/settings" title="Settings">
-              <Settings className="size-4" />
+              <Settings className="size-4.5" />
             </Link>
           </Button>
 
@@ -149,11 +140,11 @@ export const Navbar = () => {
             <Button
               variant="outline"
               size="icon"
-              className="size-9 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
+              className="size-10 rounded-xl border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl"
               onClick={toggleSidebar}
               aria-label="Toggle navigation"
             >
-              <Menu className="size-4" />
+              <Menu className="size-4.5" />
             </Button>
           </div>
         </div>

@@ -31,7 +31,7 @@ import { sem4Materials } from "@/lib/constants/sem-4/materials.constants";
 
 export const useDataGetters = () => {
   const sem = useDataStore((state) => state.sem);
-  const division = useDataStore((state) => state.division);
+  const specialization = useDataStore((state) => state.specialization);
 
   // Get materials   constant
   const getMaterials = () => {
@@ -111,7 +111,7 @@ ${reason ? `\nReason: The reason I was absent because ${reason}\n` : ""}
 Details:-
 Name: ${name}
 Enrollment No.: ${enrollment}
-Division: ${division.charAt(division.length - 1).toUpperCase()}
+Specialization: ${(specialization || "").toUpperCase()}
 Semester: MCA Sem-${sem}
 
 Kindly request you to update the attendance accordingly.
@@ -129,7 +129,7 @@ ${reason ? `\nReason: The reason I was absent because ${reason}\n` : ""}
 Date: ${formattedDate}
 Name: ${name}
 Enrollment: ${enrollment}
-Division: ${division.charAt(division.length - 1).toUpperCase()}, MCA Sem-${sem}
+Specialization: ${(specialization || "").toUpperCase()}, MCA Sem-${sem}
 
 Kindly request you to please update my attendance. Thank you!`;
     return "";

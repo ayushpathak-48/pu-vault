@@ -28,9 +28,7 @@ export default function Home() {
   const user = useDataStore((state) => state.user);
   const course = useDataStore((state) => state.course);
   const sem = useDataStore((state) => state.sem);
-  const division = useDataStore((state) => state.division);
-
-  const formattedDivision = division ? division.replace("div_", "").toUpperCase() : "";
+  const specialization = useDataStore((state) => state.specialization);
 
   const quickActions = [
     {
@@ -38,28 +36,28 @@ export default function Home() {
       desc: "Calculate target & bunks",
       href: "/attendance-calculator",
       icon: Calculator,
-      color: "from-blue-500/15 via-indigo-500/10 to-transparent text-blue-600 dark:text-blue-400 border-blue-500/25",
+      iconColor: "text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20",
     },
     {
       title: "Source Codes",
       desc: "Lab practicals & solutions",
       href: "/code",
       icon: Code2,
-      color: "from-purple-500/15 via-pink-500/10 to-transparent text-purple-600 dark:text-purple-400 border-purple-500/25",
+      iconColor: "text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-500/20",
     },
     {
-      title: "Time Table",
-      desc: "Daily lecture schedule",
-      href: "/time-table",
-      icon: CalendarDays,
-      color: "from-emerald-500/15 via-teal-500/10 to-transparent text-emerald-600 dark:text-emerald-400 border-emerald-500/25",
+      title: "Assignments",
+      desc: "Course practical & theory tasks",
+      href: "/assignments",
+      icon: BookOpen,
+      iconColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
     },
     {
       title: "MCQs Quiz",
       desc: "Unit practice & mock tests",
       href: "/mcqs",
       icon: ListTodo,
-      color: "from-amber-500/15 via-orange-500/10 to-transparent text-amber-600 dark:text-amber-400 border-amber-500/25",
+      iconColor: "text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20",
     },
   ];
 
@@ -74,9 +72,9 @@ export default function Home() {
                 <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20 uppercase tracking-wide backdrop-blur-md">
                   {course} • Semester {sem}
                 </span>
-                {formattedDivision && (
-                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/50 dark:bg-white/[0.06] text-muted-foreground border border-white/60 dark:border-white/[0.08] backdrop-blur-md">
-                    Division {formattedDivision}
+                {specialization && (
+                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/50 dark:bg-white/[0.06] text-muted-foreground border border-white/60 dark:border-white/[0.08] backdrop-blur-md uppercase">
+                    Track: {specialization}
                   </span>
                 )}
               </div>
@@ -89,21 +87,21 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button asChild size="sm" className="rounded-xl shadow-xs gap-1.5">
-                <Link href="/time-table">
-                  <CalendarDays className="size-4" />
-                  View Schedule
+              <Button asChild size="default" className="rounded-2xl shadow-xs gap-2 font-semibold">
+                <Link href="/code">
+                  <Code2 className="size-4" />
+                  Source Codes
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                size="sm"
-                className="rounded-xl gap-1.5 border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md"
+                size="default"
+                className="rounded-2xl gap-2 font-medium border-white/60 dark:border-white/[0.1] bg-white/50 dark:bg-white/[0.06] backdrop-blur-md"
               >
-                <Link href="/attendance-calculator">
-                  <Calculator className="size-4" />
-                  Attendance
+                <Link href="/assignments">
+                  <BookOpen className="size-4" />
+                  Assignments
                 </Link>
               </Button>
             </div>
@@ -120,19 +118,19 @@ export default function Home() {
               <Link
                 key={action.href}
                 href={action.href}
-                className={`p-4 rounded-2xl bg-gradient-to-br ${action.color} backdrop-blur-xl backdrop-saturate-150 border shadow-[0_8px_24px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group`}
+                className="p-5 rounded-3xl bg-white/65 dark:bg-zinc-900/40 backdrop-blur-xl backdrop-saturate-150 border border-white/60 dark:border-white/[0.08] shadow-[0_8px_24px_rgba(0,0,0,0.03),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between group min-h-[140px]"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="p-2 rounded-xl bg-white/70 dark:bg-white/[0.1] border border-white/60 dark:border-white/[0.1] shadow-2xs backdrop-blur-md">
+                  <div className={`p-2.5 rounded-2xl ${action.iconColor} border shadow-2xs backdrop-blur-md`}>
                     <Icon className="size-5" />
                   </div>
-                  <ArrowRight className="size-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                  <ArrowRight className="size-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-muted-foreground group-hover:text-foreground" />
                 </div>
                 <div>
                   <h3 className="font-bold text-sm text-foreground">
                     {action.title}
                   </h3>
-                  <p className="text-[11px] text-muted-foreground leading-tight mt-0.5 line-clamp-1">
+                  <p className="text-[11px] text-muted-foreground leading-tight mt-1 line-clamp-1">
                     {action.desc}
                   </p>
                 </div>
@@ -172,7 +170,7 @@ export default function Home() {
                   className="flex items-center justify-between p-3 rounded-xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-white/50 dark:border-white/[0.08] text-sm shadow-2xs"
                 >
                   <span className="font-semibold text-foreground">{alert.title}</span>
-                  <Button asChild size="sm" variant="outline" className="rounded-lg h-7 text-xs">
+                  <Button asChild size="sm" variant="outline" className="rounded-xl h-9 text-xs font-semibold">
                     <Link href={alert.href} target="_blank">
                       View <ExternalLink className="size-3 ml-1" />
                     </Link>

@@ -8,7 +8,7 @@ import {
   Search,
   Users,
   HardDriveDownload,
-  CalendarDays,
+  BookCheck,
   Calculator,
   ListTodo,
   SquareAsterisk,
@@ -81,7 +81,7 @@ export default function SearchModal({
 
   const quickPages = [
     { title: "Study Materials & Notes", href: "/", icon: BookOpen },
-    { title: "Time Table Schedule", href: "/time-table", icon: CalendarDays },
+    { title: "Assignments & Practical Tasks", href: "/assignments", icon: BookCheck },
     { title: "Attendance Calculator", href: "/attendance-calculator", icon: Calculator },
     { title: "Practical Source Codes", href: "/code", icon: Code2 },
     { title: "MCQs Practice Quiz", href: "/mcqs", icon: ListTodo },
